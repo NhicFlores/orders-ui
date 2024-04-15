@@ -1,0 +1,18 @@
+React Docs 
+https://react.dev/learn/start-a-new-react-project 
+
+NextJS project structure 
+https://nextjs.org/docs/getting-started/project-structure 
+
+NEXTJS 
+https://nextjs.org/docs/getting-started/installation
+
+optimizing fonts
+https://nextjs.org/docs/app/building-your-application/optimizing/fonts 
+
+db connections 
+https://www.educative.io/answers/how-to-implement-a-server-for-reactjs-and-mysql-application 
+https://www.geeksforgeeks.org/how-to-connect-sql-server-database-from-javascript-in-the-browser/ 
+
+Some templates to look at 
+https://vercel.com/templates?framework=next.js 
