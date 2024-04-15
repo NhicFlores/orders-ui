@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import {inter} from '@/app/ui/fonts';
 import "./ui/globals.css";
 
+//layout for main app: root layout
+
 export const metadata: Metadata = {
   title: "Profile Landing Page",
   description: "Glass ordering home page",
