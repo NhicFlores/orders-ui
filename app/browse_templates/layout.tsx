@@ -1,5 +1,9 @@
 // browse templates layout
 
 export default function Layout({ children }: {children: React.ReactNode}){
-    return <p>Layout for browse templates page</p>
+    return (
+        <main className="flex min-h-screen flex-col items-center justify-between p-24">
+            <p>browse templates layout</p>
+        </main>
+    );
 }
