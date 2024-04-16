@@ -39,7 +39,6 @@ export default function Orders_List() {
     },
 ];
 
-
   return (
     <div className="flex w-full flex-col md:col-span-4">
       <h2 className={`${lusitana.className} mb-4 text-xl md:text-2xl`}>
