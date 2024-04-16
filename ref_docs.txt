@@ -16,3 +16,14 @@ https://www.geeksforgeeks.org/how-to-connect-sql-server-database-from-javascript
 
 Some templates to look at 
 https://vercel.com/templates?framework=next.js 
+
+font awesome 
+https://react-icons-v2.vercel.app/icons/fa6 
+https://docs.fontawesome.com/web/setup/get-started 
+
+rgb colors 
+https://www.w3schools.com/css/css_colors_rgb.asp 
+
+image optimization 
+https://nextjs.org/docs/pages/api-reference/components/image 
+https://www.w3schools.com/w3css/w3css_images.asp 
