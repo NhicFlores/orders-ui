@@ -2,7 +2,8 @@
 import Link from "next/link";
 import clsx from "clsx";
 
-
+//eventaully put into db or dedicated folder 
+//export homepage, design, order links etc 
 const links = [
     {
         name: 'New Design',

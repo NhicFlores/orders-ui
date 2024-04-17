@@ -8,7 +8,7 @@ export default function OrdersList() {
       customer_id: "customers[0].id",
       order_name: "living room windows",
       product_id: "1234",
-      amount: 5,
+      quantity: 5,
       price: 100.0,
       date: "04-16-2024",
       status: "pending",
@@ -18,7 +18,7 @@ export default function OrdersList() {
       customer_id: "customers[1].id",
       order_name: "barn door",
       product_id: "1234",
-      amount: 1,
+      quantity: 1,
       price: 100.0,
       date: "04-16-2024",
       status: "draft",
@@ -28,7 +28,7 @@ export default function OrdersList() {
       customer_id: "customers[2].id",
       order_name: "shower doors",
       product_id: "1234",
-      amount: 5,
+      quantity: 5,
       price: 100.0,
       date: "04-16-2024",
       status: "shipped",
@@ -52,7 +52,7 @@ export default function OrdersList() {
               <td>{order.customer_id}</td>
               <td>{order.order_name}</td>
               <td>{order.product_id}</td>
-              <td>{order.amount}</td>
+              <td>{order.quantity}</td>
               <td>{order.price}</td>
               <td>{order.date}</td>
               <td>{order.status}</td>

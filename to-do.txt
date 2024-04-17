@@ -29,5 +29,5 @@ https://ui.shadcn.com/docs/installation/next
 add components
 https://ui.shadcn.com/docs/components/data-table 
 
-install intellicode 
-install indent rainbow 
+use tooltips to see details when hovering over table like seeing the custoomer id when 
+hovering on customer name 
