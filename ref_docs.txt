@@ -27,3 +27,6 @@ https://www.w3schools.com/css/css_colors_rgb.asp
 image optimization 
 https://nextjs.org/docs/pages/api-reference/components/image 
 https://www.w3schools.com/w3css/w3css_images.asp 
+
+notes 
+don't npm-i your styling system 

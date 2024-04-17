@@ -4,7 +4,8 @@
 //className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-4 lg:grid-cols-8"
 import Orders_List from "../ui/components/orders_list";
 import OrdersList from "../ui/components/OrdersList";
-import { Order, order_table_columns } from "./columns";
+import { order_table_columns } from "./columns";
+import { Order } from "../lib/definitions";
 import { DataTable } from "../ui/components/data-table";
 
 async function fetchOrders(): Promise<Order[]> {
@@ -15,7 +16,7 @@ async function fetchOrders(): Promise<Order[]> {
       customer_id: "customers[0].id",
       order_name: "living room windows",
       product_id: "1234",
-      amount: 5,
+      quantity: 5,
       price: 100.0,
       date: "04-16-2024",
       status: "pending",
@@ -25,7 +26,7 @@ async function fetchOrders(): Promise<Order[]> {
       customer_id: "customers[1].id",
       order_name: "barn door",
       product_id: "1234",
-      amount: 1,
+      quantity: 1,
       price: 100.0,
       date: "04-16-2024",
       status: "draft",
@@ -35,7 +36,7 @@ async function fetchOrders(): Promise<Order[]> {
       customer_id: "customers[2].id",
       order_name: "shower doors",
       product_id: "1234",
-      amount: 5,
+      quantity: 5,
       price: 100.0,
       date: "04-16-2024",
       status: "shipped",

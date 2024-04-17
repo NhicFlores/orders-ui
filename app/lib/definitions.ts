@@ -16,7 +16,7 @@ export type Order = {
   customer_id: string;
   order_name: string;
   product_id: string;
-  amount: number;
+  quantity: number;
   price: number;
   date: string;
   status: "pending" | "draft" | "shipped" | "processing";
