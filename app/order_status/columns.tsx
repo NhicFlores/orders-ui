@@ -3,7 +3,7 @@
 
 import { ColumnDef, RowExpanding } from "@tanstack/react-table";
 import { Order } from "../lib/definitions";
-import { MoreHorizontal } from "lucide-react";
+import { ArrowUpDown, MoreHorizontal } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -60,35 +60,77 @@ export const order_table_columns: ColumnDef<Order>[] = [
   },
   {
     accessorKey: "customer_id",
-    header: "Customer",
+    header: ({ column }) => {
+      return (
+        <Button variant={'ghost'} onClick={() => column.toggleSorting(column.getIsSorted() === 'asc')}>
+          Customer
+          <ArrowUpDown className="ml-2 h-4 w-4"/>
+        </Button>
+      )
+    },
   },
   {
     accessorKey: "order_name",
-    header: "Order Name",
+    header: ({ column }) => {
+      return (
+        <Button variant={'ghost'} onClick={() => column.toggleSorting(column.getIsSorted() === 'asc')}>
+          Order Name
+          <ArrowUpDown className="ml-2 h-4 w-4"/>
+        </Button>
+      )
+    },
   },
   {
     accessorKey: "product_id",
-    header: "Product",
+    header: ({ column }) => {
+      return (
+        <Button variant={'ghost'} onClick={() => column.toggleSorting(column.getIsSorted() === 'asc')}>
+          Product
+          <ArrowUpDown className="ml-2 h-4 w-4"/>
+        </Button>
+      )
+    },
   },
   {
     accessorKey: "quantity",
-    header: "Quantity",
+    header: ({ column }) => {
+      return (
+        <Button variant={'ghost'} onClick={() => column.toggleSorting(column.getIsSorted() === 'asc')}>
+          Quantity
+          <ArrowUpDown className="ml-2 h-4 w-4"/>
+        </Button>
+      )
+    },
   },
   {
     accessorKey: "price",
-    header: () => <div className="text-right">Total</div>,
+    header: ({ column }) => {
+      return (
+        <Button variant={'ghost'} onClick={() => column.toggleSorting(column.getIsSorted() === 'asc')}>
+          <div className="text-right">Total</div>
+          <ArrowUpDown className="ml-2 h-4 w-4"/>
+        </Button>
+      )
+    },
     cell: ({ row }) => {
       const price = parseFloat(row.getValue("price"));
       const formatted = new Intl.NumberFormat("en-US", {
         style: 'currency',
         currency: 'USD',
       }).format(price);
-      return <div className="text-right font-medium">{formatted}</div>
+      return <div className="text-right pr-5 font-medium">{formatted}</div>
     }
   },
   {
     accessorKey: "date",
-    header: "Date",
+    header: ({ column }) => {
+      return (
+        <Button variant={'ghost'} onClick={() => column.toggleSorting(column.getIsSorted() === 'asc')}>
+          Date
+          <ArrowUpDown className="ml-2 h-4 w-4"/>
+        </Button>
+      )
+    },
   },
   {
     accessorKey: "status",
