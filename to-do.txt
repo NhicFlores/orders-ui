@@ -22,3 +22,12 @@ server components
    can reuse other components: change data types 
 
 start with components and arrays of data, then later make dynamic data 
+
+install shadcn ui 
+https://ui.shadcn.com/docs/installation/next 
+
+add components
+https://ui.shadcn.com/docs/components/data-table 
+
+install intellicode 
+install indent rainbow 
