@@ -7,8 +7,27 @@ import OrdersList from "../ui/components/OrdersList";
 import { order_table_columns } from "./columns";
 import { Order } from "../lib/definitions";
 import { DataTable } from "../ui/components/data-table";
+import { fetchOrders } from "../lib/data";
 
-async function fetchOrders(): Promise<Order[]> {
+/*async function fetchOrders(): Promise<Order[]> {
+  //once api layer is made we can move this function over
+  return [
+  ];
+}*/
+
+export default async function Page() {
+  const orders = await fetchOrders();
+  console.log('we got the orders');
+  return (
+    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+      <div className="container mx-auto py-10">
+        <DataTable columns={order_table_columns} data={orders} />
+      </div>
+    </main>
+  );
+}
+
+/*async function fetchOrders(): Promise<Order[]> {
   //once api layer is made we can move this function over
   return [
     {
@@ -42,15 +61,4 @@ async function fetchOrders(): Promise<Order[]> {
       status: "shipped",
     },
   ];
-}
-
-export default async function Page() {
-  const orders = await fetchOrders();
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="container mx-auto py-10">
-        <DataTable columns={order_table_columns} data={orders} />
-      </div>
-    </main>
-  );
-}
+}*/
