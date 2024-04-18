@@ -8,28 +8,17 @@ reusable components: buttons, rows, banners,
 
 form: saving info -> output order format 
 
-order rows should be selectable 
 button that inserts new order - finish later, next, submit should do the same thing just storing different tags 
 
 style page - center information 
 maybe find some pictures to put in the background 
 
-fake data 
-seed script 
-placeholderdata.js 
+
 definitions.ts - data types for tables:; customers 
     draft table everything nullable 
 
 server components 
    can reuse other components: change data types 
-
-start with components and arrays of data, then later make dynamic data 
-
-install shadcn ui 
-https://ui.shadcn.com/docs/installation/next 
-
-add components
-https://ui.shadcn.com/docs/components/data-table 
 
 use tooltips to see details when hovering over table like seeing the custoomer id when 
 hovering on customer name 
