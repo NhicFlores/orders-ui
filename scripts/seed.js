@@ -1,5 +1,6 @@
 const { db } = require('@vercel/postgres');
 const {
+  orders,
   invoices,
   customers,
   revenue,
@@ -42,6 +43,49 @@ async function seedUsers(client) {
     };
   } catch (error) {
     console.error('Error seeding users:', error);
+    throw error;
+  }
+}
+
+async function seedOrders(client) {
+  try {
+    await client.sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
+
+    // Create the "orders" table if it doesn't exist
+    const createTable = await client.sql`
+    CREATE TABLE IF NOT EXISTS orders (
+    id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
+    customer_id UUID NOT NULL,
+    order_name VARCHAR(255) NOT NULL,
+    product_id VARCHAR(255) NOT NULL,
+    quantity INT NOT NULL,
+    price DECIMAL(19,4) NOT NULL,
+    status VARCHAR(255) NOT NULL,
+    date DATE NOT NULL
+  );
+`;
+
+    console.log(`Created "orders" table`);
+
+    // Insert data into the "orders" table
+    const insertedOrders = await Promise.all(
+      orders.map(
+        (order) => client.sql`
+        INSERT INTO orders (customer_id, order_name, product_id, quantity, price, status, date)
+        VALUES (${order.customer_id}, ${order.order_name}, ${order.product_id}, ${order.quantity}, ${order.price}, ${order.status}, ${order.date})
+        ON CONFLICT (id) DO NOTHING;
+      `,
+      ),
+    );
+
+    console.log(`Seeded ${insertedOrders.length} orders`);
+
+    return {
+      createTable,
+      orders: insertedOrders,
+    };
+  } catch (error) {
+    console.error('Error seeding orders:', error);
     throw error;
   }
 }
@@ -163,6 +207,7 @@ async function seedRevenue(client) {
 async function main() {
   const client = await db.connect();
 
+  await seedOrders(client);
   await seedUsers(client);
   await seedCustomers(client);
   await seedInvoices(client);

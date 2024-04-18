@@ -30,3 +30,13 @@ https://www.w3schools.com/w3css/w3css_images.asp
 
 notes 
 don't npm-i your styling system 
+
+form validation with Zod 
+https://zod.dev/ : TypeScript-first schema validation with static type inference 
+
+reusable comonent library 
+https://ui.shadcn.com/ 
+
+choose license 
+https://fossa.com/learn/developers-guide-open-source-software-licenses 
+https://fossa.com/blog/which-open-source-license-is-the-best-for-commercialization/  

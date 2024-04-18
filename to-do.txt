@@ -1,3 +1,5 @@
+choose license 
+
 import icons 
 
 placeholder data 
@@ -31,3 +33,19 @@ https://ui.shadcn.com/docs/components/data-table
 
 use tooltips to see details when hovering over table like seeing the custoomer id when 
 hovering on customer name 
+
+Loose project structure (will require some refactoring) 
+	• App 
+		○ Landing page and layout 
+		○ Routing and navigation modules 
+			§ Page and shared layouts for forms 
+		○ Ui 
+			§ Stylized local components 
+	• Styles 
+		○ Font definitions 
+		○ Default style definitions 
+	• Components 
+		○ Headless, global components 
+			§ Table, button, dropdown etc 
+	• Lib 
+Global utils 
