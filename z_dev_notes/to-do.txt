@@ -1,8 +1,6 @@
 choose license 
 
-import icons 
-
-placeholder data 
+import icons  
 
 reusable components: buttons, rows, banners, 
 
@@ -23,6 +21,11 @@ server components
 use tooltips to see details when hovering over table like seeing the custoomer id when 
 hovering on customer name 
 
+deleting items: should have a deleted folder (and table) that will hold onto stuff for like 15 days or something 
+archiving items to clean out historical data from current: ex. past customers - dont want to delete them but 
+we don't need them in working data 
+
+global definitions for paths to consolidate them and avoid spelling errors 
 
 Loose project structure (will require some refactoring) 
 	• App 

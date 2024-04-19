@@ -35,6 +35,7 @@ import {
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { NewOrderButton } from "./new-order-button";
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
@@ -84,6 +85,7 @@ export function DataTable<TData, TValue>({
           }
           className="max-w-sm"
         />
+        <NewOrderButton/>
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button variant={"outline"} className="ml-auto">

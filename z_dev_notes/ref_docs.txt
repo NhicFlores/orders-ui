@@ -7,6 +7,9 @@ https://nextjs.org/docs/getting-started/project-structure
 NEXTJS 
 https://nextjs.org/docs/getting-started/installation
 
+Security witih Server Actions 
+https://nextjs.org/blog/security-nextjs-server-components-actions 
+
 optimizing fonts
 https://nextjs.org/docs/app/building-your-application/optimizing/fonts 
 

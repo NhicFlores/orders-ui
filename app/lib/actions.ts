@@ -1,6 +1,8 @@
 'use server';
 import { z } from 'zod';
 import { sql } from '@vercel/postgres';
+import { revalidatePath } from 'next/cache';
+import { redirect } from 'next/navigation';
 
 //updating the data displayed in the orders route, 
 //so we need to clear this cache and trigger a new request to the server 
@@ -27,8 +29,31 @@ const rawFormData = Object.fromEntries(formData.entries())
 */
 export async function createOrder(formData: FormData) {
     //const rawFormData =
+
+    const { customer_id, order_name, product_id, quantity, price, status } = CreateOrder.parse({
+        customer_id: formData.get('customer_id'),
+        order_name: formData.get('order_name'),
+        product_id: formData.get('product_id'),
+        quantity: formData.get('quantity'),
+        price: formData.get('price'),
+        status: formData.get('status'),
+    });
+
+    const date = new Date().toISOString().split('T')[0];
     
     await sql`
-        INSERT INTO 
+        INSERT INTO orders (customer_id, order_name, product_id, quantity, price, status, date)
+        VALUES (${customer_id}, ${order_name}, ${product_id}, ${quantity}, ${price}, ${status}, ${date})
     `;
+
+    revalidatePath('/app/order_status');
+    redirect('/app/order_status');
+}
+
+export async function deleteOrder(id: string){
+    await sql`
+        DELETE FROM orders
+        WHERE id = ${id}
+    `;
+    revalidatePath('/app/order_status');
 }
