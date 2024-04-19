@@ -33,6 +33,7 @@ don't npm-i your styling system
 
 form validation with Zod 
 https://zod.dev/ : TypeScript-first schema validation with static type inference 
+npm i zod 
 
 reusable comonent library 
 https://ui.shadcn.com/ 
