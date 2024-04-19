@@ -30,15 +30,21 @@ const rawFormData = Object.fromEntries(formData.entries())
 export async function createOrder(formData: FormData) {
     //const rawFormData =
 
-    const { customer_id, order_name, product_id, quantity, price, status } = CreateOrder.parse({
-        customer_id: formData.get('customer_id'),
-        order_name: formData.get('order_name'),
-        product_id: formData.get('product_id'),
-        quantity: formData.get('quantity'),
-        price: formData.get('price'),
-        status: formData.get('status'),
-    });
+    // const { customer_id, order_name, product_id, quantity, price, status } = CreateOrder.parse({
+    //     customer_id: formData.get('customer_id'),
+    //     order_name: formData.get('order_name'),
+    //     product_id: formData.get('product_id'),
+    //     quantity: formData.get('quantity'),
+    //     price: formData.get('price'),
+    //     status: formData.get('status'),
+    // });
 
+    const customer_id = '3958dc9e-742f-4377-85e9-fec4b6a6442a';
+    const order_name = 'new order';
+    const product_id = 'some product';
+    const quantity = 45;
+    const price = 120.00;
+    const status = 'shipped';
     const date = new Date().toISOString().split('T')[0];
     
     await sql`

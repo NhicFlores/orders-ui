@@ -2,8 +2,6 @@
 // server component where we will fetch data and render table
 
 //className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-4 lg:grid-cols-8"
-import Orders_List from "../ui/components/orders_list";
-import OrdersList from "../ui/components/OrdersList";
 import { order_table_columns } from "./columns";
 import { Order } from "../lib/definitions";
 import { DataTable } from "../ui/components/data-table";
