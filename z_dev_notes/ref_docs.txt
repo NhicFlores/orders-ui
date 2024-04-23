@@ -44,3 +44,6 @@ https://ui.shadcn.com/
 choose license 
 https://fossa.com/learn/developers-guide-open-source-software-licenses 
 https://fossa.com/blog/which-open-source-license-is-the-best-for-commercialization/  
+
+deployment strategy 
+https://medium.com/@vinodvamanbhat/mastering-the-art-of-web-app-deployment-a-comprehensive-guide-to-end-to-end-project-deployment-3e6d368f4b7f 

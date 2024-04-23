@@ -1,6 +1,9 @@
 choose license 
 
 import icons  
+font awesome 
+ant design 
+
 
 reusable components: buttons, rows, banners, 
 

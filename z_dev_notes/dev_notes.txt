@@ -48,3 +48,21 @@ updating an order
 	fetch the specific order from db 
 	pre-populate the form with the order data 
 	update the order data in db  
+
+
+code organization 
+app/
+  ui/
+  etc 
+
+branching strategy and conventions 
+
+environment configuration 
+  dotenv 
+
+code quality and style 
+eslint and prettier configs
+
+testing - Jest 
+
+versioning dependencies 
