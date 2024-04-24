@@ -11,6 +11,7 @@ export type Order = {
   date: string;
   status: "pending" | "draft" | "shipped" | "processing";
 };
+//quote: nullable field or status - 
 
 export type OrderKeys = keyof Order;
 
