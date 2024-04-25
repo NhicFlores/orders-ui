@@ -15,6 +15,32 @@ export type Order = {
 
 export type OrderKeys = keyof Order;
 
+export type OrderItem = {
+  id: string;
+  code: string;
+};
+//code: (preliminary) calculated value based on abbreviations for the materials that make up the product 
+//parsable for UI to be able to switch from abbreviated to expanded views 
+
+//consider creating a product class here for out different products to extend 
+export type Product = {
+  id: string; 
+  name: string;
+  category: "standard glass | store front price book | store front estimating";
+  prod_type: Product_Type;
+};
+
+interface Product_Type {
+  name: string;
+  strength: string;
+}
+
+export type ShowerDoor = {
+  glass_strength: "1/8 | 5/32 | 3/16 | 1/4 | 5/16 | 3/8 | 1/2 | 5/8";//do all glass products have the same options? /
+  view_type: "clear | low i | reflective | patterned"; // each of these have follow up specifications - maybe a 'glass specifications' object? 
+  measurements: string;
+}
+
 export type User = {
   id: string;
   name: string;
@@ -28,6 +54,50 @@ export type Customer = {
   email: string;
   image_url: string;
 };
+
+//PROFILE PAGE INFO  
+
+export type Client_Customer = {
+  id: string;
+  name: string;//can be person or company
+  email: string;
+  account_num: string;//accounting handles these
+  phone_num: string;
+  billing_info: Billing_Info;
+  shipping_info: ShippingInfo;
+};
+//since we repeat the name, email, phone number pattern, is it worth it to create a contact info object 
+//customer would still need a name since it can be a company or a person 
+//might end up creating a company and person type to use in the pricing model
+export interface Billing_Info {
+  billing_addr_prim: Address;
+  billing_addr_sec?: Address;
+  payment_method: string;
+  purchase_order: string;
+  additional_info: string;
+  primary_contact_name: string;
+  primary_contact_email: string;
+  phone_num: string;
+  alt_phone_num: string;
+  fac_num: string;
+}
+
+export interface ShippingInfo {
+  delivery_addr: Address;
+  is_job_site: boolean;
+}
+
+export interface Address {
+  city: string;
+  state: string;
+  zip: string;
+  county: string;
+  country: string;
+}
+
+//there's a notes section - for clients this will be part of the order - unless a resuable note is needed to keep them from re-writing the same info 
+//on admin side - you can create a note attached to an entity by it's id - customer id, order id etc 
+//END OF PROFILE INFO 
 
 export type Invoice = {
   id: string;
