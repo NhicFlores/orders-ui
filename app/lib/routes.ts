@@ -1,4 +1,4 @@
-export const routes = [
+export const Routes = [
   {
     label: "New Design",
     href: "/design_dashboard",
