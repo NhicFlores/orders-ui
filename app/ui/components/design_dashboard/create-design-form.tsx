@@ -1,10 +1,16 @@
+'use client'
+
 import { createOrder } from "@/app/lib/actions";
-import { SubmitButton } from "../submit-button";
+import { MyButton } from "../my-button";
 import Link from "next/link";
 import { CustomerField } from "@/app/lib/definitions";
+import { useFormState, useFormStatus } from "react-dom";
 
 export default function DesignForm({ customers }: {customers: CustomerField[]}){
-    return(
+  //const initialState = {message: null, errors: {}};
+  //const [state, dispatch] = useFormState(createOrder, initialState);  
+  
+  return(
         <form action={createOrder}>
             <div className="rounded-md bg-gray-50 p-4 md:p-6">
         {/* Customer Name */}
@@ -113,8 +119,19 @@ export default function DesignForm({ customers }: {customers: CustomerField[]}){
         >
           Cancel
         </Link>
-        <SubmitButton type="submit">Submit Order</SubmitButton>
+        <MyButton type="submit">Submit Order</MyButton>
       </div>
         </form>
     )
+}
+
+function SubmitButton() {
+  const { pending } = useFormStatus();
+
+  return (
+    <MyButton className="mt-4 w-full" aria-disabled={pending}>
+      Submit Order
+    </MyButton>
+
+  )
 }

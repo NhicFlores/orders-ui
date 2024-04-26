@@ -18,7 +18,7 @@ const OrderFormSchema = z.object({
     status: z.enum(['pending', 'draft', 'shipped', 'processing']),
     date: z.string(),
 });
-const CreateOrder = OrderFormSchema.omit({id: true, date: true});
+const CreateOrder = OrderFormSchema.omit({id: true, date: true, order_name: true, product_id: true, price: true, });
 
 /*
 If you're working with forms that have many fields, 
@@ -27,6 +27,19 @@ with JavaScript's Object.fromEntries(). For example:
 
 const rawFormData = Object.fromEntries(formData.entries())
 */
+
+// this is temporary untul @types/react-dom is updated
+export type OrderFormState = {
+    errors?: {
+        customer_id?: string[];
+        quantity?: string[];
+        status?: string[];
+    };
+    message?: string | null;
+};
+
+//prevState: OrderFormState,
+
 export async function createOrder(formData: FormData) {
     //const rawFormData =
 
@@ -43,17 +56,19 @@ export async function createOrder(formData: FormData) {
     const order_name = 'new order';
     const product_id = 'some product';
     const quantity = 45;
-    const price = 120.00;
+    const price = 14120.00;
     const status = 'shipped';
     const date = new Date().toISOString().split('T')[0];
     
+
+
     await sql`
         INSERT INTO orders (customer_id, order_name, product_id, quantity, price, status, date)
         VALUES (${customer_id}, ${order_name}, ${product_id}, ${quantity}, ${price}, ${status}, ${date})
     `;
 
-    revalidatePath('/app/order_status');
-    redirect('/app/order_status');
+    revalidatePath('/order_status');
+    redirect('/order_status');
 }
 
 export async function deleteOrder(id: string){
