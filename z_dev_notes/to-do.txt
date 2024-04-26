@@ -3,6 +3,7 @@ choose license
 import icons  
 font awesome 
 ant design 
+lucide react
 
 
 reusable components: buttons, rows, banners, 
