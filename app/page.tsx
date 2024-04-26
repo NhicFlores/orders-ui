@@ -5,7 +5,8 @@ import { ProfileNavBar } from "./ui/profile_nav_bar";
 //home page for app
 export default function Home() {
   return (
-    <main className="flex flex-col place-items-center h-screen">
+    //Set main screen layout to not be locked to center page --tdh 4/26/24
+    <main className="flex flex-col h-screen">
       <div>
         <Header />
       </div>
