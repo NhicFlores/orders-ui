@@ -1,5 +1,5 @@
 import { fetchCustomers } from "@/app/lib/data";
-import DesignForm from "@/app/ui/components/design_dashboard/create-design-form";
+import NewOrderForm from "@/app/ui/components/order-components/new_order_form";
 
 export default async function Page() {
 
@@ -7,7 +7,7 @@ export default async function Page() {
 
     return(
         <main>
-            <DesignForm customers={customers}/>
+            <NewOrderForm customers={customers}/>
         </main>
     )
 }

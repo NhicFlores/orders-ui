@@ -1,4 +1,7 @@
 import { UserRound } from "lucide-react";
+
+// NOT USED
+
 //import { icons } from "lucide-react";
 //how does this import statement work - what is the shape of 'icons' and how do we iterate through it while enforcing type safety 
 

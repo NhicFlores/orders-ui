@@ -1,6 +1,5 @@
 import Homepage_NavLinks from "./ui/components/homepage_navlinks";
 import Header from "./ui/header";
-import { ProfileNavBar } from "./ui/profile_nav_bar";
 
 //home page for app
 export default function Home() {

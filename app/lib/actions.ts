@@ -67,8 +67,8 @@ export async function createOrder(formData: FormData) {
         VALUES (${customer_id}, ${order_name}, ${product_id}, ${quantity}, ${price}, ${status}, ${date})
     `;
 
-    revalidatePath('/order_status');
-    redirect('/order_status');
+    revalidatePath('/order');
+    redirect('/order');
 }
 
 export async function deleteOrder(id: string){

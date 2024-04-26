@@ -9,11 +9,11 @@ export const Home =
 export const HeaderRoutes = [
   {
     label: "Quotes",
-    href: "/quotes",
+    href: "/quote",
   },
   {
     label: "Orders",
-    href: "/orders",
+    href: "/order",
   },
   {
     label: "Drafts",
@@ -30,15 +30,25 @@ export const Profile =
 
 export const HomeNavLinks = [
   {
-    label: "New Design",
-    href: "/design_dashboard",
+    label: "New Order",
+    href: "/order/new_order",
   },
   {
     label: "Check Order Status",
-    href: "/order_status",
+    href: "/order",
   },
   {
     label: "Browse Templates",
     href: "/browse_templates",
   },
 ]
+
+export const NewOrder = {
+  label: "New Order",
+  href: "/order/new_order",
+};
+
+export const OrderRoute = {
+  label: "Orders",
+  href: "/order",
+};

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import {inter} from '@/app/ui/fonts';
-import "./ui/globals.css";
+import {inter} from '@/app/ui/styles/fonts';
+import "./ui/styles/globals.css";
 
 //layout for main app: root layout
 
