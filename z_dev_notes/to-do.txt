@@ -1,3 +1,9 @@
+NEXT 
+new order form - break down into comonents - text input, buttons, dropdowns, radio buttons 
+form input types 
+form input validation 
+
+Low Priority 
 choose license 
 
 import icons  
@@ -5,19 +11,16 @@ font awesome
 ant design 
 lucide react
 
-
-reusable components: buttons, rows, banners, 
-
 form: saving info -> output order format 
 
 button that inserts new order - finish later, next, submit should do the same thing just storing different tags 
 
-style page - center information 
+styling
 maybe find some pictures to put in the background 
 
 
 definitions.ts - data types for tables:; customers 
-    draft table everything nullable 
+    draft table everything nullable - no draft table - just a status on an order 
 
 server components 
    can reuse other components: change data types 
