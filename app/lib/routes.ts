@@ -28,6 +28,12 @@ export const OrderRoute = {
   href: "/order",
 };
 
+/*
+export const EditOrderRoute = {
+  label: "Edit Order",
+  href: 
+}
+*/
 export const DraftRoute = {
   label: "Drafts",
   href: "/drafts",

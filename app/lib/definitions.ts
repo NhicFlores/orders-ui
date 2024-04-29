@@ -15,9 +15,21 @@ export type Order = {
 
 export type OrderKeys = keyof Order;
 
+//this object is used to verify the data requested from db on edit forms
+export type OrderForm = {
+  id: string;
+  customer_id: string;
+  order_name: string;
+  product_id: string;
+  quantity: number;
+  price: number;
+  status: "pending" | "draft" | "shipped" | "processing";
+};
+
 export type OrderItem = {
   id: string;
   code: string;
+  description: string;
 };
 //code: (preliminary) calculated value based on abbreviations for the materials that make up the product 
 //parsable for UI to be able to switch from abbreviated to expanded views 
@@ -79,7 +91,7 @@ export interface Billing_Info {
   primary_contact_email: string;
   phone_num: string;
   alt_phone_num: string;
-  fac_num: string;
+  fax_num: string;
 }
 
 export interface ShippingInfo {

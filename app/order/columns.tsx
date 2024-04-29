@@ -15,6 +15,7 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import { table } from "console";
+import Link from "next/link";
 
 /*export type Order = {
   id: string;
@@ -64,6 +65,11 @@ export const order_table_columns: ColumnDef<Order>[] = [
             <DropdownMenuLabel>Actions</DropdownMenuLabel>
             <DropdownMenuItem onClick={() => navigator.clipboard.writeText(order.id)}>
               Copy order ID
+            </DropdownMenuItem>
+            <DropdownMenuItem>
+              <Link href={`/order/${order.id}/edit`}>
+                Edit Order
+              </Link>
             </DropdownMenuItem>
             <DropdownMenuSeparator/>
             <DropdownMenuItem>View customer</DropdownMenuItem>

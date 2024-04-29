@@ -41,7 +41,16 @@ const rawFormData = Object.fromEntries(formData.entries())
 //prevState: OrderFormState,
 
 export async function createOrder(formData: FormData) {
-    //const rawFormData =
+    // const rawFormData = {
+    //     customer_id: formData.get('customer_id'),
+    //     order_name: formData.get('order_name'),
+    //     product_id: formData.get('product_id'),
+    //     quantity: formData.get('quantity'),
+    //     price: formData.get('price'),
+    //     status: formData.get('status'),
+    // };
+
+    // console.log(rawFormData);
 
     const { customer_id, order_name, product_id, quantity, price, status } = CreateOrder.parse({
         customer_id: formData.get('customer_id'),

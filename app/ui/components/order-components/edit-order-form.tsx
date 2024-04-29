@@ -3,10 +3,16 @@
 import { createOrder } from "@/app/lib/actions";
 import { MyButton } from "../my-button";
 import Link from "next/link";
-import { CustomerField } from "@/app/lib/definitions";
+import { CustomerField, OrderForm } from "@/app/lib/definitions";
 import { useFormState, useFormStatus } from "react-dom";
 
-export default function NewOrderForm({ customers }: {customers: CustomerField[]}){
+export default function EditOrderForm({ 
+    order, 
+    customers 
+}: { 
+    order: OrderForm; 
+    customers: CustomerField[];
+}){
   //const initialState = {message: null, errors: {}};
   //const [state, dispatch] = useFormState(createOrder, initialState);  
   
@@ -193,15 +199,4 @@ export default function NewOrderForm({ customers }: {customers: CustomerField[]}
       </div>
     </form>
     )
-}
-
-function SubmitButton() {
-  const { pending } = useFormStatus();
-
-  return (
-    <MyButton className="mt-4 w-full" aria-disabled={pending}>
-      Submit Order
-    </MyButton>
-
-  )
 }

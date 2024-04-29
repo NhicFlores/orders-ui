@@ -9,6 +9,7 @@ import {
   User,
   Revenue,
   Order,
+  OrderForm,
 } from './definitions';
 import { formatCurrency } from './utils';
 import { unstable_noStore as noStore } from 'next/cache';
@@ -24,6 +25,34 @@ export async function fetchOrders() {
         throw new Error('Failed to fetch order data')
     }
   }
+
+export async function fetchOrderById(id: string) {
+  // check the need for noStore on this function 
+  try {
+    const data = await sql<OrderForm>`
+      SELECT 
+        orders.id,
+        orders.customer_id,
+        orders.order_name,
+        orders.product_id,
+        orders.quantity, 
+        orders.price,
+        orders.status
+      FROM orders
+      WHERE orders.id = ${id};
+    `;
+
+    const order = data.rows.map((order) => ({
+      ...order,
+      //convert from cents to dollars 
+      price: order.price / 100,
+    }));
+    return order[0];
+  } catch (error) {
+    console.error('Datavase Error: ', error);
+    throw new Error('Failed to fetch order');
+  }
+}
 
 export async function fetchRevenue() {
   // Add noStore() here to prevent the response from being cached.
