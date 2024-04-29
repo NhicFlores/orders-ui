@@ -3,6 +3,7 @@ import { z } from 'zod';
 import { sql } from '@vercel/postgres';
 import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
+import { OrderRoute } from './routes';
 
 //updating the data displayed in the orders route, 
 //so we need to clear this cache and trigger a new request to the server 
@@ -10,12 +11,23 @@ import { redirect } from 'next/navigation';
 
 const OrderFormSchema = z.object({
     id: z.string(),
-    customer_id: z.string(),
-    order_name: z.string(),
-    product_id: z.string(),//NOTE TODO: how am i creating the product id 
-    quantity: z.coerce.number(),
-    price: z.coerce.number(),
-    status: z.enum(['pending', 'draft', 'shipped', 'processing']),
+    customer_id: z.string({
+        invalid_type_error: 'Please select a customer.',
+    }),
+    order_name: z.string({
+        invalid_type_error: 'Please enter an order name.',
+    }),
+    product_id: z.string({
+        invalid_type_error: 'Please enter a product ID.',
+    }),//NOTE TODO: how am i creating the product id - this will probably end up being a calculated value to provide readability 
+    // or create a UUID and provide an expandable summary/description for the order 
+    quantity: z.coerce.number()
+        .gt(0, { message: 'Please enter a quantity greater than 0.'}),
+    price: z.coerce.number()
+        .gt(0, { message: 'Please enter a price greater than 0.'}),
+    status: z.enum(['pending', 'draft', 'shipped', 'processing'], {
+        invalid_type_error: 'Please select an order status.'
+    }),
     date: z.string(),
 });
 const CreateOrder = OrderFormSchema.omit({id: true, date: true });
@@ -28,19 +40,20 @@ with JavaScript's Object.fromEntries(). For example:
 const rawFormData = Object.fromEntries(formData.entries())
 */
 
-// this is temporary untul @types/react-dom is updated
-// export type OrderFormState = {
-//     errors?: {
-//         customer_id?: string[];
-//         quantity?: string[];
-//         status?: string[];
-//     };
-//     message?: string | null;
-// };
+//this is temporary until @types/react-dom is updated
+export type OrderFormState = {
+    errors?: {
+        customer_id?: string[];
+        order_name?: string[];
+        product_id?: string[];
+        quantity?: string[];
+        price?: string[];
+        status?: string[];
+    };
+    message?: string | null;
+};
 
-//prevState: OrderFormState,
-
-export async function createOrder(formData: FormData) {
+export async function createOrder(prevState: OrderFormState,formData: FormData) {
     // const rawFormData = {
     //     customer_id: formData.get('customer_id'),
     //     order_name: formData.get('order_name'),
@@ -52,7 +65,7 @@ export async function createOrder(formData: FormData) {
 
     // console.log(rawFormData);
 
-    const { customer_id, order_name, product_id, quantity, price, status } = CreateOrder.parse({
+    const validatedFields = CreateOrder.safeParse({
         customer_id: formData.get('customer_id'),
         order_name: formData.get('order_name'),
         product_id: formData.get('product_id'),
@@ -61,21 +74,71 @@ export async function createOrder(formData: FormData) {
         status: formData.get('status'),
     });
 
-    // const customer_id = '3958dc9e-742f-4377-85e9-fec4b6a6442a';
-    // const order_name = 'new order';
-    // const product_id = 'some product';
-    // const quantity = 45;
-    // const price = 14120.00;//TO DO - rename to order total 
-    // const status = 'shipped';
+    if(!validatedFields.success){
+        return {
+            errors: validatedFields.error.flatten().fieldErrors,
+            message: 'Missing Fields. Failed to Create Order',
+        }
+    }
+
+    const { customer_id, order_name, product_id, quantity, price, status } = validatedFields.data;
+    const priceInCents = price * 100;
     const date = new Date().toISOString().split('T')[0];
 
-    await sql`
+    try {
+        await sql`
         INSERT INTO orders (customer_id, order_name, product_id, quantity, price, status, date)
-        VALUES (${customer_id}, ${order_name}, ${product_id}, ${quantity}, ${price}, ${status}, ${date})
+        VALUES (${customer_id}, ${order_name}, ${product_id}, ${quantity}, ${priceInCents}, ${status}, ${date})
     `;
+    } catch (error) {
+        return {
+            message: 'Database Error: Failed to create and Order.',
+        };
+    }
 
-    revalidatePath('/order');
-    redirect('/order');
+
+    revalidatePath(OrderRoute.href);
+    redirect(OrderRoute.href);
+}
+
+const UpdateOrder = OrderFormSchema.omit({id: true, date: true});
+
+export async function updateOrder(id: string, prevState: OrderFormState, formData: FormData){
+
+    const validatedFields = UpdateOrder.safeParse({
+        customer_id: formData.get('customer_id'),
+        order_name: formData.get('order_name'),
+        product_id: formData.get('product_id'),
+        quantity: formData.get('quantity'),
+        price: formData.get('price'),
+        status: formData.get('status'),
+    });
+
+    if(!validatedFields.success){
+        return {
+            errors: validatedFields.error.flatten().fieldErrors,
+            message: 'Missing Fields. Failed to update Invoice',
+        }
+    }
+
+    const {customer_id, order_name, product_id, quantity, price, status} = validatedFields.data;
+    const priceInCents = price * 100;
+
+    try {
+        await sql`
+            UPDATE orders
+            SET customer_id = ${customer_id}, order_name = ${order_name}, product_id = ${product_id}, quantity = ${quantity}, price = ${priceInCents}, status = ${status}
+            WHERE id = ${id}
+        `;
+    } catch (error) {
+        return {
+            message: 'Database Error: Failed to update Order'
+        }
+    }
+
+    revalidatePath(OrderRoute.href);
+    redirect(OrderRoute.href);
+
 }
 
 export async function deleteOrder(id: string){
@@ -83,5 +146,5 @@ export async function deleteOrder(id: string){
         DELETE FROM orders
         WHERE id = ${id}
     `;
-    revalidatePath('/app/order_status');
+    revalidatePath(OrderRoute.href);
 }

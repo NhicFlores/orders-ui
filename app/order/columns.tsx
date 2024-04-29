@@ -16,6 +16,7 @@ import {
 } from '@/components/ui/dropdown-menu';
 import { table } from "console";
 import Link from "next/link";
+import { deleteOrder } from "../lib/actions";
 
 /*export type Order = {
   id: string;
@@ -52,7 +53,7 @@ export const order_table_columns: ColumnDef<Order>[] = [
     id: 'actions',
     cell: ({ row }) => {
       const order = row.original
-
+      const deleteOrderWithId = deleteOrder.bind(null, order.id);
       return (
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
@@ -75,7 +76,10 @@ export const order_table_columns: ColumnDef<Order>[] = [
             <DropdownMenuItem>View customer</DropdownMenuItem>
             <DropdownMenuItem>View product details</DropdownMenuItem>
             <DropdownMenuSeparator/>
-            <DropdownMenuItem className="focus:bg-red-500 focus:text-white">Delete Order</DropdownMenuItem>
+            {/** NOTE HOW TO Server Actions are not limited to <form> and can be invoked from event handlers, useEffect, third-party libraries, and other form elements like <button> **/}
+            <form action={deleteOrderWithId}>
+              <DropdownMenuItem className="focus:bg-red-500 focus:text-white">Delete Order</DropdownMenuItem>
+            </form>
           </DropdownMenuContent>
         </DropdownMenu>
       )

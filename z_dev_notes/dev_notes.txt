@@ -74,3 +74,17 @@ eslint and prettier configs
 testing - Jest 
 
 versioning dependencies 
+
+
+adding a new fetch feature 
+stub in page 
+stub in component 
+buttons in datatable and columnst tsx 
+create a corresponding action 
+create a corresponding object for receiving data from db query 
+test 
+add error handling 
+add all required fields 
+
+NextJS 
+Server Actions are not limited to <form> and can be invoked from event handlers, useEffect, third-party libraries, and other form elements like <button> 

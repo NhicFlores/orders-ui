@@ -7,11 +7,13 @@ import { CustomerField } from "@/app/lib/definitions";
 import { useFormState, useFormStatus } from "react-dom";
 
 export default function NewOrderForm({ customers }: {customers: CustomerField[]}){
-  //const initialState = {message: null, errors: {}};
-  //const [state, dispatch] = useFormState(createOrder, initialState);  
-  
+  //server side validation setup 
+  //initial state can be anything - here we are creat an object with two empty keys: message and errors 
+  const initialState = {message: null, errors: {}};
+  const [state, dispatch] = useFormState(createOrder, initialState);  
+  //{/** continue with aria labels and state */}
   return(
-    <form action={createOrder}>
+    <form action={dispatch}>
       <div className="rounded-md bg-gray-50 p-4 md:p-6">
         {/* Customer Name */}
         <div className="mb-4">
@@ -24,6 +26,7 @@ export default function NewOrderForm({ customers }: {customers: CustomerField[]}
               name="customer_id"
               className="peer block w-full cursor-pointer rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
               defaultValue=""
+              
             >
               <option value="" disabled>
                 Select a customer

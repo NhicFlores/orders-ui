@@ -1,6 +1,6 @@
 'use client'
 
-import { createOrder } from "@/app/lib/actions";
+import { updateOrder } from "@/app/lib/actions";
 import { MyButton } from "../my-button";
 import Link from "next/link";
 import { CustomerField, OrderForm } from "@/app/lib/definitions";
@@ -15,9 +15,10 @@ export default function EditOrderForm({
 }){
   //const initialState = {message: null, errors: {}};
   //const [state, dispatch] = useFormState(createOrder, initialState);  
+  const updateOrderWithID = updateOrder.bind(null, order.id);
   
   return(
-    <form action={createOrder}>
+    <form action={updateOrderWithID}>
       <div className="rounded-md bg-gray-50 p-4 md:p-6">
         {/* Customer Name */}
         <div className="mb-4">
@@ -29,7 +30,8 @@ export default function EditOrderForm({
               id="customer_id"
               name="customer_id"
               className="peer block w-full cursor-pointer rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
-              defaultValue=""
+              defaultValue={order.customer_id}
+              aria-describedby='customer-error'
             >
               <option value="" disabled>
                 Select a customer
@@ -41,6 +43,14 @@ export default function EditOrderForm({
               ))}
             </select>
           </div>
+          {/*<div id='customer-error' aria-live='polite' aria-atomic='true'>
+              {state.errors?.customer_id && 
+                state.errors.customer_id.map((error: string) => (
+                  <p className='mt-2 text-sm text-red-500' key={error}>
+                    {error}
+                  </p>
+                ))}
+          </div>*/}
         </div>
 
         {/* Order Name */}
@@ -55,6 +65,7 @@ export default function EditOrderForm({
                 name="order_name"
                 type='text'
                 placeholder="Enter Order Name"
+                value={order.order_name}
                 className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
               />
             </div>
@@ -73,6 +84,7 @@ export default function EditOrderForm({
                 name="product_id"
                 type='text'
                 placeholder="Enter product ID"
+                value={order.product_id}
                 className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
               />
             </div>
@@ -92,6 +104,7 @@ export default function EditOrderForm({
                 type='number'
                 step="1"
                 placeholder="0"
+                value={order.quantity}
                 className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
               />
             </div>
@@ -111,6 +124,7 @@ export default function EditOrderForm({
                 type='number'
                 step="0.01"
                 placeholder="order total"
+                value={order.price}
                 className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
               />
             </div>
@@ -130,6 +144,7 @@ export default function EditOrderForm({
                   name="status"
                   type='radio'
                   value="pending"
+                  checked={order.status === 'pending' ? true: false}
                   className="h-4 w-4 cursor-pointer border-gray-300 bg-gray-100 text-gray-600 focus:ring-2"
                 />
                 <label
@@ -144,7 +159,8 @@ export default function EditOrderForm({
                   id="draft"
                   name="status"
                   type="radio"
-                  value="shipped"
+                  value="draft"
+                  checked={order.status === 'draft' ? true: false}
                   className="h-4 w-4 cursor-pointer border-gray-300 bg-gray-100 text-gray-600 focus:ring-2"
                 />
                 <label
@@ -160,6 +176,7 @@ export default function EditOrderForm({
                   name="status"
                   type="radio"
                   value="processing"
+                  checked={order.status === 'processing' ? true: false}
                   className="h-4 w-4 cursor-pointer border-gray-300 bg-gray-100 text-gray-600 focus:ring-2"
                 />
                 <label
@@ -175,6 +192,7 @@ export default function EditOrderForm({
                   name="status"
                   type="radio"
                   value="shipped"
+                  checked={order.status === 'shipped' ? true: false}
                   className="h-4 w-4 cursor-pointer border-gray-300 bg-gray-100 text-gray-600 focus:ring-2"
                 />
                 <label
