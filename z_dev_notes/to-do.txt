@@ -1,5 +1,5 @@
 NEXT 
-new order form - break down into comonents - text input, buttons, dropdowns, radio buttons 
+new order form - break down into components - text input, buttons, dropdowns, radio buttons 
 form input types 
 form input validation 
 

@@ -11,8 +11,8 @@ export default function NewOrderForm({ customers }: {customers: CustomerField[]}
   //const [state, dispatch] = useFormState(createOrder, initialState);  
   
   return(
-        <form action={createOrder}>
-            <div className="rounded-md bg-gray-50 p-4 md:p-6">
+    <form action={createOrder}>
+      <div className="rounded-md bg-gray-50 p-4 md:p-6">
         {/* Customer Name */}
         <div className="mb-4">
           <label htmlFor="customer_id" className="mb-2 block text-sm font-medium">
@@ -37,29 +37,84 @@ export default function NewOrderForm({ customers }: {customers: CustomerField[]}
           </div>
         </div>
 
-        {/* Invoice Amount */}
+        {/* Order Name */}
         <div className="mb-4">
-          <label htmlFor="amount" className="mb-2 block text-sm font-medium">
-            Choose an amount
+          <label htmlFor="order_name" className="mb-2 block text-sm font-medium">
+            Choose an order name
           </label>
           <div className="relative mt-2 rounded-md">
             <div className="relative">
               <input
-                id="amount"
-                name="amount"
-                type="number"
-                step="0.01"
-                placeholder="Enter USD amount"
+                id="order_name"
+                name="order_name"
+                type='text'
+                placeholder="Enter Order Name"
                 className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
               />
             </div>
           </div>
         </div>
 
-        {/* Invoice Status */}
+        {/* Product ID */}
+        <div className="mb-4">
+          <label htmlFor="product_id" className="mb-2 block text-sm font-medium">
+            Choose a product ID
+          </label>
+          <div className="relative mt-2 rounded-md">
+            <div className="relative">
+              <input
+                id="product_id"
+                name="product_id"
+                type='text'
+                placeholder="Enter product ID"
+                className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* product quantity */}
+        <div className="mb-4">
+          <label htmlFor="quantity" className="mb-2 block text-sm font-medium">
+            prodeuct quantity
+          </label>
+          <div className="relative mt-2 rounded-md">
+            <div className="relative">
+              <input
+                id="quantity"
+                name="quantity"
+                type='number'
+                step="1"
+                placeholder="0"
+                className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* Order total */}
+        <div className="mb-4">
+          <label htmlFor="price" className="mb-2 block text-sm font-medium">
+            Order Total
+          </label>
+          <div className="relative mt-2 rounded-md">
+            <div className="relative">
+              <input
+                id="price"
+                name="price"
+                type='number'
+                step="0.01"
+                placeholder="order total"
+                className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* Order Status */}
         <fieldset>
           <legend className="mb-2 block text-sm font-medium">
-            Set the invoice status
+            Set the order status
           </legend>
           <div className="rounded-md border border-gray-200 bg-white px-[14px] py-3">
             <div className="flex gap-4">
@@ -67,7 +122,7 @@ export default function NewOrderForm({ customers }: {customers: CustomerField[]}
                 <input
                   id="pending"
                   name="status"
-                  type="radio"
+                  type='radio'
                   value="pending"
                   className="h-4 w-4 cursor-pointer border-gray-300 bg-gray-100 text-gray-600 focus:ring-2"
                 />
@@ -80,17 +135,32 @@ export default function NewOrderForm({ customers }: {customers: CustomerField[]}
               </div>
               <div className="flex items-center">
                 <input
-                  id="paid"
+                  id="draft"
                   name="status"
                   type="radio"
-                  value="paid"
+                  value="shipped"
                   className="h-4 w-4 cursor-pointer border-gray-300 bg-gray-100 text-gray-600 focus:ring-2"
                 />
                 <label
-                  htmlFor="paid"
+                  htmlFor="draft"
                   className="ml-2 flex cursor-pointer items-center gap-1.5 rounded-full bg-green-500 px-3 py-1.5 text-xs font-medium text-white"
                 >
-                  Paid
+                  Draft
+                </label>
+              </div>
+              <div className="flex items-center">
+                <input
+                  id="processing"
+                  name="status"
+                  type="radio"
+                  value="processing"
+                  className="h-4 w-4 cursor-pointer border-gray-300 bg-gray-100 text-gray-600 focus:ring-2"
+                />
+                <label
+                  htmlFor="processing"
+                  className="ml-2 flex cursor-pointer items-center gap-1.5 rounded-full bg-green-500 px-3 py-1.5 text-xs font-medium text-white"
+                >
+                  Processing
                 </label>
               </div>
               <div className="flex items-center">
@@ -121,7 +191,7 @@ export default function NewOrderForm({ customers }: {customers: CustomerField[]}
         </Link>
         <MyButton type="submit">Submit Order</MyButton>
       </div>
-        </form>
+    </form>
     )
 }
 

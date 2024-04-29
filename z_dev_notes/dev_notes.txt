@@ -3,7 +3,7 @@ nextjs upcoming release
 new api for tagging functions and specific tags 
 for caching, so react knows what to check to re-render 
 
-define data fetching patter - server actions
+define data fetching pattern - server actions
 form submission pattern 
 
 creating new order form

@@ -1,10 +1,42 @@
 
 
 export const Home =
-  {
-    label: "Glass Ordering",
-    href: "/",
-  };
+{
+  label: "Glass Ordering",
+  href: "/",
+};
+
+export const Profile = 
+{
+  label: "Profile",
+  href: "/profile",
+};
+
+export const QuoteRoute = 
+{
+  label: "Quotes",
+  href: "/quote",
+};
+
+export const NewOrder = {
+  label: "New Order",
+  href: "/order/new_order",
+};
+
+export const OrderRoute = {
+  label: "Orders",
+  href: "/order",
+};
+
+export const DraftRoute = {
+  label: "Drafts",
+  href: "/drafts",
+};
+
+export const TemplatesRoute = {
+  label: "Browse Templates",
+  href: "/browse_templates",
+};
 
 export const HeaderRoutes = [
   {
@@ -21,12 +53,6 @@ export const HeaderRoutes = [
   },
 ];
 
-export const Profile = 
-  {
-    label: "Profile",
-    href: "/profile",
-  };
-
 
 export const HomeNavLinks = [
   {
@@ -42,13 +68,3 @@ export const HomeNavLinks = [
     href: "/browse_templates",
   },
 ]
-
-export const NewOrder = {
-  label: "New Order",
-  href: "/order/new_order",
-};
-
-export const OrderRoute = {
-  label: "Orders",
-  href: "/order",
-};
