@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import { createOrder } from "@/app/lib/actions";
 import { MyButton } from "../my-button";
@@ -9,7 +9,7 @@ import { useFormState, useFormStatus } from "react-dom";
 export default function NewOrderForm({ customers }: {customers: CustomerField[]}){
   //server side validation setup 
   //initial state can be anything - here we are creat an object with two empty keys: message and errors 
-  const initialState = {message: null, errors: {}};
+  const initialState = {message: "", errors: {}};
   const [state, dispatch] = useFormState(createOrder, initialState);  
   //{/** continue with aria labels and state */}
   return(
@@ -26,7 +26,7 @@ export default function NewOrderForm({ customers }: {customers: CustomerField[]}
               name="customer_id"
               className="peer block w-full cursor-pointer rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
               defaultValue=""
-              
+              aria-describedby='customer-error'
             >
               <option value="" disabled>
                 Select a customer
@@ -37,6 +37,14 @@ export default function NewOrderForm({ customers }: {customers: CustomerField[]}
                 </option>
               ))}
             </select>
+          </div>
+          <div id="customer-error" aria-live='polite' aria-atomic='true'>
+            {state.errors?.customer_id && 
+              state.errors.customer_id.map((error: string) => (
+                <p className='mt-2 text-sm text-red-500' key={error}>
+                  {error}
+                </p>
+              ))}
           </div>
         </div>
 
@@ -53,7 +61,17 @@ export default function NewOrderForm({ customers }: {customers: CustomerField[]}
                 type='text'
                 placeholder="Enter Order Name"
                 className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
+                aria-describedby="order_name-error"
               />
+            </div>
+            <div id='order_name-error' aria-live='polite' aria-atomic='true'>
+              {/* conditionaly rendering for validation error */}
+              {state.errors?.order_name && 
+                state.errors.order_name?.map((error: string) => (
+                  <p className='mt-2 text-sm text-red-500' key={error}>
+                    {error}
+                  </p>
+                ))}
             </div>
           </div>
         </div>
@@ -71,7 +89,17 @@ export default function NewOrderForm({ customers }: {customers: CustomerField[]}
                 type='text'
                 placeholder="Enter product ID"
                 className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
+                aria-describedby="product_id-error"
               />
+            </div>
+            <div id='product_id-error' aria-live='polite' aria-atomic='true'>
+              {/* conditionaly rendering for validation error */}
+              {state.errors?.product_id && 
+                state.errors.product_id?.map((error: string) => (
+                  <p className='mt-2 text-sm text-red-500' key={error}>
+                    {error}
+                  </p>
+                ))}
             </div>
           </div>
         </div>
@@ -90,7 +118,17 @@ export default function NewOrderForm({ customers }: {customers: CustomerField[]}
                 step="1"
                 placeholder="0"
                 className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
+                aria-describedby="quantity-error"
               />
+            </div>
+            <div id='quantity-error' aria-live='polite' aria-atomic='true'>
+              {/* conditionaly rendering for validation error */}
+              {state.errors?.quantity && 
+                state.errors.quantity?.map((error: string) => (
+                  <p className='mt-2 text-sm text-red-500' key={error}>
+                    {error}
+                  </p>
+                ))}
             </div>
           </div>
         </div>
@@ -109,7 +147,17 @@ export default function NewOrderForm({ customers }: {customers: CustomerField[]}
                 step="0.01"
                 placeholder="order total"
                 className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
+                aria-describedby="price-error"
               />
+            </div>
+            <div id='price-error' aria-live='polite' aria-atomic='true'>
+              {/* conditionaly rendering for validation error */}
+              {state.errors?.price && 
+                state.errors.price?.map((error: string) => (
+                  <p className='mt-2 text-sm text-red-500' key={error}>
+                    {error}
+                  </p>
+                ))}
             </div>
           </div>
         </div>
@@ -128,6 +176,7 @@ export default function NewOrderForm({ customers }: {customers: CustomerField[]}
                   type='radio'
                   value="pending"
                   className="h-4 w-4 cursor-pointer border-gray-300 bg-gray-100 text-gray-600 focus:ring-2"
+                  aria-describedby="status-error"
                 />
                 <label
                   htmlFor="pending"
@@ -143,6 +192,7 @@ export default function NewOrderForm({ customers }: {customers: CustomerField[]}
                   type="radio"
                   value="shipped"
                   className="h-4 w-4 cursor-pointer border-gray-300 bg-gray-100 text-gray-600 focus:ring-2"
+                  aria-describedby="status-error"
                 />
                 <label
                   htmlFor="draft"
@@ -158,6 +208,7 @@ export default function NewOrderForm({ customers }: {customers: CustomerField[]}
                   type="radio"
                   value="processing"
                   className="h-4 w-4 cursor-pointer border-gray-300 bg-gray-100 text-gray-600 focus:ring-2"
+                  aria-describedby="status-error"
                 />
                 <label
                   htmlFor="processing"
@@ -173,6 +224,7 @@ export default function NewOrderForm({ customers }: {customers: CustomerField[]}
                   type="radio"
                   value="shipped"
                   className="h-4 w-4 cursor-pointer border-gray-300 bg-gray-100 text-gray-600 focus:ring-2"
+                  aria-describedby="status-error"
                 />
                 <label
                   htmlFor="shipped"
@@ -183,7 +235,20 @@ export default function NewOrderForm({ customers }: {customers: CustomerField[]}
               </div>
             </div>
           </div>
+          <div id='status-error' aria-live='polite' aria-atomic='true'>
+                {state.errors?.status && 
+                  state.errors.status.map((error: string) => (
+                    <p className='mt-2 text-sm text-red-500' key={error}>
+                      {error}
+                    </p>
+                  ))}
+          </div>
         </fieldset>
+        {state.message && 
+          <p className='mt-2 text-sm text-red-500'>
+            {state.message}
+          </p>
+        }
       </div>
       <div className="mt-6 flex justify-end gap-4">
         <Link

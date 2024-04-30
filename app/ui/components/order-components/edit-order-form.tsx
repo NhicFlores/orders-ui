@@ -1,6 +1,6 @@
 'use client'
 
-import { updateOrder } from "@/app/lib/actions";
+import { createOrder, updateOrder } from "@/app/lib/actions";
 import { MyButton } from "../my-button";
 import Link from "next/link";
 import { CustomerField, OrderForm } from "@/app/lib/definitions";
@@ -13,12 +13,13 @@ export default function EditOrderForm({
     order: OrderForm; 
     customers: CustomerField[];
 }){
-  //const initialState = {message: null, errors: {}};
-  //const [state, dispatch] = useFormState(createOrder, initialState);  
+  const initialState = {message: "", errors: {}};
   const updateOrderWithID = updateOrder.bind(null, order.id);
+  const [state, dispatch] = useFormState(updateOrderWithID, initialState);  
+
   
   return(
-    <form action={updateOrderWithID}>
+    <form action={dispatch}>
       <div className="rounded-md bg-gray-50 p-4 md:p-6">
         {/* Customer Name */}
         <div className="mb-4">

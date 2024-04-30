@@ -53,7 +53,7 @@ export type OrderFormState = {
     message?: string | null;
 };
 
-export async function createOrder(prevState: OrderFormState,formData: FormData) {
+export async function createOrder(prevState: OrderFormState, formData: FormData) {
     // const rawFormData = {
     //     customer_id: formData.get('customer_id'),
     //     order_name: formData.get('order_name'),
@@ -117,7 +117,7 @@ export async function updateOrder(id: string, prevState: OrderFormState, formDat
     if(!validatedFields.success){
         return {
             errors: validatedFields.error.flatten().fieldErrors,
-            message: 'Missing Fields. Failed to update Invoice',
+            message: 'Missing Fields. Failed to update Order',
         }
     }
 
