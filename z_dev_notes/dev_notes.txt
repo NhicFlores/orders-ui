@@ -105,3 +105,7 @@ You can't really even test test a unit. It might work in a unit test without the
 It becomes impossible to even identify all of the code paths. 
 Conversely, code using immutable practices grows in complexity linearly. 
 This piece always takes this value in and sends that value out. Tested, done, and on to the next part.
+
+JSX 
+wrap elements in Link, rather than putting Link in an element: this way, if you put a button in a link, the whole button is clickable 
+  this was how I resolved the Edit Order button bug 

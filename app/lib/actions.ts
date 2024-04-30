@@ -142,6 +142,8 @@ export async function updateOrder(id: string, prevState: OrderFormState, formDat
 }
 
 export async function deleteOrder(id: string){
+    //console.log("DELETED ORDER");
+
     await sql`
         DELETE FROM orders
         WHERE id = ${id}

@@ -14,9 +14,12 @@ import {
 import { formatCurrency } from './utils';
 import { unstable_noStore as noStore } from 'next/cache';
 
+//create fetch functions for orders where status = draft, quote 
+//refactor - fetch data file for each tab to keep my fetch types separate 
+
 export async function fetchOrders() {
     noStore();
-    console.log('made it to fetch orders yo');
+    //console.log('made it to fetch orders yo');
     try {
         const data = await sql<Order>`SELECT * FROM orders`;
         return data.rows;

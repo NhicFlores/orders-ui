@@ -53,7 +53,7 @@ export const order_table_columns: ColumnDef<Order>[] = [
     id: 'actions',
     cell: ({ row }) => {
       const order = row.original
-      const deleteOrderWithId = deleteOrder.bind(null, order.id);
+      //const deleteOrderWithId = deleteOrder.bind(null, order.id);
       return (
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
@@ -67,19 +67,19 @@ export const order_table_columns: ColumnDef<Order>[] = [
             <DropdownMenuItem onClick={() => navigator.clipboard.writeText(order.id)}>
               Copy order ID
             </DropdownMenuItem>
-            <DropdownMenuItem>
-              <Link href={`/order/${order.id}/edit`}>
+            <Link href={`/order/${order.id}/edit`}>
+              <DropdownMenuItem>
                 Edit Order
-              </Link>
-            </DropdownMenuItem>
+              </DropdownMenuItem>
+            </Link>
             <DropdownMenuSeparator/>
             <DropdownMenuItem>View customer</DropdownMenuItem>
             <DropdownMenuItem>View product details</DropdownMenuItem>
             <DropdownMenuSeparator/>
             {/** NOTE HOW TO Server Actions are not limited to <form> and can be invoked from event handlers, useEffect, third-party libraries, and other form elements like <button> **/}
-            <form action={deleteOrderWithId}>
-              <DropdownMenuItem className="focus:bg-red-500 focus:text-white">Delete Order</DropdownMenuItem>
-            </form>
+            
+            <DropdownMenuItem onClick={ () => deleteOrder(order.id)} className="focus:bg-red-500 focus:text-white">Delete Order</DropdownMenuItem>
+          
           </DropdownMenuContent>
         </DropdownMenu>
       )

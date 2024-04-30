@@ -1,5 +1,12 @@
 // definitions for data
 // describes the shape of the data, and what data type each property should accept 
+enum OrderStatus {
+  Pending ="pending",
+  Draft = "draft",
+  Shipped = "shipped",
+  Processing = "processing",
+  Quote = "quote",
+}
 
 export type Order = {
   id: string;
@@ -9,7 +16,7 @@ export type Order = {
   quantity: number;
   price: number;
   date: string;
-  status: "pending" | "draft" | "shipped" | "processing";
+  status: OrderStatus;
 };
 //quote: nullable field or status - 
 
@@ -23,7 +30,7 @@ export type OrderForm = {
   product_id: string;
   quantity: number;
   price: number;
-  status: "pending" | "draft" | "shipped" | "processing";
+  status: OrderStatus;
 };
 
 export type User = {

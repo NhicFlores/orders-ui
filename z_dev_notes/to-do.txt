@@ -1,4 +1,6 @@
 NEXT 
+fetch for drafts, quotes 
+configure table for drafts/quote client view 
 definitions for table entities separate definitions into multiple files  
 	users need updated 
 	products need created 

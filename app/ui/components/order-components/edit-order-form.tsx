@@ -16,7 +16,6 @@ export default function EditOrderForm({
   const initialState = {message: "", errors: {}};
   const updateOrderWithID = updateOrder.bind(null, order.id);
   const [state, dispatch] = useFormState(updateOrderWithID, initialState);  
-
   
   return(
     <form action={dispatch}>
