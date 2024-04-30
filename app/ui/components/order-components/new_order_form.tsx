@@ -3,7 +3,7 @@
 import { createOrder } from "@/app/lib/actions";
 import { MyButton } from "../my-button";
 import Link from "next/link";
-import { CustomerField } from "@/app/lib/definitions";
+import { CustomerField } from "@/app/lib/definitions/definitions";
 import { useFormState, useFormStatus } from "react-dom";
 
 export default function NewOrderForm({ customers }: {customers: CustomerField[]}){

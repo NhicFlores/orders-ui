@@ -1,7 +1,10 @@
 NEXT 
-new order form - break down into components - text input, buttons, dropdowns, radio buttons 
-form input types 
-form input validation 
+definitions for table entities separate definitions into multiple files  
+	users need updated 
+	products need created 
+update db queries 
+update datatable to show drafts, quotes, on appropriate pages 
+change status to a client side read only field 
 
 Low Priority 
 choose license 

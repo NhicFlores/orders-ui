@@ -88,3 +88,20 @@ add all required fields
 
 NextJS 
 Server Actions are not limited to <form> and can be invoked from event handlers, useEffect, third-party libraries, and other form elements like <button> 
+
+TypeScript
+classes vs types for data modeling 
+
+classes 
+imperative code describes the steps that the runtime must take to inialize an object
+declarative code describes the state of the initialized object
+
+How we instantiated const user: User = { above 
+is declarative; we're declaring the object in its full state. 
+Imperative code, on the other hand, declares the object, then describes all of the steps to build it: 
+
+immutable practices
+You can't really even test test a unit. It might work in a unit test without the other parts, but if other parts modify it, then your test is useless. 
+It becomes impossible to even identify all of the code paths. 
+Conversely, code using immutable practices grows in complexity linearly. 
+This piece always takes this value in and sends that value out. Tested, done, and on to the next part.

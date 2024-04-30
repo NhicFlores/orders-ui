@@ -10,7 +10,7 @@ import {
   Revenue,
   Order,
   OrderForm,
-} from './definitions';
+} from './definitions/definitions';
 import { formatCurrency } from './utils';
 import { unstable_noStore as noStore } from 'next/cache';
 
