@@ -5,8 +5,6 @@
 import { OrderColumns } from "./columns";
 import { DataTable } from "../ui/components/data-table";
 import { fetchOrders } from "../lib/data";
-import { OrderStatus } from "../lib/definitions/definitions";
-
 /*async function fetchOrders(): Promise<Order[]> {
   //once api layer is made we can move this function over
   return [

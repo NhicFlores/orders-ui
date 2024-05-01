@@ -26,19 +26,17 @@ import { formatDateToLocal } from "../lib/utils";
 //more than likely, they'll keep that on their own systems, so PO is the column that they'll want 
 //if we pull all orders by company, they'll want an 'Entered By' date to see who made the order 
 
-// thought i needed to define a new type for the datatable to read the columns right
-// but the issue was typing the sql query result 
-// type DraftColumns = {
-//     id: string;
-//     customer_id: string;
-//     order_name: string;
-//     product_id: string;
-//     quantity: number;
-//     total: number;
-//     date: string;
-// };
+type QuoteColumns = {
+    id: string;
+    customer_id: string;
+    order_name: string;
+    product_id: string;
+    quantity: number;
+    total: number;
+    date: string;
+};
 
-export const DraftColumns: ColumnDef<Order>[] = [
+export const QuoteColumns: ColumnDef<Order>[] = [
   {
     id: 'select',
     header: ({table}) => (

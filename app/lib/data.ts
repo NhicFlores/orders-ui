@@ -36,7 +36,7 @@ export async function fetchOrders() {
   export async function fetchQuote() {
     // check the need for noStore on this function 
     try {
-      const data = await sql`
+      const data = await sql<Order>`
         SELECT * FROM orders
         WHERE orders.status = ${OrderStatus.Quote};
       `;
@@ -55,7 +55,8 @@ export async function fetchOrders() {
 
 export async function fetchDraftOrders() {
   try {
-    const data = await sql`
+    //NOTE: type your sql queries 
+    const data = await sql<Order>`
       SELECT * FROM orders
       WHERE orders.status = ${OrderStatus.Draft}
     `;

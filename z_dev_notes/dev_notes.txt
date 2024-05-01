@@ -3,9 +3,6 @@ nextjs upcoming release
 new api for tagging functions and specific tags 
 for caching, so react knows what to check to re-render 
 
-define data fetching pattern - server actions
-form submission pattern 
-
 creating new order form
 new 'create' route in orders folder 
     'create' folder with page.tsx
@@ -36,13 +33,7 @@ export default async function Page() {
 
 <form> has: input, dropdown, input of type number and radio, cancel, and submit 
 
-create a  actions.ts in app/lib 
-   'use server';
-    export async function createOrder(formData: FormData) {} 
-
-import this function in form component and add the action attribute 
-<form action={createOrder}> asdfa f </form>
-
+Server actions 
 Good to know: In HTML, you'd pass a URL to the action attribute. This URL would be the destination where your form data should be submitted (usually an API endpoint).
 
 However, in React, the action attribute is considered a special prop - meaning React builds on top of it to allow actions to be invoked.
@@ -109,3 +100,9 @@ This piece always takes this value in and sends that value out. Tested, done, an
 JSX 
 wrap elements in Link, rather than putting Link in an element: this way, if you put a button in a link, the whole button is clickable 
   this was how I resolved the Edit Order button bug 
+
+Data fetching 
+type sql queries - edefault seems to be 'query result row'
+when some components like datatable, and columns definitions are expecting an 
+order, the sql query needs to be typed 
+ex. await sql<Order>`sql statement`;

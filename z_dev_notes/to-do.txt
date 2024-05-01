@@ -8,6 +8,9 @@ update db queries
 update datatable to show drafts, quotes, on appropriate pages 
 change status to a client side read only field 
 
+define data fetching pattern - server actions
+form submission pattern 
+
 Low Priority 
 choose license 
 
