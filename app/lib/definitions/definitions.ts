@@ -1,6 +1,6 @@
 // definitions for data
 // describes the shape of the data, and what data type each property should accept 
-enum OrderStatus {
+export enum OrderStatus {
   Pending ="pending",
   Draft = "draft",
   Shipped = "shipped",

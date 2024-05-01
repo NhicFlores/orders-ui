@@ -18,18 +18,25 @@ import Link from "next/link";
 import { deleteOrder } from "../lib/actions";
 import { formatDateToLocal } from "../lib/utils";
 
-/*export type Order = {
-  id: string;
-  customer_id: string;
-  order_name: string;
-  product_id: string;
-  amount: number;
-  price: number;
-  date: string;
-  status: "pending" | "draft" | "shipped" | "processing";
-};*/
-//TODO: enable shift select 
-export const OrderColumns: ColumnDef<Order>[] = [
+//NOTE TODO: enable shift select 
+//NOTE TODO: draft form: save button with empty fields 
+//NOTE TODO: for conditional columns: concatonate arrays 
+//NOTE: client columns depend on how we want them to use the app 
+//will they want to be able to put their own customer names attached to the order so they know where glass is going 
+//more than likely, they'll keep that on their own systems, so PO is the column that they'll want 
+//if we pull all orders by company, they'll want an 'Entered By' date to see who made the order 
+
+type DraftColumns = {
+    id: string;
+    customer_id: string;
+    order_name: string;
+    product_id: string;
+    quantity: number;
+    total: number;
+    date: string;
+};
+
+export const DraftColumns: ColumnDef<DraftColumns>[] = [
   {
     id: 'select',
     header: ({table}) => (
@@ -86,10 +93,6 @@ export const OrderColumns: ColumnDef<Order>[] = [
     }
   },
   {
-    accessorKey: "id",
-    header: "ID",
-  },
-  {
     accessorKey: "customer_id",
     header: ({ column }) => {
       return (
@@ -112,7 +115,7 @@ export const OrderColumns: ColumnDef<Order>[] = [
     },
   },
   {
-    accessorKey: "product_id",
+    accessorKey: "product_id",//NOTE TODO: product id's should all be changed to product description: we'll use order_item on backend 
     header: ({ column }) => {
       return (
         <Button variant={'ghost'} onClick={() => column.toggleSorting(column.getIsSorted() === 'asc')}>
@@ -167,16 +170,5 @@ export const OrderColumns: ColumnDef<Order>[] = [
       const formattedDate = formatDateToLocal(date as string);
       return <div>{formattedDate}</div>
     }
-  },
-  {
-    accessorKey: "status",
-    header: ({ column }) => {
-      return (
-        <Button variant={'ghost'} onClick={() => column.toggleSorting(column.getIsSorted() === 'asc')}>
-          Status
-          <ArrowUpDown className="ml-2 h-4 w-4"/>
-        </Button>
-      )
-    },
   },
 ];

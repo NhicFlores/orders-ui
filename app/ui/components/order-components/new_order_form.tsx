@@ -3,7 +3,7 @@
 import { createOrder } from "@/app/lib/actions";
 import { MyButton } from "../my-button";
 import Link from "next/link";
-import { CustomerField } from "@/app/lib/definitions/definitions";
+import { CustomerField, OrderStatus } from "@/app/lib/definitions/definitions";
 import { useFormState, useFormStatus } from "react-dom";
 
 export default function NewOrderForm({ customers }: {customers: CustomerField[]}){
@@ -174,7 +174,7 @@ export default function NewOrderForm({ customers }: {customers: CustomerField[]}
                   id="pending"
                   name="status"
                   type='radio'
-                  value="pending"
+                  value={OrderStatus.Pending}
                   className="h-4 w-4 cursor-pointer border-gray-300 bg-gray-100 text-gray-600 focus:ring-2"
                   aria-describedby="status-error"
                 />
@@ -190,7 +190,7 @@ export default function NewOrderForm({ customers }: {customers: CustomerField[]}
                   id="draft"
                   name="status"
                   type="radio"
-                  value="shipped"
+                  value={OrderStatus.Draft}
                   className="h-4 w-4 cursor-pointer border-gray-300 bg-gray-100 text-gray-600 focus:ring-2"
                   aria-describedby="status-error"
                 />
@@ -206,7 +206,7 @@ export default function NewOrderForm({ customers }: {customers: CustomerField[]}
                   id="processing"
                   name="status"
                   type="radio"
-                  value="processing"
+                  value={OrderStatus.Processing}
                   className="h-4 w-4 cursor-pointer border-gray-300 bg-gray-100 text-gray-600 focus:ring-2"
                   aria-describedby="status-error"
                 />
@@ -222,7 +222,7 @@ export default function NewOrderForm({ customers }: {customers: CustomerField[]}
                   id="shipped"
                   name="status"
                   type="radio"
-                  value="shipped"
+                  value={OrderStatus.Shipped}
                   className="h-4 w-4 cursor-pointer border-gray-300 bg-gray-100 text-gray-600 focus:ring-2"
                   aria-describedby="status-error"
                 />
@@ -231,6 +231,22 @@ export default function NewOrderForm({ customers }: {customers: CustomerField[]}
                   className="ml-2 flex cursor-pointer items-center gap-1.5 rounded-full bg-green-500 px-3 py-1.5 text-xs font-medium text-white"
                 >
                   Shipped
+                </label>
+              </div>
+              <div className="flex items-center">
+                <input
+                  id="quote"
+                  name="status"
+                  type="radio"
+                  value={OrderStatus.Quote}
+                  className="h-4 w-4 cursor-pointer border-gray-300 bg-gray-100 text-gray-600 focus:ring-2"
+                  aria-describedby="status-error"
+                />
+                <label
+                  htmlFor="quote"
+                  className="ml-2 flex cursor-pointer items-center gap-1.5 rounded-full bg-green-500 px-3 py-1.5 text-xs font-medium text-white"
+                >
+                  Quote
                 </label>
               </div>
             </div>

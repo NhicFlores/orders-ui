@@ -10,6 +10,7 @@ import {
   Revenue,
   Order,
   OrderForm,
+  OrderStatus,
 } from './definitions/definitions';
 import { formatCurrency } from './utils';
 import { unstable_noStore as noStore } from 'next/cache';
@@ -21,13 +22,50 @@ export async function fetchOrders() {
     noStore();
     //console.log('made it to fetch orders yo');
     try {
-        const data = await sql<Order>`SELECT * FROM orders`;
+        const data = await sql<Order>`
+        SELECT * FROM orders
+        WHERE orders.status != ${OrderStatus.Draft} AND orders.status != ${OrderStatus.Quote}
+        `;
         return data.rows;
     } catch (err) {
         console.error('Databse Error:', err);
         throw new Error('Failed to fetch order data')
     }
   }
+
+  export async function fetchQuote() {
+    // check the need for noStore on this function 
+    try {
+      const data = await sql`
+        SELECT * FROM orders
+        WHERE orders.status = ${OrderStatus.Quote};
+      `;
+  
+      /*const order = data.rows.map((order) => ({
+        ...order,
+        //convert from cents to dollars 
+        price: order.price / 100,
+      }));*/
+      return data.rows;
+    } catch (error) {
+      console.error('Database Error: ', error);
+      throw new Error('Failed to fetch Quotes');
+    }
+}
+
+export async function fetchDraftOrders() {
+  try {
+    const data = await sql`
+      SELECT * FROM orders
+      WHERE orders.status = ${OrderStatus.Draft}
+    `;
+    console.log("got the drafts");
+    return data.rows;
+  } catch (error) {
+    console.error('Database Error: ', error);
+    throw new Error('Failed to get Drafts')
+  }
+}
 
 export async function fetchOrderById(id: string) {
   // check the need for noStore on this function 
@@ -52,7 +90,7 @@ export async function fetchOrderById(id: string) {
     }));
     return order[0];
   } catch (error) {
-    console.error('Datavase Error: ', error);
+    console.error('Database Error: ', error);
     throw new Error('Failed to fetch order');
   }
 }
