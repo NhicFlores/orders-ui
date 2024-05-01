@@ -5,7 +5,10 @@ X configure table for drafts/quote client view
 
 create user profile 
 	- page, routes
-		new profile, edit user  
+		new profile, edit user 
+		input fields 
+		form validation 
+		edit button toggle -> save button  
 	- fetch function 
 	- update, insert, delete server actions 
 		this is from client perspective: create one profile for yourself 

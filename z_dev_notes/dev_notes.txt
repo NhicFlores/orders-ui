@@ -106,3 +106,9 @@ type sql queries - edefault seems to be 'query result row'
 when some components like datatable, and columns definitions are expecting an 
 order, the sql query needs to be typed 
 ex. await sql<Order>`sql statement`;
+
+Zod - form validation 
+.partial is a method that can make all properties optional 
+ex. const partialUser = user.partial();
+can also specify which properties to make optional 
+.required makes every property required 
