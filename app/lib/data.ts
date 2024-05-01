@@ -69,7 +69,7 @@ export async function fetchDraftOrders() {
 }
 
 export async function fetchOrderById(id: string) {
-  // check the need for noStore on this function 
+  // NOTE TODO: check the need for noStore on this function 
   try {
     const data = await sql<OrderForm>`
       SELECT 
@@ -311,16 +311,5 @@ export async function fetchFilteredCustomers(query: string) {
   } catch (err) {
     console.error('Database Error:', err);
     throw new Error('Failed to fetch customer table.');
-  }
-}
-
-export async function getUser(email: string) {
-  //noStore();
-  try {
-    const user = await sql`SELECT * FROM users WHERE email=${email}`;
-    return user.rows[0] as User;
-  } catch (error) {
-    console.error('Failed to fetch user:', error);
-    throw new Error('Failed to fetch user.');
   }
 }

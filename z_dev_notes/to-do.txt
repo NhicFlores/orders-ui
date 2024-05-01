@@ -1,11 +1,25 @@
 NEXT 
-fetch for drafts, quotes 
-configure table for drafts/quote client view 
+X fetch for drafts, quotes 
+X pages, routes for drafts, quotes 
+X configure table for drafts/quote client view
+
+create user profile 
+	- page, routes
+		new profile, edit user  
+	- fetch function 
+	- update, insert, delete server actions 
+		this is from client perspective: create one profile for yourself 
+	-update user table in db 
+		update fields and types 
+	- consider one customer can have many users - keep many user_ide with email and password attached to 'customers' which stores company, shipping, billing, etc 
+		this won't work(smoothly) in the case that different users at different companies handle orders for different work sites
+		maybe we need user, company, and customer to allow for user to choose default order information 
+
 definitions for table entities separate definitions into multiple files  
 	users need updated 
 	products need created 
-update db queries 
-update datatable to show drafts, quotes, on appropriate pages 
+
+move header to layout
 change status to a client side read only field 
 
 define data fetching pattern - server actions
@@ -21,7 +35,7 @@ lucide react
 
 form: saving info -> output order format 
 
-button that inserts new order - finish later, next, submit should do the same thing just storing different tags 
+buttons on new order page- finish later, next, and submit buttons should do the same thing just storing different tags 
 
 styling
 maybe find some pictures to put in the background 
