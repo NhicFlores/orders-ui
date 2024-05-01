@@ -23,7 +23,7 @@ move header to layout
 change status to a client side read only field 
 
 define data fetching pattern - server actions
-form submission pattern 
+form submission pattern - allow for inline editing 
 
 Low Priority 
 choose license 
