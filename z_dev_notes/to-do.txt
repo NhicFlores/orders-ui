@@ -3,6 +3,17 @@ X fetch for drafts, quotes
 X pages, routes for drafts, quotes 
 X configure table for drafts/quote client view
 
+auth 
+	-register and login routes 
+		-layout for styling and positioning 
+	-register and login forms 
+		-card component to hold form fields 
+		-styling wrapper to pass styling and props to login and register cards 
+		-forms will be similar - eventually can refactor into single form with conditional rendering 
+	-data schema 
+	-form validation 
+	-submit handling 
+
 create user profile 
 	- page, routes
 		new profile 
