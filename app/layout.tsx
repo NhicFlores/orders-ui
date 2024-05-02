@@ -15,16 +15,14 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  //NOTE: In HTML, <div> cannot be a child of <html>.
+  //This will cause a hydration error.
   return (
     <html lang="en">
-      <div>
         <body className={`${inter.className} antialiased`}>
-          <div>
-            <Header />
-          </div>
+          <Header />
           {children}
         </body>
-      </div>
     </html>
   );
 }
