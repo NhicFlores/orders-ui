@@ -5,9 +5,19 @@ X configure table for drafts/quote client view
 
 create user profile 
 	- page, routes
-		new profile, edit user 
-		input fields 
+		new profile 
+		edit profile 
+			cache locally or fetch - depends on the amount of data 
+				- static rendering is probably okay since it doesn't get updated often
+				- if we need to cut the size of the bundle, we can cut the profile data 
+				but keep data necessary for ordering - shipping etc, or fetch when 
+				new order is clicked since that form will be statically rendered    
+		input fields and forms 
+			component profile folder will contain client side components 
 		form validation 
+			zod schema - make folder for all schema or a schema file for each form 
+				forms are going to be under components 
+			form status - pending, loading 
 		edit button toggle -> save button  
 	- fetch function 
 	- update, insert, delete server actions 
@@ -22,7 +32,6 @@ definitions for table entities separate definitions into multiple files
 	users need updated 
 	products need created 
 
-move header to layout
 change status to a client side read only field 
 
 define data fetching pattern - server actions
@@ -36,9 +45,9 @@ font awesome
 ant design 
 lucide react
 
-form: saving info -> output order format 
-
-buttons on new order page- finish later, next, and submit buttons should do the same thing just storing different tags 
+New Order 
+	form: saving info -> output order format 
+	buttons on new order page- finish later, next, and submit buttons should do the same thing just storing different tags 
 
 styling
 maybe find some pictures to put in the background 
@@ -50,8 +59,6 @@ definitions.ts - data types for tables:; customers
 server components 
    can reuse other components: change data types 
 
-use tooltips to see details when hovering over table like seeing the custoomer id when 
-hovering on customer name 
 
 deleting items: should have a deleted folder (and table) that will hold onto stuff for like 15 days or something 
 archiving items to clean out historical data from current: ex. past customers - dont want to delete them but 
@@ -72,5 +79,22 @@ Loose project structure (will require some refactoring)
 	• Components 
 		○ Headless, global components 
 			§ Table, button, dropdown etc 
-	• Lib 
+	• Lib
+	• Schema  
+	
 Global utils 
+
+future functionality 
+-updating profile fields 
+for updating single fields, each field needs an edit button.
+once clicked, the edit button makes the readonly field editable and a save button appears
+when save is hit, button passes user_id and updated field to sql query and updates single field 
+should probably enable editing all fields, and save button takes all changed fields 
+
+-adding shipping addresses 
+add shipping address should be its own button, and shipping adresses are titled and selectable 
+from new order form 
+address table may be necessary but we'll try to avoid that 
+
+-use tooltips to see details when hovering over table like seeing the custoomer id when 
+hovering on customer name 

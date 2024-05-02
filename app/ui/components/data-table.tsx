@@ -69,7 +69,7 @@ export function DataTable<TData, TValue>({
       rowSelection,
     },
   });
-
+//NOTE TODO: conditionally render filter for existing columns 
   return (
     <div>
       <div className="flex-1 text-sm text-muted-foreground">
@@ -85,10 +85,12 @@ export function DataTable<TData, TValue>({
           }
           className="max-w-sm"
         />
-        <NewOrderButton/>
+        <div className="ml-auto">
+          <NewOrderButton />
+        </div>
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button variant={"outline"} className="ml-auto">
+            <Button variant={"outline"} className="ml-5">
               Columns
             </Button>
           </DropdownMenuTrigger>

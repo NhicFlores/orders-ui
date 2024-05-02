@@ -14,37 +14,12 @@ import {
     FormMessage    
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-//NOTE TODO: email validation, phone number validation - regex might work
-//nested object schema with z.record
-const formSchema = z.object({
-    name: z.string({
-        invalid_type_error: 'Please enter your name'
-    }),
-    email: z.string().email({
-        message: "This is not a valid emaill address."
-    }),
-    phone_num: z.string({
-        invalid_type_error: 'please enter a valid phone number.'
-    }),
-    billing_info: z.object({
-        billing_addr: z.string({
-            invalid_type_error: 'Please enter a valid street address.'
-        }),
-        payment_method: z.string({
-            invalid_type_error: 'select payment method'
-        }),
-    }),
-    shipping_info: z.object({
-        delivery_addr: z.string({
-            invalid_type_error: 'Please enter a valid street address.'
-        }),
-    }),
-});
+import { ProfileSchema } from "@/schema/form-schema";
 
 export default function ProfileForm(){
 
-    const form = useForm<z.infer<typeof formSchema>>({
-        resolver: zodResolver(formSchema),
+    const form = useForm<z.infer<typeof ProfileSchema>>({
+        resolver: zodResolver(ProfileSchema),
         defaultValues: {
             name: "",
             email: "",
@@ -59,21 +34,17 @@ export default function ProfileForm(){
         },
     })
     //NOTE TODO: onSubmit event handler 
-    // function onSubmit(values: z.infer<typeof formSchema>) {
-    //     console.log("user form");
-    //     console.log(form);
-    // }
-
-    function clickHandler(){
-        console.log("click handler");
-        console.log(form.formState);
+    function onSubmit(data: z.infer<typeof ProfileSchema>){
+        console.log("submit handler");
+        console.log(data);
     }
     //create multiple forms - one for customer info, billing info, delivery info
     //pass that form data from each back to the action 
     //in action, build the object you're going to send back to the db 
     return (
         <Form {...form}>
-            <form>
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                <div className="space-y-4">
                 <FormField 
                     control={form.control}
                     name="name"
@@ -158,7 +129,8 @@ export default function ProfileForm(){
                         </FormItem>
                     )}
                 />
-                <Button type="submit" onClick={clickHandler}>Save</Button>
+                <Button type="submit">Save</Button>
+                </div>
             </form>
         </Form>
     )
