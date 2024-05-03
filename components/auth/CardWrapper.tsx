@@ -1,12 +1,11 @@
-import { Button } from "../ui/button"
 import { 
   Card,
   CardContent,
-  CardDescription,
   CardFooter,
   CardHeader,
-  CardTitle,
  } from "../ui/card"
+import AuthHeader from "./AuthHeader"
+import BackButton from "./BackButton"
 
 interface CardWrapperProps {
   header: string,
@@ -17,6 +16,10 @@ interface CardWrapperProps {
 }
 //NOTE TODO NEXT: create auth header component for conditional styling 
 //create back button 
+//consider renaming to Form Wrapper since this card wraps the forms 
+//rule of thumb for breaking down components 
+//blocks containing info such as props, with their own containerized styling,
+// can be extracted into their own component : ex. AuthHeader 
 const CardWrapper = ({
   header,
   label,
@@ -25,17 +28,15 @@ const CardWrapper = ({
   children,
 }: CardWrapperProps) => {
   return (
-    <Card>
+    <Card className="xl:w-1/4 md:w-1/2 shadow-md">
       <CardHeader>
-        Login
+        <AuthHeader header={header} label={label}/>
       </CardHeader>
       <CardContent>
         {children}
       </CardContent>
       <CardFooter>
-        <Button>
-          Login
-        </Button>
+        <BackButton label={backButtonLabel} href={backButtonHref}/>
       </CardFooter>
     </Card>
   )

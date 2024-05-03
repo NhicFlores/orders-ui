@@ -1,4 +1,4 @@
-import React from 'react'
+//layout for auth route
 
 const AuthLayout = ({children}: {children: React.ReactNode}) => {
   return (

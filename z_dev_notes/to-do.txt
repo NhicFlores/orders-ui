@@ -10,6 +10,8 @@ auth
 		-card component to hold form fields 
 		-styling wrapper to pass styling and props to login and register cards 
 		-forms will be similar - eventually can refactor into single form with conditional rendering 
+			-this would probably require context which adds complexity and may reduce reusability, 
+			so just keeping the two separate components is probably the better option 
 	-data schema 
 	-form validation 
 	-submit handling 
