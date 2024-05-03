@@ -5,7 +5,7 @@ import {
   CardHeader,
  } from "../ui/card"
 import AuthHeader from "./AuthHeader"
-import BackButton from "./BackButton"
+import AuthLink from "./AuthLink"
 
 interface CardWrapperProps {
   header: string,
@@ -36,7 +36,7 @@ const CardWrapper = ({
         {children}
       </CardContent>
       <CardFooter>
-        <BackButton label={backButtonLabel} href={backButtonHref}/>
+        <AuthLink label={backButtonLabel} href={backButtonHref}/>
       </CardFooter>
     </Card>
   )

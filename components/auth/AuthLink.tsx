@@ -6,7 +6,7 @@ interface BackButtonProps {
     href: string,
 }
 
-const BackButton = ({label, href}: BackButtonProps) => {
+const AuthLink = ({label, href}: BackButtonProps) => {
   return (
     <Button variant='link' className='font-normal w-full' size='sm' asChild>
       <Link href={href}>
@@ -16,4 +16,4 @@ const BackButton = ({label, href}: BackButtonProps) => {
   )
 }
 
-export default BackButton
+export default AuthLink
