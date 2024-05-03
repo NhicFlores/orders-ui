@@ -47,3 +47,10 @@ https://fossa.com/blog/which-open-source-license-is-the-best-for-commercializati
 
 deployment strategy 
 https://medium.com/@vinodvamanbhat/mastering-the-art-of-web-app-deployment-a-comprehensive-guide-to-end-to-end-project-deployment-3e6d368f4b7f 
+
+NextAuth
+https://github.com/vvo/iron-session
+ https://authjs.dev/getting-started/installation?framework=next.js 
+https://www.youtube.com/watch?v=DJvM2lSPn6w 
+https://www.youtube.com/watch?v=MNm1XhDjX1s 
+https://www.youtube.com/watch?v=1MTyCvS05V4 

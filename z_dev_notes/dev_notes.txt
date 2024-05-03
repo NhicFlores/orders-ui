@@ -3,57 +3,6 @@ nextjs upcoming release
 new api for tagging functions and specific tags 
 for caching, so react knows what to check to re-render 
 
-creating new order form
-new 'create' route in orders folder 
-    'create' folder with page.tsx
-
-    import Form from '@/app/ui/order/create-form';
-import Breadcrumbs from '@/app/ui/order/breadcrumbs';
-import { fetchCustomers } from '@/app/lib/data';
- 
-export default async function Page() {
-  const customers = await fetchCustomers();
-  //customers for dropdown menu 
-  return (
-    <main>
-      <Breadcrumbs
-        breadcrumbs={[
-          { label: 'Orders', href: '/dashboard/orders' },
-          {
-            label: 'Create Order',
-            href: '/dashboard/orders/create',
-            active: true,
-          },
-        ]}
-      />
-      <Form customers={customers} />
-    </main>
-  );
-}
-
-<form> has: input, dropdown, input of type number and radio, cancel, and submit 
-
-Server actions 
-Good to know: In HTML, you'd pass a URL to the action attribute. This URL would be the destination where your form data should be submitted (usually an API endpoint).
-
-However, in React, the action attribute is considered a special prop - meaning React builds on top of it to allow actions to be invoked.
-
-Behind the scenes, Server Actions create a POST API endpoint. This is why you don't need to create API endpoints manually when using Server Actions.
-
-
-updating an order 
-	create new dynamic route segment with the order id 
-	read the order id from the page params 
-	fetch the specific order from db 
-	pre-populate the form with the order data 
-	update the order data in db  
-
-
-code organization 
-app/
-  ui/
-  etc 
-
 branching strategy and conventions 
 
 environment configuration 
@@ -67,21 +16,18 @@ testing - Jest
 versioning dependencies 
 
 
-adding a new fetch feature 
-stub in page 
-stub in component 
-buttons in datatable and columnst tsx 
-create a corresponding action 
-create a corresponding object for receiving data from db query 
-test 
-add error handling 
-add all required fields 
-
-NextJS 
+------------------------------------ NextJS ------------------------------------
 Server Actions are not limited to <form> and can be invoked from event handlers, useEffect, third-party libraries, and other form elements like <button> 
 
-TypeScript
-classes vs types for data modeling 
+Server actions 
+Good to know: In HTML, you'd pass a URL to the action attribute. This URL would be the destination where your form data should be submitted (usually an API endpoint).
+
+However, in React, the action attribute is considered a special prop - meaning React builds on top of it to allow actions to be invoked.
+
+Behind the scenes, Server Actions create a POST API endpoint. This is why you don't need to create API endpoints manually when using Server Actions.
+
+------------------------------------ TypeScript ------------------------------------
+classes vs types for data modeling - declarative code 
 
 classes 
 imperative code describes the steps that the runtime must take to inialize an object
@@ -97,18 +43,56 @@ It becomes impossible to even identify all of the code paths.
 Conversely, code using immutable practices grows in complexity linearly. 
 This piece always takes this value in and sends that value out. Tested, done, and on to the next part.
 
-JSX 
+------------------------------------ JSX ------------------------------------
 wrap elements in Link, rather than putting Link in an element: this way, if you put a button in a link, the whole button is clickable 
   this was how I resolved the Edit Order button bug 
 
-Data fetching 
+<form> has: input, dropdown, input of type number and radio, cancel, and submit 
+
+------------------------------------ Data fetching ------------------------------------
 type sql queries - edefault seems to be 'query result row'
 when some components like datatable, and columns definitions are expecting an 
 order, the sql query needs to be typed 
 ex. await sql<Order>`sql statement`;
 
-Zod - form validation 
+------------------------------------ Zod - form validation ------------------------------------
 .partial is a method that can make all properties optional 
 ex. const partialUser = user.partial();
 can also specify which properties to make optional 
 .required makes every property required 
+
+------------------------------------ Auth ------------------------------------
+
+JWT vs Session(cookies)
+Sesson 
+In the session based authentication, the server will create a session for 
+the user after the user logs in. The session id is then stored on a 
+cookie on the user’s browser. While the user stays logged in, the cookie 
+would be sent along with every subsequent request. The server can then 
+compare the session id stored on the cookie against the session information 
+stored in the memory to verify user’s identity and sends response 
+with the corresponding state!
+
+JWT 
+Many web applications use JSON Web Token (JWT) instead of sessions for 
+authentication. In the token based application, the server creates JWT 
+with a secret and sends the JWT to the client. The client stores 
+the JWT (usually in local storage) and includes JWT in the header 
+with every request. The server would then validate the JWT with 
+every request from the client and sends response.
+
+The biggest difference here is that the user’s state is not stored on the server, 
+as the state is stored inside the token on the client side instead. 
+Most of the modern web applications use JWT for authentication for reasons 
+including scalability and mobile device authentication.
+
+If we expect a lot of users, or want to minimize load on the server, use toke 
+authentication, since the token is stored on the client side 
+
+Care must be taken to ensure only the necessary information is included in 
+JWT and sensitive information should be omitted to prevent XSS security attacks.
+
+https://sherryhsu.medium.com/session-vs-token-based-authentication-11a6c5ac45e4
+
+
+https://stytch.com/blog/jwts-vs-sessions-which-is-right-for-you/ 

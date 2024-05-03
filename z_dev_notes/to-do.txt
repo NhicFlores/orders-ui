@@ -15,6 +15,13 @@ auth
 	-data schema 
 	-form validation 
 	-submit handling 
+	-pick an auth provider - authjs/nextauth, iron-session,  lucia auth 
+		-session manager 
+		-account creation / registration 
+		-email verification 
+		-forgot password workflow 
+		https://lucia-auth.com/getting-started/nextjs-app 
+		https://github.com/vvo/iron-session 
 
 create user profile 
 	- page, routes

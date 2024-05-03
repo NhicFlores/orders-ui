@@ -1,0 +1,44 @@
+adding a new fetch feature 
+stub in page 
+stub in component 
+buttons in datatable and columnst tsx 
+create a corresponding action 
+create a corresponding object for receiving data from db query 
+test 
+add error handling 
+add all required fields 
+
+updating an order 
+	create new dynamic route segment with the order id 
+	read the order id from the page params 
+	fetch the specific order from db 
+	pre-populate the form with the order data 
+	update the order data in db  
+
+creating new order form
+new 'create' route in orders folder 
+    'create' folder with page.tsx
+
+    import Form from '@/app/ui/order/create-form';
+import Breadcrumbs from '@/app/ui/order/breadcrumbs';
+import { fetchCustomers } from '@/app/lib/data';
+ 
+export default async function Page() {
+  const customers = await fetchCustomers();
+  //customers for dropdown menu 
+  return (
+    <main>
+      <Breadcrumbs
+        breadcrumbs={[
+          { label: 'Orders', href: '/dashboard/orders' },
+          {
+            label: 'Create Order',
+            href: '/dashboard/orders/create',
+            active: true,
+          },
+        ]}
+      />
+      <Form customers={customers} />
+    </main>
+  );
+}
