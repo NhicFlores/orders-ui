@@ -16,8 +16,13 @@ import { LoginSchema } from '@/schema/form-schema';
 import { z } from 'zod';
 import { Input } from '../ui/input';
 import { Button } from '../ui/button';
+import { useState } from 'react';
+import { useFormStatus } from 'react-dom';
 
 const LoginForm = () => {
+  const [loading, setLoading] = useState(false);
+  const { pending } = useFormStatus();
+
   const form = useForm({
     resolver: zodResolver(LoginSchema),
     defaultValues: {
@@ -29,12 +34,14 @@ const LoginForm = () => {
 
 
   function onSubmit(data: z.infer<typeof LoginSchema>){
+    setLoading(true);
     console.log(data);
+    //setLoading(false); after backend logic 
   }
 
   return (
     <CardWrapper header='Login' 
-                 label='Create an account' 
+                 label='Sign in to you account' 
                  backButtonHref='/auth/register' 
                  backButtonLabel="Don't have an account? Register here."
     >
@@ -72,8 +79,8 @@ const LoginForm = () => {
               )}
             />
           </div>
-          <Button type='submit' className='w-full'>
-            Log In
+          <Button type='submit' className='w-full' disabled={pending}>
+            {loading ? "Loading ..." : "Log In"}
           </Button>
         </form>
       </Form>

@@ -8,8 +8,12 @@ import CardWrapper from "./CardWrapper";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "../ui/form";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
+import { useState } from "react";
+import { useFormStatus } from "react-dom";
 
 const RegisterForm = () => {
+  const [loading, setLoding] = useState(false);
+  const { pending } = useFormStatus();
 
   const form = useForm({
     resolver: zodResolver(RegisterSchema),
@@ -23,6 +27,7 @@ const RegisterForm = () => {
 
   function onSubmit(data: z.infer<typeof RegisterSchema>){
     console.log("in submit handler");
+    setLoding(true);
   }
 
   return (
@@ -96,8 +101,8 @@ const RegisterForm = () => {
               )}  
             />
           </div>
-          <Button type="submit" className="w-full">
-            Register
+          <Button type="submit" className="w-full" disabled={pending}>
+            {loading ? "Loading ..." : "Register"}
           </Button>
         </form>
       </Form>
