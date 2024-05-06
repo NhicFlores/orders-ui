@@ -1,22 +1,27 @@
 NEXT 
 
 
-billing form and  route 
+billing form and route 
 	- href of billng and address tab in user dropdown 
-	- separate from user object 
+	- billing and address forms 
+	- separate billing and address tables vs nested profile objects 
 	- create sql script for creating and inserting values in table 
-register - 
+		- use jsonb type for nested objects with nullable values 
+register 
 	- create new users -> server action 
 	- passwords match check 
 log in 
 	- need user look up function async and redirect to homepage
 	- implement authorization  
 	- protected routes 
-profile
+profile 
+	- large user objest with nested profile vs discrete, minimally nested objects 
 	- fetch profile by user id function 
 	- same for billing and shipping info 
-add company to user profile 
-start with nextauth 
+	- add company field to user profile 
+
+
+dev tab available to admins for adding tasks and questions 
 
 
 X fetch for drafts, quotes 
@@ -24,6 +29,7 @@ X pages, routes for drafts, quotes
 X configure table for drafts/quote client view
 
 auth 
+	- start with nextauth 
 	-register and login routes 
 		-layout for styling and positioning 
 	-register and login forms 

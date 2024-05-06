@@ -4,7 +4,32 @@ import { sql } from '@vercel/postgres';
 import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
 import { OrderRoute } from './routes';
-import { OrderStatus } from './definitions/definitions';
+//import { OrderStatus } from './definitions/definitions';
+import { signIn } from '@/auth';
+import { AuthError } from 'next-auth';
+
+
+// -------------------- Authentication ------------------ 
+
+export async function authenticate(
+    prevState: string | undefined,
+    formData: FormData,
+) {
+    try {
+        await signIn('credentials', formData);
+    } catch (error) {
+        if (error instanceof AuthError) {
+            switch (error.type) {
+                case 'CredentialsSignin':
+                    return 'Invalid Credentials';
+                default: 
+                    return 'Something went wrong.';
+            }
+        }
+        throw error;
+    }
+}
+
 
 //updating the data displayed in the orders route, 
 //so we need to clear this cache and trigger a new request to the server 

@@ -17,11 +17,13 @@ import { z } from 'zod';
 import { Input } from '../ui/input';
 import { Button } from '../ui/button';
 import { useState } from 'react';
-import { useFormStatus } from 'react-dom';
+import { useFormState, useFormStatus } from 'react-dom';
 import { Register, Home } from '@/app/lib/routes';
 import Link from 'next/link';
+import { authenticate } from '@/app/lib/actions';
 
 const LoginForm = () => {
+  const [errorMessage, dispath] = useFormState(authenticate, undefined);
   const [loading, setLoading] = useState(false);
   const { pending } = useFormStatus();
 
@@ -35,12 +37,12 @@ const LoginForm = () => {
 
 
 
-  function onSubmit(data: z.infer<typeof LoginSchema>){
+  async function onSubmit(data: z.infer<typeof LoginSchema>){
     setLoading(true);
     console.log(data);
     //setLoading(false); after backend logic 
   }
-
+  //onSubmit={form.handleSubmit(onSubmit)}
   return (
     <CardWrapper header='Login' 
                  label='Sign in to you account' 
@@ -48,7 +50,7 @@ const LoginForm = () => {
                  backButtonLabel="Don't have an account? Register here."
     >
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className='space-y-6'>
+        <form action={dispath} className='space-y-6'>
           <div className='space-y-4'>
             <FormField
               control={form.control}
@@ -81,11 +83,9 @@ const LoginForm = () => {
               )}
             />
           </div>
-          <Link href={Home.href}>
-            <Button type='submit' className='w-full' disabled={pending}>
+          <Button type='submit' className='w-full' aria-disabled={pending}>
               {loading ? "Loading ..." : "Log In"}
-            </Button>
-          </Link>
+          </Button>
         </form>
       </Form>
     </CardWrapper>
