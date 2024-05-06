@@ -18,6 +18,8 @@ import { Input } from '../ui/input';
 import { Button } from '../ui/button';
 import { useState } from 'react';
 import { useFormStatus } from 'react-dom';
+import { Register, Home } from '@/app/lib/routes';
+import Link from 'next/link';
 
 const LoginForm = () => {
   const [loading, setLoading] = useState(false);
@@ -42,7 +44,7 @@ const LoginForm = () => {
   return (
     <CardWrapper header='Login' 
                  label='Sign in to you account' 
-                 backButtonHref='/auth/register' 
+                 backButtonHref={Register.href}
                  backButtonLabel="Don't have an account? Register here."
     >
       <Form {...form}>
@@ -79,9 +81,11 @@ const LoginForm = () => {
               )}
             />
           </div>
-          <Button type='submit' className='w-full' disabled={pending}>
-            {loading ? "Loading ..." : "Log In"}
-          </Button>
+          <Link href={Home.href}>
+            <Button type='submit' className='w-full' disabled={pending}>
+              {loading ? "Loading ..." : "Log In"}
+            </Button>
+          </Link>
         </form>
       </Form>
     </CardWrapper>

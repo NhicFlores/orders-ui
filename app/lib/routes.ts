@@ -28,6 +28,16 @@ export const OrderRoute = {
   href: "/order",
 };
 
+export const Login = {
+  label: "Login",
+  href: "/auth/login",
+}
+
+export const Register = {
+  label: "Register",
+  href: "/auth/register",
+}
+
 /*
 export const EditOrderRoute = {
   label: "Edit Order",

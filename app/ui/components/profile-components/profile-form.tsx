@@ -15,6 +15,8 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { ProfileSchema } from "@/schema/form-schema";
+import { redirect } from "next/navigation";
+import { Home } from "@/app/lib/routes";
 
 export default function ProfileForm(){
 
@@ -34,9 +36,11 @@ export default function ProfileForm(){
         },
     })
     //NOTE TODO: onSubmit event handler 
-    function onSubmit(data: z.infer<typeof ProfileSchema>){
+    async function onSubmit(data: z.infer<typeof ProfileSchema>){
         console.log("submit handler");
         console.log(data);
+        await new Promise((resolve) => setTimeout(resolve, 3000));
+        //redirect(Home.href);
     }
     //create multiple forms - one for customer info, billing info, delivery info
     //pass that form data from each back to the action 

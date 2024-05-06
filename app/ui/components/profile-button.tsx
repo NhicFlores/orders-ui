@@ -10,7 +10,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { UserRound } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Profile } from "@/app/lib/routes";
+import { Profile, Login } from "@/app/lib/routes";
 //get images into public 
 // NOTE TODO: remove link from dropdown trigger and replace with account button 
 const ProfileButton = () => {
@@ -37,7 +37,9 @@ const ProfileButton = () => {
           Settings
         </DropdownMenuItem>
         <DropdownMenuSeparator />
-        <DropdownMenuItem className="cursor-pointer">Log Out</DropdownMenuItem>
+        <Link href={Login.href}>
+          <DropdownMenuItem className="cursor-pointer">Log Out</DropdownMenuItem>
+        </Link>
       </DropdownMenuContent>
     </DropdownMenu>
   );

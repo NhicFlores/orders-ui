@@ -10,6 +10,8 @@ import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 import { useState } from "react";
 import { useFormStatus } from "react-dom";
+import { Login, Profile } from "@/app/lib/routes";
+import Link from "next/link";
 
 const RegisterForm = () => {
   const [loading, setLoding] = useState(false);
@@ -34,7 +36,7 @@ const RegisterForm = () => {
     <CardWrapper 
       header="Register"
       label="Create an account"
-      backButtonHref="/auth/login"
+      backButtonHref={Login.href}
       backButtonLabel="Have an account? Log in."
       >
       <Form {...form}>
@@ -101,9 +103,11 @@ const RegisterForm = () => {
               )}  
             />
           </div>
-          <Button type="submit" className="w-full" disabled={pending}>
-            {loading ? "Loading ..." : "Register"}
-          </Button>
+          <Link href={Profile.href}>
+            <Button type="submit" className="w-full" disabled={pending}>
+              {loading ? "Loading ..." : "Register"}
+            </Button>
+          </Link>
         </form>
       </Form>
     </CardWrapper>

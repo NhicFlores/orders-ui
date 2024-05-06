@@ -1,4 +1,24 @@
 NEXT 
+
+
+billing form and  route 
+	- href of billng and address tab in user dropdown 
+	- separate from user object 
+	- create sql script for creating and inserting values in table 
+register - 
+	- create new users -> server action 
+	- passwords match check 
+log in 
+	- need user look up function async and redirect to homepage
+	- implement authorization  
+	- protected routes 
+profile
+	- fetch profile by user id function 
+	- same for billing and shipping info 
+add company to user profile 
+start with nextauth 
+
+
 X fetch for drafts, quotes 
 X pages, routes for drafts, quotes 
 X configure table for drafts/quote client view
