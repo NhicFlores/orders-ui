@@ -161,3 +161,8 @@ https://sherryhsu.medium.com/session-vs-token-based-authentication-11a6c5ac45e4
 
 
 https://stytch.com/blog/jwts-vs-sessions-which-is-right-for-you/ 
+
+
+------------------------------------ CLI ------------------------------------ 
+specify port 
+PORT 4000 npm run dev 

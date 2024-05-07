@@ -8,7 +8,7 @@ import { Login } from './app/lib/routes';
 
 export const authConfig = {
     pages: {
-        signIn: Login.href,
+        signIn: '/login',
     },
     callbacks: {
         authorized({ auth, request : {nextUrl } }) {
@@ -19,7 +19,7 @@ export const authConfig = {
                 return false; // redirect unauthenticated users to login page 
             } 
             else if (isLoggedIn) {
-                return Response.redirect(new URL('/', nextUrl));
+                return Response.redirect(new URL('/', nextUrl));//NOTE TODO: protected routes  
             }
             return true;
         },
