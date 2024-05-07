@@ -19,7 +19,6 @@ import { Button } from '../ui/button';
 import { useState } from 'react';
 import { useFormState, useFormStatus } from 'react-dom';
 import { Register, Home } from '@/app/lib/routes';
-import Link from 'next/link';
 import { authenticate } from '@/app/lib/actions';
 
 const LoginForm = () => {
@@ -39,6 +38,7 @@ const LoginForm = () => {
 
   async function onSubmit(data: z.infer<typeof LoginSchema>){
     setLoading(true);
+    //authenticate(data);
     console.log(data);
     //setLoading(false); after backend logic 
   }
@@ -83,13 +83,21 @@ const LoginForm = () => {
               )}
             />
           </div>
-          <Button type='submit' className='w-full' aria-disabled={pending}>
-              {loading ? "Loading ..." : "Log In"}
-          </Button>
+          <LoginButton/>
         </form>
       </Form>
     </CardWrapper>
   )
+}
+
+function LoginButton() {
+  const { pending } = useFormStatus();
+
+  return (
+    <Button className="mt-4 w-full" aria-disabled={pending}>
+      Log in
+    </Button>
+  );
 }
 
 export default LoginForm

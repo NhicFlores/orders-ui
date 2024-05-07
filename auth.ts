@@ -7,6 +7,7 @@ import type { User } from './app/lib/definitions/definitions';
 import bcrypt from 'bcrypt';
 
 async function getUser(email: string): Promise<User | undefined> {
+    console.log("IN AUTH - getUser()")
     try {
         const user = await sql<User>`
             SELECT * FROM users 

@@ -15,9 +15,48 @@ testing - Jest
 
 versioning dependencies 
 
+------------------------------------ REACT CORE ------------------------------------
+React 
+
+Props
+To collect data from multiple children, or to have two child components communicate with each other, declare the shared state in their parent component instead. The parent component can pass that state back down to the children via props. This keeps the child components in sync with each other and with their parent.
+
+State
+When you call a set function in a component, React automatically updates the child components inside
+
+ state is private to a component that defines it, you cannot update the Parent's state directly from the Child component 
+
+define function in parent component, pass that function to child as a prop 
+
+Calling the 'setState' function lets React know the state of the component has changed. This will trigger a re-render of the components that use the 'state' state as well as its child components
+
+Avoid storing redundant state: can one state be calculated from another?  
+
+Keys 
+When a list is re-rendered, React takes each list item’s key and searches the previous list’s items for a matching key. If the current list has a key that didn’t exist before, React creates a component. If the current list is missing a key that existed in the previous list, React destroys the previous component. If two keys match, the corresponding component is moved.
+
+Keys tell React about the identity of each component, which allows React to maintain state between re-renders. If a component’s key changes, the component will be destroyed and re-created with a new state.
+
+key is a special and reserved property in React. When an element is created, React extracts the key property and stores the key directly on the returned element. Even though key may look like it is passed as props, React automatically uses key to decide which components to update. There’s no way for a component to ask what key its parent specified.
+
+It’s strongly recommended that you assign proper keys whenever you build dynamic lists. If you don’t have an appropriate key, you may want to consider restructuring your data so that you do.
+
+Array Index as Key 
+If no key is specified, React will report an error and use the array index as a key by default. Using the array index as a key is problematic when trying to re-order a list’s items or inserting/removing list items. Explicitly passing key={i} silences the error but has the same problems as array indices and is not recommended in most cases.
+
+Keys do not need to be globally unique; they only need to be unique between components and their siblings.
+
+
 
 ------------------------------------ NextJS ------------------------------------
+routing conventions 
+creating a folder with parenthesis allows you to create a shared layout, without adding another segment to the URL 
+app -> auth -> login -->> localhost:3000/auth/login 
+app -> (auth) -> login -->> localhost:3000/login 
+_foldername: the '_' tells nextjs to omit this route 
+
 Server Actions are not limited to <form> and can be invoked from event handlers, useEffect, third-party libraries, and other form elements like <button> 
+
 
 Server actions 
 Good to know: In HTML, you'd pass a URL to the action attribute. This URL would be the destination where your form data should be submitted (usually an API endpoint).
@@ -43,11 +82,37 @@ It becomes impossible to even identify all of the code paths.
 Conversely, code using immutable practices grows in complexity linearly. 
 This piece always takes this value in and sends that value out. Tested, done, and on to the next part.
 
+{...rest} used in props 
+rest is not a property that you define in your interface. Typescript automatically infers the type from the remainder properties (those you don't include in your destructure syntax
+------------------------------------ JavaScript ------------------------------------
+.slice() can be used to create a copy of an array 
+nextSquares = Squares.slice()
+
+Immutability makes complex features much easier to implement. Later in this tutorial, you will implement a “time travel” feature that lets you review the game’s history and “jump back” to past moves. This functionality isn’t specific to games—an ability to undo and redo certain actions is a common requirement for apps. Avoiding direct data mutation lets you keep previous versions of the data intact, and reuse them later.
+
+There is also another benefit of immutability. By default, all child components re-render automatically when the state of a parent component changes. This includes even the child components that weren’t affected by the change. Although re-rendering is not by itself noticeable to the user (you shouldn’t actively try to avoid it!), you might want to skip re-rendering a part of the tree that clearly wasn’t affected by it for performance reasons. Immutability makes it very cheap for components to compare whether their data has changed or not. You can learn more about how React chooses when to re-render a component in the memo API reference.
+
+when creating new arrays we can use the spreader operator 
+- You can read the ...history spread syntax as “enumerate all the items in array”.
+
+JavaScript supports closures which means an inner function (e.g. handleClick) has access to variables and functions defined in a outer function (e.g. Board). The handleClick function can read the squares state and call the setSquares method because they are both defined inside of the Board function - to my understanding, 'closures' is what allows nested functions to access the constants and states defined in the outer function 
+
+when passing functions, you just pass the name. when you include the parenthesis function() you are calling it. This can cause infinite loops when calling functions instead of passing them when trying to pass them as props, causing the component to re-render, which changes the state, which triggers another re-render and so on 
+
+when passing a function as a prop, and you need a parameter, use arrow functions so as not to call the function when rendering the component 
+the code after the => “arrow” will run, calling handleClick(0).
+so instead of <Component value={someValue} onClick={handleClick(0)} >
+use arrow function 
+ <Component value={someValue} onClick={() => handleClick(0)} >
+
+
 ------------------------------------ JSX ------------------------------------
 wrap elements in Link, rather than putting Link in an element: this way, if you put a button in a link, the whole button is clickable 
   this was how I resolved the Edit Order button bug 
 
 <form> has: input, dropdown, input of type number and radio, cancel, and submit 
+
+<><>: fragments can be used to avoid unnecessarily adding extra nodes to the DOM 
 
 ------------------------------------ Data fetching ------------------------------------
 type sql queries - edefault seems to be 'query result row'
