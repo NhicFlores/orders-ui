@@ -1,0 +1,24 @@
+
+ISSUE: 
+
+ ⨯ ./node_modules/@mapbox/node-pre-gyp/lib/util/nw-pre-gyp/index.html
+Module parse failed: Unexpected token (1:0)
+You may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders
+> <!doctype html>
+| <html>
+| <head>
+
+Import trace for requested module:
+./node_modules/@mapbox/node-pre-gyp/lib/util/nw-pre-gyp/index.html
+./node_modules/@mapbox/node-pre-gyp/lib/ sync ^\.\/.*$
+./node_modules/@mapbox/node-pre-gyp/lib/node-pre-gyp.js
+./node_modules/bcrypt/bcrypt.js
+./actions/register.ts
+./components/auth/register-form.tsx
+
+looking at stackoverflow, threads on npm and nextjs github pages, and reddit threads, most people were saying it was a node module issue.
+The suggestion was to install the latest versions of npm and node 
+
+FIX: 
+tag the file using bcrypt as a server component 'use server 'I was using bcrypt in server actions, but I hadn't tagged the file with the 'use server' tag 
+https://github.com/kelektiv/node.bcrypt.js/issues/979 

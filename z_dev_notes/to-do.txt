@@ -1,5 +1,12 @@
 NEXT 
-
+ create landing page with sign in button and 
+ restructure the route groups so you can handle 
+ the protected routes 
+ landing page is just a button with some styling 
+ create a folder called home for the main page with 3 button stackoverflow
+	how do we pass the nav bar around if their is a home route 
+	but the subsequent pages are not part of the home routing group 
+create routes.ts file in root 
 
 billing form and route 
 	- href of billng and address tab in user dropdown 
@@ -15,6 +22,10 @@ log in
 	- implement authorization  
 	- protected routes 
 profile 
+	- since this will see minimal updates from user, we can render it statically and in the background, on sign in, 
+	check if there are updates in the db in case they use multiple devices 
+	- since it needs minimal editing and vewing, it might also be worth deprioritizing and fetching in the background to minimize 
+	load times and prioritize orders 
 	- large user objest with nested profile vs discrete, minimally nested objects 
 	- fetch profile by user id function 
 	- same for billing and shipping info 
