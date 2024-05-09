@@ -65,6 +65,10 @@ However, in React, the action attribute is considered a special prop - meaning R
 
 Behind the scenes, Server Actions create a POST API endpoint. This is why you don't need to create API endpoints manually when using Server Actions.
 
+How are actions handled differently than an async fetch function? look at data and actions files 
+
+how is FormData something we have access to but don't explicitly pass in an action  
+
 auth 
 middleware 
 middleware is not nextauth specific, it is nextjs specific 

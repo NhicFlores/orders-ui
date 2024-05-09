@@ -5,33 +5,7 @@ import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
 import { OrderRoute } from './routes';
 //import { OrderStatus } from './definitions/definitions';
-import { signIn } from '@/auth';
-import { AuthError } from 'next-auth';
 
-
-// -------------------- Authentication ------------------ 
-
-export async function authenticate(
-    prevState: string | undefined,
-    formData: FormData,
-) {
-    console.log("IN SERVER ACTION");
-    try {
-        await signIn('credentials', formData);
-    } catch (error) {
-        if (error instanceof AuthError) {
-            switch (error.type) {
-                case 'CredentialsSignin':
-                    return 'Invalid Credentials';//this is linked to what the login form is expecting in useFormStatus 
-                default: 
-                    return 'Something went wrong.';
-            }
-        }
-        throw error;
-    }
-
-    //return { success: "user found"}; //NOTE TODO this doesn't work, it throws off the type for useFormStatus; how to change/define types expected by hooks  
-}
 
 
 //updating the data displayed in the orders route, 

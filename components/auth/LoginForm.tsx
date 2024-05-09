@@ -19,7 +19,7 @@ import { Button } from '../ui/button';
 import { useState } from 'react';
 import { useFormState, useFormStatus } from 'react-dom';
 import { Register } from '@/app/lib/routes';
-import { authenticate } from '@/app/lib/actions';
+import { authenticate } from '@/app/lib/auth-actions/auth-actions';
 import FormError from '../form-components/form-error';
 import FormSuccess from '../form-components/form-success';
 
