@@ -1,6 +1,5 @@
 //homepage navlinks 
 import Link from "next/link";
-import clsx from "clsx";
 import { DashboardNavLinks } from "@/app/lib/routes";
 
 //eventaully put into db or dedicated folder 

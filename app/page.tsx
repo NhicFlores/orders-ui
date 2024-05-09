@@ -1,5 +1,4 @@
 import { Button } from "@/components/ui/button";
-import Homepage_NavLinks from "./ui/components/dashboard-nav-stack";
 import SignInButton from "@/components/landing_page/sign-in-button";
 
 //home page for app

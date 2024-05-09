@@ -18,7 +18,7 @@ import { Input } from '../ui/input';
 import { Button } from '../ui/button';
 import { useState } from 'react';
 import { useFormState, useFormStatus } from 'react-dom';
-import { Register, Home } from '@/app/lib/routes';
+import { Register } from '@/app/lib/routes';
 import { authenticate } from '@/app/lib/actions';
 
 const LoginForm = () => {
@@ -45,7 +45,7 @@ const LoginForm = () => {
   //onSubmit={form.handleSubmit(onSubmit)}
   return (
     <CardWrapper header='Login' 
-                 label='Sign in to you account' 
+                 label='Sign in to your account' 
                  backButtonHref={Register.href}
                  backButtonLabel="Don't have an account? Register here."
     >
