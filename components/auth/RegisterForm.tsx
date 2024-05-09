@@ -103,11 +103,13 @@ const RegisterForm = () => {
               )}  
             />
           </div>
-          <Link href={Profile.href}>
-            <Button type="submit" className="w-full" disabled={pending}>
-              {loading ? "Loading ..." : "Register"}
-            </Button>
-          </Link>
+          <div>
+            <Link href={Profile.href}>
+              <Button type="submit" className="w-full" disabled={pending}>
+                {loading ? "Loading ..." : "Register"}
+              </Button>
+            </Link>
+          </div>
         </form>
       </Form>
     </CardWrapper>
