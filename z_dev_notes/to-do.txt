@@ -1,4 +1,8 @@
 NEXT 
+
+- need to restructure routes under (protected) folder 
+- move page and layout into protected route 
+
  create landing page with sign in button and 
  restructure the route groups so you can handle 
  the protected routes 
