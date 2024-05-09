@@ -16,12 +16,8 @@ export const authConfig = {
             const isLoggedIn = !!auth?.user;
             const isPublicRoute = publicRoutes.includes(nextUrl.pathname)
             const isAuthRoute = authRoutes.includes(nextUrl.pathname)
-            const isPrivateRoute = privateRoutes.includes(nextUrl.pathname)
+            //const isPrivateRoute = privateRoutes.includes(nextUrl.pathname)
             //const isOnOrder = nextUrl.pathname.startsWith('/');
-            if(isPublicRoute){
-                return true;
-            }
-
             if (isAuthRoute) {
                 if(isLoggedIn) {
                     //if requesting an auth route, but they are logged in, redirect to default login, currently set to dashboard 
@@ -31,10 +27,15 @@ export const authConfig = {
                 //if (isLoggedIn) return true;
                 //return false; // redirect unauthenticated users to login page 
             } 
-            else if (isPrivateRoute && isLoggedIn) {
-                return true;  
+
+            if(isPublicRoute){
+                return true;
             }
-            return false;//authorized to access route requested 
+
+            else if (isLoggedIn) {
+                return true;  //authorized to access private page requested 
+            }
+            return false;//redirect to log in page  
         },
     }, providers: [],
 } satisfies NextAuthConfig;
