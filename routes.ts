@@ -42,7 +42,7 @@ export const apiAuthPrefix = "/api/auth";
  * the default redirect path after logging in 
  * @type {string}
  */
-export const DEFAULT_LOGIN_REDIRECT = "/home"
+export const DEFAULT_LOGIN_REDIRECT = "/dashboard"
 
 //make either home or dashboard. dashboard will pull recent orders 
 //there isn't much need for a landing page once logged in 
