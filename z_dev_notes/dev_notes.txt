@@ -239,6 +239,11 @@ paths
 protected routes 
 URL constructor 
 
+
+------------------------------------ styling ------------------------------------ 
+
+use h-screen instead of h-full
+
 ------------------------------------ CLI ------------------------------------ 
 specify port 
 PORT 4000 npm run dev 

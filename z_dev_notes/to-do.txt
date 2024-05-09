@@ -1,16 +1,10 @@
 NEXT 
+- auth.ts, auth.config.ts, middleware.ts, routes.ts 
+	- protected routes logic 
+	- regex from clerk for protecting all routes by default 
+	- authorize callback 
+	- auth providers - credentials 
 
-- need to restructure routes under (protected) folder 
-- move page and layout into protected route 
-
- create landing page with sign in button and 
- restructure the route groups so you can handle 
- the protected routes 
- landing page is just a button with some styling 
- create a folder called home for the main page with 3 button stackoverflow
-	how do we pass the nav bar around if their is a home route 
-	but the subsequent pages are not part of the home routing group 
-create routes.ts file in root 
 
 billing form and route 
 	- href of billng and address tab in user dropdown 
@@ -38,11 +32,22 @@ profile
 
 dev tab available to admins for adding tasks and questions 
 
-
-X fetch for drafts, quotes 
-X pages, routes for drafts, quotes 
-X configure table for drafts/quote client view
-
+DONE 
+x
+ - fetch for drafts, quotes 
+ - pages, routes for drafts, quotes 
+ - configure table for drafts/quote client view
+ - need to restructure routes under (protected) folder 
+ - move page and layout into protected route 
+ - create landing page with sign in button 
+ - restructure the route groups so you can handle the protected routes 
+ - landing page is just a button with some styling 
+ - create a folder called home for the main page with 3 button stack 
+	- how do we pass the nav bar around if their is a home route 
+	but the subsequent pages are not part of the home routing group 
+	- layout for all routes under (protected)
+ - create routes.ts file in root 
+x
 auth 
 	- start with nextauth 
 	-register and login routes 

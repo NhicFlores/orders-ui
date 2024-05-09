@@ -18,6 +18,7 @@ export const privateRoutes = [
     "/quote",
     "/order",
     "/drafts",
+    "/dashboard",
 ]
 
 /**
