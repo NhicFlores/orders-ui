@@ -12,6 +12,8 @@ import { useState } from "react";
 import { useFormStatus } from "react-dom";
 import { Login, Profile } from "@/app/lib/routes";
 import Link from "next/link";
+import FormError from "../form-components/form-error";
+import FormSuccess from "../form-components/form-success";
 
 const RegisterForm = () => {
   const [loading, setLoding] = useState(false);
@@ -30,6 +32,9 @@ const RegisterForm = () => {
   function onSubmit(data: z.infer<typeof RegisterSchema>){
     console.log("in submit handler");
     setLoding(true);
+    //call action 
+    //update message
+    //add message prop to form error and success 
   }
 
   return (
@@ -103,13 +108,11 @@ const RegisterForm = () => {
               )}  
             />
           </div>
-          <div>
-            <Link href={Profile.href}>
-              <Button type="submit" className="w-full" disabled={pending}>
-                {loading ? "Loading ..." : "Register"}
-              </Button>
-            </Link>
-          </div>
+          <FormError/>
+          <FormSuccess/>
+          <Button type="submit" className="w-full" disabled={pending}>
+            {loading ? "Loading ..." : "Register"}
+          </Button>
         </form>
       </Form>
     </CardWrapper>

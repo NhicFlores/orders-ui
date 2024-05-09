@@ -19,7 +19,7 @@ async function getUser(email: string): Promise<User | undefined> {
         throw new Error('Failed to fetch user.');
     }
 }
-//NOTE TODO: need to connect login server action with login form 
+//NOTE TODO: send success message to form 
 export const { auth, signIn, signOut } = NextAuth({
   ...authConfig,
   providers: [Credentials({

@@ -20,6 +20,8 @@ import { useState } from 'react';
 import { useFormState, useFormStatus } from 'react-dom';
 import { Register } from '@/app/lib/routes';
 import { authenticate } from '@/app/lib/actions';
+import FormError from '../form-components/form-error';
+import FormSuccess from '../form-components/form-success';
 
 const LoginForm = () => {
   const [errorMessage, dispath] = useFormState(authenticate, undefined);
@@ -34,14 +36,14 @@ const LoginForm = () => {
     }
   })
 
+  //NOTE TODO: pass action in onSubmit so we can use .then to receive error and success messages 
 
-
-  async function onSubmit(data: z.infer<typeof LoginSchema>){
-    setLoading(true);
-    //authenticate(data);
-    console.log(data);
-    //setLoading(false); after backend logic 
-  }
+  // async function onSubmit(data: z.infer<typeof LoginSchema>){
+  //   setLoading(true);
+  //   //authenticate(data);
+  //   console.log(data);
+  //   //setLoading(false); after backend logic 
+  // }
   //onSubmit={form.handleSubmit(onSubmit)}
   return (
     <CardWrapper header='Login' 
@@ -83,6 +85,8 @@ const LoginForm = () => {
               )}
             />
           </div>
+          <FormSuccess message={errorMessage}/>
+          <FormError message={errorMessage}/>
           <LoginButton/>
         </form>
       </Form>
