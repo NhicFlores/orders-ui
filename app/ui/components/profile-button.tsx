@@ -17,8 +17,9 @@ import { logOut } from "@/app/lib/auth-actions/auth-actions";
 // NOTE TODO: remove link from dropdown trigger and replace with account button 
 const ProfileButton = () => {
 
-  function onLogoutClick() {
-    logOut();
+  async function onLogoutClick() {
+    console.log("---------- LOGOUT CLICKED ------------");
+    await logOut();
   }
 
   return (

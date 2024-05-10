@@ -35,3 +35,18 @@ No overload matches this call.
       Types of parameters 'prevState' and 'state' are incompatible.
         Type '"Invalid Credentials" | "Something went wrong." | { error: ZodError<{ email: string; password: string; }>; } | undefined' is not assignable to type 'string | undefined'.
           Type '{ error: z.ZodError<{ email: string; password: string; }>; }' is not assignable to type 'string'.ts(2769)
+
+after creating the auth-merge branch and resetting the commits to have one 
+clean commit go into dev then main, i got the following error in the browser 
+after trying to sign in a new user. I got the credentials wrong, then tried again 
+and the browser showed the following build error. 
+next time I'll make sure to copy the build stack as well 
+
+TypeError: originalFactory is undefined
+
+i was unable to recreate the error. I looked it up and didn't find anything useful 
+
+i ran npm i just to see if it was a module thing since i had merged a bunch of commits 
+into the dev branch. it didn't show any updates or changes. I tried again and wasn't able 
+to recreate it. I went ahead and merged to main. there were no build errors in main, 
+or any of the preview deployments for the dev, auth, or register-user branches 

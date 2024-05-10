@@ -118,5 +118,6 @@ export async function getUser(email: string): Promise<User | undefined> {
 }
 
 export async function logOut(){
+    console.log("-------- IN LOGOUT ACTION ------------")
     await signOut();
 }
