@@ -5,31 +5,7 @@ import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
 import { OrderRoute } from './routes';
 //import { OrderStatus } from './definitions/definitions';
-import { signIn } from '@/auth';
-import { AuthError } from 'next-auth';
 
-
-// -------------------- Authentication ------------------ 
-
-export async function authenticate(
-    prevState: string | undefined,
-    formData: FormData,
-) {
-    console.log("IN SERVER ACTION");
-    try {
-        await signIn('credentials', formData);
-    } catch (error) {
-        if (error instanceof AuthError) {
-            switch (error.type) {
-                case 'CredentialsSignin':
-                    return 'Invalid Credentials';
-                default: 
-                    return 'Something went wrong.';
-            }
-        }
-        throw error;
-    }
-}
 
 
 //updating the data displayed in the orders route, 

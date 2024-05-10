@@ -65,6 +65,16 @@ However, in React, the action attribute is considered a special prop - meaning R
 
 Behind the scenes, Server Actions create a POST API endpoint. This is why you don't need to create API endpoints manually when using Server Actions.
 
+How are actions handled differently than an async fetch function? look at data and actions files 
+
+how is FormData something we have access to but don't explicitly pass in an action  
+
+auth 
+middleware 
+middleware is not nextauth specific, it is nextjs specific 
+Adding auth to your Middleware is optional, but recommended to keep the user session alive.
+https://nextjs.org/docs/app/building-your-application/routing/middleware#matcher
+
 ------------------------------------ TypeScript ------------------------------------
 classes vs types for data modeling - declarative code 
 
@@ -161,3 +171,87 @@ https://sherryhsu.medium.com/session-vs-token-based-authentication-11a6c5ac45e4
 
 
 https://stytch.com/blog/jwts-vs-sessions-which-is-right-for-you/ 
+
+
+------------------------------------ Authjs ------------------------------------ 
+TODO: in what case do we need export const runtime = "edge" 
+
+middleware 
+middleware is not nextauth specific, it is nextjs specific 
+Adding auth to your Middleware is optional, but recommended to keep the user session alive. 
+
+from edge compatibility section 
+https://authjs.dev/getting-started/migrating-to-v5 
+
+While Auth.js strictly uses standard Web APIs (and thus can run in any 
+environment that supports them), some libraries or ORMs 
+(Object-Relational Mapping) packages that you rely on might not be ready yet. 
+In this case, you can split the auth configuration into multiple files.
+
+Auth.js supports two session strategies. When you are using an adapter, 
+it will default to the database strategy. Unless your database and its 
+adapter is compatible with the Edge runtime/infrastructure, you will not be 
+able to use the "database" session strategy.
+
+So for example, if you are using an adapter that relies on an ORM/library that
+is not yet compatible with Edge runtime(s) below is an example where we 
+force the jwt strategy and split up the configuration so the library 
+doesn’t attempt to access the database in edge environments, 
+like in the middleware.
+
+when using an ORM/library that is not edge compatible, we will not have access to callbacks 
+and events in the auth.ts file, which we normally would be able to use if our db was compatible 
+with the edge.  NextJS Middleware works on the edge, and so if you want to use Middleware and 
+somethihng like Prisma, which is not edge compatible, we have to separate auth.ts into two files:
+auth.ts and auth.config.ts ------------- 05-08-2024
+-----------------------
+EX: Create an auth.config.ts file which exports an object containing your Auth.js configuration options. 
+You can put all common configuration here which does not rely on the adapter. 
+Notice this is exporting a configuration object only, we’re not calling NextAuth() here.
+----
+due to prisma's incompatability with edge, this is the file 
+that triggers the nextjs middleware 
+while auth.ts uses prisma adapter 
+
+auth.config.ts 
+import GitHub from "next-auth/providers/github"
+import type { NextAuthConfig } from "next-auth"
+ 
+export default { providers: [GitHub] } satisfies NextAuthConfig
+--------------------------
+EX: 
+Next, create an auth.ts file and add your adapter and the jwt session strategy there. 
+This is the auth.ts configuration file you will import from in the rest of your application, other than in the middleware.
+auth.ts 
+import NextAuth from "next-auth"
+import { PrismaAdapter } from "@auth/prisma-adapter"
+import { PrismaClient } from "@prisma/client"
+import authConfig from "./auth.config"
+ 
+const prisma = new PrismaClient()
+ 
+export const { handlers, auth } = NextAuth({
+  adapter: PrismaAdapter(prisma),
+  session: { strategy: "jwt" },
+  ...authConfig,
+})  ------------- 05-08-2024 
+
+------------------------------------ URL ------------------------------------
+absolute URL
+NextURL 
+paths 
+protected routes 
+URL constructor 
+
+
+------------------------------------ styling ------------------------------------ 
+
+use h-screen instead of h-full
+
+------------------------------------ CLI ------------------------------------ 
+specify port 
+PORT 4000 npm run dev 
+
+------------------------------------ Security ------------------------------------
+bcrypt 
+incorporating a salt to protect against rainbow table attacks 

@@ -18,8 +18,10 @@ import { Input } from '../ui/input';
 import { Button } from '../ui/button';
 import { useState } from 'react';
 import { useFormState, useFormStatus } from 'react-dom';
-import { Register, Home } from '@/app/lib/routes';
-import { authenticate } from '@/app/lib/actions';
+import { Register } from '@/app/lib/routes';
+import { authenticate } from '@/app/lib/auth-actions/auth-actions';
+import FormError from '../form-components/form-error';
+import FormSuccess from '../form-components/form-success';
 
 const LoginForm = () => {
   const [errorMessage, dispath] = useFormState(authenticate, undefined);
@@ -34,18 +36,18 @@ const LoginForm = () => {
     }
   })
 
+  //NOTE TODO: pass action in onSubmit so we can use .then to receive error and success messages 
 
-
-  async function onSubmit(data: z.infer<typeof LoginSchema>){
-    setLoading(true);
-    //authenticate(data);
-    console.log(data);
-    //setLoading(false); after backend logic 
-  }
+  // async function onSubmit(data: z.infer<typeof LoginSchema>){
+  //   setLoading(true);
+  //   //authenticate(data);
+  //   console.log(data);
+  //   //setLoading(false); after backend logic 
+  // }
   //onSubmit={form.handleSubmit(onSubmit)}
   return (
     <CardWrapper header='Login' 
-                 label='Sign in to you account' 
+                 label='Sign in to your account' 
                  backButtonHref={Register.href}
                  backButtonLabel="Don't have an account? Register here."
     >
@@ -83,6 +85,7 @@ const LoginForm = () => {
               )}
             />
           </div>
+          <FormError message={errorMessage}/>
           <LoginButton/>
         </form>
       </Form>

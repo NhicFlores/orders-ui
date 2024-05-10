@@ -1,6 +1,6 @@
 import Container from "./components/page-container";
 import Link from "next/link";
-import { Home, HeaderRoutes, Profile } from "../lib/routes";
+import { Dashboard, HeaderRoutes, Profile } from "../lib/routes";
 import { Button } from "@/components/ui/button";
 import { UserRound } from "lucide-react";
 import ProfileButton from "./components/profile-button";
@@ -12,8 +12,8 @@ export default function Header() {
       <Container>
         <div className="relative px-4 sm:px-6 lg:px-8 flex h-16 items-center justify-between w-full">
           <div className="flex items-center">
-            <Link href={Home.href} className="ml-4 lg:ml-0">
-              <h1 className="text-xl font-bold">{Home.label}</h1>
+            <Link href={Dashboard.href} className="ml-4 lg:ml-0">
+              <h1 className="text-xl font-bold">{Dashboard.label}</h1>
             </Link>
           </div>
           <nav className="mx-6 flex items-center space-x-4 lg:space-x-6 md:block">

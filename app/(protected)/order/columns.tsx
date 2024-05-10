@@ -2,7 +2,7 @@
 "use client";
 
 import { ColumnDef, RowExpanding } from "@tanstack/react-table";
-import { Order } from "../lib/definitions/definitions";
+import { Order } from "../../lib/definitions/definitions";
 import { ArrowUpDown, MoreHorizontal } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
@@ -15,8 +15,8 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import Link from "next/link";
-import { deleteOrder } from "../lib/actions";
-import { formatDateToLocal } from "../lib/utils";
+import { deleteOrder } from "../../lib/actions";
+import { formatDateToLocal } from "../../lib/utils";
 
 /*export type Order = {
   id: string;

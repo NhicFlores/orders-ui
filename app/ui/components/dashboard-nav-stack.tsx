@@ -1,7 +1,6 @@
 //homepage navlinks 
 import Link from "next/link";
-import clsx from "clsx";
-import { HomeNavLinks } from "@/app/lib/routes";
+import { DashboardNavLinks } from "@/app/lib/routes";
 
 //eventaully put into db or dedicated folder 
 //export homepage, design, order links etc 
@@ -20,11 +19,11 @@ import { HomeNavLinks } from "@/app/lib/routes";
 //     },
 // ];
 
-export default function Homepage_NavLinks(){
+export default function DashboardNavStack(){
     return (
         <>
             {
-                HomeNavLinks.map((link) => {
+                DashboardNavLinks.map((link) => {
                     return (
                         <Link 
                             key={link.label} 

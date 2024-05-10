@@ -1,5 +1,5 @@
 import type { NextAuthConfig } from 'next-auth';
-import { Login } from './app/lib/routes';
+import { authRoutes, DEFAULT_LOGIN_REDIRECT, privateRoutes, publicRoutes } from './routes';
 
 // You can use the pages option to specify the route for 
 // custom sign-in, sign-out, and error pages. This is not required, 
@@ -8,20 +8,33 @@ import { Login } from './app/lib/routes';
 
 export const authConfig = {
     pages: {
-        signIn: Login.href,
+        signIn: '/auth/login',
     },
     callbacks: {
         authorized({ auth, request : {nextUrl } }) {
             const isLoggedIn = !!auth?.user;
-            const isOnHome = nextUrl.pathname.startsWith('/');
-            if (isOnHome) {
-                if (isLoggedIn) return true;
-                return false; // redirect unauthenticated users to login page 
+            const isPublicRoute = publicRoutes.includes(nextUrl.pathname)
+            const isAuthRoute = authRoutes.includes(nextUrl.pathname)
+            // NOTE: isPrivate route seems unnecessary 
+            // NOTE: to target a whole route group use pathname.startsWith(''); 
+            //const isOnOrder = nextUrl.pathname.startsWith('/');
+            if (isAuthRoute) {
+                if(isLoggedIn) {
+                    // if requesting an auth route, but they are logged in, redirect to default login, 
+                    // currently set to dashboard 
+                    return Response.redirect(new URL(DEFAULT_LOGIN_REDIRECT, nextUrl));
+                }
+                return true;//authorized to access auth routes 
             } 
-            else if (isLoggedIn) {
-                return Response.redirect(new URL('/', nextUrl));
+
+            if(isPublicRoute){
+                return true;
             }
-            return true;
+
+            else if (isLoggedIn) {
+                return true;  //authorized to access private page requested 
+            }
+            return false;//redirect to log in page  
         },
     }, providers: [],
 } satisfies NextAuthConfig;

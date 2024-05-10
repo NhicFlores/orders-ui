@@ -1,9 +1,15 @@
 
 
-export const Home =
+export const Landing =
 {
   label: "Glass Ordering",
   href: "/",
+};
+
+export const Dashboard =
+{
+  label: "Dashboard",
+  href: "/dashboard",
 };
 
 export const Profile = 
@@ -70,7 +76,7 @@ export const HeaderRoutes = [
 ];
 
 
-export const HomeNavLinks = [
+export const DashboardNavLinks = [
   {
     label: "New Order",
     href: "/order/new_order",

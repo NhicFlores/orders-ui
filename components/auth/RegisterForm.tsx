@@ -11,11 +11,15 @@ import { Button } from "../ui/button";
 import { useState } from "react";
 import { useFormStatus } from "react-dom";
 import { Login, Profile } from "@/app/lib/routes";
-import Link from "next/link";
+import FormError from "../form-components/form-error";
+import FormSuccess from "../form-components/form-success";
+import { registerUser } from "@/app/lib/auth-actions/auth-actions";
 
 const RegisterForm = () => {
   const [loading, setLoding] = useState(false);
   const { pending } = useFormStatus();
+  const [errorMessage, setErrorMessage] = useState<string | undefined>("");
+  const [successMessage, setsuccessMessage] = useState<string | undefined>("");
 
   const form = useForm({
     resolver: zodResolver(RegisterSchema),
@@ -28,8 +32,17 @@ const RegisterForm = () => {
   })
 
   function onSubmit(data: z.infer<typeof RegisterSchema>){
-    console.log("in submit handler");
+    console.log("---------- in submit handler --------------");
     setLoding(true);
+    //call action 
+    //const formData = new FormData(data)
+    registerUser(data)
+      .then((validatedFields) => {
+        setErrorMessage(validatedFields?.error);
+        setsuccessMessage(validatedFields?.success);//confirm messages are mapped correctly 
+      })
+    //update message
+    //add message prop to form error and success 
   }
 
   return (
@@ -103,11 +116,11 @@ const RegisterForm = () => {
               )}  
             />
           </div>
-          <Link href={Profile.href}>
-            <Button type="submit" className="w-full" disabled={pending}>
-              {loading ? "Loading ..." : "Register"}
-            </Button>
-          </Link>
+          <FormError message={errorMessage}/>
+          <FormSuccess message={successMessage}/>
+          <Button type="submit" className="w-full" disabled={pending}>
+            {loading ? "Loading ..." : "Register"}
+          </Button>
         </form>
       </Form>
     </CardWrapper>

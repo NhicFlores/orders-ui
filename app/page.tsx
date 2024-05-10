@@ -1,12 +1,21 @@
-import Homepage_NavLinks from "./ui/components/homepage_navlinks";
+import { Button } from "@/components/ui/button";
+import SignInButton from "@/components/landing_page/sign-in-button";
 
-//home page for app
+//landing page 
 export default function Home() {
   return (
-    //Set main screen layout to not be locked to center page --tdh 4/26/24
-    <main>
-      <div className="mt-30 grid text-center sm:mt-10 lg:mb-0 lg:mt-30 lg:w-auto lg:max-w-10xl lg:grid-rows-3 lg:text-center">
-        <Homepage_NavLinks />
+    <main className="flex h-screen flex-col items-center justify-center
+                     bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-sky-600 to-slate-400">
+      <div className="space-y-6 text-center">
+        <h1 className="text-semibold text-6xl text-white drop-shadow-md">Welcome!</h1>
+        <p className="text-white text-lg">Sign in to order some glass</p>
+        <div>
+          <SignInButton>
+            <Button variant="secondary" size="lg">
+              Sign in
+            </Button>
+          </SignInButton>
+        </div>
       </div>
     </main>
   );

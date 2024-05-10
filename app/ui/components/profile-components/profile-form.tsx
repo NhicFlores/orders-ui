@@ -16,7 +16,6 @@ import {
 import { Input } from "@/components/ui/input";
 import { ProfileSchema } from "@/schema/form-schema";
 import { redirect } from "next/navigation";
-import { Home } from "@/app/lib/routes";
 
 export default function ProfileForm(){
 

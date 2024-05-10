@@ -1,12 +1,48 @@
-NEXT 
+---------------------------------------- NEXT ---------------------------------------- 
+- check for UNDO's before commit and merge 
+- verify login x
+- add register action x 
+- error messages for login and register forms x 
+- form validation for login form 
+	- refactor signIn callback in auth.config 
+	- to get a different error message from the 
+	callback we need to define our own error type 
+- logout 
+	- button x 
+	- function 
+	- routing 
 
 
-billing form and route 
-	- href of billng and address tab in user dropdown 
-	- billing and address forms 
-	- separate billing and address tables vs nested profile objects 
-	- create sql script for creating and inserting values in table 
-		- use jsonb type for nested objects with nullable values 
+auth 
+	- start with nextauth X
+	-register and login routes X
+		-layout for styling and positioning X
+	-register and login forms X
+		-card component to hold form fields X
+		-styling wrapper to pass styling and props to login and register cards X
+		-forms will be similar - eventually can refactor into single form with conditional rendering 
+			-this would probably require context which adds complexity and may reduce reusability, 
+			so just keeping the two separate components is probably the better option 
+	-data schema X
+	-form validation X
+	-submit handling X
+
+- auth.ts, auth.config.ts, middleware.ts, routes.ts 
+	- protected routes logic 
+		- middleware.ts 
+			- regex for filtering routes to invoke middleware 
+			- regex from clerk for protecting all routes by default 
+	- authorize callback 
+	- auth providers - credentials 
+
+	-pick an auth provider - authjs/nextauth, iron-session,  lucia auth 
+		-session manager 
+		-account creation / registration 
+		-email verification 
+		-forgot password workflow 
+		https://lucia-auth.com/getting-started/nextjs-app 
+		https://github.com/vvo/iron-session 
+
 register 
 	- create new users -> server action 
 	- passwords match check 
@@ -15,39 +51,20 @@ log in
 	- implement authorization  
 	- protected routes 
 profile 
+	- since this will see minimal updates from user, we can render it statically and in the background, on sign in, 
+	check if there are updates in the db in case they use multiple devices 
+	- since it needs minimal editing and vewing, it might also be worth deprioritizing and fetching in the background to minimize 
+	load times and prioritize orders 
 	- large user objest with nested profile vs discrete, minimally nested objects 
 	- fetch profile by user id function 
 	- same for billing and shipping info 
 	- add company field to user profile 
-
-
-dev tab available to admins for adding tasks and questions 
-
-
-X fetch for drafts, quotes 
-X pages, routes for drafts, quotes 
-X configure table for drafts/quote client view
-
-auth 
-	- start with nextauth 
-	-register and login routes 
-		-layout for styling and positioning 
-	-register and login forms 
-		-card component to hold form fields 
-		-styling wrapper to pass styling and props to login and register cards 
-		-forms will be similar - eventually can refactor into single form with conditional rendering 
-			-this would probably require context which adds complexity and may reduce reusability, 
-			so just keeping the two separate components is probably the better option 
-	-data schema 
-	-form validation 
-	-submit handling 
-	-pick an auth provider - authjs/nextauth, iron-session,  lucia auth 
-		-session manager 
-		-account creation / registration 
-		-email verification 
-		-forgot password workflow 
-		https://lucia-auth.com/getting-started/nextjs-app 
-		https://github.com/vvo/iron-session 
+billing form and route 
+	- href of billng and address tab in user dropdown 
+	- billing and address forms 
+	- separate billing and address tables vs nested profile objects 
+	- create sql script for creating and inserting values in table 
+		- use jsonb type for nested objects with nullable values 
 
 create user profile 
 	- page, routes
@@ -73,6 +90,56 @@ create user profile
 	- consider one customer can have many users - keep many user_ide with email and password attached to 'customers' which stores company, shipping, billing, etc 
 		this won't work(smoothly) in the case that different users at different companies handle orders for different work sites
 		maybe we need user, company, and customer to allow for user to choose default order information 
+
+data table 
+expandable row 
+	- on expand 
+		- also show the buttons from the 'more elipse': edit, copy, view customer, etc to make it easier to navigate 
+	- limit to 10 at a time, 
+	- default to order by recent activity, 
+	- add column for load date 
+	- maybe some highlighting based on date calc for admin side 
+		- green when the difference between load date and current date is greater than 5 and the status is processing or fab 
+		- yellow then status is needs ordered 
+		- red when difference is less than five 
+		- we'll work out the business logic when we get there 
+
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx DONE xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+data tables 
+ - order route 
+	- page and layout 
+ - order table 
+	- update db 
+	- fetch function 
+	- column definitions
+	- status filter 
+	- column sort  
+	- new order button 
+	- pagination 
+ - fetch for drafts, quotes 
+ - pages, routes for drafts, quotes 
+ - configure table for drafts/quote client view
+auth 
+ - need to restructure routes under (protected) folder 
+ - move page and layout into protected route 
+ - create landing page with sign in button 
+ - restructure the route groups so you can handle the protected routes 
+ - landing page is just a button with some styling 
+ - create a folder called home for the main page with 3 button stack 
+	- how do we pass the nav bar around if their is a home route 
+	but the subsequent pages are not part of the home routing group 
+	- layout for all routes under (protected)
+ - create routes.ts file in root 
+profile 
+ - profile form and route
+ - update model   
+ - form validation 
+product 
+ - order item definitions 
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
 
 definitions for table entities separate definitions into multiple files  
 	users need updated 
@@ -130,7 +197,10 @@ Loose project structure (will require some refactoring)
 	
 Global utils 
 
-future functionality 
+ooooooooooooooooooooooooooooooooooo future functionality ooooooooooooooooooooooooooooooooooo
+
+-dev tab available to admins for adding tasks and questions  
+
 -updating profile fields 
 for updating single fields, each field needs an edit button.
 once clicked, the edit button makes the readonly field editable and a save button appears

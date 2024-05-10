@@ -1,13 +1,12 @@
 import type { Metadata } from "next";
 import {inter} from '@/app/ui/styles/fonts';
 import "./ui/styles/globals.css";
-import Header from "./ui/header";
 
 //layout for main app: root layout
 
 export const metadata: Metadata = {
-  title: "Profile Landing Page",
-  description: "Glass ordering home page",
+  title: "Landing Page",
+  description: "Glass ordering landing page",
 };
 
 export default function RootLayout({
@@ -20,7 +19,6 @@ export default function RootLayout({
   return (
     <html lang="en">
         <body className={`${inter.className} antialiased`}>
-          <Header />
           {children}
         </body>
     </html>
