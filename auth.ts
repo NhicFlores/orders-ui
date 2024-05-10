@@ -1,18 +1,28 @@
 import NextAuth from 'next-auth'; //there is a User object I can import from next-auth as well 
 import { authConfig } from './auth.config';
 import Credentials from 'next-auth/providers/credentials';
-import { z } from 'zod';
 import bcrypt from 'bcrypt';
 import { getUser } from '@/app/lib/auth-actions/auth-actions'
+import { LoginSchema } from './schema/form-schema';
+
+// NOTE: HOW TO create custom error for callbacks 
+// for more useful error codes for both client and server 
+// class InvalidFieldsError extends CredentialsSignin {
+//     code = "empty fields"
+// }
+
 
 //NOTE TODO: send success message to form 
 export const { auth, signIn, signOut } = NextAuth({
   ...authConfig,
   providers: [Credentials({
     async authorize(credentials) {
-        const parsedCredentials = z
-            .object({ email: z.string().email(), password: z.string().min(6) })
-            .safeParse(credentials);
+        const parsedCredentials = LoginSchema.safeParse(credentials);
+        console.log("------------- PARSED CREDENTIALS ----------------");
+
+        // if(!parsedCredentials.success){
+        //     throw new InvalidFieldsError();
+        // }
 
         if (parsedCredentials.success) {
             const { email, password } = parsedCredentials.data;

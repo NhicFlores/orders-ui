@@ -1,10 +1,10 @@
 'use server'
 import { z } from 'zod';
 import { sql } from '@vercel/postgres';
-import { LoginSchema, RegisterSchema } from '@/schema/form-schema';
+import { RegisterSchema } from '@/schema/form-schema';
 import bcrypt from 'bcrypt';
 import { User } from '../definitions/definitions';
-import { signIn } from '@/auth';
+import { signIn, signOut } from '@/auth';
 import { AuthError } from 'next-auth';
 
 
@@ -16,10 +16,13 @@ export async function authenticate(
 ) {
     console.log("IN SERVER ACTION");
 
-    const validatedFields = LoginSchema.safeParse({
-        email: formData.get('email'),
-        password: formData.get('password'),
-    });
+    // const validatedFields = LoginSchema.safeParse({
+    //     email: formData.get('email'),
+    //     password: formData.get('password'),
+    // });
+    //maybe create a form validation function - instead of a schemas
+    //file or folder, make a schema validation file or folder. Here, we 
+    //define the schema, immediately safe parse it, and return the extracted fields 
     //NOTE TEST: why does adding it here break and cause a type mismatch? 
     //NOTE TODO: form validation 
     // if (!validatedFields.success) {
@@ -34,8 +37,11 @@ export async function authenticate(
             switch (error.type) {
                 case 'CredentialsSignin':
                     return 'Invalid Credentials';//this is linked to what the login form is expecting in useFormStatus 
+                // NOTE TODO: implement custome error for invalid fields defined in auth.ts 
+                // case 'InvalidFieldsError':
+                //     return 'Enter credentials'
                 default: 
-                    return 'Something went wrong.';
+                return 'Something went wrong.';
             }
         }
         throw error;
@@ -109,4 +115,8 @@ export async function getUser(email: string): Promise<User | undefined> {
         console.error('Failed to fetch user: ', error);
         throw new Error('Failed to fetch user.');
     }
+}
+
+export async function logOut(){
+    await signOut();
 }

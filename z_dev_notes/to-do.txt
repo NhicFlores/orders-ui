@@ -1,8 +1,12 @@
 ---------------------------------------- NEXT ---------------------------------------- 
 - check for UNDO's before commit and merge 
 - verify login x
-- add register action 
-- error messages for login and register forms x  
+- add register action x 
+- error messages for login and register forms x 
+- form validation for login form 
+	- refactor signIn callback in auth.config 
+	- to get a different error message from the 
+	callback we need to define our own error type 
 - logout 
 	- button x 
 	- function 

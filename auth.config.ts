@@ -6,7 +6,6 @@ import { authRoutes, DEFAULT_LOGIN_REDIRECT, privateRoutes, publicRoutes } from 
 // but by adding signIn: '/login' into our pages option, the user 
 // will be redirected to our custom login page, rather than the NextAuth.js default page.
 
-// NOTE TODO: protected route logic
 export const authConfig = {
     pages: {
         signIn: '/auth/login',
@@ -16,16 +15,16 @@ export const authConfig = {
             const isLoggedIn = !!auth?.user;
             const isPublicRoute = publicRoutes.includes(nextUrl.pathname)
             const isAuthRoute = authRoutes.includes(nextUrl.pathname)
-            //const isPrivateRoute = privateRoutes.includes(nextUrl.pathname)
+            // NOTE: isPrivate route seems unnecessary 
+            // NOTE: to target a whole route group use pathname.startsWith(''); 
             //const isOnOrder = nextUrl.pathname.startsWith('/');
             if (isAuthRoute) {
                 if(isLoggedIn) {
-                    //if requesting an auth route, but they are logged in, redirect to default login, currently set to dashboard 
+                    // if requesting an auth route, but they are logged in, redirect to default login, 
+                    // currently set to dashboard 
                     return Response.redirect(new URL(DEFAULT_LOGIN_REDIRECT, nextUrl));
                 }
-                return true;//authorized to access page requested 
-                //if (isLoggedIn) return true;
-                //return false; // redirect unauthenticated users to login page 
+                return true;//authorized to access auth routes 
             } 
 
             if(isPublicRoute){
