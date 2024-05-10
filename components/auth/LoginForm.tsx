@@ -85,7 +85,6 @@ const LoginForm = () => {
               )}
             />
           </div>
-          <FormSuccess message={errorMessage}/>
           <FormError message={errorMessage}/>
           <LoginButton/>
         </form>

@@ -22,3 +22,16 @@ The suggestion was to install the latest versions of npm and node
 FIX: 
 tag the file using bcrypt as a server component 'use server 'I was using bcrypt in server actions, but I hadn't tagged the file with the 'use server' tag 
 https://github.com/kelektiv/node.bcrypt.js/issues/979 
+
+
+after adding form validation with safeParse in authentication server action I got this error in the useFormStatus hook 
+
+No overload matches this call.
+  Overload 1 of 2, '(action: (state: "Invalid Credentials" | "Something went wrong." | { error: ZodError<{ email: string; password: string; }>; } | undefined) => "Invalid Credentials" | "Something went wrong." | { ...; } | Promise<...> | undefined, initialState: "Invalid Credentials" | ... 2 more ... | undefined, permalink?: string | undefined): [state: ...]', gave the following error.
+    Argument of type '(prevState: string | undefined, formData: FormData) => Promise<"Invalid Credentials" | "Something went wrong." | { error: ZodError<{ email: string; password: string; }>; } | undefined>' is not assignable to parameter of type '(state: "Invalid Credentials" | "Something went wrong." | { error: ZodError<{ email: string; password: string; }>; } | undefined) => "Invalid Credentials" | "Something went wrong." | { ...; } | Promise<...> | undefined'.
+      Target signature provides too few arguments. Expected 2 or more, but got 1.
+  Overload 2 of 2, '(action: (state: "Invalid Credentials" | "Something went wrong." | { error: ZodError<{ email: string; password: string; }>; } | undefined, payload: FormData) => "Invalid Credentials" | "Something went wrong." | { ...; } | Promise<...> | undefined, initialState: "Invalid Credentials" | ... 2 more ... | undefined, permalink?: string | undefined): [state: ...]', gave the following error.
+    Argument of type '(prevState: string | undefined, formData: FormData) => Promise<"Invalid Credentials" | "Something went wrong." | { error: ZodError<{ email: string; password: string; }>; } | undefined>' is not assignable to parameter of type '(state: "Invalid Credentials" | "Something went wrong." | { error: ZodError<{ email: string; password: string; }>; } | undefined, payload: FormData) => "Invalid Credentials" | "Something went wrong." | { ...; } | Promise<...> | undefined'.
+      Types of parameters 'prevState' and 'state' are incompatible.
+        Type '"Invalid Credentials" | "Something went wrong." | { error: ZodError<{ email: string; password: string; }>; } | undefined' is not assignable to type 'string | undefined'.
+          Type '{ error: z.ZodError<{ email: string; password: string; }>; }' is not assignable to type 'string'.ts(2769)

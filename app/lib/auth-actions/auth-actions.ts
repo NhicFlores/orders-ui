@@ -1,7 +1,7 @@
 'use server'
 import { z } from 'zod';
 import { sql } from '@vercel/postgres';
-import { RegisterSchema } from '@/schema/form-schema';
+import { LoginSchema, RegisterSchema } from '@/schema/form-schema';
 import bcrypt from 'bcrypt';
 import { User } from '../definitions/definitions';
 import { signIn } from '@/auth';
@@ -15,6 +15,18 @@ export async function authenticate(
     formData: FormData,
 ) {
     console.log("IN SERVER ACTION");
+
+    const validatedFields = LoginSchema.safeParse({
+        email: formData.get('email'),
+        password: formData.get('password'),
+    });
+    //NOTE TEST: why does adding it here break and cause a type mismatch? 
+    //NOTE TODO: form validation 
+    // if (!validatedFields.success) {
+
+    // }
+
+
     try {
         await signIn('credentials', formData);
     } catch (error) {
