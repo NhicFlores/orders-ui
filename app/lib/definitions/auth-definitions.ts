@@ -4,9 +4,18 @@ export type User = {
     email: string;
     //emailVerified: string;
     password: string;
+    role: Role;
     Accounts: Account[];
-    Sessions: Session[];
+    //Sessions: Session[];
   };
+
+//role definiton 
+export enum Role {
+    USER,
+    ADMIN,
+}
+
+//CREATE TYPE role AS ENUM ('USER', 'ADMIN');
 
 export type Account = {
     id: string;

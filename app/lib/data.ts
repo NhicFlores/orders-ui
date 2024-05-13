@@ -6,7 +6,6 @@ import {
   InvoiceForm,
   InvoicesTable,
   LatestInvoiceRaw,
-  User,
   Revenue,
   Order,
   OrderForm,

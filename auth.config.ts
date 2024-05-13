@@ -1,5 +1,6 @@
 import type { NextAuthConfig } from 'next-auth';
 import { authRoutes, DEFAULT_LOGIN_REDIRECT, privateRoutes, publicRoutes } from './routes';
+import { getUserByID } from './app/lib/data/user-data';
 
 // You can use the pages option to specify the route for 
 // custom sign-in, sign-out, and error pages. This is not required, 
@@ -35,6 +36,47 @@ export const authConfig = {
                 return true;  //authorized to access private page requested 
             }
             return false;//redirect to log in page  
+        },
+
+        async session({ session, token }){
+            console.log("----------------------------------\n---------- SESSION LOGS ----------\n----------------------------------");
+            console.log({
+                sessionToken: token,
+                session,
+            })
+
+            if (token.sub && session.user) {
+                session.user.id = token.sub;
+            }
+            //NOTE TODO: add property role to session 
+            if (token.role && session.user) {
+                session.user.role = token.role;
+            }
+
+            console.log("----------------------------------\n---------- MODIFIED SESSION LOGS ----------\n----------------------------------");
+            console.log({
+                sessionToken: token,
+                session,
+            })
+
+            return session
+        },
+
+        async jwt({ token }) {
+            console.log("----------------------------------\n---------- TOKEN LOGS ----------\n----------------------------------");
+            console.log({ token });
+
+            if(!token.sub) return token;
+
+            const currentUser = await getUserByID(token.sub)
+
+            if (!currentUser) return token; 
+
+            token.role = currentUser.role;
+
+            //token.customField = 'test';//jwt callback allows read and write of session toke property
+            //any modeifications made here are seen in the session callback 
+            return token;            
         },
     }, providers: [],
 } satisfies NextAuthConfig;

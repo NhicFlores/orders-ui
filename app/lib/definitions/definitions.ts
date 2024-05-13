@@ -33,12 +33,13 @@ export type OrderForm = {
   status: OrderStatus;
 };
 
-export type User = {
-  id: string;
-  name: string;
-  email: string;
-  password: string;
-};
+//depracated 
+// export type User = {
+//   id: string;
+//   name: string;
+//   email: string;
+//   password: string;
+// };
 
 export type Customer = {
   id: string;

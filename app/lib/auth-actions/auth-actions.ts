@@ -3,7 +3,7 @@ import { z } from 'zod';
 import { sql } from '@vercel/postgres';
 import { LoginSchema, RegisterSchema } from '@/schema/form-schema';
 import bcrypt from 'bcrypt';
-import { User } from '../definitions/definitions';
+import { User } from '../definitions/auth-definitions';
 import { signIn, signOut } from '@/auth';
 import { AuthError } from 'next-auth';
 
