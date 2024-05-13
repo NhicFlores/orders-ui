@@ -1,7 +1,7 @@
 'use server'
 import { z } from 'zod';
 import { sql } from '@vercel/postgres';
-import { RegisterSchema } from '@/schema/form-schema';
+import { LoginSchema, RegisterSchema } from '@/schema/form-schema';
 import bcrypt from 'bcrypt';
 import { User } from '../definitions/definitions';
 import { signIn, signOut } from '@/auth';
@@ -48,6 +48,33 @@ export async function authenticate(
     }
 
     //return { success: "user found"}; //NOTE TODO this doesn't work, it throws off the type for useFormStatus; how to change/define types expected by hooks  
+}
+//NOTE TODO: unused funtion, remove after testing 
+export async function userLogin(formFields: z.infer<typeof LoginSchema>){
+    console.log("------------- IN USER LOGIN ACTION ---------------");
+
+    const validatedFields = LoginSchema.safeParse(formFields);
+
+    if(!validatedFields.success) {
+        return {
+            errors: validatedFields.error?.flatten().fieldErrors,
+            message: "Invalid Credentials"
+        }
+    }
+
+    try {
+        await signIn('credentials', validatedFields.data)
+    } catch (error) {
+        if (error instanceof AuthError) {
+            switch(error.type) {
+                case 'CredentialsSignin':
+                    return 'Invalid Credentials';
+                default: 
+                    return 'Somethine went wrong';
+            }
+        }
+        throw error;
+    }
 }
 
 
