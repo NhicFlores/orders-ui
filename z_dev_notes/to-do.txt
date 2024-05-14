@@ -1,11 +1,26 @@
 ---------------------------------------- NEXT ---------------------------------------- 
 - check for UNDO's before commit and merge 
-- create user roles x
-- modify session and tokens to have id and role accessible 
-- getUserById function x
+
+
+products 
+- selectable cards 
+- descriptions 
+- conditional availability based on previous selections 
+	- state management for conditional rendering 
+	- or check specification string build 
+		- if specs.contains('') render from this product array 
+- selectable edges 
+
+db 
+- update product models 
+- update tables 
+- create queries and server actions 
+https://docs.oracle.com/en/database/oracle/oracle-database/18/sqlrf/SQL-JSON-Conditions.html#GUID-35C7012D-FCDB-4106-88C1-CABA78326896 
+https://stackoverflow.com/questions/56335674/sql-query-with-join-to-get-nested-array-of-objects 
 
 
 auth 
+
 	- start with nextauth X
 	-register and login routes X
 		-layout for styling and positioning X
@@ -42,6 +57,12 @@ log in
 	- need user look up function async and redirect to homepage x
 	- implement authorization  
 	- protected routes x
+
+Sign in ROLES 
+- create user roles x
+- modify session and tokens to have id and role accessible x 
+- getUserById function x
+
 profile 
 	- since this will see minimal updates from user, we can render it statically and in the background, on sign in, 
 	check if there are updates in the db in case they use multiple devices 

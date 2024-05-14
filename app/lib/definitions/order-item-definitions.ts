@@ -11,7 +11,7 @@ export type OrderItem = {
   //what information would admin enter when adding a new product to inventory 
   export type GlassInventoryProduct = {
     id: string; //UUID generated on backend
-    supplier?: string;//or vendor? 
+    vendor?: string;//or vendor? 
     brand?: string;
     part_number: string;
     type: string;
@@ -45,6 +45,11 @@ export type OrderItem = {
     strength: string;
   }
 
+  //annealed, tempered, heat strengthened, laminated 
+  interface Process_Type {
+
+  }
+
   //front end values
   //customer chooses Shower Door and the next pages are populated with 
   //shower door dimensions, glass types, treatment types 
@@ -59,3 +64,34 @@ export type OrderItem = {
   }
   //is category necessary on a product? maybe so it'll show up on the right pages 
   //category: "standard glass | store front price book | store front estimating";
+
+
+interface order_item {
+  type: string[];
+  shape: string[];
+  dimensions: number[];
+  thickness: number[];
+  tiner: string[];
+  edgework: string[];
+  note: string;
+}
+
+//glass type determines treament and price 
+//shape has a pricing factor 
+//
+
+export type retail_product = {
+  
+}
+
+export const process = ['annealed', 'temepere', 'heat-strengthened'];
+
+export const laminated = ['0.030', '0.060', '0.090'];
+
+export const sizes = ['1/8', '5/32', '3/16', '1/4', '5/16', '3/8', '1/2', '5/8'];
+
+export const colors = ['clear', 'bronze', 'green', 'grey', 'satin'];
+
+
+// product page 
+// slectable cards - name - description 
