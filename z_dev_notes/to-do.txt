@@ -1,16 +1,8 @@
 ---------------------------------------- NEXT ---------------------------------------- 
 - check for UNDO's before commit and merge 
-- verify login x
-- add register action x 
-- error messages for login and register forms x 
-- form validation for login form 
-	- refactor signIn callback in auth.config 
-	- to get a different error message from the 
-	callback we need to define our own error type 
-- logout 
-	- button x 
-	- function 
-	- routing 
+- create user roles x
+- modify session and tokens to have id and role accessible 
+- getUserById function x
 
 
 auth 
@@ -27,13 +19,13 @@ auth
 	-form validation X
 	-submit handling X
 
-- auth.ts, auth.config.ts, middleware.ts, routes.ts 
-	- protected routes logic 
-		- middleware.ts 
-			- regex for filtering routes to invoke middleware 
-			- regex from clerk for protecting all routes by default 
-	- authorize callback 
-	- auth providers - credentials 
+- auth.ts, auth.config.ts, middleware.ts, routes.ts x
+	- protected routes logic x
+		- middleware.ts x
+			- regex for filtering routes to invoke middleware x
+			- regex from clerk for protecting all routes by default x
+	- authorize callback x 
+	- auth providers - credentials x
 
 	-pick an auth provider - authjs/nextauth, iron-session,  lucia auth 
 		-session manager 
@@ -44,12 +36,12 @@ auth
 		https://github.com/vvo/iron-session 
 
 register 
-	- create new users -> server action 
-	- passwords match check 
+	- create new users -> server action x
+	- passwords match check x
 log in 
-	- need user look up function async and redirect to homepage
+	- need user look up function async and redirect to homepage x
 	- implement authorization  
-	- protected routes 
+	- protected routes x
 profile 
 	- since this will see minimal updates from user, we can render it statically and in the background, on sign in, 
 	check if there are updates in the db in case they use multiple devices 
@@ -131,7 +123,18 @@ auth
 	- how do we pass the nav bar around if their is a home route 
 	but the subsequent pages are not part of the home routing group 
 	- layout for all routes under (protected)
- - create routes.ts file in root 
+ - create routes.ts file in root
+ - verify login x
+	- add register action x 
+	- error messages for login and register forms x 
+	- form validation for login form 
+		- refactor signIn callback in auth.config 
+		- to get a different error message from the 
+		callback we need to define our own error type 
+	- logout 
+		- button x 
+		- function 
+		- routing  
 profile 
  - profile form and route
  - update model   

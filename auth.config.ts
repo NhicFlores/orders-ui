@@ -1,5 +1,5 @@
 import type { NextAuthConfig } from 'next-auth';
-import { authRoutes, DEFAULT_LOGIN_REDIRECT, privateRoutes, publicRoutes } from './routes';
+import { authRoutes, DEFAULT_LOGIN_REDIRECT, publicRoutes } from './routes';
 import { getUserByID } from './app/lib/data/user-data';
 
 // You can use the pages option to specify the route for 
@@ -48,12 +48,14 @@ export const authConfig = {
             if (token.sub && session.user) {
                 session.user.id = token.sub;
             }
-            //NOTE TODO: add property role to session 
+            
             if (token.role && session.user) {
+                // console.log("TOKEN.ROLE TYPE: ------------------")
+                // console.log(typeof token.role);
                 session.user.role = token.role;
             }
 
-            console.log("----------------------------------\n---------- MODIFIED SESSION LOGS ----------\n----------------------------------");
+            console.log("-------------------------------------------\n---------- MODIFIED SESSION LOGS ----------\n-------------------------------------------");
             console.log({
                 sessionToken: token,
                 session,
@@ -65,6 +67,7 @@ export const authConfig = {
         async jwt({ token }) {
             console.log("----------------------------------\n---------- TOKEN LOGS ----------\n----------------------------------");
             console.log({ token });
+            //console.log(token.role)
 
             if(!token.sub) return token;
 
