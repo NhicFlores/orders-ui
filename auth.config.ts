@@ -37,7 +37,16 @@ export const authConfig = {
             }
             return false;//redirect to log in page  
         },
+        // NOTE TODO: signIn callback to add further conditionals on sign in 
+        // async signIn({ user }) {
+        //     const currentUser = await getUserByID(user.id as string);
 
+        //     if(!currentUser || !currentUser.emailVerified) {
+        //         return false;
+        //     }
+
+        //     return true;
+        // },
         async session({ session, token }){
             console.log("----------------------------------\n---------- SESSION LOGS ----------\n----------------------------------");
             console.log({
