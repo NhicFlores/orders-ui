@@ -11,7 +11,7 @@ interface SummaryMenuProps {
 
 async function SummaryMenu(){
     const customers = await fetchCustomers();
-
+    console.log(customers);
   return (
     <Card className="w-full text-center shadow-md">
         <CardHeader className="bg-gray-200">
