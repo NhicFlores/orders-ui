@@ -46,6 +46,8 @@ If no key is specified, React will report an error and use the array index as a 
 
 Keys do not need to be globally unique; they only need to be unique between components and their siblings.
 
+Functional Components 
+Remember to use Functional components only when there are no dependencies between components or there aren't many! 
 
 
 ------------------------------------ NextJS ------------------------------------
@@ -247,6 +249,63 @@ URL constructor
 ------------------------------------ styling ------------------------------------ 
 
 use h-screen instead of h-full
+
+background image - can set to scroll or be fixed 
+
+- CSS 
+absolute units like cm, mm, in, pt, and pc should not be used: they are only effective for very high definition devices 
+
+stick to rem, em, px, and % 
+vw - 1/100 of window's width 
+vh - 1/100 of window's height 
+
+padding, the space around the content. In the example below, it is the space around the paragraph text.
+border, the solid line that is just outside the padding.
+margin, the space around the outside of the border.
+
+Something else you might like to try is styling a paragraph when it comes directly after a heading at the 
+same hierarchy level in the HTML. To do so, place a + (an next-sibling combinator) between the selectors. 
+
+/* selects any <span> that is inside a <p>, which is inside an <article>  */
+article p span {
+}
+
+/* selects any <p> that comes directly after a <ul>, which comes directly after an <h1>  */
+h1 + ul + p {
+}
+
+- css functions 
+some properties have functions you can use for values such as: 
+width: calc() 
+transform: rotate(), 
+color: rgb()
+background-image: gradient()
+
+@rules (at-rules)
+provide instruction for behavior such as conditional styling 
+@import can import a stylesheet into another stylesheet 
+@media is used to create media queries for conditional styling 
+for browser viewports wider than 30 em, apply a blue background: 
+@media (min-width: 30em) {
+  body {
+    background-color: blue;
+  }
+}
+
+can set fallback styles by defining them earlier in ruleset 
+.box {
+  width: 500px; //if a browser doesn't support calc, then it'll fall back to 500px 
+  width: calc(100% - 50px);
+}
+
+not sure if this applies to css in react or through tailwind 
+Warning: One less obvious aspect of using CSS shorthand is how omitted values reset. A value not specified in CSS shorthand 
+reverts to its initial value. This means an omission in CSS shorthand can override previously set values.
+
+- DOM is where your CSS and the document's content meet up 
+
+
+------------------------------------ Debugging -----------------------------------
 
 ------------------------------------ CLI ------------------------------------ 
 specify port 

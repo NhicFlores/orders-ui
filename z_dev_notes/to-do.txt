@@ -1,6 +1,8 @@
 ---------------------------------------- NEXT ---------------------------------------- 
 - check for UNDO's before commit and merge 
 
+styling 
+- create reusable containers for components and pages 
 
 products 
 - selectable cards 
@@ -20,48 +22,17 @@ https://stackoverflow.com/questions/56335674/sql-query-with-join-to-get-nested-a
 
 
 auth 
+- designate roles 
+- lock routes by role 
 
-	- start with nextauth X
-	-register and login routes X
-		-layout for styling and positioning X
-	-register and login forms X
-		-card component to hold form fields X
-		-styling wrapper to pass styling and props to login and register cards X
-		-forms will be similar - eventually can refactor into single form with conditional rendering 
-			-this would probably require context which adds complexity and may reduce reusability, 
-			so just keeping the two separate components is probably the better option 
-	-data schema X
-	-form validation X
-	-submit handling X
+-pick an auth provider for production - authjs/nextauth, iron-session,  lucia auth 
+	-session manager 
+	-account creation / registration 
+	-email verification 
+	-forgot password workflow 
+	https://lucia-auth.com/getting-started/nextjs-app 
+	https://github.com/vvo/iron-session 
 
-- auth.ts, auth.config.ts, middleware.ts, routes.ts x
-	- protected routes logic x
-		- middleware.ts x
-			- regex for filtering routes to invoke middleware x
-			- regex from clerk for protecting all routes by default x
-	- authorize callback x 
-	- auth providers - credentials x
-
-	-pick an auth provider - authjs/nextauth, iron-session,  lucia auth 
-		-session manager 
-		-account creation / registration 
-		-email verification 
-		-forgot password workflow 
-		https://lucia-auth.com/getting-started/nextjs-app 
-		https://github.com/vvo/iron-session 
-
-register 
-	- create new users -> server action x
-	- passwords match check x
-log in 
-	- need user look up function async and redirect to homepage x
-	- implement authorization  
-	- protected routes x
-
-Sign in ROLES 
-- create user roles x
-- modify session and tokens to have id and role accessible x 
-- getUserById function x
 
 profile 
 	- since this will see minimal updates from user, we can render it statically and in the background, on sign in, 
@@ -156,12 +127,44 @@ auth
 		- button x 
 		- function 
 		- routing  
+- start with nextauth X
+-register and login routes X
+	-layout for styling and positioning X
+-register and login forms X
+	-card component to hold form fields X
+	-styling wrapper to pass styling and props to login and register cards X
+-forms will be similar - eventually can refactor into single form with conditional rendering 
+	-this would probably require context which adds complexity and may reduce reusability, 
+		so just keeping the two separate components is probably the better option 
+-data schema X
+-form validation X
+-submit handling X
+
+- auth.ts, auth.config.ts, middleware.ts, routes.ts x
+- protected routes logic x
+	- middleware.ts x
+		- regex for filtering routes to invoke middleware x
+		- regex from clerk for protecting all routes by default x
+- authorize callback x 
+- auth providers - credentials x
+
 profile 
  - profile form and route
  - update model   
  - form validation 
 product 
  - order item definitions 
+register 
+	- create new users -> server action x
+	- passwords match check x
+log in 
+	- need user look up function async and redirect to homepage x
+	- implement authorization  
+	- protected routes x
+Sign in ROLES 
+- create user roles x
+- modify session and tokens to have id and role accessible x 
+- getUserById function x
 
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
 

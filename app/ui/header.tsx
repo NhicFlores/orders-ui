@@ -2,13 +2,12 @@ import Container from "./components/page-container";
 import Link from "next/link";
 import { Dashboard, HeaderRoutes, Profile } from "../lib/routes";
 import { Button } from "@/components/ui/button";
-import { UserRound } from "lucide-react";
 import ProfileButton from "./components/profile-button";
 
 //might need to install previous version of lucide npm i lucide-react@0.263.1 if this version is still having issues
 export default function Header() {
   return (
-    <header className="sm:flex sm:justify-between py-3 px-4 border-b">
+    <header className="sm:flex sm:justify-between py-3 border-b">
       <Container>
         <div className="relative px-4 sm:px-6 lg:px-8 flex h-16 items-center justify-between w-full">
           <div className="flex items-center">
@@ -22,9 +21,10 @@ export default function Header() {
                 <Link
                   key={i}
                   href={route.href}
-                  className="text-sm font-medium transition-colors"
                 >
-                  {route.label}
+                  <h2 className="text-lg font-medium transition-colors">
+                    {route.label}
+                  </h2>
                 </Link>
               </Button>
             ))}

@@ -3,9 +3,7 @@ import Header from "../ui/header"
 const MainLayout = ({children}: {children: React.ReactNode}) => {
   return (
     <main >
-        <>
-          <Header />
-        </>
+      <Header/>
       {children}
     </main>
   )
