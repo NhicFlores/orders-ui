@@ -3,17 +3,17 @@ import { ScrollArea } from "../ui/scroll-area"
 import { Card, CardContent, CardFooter, CardHeader } from "../ui/card";
 
 
-interface SummaryMenuProps {
+interface SummaryCardProps {
     order_name: string;
     scrollable_list: string[];
     total: number;
 }
-
-async function SummaryMenu(){
+//NOTE TODO: implement props 
+async function SummaryCard(){
     const customers = await fetchCustomers();
     console.log(customers);
   return (
-    <Card className="w-full text-center shadow-md">
+    <Card className="w-full text-center shadow-md ">
         <CardHeader className="bg-gray-200">
             <h1>
                 Order name
@@ -30,7 +30,7 @@ async function SummaryMenu(){
                 </div>
             </ScrollArea>
         </CardContent>
-        <CardFooter className="bg-gray-200 justify-left items-center"> 
+        <CardFooter className="bg-gray-200 justify-left items-center pt-4"> 
             <p>
                 order total
             </p>
@@ -39,4 +39,4 @@ async function SummaryMenu(){
   )
 }
 
-export default SummaryMenu
+export default SummaryCard

@@ -1,3 +1,5 @@
+import CardWithButton from '@/components/product-components/card-with-button'
+import ProductCard from '@/components/product-components/product-card'
 import React from 'react'
 
 const ProductPage = () => {
@@ -12,7 +14,7 @@ const ProductPage = () => {
   // if the render array is being monitored by state 
   return (
     <div>
-      This is the product page 
+      <CardWithButton/> 
     </div>
   )
 }

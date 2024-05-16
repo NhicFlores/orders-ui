@@ -11,7 +11,63 @@ products
 	- state management for conditional rendering 
 	- or check specification string build 
 		- if specs.contains('') render from this product array 
-- selectable edges 
+- selectable edges - low priority 
+- continue and back buttons 
+- forms and submit button 
+- the save button which submits is tagged as a draft 
+- when an order is initiated, it has a default status of DRAFT 
+- product form and submit button 
+	- submit button is the add to order button 
+	- onclick it updates the current draft 
+then we need the orer button on the summary card 
+	- on submit this button changes the status and updates the created at date 
+	- drafts have a created at date useful for sorting, but once submitted, that date 
+	is changed to the date ordered  because that is what's needed on an order 
+- we need a product container 
+	- this container renders the product cards dependent on the product arrays 
+	each card has a title, image, description, and add to order button 
+	- might be better to just make the cards selecteable with radio buttons or something and have 
+	a continue button 
+	- the continue button, or the add to order button, whichever i decide to implement, 
+	will update the draft, the specification string, and change the products listed 
+	- instead of changing the products it coute route to the next page but that complicates 
+	state management 
+	- call three parallel functions that all take the same parameter: 
+		- server action to edit draft 
+		- edit specification string 
+		- render next products
+			- if current selection == some type then product array = next products 
+			- use state: setProductArray(nextProducts) 
+
+comoponent tree 
+
+product route - start with conditional rendering then extract to pages 
+layout 
+	- product navigation on left 
+		- stack of buttons with corresponding titles 
+		- maybe dropdowns with the options so people can go back and see 
+		- low priority 
+			- it will probably just have to erase any subsequent selections 
+			so we don't have issues with incompatible products and options 
+	- product grid center 
+		- product form 
+			- product card 
+				- name 
+				- image 
+				- description 
+			- specification card - dimensions and edgework can use this 
+				- instructions 
+				- diagram and labels 
+				- user input 
+					- label corresponding to dimension 
+					- dropdowns populated with arrays of possible values for length and fractions of inches 
+			- continue button 
+			- finish later button 
+			- back button 
+	- summary on right 
+		- based on certain selections 
+			- adding this selection will require a quote for accurate pricing 
+		- summary order form 
 
 db 
 - update product models 
@@ -87,6 +143,15 @@ expandable row
 		- yellow then status is needs ordered 
 		- red when difference is less than five 
 		- we'll work out the business logic when we get there 
+
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx LOW PRIORITY xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+- how do conflicting layouts resolve 
+- nav bar should be part of the full screen height to avoid the scroll bar 
+
+default values 
+order name should default to UNAMED DRAFT 
+form at the end for naming it
 
 
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx DONE xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx

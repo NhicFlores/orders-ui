@@ -71,6 +71,22 @@ How are actions handled differently than an async fetch function? look at data a
 
 how is FormData something we have access to but don't explicitly pass in an action  
 
+
+Image 
+statically import the image: import Logo from 'logo path';
+  - here the image file is stored next ot the component from where it is imported.
+  during build, nextjs will move it to dist folder, detemine width and height, 
+  and set it to the component. this helps avoid layout shift during image loading 
+  - Warning: Dynamic await import() or require() are not supported. 
+  The import must be static so it can be analyzed at build time.
+a path string: 
+  - here nextjs thinks this is a remote image and it should be loaded from either next public 
+  folder or some remote location. in this case height and width must be set manually or 
+  configure remote patterns if you want to enable image next optimization 
+https://stackoverflow.com/questions/78439844/import-images-vs-include-them-inline-nextjs 
+
+
+
 auth 
 middleware 
 middleware is not nextauth specific, it is nextjs specific 
