@@ -1,11 +1,19 @@
+import { SessionProvider } from "next-auth/react"
 import Header from "../ui/header"
+import { auth } from "@/auth"
 
-const MainLayout = ({children}: {children: React.ReactNode}) => {
+
+const MainLayout = async ({children}: {children: React.ReactNode}) => {
+  
+  const session = await auth();
+
   return (
-    <main >
-      <Header/>
-      {children}
-    </main>
+    <SessionProvider session={session}>
+      <main>
+        <Header/>
+        {children}
+      </main>
+    </SessionProvider>
   )
 }
 
