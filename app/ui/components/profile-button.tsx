@@ -44,9 +44,7 @@ const ProfileButton = () => {
           Settings
         </DropdownMenuItem>
         <DropdownMenuSeparator />
-        <form action={logOut}>
-          <DropdownMenuItem onClick={onLogoutClick} className="cursor-pointer">Log Out</DropdownMenuItem>
-        </form>
+        <DropdownMenuItem onClick={onLogoutClick} className="cursor-pointer">Log Out</DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
   );
