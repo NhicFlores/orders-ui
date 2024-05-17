@@ -5,7 +5,7 @@ styling
 - create reusable containers for components and pages 
 
 products 
-- selectable cards 
+- selectable cards x
 - descriptions 
 - conditional availability based on previous selections 
 	- state management for conditional rendering 

@@ -1,6 +1,7 @@
 import { fetchCustomers } from "@/app/lib/data"
 import { ScrollArea } from "../ui/scroll-area"
 import { Card, CardContent, CardFooter, CardHeader } from "../ui/card";
+import { Button } from "../ui/button";
 
 
 interface SummaryCardProps {
@@ -14,7 +15,7 @@ async function SummaryCard(){
     console.log(customers);
   return (
     <Card className="w-full text-center shadow-md ">
-        <CardHeader className="bg-gray-200">
+        <CardHeader className="bg-slate-200">
             <h1>
                 Order name
             </h1>
@@ -30,10 +31,15 @@ async function SummaryCard(){
                 </div>
             </ScrollArea>
         </CardContent>
-        <CardFooter className="bg-gray-200 justify-left items-center pt-4"> 
-            <p>
-                order total
-            </p>
+        <CardFooter className="bg-gray-200 pt-4"> 
+            <div className="space-y-4">
+                <p>
+                    order total
+                </p>
+                <Button className="">
+                    Submit Order
+                </Button>
+            </div>
         </CardFooter>
     </Card>
   )

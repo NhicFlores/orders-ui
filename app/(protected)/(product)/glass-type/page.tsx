@@ -4,7 +4,7 @@ import React from 'react'
 import glassImage from '@/public/images/glass-verre.jpg';
 import ProductGrid from '@/components/product-components/ProductGrid';
 
-const ProductPage = () => {
+const GlassTypePage = () => {
 
   //pass specification string as a prop 
   // if specification string has certain values 
@@ -15,11 +15,6 @@ const ProductPage = () => {
   // this could all be done on a single page with one component 
   // if the render array is being monitored by state 
 
-  const title = "product name";
-  const description = "Product Description really really long product description really really long product description really really long product description ";
-  const alt = 'glass products';
-  const isSelected = false;
-
   return (
     <div>
       <ProductGrid/>
@@ -27,4 +22,4 @@ const ProductPage = () => {
   )
 }
 
-export default ProductPage
+export default GlassTypePage
