@@ -3,6 +3,8 @@ import glassImage from '@/public/images/glass-verre.jpg';
 import ProductCard from './product-card';
 import { useState } from 'react';
 import { Button } from '../ui/button';
+import Link from 'next/link';
+import { DimensionRoute } from '@/app/lib/routes';
 
 const productList = [
     {
@@ -60,8 +62,10 @@ export default function ProductGrid(){
         <h1 className='text-2xl font-bold mb-4'>
           Select Glass Type
         </h1>
-        <Button>
-          Continue
+        <Button asChild>
+          <Link href={DimensionRoute.href}>
+            Continue
+          </Link>
         </Button>
       </div>
       <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>

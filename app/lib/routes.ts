@@ -34,6 +34,14 @@ export const OrderRoute = {
   href: "/order",
 };
 
+export const GlasTypeRoute = {
+  href: "/glass-type",
+}
+
+export const DimensionRoute = {
+  href: "/dimensions",
+}
+
 export const Login = {
   label: "Login",
   href: "/auth/login",
@@ -79,7 +87,7 @@ export const HeaderRoutes = [
 export const DashboardNavLinks = [
   {
     label: "New Order",
-    href: "/order/new_order",
+    href: GlasTypeRoute.href,
   },
   {
     label: "Check Order Status",
