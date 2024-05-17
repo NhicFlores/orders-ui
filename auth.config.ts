@@ -7,6 +7,8 @@ import { getUserByID } from './app/lib/data/user-data';
 // but by adding signIn: '/login' into our pages option, the user 
 // will be redirected to our custom login page, rather than the NextAuth.js default page.
 
+//should add a custom error page to route to below signIn: '';
+//include it in auth routes in routes.ts in root 
 export const authConfig = {
     pages: {
         signIn: '/auth/login',

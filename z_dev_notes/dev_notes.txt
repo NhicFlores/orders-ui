@@ -236,6 +236,8 @@ import GitHub from "next-auth/providers/github"
 import type { NextAuthConfig } from "next-auth"
  
 export default { providers: [GitHub] } satisfies NextAuthConfig
+
+server side login uses redirect() client side login uses callbackURL()
 --------------------------
 EX: 
 Next, create an auth.ts file and add your adapter and the jwt session strategy there. 
@@ -330,3 +332,12 @@ PORT 4000 npm run dev
 ------------------------------------ Security ------------------------------------
 bcrypt 
 incorporating a salt to protect against rainbow table attacks 
+
+--------------------------------------- Git ---------------------------------------
+
+git error: cannot lock ref ''
+i created a new branch auth/auth-proviers and when i tried to push or publish the branch 
+i got the cannot lock ref error. it didn't like my auth/ ref because on remote the auth/
+folder didn't exist but there was a branch named auth and the refs were getting mixed up 
+I deleted the auth branch from remote, ran git remote prune origin, then tried to push 
+and set upstream for auth/auth-providers and it worked 

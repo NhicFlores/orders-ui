@@ -37,3 +37,12 @@ export type Session = {
     userId: string;
     expiresAt: string;
 }
+// used for email verification and password reset 
+// instad of generating a UUID, hash the users email 
+// to generate a unique token 
+export type VerificationToken = {
+    id: string;
+    email: string;
+    token: string;
+    expireAt: string;
+}

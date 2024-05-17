@@ -48,6 +48,46 @@ async function seedUsers(client) {
   }
 }
 
+//NOTE TODO: finish token script 
+async function seedToken(client) {
+  try {
+    await client.sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
+
+    // Create the "verificationTokens" table if it doesn't exist
+    const createTable = await client.sql`
+    CREATE TABLE IF NOT EXISTS verificationTokens (
+    id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
+    email TEXT NOT NULL UNIQUE
+    token: 
+    expiresAt DATE NOT NULL
+    );
+    `;
+
+    console.log(`Created "verificationTokens" table`);
+    // NOTE TODO: seed tokens function 
+    // Insert data into the "verificationTokens" table
+    // const insertedTokens = await Promise.all(
+    //   invoices.map(
+    //     (token) => client.sql`
+    //     INSERT INTO verificationTokens (customer_id, amount, status, date)
+    //     VALUES (${invoice.customer_id}, ${invoice.amount}, ${invoice.status}, ${invoice.date})
+    //     ON CONFLICT (id) DO NOTHING;
+    //   `,
+    //   ),
+    // );
+
+    console.log(`Seeded ${insertedTokens.length} tokens`);
+
+    return {
+      createTable,
+      tokens: insertedTokens,
+    };
+  } catch (error) {
+    console.error('Error seeding tokens:', error);
+    throw error;
+  }
+}
+
 // DEPRACATED 
 // async function seedUsers(client) {
 //   try {
@@ -143,8 +183,8 @@ async function seedInvoices(client) {
     amount INT NOT NULL,
     status VARCHAR(255) NOT NULL,
     date DATE NOT NULL
-  );
-`;
+    );
+    `;
 
     console.log(`Created "invoices" table`);
 

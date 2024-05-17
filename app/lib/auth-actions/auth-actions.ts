@@ -143,7 +143,8 @@ export async function getUser(email: string): Promise<User | undefined> {
         throw new Error('Failed to fetch user.');
     }
 }
-
+// this method allows us to do some more server operations 
+// before the user is logged out and the session is lost 
 export async function logOut(){
     console.log("------------\n------------ IN LOGOUT ACTION ------------\n------------")
     await signOut();
