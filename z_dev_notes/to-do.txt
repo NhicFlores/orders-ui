@@ -72,6 +72,9 @@ layout
 db 
 - update product models 
 - update tables 
+	- shapes 
+		- each shape needs to have required dimensions associated with it 
+    	- each dimension needs label and options array 
 - create queries and server actions 
 https://docs.oracle.com/en/database/oracle/oracle-database/18/sqlrf/SQL-JSON-Conditions.html#GUID-35C7012D-FCDB-4106-88C1-CABA78326896 
 https://stackoverflow.com/questions/56335674/sql-query-with-join-to-get-nested-array-of-objects 
@@ -148,6 +151,9 @@ expandable row
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx LOW PRIORITY xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 - how do conflicting layouts resolve 
 - nav bar should be part of the full screen height to avoid the scroll bar 
+
+- on admin side - tooltip to show product code so they see exactly what was sent to the 
+back end - this will help determine errors in orders and inventory 
 
 default values 
 order name should default to UNAMED DRAFT 
