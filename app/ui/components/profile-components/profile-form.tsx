@@ -15,7 +15,11 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { ProfileSchema } from "@/schema/form-schema";
-import { redirect } from "next/navigation";
+import { User } from "@/app/lib/definitions/auth-definitions";
+
+interface ProfileFormProps {
+    user: User;
+}
 
 export default function ProfileForm(){
 
@@ -39,14 +43,13 @@ export default function ProfileForm(){
         console.log("submit handler");
         console.log(data);
         await new Promise((resolve) => setTimeout(resolve, 3000));
-        //redirect(Home.href);
     }
     //create multiple forms - one for customer info, billing info, delivery info
     //pass that form data from each back to the action 
     //in action, build the object you're going to send back to the db 
     return (
         <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="w-[450px] space-y-6">
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
                 <div className="space-y-4">
                 <FormField 
                     control={form.control}

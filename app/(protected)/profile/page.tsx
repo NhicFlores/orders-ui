@@ -6,16 +6,11 @@ import { auth } from "@/auth";
 export default async function ProfilePage() {
     const session = await auth();
   return (
-        <main>
-        <div className="w-[650px] border rounded-md p-4 text-center">
-            <div>current user:</div>
-            <div>{JSON.stringify(session?.user) || 'null'}</div>
-          </div>
-        <Container>
-            <ProfileForm />
-        </Container>
+        <main className="lg:w-1/2 sm:w-full bg-white border rounded-md p-6">
+            <Container>
+                <ProfileForm />
+            </Container>
         </main>
-    
   );
 };
 

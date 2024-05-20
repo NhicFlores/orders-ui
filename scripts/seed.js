@@ -54,6 +54,7 @@ async function seedToken(client) {
     await client.sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
 
     // Create the "verificationTokens" table if it doesn't exist
+    // hash email to create token
     const createTable = await client.sql`
     CREATE TABLE IF NOT EXISTS verificationTokens (
     id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
@@ -303,3 +304,50 @@ main().catch((err) => {
     err,
   );
 });
+
+async function sqlStatements() {
+  try {
+    const createTables = await client.sql`
+    CREATE TABLE Address (
+      id SERIAL PRIMARY KEY,
+      city VARCHAR(255),
+      state VARCHAR(255),
+      zip VARCHAR(255),
+      county VARCHAR(255),
+      country VARCHAR(255)
+  );
+  
+  CREATE TABLE Billing_Info (
+      id SERIAL PRIMARY KEY,
+      billing_addr_prim INTEGER REFERENCES Address(id),
+      billing_addr_sec INTEGER REFERENCES Address(id),
+      payment_method VARCHAR(255),
+      purchase_order VARCHAR(255),
+      additional_info VARCHAR(255),
+      primary_contact_name VARCHAR(255),
+      primary_contact_email VARCHAR(255),
+      phone_num VARCHAR(255),
+      alt_phone_num VARCHAR(255),
+      fax_num VARCHAR(255)
+  );
+  
+  CREATE TABLE ShippingInfo (
+      id SERIAL PRIMARY KEY,
+      delivery_addr INTEGER REFERENCES Address(id),
+      is_job_site BOOLEAN
+  );
+  
+  CREATE TABLE UserProfile (
+      id UUID PRIMARY KEY,
+      name VARCHAR(255),
+      account_num VARCHAR(255),
+      phone_num VARCHAR(255),
+      billing_info INTEGER REFERENCES Billing_Info(id),
+      shipping_info INTEGER REFERENCES ShippingInfo(id)
+  );
+    `;
+  } catch (error) {
+    console.error('Error creating tables:', error);
+    throw error;
+  }
+}

@@ -9,7 +9,7 @@ export type User = {
     //Sessions: Session[];
   };
 
-//role definiton 
+//role definition 
 export enum Role {
     USER,
     ADMIN,
@@ -38,7 +38,7 @@ export type Session = {
     expiresAt: string;
 }
 // used for email verification and password reset 
-// instad of generating a UUID, hash the users email 
+// instead of generating a UUID, hash the users email 
 // to generate a unique token 
 export type VerificationToken = {
     id: string;

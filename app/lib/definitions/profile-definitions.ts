@@ -1,10 +1,10 @@
 //PROFILE PAGE INFO  
 
-export type Client_Customer = {
-    id: string;
+export type UserProfile = {
+    id: string;//this is the user id 
     name: string;//can be person or company
-    email: string;
-    account_num: string;//accounting handles these
+    account_num: string;//accounting handles these - do users need access to this 
+    //or is this only on the admin side 
     phone_num: string;
     billing_info: Billing_Info;
     shipping_info: ShippingInfo;
