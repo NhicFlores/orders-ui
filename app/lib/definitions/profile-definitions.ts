@@ -2,22 +2,21 @@
 
 export type UserProfile = {
     id: string;//this is the user id 
-    name: string;//can be person or company
+    company: string;
     account_num: string;//accounting handles these - do users need access to this 
     //or is this only on the admin side 
     phone_num: string;
-    billing_info: Billing_Info;
-    shipping_info: ShippingInfo;
+    //billing_info: Billing_Info[];
+    //shipping_info: ShippingInfo[];
   };
   //since we repeat the name, email, phone number pattern, is it worth it to create a contact info object 
   //customer would still need a name since it can be a company or a person 
   //might end up creating a company and person type to use in the pricing model
-  export interface Billing_Info {
+  export type BillingInfo = {
     billing_addr_prim: Address;
     billing_addr_sec?: Address;
     payment_method: string;
     purchase_order: string;
-    additional_info: string;
     primary_contact_name: string;
     primary_contact_email: string;
     phone_num: string;
@@ -25,9 +24,10 @@ export type UserProfile = {
     fax_num: string;
   }
   
-  export interface ShippingInfo {
+  export type ShippingInfo = {
     delivery_addr: Address;
     is_job_site: boolean;
+    note: string;
   }
   
   export interface Address {

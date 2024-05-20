@@ -308,7 +308,7 @@ main().catch((err) => {
 async function sqlStatements() {
   try {
     const createTables = await client.sql`
-    CREATE TABLE Address (
+    CREATE TABLE address (
       id SERIAL PRIMARY KEY,
       city VARCHAR(255),
       state VARCHAR(255),
@@ -317,7 +317,7 @@ async function sqlStatements() {
       country VARCHAR(255)
   );
   
-  CREATE TABLE Billing_Info (
+  CREATE TABLE billing_info (
       id SERIAL PRIMARY KEY,
       billing_addr_prim INTEGER REFERENCES Address(id),
       billing_addr_sec INTEGER REFERENCES Address(id),
@@ -331,13 +331,13 @@ async function sqlStatements() {
       fax_num VARCHAR(255)
   );
   
-  CREATE TABLE ShippingInfo (
+  CREATE TABLE shipping_info (
       id SERIAL PRIMARY KEY,
       delivery_addr INTEGER REFERENCES Address(id),
       is_job_site BOOLEAN
   );
   
-  CREATE TABLE UserProfile (
+  CREATE TABLE user_profile (
       id UUID PRIMARY KEY,
       name VARCHAR(255),
       account_num VARCHAR(255),
@@ -345,6 +345,34 @@ async function sqlStatements() {
       billing_info INTEGER REFERENCES Billing_Info(id),
       shipping_info INTEGER REFERENCES ShippingInfo(id)
   );
+  CREATE TABLE user_profile (
+    id UUID PRIMARY KEY,
+    user_id UUID REFERENCES users(id),
+    company VARCHAR(255),
+    account_num VARCHAR(255),
+    phone_num VARCHAR(255)
+);
+CREATE TABLE shipping_info (
+  id SERIAL PRIMARY KEY,
+  user_id UUID REFERENCES user_profile(id),
+  delivery_addr Address,
+  is_job_site BOOLEAN,
+  note TEXT
+);
+CREATE TABLE billing_info (
+  id SERIAL PRIMARY KEY,
+  user_id UUID REFERENCES user_profile(id),
+  billing_addr_prim Address,
+  billing_addr_sec Address,
+  payment_method VARCHAR(255),
+  purchase_order VARCHAR(255),
+  additional_info VARCHAR(255),
+  primary_contact_name VARCHAR(255),
+  primary_contact_email VARCHAR(255),
+  phone_num VARCHAR(255),
+  alt_phone_num VARCHAR(255),
+  fax_num VARCHAR(255)
+);
     `;
   } catch (error) {
     console.error('Error creating tables:', error);

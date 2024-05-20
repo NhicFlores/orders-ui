@@ -3,6 +3,7 @@
 import { sql } from '@vercel/postgres';
 import { User } from '@/app/lib/definitions/auth-definitions';
 import { unstable_noStore as noStore } from 'next/cache';
+import { BillingInfo, ShippingInfo, UserProfile } from '../definitions/profile-definitions';
 
 
 export async function getUserByID(id: string) {
@@ -17,3 +18,42 @@ export async function getUserByID(id: string) {
       throw new Error('Failed to fetch user.');
     }
   }
+
+export async function getUserProfileById(id: string) {
+  try {
+    const userProfile = await sql<UserProfile>`
+      SELECT * FROM user_profile 
+      WHERE id=${id}`;
+
+    return userProfile.rows[0];
+  } catch (error) {
+    console.error('Failed to fetch user profile:', error);
+    throw new Error('Failed to fetch user profile.');
+  }
+};
+
+export async function getBillingInfoById(id: string) {
+  try {
+    const billingInfo = await sql<BillingInfo>`
+      SELECT * FROM billing_info 
+      WHERE id=${id}`;
+
+    return billingInfo.rows;
+  } catch (error) {
+    console.error('Failed to fetch billing info:', error);
+    throw new Error('Failed to fetch billing info.');
+  }
+}
+
+export async function getShippingInfoById(id: string) {
+  try {
+    const shippingInfo = await sql<ShippingInfo>`
+      SELECT * FROM shipping_info 
+      WHERE id=${id}`;
+
+    return shippingInfo.rows;
+  } catch (error) {
+    console.error('Failed to fetch shipping info:', error);
+    throw new Error('Failed to fetch shipping info.');
+  }
+}

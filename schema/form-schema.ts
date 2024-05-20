@@ -29,6 +29,46 @@ export const ProfileSchema = z.object({
     }),
 });
 
+export const BillingInfoSchema = z.object({
+    billing_addr_prim: z.string({
+        invalid_type_error: 'enter valid street address'
+    }),
+    billing_addr_sec: z.string({
+        invalid_type_error: 'enter valid street address'
+    }),
+    payment_method: z.string({
+        invalid_type_error: 'select payment method'
+    }),
+    purchase_order: z.string({
+        invalid_type_error: 'enter purchase order number'
+    }),
+    primary_contact_name: z.string({
+        invalid_type_error: 'enter primary contact name'
+    }),
+    primary_contact_email: z.string({
+        invalid_type_error: 'enter primary contact email'
+    }),
+    phone_num: z.string({
+        invalid_type_error: 'enter phone number'
+    }),
+    alt_phone_num: z.string({
+        invalid_type_error: 'enter phone number'
+    }),
+    fax_num: z.string({
+        invalid_type_error: 'enter fax number'
+    }),
+});
+
+export const ShippingInfoSchema = z.object({
+    delivery_addr: z.string({
+        invalid_type_error: 'enter valid street address'
+    }),
+    is_job_site: z.boolean(),
+    note: z.string({
+        invalid_type_error: 'enter note'
+    }),
+});
+
 export const LoginSchema = z.object({
     email: z.string().email({
         message: 'please enter a valid email address'
