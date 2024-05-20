@@ -1,6 +1,11 @@
 ---------------------------------------- NEXT ---------------------------------------- 
 - check for UNDO's before commit and merge 
 
+- resolve session provider issue 
+	- can't be in layout since it doesn't rerender 
+	https://nextjs.org/docs/app#not-planned-features 
+	- can't be in client componenet because client components can't be asynchronous 
+
 styling 
 - create reusable containers for components and pages 
 
@@ -83,6 +88,8 @@ https://stackoverflow.com/questions/56335674/sql-query-with-join-to-get-nested-a
 auth 
 - designate roles 
 - lock routes by role 
+	- use parallels routes - use Slots (@adminDashboard) to conditionally render 
+	https://nextjs.org/docs/app/building-your-application/routing/parallel-routes 
 
 -pick an auth provider for production - authjs/nextauth, iron-session,  lucia auth 
 	-session manager 

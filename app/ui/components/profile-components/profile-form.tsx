@@ -46,7 +46,7 @@ export default function ProfileForm(){
     //in action, build the object you're going to send back to the db 
     return (
         <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+            <form onSubmit={form.handleSubmit(onSubmit)} className="w-[450px] space-y-6">
                 <div className="space-y-4">
                 <FormField 
                     control={form.control}
