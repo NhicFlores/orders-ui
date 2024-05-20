@@ -50,3 +50,27 @@ i ran npm i just to see if it was a module thing since i had merged a bunch of c
 into the dev branch. it didn't show any updates or changes. I tried again and wasn't able 
 to recreate it. I went ahead and merged to main. there were no build errors in main, 
 or any of the preview deployments for the dev, auth, or register-user branches 
+
+in the client i was getting the ClientFetchError: Unexpected token '<', "<!DOCTYPE "... is not valid JSON
+which means my function was expecting JSON and received HTML. 
+The reason I was getting html was because I was getting receiving a 404 page not found but I wasn't 
+handling the error correctly. GET /api/auth/session 404 was in the server logs. 
+i was getting a 404 when using await auth() in a layout because that was an asynchronous call in a 
+synchronous component which is why I kept getting null sessions. 
+- copilot 
+i am working on implementing authentication and protected routes in my nextjs app. In my profile page, 
+I import auth from "@auth" and I use 'const session = await auth();' to get the session. When I move this to the layout.tsx, 
+I get the a 404 error form auth(). Why doesn't await auth() work in the layout?
+The issue you're facing is due to the fact that you're trying to use an asynchronous operation (await auth()) inside a 
+synchronous React component (MainLayout). React components are synchronous and cannot be made asynchronous with async.
+
+In React, data fetching should be done in specific lifecycle methods or hooks. For functional components, you can 
+use the useEffect hook for side effects, including data fetching. However, useEffect runs after the component has been rendered, 
+so it's not suitable for fetching authentication status before rendering the component.
+
+In Next.js, you can use getServerSideProps or getInitialProps for server-side data fetching, but these can only be used in 
+page components, not in layout or other regular components.
+
+If you want to fetch the session data in the layout component, you can use the useSession hook from next-auth/react. 
+This hook returns an object with data and status properties. The data property contains the session data if a session exists, 
+and status indicates the loading state of the session data.

@@ -15,6 +15,39 @@ testing - Jest
 
 versioning dependencies 
 
+
+------------------------------------ Web Dev Concepts ---------------------------------- 
+Two environments code runs on: client and server 
+  Client is browser on user device that sends requests to a server. 
+  Server receives requests and sends responses back to client 
+
+Request-Response Lifecycle 
+-User Action: The user interacts with a web application. This could be clicking a link, 
+submitting a form, or typing a URL directly into the browser's address bar.
+-HTTP Request: The client sends an HTTP request to the server that contains necessary information 
+about what resources are being requested, what method is being used (e.g. GET, POST), and additional data if necessary.
+-Server: The server processes the request and responds with the appropriate resources. This process 
+may take a couple of steps like routing, fetching data, etc.
+-HTTP Response: After processing the request, the server sends an HTTP response back to the client. 
+This response contains a status code (which tells the client whether the request was successful or not) and requested 
+resources (e.g. HTML, CSS, JavaScript, static assets, etc).
+-Client: The client parses the resources to render the user interface.
+-User Action: Once the user interface is rendered, the user can interact with it, and the whole process starts again.
+
+In web development, the Network Boundary is a conceptual line that separates the different environments. For example, 
+the client and the server, or the server and the data store.
+
+In React, you choose where to place the client-server network boundary wherever it makes the most sense.
+
+Behind the scenes, the work is split into two parts: the client module graph and the server module graph. The server 
+module graph contains all the components that are rendered on the server, and the client module graph contains all 
+components that are rendered on the client.
+
+It may be helpful to think about module graphs as a visual representation of how files in your application depend on each other.
+
+You can use the React "use client" convention to define the boundary. There's also a "use server" convention, which 
+tells React to do some computational work on the server.
+
 ------------------------------------ REACT CORE ------------------------------------
 React 
 
@@ -91,7 +124,11 @@ auth
 middleware 
 middleware is not nextauth specific, it is nextjs specific 
 Adding auth to your Middleware is optional, but recommended to keep the user session alive.
-https://nextjs.org/docs/app/building-your-application/routing/middleware#matcher
+https://nextjs.org/docs/app/building-your-application/routing/middleware#matcher 
+
+
+<SessionProvider> must wrap the children using useSession() - however all pages in the 
+layout using <SessionProvider> must be server components - 
 
 ------------------------------------ TypeScript ------------------------------------
 classes vs types for data modeling - declarative code 

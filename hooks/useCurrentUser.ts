@@ -1,10 +1,8 @@
 import { useSession } from 'next-auth/react';
 
+//NOTE: currently not used, need to implement useSession 
 export const useCurrentUser = () => {
     const session = useSession();
-    console.log("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
-    console.log("---------------- session in hook -----------")
-    console.log("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
-    console.log(session)
+    
     return session.data?.user;
 }

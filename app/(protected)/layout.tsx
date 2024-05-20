@@ -1,22 +1,13 @@
-
-import { auth } from "@/auth"
 import Header from "../ui/header"
-import { SessionProvider } from "next-auth/react";
 
 
-
-const MainLayout = async ({children}: {children: React.ReactNode}) => {
-  
-  const session = await auth();
-
+export default async function MainLayout ({children}: {children: React.ReactNode}) {
+  //NOTE TODO: create context to provide session data to all children
   return (
-    <SessionProvider session={session}>
       <main>
         <Header/>
         {children}
       </main>
-    </SessionProvider>
   )
 }
 
-export default MainLayout
