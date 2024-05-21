@@ -1,10 +1,20 @@
 ---------------------------------------- NEXT ---------------------------------------- 
 - check for UNDO's before commit and merge 
 
+- profile route 
+	- models: profile, billing, shipping, address, user  
+		- revise models, create tables 
+	- create server actions for each model: create, update, delete 
+		- form schemas 
+	- data fetching functions 
+	- forms, and pages 
+		- edit buttons 
+		- layout and styling 
+
 - resolve session provider issue 
 	- can't be in layout since it doesn't rerender 
 	https://nextjs.org/docs/app#not-planned-features 
-	- can't be in client componenet because client components can't be asynchronous 
+	- can't be in client component because client components can't be asynchronous 
 
 styling 
 - create reusable containers for components and pages 

@@ -1,7 +1,8 @@
 //PROFILE PAGE INFO  
 
 export type UserProfile = {
-    id: string;//this is the user id 
+    id: string;
+    user_id: string;//this is the user id 
     company?: string;
     account_num: string;//accounting handles these - do users need access to this 
     //or is this only on the admin side 

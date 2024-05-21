@@ -28,6 +28,12 @@ export default function UserForm({ user }: UserFormProps) {
 
     async function handleUserSave(data: z.infer<typeof UserSchema>){
         console.log("submit handler");
+        
+        if(data.email === user.email && data.name === user.name){
+            setIsEditEnabled(!isEditEnabled);
+            return;
+        }
+
         updateUser(user.id, data);
         //await new Promise((resolve) => setTimeout(resolve, 3000));
         setIsEditEnabled(!isEditEnabled);
@@ -50,7 +56,7 @@ export default function UserForm({ user }: UserFormProps) {
                             <FormItem>
                                 <FormLabel>Name</FormLabel>
                                 <FormControl>
-                                    <Input defaultValue={user.name} {...field} readOnly={!isEditEnabled} className={!isEditEnabled? 'bg-slate-100':'bg-white'}/>
+                                    <Input defaultValue={user.name} {...field} readOnly={!isEditEnabled} onChange={toggleEditMode} className={!isEditEnabled? 'bg-slate-100':'bg-white'}/>
                                 </FormControl>
                                 <FormMessage>{userForm.formState.errors.name?.message}</FormMessage>
                             </FormItem>

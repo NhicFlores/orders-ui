@@ -6,6 +6,7 @@ import { revalidatePath } from "next/cache";
 import { z } from "zod";
 
 export async function updateUser(user_id: string, formFields: z.infer<typeof UserSchema>){
+    console.log("------------------------- updateUser -------------------------");
     const validatedFields = UserSchema.safeParse(formFields);
 
     if(!validatedFields.success){
@@ -29,7 +30,7 @@ export async function updateUser(user_id: string, formFields: z.infer<typeof Use
         }
     }
 
-    revalidatePath(ProfileRoute.href);//TODO: need to make sure we have the most up to date user info 
+    //revalidatePath(ProfileRoute.href);//TODO: need to make sure we have the most up to date user info 
 }
 
 export async function createProfile(user_id: string, formFields: z.infer<typeof ProfileSchema>){
@@ -57,6 +58,7 @@ export async function createProfile(user_id: string, formFields: z.infer<typeof 
 }
 //NOTE TODO: if users are allowed multiple profiles, we need to update by profile_id
 export async function updateProfile(user_id: string, formFields: z.infer<typeof ProfileSchema>){
+    console.log("------------------------- updateProfile -------------------------");
     const validatedFields = ProfileSchema.safeParse(formFields);
 
     if(!validatedFields.success){

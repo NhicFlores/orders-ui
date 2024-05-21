@@ -171,6 +171,10 @@ use arrow function
  <Component value={someValue} onClick={() => handleClick(0)} >
 
 
+------------------------------------ TypeScript ------------------------------- 
+similar to unwrapping in swift 
+profile && profile.company ? profile.company : "blank" 
+
 ------------------------------------ JSX ------------------------------------
 wrap elements in Link, rather than putting Link in an element: this way, if you put a button in a link, the whole button is clickable 
   this was how I resolved the Edit Order button bug 

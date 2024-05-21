@@ -1,143 +1,129 @@
-'use client'
+"use client";
 
-import { z } from "zod"
+import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from 'react-hook-form';
+import { useForm } from "react-hook-form";
 import { Button } from "@/components/ui/button";
-import { 
-    Form, 
-    FormControl,
-    FormDescription,
-    FormField,
-    FormItem,
-    FormLabel,
-    FormMessage    
+import {
+  Form,
+  FormControl,
+  FormDescription,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { ProfileSchema } from "@/schema/form-schema";
-import { User } from "@/app/lib/definitions/auth-definitions";
+import { UserProfile } from "@/app/lib/definitions/profile-definitions";
+import { useState } from "react";
+import { Pencil } from "lucide-react";
+import { updateProfile } from "@/app/lib/actions/profile-actions";
 
 interface ProfileFormProps {
-    user: User;
+  user_id: string;
+  profile: UserProfile;
 }
 
-export default function ProfileForm(){
+export default function ProfileForm({ user_id, profile }: ProfileFormProps) {
+    const [isEditEnabled, setIsEditEnabled] = useState(false);
 
-    const form = useForm<z.infer<typeof ProfileSchema>>({
-        resolver: zodResolver(ProfileSchema),
-        defaultValues: {
-            name: "",
-            email: "",
-            phone_num: "",
-            billing_info: {
-                billing_addr: "",
-                payment_method: "",
-            },
-            shipping_info: {
-                delivery_addr: "",
-            },
-        },
-    })
-    //NOTE TODO: onSubmit event handler 
-    async function onSubmit(data: z.infer<typeof ProfileSchema>){
-        console.log("submit handler");
-        console.log(data);
-        await new Promise((resolve) => setTimeout(resolve, 3000));
+  const form = useForm<z.infer<typeof ProfileSchema>>({
+    resolver: zodResolver(ProfileSchema),
+    defaultValues: {
+      company: profile && profile.company ? profile.company : "",
+      account_num: profile && profile.account_num ? profile.account_num : "",
+      phone_num: profile && profile.phone_num ? profile.phone_num : "",
+    },
+  });
+
+  async function toggleEditEnabled() {
+    setIsEditEnabled(!isEditEnabled);
+  }
+  //NOTE TODO: onSubmit event handler
+  async function handleFormSave(data: z.infer<typeof ProfileSchema>) {
+    console.log("submit handler");
+    if(data.company === profile.company && 
+        data.account_num === profile.account_num && 
+        data.phone_num === profile.phone_num){
+        setIsEditEnabled(!isEditEnabled);
+        return;
     }
-    //create multiple forms - one for customer info, billing info, delivery info
-    //pass that form data from each back to the action 
-    //in action, build the object you're going to send back to the db 
-    return (
-        <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-                <div className="space-y-4">
-                <FormField 
-                    control={form.control}
-                    name="name"
-                    render={({ field }) => (
-                        <FormItem>
-                            <FormLabel>Name</FormLabel>
-                            <FormControl>
-                                <Input placeholder="..." {...field}/>
-                            </FormControl>
-                            <FormDescription>
-                                First Name
-                            </FormDescription>
-                            <FormMessage/>
-                        </FormItem>
-                    )}
-                />
-                <FormField 
-                    control={form.control}
-                    name="email"
-                    render={({ field }) => (
-                        <FormItem>
-                            <FormLabel>Email</FormLabel>
-                            <FormControl>
-                                <Input placeholder="example@yourdomain.com" {...field}/>
-                            </FormControl>
-                            <FormDescription>
-                                Primary Email
-                            </FormDescription>
-                            <FormMessage/>
-                        </FormItem>
-                    )}
-                />
-                <FormField 
-                    control={form.control}
-                    name="phone_num"
-                    render={({ field }) => (
-                        <FormItem>
-                            <FormLabel>Phone Number</FormLabel>
-                            <FormControl>
-                                <Input placeholder="(000)000-0000" {...field}/>
-                            </FormControl>
-                            <FormDescription>
-                                Primary Phone Number
-                            </FormDescription>
-                            <FormMessage/>
-                        </FormItem>
-                    )}
-                />
-                <FormField
-                    control={form.control}
-                    name="billing_info.billing_addr"
-                    render={({ field }) => (
-                        <FormItem>
-                            <FormLabel>Billing Address</FormLabel>
-                            <FormControl>
-                                <Input placeholder="street address" {...field}/>
-                            </FormControl>
-                        </FormItem>
-                    )}
-                />
-                <FormField
-                    control={form.control}
-                    name="billing_info.payment_method"
-                    render={({ field }) => (
-                        <FormItem>
-                            <FormLabel>Payment Method</FormLabel>
-                            <FormControl>
-                                <Input placeholder="credit..." {...field}/>
-                            </FormControl>
-                        </FormItem>
-                    )}
-                />
-                <FormField
-                    control={form.control}
-                    name="shipping_info.delivery_addr"
-                    render={({ field }) => (
-                        <FormItem>
-                            <FormLabel>Delivery Address</FormLabel>
-                            <FormControl>
-                                <Input placeholder="street address" {...field}/>
-                            </FormControl>
-                        </FormItem>
-                    )}
-                />
-                <Button type="submit">Save</Button>
+    updateProfile(user_id, data);
+    setIsEditEnabled(!isEditEnabled);
+  }
+  //create multiple forms - one for customer info, billing info, delivery info
+  //pass that form data from each back to the action
+  //in action, build the object you're going to send back to the db
+  return (
+    <Form {...form}>
+      <form onSubmit={form.handleSubmit(handleFormSave)} className="space-y-6">
+        <div className="space-y-4">
+          <FormField
+            control={form.control}
+            name="company"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Company</FormLabel>
+                <FormControl>
+                  <Input placeholder="company" {...field} className={isEditEnabled ? "bg-white" : "bg-slate-100"} readOnly={!isEditEnabled}/>
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <div className="flex space-x-8">
+            <div className="w-full">
+              <FormField
+                control={form.control}
+                name="account_num"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Account Number</FormLabel>
+                    <FormControl>
+                      <Input placeholder="1234567" {...field} className={isEditEnabled ? "bg-white" : "bg-slate-100"} readOnly={!isEditEnabled}/>
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+            </div>
+            <div className="w-full">
+              <FormField
+                control={form.control}
+                name="phone_num"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Phone Number</FormLabel>
+                    <FormControl>
+                      <Input placeholder="(000)000-0000" {...field} className={isEditEnabled ? "bg-white" : "bg-slate-100"} readOnly={!isEditEnabled}/>
+                    </FormControl>
+                    <FormDescription>Primary Phone Number</FormDescription>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+            </div>
+          </div>
+          <div className="flex justify-end">
+            {isEditEnabled ? (
+                <div>
+                    <Button type="button" variant={'ghost'} onClick={toggleEditEnabled}>
+                        Cancel
+                    </Button>
+                    <Button type="submit">
+                        Save
+                    </Button>
                 </div>
-            </form>
-        </Form>
-    )
+            ) : (
+                <Button onClick={toggleEditEnabled}>
+                    <Pencil size={16} />
+                    <span className="pl-2">Edit</span>
+                </Button>
+            )}
+          </div>
+        </div>
+      </form>
+    </Form>
+  );
 }
