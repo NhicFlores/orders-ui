@@ -4,14 +4,15 @@ import Container from "../../ui/components/page-container";
 import ProfileForm from "../../ui/components/profile-components/profile-form";
 import { auth } from "@/auth";
 import { User } from "@/app/lib/definitions/auth-definitions";
+import { getUserByID } from "@/app/lib/data/user-data";
 
 export default async function ProfilePage() {
     const session = await auth();
-    const user = session?.user as User;
+    //const user =  await getUserByID(session?.user.id as string);
   return (
         <main className="lg:w-1/2 sm:w-full bg-white border rounded-md p-6">
             <Container>
-                <UserForm user={user}/>
+                <UserForm user={session?.user as User}/>
             </Container>
         </main>
   );

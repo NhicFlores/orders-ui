@@ -1,7 +1,36 @@
-'user server';
-import { BillingInfoSchema, ProfileSchema, ShippingInfoSchema } from "@/schema/form-schema";
+'use server';
+import { ProfileRoute } from "@/routes";
+import { BillingInfoSchema, ProfileSchema, ShippingInfoSchema, UserSchema } from "@/schema/form-schema";
 import { sql } from "@vercel/postgres";
+import { revalidatePath } from "next/cache";
 import { z } from "zod";
+
+export async function updateUser(user_id: string, formFields: z.infer<typeof UserSchema>){
+    const validatedFields = UserSchema.safeParse(formFields);
+
+    if(!validatedFields.success){
+        return {
+            errors: validatedFields.error.flatten().fieldErrors,
+            message: 'Missing Fields. Failed to update User',
+        }
+    }
+
+    const {email, name} = validatedFields.data;
+
+    try {
+        await sql`
+            UPDATE users
+            SET email = ${email}, name = ${name}
+            WHERE id = ${user_id}
+        `;
+    } catch (error) {
+        return {
+            message: 'Database Error: Failed to update User'
+        }
+    }
+
+    revalidatePath(ProfileRoute.href);//TODO: need to make sure we have the most up to date user info 
+}
 
 export async function createProfile(user_id: string, formFields: z.infer<typeof ProfileSchema>){
     const validatedFields = ProfileSchema.safeParse(formFields);

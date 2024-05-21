@@ -4,11 +4,12 @@ import { UserSchema } from '@/schema/form-schema';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Input } from "@/components/ui/input";
 import { useForm } from 'react-hook-form';
-import { set, z } from 'zod';
+import { z } from 'zod';
 import { Button } from '@/components/ui/button';
 import { Pencil } from 'lucide-react';
 import { User } from '@/app/lib/definitions/auth-definitions';
 import { useState } from 'react';
+import { updateUser } from '@/app/lib/actions/profile-actions';
 
 interface UserFormProps {
     user: User;
@@ -27,8 +28,8 @@ export default function UserForm({ user }: UserFormProps) {
 
     async function handleUserSave(data: z.infer<typeof UserSchema>){
         console.log("submit handler");
-        console.log(data);
-        await new Promise((resolve) => setTimeout(resolve, 3000));
+        updateUser(user.id, data);
+        //await new Promise((resolve) => setTimeout(resolve, 3000));
         setIsEditEnabled(!isEditEnabled);
     }
 
@@ -64,7 +65,7 @@ export default function UserForm({ user }: UserFormProps) {
                             <FormItem>
                                 <FormLabel>Email</FormLabel>
                                 <FormControl>
-                                    <Input defaultValue={user.email} {...field} readOnly={!isEditEnabled} />
+                                    <Input defaultValue={user.email} {...field} readOnly={!isEditEnabled} className={!isEditEnabled? 'bg-slate-100':'bg-white'}/>
                                 </FormControl>
                                 <FormMessage>{userForm.formState.errors.email?.message}</FormMessage>
                             </FormItem>
@@ -75,7 +76,10 @@ export default function UserForm({ user }: UserFormProps) {
                 <div className='flex justify-end'>
                     {isEditEnabled ? (
                         <div>
-                            <Button variant={'ghost'}>
+                            <Button variant={'ghost'} onClick={() => {
+                                userForm.reset();
+                                toggleEditMode();
+                            }}>
                                 Cancel
                             </Button>
                             <Button type="submit">
