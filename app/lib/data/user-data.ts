@@ -19,11 +19,11 @@ export async function getUserByID(id: string) {
     }
   }
 
-export async function getUserProfileById(id: string) {
+export async function getUserProfileById(user_id: string) {
   try {
     const userProfile = await sql<UserProfile>`
       SELECT * FROM user_profile 
-      WHERE id=${id}`;
+      WHERE user_id=${user_id}`;
 
     return userProfile.rows[0];
   } catch (error) {
@@ -32,11 +32,11 @@ export async function getUserProfileById(id: string) {
   }
 };
 
-export async function getBillingInfoById(id: string) {
+export async function getBillingInfoById(user_id: string) {
   try {
     const billingInfo = await sql<BillingInfo>`
       SELECT * FROM billing_info 
-      WHERE id=${id}`;
+      WHERE user_id=${user_id}`;
 
     return billingInfo.rows;
   } catch (error) {
@@ -45,11 +45,11 @@ export async function getBillingInfoById(id: string) {
   }
 }
 
-export async function getShippingInfoById(id: string) {
+export async function getShippingInfoById(user_id: string) {
   try {
     const shippingInfo = await sql<ShippingInfo>`
       SELECT * FROM shipping_info 
-      WHERE id=${id}`;
+      WHERE user_id=${user_id}`;
 
     return shippingInfo.rows;
   } catch (error) {

@@ -1,68 +1,60 @@
 import { z } from "zod";
 
 //NOTE TODO: email validation, phone number validation - regex might work
-//nested object schema with z.record
-//add schema objects for address, shipping info, and billing info 
-//NOTE TODO: create corresponding sql table - update users 
+
 export const ProfileSchema = z.object({
-    name: z.string({
+    company: z.string({
         invalid_type_error: 'Please enter your name'
-    }),
-    email: z.string().email({
-        message: "This is not a valid emaill address."
+    }).optional(),
+    account_num: z.string({
+        invalid_type_error: 'Please enter your account number'
     }),
     phone_num: z.string({
         invalid_type_error: 'please enter a valid phone number.'
     }),
-    billing_info: z.object({
-        billing_addr: z.string({
-            invalid_type_error: 'enter valid street address'
-        }),
-        payment_method: z.string({
-            invalid_type_error: 'select payment method'
-        }),
-    }),
-    shipping_info: z.object({
-        delivery_addr: z.string({
-            invalid_type_error: 'Please enter a valid street address.'
-        }),
-    }),
 });
 
 export const BillingInfoSchema = z.object({
-    billing_addr_prim: z.string({
-        invalid_type_error: 'enter valid street address'
+    billing_addr_prim: z.object({
+      city: z.string(
+        {
+          invalid_type_error: 'Please choose a city.'
+        }
+      ),
+      state: z.string(
+        {
+          invalid_type_error: 'Please choose a state.'
+        }
+      ),
+      zip: z.string().length(5),
+      county: z.string().optional(),
+      country: z.string(),
     }),
-    billing_addr_sec: z.string({
-        invalid_type_error: 'enter valid street address'
-    }),
-    payment_method: z.string({
-        invalid_type_error: 'select payment method'
-    }),
-    purchase_order: z.string({
-        invalid_type_error: 'enter purchase order number'
-    }),
-    primary_contact_name: z.string({
-        invalid_type_error: 'enter primary contact name'
-    }),
-    primary_contact_email: z.string({
-        invalid_type_error: 'enter primary contact email'
-    }),
-    phone_num: z.string({
-        invalid_type_error: 'enter phone number'
-    }),
-    alt_phone_num: z.string({
-        invalid_type_error: 'enter phone number'
-    }),
-    fax_num: z.string({
-        invalid_type_error: 'enter fax number'
-    }),
-});
+    billing_addr_sec: z.object({
+      city: z.string(),
+      state: z.string(),
+      zip: z.string().length(5),
+      county: z.string().optional(),
+      country: z.string(),
+    }).optional(),
+    payment_method: z.string(),
+    purchase_order: z.string(),
+    additional_info: z.string().optional(),
+    primary_contact_name: z.string(),
+    primary_contact_email: z.string().email(),
+    phone_num: z.string(),
+    alt_phone_num: z.string().optional(),
+    fax_num: z.string().optional(),
+  });
 
 export const ShippingInfoSchema = z.object({
-    delivery_addr: z.string({
-        invalid_type_error: 'enter valid street address'
-    }),
+    delivery_addr: z.object({
+        city: z.string(),
+        state: z.string(),
+        zip: z.string().length(5),
+        county: z.string().optional(),
+        country: z.string(),
+      }),
     is_job_site: z.boolean(),
     note: z.string({
         invalid_type_error: 'enter note'

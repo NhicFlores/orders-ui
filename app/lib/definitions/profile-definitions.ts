@@ -33,7 +33,7 @@ export type UserProfile = {
     city: string;
     state: string;
     zip: string;
-    county: string;
+    county?: string;
     country: string;
   }
   

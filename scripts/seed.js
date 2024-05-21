@@ -89,46 +89,6 @@ async function seedToken(client) {
   }
 }
 
-// DEPRECATED
-// async function seedUsers(client) {
-//   try {
-//     await client.sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
-//     // Create the "users" table if it doesn't exist
-//     const createTable = await client.sql`
-//       CREATE TABLE IF NOT EXISTS users (
-//         id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
-//         name VARCHAR(255) NOT NULL,
-//         email TEXT NOT NULL UNIQUE,
-//         password TEXT NOT NULL
-//       );
-//     `;
-
-//     console.log(`Created "users" table`);
-
-//     // Insert data into the "users" table
-//     const insertedUsers = await Promise.all(
-//       users.map(async (user) => {
-//         const hashedPassword = await bcrypt.hash(user.password, 10);
-//         return client.sql`
-//         INSERT INTO users (id, name, email, password)
-//         VALUES (${user.id}, ${user.name}, ${user.email}, ${hashedPassword})
-//         ON CONFLICT (id) DO NOTHING;
-//       `;
-//       }),
-//     );
-
-//     console.log(`Seeded ${insertedUsers.length} users`);
-
-//     return {
-//       createTable,
-//       users: insertedUsers,
-//     };
-//   } catch (error) {
-//     console.error('Error seeding users:', error);
-//     throw error;
-//   }
-// }
-
 async function seedOrders(client) {
   try {
     await client.sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
@@ -307,45 +267,25 @@ main().catch((err) => {
 
 async function sqlStatements() {
   try {
-    const createTables = await client.sql`
-    CREATE TABLE address (
-      id SERIAL PRIMARY KEY,
-      city VARCHAR(255) NOT NULL,
-      state VARCHAR(255) NOT NULL,
-      zip VARCHAR(255) NOT NULL,
+    const createTables = await client.sql`  
+    CREATE TYPE address AS (
+      city VARCHAR(255),
+      state VARCHAR(255),
+      zip VARCHAR(255),
       county VARCHAR(255),
-      country VARCHAR(255) NOT NULL
-  );
-  
-  CREATE TABLE billing_info (
-      id SERIAL PRIMARY KEY,
-      billing_addr_prim INTEGER NOT NULL REFERENCES address(id),
-      billing_addr_sec INTEGER REFERENCES address(id),
-      payment_method VARCHAR(255) NOT NULL,
-      purchase_order VARCHAR(255) NOT NULL,
-      primary_contact_name VARCHAR(255),
-      primary_contact_email VARCHAR(255),
-      phone_num VARCHAR(255) NOT NULL,
-      alt_phone_num VARCHAR(255),
-      fax_num VARCHAR(255)
-  );
-  
-  CREATE TABLE shipping_info (
-      id SERIAL PRIMARY KEY,
-      delivery_addr INTEGER NOT NULL REFERENCES address(id),
-      ------note TEXT,
-      is_job_site BOOLEAN NOT NULL
+      country VARCHAR(255)
   );
   CREATE TABLE user_profile (
-      id UUID PRIMARY KEY, ---------- UUID is less readable, more random than SERIAL. good for anonymity, but will make indexing take longer
-      name VARCHAR(255) NOT NULL,
-      account_num VARCHAR(255) NOT NULL,
+      id SERIAL PRIMARY KEY, ---------- UUID is less readable, more random than SERIAL. good for anonymity, but will make indexing take longer
+      user_id UUID REFERENCES users(id),
+      company VARCHAR(255),
+      account_num VARCHAR(255),
       phone_num VARCHAR(255),
-      billing_info INTEGER REFERENCES Billing_Info(id),
-      shipping_info INTEGER REFERENCES ShippingInfo(id)
+      billing_info INTEGER REFERENCES billing_info(id),
+      shipping_info INTEGER REFERENCES shipping_info(id)
   );
   CREATE TABLE user_profile (
-    id UUID PRIMARY KEY,
+    id SERIAL PRIMARY KEY,
     user_id UUID REFERENCES users(id),
     company VARCHAR(255),
     account_num VARCHAR(255),
@@ -353,19 +293,18 @@ async function sqlStatements() {
 );
 CREATE TABLE shipping_info (
   id SERIAL PRIMARY KEY,
-  user_id UUID REFERENCES user_profile(id),
-  delivery_addr Address,
+  user_id UUID REFERENCES users(id),
+  delivery_addr address,
   is_job_site BOOLEAN,
   note TEXT
 );
 CREATE TABLE billing_info (
   id SERIAL PRIMARY KEY,
-  user_id UUID REFERENCES user_profile(id),
-  billing_addr_prim Address,
-  billing_addr_sec Address,
+  user_id UUID REFERENCES users(id),
+  billing_addr_prim address,
+  billing_addr_sec address,
   payment_method VARCHAR(255),
   purchase_order VARCHAR(255),
-  additional_info VARCHAR(255),
   primary_contact_name VARCHAR(255),
   primary_contact_email VARCHAR(255),
   phone_num VARCHAR(255),
