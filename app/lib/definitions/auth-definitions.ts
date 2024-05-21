@@ -5,7 +5,7 @@ export type User = {
     emailVerified: string;
     password: string;
     role: Role;
-    Accounts: Account[];
+    //Accounts: Account[];
     //Sessions: Session[];
   };
 

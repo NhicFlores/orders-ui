@@ -1,3 +1,8 @@
+export const ProfileRoute = {
+    label: "Profile",
+    href: "/profile",
+  };
+
 /**
  * an array of routes that are accessible to the public 
  * these routes do not require authentication 

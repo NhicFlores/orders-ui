@@ -1,25 +1,16 @@
-
-
-export const Landing =
-{
+export const Landing = {
   label: "Glass Ordering",
   href: "/",
 };
 
-export const Dashboard =
-{
+export const Dashboard = {
   label: "Dashboard",
   href: "/dashboard",
 };
 
-export const Profile = 
-{
-  label: "Profile",
-  href: "/profile",
-};
 
-export const QuoteRoute = 
-{
+
+export const QuoteRoute = {
   label: "Quotes",
   href: "/quote",
 };
@@ -36,21 +27,21 @@ export const OrderRoute = {
 
 export const GlasTypeRoute = {
   href: "/glass-type",
-}
+};
 
 export const DimensionRoute = {
   href: "/dimensions",
-}
+};
 
 export const Login = {
   label: "Login",
   href: "/auth/login",
-}
+};
 
 export const Register = {
   label: "Register",
   href: "/auth/register",
-}
+};
 
 /*
 export const EditOrderRoute = {
@@ -83,7 +74,6 @@ export const HeaderRoutes = [
   },
 ];
 
-
 export const DashboardNavLinks = [
   {
     label: "New Order",
@@ -97,4 +87,4 @@ export const DashboardNavLinks = [
     label: "Browse Templates",
     href: "/browse_templates",
   },
-]
+];

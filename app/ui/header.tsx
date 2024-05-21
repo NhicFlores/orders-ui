@@ -1,7 +1,7 @@
-'use client';
+"use client";
 import Container from "./components/page-container";
 import Link from "next/link";
-import { Dashboard, HeaderRoutes, Profile } from "../lib/routes";
+import { Dashboard, HeaderRoutes } from "../lib/routes";
 import { Button } from "@/components/ui/button";
 import ProfileButton from "./components/profile-button";
 import { usePathname } from "next/navigation";
@@ -20,11 +20,12 @@ export default function Header() {
           </div>
           <nav className="mx-6 flex items-center space-x-4 lg:space-x-6 md:block">
             {HeaderRoutes.map((route, i) => (
-              <Button key={i} asChild variant={pathName === route.href ? "default" : "ghost"}>
-                <Link
-                  key={i}
-                  href={route.href}
-                >
+              <Button
+                key={i}
+                asChild
+                variant={pathName === route.href ? "default" : "ghost"}
+              >
+                <Link key={i} href={route.href}>
                   <h2 className="text-lg font-medium transition-colors">
                     {route.label}
                   </h2>
@@ -33,7 +34,7 @@ export default function Header() {
             ))}
           </nav>
           <div>
-            <ProfileButton/>
+            <ProfileButton />
           </div>
         </div>
       </Container>
