@@ -1,3 +1,4 @@
+'user server';
 import { BillingInfoSchema, ProfileSchema, ShippingInfoSchema } from "@/schema/form-schema";
 import { sql } from "@vercel/postgres";
 import { z } from "zod";

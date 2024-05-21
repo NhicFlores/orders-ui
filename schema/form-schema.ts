@@ -1,6 +1,14 @@
 import { z } from "zod";
 
 //NOTE TODO: email validation, phone number validation - regex might work
+export const UserSchema = z.object({
+    email: z.string().email({
+        message: 'please enter a valid email address'
+    }),
+    name: z.string().min(1, {
+        message: 'please enter your name'
+    }),
+});
 
 export const ProfileSchema = z.object({
     company: z.string({
