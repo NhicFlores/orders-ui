@@ -37,7 +37,7 @@ export async function authenticate(
             switch (error.type) {
                 case 'CredentialsSignin':
                     return 'Invalid Credentials';//this is linked to what the login form is expecting in useFormStatus 
-                // NOTE TODO: implement custome error for invalid fields defined in auth.ts 
+                // NOTE TODO: implement custom error for invalid fields defined in auth.ts 
                 // case 'InvalidFieldsError':
                 //     return 'Enter credentials'
                 default: 
@@ -49,7 +49,7 @@ export async function authenticate(
 
     //return { success: "user found"}; //NOTE TODO this doesn't work, it throws off the type for useFormStatus; how to change/define types expected by hooks  
 }
-//NOTE TODO: unused funtion, remove after testing 
+//NOTE TODO: unused function, remove after testing 
 export async function userLogin(formFields: z.infer<typeof LoginSchema>){
     console.log("------------- IN USER LOGIN ACTION ---------------");
 
@@ -70,7 +70,7 @@ export async function userLogin(formFields: z.infer<typeof LoginSchema>){
                 case 'CredentialsSignin':
                     return 'Invalid Credentials';
                 default: 
-                    return 'Somethine went wrong';
+                    return 'Something went wrong';
             }
         }
         throw error;
