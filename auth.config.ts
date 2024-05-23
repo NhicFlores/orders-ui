@@ -50,11 +50,11 @@ export const authConfig = {
         //     return true;
         // },
         async session({ session, token }){
-            console.log("----------------------------------\n---------- SESSION LOGS ----------\n----------------------------------");
-            console.log({
-                sessionToken: token,
-                session,
-            })
+            // console.log("----------------------------------\n---------- SESSION LOGS ----------\n----------------------------------");
+            // console.log({
+            //     sessionToken: token,
+            //     session,
+            // })
 
             if (token.sub && session.user) {
                 session.user.id = token.sub;
@@ -66,18 +66,18 @@ export const authConfig = {
                 session.user.role = token.role;
             }
 
-            console.log("-------------------------------------------\n---------- MODIFIED SESSION LOGS ----------\n-------------------------------------------");
-            console.log({
-                sessionToken: token,
-                session,
-            })
+            // console.log("-------------------------------------------\n---------- MODIFIED SESSION LOGS ----------\n-------------------------------------------");
+            // console.log({
+            //     sessionToken: token,
+            //     session,
+            // })
 
             return session
         },
 
         async jwt({ token }) {
-            console.log("----------------------------------\n---------- TOKEN LOGS ----------\n----------------------------------");
-            console.log({ token });
+            //console.log("----------------------------------\n---------- TOKEN LOGS ----------\n----------------------------------");
+            //console.log({ token });
             //console.log(token.role)
 
             if(!token.sub) return token;
@@ -89,7 +89,7 @@ export const authConfig = {
             token.role = currentUser.role;
 
             //token.customField = 'test';//jwt callback allows read and write of session toke property
-            //any modeifications made here are seen in the session callback 
+            //any modifications made here are seen in the session callback 
             return token;            
         },
     }, providers: [],

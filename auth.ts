@@ -18,7 +18,7 @@ export const { auth, signIn, signOut } = NextAuth({
   providers: [Credentials({
     async authorize(credentials) {
         const parsedCredentials = LoginSchema.safeParse(credentials);
-        console.log("------------- PARSED CREDENTIALS ----------------");
+        //console.log("------------- PARSED CREDENTIALS ----------------");
 
         if (parsedCredentials.success) {
             const { email, password } = parsedCredentials.data;
@@ -29,8 +29,8 @@ export const { auth, signIn, signOut } = NextAuth({
             if (passwordsMatch) return user;
         }
 
-        console.log('USER NOT AUTHENTICATED')
-        console.log('Invalid Credentials');
+        //console.log('USER NOT AUTHENTICATED')
+        //console.log('Invalid Credentials');
         return null;
     },
   })],
