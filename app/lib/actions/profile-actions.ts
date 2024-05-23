@@ -16,12 +16,12 @@ export async function updateUser(user_id: string, formFields: z.infer<typeof Use
         }
     }
 
-    const {email, name} = validatedFields.data;
+    const {email, password} = validatedFields.data;
 
     try {
         await sql`
             UPDATE users
-            SET email = ${email}, name = ${name}
+            SET email = ${email}, password = ${password}
             WHERE id = ${user_id}
         `;
     } catch (error) {
@@ -43,12 +43,12 @@ export async function createProfile(user_id: string, formFields: z.infer<typeof 
         }
     }
 
-    const {company, account_num, phone_num} = validatedFields.data;
+    const {name, company, account_num, phone_num} = validatedFields.data;
 
     try {
         await sql`
-            INSERT INTO user_profile (user_id, company, account_num, phone_num)
-            VALUES (${user_id}, ${company}, ${account_num}, ${phone_num})
+            INSERT INTO user_profile (user_id, name, company, account_num, phone_num)
+            VALUES (${user_id}, ${name}, ${company}, ${account_num}, ${phone_num})
         `;
     } catch (error) {
         return {
@@ -68,12 +68,12 @@ export async function updateProfile(user_id: string, formFields: z.infer<typeof 
         }
     }
 
-    const {company, account_num, phone_num} = validatedFields.data;
+    const {name, company, account_num, phone_num} = validatedFields.data;
 
     try {
         await sql`
             UPDATE user_profile
-            SET company = ${company}, account_num = ${account_num}, phone_num = ${phone_num}
+            SET name = ${name}, company = ${company}, account_num = ${account_num}, phone_num = ${phone_num}
             WHERE user_id = ${user_id}
         `;
     } catch (error) {
@@ -100,17 +100,15 @@ export async function createBillingInfo(user_id: string, formFields: z.infer<typ
         }
     }
 
-    const {billing_addr_prim, billing_addr_sec, payment_method, purchase_order, additional_info, primary_contact_name, primary_contact_email, phone_num, alt_phone_num, fax_num} = validatedFields.data;
+    const {billing_addr, payment_method, purchase_order, primary_contact_name, primary_contact_email, phone_num, alt_phone_num, fax_num} = validatedFields.data;
 
     try {
         await sql`
-            INSERT INTO billing_info (user_id, billing_addr_prim, billing_addr_sec, payment_method, purchase_order, additional_info, primary_contact_name, primary_contact_email, phone_num, alt_phone_num, fax_num)
+            INSERT INTO billing_info (user_id, billing_addr, payment_method, purchase_order, primary_contact_name, primary_contact_email, phone_num, alt_phone_num, fax_num)
             VALUES (${user_id}, 
-                ${billing_addr_prim.city, billing_addr_prim.state, billing_addr_prim.zip, billing_addr_prim.country, billing_addr_prim.county}, 
-                ${billing_addr_sec?.city, billing_addr_sec?.state, billing_addr_sec?.zip, billing_addr_sec?.country, billing_addr_sec?.county}, 
+                ${billing_addr.street, billing_addr.apt_num, billing_addr.city, billing_addr.state, billing_addr.zip, billing_addr.country}, 
                 ${payment_method}, 
                 ${purchase_order}, 
-                ${additional_info}, 
                 ${primary_contact_name}, 
                 ${primary_contact_email}, 
                 ${phone_num}, 
@@ -134,16 +132,14 @@ export async function updateBillingInfo(user_id: string, billing_info_id: string
         }
     }
 
-    const {billing_addr_prim, billing_addr_sec, payment_method, purchase_order, additional_info, primary_contact_name, primary_contact_email, phone_num, alt_phone_num, fax_num} = validatedFields.data;
+    const {billing_addr, payment_method, purchase_order, primary_contact_name, primary_contact_email, phone_num, alt_phone_num, fax_num} = validatedFields.data;
 
     try {
         await sql`
             UPDATE billing_info
-            SET billing_addr_prim = ${billing_addr_prim.city, billing_addr_prim.state, billing_addr_prim.zip, billing_addr_prim.country, billing_addr_prim.county}, 
-                billing_addr_sec = ${billing_addr_sec?.city, billing_addr_sec?.state, billing_addr_sec?.zip, billing_addr_sec?.country, billing_addr_sec?.county}, 
+            SET billing_addr_prim = ${billing_addr.street, billing_addr.apt_num, billing_addr.city, billing_addr.state, billing_addr.zip, billing_addr.country},  
                 payment_method = ${payment_method}, 
                 purchase_order = ${purchase_order}, 
-                additional_info = ${additional_info}, 
                 primary_contact_name = ${primary_contact_name}, 
                 primary_contact_email = ${primary_contact_email}, 
                 phone_num = ${phone_num}, 
@@ -181,7 +177,7 @@ export async function createShippingInfo(user_id: string, formFields: z.infer<ty
         await sql`
             INSERT INTO shipping_info (user_id, delivery_addr, is_job_site, note)
             VALUES (${user_id}, 
-                ${delivery_addr.city, delivery_addr.state, delivery_addr.zip, delivery_addr.country, delivery_addr.county}, 
+                ${delivery_addr.street, delivery_addr.apt_num, delivery_addr.city, delivery_addr.state, delivery_addr.zip, delivery_addr.country}, 
                 ${is_job_site}, 
                 ${note})
         `;
@@ -207,7 +203,7 @@ export async function updateShippingInfo(user_id: string, shipping_info_id: stri
     try {
         await sql`
             UPDATE shipping_info
-            SET delivery_addr = ${delivery_addr.city, delivery_addr.state, delivery_addr.zip, delivery_addr.country, delivery_addr.county}, 
+            SET delivery_addr = ${delivery_addr.street, delivery_addr.apt_num, delivery_addr.city, delivery_addr.state, delivery_addr.zip, delivery_addr.country}, 
                 is_job_site = ${is_job_site}, 
                 note = ${note}
             WHERE user_id = ${user_id} AND id = ${shipping_info_id}
