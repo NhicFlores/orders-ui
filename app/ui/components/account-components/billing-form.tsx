@@ -16,13 +16,28 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
 import { z } from "zod";
+import { createBillingInfo, insertBillingInfo } from "@/app/lib/actions/profile-actions";
+import { BillingInfo } from "@/app/lib/definitions/profile-definitions";
 
-const BillingForm = () => {
+interface BillingFormProps {
+  user_id: string;
+  billing_info: BillingInfo | null;
+}
+
+const BillingForm = ({user_id, billing_info}: BillingFormProps) => {
   const [isEditEnabled, setIsEditEnabled] = useState(false);
 
   async function ToggleEditEnabled() {
     setIsEditEnabled(!isEditEnabled);
   }
+
+  async function handleFormSave(data: z.infer<typeof BillingInfoSchema>) {
+    console.log("submit handler");
+    createBillingInfo(user_id, data);
+    console.log(data);
+    //insertBillingInfo();
+  }
+
   const billingForm = useForm<z.infer<typeof BillingInfoSchema>>({
     resolver: zodResolver(BillingInfoSchema),
     defaultValues: {
@@ -44,8 +59,13 @@ const BillingForm = () => {
     },
   });
   return (
+    <div>
+      <div className="border rounded p-4">
+        user id: {user_id}
+      </div>
+
     <Form {...billingForm}>
-      <form className="space-y-6">
+      <form onSubmit={billingForm.handleSubmit(handleFormSave)} className="space-y-6">
         {/* ------------------- payment method section ------------------- */}
 
         <div className="flex space-x-8">
@@ -315,12 +335,12 @@ const BillingForm = () => {
         <div className="flex justify-end">
           {isEditEnabled ? (
             <div className="space-x-4">
-              <Button variant={'ghost'}>Cancel</Button>
-              <Button>Save</Button>
+              <Button type="reset" variant={'ghost'}>Cancel</Button>
+              <Button type="submit">Save</Button>
             </div>
           ) : (
             <>
-              <Button onClick={ToggleEditEnabled}>
+              <Button type="button" onClick={ToggleEditEnabled}>
                 <Pencil size={16} />
                 <span className="pl-2">Edit</span>
               </Button>
@@ -329,6 +349,7 @@ const BillingForm = () => {
         </div>
       </form>
     </Form>
+    </div>
   );
 };
 

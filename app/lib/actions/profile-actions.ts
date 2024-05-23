@@ -99,14 +99,28 @@ export async function createBillingInfo(user_id: string, formFields: z.infer<typ
             message: 'Missing Fields. Failed to create Billing Info',
         }
     }
-
+    console.log("---------------- createBillingInfo -----------------");
     const {billing_addr, payment_method, purchase_order, primary_contact_name, primary_contact_email, phone_num, alt_phone_num, fax_num} = validatedFields.data;
 
+    const billing_addr_str = `(${billing_addr.street}, ${billing_addr.apt_num}, ${billing_addr.city}, ${billing_addr.state}, ${billing_addr.zip}, ${billing_addr.country})`;
+    
     try {
+        console.log("---------------- updating DB -----------------")
+        console.log("billing_addr: ", billing_addr);
         await sql`
-            INSERT INTO billing_info (user_id, billing_addr, payment_method, purchase_order, primary_contact_name, primary_contact_email, phone_num, alt_phone_num, fax_num)
+        INSERT INTO billing_info (
+            user_id, 
+            billing_addr, 
+            payment_method, 
+            purchase_order, 
+            primary_contact_name, 
+            primary_contact_email, 
+            phone_num, 
+            alt_phone_num, 
+            fax_num
+          )
             VALUES (${user_id}, 
-                ${billing_addr.street, billing_addr.apt_num, billing_addr.city, billing_addr.state, billing_addr.zip, billing_addr.country}, 
+                (${billing_addr_str}), 
                 ${payment_method}, 
                 ${purchase_order}, 
                 ${primary_contact_name}, 
@@ -115,12 +129,76 @@ export async function createBillingInfo(user_id: string, formFields: z.infer<typ
                 ${alt_phone_num}, 
                 ${fax_num})
         `;
+        console.log("---------------- updated DB -----------------")
     } catch (error) {
         return {
             message: 'Database Error: Failed to create Billing Info.',
         };
     }
 }
+
+export async function insertBillingInfo(){
+    try {
+        console.log("---------------- inserting into BillingInfo -----------------");
+        await sql`
+        INSERT INTO billing_info (
+            user_id, 
+            billing_addr, 
+            payment_method, 
+            purchase_order, 
+            primary_contact_name, 
+            primary_contact_email, 
+            phone_num, 
+            alt_phone_num, 
+            fax_num
+          ) VALUES 
+          (
+            '53a6eaf2-3f13-448e-a964-f72e1c6d4bd9', 
+            (
+                '123 Test St', 
+                'Apt 1', 
+                'New York', 
+                'NY', 
+                '10001', 
+                'USA'
+            ), 
+            'Credit Card', 
+            'PO12345', 
+            'John Doe', 
+            'john.doe@example.com', 
+            '123-456-7890', 
+            '098-765-4321', 
+            '111-222-3333'
+        ),
+          ('53a6eaf2-3f13-448e-a964-f72e1c6d4bd9', ('456 Maple Ave', 'Apt 2', 'Los Angeles', 'CA', '90001', 'USA'), 'Debit Card', 'PO23456', 'Jane Smith', 'jane.smith@example.com', '234-567-8901', '109-876-5432', '222-333-4444'),
+          ('53a6eaf2-3f13-448e-a964-f72e1c6d4bd9', ('789 Oak Dr', 'Apt 3', 'Chicago', 'IL', '60007', 'USA'), 'PayPal', 'PO34567', 'Bob Johnson', 'bob.johnson@example.com', '345-678-9012', '210-987-6543', '333-444-5555'),
+          ('53a6eaf2-3f13-448e-a964-f72e1c6d4bd9', ('012 Pine Rd', 'Apt 4', 'Houston', 'TX', '77001', 'USA'), 'Bank Transfer', 'PO45678', 'Alice Williams', 'alice.williams@example.com', '456-789-0123', '321-098-7654', '444-555-6666'),
+          ('53a6eaf2-3f13-448e-a964-f72e1c6d4bd9', ('345 Birch Ln', 'Apt 5', 'Phoenix', 'AZ', '85001', 'USA'), 'Check', 'PO56789', 'Charlie Brown', 'charlie.brown@example.com', '567-890-1234', '432-109-8765', '555-666-7777');
+        `;
+        console.log("---------------- inserted into BillingInfo -----------------");
+    } catch (error) {
+        return {
+            message: 'Database Error: Failed to insert Billing Info.',
+        };
+    }
+}
+
+// INSERT INTO billing_info (
+//   user_id, 
+//   billing_addr, 
+//   payment_method, 
+//   purchase_order, 
+//   primary_contact_name, 
+//   primary_contact_email, 
+//   phone_num, 
+//   alt_phone_num, 
+//   fax_num
+// ) VALUES 
+// ('14e57592-e422-4da6-be3b-fba670ce498d', ('123 Main St', 'Apt 1', 'New York', 'NY', '10001', 'USA'), 'Credit Card', 'PO12345', 'John Doe', 'john.doe@example.com', '123-456-7890', '098-765-4321', '111-222-3333'),
+// ('14e57592-e422-4da6-be3b-fba670ce498d', ('456 Maple Ave', 'Apt 2', 'Los Angeles', 'CA', '90001', 'USA'), 'Debit Card', 'PO23456', 'Jane Smith', 'jane.smith@example.com', '234-567-8901', '109-876-5432', '222-333-4444'),
+// ('14e57592-e422-4da6-be3b-fba670ce498d', ('789 Oak Dr', 'Apt 3', 'Chicago', 'IL', '60007', 'USA'), 'PayPal', 'PO34567', 'Bob Johnson', 'bob.johnson@example.com', '345-678-9012', '210-987-6543', '333-444-5555'),
+// ('14e57592-e422-4da6-be3b-fba670ce498d', ('012 Pine Rd', 'Apt 4', 'Houston', 'TX', '77001', 'USA'), 'Bank Transfer', 'PO45678', 'Alice Williams', 'alice.williams@example.com', '456-789-0123', '321-098-7654', '444-555-6666'),
+// ('14e57592-e422-4da6-be3b-fba670ce498d', ('345 Birch Ln', 'Apt 5', 'Phoenix', 'AZ', '85001', 'USA'), 'Check', 'PO56789', 'Charlie Brown', 'charlie.brown@example.com', '567-890-1234', '432-109-8765', '555-666-7777');
 
 export async function updateBillingInfo(user_id: string, billing_info_id: string, formFields: z.infer<typeof BillingInfoSchema>){
     const validatedFields = BillingInfoSchema.safeParse(formFields);

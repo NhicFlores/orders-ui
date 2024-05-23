@@ -245,6 +245,72 @@ async function seedRevenue(client) {
   }
 }
 
+const billingInfoArray = [
+  {
+    user_id: '14e57592-e422-4da6-be3b-fba670ce498d',
+    billing_addr: { street: '123 Main St', apt_num: 'Apt 1', city: 'New York', state: 'NY', zip: '10001', country: 'USA' },
+    payment_method: 'Credit Card',
+    purchase_order: 'PO12345',
+    primary_contact_name: 'John Doe',
+    primary_contact_email: 'john.doe@example.com',
+    phone_num: '123-456-7890',
+    alt_phone_num: '098-765-4321',
+    fax_num: '111-222-3333'
+  },
+  {
+    user_id: '14e57592-e422-4da6-be3b-fba670ce498d',
+    billing_addr: { street: '456 Maple Ave', apt_num: 'Apt 2', city: 'Los Angeles', state: 'CA', zip: '90001', country: 'USA' },
+    payment_method: 'Debit Card',
+    purchase_order: 'PO23456',
+    primary_contact_name: 'Jane Smith',
+    primary_contact_email: 'jane.smith@example.com',
+    phone_num: '234-567-8901',
+    alt_phone_num: '109-876-5432',
+    fax_num: '222-333-4444'
+  },
+];
+
+async function seedBillingInfo(client) {
+  try {
+    const createTable = await client.sql`
+    CREATE TABLE billing_info (
+      id SERIAL PRIMARY KEY,
+      user_id UUID REFERENCES users(id),
+      billing_addr address,
+      payment_method VARCHAR(255),
+      purchase_order VARCHAR(255),
+      primary_contact_name VARCHAR(255),
+      primary_contact_email VARCHAR(255),
+      phone_num VARCHAR(255),
+      alt_phone_num VARCHAR(255),
+      fax_num VARCHAR(255)
+    );
+    `;
+    console.log(`Created "billing_info" table`);
+    return createTable;
+  } catch (error) {
+    console.error("Error seeding billing_info:", error);
+    throw error;
+  }
+}
+
+// INSERT INTO billing_info (
+//   user_id, 
+//   billing_addr, 
+//   payment_method, 
+//   purchase_order, 
+//   primary_contact_name, 
+//   primary_contact_email, 
+//   phone_num, 
+//   alt_phone_num, 
+//   fax_num
+// ) VALUES 
+// ('14e57592-e422-4da6-be3b-fba670ce498d', ('123 Main St', 'Apt 1', 'New York', 'NY', '10001', 'USA'), 'Credit Card', 'PO12345', 'John Doe', 'john.doe@example.com', '123-456-7890', '098-765-4321', '111-222-3333'),
+// ('14e57592-e422-4da6-be3b-fba670ce498d', ('456 Maple Ave', 'Apt 2', 'Los Angeles', 'CA', '90001', 'USA'), 'Debit Card', 'PO23456', 'Jane Smith', 'jane.smith@example.com', '234-567-8901', '109-876-5432', '222-333-4444'),
+// ('14e57592-e422-4da6-be3b-fba670ce498d', ('789 Oak Dr', 'Apt 3', 'Chicago', 'IL', '60007', 'USA'), 'PayPal', 'PO34567', 'Bob Johnson', 'bob.johnson@example.com', '345-678-9012', '210-987-6543', '333-444-5555'),
+// ('14e57592-e422-4da6-be3b-fba670ce498d', ('012 Pine Rd', 'Apt 4', 'Houston', 'TX', '77001', 'USA'), 'Bank Transfer', 'PO45678', 'Alice Williams', 'alice.williams@example.com', '456-789-0123', '321-098-7654', '444-555-6666'),
+// ('14e57592-e422-4da6-be3b-fba670ce498d', ('345 Birch Ln', 'Apt 5', 'Phoenix', 'AZ', '85001', 'USA'), 'Check', 'PO56789', 'Charlie Brown', 'charlie.brown@example.com', '567-890-1234', '432-109-8765', '555-666-7777');
+
 async function main() {
   const client = await db.connect();
 

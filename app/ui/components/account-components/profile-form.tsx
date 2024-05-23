@@ -18,7 +18,7 @@ import { ProfileSchema } from "@/schema/form-schema";
 import { UserProfile } from "@/app/lib/definitions/profile-definitions";
 import { useState } from "react";
 import { Pencil } from "lucide-react";
-import { updateProfile } from "@/app/lib/actions/profile-actions";
+import { createProfile, updateProfile } from "@/app/lib/actions/profile-actions";
 
 interface ProfileFormProps {
   user_id: string;
@@ -44,21 +44,23 @@ export default function ProfileForm({ user_id, profile }: ProfileFormProps) {
   //NOTE TODO: onSubmit event handler
   async function handleFormSave(data: z.infer<typeof ProfileSchema>) {
     console.log("submit handler");
-    if (
-      data.name === profile.name &&
-      data.company === profile.company &&
-      data.account_num === profile.account_num &&
-      data.phone_num === profile.phone_num
-    ) {
-      setIsEditEnabled(!isEditEnabled);
-      return;
-    }
+    // if (
+    //   data.name === profile.name &&
+    //   data.company === profile.company &&
+    //   data.account_num === profile.account_num &&
+    //   data.phone_num === profile.phone_num
+    // ) {
+    //   setIsEditEnabled(!isEditEnabled);
+    //   return;
+    // }
     updateProfile(user_id, data);
+    //createProfile(user_id, data);
     setIsEditEnabled(!isEditEnabled);
   }
   //create multiple forms - one for customer info, billing info, delivery info
   //pass that form data from each back to the action
   //in action, build the object you're going to send back to the db
+  // can use onChange to enable save button 
   return (
     <Form {...profileForm}>
       <form
@@ -79,7 +81,6 @@ export default function ProfileForm({ user_id, profile }: ProfileFormProps) {
                         defaultValue={profile && profile.name ? profile.name : ""}
                         {...field}
                         readOnly={!isEditEnabled}
-                        onChange={toggleEditEnabled}
                         className={!isEditEnabled ? "bg-slate-100" : "bg-white"}
                       />
                     </FormControl>
