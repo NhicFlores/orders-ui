@@ -267,26 +267,35 @@ main().catch((err) => {
 
 async function sqlStatements() {
   try {
-    const createTables = await client.sql`  
+    const createTables = await client.sql`
+    
+    DROP TABLE IF EXISTS shipping_info;
+    DROP TABLE IF EXISTS billing_info;
+    DROP TYPE IF EXISTS address;
+    DROP TABLE IF EXISTS user_profile;
+    DROP TABLE IF EXISTS users;
+
+    CREATE TABLE IF NOT EXISTS users (
+      id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
+      email TEXT NOT NULL UNIQUE,
+      emailVerified DATE,
+      password TEXT NOT NULL,
+      role role DEFAULT 'USER' 
+    );
+    
     CREATE TYPE address AS (
+      street VARCHAR(255),
+      apt_num VARCHAR(255),
       city VARCHAR(255),
       state VARCHAR(255),
       zip VARCHAR(255),
-      county VARCHAR(255),
       country VARCHAR(255)
   );
-  CREATE TABLE user_profile (
-      id SERIAL PRIMARY KEY, ---------- UUID is less readable, more random than SERIAL. good for anonymity, but will make indexing take longer
-      user_id UUID REFERENCES users(id),
-      company VARCHAR(255),
-      account_num VARCHAR(255),
-      phone_num VARCHAR(255),
-      billing_info INTEGER REFERENCES billing_info(id),
-      shipping_info INTEGER REFERENCES shipping_info(id)
-  );
+
   CREATE TABLE user_profile (
     id SERIAL PRIMARY KEY,
     user_id UUID REFERENCES users(id),
+    name VARCHAR(255) NOT NULL,
     company VARCHAR(255),
     account_num VARCHAR(255),
     phone_num VARCHAR(255)
@@ -301,8 +310,7 @@ CREATE TABLE shipping_info (
 CREATE TABLE billing_info (
   id SERIAL PRIMARY KEY,
   user_id UUID REFERENCES users(id),
-  billing_addr_prim address,
-  billing_addr_sec address,
+  billing_addr address,
   payment_method VARCHAR(255),
   purchase_order VARCHAR(255),
   primary_contact_name VARCHAR(255),
@@ -310,6 +318,16 @@ CREATE TABLE billing_info (
   phone_num VARCHAR(255),
   alt_phone_num VARCHAR(255),
   fax_num VARCHAR(255)
+);
+-----------For testing purposes only-----------
+CREATE TABLE user_profile (
+  id SERIAL PRIMARY KEY, ---------- UUID is less readable, more random than SERIAL. good for anonymity, but will make indexing take longer
+  user_id UUID REFERENCES users(id),
+  company VARCHAR(255),
+  account_num VARCHAR(255),
+  phone_num VARCHAR(255),
+  billing_info INTEGER REFERENCES billing_info(id),
+  shipping_info INTEGER REFERENCES shipping_info(id)
 );
     `;
   } catch (error) {

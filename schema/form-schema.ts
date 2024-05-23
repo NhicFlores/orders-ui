@@ -5,12 +5,15 @@ export const UserSchema = z.object({
     email: z.string().email({
         message: 'please enter a valid email address'
     }),
-    name: z.string().min(1, {
-        message: 'please enter your name'
+    password: z.string().min(6, {
+        message: 'password must be at least 6 characters long'
     }),
 });
 
 export const ProfileSchema = z.object({
+    name: z.string().min(1, {
+        message: 'please enter your name'
+    }),
     company: z.string({
         invalid_type_error: 'Please enter your name'
     }).optional(),
@@ -23,31 +26,20 @@ export const ProfileSchema = z.object({
 });
 
 export const BillingInfoSchema = z.object({
-    billing_addr_prim: z.object({
-      city: z.string(
-        {
-          invalid_type_error: 'Please choose a city.'
-        }
-      ),
+    billing_addr: z.object({
+        street: z.string(),
+        apt_num: z.string().optional(),
+      city: z.string(),
       state: z.string(
         {
           invalid_type_error: 'Please choose a state.'
         }
       ),
       zip: z.string().length(5),
-      county: z.string().optional(),
       country: z.string(),
     }),
-    billing_addr_sec: z.object({
-      city: z.string(),
-      state: z.string(),
-      zip: z.string().length(5),
-      county: z.string().optional(),
-      country: z.string(),
-    }).optional(),
     payment_method: z.string(),
-    purchase_order: z.string(),
-    additional_info: z.string().optional(),
+    purchase_order: z.string().optional(),
     primary_contact_name: z.string(),
     primary_contact_email: z.string().email(),
     phone_num: z.string(),
@@ -57,16 +49,17 @@ export const BillingInfoSchema = z.object({
 
 export const ShippingInfoSchema = z.object({
     delivery_addr: z.object({
+        street: z.string(),
+        apt_num: z.string().optional(),
         city: z.string(),
         state: z.string(),
         zip: z.string().length(5),
-        county: z.string().optional(),
         country: z.string(),
       }),
     is_job_site: z.boolean(),
     note: z.string({
         invalid_type_error: 'enter note'
-    }),
+    }).optional(),
 });
 
 export const LoginSchema = z.object({
@@ -81,9 +74,6 @@ export const LoginSchema = z.object({
 export const RegisterSchema = z.object({
     email: z.string().email({
         message: 'please enter a valid email address'
-    }),
-    name: z.string().min(1, {
-        message: 'please enter your name'
     }),
     password: z.string().min(6, {
         message: 'password must be at least 6 characters long'

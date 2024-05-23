@@ -3,6 +3,7 @@
 export type UserProfile = {
     id: string;
     user_id: string;//this is the user id 
+    name: string;
     company?: string;
     account_num: string;//accounting handles these - do users need access to this 
     //or is this only on the admin side 
@@ -13,10 +14,9 @@ export type UserProfile = {
 
   //could have a check for if phone number
   export type BillingInfo = {
-    billing_addr_prim: Address;
-    billing_addr_sec?: Address;
+    billing_addr: Address;
     payment_method: string;
-    purchase_order: string;
+    purchase_order?: string;
     primary_contact_name: string;
     primary_contact_email: string;
     phone_num: string;
@@ -31,10 +31,11 @@ export type UserProfile = {
   }
   
   export interface Address {
+    street: string;
+    apt_num?: string;
     city: string;
     state: string;
     zip: string;
-    county?: string;
     country: string;
   }
   

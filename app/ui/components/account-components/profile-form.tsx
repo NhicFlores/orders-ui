@@ -26,11 +26,12 @@ interface ProfileFormProps {
 }
 
 export default function ProfileForm({ user_id, profile }: ProfileFormProps) {
-    const [isEditEnabled, setIsEditEnabled] = useState(false);
+  const [isEditEnabled, setIsEditEnabled] = useState(false);
 
-  const form = useForm<z.infer<typeof ProfileSchema>>({
+  const profileForm = useForm<z.infer<typeof ProfileSchema>>({
     resolver: zodResolver(ProfileSchema),
     defaultValues: {
+      name: profile && profile.name ? profile.name : "",
       company: profile && profile.company ? profile.company : "",
       account_num: profile && profile.account_num ? profile.account_num : "",
       phone_num: profile && profile.phone_num ? profile.phone_num : "",
@@ -43,11 +44,14 @@ export default function ProfileForm({ user_id, profile }: ProfileFormProps) {
   //NOTE TODO: onSubmit event handler
   async function handleFormSave(data: z.infer<typeof ProfileSchema>) {
     console.log("submit handler");
-    if(data.company === profile.company && 
-        data.account_num === profile.account_num && 
-        data.phone_num === profile.phone_num){
-        setIsEditEnabled(!isEditEnabled);
-        return;
+    if (
+      data.name === profile.name &&
+      data.company === profile.company &&
+      data.account_num === profile.account_num &&
+      data.phone_num === profile.phone_num
+    ) {
+      setIsEditEnabled(!isEditEnabled);
+      return;
     }
     updateProfile(user_id, data);
     setIsEditEnabled(!isEditEnabled);
@@ -56,47 +60,50 @@ export default function ProfileForm({ user_id, profile }: ProfileFormProps) {
   //pass that form data from each back to the action
   //in action, build the object you're going to send back to the db
   return (
-    <Form {...form}>
-      <form onSubmit={form.handleSubmit(handleFormSave)} className="space-y-6">
+    <Form {...profileForm}>
+      <form
+        onSubmit={profileForm.handleSubmit(handleFormSave)}
+        className="space-y-6"
+      >
         <div className="space-y-4">
-          <FormField
-            control={form.control}
-            name="company"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Company</FormLabel>
-                <FormControl>
-                  <Input placeholder="company" {...field} className={isEditEnabled ? "bg-white" : "bg-slate-100"} readOnly={!isEditEnabled}/>
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
           <div className="flex space-x-8">
             <div className="w-full">
               <FormField
-                control={form.control}
-                name="account_num"
+                control={profileForm.control}
+                name="name"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Account Number</FormLabel>
+                    <FormLabel>Name</FormLabel>
                     <FormControl>
-                      <Input placeholder="1234567" {...field} className={isEditEnabled ? "bg-white" : "bg-slate-100"} readOnly={!isEditEnabled}/>
+                      <Input
+                        defaultValue={profile.name}
+                        {...field}
+                        readOnly={!isEditEnabled}
+                        onChange={toggleEditEnabled}
+                        className={!isEditEnabled ? "bg-slate-100" : "bg-white"}
+                      />
                     </FormControl>
-                    <FormMessage />
+                    <FormMessage>
+                      {profileForm.formState.errors.name?.message}
+                    </FormMessage>
                   </FormItem>
                 )}
               />
             </div>
             <div className="w-full">
               <FormField
-                control={form.control}
+                control={profileForm.control}
                 name="phone_num"
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel>Phone Number</FormLabel>
                     <FormControl>
-                      <Input placeholder="(000)000-0000" {...field} className={isEditEnabled ? "bg-white" : "bg-slate-100"} readOnly={!isEditEnabled}/>
+                      <Input
+                        placeholder="(000)000-0000"
+                        {...field}
+                        className={isEditEnabled ? "bg-white" : "bg-slate-100"}
+                        readOnly={!isEditEnabled}
+                      />
                     </FormControl>
                     <FormDescription>Primary Phone Number</FormDescription>
                     <FormMessage />
@@ -105,21 +112,65 @@ export default function ProfileForm({ user_id, profile }: ProfileFormProps) {
               />
             </div>
           </div>
+          <div className="flex space-x-8">
+            <div className="w-full">
+              <FormField
+                control={profileForm.control}
+                name="company"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Company</FormLabel>
+                    <FormControl>
+                      <Input
+                        placeholder="company"
+                        {...field}
+                        className={isEditEnabled ? "bg-white" : "bg-slate-100"}
+                        readOnly={!isEditEnabled}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+            </div>
+            <div className="w-full">
+              <FormField
+                control={profileForm.control}
+                name="account_num"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Account Number</FormLabel>
+                    <FormControl>
+                      <Input
+                        placeholder="1234567"
+                        {...field}
+                        className={isEditEnabled ? "bg-white" : "bg-slate-100"}
+                        readOnly={!isEditEnabled}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+            </div>
+          </div>
           <div className="flex justify-end">
             {isEditEnabled ? (
-                <div>
-                    <Button type="button" variant={'ghost'} onClick={toggleEditEnabled}>
-                        Cancel
-                    </Button>
-                    <Button type="submit">
-                        Save
-                    </Button>
-                </div>
-            ) : (
-                <Button onClick={toggleEditEnabled}>
-                    <Pencil size={16} />
-                    <span className="pl-2">Edit</span>
+              <div>
+                <Button
+                  type="button"
+                  variant={"ghost"}
+                  onClick={toggleEditEnabled}
+                >
+                  Cancel
                 </Button>
+                <Button type="submit">Save</Button>
+              </div>
+            ) : (
+              <Button onClick={toggleEditEnabled}>
+                <Pencil size={16} />
+                <span className="pl-2">Edit</span>
+              </Button>
             )}
           </div>
         </div>

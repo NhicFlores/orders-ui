@@ -23,16 +23,15 @@ import FormSuccess from "../form-components/form-success";
 import { registerUser } from "@/app/lib/auth-actions/auth-actions";
 
 const RegisterForm = () => {
-  const [loading, setLoding] = useState(false);
+  const [loading, setLoading] = useState(false);
   const { pending } = useFormStatus();
   const [errorMessage, setErrorMessage] = useState<string | undefined>("");
-  const [successMessage, setsuccessMessage] = useState<string | undefined>("");
+  const [successMessage, setSuccessMessage] = useState<string | undefined>("");
 
   const form = useForm({
     resolver: zodResolver(RegisterSchema),
     defaultValues: {
       email: "",
-      name: "",
       password: "",
       confirm_password: "",
     },
@@ -40,12 +39,12 @@ const RegisterForm = () => {
 
   function onSubmit(data: z.infer<typeof RegisterSchema>) {
     console.log("---------- in submit handler --------------");
-    setLoding(true);
+    setLoading(true);
     //call action
     //const formData = new FormData(data)
     registerUser(data).then((validatedFields) => {
       setErrorMessage(validatedFields?.error);
-      setsuccessMessage(validatedFields?.success); //confirm messages are mapped correctly
+      setSuccessMessage(validatedFields?.success); //confirm messages are mapped correctly
     });
     //update message
     //add message prop to form error and success
@@ -72,23 +71,6 @@ const RegisterForm = () => {
                       {...field}
                       type="email"
                       placeholder="name@yourdomain.com"
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="name"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Name</FormLabel>
-                  <FormControl>
-                    <Input
-                      {...field}
-                      type="text"
-                      placeholder="first name last name"
                     />
                   </FormControl>
                   <FormMessage />
