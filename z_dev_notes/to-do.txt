@@ -173,9 +173,10 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx LOW PRIORITY xxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 back end - this will help determine errors in orders and inventory 
 
 default values 
-order name should default to UNAMED DRAFT 
+order name should default to UnNAMED DRAFT 
 form at the end for naming it
 
+move name field to profile instead of auth 
 
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx DONE xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 

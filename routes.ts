@@ -1,6 +1,13 @@
+import exp from "constants";
+
 export const ProfileRoute = {
     label: "Profile",
     href: "/profile",
+  };
+
+export const BillingRoute = {
+    label: "Billing",
+    href: "/billing",
   };
 
 /**
