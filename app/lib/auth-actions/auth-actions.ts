@@ -99,7 +99,7 @@ export async function registerUser(formFields: z.infer<typeof RegisterSchema>) {
         }
     }
 
-    const { email, name, password, confirm_password } = validatedFields.data;
+    const { email, password, confirm_password } = validatedFields.data;
 
     if (!(password === confirm_password)) {
         return {
@@ -111,8 +111,8 @@ export async function registerUser(formFields: z.infer<typeof RegisterSchema>) {
 
     try {
         await sql`
-            INSERT INTO users (name, email, password)
-            VALUES (${name}, ${email}, ${hashedPassword})
+            INSERT INTO users (email, password)
+            VALUES (${email}, ${hashedPassword})
         `;
     } catch ( error ) {
         return {

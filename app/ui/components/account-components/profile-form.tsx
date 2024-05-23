@@ -76,7 +76,7 @@ export default function ProfileForm({ user_id, profile }: ProfileFormProps) {
                     <FormLabel>Name</FormLabel>
                     <FormControl>
                       <Input
-                        defaultValue={profile.name}
+                        defaultValue={profile && profile.name ? profile.name : ""}
                         {...field}
                         readOnly={!isEditEnabled}
                         onChange={toggleEditEnabled}
