@@ -1,4 +1,7 @@
-import exp from "constants";
+export const ShapeRoute = {
+    label: "Shape",
+    href: "/shape",
+  };
 
 export const ProfileRoute = {
     label: "Profile",
