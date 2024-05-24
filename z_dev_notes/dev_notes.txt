@@ -130,7 +130,11 @@ https://nextjs.org/docs/app/building-your-application/routing/middleware#matcher
 <SessionProvider> must wrap the children using useSession() - however all pages in the 
 layout using <SessionProvider> must be server components - 
 
+
 ------------------------------------ TypeScript ------------------------------------
+similar to unwrapping in swift 
+profile && profile.company ? profile.company : "blank" 
+
 classes vs types for data modeling - declarative code 
 
 classes 
@@ -149,6 +153,8 @@ This piece always takes this value in and sends that value out. Tested, done, an
 
 {...rest} used in props 
 rest is not a property that you define in your interface. Typescript automatically infers the type from the remainder properties (those you don't include in your destructure syntax
+
+
 ------------------------------------ JavaScript ------------------------------------
 .slice() can be used to create a copy of an array 
 nextSquares = Squares.slice()
@@ -171,10 +177,6 @@ use arrow function
  <Component value={someValue} onClick={() => handleClick(0)} >
 
 
------------------------------------- TypeScript ------------------------------- 
-similar to unwrapping in swift 
-profile && profile.company ? profile.company : "blank" 
-
 ------------------------------------ JSX ------------------------------------
 wrap elements in Link, rather than putting Link in an element: this way, if you put a button in a link, the whole button is clickable 
   this was how I resolved the Edit Order button bug 
@@ -182,6 +184,13 @@ wrap elements in Link, rather than putting Link in an element: this way, if you 
 <form> has: input, dropdown, input of type number and radio, cancel, and submit 
 
 <><>: fragments can be used to avoid unnecessarily adding extra nodes to the DOM 
+
+
+------------------------------------- PostgreSQL ---------------------------------------- 
+issue where my update billing info wasn't working: adding the billing_addr field to the update sql statement 
+would stop it from updating but no errors were thrown. 
+- fix : PostgreSQL expects the update to be a string not a tuple so I had to update my syntax in createBillingInfo form 
+
 
 ------------------------------------ Data fetching ------------------------------------
 type sql queries - edefault seems to be 'query result row'
@@ -198,7 +207,7 @@ can also specify which properties to make optional
 ------------------------------------ Auth ------------------------------------
 
 JWT vs Session(cookies)
-Sesson 
+Session 
 In the session based authentication, the server will create a session for 
 the user after the user logs in. The session id is then stored on a 
 cookie on the user’s browser. While the user stays logged in, the cookie 

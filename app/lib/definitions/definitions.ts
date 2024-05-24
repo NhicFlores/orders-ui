@@ -39,6 +39,9 @@ export type Order = {
   status: OrderStatus;
   glassConfig: GlassConfiguration;
 };
+//quote: nullable field or status -
+
+export type OrderKeys = keyof Order;
 
 export type GlassConfiguration = {
   id: string;
@@ -49,9 +52,6 @@ export type GlassConfiguration = {
   glass_tint: Tint;
   glass_options: Options;
 };
-//quote: nullable field or status -
-
-export type OrderKeys = keyof Order;
 
 //this object is used to verify the data requested from db on edit forms
 export type OrderForm = {
@@ -63,14 +63,6 @@ export type OrderForm = {
   price: number;
   status: OrderStatus;
 };
-
-//depracated
-// export type User = {
-//   id: string;
-//   name: string;
-//   email: string;
-//   password: string;
-// };
 
 export type Customer = {
   id: string;

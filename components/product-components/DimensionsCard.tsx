@@ -98,6 +98,23 @@ const DimensionsCard = () => {
               </Select>
             </div>
           </div>
+          <div className="space-y-2">
+            <Label>Thickness (inches)</Label>
+            <div className="flex space-x-2">
+              <Select>
+                <SelectTrigger id="height">
+                  <SelectValue placeholder="1/8" />
+                </SelectTrigger>
+                <SelectContent>
+                  {fractionRange.map((value, index) => (
+                    <div key={index}>
+                      <SelectItem value={value}>{value}</SelectItem>
+                    </div>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
+          </div>
           <div className="flex justify-between">
             <Button variant="outline">Back</Button>
             <Button type="submit">Continue</Button>

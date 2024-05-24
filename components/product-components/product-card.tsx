@@ -25,7 +25,7 @@ const ProductCard = ({
   return (
     <div>
         <Card onClick={() => onClick(prodId)} 
-            className={cn("w-[380px] cursor-pointer hover:scale-105 shadow-md", {
+            className={cn("lg:w-[350px] md:w-[300px] sm:w-[250px] cursor-pointer hover:scale-105 shadow-md", {
             "bg-blue-100": isSelected,
             "hover:bg-slate-100": !isSelected,
         })}>
