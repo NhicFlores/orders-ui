@@ -4,31 +4,28 @@ import { Card, CardContent, CardFooter, CardHeader } from "../ui/card";
 import { Button } from "../ui/button";
 
 interface SummaryCardProps {
-  order_name: string;
-  scrollable_list: string[];
-  total: number;
+  selections: string[];
 }
 //NOTE TODO: implement props
-async function SummaryCard() {
-  const customers = await fetchCustomers();
-  console.log(customers);
+function SummaryCard({selections}: SummaryCardProps) {
+  
   return (
     <Card className="w-full text-center shadow-md ">
       <CardHeader className="bg-slate-200">
         <h1>Order name</h1>
       </CardHeader>
-      <CardContent className="">
+      <CardContent className="h-[100px]">
         <ScrollArea className="whitespace-nowrap p-2">
           <div className="space-y-4">
-            {customers.map((customer) => (
-              <div key={customer.id} className="text-sm border-b bg-green-100">
-                {customer.name}
+            {selections?.map((option, index) => (
+              <div key={index} className="text-sm border-b bg-green-100">
+                {option}
               </div>
             ))}
           </div>
         </ScrollArea>
       </CardContent>
-      <CardFooter className="bg-gray-200 pt-4">
+      <CardFooter className="bg-slate-200 pt-4">
         <div className="w-full space-y-4">
           <div className="flex justify-between">
           <p>Order Total</p>

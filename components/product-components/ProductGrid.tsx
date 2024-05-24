@@ -4,6 +4,7 @@ import ProductCard from "./product-card";
 import { useState } from "react";
 import { Button } from "../ui/button";
 import Link from "next/link";
+import { ShapeRoute } from "@/routes";
 
 const productList = [
   {
@@ -44,7 +45,12 @@ const productList = [
   },
 ];
 
-export default function ProductGrid() {
+interface ProductGridProps {
+  updateSelections: (selection: string) => void;
+  //setSelections: React.Dispatch<React.SetStateAction<string[]>>;
+}
+
+export default function ProductGrid({ updateSelections }: ProductGridProps) {
   const [selectedCard, setSelectedCard] = useState<string | null>(null);
 
   const handleCardClick = (id: string) => {
@@ -52,21 +58,22 @@ export default function ProductGrid() {
       "------------------------------\n---------------------------- card clicked! ------------------------------\n----------------------------"
     );
     setSelectedCard(id);
+    //setSelections(id);
   };
 
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4">
       {productList.map((item, i) => (
-        <ProductCard
-          key={i}
-          title={item.title}
-          prodId={item.id}
-          description={item.description}
-          imageSrc={item.imageSrc}
-          alt={item.alt}
-          isSelected={selectedCard === item.id}
-          onClick={handleCardClick}
-        />
+          <ProductCard
+            key={i}
+            title={item.title}
+            prodId={item.id}
+            description={item.description}
+            imageSrc={item.imageSrc}
+            alt={item.alt}
+            isSelected={selectedCard === item.id}
+            onClick={handleCardClick}
+          />
       ))}
     </div>
   );
