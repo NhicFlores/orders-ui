@@ -1,6 +1,18 @@
 ---------------------------------------- NEXT ---------------------------------------- 
 - check for UNDO's before commit and merge 
 
+- how to connect to azure db 
+
+- table for billing info and shipping info 
+	- reusable table 
+	- expandable row 
+	- server actions 
+
+- submit order with summary card 
+	- state management, context management
+	- pass callback function from layout to child components 
+	- use glass config object 
+
 - profile route 
 	- models: profile, billing, shipping, address, user  
 		- revise models, create tables 
@@ -113,6 +125,37 @@ https://docs.oracle.com/en/database/oracle/oracle-database/18/sqlrf/SQL-JSON-Con
 https://stackoverflow.com/questions/56335674/sql-query-with-join-to-get-nested-array-of-objects 
 
 
+
+
+data table 
+expandable row 
+	- on expand 
+		- also show the buttons from the 'more elipse': edit, copy, view customer, etc to make it easier to navigate 
+	- limit to 10 at a time, 
+	- default to order by recent activity, 
+	- add column for load date 
+	- maybe some highlighting based on date calc for admin side 
+		- green when the difference between load date and current date is greater than 5 and the status is processing or fab 
+		- yellow then status is needs ordered 
+		- red when difference is less than five 
+		- we'll work out the business logic when we get there 
+
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx LOW PRIORITY xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+- how do conflicting layouts resolve 
+- nav bar should be part of the full screen height to avoid the scroll bar 
+
+- on admin side - tooltip to show product code so they see exactly what was sent to the 
+back end - this will help determine errors in orders and inventory 
+
+default values 
+order name should default to UnNAMED DRAFT 
+form at the end for naming it
+
+
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx DONE xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
 auth 
 - designate roles 
 - lock routes by role 
@@ -168,35 +211,6 @@ create user profile
 	- consider one customer can have many users - keep many user_ide with email and password attached to 'customers' which stores company, shipping, billing, etc 
 		this won't work(smoothly) in the case that different users at different companies handle orders for different work sites
 		maybe we need user, company, and customer to allow for user to choose default order information 
-
-data table 
-expandable row 
-	- on expand 
-		- also show the buttons from the 'more elipse': edit, copy, view customer, etc to make it easier to navigate 
-	- limit to 10 at a time, 
-	- default to order by recent activity, 
-	- add column for load date 
-	- maybe some highlighting based on date calc for admin side 
-		- green when the difference between load date and current date is greater than 5 and the status is processing or fab 
-		- yellow then status is needs ordered 
-		- red when difference is less than five 
-		- we'll work out the business logic when we get there 
-
-
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx LOW PRIORITY xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-- how do conflicting layouts resolve 
-- nav bar should be part of the full screen height to avoid the scroll bar 
-
-- on admin side - tooltip to show product code so they see exactly what was sent to the 
-back end - this will help determine errors in orders and inventory 
-
-default values 
-order name should default to UnNAMED DRAFT 
-form at the end for naming it
-
-
-
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx DONE xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 data tables 
  - order route 
