@@ -1,6 +1,19 @@
+export const GlassTypeRoute = {
+  label: "Glass Type",
+  href: "/glass-type",
+};
+
 export const ShapeRoute = {
     label: "Shape",
     href: "/shape",
+  };
+
+  export const DimensionRoute = {
+    href: "/dimensions",
+  };
+
+  export const TintRoute = {
+    href: "/tint",
   };
 
 export const ProfileRoute = {

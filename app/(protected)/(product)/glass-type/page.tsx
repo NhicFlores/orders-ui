@@ -3,6 +3,8 @@ import ProductCard from '@/components/product-components/product-card'
 import React from 'react'
 import glassImage from '@/public/images/glass-verre.jpg';
 import ProductGrid from '@/components/product-components/ProductGrid';
+import ProductHeader from '@/components/product-components/product-header';
+import { ShapeRoute } from '@/routes';
 
 const GlassTypePage = () => {
 
@@ -16,7 +18,8 @@ const GlassTypePage = () => {
   // if the render array is being monitored by state 
 
   return (
-    <div>
+    <div className='container mx-auto p-4'>
+      <ProductHeader title="Glass Type" backRoute='' continueRoute={ShapeRoute.href}/>
       <ProductGrid/>
     </div>
   )

@@ -1,7 +1,6 @@
 import React from "react";
 import { Button } from "../ui/button";
 import Link from "next/link";
-import { DimensionRoute } from "@/app/lib/routes";
 
 interface ProductHeaderProps {
   title: string;
@@ -14,6 +13,10 @@ const ProductHeader = ({
   backRoute,
   continueRoute,
 }: ProductHeaderProps) => {
+  let showBackButton = true;
+  if(backRoute === '') {
+    showBackButton = false;
+  }
   return (
     <div className="flex justify-between">
       <Button variant={"outline"} asChild>

@@ -75,7 +75,7 @@ interface order_item {
 
 export type retail_product = {};
 
-export const process = ["annealed", "temepere", "heat-strengthened"];
+export const process = ["annealed", "tempered", "heat-strengthened"];
 
 export const laminated = ["0.030", "0.060", "0.090"];
 
@@ -201,6 +201,7 @@ export const glassTypes: GlassType[] = [
 export type Shape = {
   id: string;
   shape_name: string;
+  required_dimensions?: Dimensions[];
   thickness_types?: Thickness[];
   tint_types?: Tint[];
   options_types?: Options[];
@@ -395,27 +396,27 @@ export type Dimensions = {
   options_types?: Options[];
 };
 
-export const inchDimension: number[] = Array.from(
+export const inchRange: number[] = Array.from(
   { length: 96 },
   (_, i) => i + 1
 );
 
-export const fractionDimension: number[] = [
-  1 / 16,
-  1 / 8,
-  3 / 16,
-  1 / 4,
-  5 / 16,
-  3 / 8,
-  7 / 16,
-  1 / 2,
-  9 / 16,
-  5 / 8,
-  11 / 16,
-  3 / 4,
-  13 / 16,
-  7 / 8,
-  15 / 16,
+export const fractionRange: string[] = [
+  "1 / 16",
+  "1 / 8",
+  "3 / 16",
+  "1 / 4",
+  "5 / 16",
+  "3 / 8",
+  "7 / 16",
+  "1 / 2",
+  "9 / 16",
+  "5 / 8",
+  "11 / 16",
+  "3 / 4",
+  "13 / 16",
+  "7 / 8",
+  "15 / 16",
 ];
 
 export type Thickness = {

@@ -18,6 +18,9 @@
 
 styling 
 - create reusable containers for components and pages 
+- make product pages responsive 
+	- hidable sheet for navigation 
+- hidable sheet for header for the whole app 
 
 products 
 - selectable cards x
@@ -34,18 +37,18 @@ products
 - product form and submit button 
 	- submit button is the add to order button 
 	- onclick it updates the current draft 
-then we need the orer button on the summary card 
+then we need the order button on the summary card 
 	- on submit this button changes the status and updates the created at date 
 	- drafts have a created at date useful for sorting, but once submitted, that date 
 	is changed to the date ordered  because that is what's needed on an order 
 - we need a product container 
 	- this container renders the product cards dependent on the product arrays 
 	each card has a title, image, description, and add to order button 
-	- might be better to just make the cards selecteable with radio buttons or something and have 
+	- might be better to just make the cards selectable with radio buttons or something and have 
 	a continue button 
 	- the continue button, or the add to order button, whichever i decide to implement, 
 	will update the draft, the specification string, and change the products listed 
-	- instead of changing the products it coute route to the next page but that complicates 
+	- instead of changing the products it could route to the next page but that complicates 
 	state management 
 	- call three parallel functions that all take the same parameter: 
 		- server action to edit draft 
@@ -53,11 +56,26 @@ then we need the orer button on the summary card
 		- render next products
 			- if current selection == some type then product array = next products 
 			- use state: setProductArray(nextProducts) 
+- on click or product select 
+	- handle product click -> add product to specification string 
 
-comoponent tree 
+possible strategy for building glass config 
+- each page has a form with the continue button as the submit 
+	- render different components based on the page 
+	- need a component wrapper that is a form 
+	- we pass the other cards like the product grids and dimension cards 
+	<ProductSelect>
+		<ProductGrid/> 
+	</ProductSelect>
+- use state management in parent component 
+
+
+component tree 
 
 product route - start with conditional rendering then extract to pages 
 layout 
+	- product header 
+		- title, back route, continue route 
 	- product navigation on left 
 		- stack of buttons with corresponding titles 
 		- maybe dropdowns with the options so people can go back and see 
@@ -176,7 +194,7 @@ default values
 order name should default to UnNAMED DRAFT 
 form at the end for naming it
 
-move name field to profile instead of auth 
+
 
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx DONE xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
@@ -253,7 +271,10 @@ log in
 Sign in ROLES 
 - create user roles x
 - modify session and tokens to have id and role accessible x 
-- getUserById function x
+- getUserById function x 
+
+models 
+- move name field to profile instead of auth 
 
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
 
