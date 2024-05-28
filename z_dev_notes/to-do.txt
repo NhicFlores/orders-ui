@@ -3,6 +3,10 @@
 
 - how to connect to azure db 
 
+- react state, react context 
+	- passing props to children from layout to pages in route group 
+	- product layout to all product pages to show live summary 
+
 - table for billing info and shipping info 
 	- reusable table 
 	- expandable row 

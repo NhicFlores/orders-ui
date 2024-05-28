@@ -82,6 +82,10 @@ Keys do not need to be globally unique; they only need to be unique between comp
 Functional Components 
 Remember to use Functional components only when there are no dependencies between components or there aren't many! 
 
+Components: 
+since components are functions -> you can modify what parameters they take and what they return 
+can be defined as classes, 
+
 
 ------------------------------------ NextJS ------------------------------------
 routing conventions 
