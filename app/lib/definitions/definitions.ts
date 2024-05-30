@@ -7,7 +7,7 @@ import {
   Shape,
   Thickness,
   Tint,
-} from "./order-item-definitions";
+} from "@/lib/definitions/order-item-definitions";
 
 // describes the shape of the data, and what data type each property should accept
 export enum OrderStatus {

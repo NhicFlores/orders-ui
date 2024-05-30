@@ -6,7 +6,7 @@ import ProductHeader from '@/components/product-components/product-header';
 import { ShapeRoute } from '@/routes';
 import ProductFooter from '@/components/product-components/product-footer';
 import { useProductContext } from '@/components/product-components/product-context-provider';
-import { glassTypes, Product } from '@/app/lib/definitions/order-item-definitions';
+import { glassTypes, Product } from '@/lib/definitions/order-item-definitions';
 
 //if i make it an object, i can update different fields of the object 
 

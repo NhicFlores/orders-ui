@@ -1,5 +1,5 @@
 "use client";
-import { Product, tintOptions } from '@/app/lib/definitions/order-item-definitions';
+import { Product, tintOptions } from "@/lib/definitions/order-item-definitions";
 import { useProductContext } from '@/components/product-components/product-context-provider';
 import ProductHeader from '@/components/product-components/product-header';
 import ProductGrid from '@/components/product-components/ProductGrid';

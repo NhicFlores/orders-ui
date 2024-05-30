@@ -1,7 +1,7 @@
 import {
   fractionRange,
   inchRange,
-} from "@/app/lib/definitions/order-item-definitions";
+} from "@/lib/definitions/order-item-definitions"
 import { Button } from "../ui/button";
 import {
   Card,

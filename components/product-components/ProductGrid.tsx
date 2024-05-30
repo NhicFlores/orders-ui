@@ -3,7 +3,7 @@ import ProductCard from "./product-card";
 import { useState } from "react";
 import Link from "next/link";
 import { StaticImageData } from "next/image";
-import { GlassType, Product, Shape, Tint } from "@/app/lib/definitions/order-item-definitions";
+import { GlassType, Product, Shape, Tint } from "@/lib/definitions/order-item-definitions";
 
 interface ProductGridProps {
   productList: Product[];
