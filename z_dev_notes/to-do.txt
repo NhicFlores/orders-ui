@@ -3,11 +3,21 @@
 
 - how to connect to azure db 
 
+- submit dimensions to product specs 
+ - function to unwrap context in dimension page 
+ - validate data 
+ - format string for display 
+
+SummaryCard 
+- format order summary 
+- hook up save and submit buttons to server actions 
+
+Solutions for live summary card update 
 - react state, react context 
 	- passing props to children from layout to pages in route group 
 	- product layout to all product pages to show live summary 
 
-- table for billing info and shipping info 
+table for billing info and shipping info 
 	- reusable table 
 	- expandable row 
 	- server actions 

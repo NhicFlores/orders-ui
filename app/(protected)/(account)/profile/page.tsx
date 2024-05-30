@@ -3,7 +3,7 @@ import UserForm from "@/app/ui/components/account-components/user-form";
 import Container from "../../../ui/components/page-container";
 import ProfileForm from "../../../ui/components/account-components/profile-form";
 import { auth } from "@/auth";
-import { User } from "@/app/lib/definitions/auth-definitions";
+import { User } from "@/lib/definitions/auth-definitions";
 import { getUserByID, getUserProfileById } from "@/app/lib/data/user-data";
 
 export default async function ProfilePage() {

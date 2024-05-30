@@ -15,7 +15,7 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { Button } from "@/components/ui/button";
 import { Pencil } from "lucide-react";
-import { User } from "@/app/lib/definitions/auth-definitions";
+import { User } from "@/lib/definitions/auth-definitions";
 import { useState } from "react";
 import { updateUser } from "@/app/lib/actions/profile-actions";
 

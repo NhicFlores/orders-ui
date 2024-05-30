@@ -1,7 +1,7 @@
 // fetch functions  
 // fetch functions for users 
 import { sql } from '@vercel/postgres';
-import { User } from '@/app/lib/definitions/auth-definitions';
+import { User } from "@/lib/definitions/auth-definitions";
 import { unstable_noStore as noStore } from 'next/cache';
 import { BillingInfo, ShippingInfo, UserProfile } from '../definitions/profile-definitions';
 
