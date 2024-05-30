@@ -1,6 +1,4 @@
 'use client';
-import CardWithButton from '@/components/product-components/card-with-button'
-import ProductCard from '@/components/product-components/product-card'
 import React from 'react'
 import glassImage from '@/public/images/glass-verre.jpg';
 import ProductGrid from '@/components/product-components/ProductGrid';
@@ -72,10 +70,9 @@ const GlassTypePage = () => {
     }));
   }
 
-
   return (
     <div className='container mx-auto p-4'>
-      <ProductHeader title="Glass Type" backRoute='' continueRoute={ShapeRoute.href}/>
+      <ProductHeader title="Glass Type" continueRoute={ShapeRoute.href}/>
       <ProductGrid productList={productList} onSelect={handleSelection}/>
       <ProductFooter/>
     </div>
