@@ -3,7 +3,7 @@
 import {
   Dimensions,
   GlassType,
-  Options,
+  MiscOptions,
   Shape,
   Thickness,
   Tint,
@@ -50,7 +50,7 @@ export type GlassConfiguration = {
   glass_dimensions: Dimensions;
   glass_thickness: Thickness;
   glass_tint: Tint;
-  glass_options: Options;
+  glass_options: MiscOptions;
 };
 
 //this object is used to verify the data requested from db on edit forms

@@ -98,7 +98,6 @@ export const colors = ["clear", "bronze", "green", "grey", "satin"];
 // product page
 // slectable cards - name - description
 
-
 export type GlassType = {
   id: string;
   name: string;
@@ -108,7 +107,7 @@ export type GlassType = {
   shape_types?: Shape[];
   thickness_options?: Thickness[];
   tint_types?: Tint[];
-  options_types?: Options[];
+  options_types?: MiscOptions[];
 };
 
 export const glassTypes: GlassType[] = [
@@ -230,7 +229,7 @@ export type Shape = {
   required_dimensions?: Dimensions[];
   thickness_options?: Thickness[];
   tint_types?: Tint[];
-  options_types?: Options[];
+  options_types?: MiscOptions[];
 };
 
 export const shapeOptions: Shape[] = [
@@ -469,7 +468,7 @@ export type Dimensions = {
   height_fraction_of_inches: number;
   thickness_options?: Thickness[];
   tint_types?: Tint[];
-  options_types?: Options[];
+  options_types?: MiscOptions[];
 };
 
 export const inchRange: number[] = Array.from({ length: 96 }, (_, i) => i + 1);
@@ -496,7 +495,7 @@ export type Thickness = {
   id: string;
   thickness: number;
   tint_types?: Tint[];
-  options_types?: Options[];
+  options_types?: MiscOptions[];
 };
 
 export const thicknessOptions: Thickness[] = [
@@ -518,30 +517,93 @@ export type Product = {
 
 export type Tint = {
   id: string;
-  tint: string;
-  options_types?: Options[];
+  name: string;
+  description?: string;
+  imageSrc?: StaticImageData;
+  alt?: string;
+  options_types?: MiscOptions[];
 };
 
-export const tintTypes: Tint[] = [
-  { id: "1", tint: "Clear" },
-  { id: "2", tint: "Solex" },
-  { id: "3", tint: "Bronze" },
-  { id: "4", tint: "Light Gray" },
-  { id: "5", tint: "Dark Gray" },
-  { id: "6", tint: "Satin Etch" },
-  { id: "7", tint: "P-516" },
-  { id: "8", tint: "Mistlite" },
-  { id: "9", tint: "Low-E" },
-  { id: "10", tint: "Frosted Glue Chip" },
+export const tintOptions: Tint[] = [
+  {
+    id: "1",
+    name: "Clear",
+    description: "Clear Glass",
+    imageSrc: glassImage,
+    alt: "Clear Glass",
+  },
+  {
+    id: "2",
+    name: "Solex",
+    description: "Green Tinted Glass",
+    imageSrc: glassImage,
+    alt: "Green Tinted Glass",
+  },
+  {
+    id: "3",
+    name: "Bronze",
+    description: "Bronze Tinted Glass",
+    imageSrc: glassImage,
+    alt: "Bronze Tinted Glass",
+  },
+  {
+    id: "4",
+    name: "Light Gray",
+    description: "Light Gray Tinted Glass",
+    imageSrc: glassImage,
+    alt: "Light Gray Tinted Glass",
+  },
+  {
+    id: "5",
+    name: "Dark Gray",
+    description: "Dark Gray Tinted Glass",
+    imageSrc: glassImage,
+    alt: "Dark Gray Tinted Glass",
+  },
+  {
+    id: "6",
+    name: "Satin Etch",
+    description: "Satin Etch Glass",
+    imageSrc: glassImage,
+    alt: "Satin Etch Glass",
+  },
+  {
+    id: "7",
+    name: "P-516",
+    description: "P-516 Glass",
+    imageSrc: glassImage,
+    alt: "P-516 Glass",
+  },
+  {
+    id: "8",
+    name: "Mistlite",
+    description: "Mistlite Glass",
+    imageSrc: glassImage,
+    alt: "Mistlite Glass",
+  },
+  {
+    id: "9",
+    name: "Low-E",
+    description: "Low-E Glass",
+    imageSrc: glassImage,
+    alt: "Low-E Glass",
+  },
+  {
+    id: "10",
+    name: "Frosted Blue Chip",
+    description: "Frosted Blue Chip Glass",
+    imageSrc: glassImage,
+    alt: "Frosted Blue Chip Glass",
+  },
 ];
 
-export type Options = {
+export type MiscOptions = {
   id: string;
   add_tempered_logo: boolean;
   add_holes: boolean;
 };
 
-export const optionsTypes: Options[] = [
+export const optionsTypes: MiscOptions[] = [
   { id: "1", add_tempered_logo: true, add_holes: false },
   { id: "2", add_tempered_logo: false, add_holes: true },
   { id: "3", add_tempered_logo: true, add_holes: true },
