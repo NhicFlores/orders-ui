@@ -3,7 +3,7 @@
 import { updateOrder } from "@/app/lib/actions";
 import { MyButton } from "../my-button";
 import Link from "next/link";
-import { CustomerField, OrderForm } from "@/app/lib/definitions/definitions";
+import { CustomerField, OrderForm } from "@/lib/definitions/definitions";
 import { useFormState, useFormStatus } from "react-dom";
 
 export default function EditOrderForm({ 
