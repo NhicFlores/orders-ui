@@ -1,7 +1,7 @@
 'use client'
 import React, { useState } from "react"
 import BillingForm from "./billing-form"
-import { BillingInfo } from "@/app/lib/definitions/profile-definitions"
+import { BillingInfo } from "@/lib/definitions/profile-definitions"
 
 const BillingOptionTable = () => {
     const [billingOptions, setBillingOptions] = useState<BillingInfo[]>([])

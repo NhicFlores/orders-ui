@@ -15,7 +15,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { ProfileSchema } from "@/schema/form-schema";
-import { UserProfile } from "@/app/lib/definitions/profile-definitions";
+import { UserProfile } from "@/lib/definitions/profile-definitions";
 import { useState } from "react";
 import { Pencil } from "lucide-react";
 import { createProfile, updateProfile } from "@/app/lib/actions/profile-actions";

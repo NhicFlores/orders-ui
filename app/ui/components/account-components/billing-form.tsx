@@ -17,7 +17,7 @@ import { useForm } from "react-hook-form";
 import { useState } from "react";
 import { z } from "zod";
 import { createBillingInfo, insertBillingInfo } from "@/app/lib/actions/profile-actions";
-import { BillingInfo } from "@/app/lib/definitions/profile-definitions";
+import { BillingInfo } from "@/lib/definitions/profile-definitions";
 
 interface BillingFormProps {
   user_id: string;

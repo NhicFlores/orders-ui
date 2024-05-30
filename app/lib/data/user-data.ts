@@ -3,7 +3,7 @@
 import { sql } from '@vercel/postgres';
 import { User } from "@/lib/definitions/auth-definitions";
 import { unstable_noStore as noStore } from 'next/cache';
-import { BillingInfo, ShippingInfo, UserProfile } from '../definitions/profile-definitions';
+import { BillingInfo, ShippingInfo, UserProfile } from '@/lib/definitions/profile-definitions';
 
 
 export async function getUserByID(id: string) {
