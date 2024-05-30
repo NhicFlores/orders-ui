@@ -74,3 +74,17 @@ page components, not in layout or other regular components.
 If you want to fetch the session data in the layout component, you can use the useSession hook from next-auth/react. 
 This hook returns an object with data and status properties. The data property contains the session data if a session exists, 
 and status indicates the loading state of the session data.
+
+- The error message "TypeError: updateSelections is not a function" typically means that the updateSelections prop is either not being passed to the child component or it's being overwritten somewhere in the child component.
+
+Here are a few things you can check:
+
+Ensure that updateSelections is being passed down to each child component correctly. In each component where you're passing updateSelections as a prop, make sure you're passing it like this: <ChildComponent updateSelections={updateSelections} />.
+
+Check that updateSelections is not being overwritten in any of the child components. If there's any other prop or variable in the child component with the same name, it could be overwriting the updateSelections prop.
+
+Make sure that you're not calling updateSelections in a place where it could be undefined. For example, if you're calling updateSelections in a lifecycle method or a callback that gets executed before the component receives the updateSelections prop, it could be undefined at the time it's called.
+
+Add some console logs to check the value of updateSelections in each component. This can help you figure out where it's becoming undefined or not a function.
+
+- common fix - hook is being used in a server component. include the 'use client' directive at the top of the component to get rid of this error 

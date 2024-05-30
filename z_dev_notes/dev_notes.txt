@@ -125,7 +125,7 @@ enforcing that certain properties (like updateSelections) exist.
 Image 
 statically import the image: import Logo from 'logo path';
   - here the image file is stored next ot the component from where it is imported.
-  during build, nextjs will move it to dist folder, detemine width and height, 
+  during build, nextjs will move it to dist folder, determine width and height, 
   and set it to the component. this helps avoid layout shift during image loading 
   - Warning: Dynamic await import() or require() are not supported. 
   The import must be static so it can be analyzed at build time.
