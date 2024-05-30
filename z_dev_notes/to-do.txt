@@ -118,6 +118,12 @@ layout
 			- adding this selection will require a quote for accurate pricing 
 		- summary order form 
 
+images 
+- where to store product images 
+- fetch product images 
+	- dispatch function when they select new order 
+	- get the product images first, then get the shape, color, etc, in the background 
+
 db 
 - update product models 
 - update tables 
