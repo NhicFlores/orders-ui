@@ -108,6 +108,19 @@ How are actions handled differently than an async fetch function? look at data a
 
 how is FormData something we have access to but don't explicitly pass in an action  
 
+Props from layout to Page components 
+- what is the purpose of the [key: string]: any; in 
+type ChildComponentProps = 
+  { 
+    updateSelections?: (selection: string) => void; 
+    [key: string]: any; 
+  };
+- The [key: string]: any; line in the ChildComponentProps type definition is an index signature. 
+In TypeScript, an index signature is used to describe objects that might have an unknown number of properties of a certain type.
+- In this case, [key: string]: any; means that in addition to the updateSelections property, a ChildComponentProps object can have any number of 
+additional properties, as long as their keys are strings. The type of these additional properties is any, which means they can be of any type.
+- This is useful when you want to allow flexibility in the objects that can be used as ChildComponentProps, while still 
+enforcing that certain properties (like updateSelections) exist.
 
 Image 
 statically import the image: import Logo from 'logo path';

@@ -1,24 +1,16 @@
-
 import { cn } from '@/lib/utils'
 import { Card, CardContent, CardHeader, CardDescription, CardTitle } from '../ui/card'
 import Image, { StaticImageData } from 'next/image';
+import { Product } from '@/app/lib/definitions/order-item-definitions';
 
 interface ProductCardProps {
-    title: string;
-    prodId: string;
-    description: string;
-    imageSrc: StaticImageData;
-    alt: string;
+    product: Product;
     isSelected: boolean;
     onClick: (id: string, configOption: string) => void;
 }
 
 const ProductCard = ({
-    title,
-    prodId,
-    description,
-    imageSrc,
-    alt,
+    product: {id: prodId, name: title, description, imageSrc, alt},
     isSelected,
     onClick,
 }: ProductCardProps) => {

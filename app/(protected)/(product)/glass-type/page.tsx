@@ -6,45 +6,7 @@ import ProductHeader from '@/components/product-components/product-header';
 import { ShapeRoute } from '@/routes';
 import ProductFooter from '@/components/product-components/product-footer';
 import { useProductContext } from '@/components/product-components/product-context-provider';
-
-const productList = [
-  {
-    title: "Annealed Glass",
-    description: "Standard glass type used in various applications.",
-    imageSrc: glassImage,
-    alt: "Annealed Glass",
-    id: "12345324",
-  },
-  {
-    title: "Tempered Glass",
-    description: "Stronger and safer glass type, ideal for doors and windows.",
-    imageSrc: glassImage,
-    alt: "Tempered Glass",
-    id: "56345",
-  },
-  {
-    title: "Laminated Glass",
-    description:
-      "Glass with a plastic layer for extra security and soundproofing.",
-    imageSrc: glassImage,
-    alt: "Laminated Glass",
-    id: "95678490",
-  },
-  {
-    title: "Annealed Glass",
-    description: "Standard glass type used in various applications.",
-    imageSrc: glassImage,
-    alt: "Annealed Glass",
-    id: "946134669",
-  },
-  {
-    title: "Tempered Glass",
-    description: "Stronger and safer glass type, ideal for doors and windows.",
-    imageSrc: glassImage,
-    alt: "Tempered Glass",
-    id: "97323784",
-  },
-];
+import { glassTypes, Product } from '@/app/lib/definitions/order-item-definitions';
 
 //if i make it an object, i can update different fields of the object 
 
@@ -58,7 +20,17 @@ const GlassTypePage = () => {
   // in the background, summary is getting the price 
   // this could all be done on a single page with one component 
   // if the render array is being monitored by state 
-  
+
+  const productList = glassTypes.map((glassType) => {
+    return {
+      id: glassType.id,
+      name: glassType.name,
+      description: glassType.description,
+      imageSrc: glassType.imageSrc,
+      alt: glassType.alt,
+    } as Product;
+  });
+
   const { setSummaryCard } = useProductContext();
   const handleSelection = (configOption: string) => {
     setSummaryCard((prev) => ({

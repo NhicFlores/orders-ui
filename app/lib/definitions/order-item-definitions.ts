@@ -1,3 +1,6 @@
+import { StaticImageData } from "next/image";
+import glassImage from "@/public/images/glass-verre.jpg";
+
 export type OrderItem = {
   id: string;
   description: string;
@@ -64,12 +67,12 @@ interface order_item {
   shape: string[];
   dimensions: number[];
   thickness: number[];
-  tiner: string[];
+  tint: string[];
   edgework: string[];
   note: string;
 }
 
-//glass type determines treament and price
+//glass type determines treatment and price
 //shape has a pricing factor
 //
 
@@ -95,12 +98,15 @@ export const colors = ["clear", "bronze", "green", "grey", "satin"];
 // product page
 // slectable cards - name - description
 
+
 export type GlassType = {
   id: string;
   name: string;
-  definition: string;
+  description: string;
+  imageSrc: StaticImageData;
+  alt: string;
   shape_types?: Shape[];
-  thickness_types?: Thickness[];
+  thickness_options?: Thickness[];
   tint_types?: Tint[];
   options_types?: Options[];
 };
@@ -109,90 +115,108 @@ export const glassTypes: GlassType[] = [
   {
     id: "1",
     name: "Tempered Glass",
-    definition:
+    description:
       "This product is used most often for shelves, some fireplaces and table tops. Tempered glass breaks into many small pieces when broken and usually never cracks.",
+    imageSrc: glassImage,
+    alt: "Tempered Glass",
     shape_types: [],
-    thickness_types: [],
+    thickness_options: [],
     tint_types: [],
     options_types: [],
   },
   {
     id: "2",
     name: "Insulated Unit/Dual Pane",
-    definition:
+    description:
       "This product consists of two panes of tempered glass separated by a spacer. The space between the two panes of glass is filled with air. These are most often used in residential window applications.",
+    imageSrc: glassImage,
+    alt: "Insulated Unit/Dual Pane",
     shape_types: [],
-    thickness_types: [],
+    thickness_options: [],
     tint_types: [],
     options_types: [],
   },
   {
     id: "3",
     name: "Mirror",
-    definition:
+    description:
       "This product is used to replace any mirror. Mirrors are not tempered and if broken will break into large shards.",
+    imageSrc: glassImage,
+    alt: "Mirror",
     shape_types: [],
-    thickness_types: [],
+    thickness_options: [],
     tint_types: [],
     options_types: [],
   },
   {
     id: "4",
     name: "Laminate/Safety Glass",
-    definition:
+    description:
       "This product is often used in doors and windows for security to resist burglar intrusion or if accidentally broken to keep a safeguard on the door and window until replaced. This as well makes a good sound barrier for single pane glass applications. This type of safety glass holds together when shattered.",
+    imageSrc: glassImage,
+    alt: "Laminate/Safety Glass",
     shape_types: [],
-    thickness_types: [],
+    thickness_options: [],
     tint_types: [],
     options_types: [],
   },
   {
     id: "5",
     name: "Tempered Laminate",
-    definition:
+    description:
       "This is a unique product that provides the surface strength and durability of tempered glass and the security of laminated glass. Tempered Laminated Glass, if broken, will break into small pieces yet be held together. This is often used in overhead and panel applications.",
+    imageSrc: glassImage,
+    alt: "Tempered Laminate",
     shape_types: [],
-    thickness_types: [],
+    thickness_options: [],
     tint_types: [],
     options_types: [],
   },
   {
     id: "6",
     name: "Ceramic Glass",
-    definition:
+    description:
       "These products are made to withstand very high temperatures and are often used in woodstoves, gas stoves, ovens, halogen lamps, and laboratories. Ceramic glasses do not shatter. If broken, the piece will crack into large shards.",
+    imageSrc: glassImage,
+    alt: "Ceramic Glass",
     shape_types: [],
-    thickness_types: [],
+    thickness_options: [],
     tint_types: [],
     options_types: [],
   },
   {
     id: "7",
     name: "Fire Rated Glass",
-    definition:
+    description:
       "This product is used for applications ranging from openings such as windows, side lites, and transoms, to doors, storefronts and glass walls where fire protective glass and fire resistive glass is required by code.",
+    imageSrc: glassImage,
+    alt: "Fire Rated Glass",
     shape_types: [],
-    thickness_types: [],
+    thickness_options: [],
     tint_types: [],
     options_types: [],
   },
   {
     id: "8",
     name: "Shower Doors/Panels",
-    definition:
+    description:
       'These products are made with 3/8” or 1/2" Tempered Glass with a selection of hardware such as hinges and handles as well as options such as bright guard to keep your glass looking like new for years.',
+    imageSrc: glassImage,
+    alt: "Shower Doors/Panels",
     shape_types: [],
-    thickness_types: [],
+    thickness_options: [],
     tint_types: [],
     options_types: [],
   },
   {
     id: "9",
     name: "Annealed Glass",
-    definition:
+    description:
       'Often used in small pieces. This product is not considered a safety glass. Annealed glass does not shatter into small pieces. If broken, the piece will crack into large shards. Maximum Annealed Glass Size: 29-15/16" x 47-15/16". For pieces larger than this please select Tempered Glass.',
+    imageSrc: glassImage,
+    alt: "Annealed Glass",
     shape_types: [],
-    thickness_types: [],
+    thickness_options: [],
     tint_types: [],
     options_types: [],
   },
@@ -200,186 +224,238 @@ export const glassTypes: GlassType[] = [
 
 export type Shape = {
   id: string;
-  shape_name: string;
+  name: string;
+  imageSrc: StaticImageData;
+  alt: string;
   required_dimensions?: Dimensions[];
-  thickness_types?: Thickness[];
+  thickness_options?: Thickness[];
   tint_types?: Tint[];
   options_types?: Options[];
 };
 
-export const shapeTypes: Shape[] = [
+export const shapeOptions: Shape[] = [
   {
     id: "1",
-    shape_name: "Square/Rectangle",
-    thickness_types: [],
+    name: "Square/Rectangle",
+    imageSrc: glassImage,
+    alt: "Square/Rectangle",
+    thickness_options: [],
     tint_types: [],
     options_types: [],
   },
   {
     id: "2",
-    shape_name: "Single Slope Rectangle",
-    thickness_types: [],
+    name: "Single Slope Rectangle",
+    imageSrc: glassImage,
+    alt: "Single Slope Rectangle",
+    thickness_options: [],
     tint_types: [],
     options_types: [],
   },
   {
     id: "3",
-    shape_name: "Circle",
-    thickness_types: [],
+    name: "Circle",
+    imageSrc: glassImage,
+    alt: "Circle",
+    thickness_options: [],
     tint_types: [],
     options_types: [],
   },
   {
     id: "4",
-    shape_name: "House",
-    thickness_types: [],
+    name: "House",
+    imageSrc: glassImage,
+    alt: "House",
+    thickness_options: [],
     tint_types: [],
     options_types: [],
   },
   {
     id: "5",
-    shape_name: "Arch",
-    thickness_types: [],
+    name: "Arch",
+    imageSrc: glassImage,
+    alt: "Arch",
+    thickness_options: [],
     tint_types: [],
     options_types: [],
   },
   {
     id: "6",
-    shape_name: "Arch-Top",
-    thickness_types: [],
+    name: "Arch-Top",
+    imageSrc: glassImage,
+    alt: "Arch-Top",
+    thickness_options: [],
     tint_types: [],
     options_types: [],
   },
   {
     id: "7",
-    shape_name: "Arch Top & Bottom",
-    thickness_types: [],
+    name: "Arch Top & Bottom",
+    imageSrc: glassImage,
+    alt: "Arch Top & Bottom",
+    thickness_options: [],
     tint_types: [],
     options_types: [],
   },
   {
     id: "8",
-    shape_name: "Arch Side",
-    thickness_types: [],
+    name: "Arch Side",
+    imageSrc: glassImage,
+    alt: "Arch Side",
+    thickness_options: [],
     tint_types: [],
     options_types: [],
   },
   {
     id: "9",
-    shape_name: "Rounded Corner(s)",
-    thickness_types: [],
+    name: "Rounded Corner(s)",
+    imageSrc: glassImage,
+    alt: "Rounded Corner(s)",
+    thickness_options: [],
     tint_types: [],
     options_types: [],
   },
   {
     id: "10",
-    shape_name: "Clipped Corner(s)",
-    thickness_types: [],
+    name: "Clipped Corner(s)",
+    imageSrc: glassImage,
+    alt: "Clipped Corner(s)",
+    thickness_options: [],
     tint_types: [],
     options_types: [],
   },
   {
     id: "11",
-    shape_name: "Pentagon",
-    thickness_types: [],
+    name: "Pentagon",
+    imageSrc: glassImage,
+    alt: "Pentagon",
+    thickness_options: [],
     tint_types: [],
     options_types: [],
   },
   {
     id: "12",
-    shape_name: "Hexagon",
-    thickness_types: [],
+    name: "Hexagon",
+    imageSrc: glassImage,
+    alt: "Hexagon",
+    thickness_options: [],
     tint_types: [],
     options_types: [],
   },
   {
     id: "13",
-    shape_name: "Octagon",
-    thickness_types: [],
+    name: "Octagon",
+    imageSrc: glassImage,
+    alt: "Octagon",
+    thickness_options: [],
     tint_types: [],
     options_types: [],
   },
   {
     id: "14",
-    shape_name: "Ellipse",
-    thickness_types: [],
+    name: "Ellipse",
+    imageSrc: glassImage,
+    alt: "Ellipse",
+    thickness_options: [],
     tint_types: [],
     options_types: [],
   },
   {
     id: "15",
-    shape_name: "Racetrack Oval",
-    thickness_types: [],
+    name: "Racetrack Oval",
+    imageSrc: glassImage,
+    alt: "Racetrack Oval",
+    thickness_options: [],
     tint_types: [],
     options_types: [],
   },
   {
     id: "16",
-    shape_name: "Quarter Round",
-    thickness_types: [],
+    name: "Quarter Round",
+    imageSrc: glassImage,
+    alt: "Quarter Round",
+    thickness_options: [],
     tint_types: [],
     options_types: [],
   },
   {
     id: "17",
-    shape_name: "Quarter Round with Notch",
-    thickness_types: [],
+    name: "Quarter Round with Notch",
+    imageSrc: glassImage,
+    alt: "Quarter Round with Notch",
+    thickness_options: [],
     tint_types: [],
     options_types: [],
   },
   {
     id: "18",
-    shape_name: "Half-Circle",
-    thickness_types: [],
+    name: "Half-Circle",
+    imageSrc: glassImage,
+    alt: "Half-Circle",
+    thickness_options: [],
     tint_types: [],
     options_types: [],
   },
   {
     id: "19",
-    shape_name: "Half-Circle with Notch",
-    thickness_types: [],
+    name: "Half-Circle with Notch",
+    imageSrc: glassImage,
+    alt: "Half-Circle with Notch",
+    thickness_options: [],
     tint_types: [],
     options_types: [],
   },
   {
     id: "20",
-    shape_name: "Trapezoid",
-    thickness_types: [],
+    name: "Trapezoid",
+    imageSrc: glassImage,
+    alt: "Trapezoid",
+    thickness_options: [],
     tint_types: [],
     options_types: [],
   },
   {
     id: "21",
-    shape_name: "Parallelogram",
-    thickness_types: [],
+    name: "Parallelogram",
+    imageSrc: glassImage,
+    alt: "Parallelogram",
+    thickness_options: [],
     tint_types: [],
     options_types: [],
   },
   {
     id: "22",
-    shape_name: "Right Triangle",
-    thickness_types: [],
+    name: "Right Triangle",
+    imageSrc: glassImage,
+    alt: "Right Triangle",
+    thickness_options: [],
     tint_types: [],
     options_types: [],
   },
   {
     id: "23",
-    shape_name: "Triangle",
-    thickness_types: [],
+    name: "Triangle",
+    imageSrc: glassImage,
+    alt: "Triangle",
+    thickness_options: [],
     tint_types: [],
     options_types: [],
   },
   {
     id: "24",
-    shape_name: "Quad Arch",
-    thickness_types: [],
+    name: "Quad Arch",
+    imageSrc: glassImage,
+    alt: "Quad Arch",
+    thickness_options: [],
     tint_types: [],
     options_types: [],
   },
   {
     id: "25",
-    shape_name: "Irregular/Any Other Shape",
-    thickness_types: [],
+    name: "Irregular/Any Other Shape",
+    imageSrc: glassImage,
+    alt: "Irregular/Any Other Shape",
+    thickness_options: [],
     tint_types: [],
     options_types: [],
   },
@@ -391,15 +467,12 @@ export type Dimensions = {
   width_fraction_of_inches: number;
   height_inches: number;
   height_fraction_of_inches: number;
-  thickness_types?: Thickness[];
+  thickness_options?: Thickness[];
   tint_types?: Tint[];
   options_types?: Options[];
 };
 
-export const inchRange: number[] = Array.from(
-  { length: 96 },
-  (_, i) => i + 1
-);
+export const inchRange: number[] = Array.from({ length: 96 }, (_, i) => i + 1);
 
 export const fractionRange: string[] = [
   "1 / 16",
@@ -426,7 +499,7 @@ export type Thickness = {
   options_types?: Options[];
 };
 
-export const thicknessTypes: Thickness[] = [
+export const thicknessOptions: Thickness[] = [
   { id: "1", thickness: 1 / 8 },
   { id: "2", thickness: 5 / 32 },
   { id: "3", thickness: 3 / 16 },
@@ -434,6 +507,14 @@ export const thicknessTypes: Thickness[] = [
   { id: "5", thickness: 3 / 8 },
   { id: "6", thickness: 1 / 2 },
 ];
+
+export type Product = {
+  id: string;
+  name: string;
+  description?: string;
+  imageSrc: StaticImageData;
+  alt: string;
+};
 
 export type Tint = {
   id: string;

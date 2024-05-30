@@ -31,6 +31,45 @@ const orders = [
     },
 ];
 
+const glassTypeList = [
+  {
+    title: "Annealed Glass",
+    description: "Standard glass type used in various applications.",
+    imageSrc: glassImage,
+    alt: "Annealed Glass",
+    id: "12345324",
+  },
+  {
+    title: "Tempered Glass",
+    description: "Stronger and safer glass type, ideal for doors and windows.",
+    imageSrc: glassImage,
+    alt: "Tempered Glass",
+    id: "56345",
+  },
+  {
+    title: "Laminated Glass",
+    description:
+      "Glass with a plastic layer for extra security and soundproofing.",
+    imageSrc: glassImage,
+    alt: "Laminated Glass",
+    id: "95678490",
+  },
+  {
+    title: "Annealed Glass",
+    description: "Standard glass type used in various applications.",
+    imageSrc: glassImage,
+    alt: "Annealed Glass",
+    id: "946134669",
+  },
+  {
+    title: "Tempered Glass",
+    description: "Stronger and safer glass type, ideal for doors and windows.",
+    imageSrc: glassImage,
+    alt: "Tempered Glass",
+    id: "97323784",
+  },
+];
+
 const users = [
   {
     id: '410544b2-4001-4271-9855-fec4b6a6442a',
