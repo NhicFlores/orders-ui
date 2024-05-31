@@ -18,7 +18,7 @@ import { ProfileSchema } from "@/schema/form-schema";
 import { UserProfile } from "@/lib/definitions/profile-definitions";
 import { useState } from "react";
 import { Pencil } from "lucide-react";
-import { createProfile, updateProfile } from "@/app/lib/actions/profile-actions";
+import { createProfile, updateProfile } from "@/lib/actions/profile-actions";
 
 interface ProfileFormProps {
   user_id: string;
@@ -60,7 +60,7 @@ export default function ProfileForm({ user_id, profile }: ProfileFormProps) {
   //create multiple forms - one for customer info, billing info, delivery info
   //pass that form data from each back to the action
   //in action, build the object you're going to send back to the db
-  // can use onChange to enable save button 
+  // can use onChange to enable save button
   return (
     <Form {...profileForm}>
       <form
@@ -78,7 +78,9 @@ export default function ProfileForm({ user_id, profile }: ProfileFormProps) {
                     <FormLabel>Name</FormLabel>
                     <FormControl>
                       <Input
-                        defaultValue={profile && profile.name ? profile.name : ""}
+                        defaultValue={
+                          profile && profile.name ? profile.name : ""
+                        }
                         {...field}
                         readOnly={!isEditEnabled}
                         className={!isEditEnabled ? "bg-slate-100" : "bg-white"}

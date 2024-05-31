@@ -17,7 +17,7 @@ import { Button } from "@/components/ui/button";
 import { Pencil } from "lucide-react";
 import { User } from "@/lib/definitions/auth-definitions";
 import { useState } from "react";
-import { updateUser } from "@/app/lib/actions/profile-actions";
+import { updateUser } from "@/lib/actions/profile-actions";
 
 interface UserFormProps {
   user: User;
@@ -61,7 +61,6 @@ export default function UserForm({ user }: UserFormProps) {
           className="space-y-6"
         >
           <div className="flex space-x-8">
-
             <div className="w-full">
               <FormField
                 control={userForm.control}
@@ -94,7 +93,9 @@ export default function UserForm({ user }: UserFormProps) {
                     <FormControl>
                       <Input
                         type="password"
-                        defaultValue={isEditEnabled ? user.password : "********"}
+                        defaultValue={
+                          isEditEnabled ? user.password : "********"
+                        }
                         {...field}
                         readOnly={!isEditEnabled}
                         className={!isEditEnabled ? "bg-slate-100" : "bg-white"}
