@@ -15,7 +15,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import Link from "next/link";
-import { deleteOrder } from "../../lib/actions";
+import { deleteOrder } from "@/lib/actions/actions";
 import { formatDateToLocal } from "../../lib/utils";
 
 /*export type Order = {

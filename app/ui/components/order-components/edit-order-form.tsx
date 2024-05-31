@@ -1,6 +1,6 @@
 'use client'
 
-import { updateOrder } from "@/app/lib/actions";
+import { updateOrder } from "@/lib/actions/actions";
 import { MyButton } from "../my-button";
 import Link from "next/link";
 import { CustomerField, OrderForm } from "@/lib/definitions/definitions";
