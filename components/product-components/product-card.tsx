@@ -1,6 +1,6 @@
 import { cn } from '@/lib/utils'
 import { Card, CardContent, CardHeader, CardDescription, CardTitle } from '../ui/card'
-import Image, { StaticImageData } from 'next/image';
+import Image from 'next/image';
 import { Product } from '@/lib/definitions/order-item-definitions';
 
 interface ProductCardProps {
