@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { PlusIcon } from "lucide-react";
 import BillingOptionTable from "./billing-option-table";
 import { auth } from "@/auth";
-import { getBillingInfoById, getUserByID } from "@/app/lib/data/user-data";
+import { getBillingInfoById, getUserByID } from "@/lib/data/user-data";
 
 const BillingFormWrapper = async () => {
     const session = await auth();
