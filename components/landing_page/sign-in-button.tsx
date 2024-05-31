@@ -1,5 +1,5 @@
 "use client";
-import { Login } from "@/app/lib/routes";
+import { LoginRoute } from "@/routes";
 import { useRouter } from "next/navigation";
 
 
@@ -14,7 +14,7 @@ const SignInButton = ({children, mode = 'redirect', asChild}: SignInButtonProps)
     //NOTE: router vs links vs redirect 
     const onClick = () => {
         console.log("SIGN IN BUTTON CLICKED");
-        router.push(Login.href);
+        router.push(LoginRoute.href);
     }
 
     if (mode === "modal") {

@@ -1,7 +1,7 @@
 "use client";
 import Container from "./components/page-container";
 import Link from "next/link";
-import { Dashboard, HeaderRoutes } from "../lib/routes";
+import { DashboardRoute, HeaderRoutes } from "@/routes";
 import { Button } from "@/components/ui/button";
 import ProfileButton from "./components/profile-button";
 import { usePathname } from "next/navigation";
@@ -14,8 +14,8 @@ export default function Header() {
       <Container>
         <div className="relative px-4 sm:px-6 lg:px-8 flex h-16 items-center justify-between w-full">
           <div className="flex items-center">
-            <Link href={Dashboard.href} className="ml-4 lg:ml-0">
-              <h1 className="text-xl font-bold">{Dashboard.label}</h1>
+            <Link href={DashboardRoute.href} className="ml-4 lg:ml-0">
+              <h1 className="text-xl font-bold">{DashboardRoute.label}</h1>
             </Link>
           </div>
           <nav className="mx-6 flex items-center space-x-4 lg:space-x-6 md:block">

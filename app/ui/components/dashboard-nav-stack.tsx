@@ -1,8 +1,8 @@
 //homepage navlinks 
 import Link from "next/link";
-import { DashboardNavLinks } from "@/app/lib/routes";
+import { DashboardNavLinks } from "@/routes";
 
-//eventaully put into db or dedicated folder 
+//eventually put into db or dedicated folder 
 //export homepage, design, order links etc 
 // const links = [
 //     {

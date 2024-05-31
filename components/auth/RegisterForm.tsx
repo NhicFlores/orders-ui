@@ -17,7 +17,7 @@ import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 import { useState } from "react";
 import { useFormStatus } from "react-dom";
-import { Login } from "@/app/lib/routes";
+import { LoginRoute } from "@/routes";
 import FormError from "../form-components/form-error";
 import FormSuccess from "../form-components/form-success";
 import { registerUser } from "@/lib/actions/auth-actions";
@@ -54,7 +54,7 @@ const RegisterForm = () => {
     <CardWrapper
       header="Register"
       label="Create an account"
-      backButtonHref={Login.href}
+      backButtonHref={LoginRoute.href}
       backButtonLabel="Have an account? Log in."
     >
       <Form {...form}>

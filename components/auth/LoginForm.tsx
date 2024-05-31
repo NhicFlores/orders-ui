@@ -18,12 +18,12 @@ import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 import { useState } from "react";
 import { useFormState, useFormStatus } from "react-dom";
-import { Register } from "@/app/lib/routes";
+import { RegisterRoute } from "@/routes";
 import { authenticate } from "@/lib/actions/auth-actions";
 import FormError from "../form-components/form-error";
 
 const LoginForm = () => {
-  const [errorMessage, dispath] = useFormState(authenticate, undefined);
+  const [errorMessage, dispatch] = useFormState(authenticate, undefined);
   const [loading, setLoading] = useState(false);
   const { pending } = useFormStatus();
 
@@ -52,7 +52,7 @@ const LoginForm = () => {
       backButtonLabel="Don't have an account? Register here."
     >
       <Form {...form}>
-        <form action={dispath} className="space-y-6">
+        <form action={dispatch} className="space-y-6">
           <div className="space-y-4">
             <FormField
               control={form.control}

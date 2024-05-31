@@ -3,7 +3,7 @@ import { z } from "zod";
 import { sql } from "@vercel/postgres";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
-import { OrderRoute } from "../../app/lib/routes";
+import { OrderRoute } from "@/routes";
 
 //updating the data displayed in the orders route,
 //so we need to clear this cache and trigger a new request to the server

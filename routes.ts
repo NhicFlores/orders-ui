@@ -1,3 +1,43 @@
+// welcome page 
+export const Landing = {
+  label: "Glass Ordering",
+  href: "/",
+};
+
+export const DashboardRoute = {
+  label: "Dashboard",
+  href: "/dashboard",
+};
+
+// lookup routes
+export const QuoteRoute = {
+  label: "Quotes",
+  href: "/quote",
+};
+
+export const NewOrderRoute = {
+  label: "New Order",
+  href: "/order/new_order",
+};
+
+/*
+export const EditOrderRoute = {
+  label: "Edit Order",
+  href: 
+}
+*/
+
+export const OrderRoute = {
+  label: "Orders",
+  href: "/order",
+};
+
+export const DraftRoute = {
+  label: "Drafts",
+  href: "/drafts",
+};
+
+// product routes
 export const GlassTypeRoute = {
   label: "Glass Type",
   href: "/glass-type",
@@ -25,6 +65,55 @@ export const BillingRoute = {
     label: "Billing",
     href: "/billing",
   };
+
+// header routes 
+export const HeaderRoutes = [
+  {
+    label: "Quotes",
+    href: "/quote",
+  },
+  {
+    label: "Orders",
+    href: "/order",
+  },
+  {
+    label: "Drafts",
+    href: "/drafts",
+  },
+];
+
+//dashboard nav links
+export const DashboardNavLinks = [
+  {
+    label: "New Order",
+    href: GlassTypeRoute.href,
+  },
+  {
+    label: "Check Order Status",
+    href: "/order",
+  },
+  {
+    label: "Browse Templates",
+    href: "/browse_templates",
+  },
+];
+
+// public routes 
+export const TemplatesRoute = {
+  label: "Browse Templates",
+  href: "/browse_templates",
+};
+
+// auth routes 
+export const LoginRoute = {
+  label: "Login",
+  href: "/auth/login",
+};
+
+export const RegisterRoute = {
+  label: "Register",
+  href: "/auth/register",
+};
 
 /**
  * an array of routes that are accessible to the public 
