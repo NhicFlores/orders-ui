@@ -11,7 +11,7 @@ import {
 import { UserRound } from "lucide-react";
 import Link from "next/link";
 import { BillingRoute, ProfileRoute } from "@/routes";
-import { logOut } from "@/app/lib/auth-actions/auth-actions";
+import { logOut } from "@/lib/actions/auth-actions";
 //get images into public
 // NOTE TODO: remove link from dropdown trigger and replace with account button
 const ProfileButton = () => {
@@ -37,7 +37,9 @@ const ProfileButton = () => {
           </DropdownMenuItem>
         </Link>
         <Link href={BillingRoute.href}>
-          <DropdownMenuItem className="cursor-pointer">{BillingRoute.label}</DropdownMenuItem>
+          <DropdownMenuItem className="cursor-pointer">
+            {BillingRoute.label}
+          </DropdownMenuItem>
         </Link>
         <DropdownMenuItem className="cursor-pointer">Settings</DropdownMenuItem>
         <DropdownMenuSeparator />

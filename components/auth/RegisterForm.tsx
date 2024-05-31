@@ -20,7 +20,7 @@ import { useFormStatus } from "react-dom";
 import { Login } from "@/app/lib/routes";
 import FormError from "../form-components/form-error";
 import FormSuccess from "../form-components/form-success";
-import { registerUser } from "@/app/lib/auth-actions/auth-actions";
+import { registerUser } from "@/lib/actions/auth-actions";
 
 const RegisterForm = () => {
   const [loading, setLoading] = useState(false);
