@@ -1,5 +1,5 @@
 import EditOrderForm from "@/app/ui/components/order-components/edit-order-form";
-import { fetchCustomers, fetchOrderById } from "@/app/lib/data";
+import { fetchCustomers, fetchOrderById } from "@/lib/data/data";
 
 //declaring prop of type 'params' where 'params' is an object with and id of type string 
 export default async function Page({ params }: { params: { id:string } }) {
