@@ -16,7 +16,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import Link from "next/link";
 import { deleteOrder } from "@/lib/actions/actions";
-import { formatDateToLocal } from "../../lib/utils";
+import { formatDateToLocal } from "@/lib/utils";
 
 /*export type Order = {
   id: string;

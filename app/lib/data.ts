@@ -11,7 +11,7 @@ import {
   OrderForm,
   OrderStatus,
 } from "@/lib/definitions/definitions";
-import { formatCurrency } from "./utils";
+import { formatCurrency } from "@/lib/utils";
 import { unstable_noStore as noStore } from "next/cache";
 
 //create fetch functions for orders where status = draft, quote
