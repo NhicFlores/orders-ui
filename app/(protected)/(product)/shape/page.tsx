@@ -1,6 +1,7 @@
 "use client";
 import {
-  Product
+  Product,
+  Shape
 } from "@/lib/definitions/order-item-definitions";
 import {
   shapeOptions
@@ -11,7 +12,7 @@ import ProductGrid from "@/components/product-components/ProductGrid";
 import { DimensionRoute, GlassTypeRoute } from "@/routes";
 
 const ShapePage = () => {
-  const { setSummaryCard } = useProductContext();
+  const { setOrder, setSummaryCard } = useProductContext();
 
   const handleSelect = (configOption: string) => {
     setSummaryCard((prev) => ({
@@ -22,6 +23,8 @@ const ShapePage = () => {
       },
     }));
   };
+
+
 
   // const productList = shapeOptions.map((shape) => {
   //   return {

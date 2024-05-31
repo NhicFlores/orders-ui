@@ -4,6 +4,7 @@ import {
   Dimensions,
   GlassType,
   MiscOptions,
+  RequiredDimensions,
   Shape,
   Thickness,
   Tint,
@@ -47,7 +48,7 @@ export type GlassConfiguration = {
   id: string;
   glass_type: GlassType;
   glass_shape: Shape;
-  glass_dimensions: Dimensions;
+  glass_dimensions: RequiredDimensions;
   glass_thickness: Thickness;
   glass_tint: Tint;
   glass_options: MiscOptions;

@@ -1,7 +1,4 @@
-import {
-  fractionRange,
-  inchRange,
-} from "@/lib/data/product-placeholder-data";
+import { fractionRange, inchRange } from "@/lib/data/product-placeholder-data";
 import { Button } from "../ui/button";
 import {
   Card,
@@ -20,37 +17,61 @@ import {
 } from "../ui/select";
 import { Square } from "lucide-react";
 import { useState } from "react";
+import { RequiredDimensions } from "@/lib/definitions/order-item-definitions";
 
 // shape {name: string, dimensions: {width: {label: string, options: string[]}, height: {label: string, options: string[]}, thickness: {label: string, options: string[]}}
 // for each element in dimensions, render a select with options
-// then that drop down is changed, pass the dimension label and value to function 
+// then that drop down is changed, pass the dimension label and value to function
 // function will create an object with all dimensions and values and pass it to summary card casted 'as Dimension'
 interface DimensionCardProps {
   handleSelection: (dimensionString: string, thickness: string) => void;
 }
+//any shapes that don't have these, will define their own dimensions interface
 
-interface Dimension {
-  base?: string;
-  height?: string;
-  left_sub_height?: string;
-  right_sub_height?: string;
-  top?: string;
-  left_projection?: string;
-  right_projection?: string;
-}
-//any shapes that don't have these, will define their own dimensions interface 
 
 const DimensionsCard = ({ handleSelection }: DimensionCardProps) => {
   // NOTE TODO: each shape needs to have required dimensions associated with it
   //each dimension needs label and options array
-  const dimensionArray = ["Width", "Height"];
+  const dimensionArray = [
+    { label: "Width", value: "" },
+    { label: "Height", value: "" },
+    { label: "Thickness", value: "" },
+  ];
 
-  // dimension object will have all possible dimensions 
+  // dimension object will have all possible dimensions
   // {width: {label: "Width", options: ["1", "2", "3"]}, height: {label: "Height", options: ["1", "2", "3"]}}
- // summary card will display only non-null values
+  // summary card will display only non-null values
 
-  const [dimensions, setDimensions] = useState();
-  function formatDimensionString() {}
+  const fractionStrings = fractionRange.map((value) => value.toString());
+  const inchStrings = inchRange.map((value) => value.toString());
+
+  const [thickness, setThickness] = useState("1/8" as string);
+  const [dimensions, setDimensions] = useState(dimensionArray);
+
+  function handleDimensionChange(label: string, value: string) {
+    setDimensions((prev) => ({
+      ...prev,
+      [label]: value,
+    }));
+    console.log(dimensions);
+  }
+
+  function handleThicknessChange(value: string) {
+    setThickness(value);
+  }
+
+  function formatDimensionString() {
+    let dimensionString = "";
+    dimensions.forEach((dimension) => {
+      dimensionString += `${dimension.label}: ${dimension.value}`;
+    });
+    handleSelection(dimensionString, thickness);
+  }
+  // for testing 
+  // function handleValueChange(label: string, value: string) {
+  //   //handleDropDownChange(label, value);
+  //   console.log(label, value);
+  // }
 
   return (
     <Card className="w-[350px]">
@@ -68,16 +89,18 @@ const DimensionsCard = ({ handleSelection }: DimensionCardProps) => {
           {dimensionArray.map((dimension, index) => {
             return (
               <div className="space-y-2" key={index}>
-                <Label htmlFor={dimension}>{dimension} (inches)</Label>
+                <Label htmlFor={dimension.label}>
+                  {dimension.label} (inches)
+                </Label>
                 <div className="flex space-x-2">
-                  <Select>
-                    <SelectTrigger id={dimension}>
+                  <Select onValueChange={(value) => handleDimensionChange(dimension.label, value)}>
+                    <SelectTrigger id={dimension.label}>
                       <SelectValue placeholder="1" />
                     </SelectTrigger>
                     <SelectContent position="popper">
-                      {inchRange.map((value, index) => (
+                      {inchStrings.map((value, index) => (
                         <div key={index}>
-                          <SelectItem value={value as unknown as string}>
+                          <SelectItem value={value}>
                             {value}
                           </SelectItem>
                         </div>
@@ -85,7 +108,7 @@ const DimensionsCard = ({ handleSelection }: DimensionCardProps) => {
                     </SelectContent>
                   </Select>
                   <Select>
-                    <SelectTrigger id={dimension}>
+                    <SelectTrigger id={dimension.label}>
                       <SelectValue placeholder="1/8" />
                     </SelectTrigger>
                     <SelectContent>
@@ -103,7 +126,7 @@ const DimensionsCard = ({ handleSelection }: DimensionCardProps) => {
           <div className="space-y-2">
             <Label>Thickness (inches)</Label>
             <div className="flex space-x-2">
-              <Select>
+              <Select onValueChange={(value) => handleThicknessChange(value)} >
                 <SelectTrigger id="thickness">
                   <SelectValue placeholder="1/8" />
                 </SelectTrigger>
@@ -119,7 +142,9 @@ const DimensionsCard = ({ handleSelection }: DimensionCardProps) => {
           </div>
           <div className="flex justify-between">
             <Button variant="outline">Back</Button>
-            <Button type="submit">Continue</Button>
+            <Button type="submit" onClick={formatDimensionString}>
+              Continue
+            </Button>
           </div>
         </form>
       </CardContent>

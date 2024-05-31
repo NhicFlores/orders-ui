@@ -1,3 +1,5 @@
+import { Order } from "./definitions";
+
 export type SummaryCard = {
     orderName: string;
     orderSpec: SpecificationString;
@@ -19,7 +21,10 @@ export type ProductNav = {
     setActiveSection: React.Dispatch<React.SetStateAction<ProductNavSections>>;
 }
 
+
 export type ProductContextType = {
+    order: Order;
+    setOrder: React.Dispatch<React.SetStateAction<Order>>;
     summaryCard: SummaryCard;
     setSummaryCard: React.Dispatch<React.SetStateAction<SummaryCard>>;
     productNav: ProductNav;

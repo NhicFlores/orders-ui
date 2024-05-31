@@ -6,7 +6,7 @@ import { ShapeRoute, TintRoute } from '@/routes'
 
 const DimensionsPage = () => {
 
-  const { setSummaryCard } = useProductContext();
+  const { summaryCard, setSummaryCard } = useProductContext();
   const handleSelection = (dimensionString: string, thickness: string) => {
     setSummaryCard((prev) => ({
       ...prev,
@@ -17,6 +17,8 @@ const DimensionsPage = () => {
       }
     }))
   }
+
+  const { glassShape } = summaryCard.orderSpec;
 
   return (
     <div className='container mx-auto p-4'>

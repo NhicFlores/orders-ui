@@ -122,20 +122,24 @@ export type Shape = {
   name: string;
   imageSrc: StaticImageData;
   alt: string;
-  required_dimensions?: Dimensions[];
+  required_dimensions?: RequiredDimensions;
   thickness_options?: Thickness[];
   tint_types?: Tint[];
   options_types?: MiscOptions[];
 };
-// unused
-interface Dimension {
-  base?: string;
-  height?: string;
-  left_sub_height?: string;
-  right_sub_height?: string;
-  top?: string;
-  left_projection?: string;
-  right_projection?: string;
+
+export type RequiredDimensions = {
+  radius?: {label: string, value: string};
+  offset?: {label: string, value: string};
+  edge_length?: {label: string, value: string};
+  base?: {label: string, value: string};
+  height?: {label: string, value: string};
+  sub_height?: {label: string, value: string};
+  left_sub_height?: {label: string, value: string};
+  right_sub_height?: {label: string, value: string};
+  top?: {label: string, value: string};
+  left_projection?: {label: string, value: string};
+  right_projection?: {label: string, value: string};
 }
 
 export type Dimensions = {
@@ -150,15 +154,15 @@ export type Dimensions = {
 };
 
 export type Thickness = {
-  id: string;
-  thickness: number;
+  id?: string;
+  thickness?: number;
   tint_types?: Tint[];
   options_types?: MiscOptions[];
 };
 
 export type Tint = {
-  id: string;
-  name: string;
+  id?: string;
+  name?: string;
   description?: string;
   imageSrc?: StaticImageData;
   alt?: string;
@@ -166,7 +170,7 @@ export type Tint = {
 };
 
 export type MiscOptions = {
-  id: string;
-  add_tempered_logo: boolean;
-  add_holes: boolean;
+  id?: string;
+  add_tempered_logo?: boolean;
+  add_holes?: boolean;
 };
