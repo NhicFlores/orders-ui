@@ -82,3 +82,50 @@ export const RegisterSchema = z.object({
         message: "passwords don't match"
     }),
 })
+
+export const RequiredDimensionsSchema = z.object({
+    radius: z.object({
+        label: z.string(),
+        value: z.string()
+    }).optional(),
+    offset: z.object({
+        label: z.string(),
+        value: z.string()
+    }).optional(),
+    edge_length: z.object({
+        label: z.string(),
+        value: z.string()
+    }).optional(),
+    base: z.object({
+        label: z.string(),
+        value: z.string()
+    }).optional(),
+    height: z.object({
+        label: z.string(),
+        value: z.string()
+    }).optional(),
+    sub_height: z.object({
+        label: z.string(),
+        value: z.string()
+    }).optional(),
+    left_sub_height: z.object({
+        label: z.string(),
+        value: z.string()
+    }).optional(),
+    right_sub_height: z.object({
+        label: z.string(),
+        value: z.string()
+    }).optional(),
+    top: z.object({
+        label: z.string(),
+        value: z.string()
+    }).optional(),
+    left_projection: z.object({
+        label: z.string(),
+        value: z.string()
+    }).optional(),
+    right_projection: z.object({
+        label: z.string(),
+        value: z.string()
+    }).optional(),
+});

@@ -9,7 +9,7 @@ import { useProductContext } from '@/components/product-components/product-conte
 import { Product } from '@/lib/definitions/order-item-definitions';
 import { glassTypes } from '@/lib/data/product-placeholder-data';
 
-//if i make it an object, i can update different fields of the object 
+// NOTE: if i make it an object, i can update different fields of the object 
 
 const GlassTypePage = () => {
 

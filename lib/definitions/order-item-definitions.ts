@@ -128,6 +128,8 @@ export type Shape = {
   options_types?: MiscOptions[];
 };
 
+//any shapes that don't have these, will define their own dimensions interface
+// every shape can define its own dimensions - we still need standardized dimension names and definitions  
 export type RequiredDimensions = {
   radius?: {label: string, value: string};
   offset?: {label: string, value: string};

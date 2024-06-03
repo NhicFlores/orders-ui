@@ -12,7 +12,7 @@ import ProductGrid from "@/components/product-components/ProductGrid";
 import { DimensionRoute, GlassTypeRoute } from "@/routes";
 
 const ShapePage = () => {
-  const { setOrder, setSummaryCard } = useProductContext();
+  const { order, setOrder, summaryCard, setSummaryCard } = useProductContext();
 
   const handleSelect = (configOption: string) => {
     setSummaryCard((prev) => ({
@@ -22,9 +22,21 @@ const ShapePage = () => {
         glassShape: configOption,
       },
     }));
+    // Add selected shape to order
+    setOrder((prev) => ({
+      ...prev,
+      glassConfig: {
+        ...prev.glassConfig,
+        glassShape: shapeOptions.find((shape) => shape.name === configOption),
+      },
+    }));
+
+    console.log("selected shape: ", configOption);
+    console.log("order: ", order);
+    console.log("summaryCard: ", summaryCard);
   };
 
-
+  // NOTE TODO:on select, add shape to order 
 
   // const productList = shapeOptions.map((shape) => {
   //   return {
