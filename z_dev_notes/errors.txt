@@ -42,6 +42,8 @@ after trying to sign in a new user. I got the credentials wrong, then tried agai
 and the browser showed the following build error. 
 next time I'll make sure to copy the build stack as well 
 
+
+
 TypeError: originalFactory is undefined
 
 i was unable to recreate the error. I looked it up and didn't find anything useful 
@@ -88,3 +90,295 @@ Make sure that you're not calling updateSelections in a place where it could be 
 Add some console logs to check the value of updateSelections in each component. This can help you figure out where it's becoming undefined or not a function.
 
 - common fix - hook is being used in a server component. include the 'use client' directive at the top of the component to get rid of this error 
+
+
+
+ISSUE: 
+- when I change a dropdown value, this function is called. However, it is not updating the values appropriately. 
+I have some console.log statements to monitor the values as the change. What I observe in the console.logs is that the 
+dimensions array is always in the previous state. If I update a value, the change doesn't show up until I update another value. 
+
+  function handleDimensionChange(
+    label: string,
+    value: string,
+    isFraction: boolean
+  ) {
+    console.log(label, value, isFraction);
+    console.log(dimensions);
+    setDimensions((prev) =>
+      prev.map((dimension) =>
+        dimension.label === label
+          ? isFraction
+            ? { ...dimension, fraction: value }
+            : { ...dimension, wholeNumber: value }
+          : dimension
+      )
+    );
+    console.log(dimensions);
+    dimensions.forEach(({ label, wholeNumber, fraction }) => {
+      handleSelection(`${label}: ${wholeNumber} ${fraction}`)
+    })
+  }
+
+FIX: 
+- The issue you're experiencing is due to the asynchronous nature of the setState function in React. When you call setDimensions, it 
+schedules an update to the dimensions state variable, but it doesn't immediately update the variable. This means that when you log 
+dimensions immediately after calling setDimensions, it logs the old state, not the updated state.
+- The setDimensions function also doesn't return the new state, so you can't assign its result to a variable and log that.
+- To work with the updated state immediately after it's set, you can use the state update function inside the setDimensions call. 
+function handleDimensionChange(
+  label: string,
+  value: string,
+  isFraction: boolean
+) {
+  console.log(label, value, isFraction);
+  console.log(dimensions);
+  setDimensions((prev) => {
+    const updatedDimensions = prev.map((dimension) =>
+      dimension.label === label
+        ? isFraction
+          ? { ...dimension, fraction: value }
+          : { ...dimension, wholeNumber: value }
+        : dimension
+    );
+    console.log(updatedDimensions);
+    updatedDimensions.forEach(({ label, wholeNumber, fraction }) => {
+      handleSelection(`${label}: ${wholeNumber} ${fraction}`)
+    });
+    return updatedDimensions;
+  });
+}
+
+ISSUE: 
+- Cannot update a component (`ProductContextProvider`) while rendering a different component (`DimensionsCard`). 
+To locate the bad setState() call inside `DimensionsCard`, follow the stack trace as described ... long error output 
+
+here is the function that triggered it 
+  function handleDimensionChange(
+    label: string,
+    value: string,
+    isFraction: boolean
+  ) {
+    console.log("--------- Dimension Change ---------")
+    console.log(label, value, isFraction);
+    console.log(dimensions);
+    setDimensions((prev) => {
+      const newDimensions = prev.map((dimension) => {
+        if (dimension.label === label) {
+          if (isFraction) {
+            return { ...dimension, fraction: value };
+          } else {
+            return { ...dimension, wholeNumber: value };
+          }
+        }
+        return dimension;
+      });
+      console.log("--------- New Dimensions ---------")
+      console.log(newDimensions);
+      newDimensions.forEach(({ label, wholeNumber, fraction }) => {
+        handleSelection(`${label}: ${wholeNumber} ${fraction}`)
+      })
+      return newDimensions;
+    });
+  }
+
+  function handleSave() {
+    console.log(dimensions);
+    const dimensionStrings = dimensions.map(
+      (dimension) => `${dimension.wholeNumber} ${dimension.fraction}`
+    );
+    console.log(dimensionStrings);
+    handleSelection(dimensionStrings.join(" x "));
+  }
+
+
+ISSUE: infinite rerenders:
+
+THREAD
+- prompt  
+when I change a dropdown value, this function is called. However, it is not updating the values appropriately. 
+I have some console.log statements to monitor the values as the change. What I observe in the console.logs is 
+that the dimensions array is always in the previous state. If I update a value, the change doesn't show up until I 
+update another value. What could be causing this issue in the following function:
+
+function handleDimensionChange( label: string, value: string, isFraction: boolean ) 
+{ 
+  console.log(label, value, isFraction); 
+  console.log(dimensions); 
+  setDimensions((prev) => 
+    prev.map((dimension) => 
+      dimension.label === label 
+        ? isFraction 
+          ? { ...dimension, fraction: value } 
+          : { ...dimension, wholeNumber: value } 
+        : dimension 
+      ) 
+    ); 
+    console.log(dimensions); 
+    dimensions.forEach(({ label, wholeNumber, fraction }) => { 
+      handleSelection(${label}: ${wholeNumber} ${fraction}) 
+    }) 
+}
+- response 
+The issue you're experiencing is due to the asynchronous nature of the setState function in React. When you call setDimensions, it 
+schedules an update to the dimensions state variable, but it doesn't immediately update the variable. This means that when you log 
+dimensions immediately after calling setDimensions, it logs the old state, not the updated state.
+
+The setDimensions function also doesn't return the new state, so you can't assign its result to a variable and log that.
+
+To work with the updated state immediately after it's set, you can use the state update function inside the setDimensions call. 
+Here's how you can modify your code:
+
+function handleDimensionChange(
+  label: string,
+  value: string,
+  isFraction: boolean
+) {
+  console.log(label, value, isFraction);
+  console.log(dimensions);
+  setDimensions((prev) => {
+    const updatedDimensions = prev.map((dimension) =>
+      dimension.label === label
+        ? isFraction
+          ? { ...dimension, fraction: value }
+          : { ...dimension, wholeNumber: value }
+        : dimension
+    );
+    console.log(updatedDimensions);
+    updatedDimensions.forEach(({ label, wholeNumber, fraction }) => {
+      handleSelection(`${label}: ${wholeNumber} ${fraction}`)
+    });
+    return updatedDimensions;
+  });
+}
+
+- prompt 
+i am getting the following error after updating the handleDimensionChange function:
+
+page.tsx:11 Warning: Cannot update a component (ProductContextProvider) while rendering a different component (DimensionsCard). 
+To locate the bad setState() call inside DimensionsCard .... 
+
+- response 
+The error message is indicating that you're trying to update a state (handleSelection) while rendering a different component (DimensionsCard). 
+This is a result of calling handleSelection inside the setDimensions state update function.
+
+In React, it's not recommended to cause side effects (like calling handleSelection) inside the state update function passed to 
+setState (or setDimensions in your case). This is because React may choose to delay state updates for performance reasons, and 
+causing side effects in the state update function can lead to unexpected behavior.
+
+To fix this issue, you can move the call to handleSelection inside a useEffect hook that depends on dimensions. 
+Here's how you can modify your code:
+
+function handleDimensionChange(
+  label: string,
+  value: string,
+  isFraction: boolean
+) {
+  console.log("--------- Dimension Change ---------")
+  console.log(label, value, isFraction);
+  console.log(dimensions);
+  setDimensions((prev) => {
+    const updatedDimensions = prev.map((dimension) => 
+      dimension.label === label
+        ? isFraction
+          ? { ...dimension, fraction: value }
+          : { ...dimension, wholeNumber: value }
+        : dimension
+      );
+    console.log("--------- New Dimensions ---------")
+    console.log(updatedDimensions);
+    return updatedDimensions;
+  });
+}
+
+useEffect(() => {
+  dimensions.forEach(({ label, wholeNumber, fraction }) => {
+    handleSelection(`${label}: ${wholeNumber} ${fraction}`)
+  })
+}, [dimensions, handleSelection]);
+
+
+infinite rerenders after adding handleSelection to dependency array: 
+this is the component where handleSelection is defined. What are some reasons handleSelection is getting re-rendered? 
+
+"use client";
+import DimensionsCard from '@/components/product-components/DimensionsCard'
+import { useProductContext } from '@/components/product-components/product-context-provider'
+import ProductHeader from '@/components/product-components/product-header'
+import { ShapeRoute, TintRoute } from '@/routes'
+import { useCallback } from 'react';
+
+const DimensionsPage = () => {
+
+  const { order, setSummaryCard } = useProductContext();
+  const handleSelection = (dimensionString: string) => {
+    setSummaryCard((prev) => ({
+      ...prev,
+      orderSpec: {
+        ...prev.orderSpec,
+        glassSize: dimensionString,
+      }
+    }))
+  };
+
+  //get selected shape from order
+  const { glass_shape } = order.glassConfig;
+
+  return (
+    <div className='container mx-auto p-4'>
+      <ProductHeader title="Enter Dimensions" backRoute={ShapeRoute.href} continueRoute={TintRoute.href} />
+      <div className='flex justify-center'>
+        <DimensionsCard shape={glass_shape} handleSelection={handleSelection}/>
+      </div>
+    </div>
+  )
+}
+
+export default DimensionsPage
+
+
+- response 
+In your DimensionsPage component, handleSelection is defined inside the component function. This means that a new handleSelection 
+function 
+is 
+created every 
+time 
+DimensionsPage re-renders.
+
+If DimensionsPage re-renders frequently, this could cause handleSelection to have a new identity on each render. 
+When handleSelection is passed as a prop to DimensionsCard, this can cause DimensionsCard to re-render unnecessarily.
+
+To prevent this, you can wrap handleSelection in the useCallback hook. This will return a memoized version of 
+handleSelection that only changes if its dependencies change. In this case, the dependency is setSummaryCard, so you 
+should include it in the dependency array of useCallback.
+
+This way, handleSelection will have the same reference until setSummaryCard changes, which should not happen as setSummaryCard is 
+stable and doesn't change across re-renders. This will prevent unnecessary re-renders of DimensionsCard.
+
+Here's how you can modify your code:
+const handleSelection = useCallback((dimensionString: string) => {
+  setSummaryCard((prev) => ({
+    ...prev,
+    orderSpec: {
+      ...prev.orderSpec,
+      glassSize: dimensionString,
+    }
+  }))
+}, [setSummaryCard]);
+
+
+- prompt 
+setSummaryCard is a setState function. Could that be causing the rerenders? 
+
+- response 
+Yes, setSummaryCard is a function returned by the useState hook, and it does not change across re-renders. However, the 
+handleSelection function, which uses setSummaryCard, is defined inside your component and gets recreated on every render.
+
+When you pass handleSelection to useCallback with an empty dependency array, it means that the memoized version will never 
+update because you've told React that the function doesn't depend on any values from the component scope. But in this case, 
+handleSelection does depend on setSummaryCard.
+
+So, you should include setSummaryCard in the dependency array of useCallback. 
+
+This way, handleSelection will have the same reference until setSummaryCard changes, which should not happen as setSummaryCard is 
+stable and doesn't change across re-renders. This will prevent unnecessary re-renders of DimensionsCard.

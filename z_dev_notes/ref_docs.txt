@@ -38,7 +38,7 @@ form validation with Zod
 https://zod.dev/ : TypeScript-first schema validation with static type inference 
 npm i zod 
 
-reusable comonent library 
+reusable component library 
 https://ui.shadcn.com/ 
 
 choose license 
@@ -54,3 +54,7 @@ https://github.com/vvo/iron-session
 https://www.youtube.com/watch?v=DJvM2lSPn6w 
 https://www.youtube.com/watch?v=MNm1XhDjX1s 
 https://www.youtube.com/watch?v=1MTyCvS05V4 
+
+NextJs courses 
+https://www.youtube.com/watch?v=Wta5DQv_EfA&ab_channel=Codewithguillaume 
+https://www.youtube.com/watch?v=Ou2IAs7W1Ig&ab_channel=Codevolution 
