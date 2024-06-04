@@ -52,6 +52,10 @@ export const ShapeRoute = {
     href: "/dimensions",
   };
 
+  export const GlassThicknessRoute = {
+    href: "/glass-thickness",
+  };
+
   export const TintRoute = {
     href: "/tint",
   };
