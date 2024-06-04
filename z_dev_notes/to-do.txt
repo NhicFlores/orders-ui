@@ -11,6 +11,8 @@
 SummaryCard 
 - format order summary 
 - hook up save and submit buttons to server actions 
+- take screenshots of component with different types of 
+formatting so we can choose our implementation 
 
 Solutions for live summary card update 
 - react state, react context 
