@@ -122,12 +122,17 @@ export type Shape = {
   name: string;
   imageSrc: StaticImageData;
   alt: string;
-  required_dimensions?: RequiredDimensions;
+  required_dimensions?: Dimension[];
   thickness_options?: Thickness[];
   tint_types?: Tint[];
   options_types?: MiscOptions[];
 };
 
+export type Dimension = {
+  label: string;
+  wholeNumber: string;
+  fraction: string;
+};
 //any shapes that don't have these, will define their own dimensions interface
 // every shape can define its own dimensions - we still need standardized dimension names and definitions  
 export type RequiredDimensions = {

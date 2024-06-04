@@ -3,11 +3,12 @@ import DimensionsCard from '@/components/product-components/DimensionsCard'
 import { useProductContext } from '@/components/product-components/product-context-provider'
 import ProductHeader from '@/components/product-components/product-header'
 import { ShapeRoute, TintRoute } from '@/routes'
+import { useCallback } from 'react';
 
 const DimensionsPage = () => {
 
   const { order, setSummaryCard } = useProductContext();
-  const handleSelection = (dimensionString: string) => {
+  const handleSelection = useCallback((dimensionString: string) => {
     setSummaryCard((prev) => ({
       ...prev,
       orderSpec: {
@@ -15,7 +16,8 @@ const DimensionsPage = () => {
         glassSize: dimensionString,
       }
     }))
-  }
+  }, [setSummaryCard]);
+
   //get selected shape from order
   const { glass_shape } = order.glassConfig;
 

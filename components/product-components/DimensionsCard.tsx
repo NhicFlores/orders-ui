@@ -16,26 +16,18 @@ import {
   SelectValue,
 } from "../ui/select";
 import { Square } from "lucide-react";
-import {
-  Shape,
-} from "@/lib/definitions/order-item-definitions";
-import { useState } from "react";
+import { Dimension, Shape } from "@/lib/definitions/order-item-definitions";
+import { useEffect, useState } from "react";
 
 /**
  * @typedef {Object} DimensionCardProps
- * @property {Shape} shape
+ * @property {Shape} Shape
  * @property {(dimensionString: string) => void} handleSelection
  *
  */
 interface DimensionCardProps {
   shape: Shape;
   handleSelection: (dimensionString: string) => void;
-}
-
-interface Dimension {
-  label: string;
-  wholeNumber: string;
-  fraction: string;
 }
 
 const DimensionsCard = ({
@@ -45,20 +37,61 @@ const DimensionsCard = ({
   const inchStrings = inchRange.map((value) => value.toString());
 
   // state to watch for changes in dropdown inputs
-  const [ dimensions, setDimensions ] = useState<Dimension[]>([
-    { label: "Base", wholeNumber: "", fraction: "" },
-    { label: "Height", wholeNumber: "", fraction: "" },
+  // initialize dimensions state with required dimensions from shape 
+  const [dimensions, setDimensions] = useState<Dimension[]>(required_dimensions ? required_dimensions : [
+    { label: "Base", wholeNumber: "1", fraction: "1/2" },
+    { label: "Height", wholeNumber: "1", fraction: "1/2" },
   ]);
+  // this array is used to render the dropdowns 
+  // might be unnecessary if it doesn't save any renders 
+  // compared to using the required_dimensions directly 
+  let reqDimensions = dimensions.map((dimension) => {
+    return dimension.label;
+  });
 
-  let reqDimensions = [];
+  // console.log("--------- useEffect: Dimensions ---------")
+  // console.log(dimensions);
 
-  reqDimensions = [
-    { label: "Width", value: "" },
-    { label: "Height", value: "" },
-  ];
+  function handleDimensionChange(
+    label: string,
+    value: string,
+    isFraction: boolean
+  ) {
+    console.log("X--------- handleDimensionChange: Previous Dimensions ---------X")
+    console.log(dimensions);
+    console.log("X--------- handleDimensionChange: Values from onValueChange ---------X")
+    console.log(label, value, isFraction);
+    setDimensions((prev) => {
+      const updatedDimensions = prev.map((dimension) => 
+        dimension.label === label
+          ? isFraction
+            ? { ...dimension, fraction: value }
+            : { ...dimension, wholeNumber: value }
+          : dimension
+        );
+      console.log("X--------- setDimensions: Updated Dimensions ---------X")
+      console.log(updatedDimensions);
+      return updatedDimensions;
+    });
+  }
 
-  function handleDimensionChange(label: string, value: string) {
-    handleSelection(`${label}: ${value}`);
+  useEffect(() => {
+    console.log("X-------- useEffect: Dimensions --------X")
+    console.log(dimensions);
+    let dimensionStrings = dimensions.map(
+      ({ label, wholeNumber, fraction }) => `${label}: ${wholeNumber} ${fraction}`
+    );
+    // console.log(dimensionStrings.join(" x "));
+    handleSelection(dimensionStrings.join(" x "));
+  }, [dimensions, handleSelection]);
+
+  function handleSave() {
+    console.log(dimensions);
+    const dimensionStrings = dimensions.map(
+      (dimension) => `${dimension.wholeNumber} ${dimension.fraction}`
+    );
+    console.log(dimensionStrings);
+    handleSelection(dimensionStrings.join(" x "));
   }
 
   return (
@@ -77,16 +110,16 @@ const DimensionsCard = ({
           {reqDimensions.map((dimension, index) => {
             return (
               <div className="space-y-2" key={index}>
-                <Label htmlFor={dimension.label}>
-                  {dimension.label} (inches)
+                <Label htmlFor={dimension}>
+                  {dimension} (inches)
                 </Label>
                 <div className="flex space-x-2">
                   <Select
                     onValueChange={(value) =>
-                      handleDimensionChange(dimension.label, value)
+                      handleDimensionChange(dimension, value, false)
                     }
                   >
-                    <SelectTrigger id={dimension.label}>
+                    <SelectTrigger id={dimension}>
                       <SelectValue placeholder="1" />
                     </SelectTrigger>
                     <SelectContent position="popper">
@@ -99,10 +132,10 @@ const DimensionsCard = ({
                   </Select>
                   <Select
                     onValueChange={(value) =>
-                      handleDimensionChange(dimension.label, value)
+                      handleDimensionChange(dimension, value, true)
                     }
                   >
-                    <SelectTrigger id={dimension.label}>
+                    <SelectTrigger id={dimension}>
                       <SelectValue placeholder="1/8" />
                     </SelectTrigger>
                     <SelectContent>
@@ -119,9 +152,7 @@ const DimensionsCard = ({
           })}
           <div className="flex justify-between">
             <Button variant="outline">Back</Button>
-            <Button type="submit">
-              Continue
-            </Button>
+            <Button type="button" onClick={handleSave}>Save</Button>
           </div>
         </form>
       </CardContent>
