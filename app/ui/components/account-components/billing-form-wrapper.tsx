@@ -4,6 +4,8 @@ import { PlusIcon } from "lucide-react";
 import BillingOptionTable from "./billing-option-table";
 import { auth } from "@/auth";
 import { getBillingInfoById, getUserByID } from "@/lib/data/user-data";
+import { DataTable } from "../data-table";
+import { BillingInfoColumns } from "./billing-info-columns";
 
 const BillingFormWrapper = async () => {
     const session = await auth();
@@ -19,9 +21,9 @@ const BillingFormWrapper = async () => {
           <div className="pl-2">New Payment Option</div>
         </Button>
       </div>
-      <BillingForm user_id={ user.id} billing_info={billingOptions[0]}/>
+      {/* <BillingForm user_id={ user.id} billing_info={billingOptions[0]}/> */}
       <div>
-        <BillingOptionTable/>
+        <DataTable columns={BillingInfoColumns} data={billingOptions} />
       </div>
     </div>
   );

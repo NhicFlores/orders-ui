@@ -78,16 +78,13 @@ export function DataTable<TData, TValue>({
       </div>
       <div className="flex items-center py-4">
         <Input
-          placeholder="Filter status..."
+          placeholder="Filter status..." // NOTE TODO: make this dynamic
           value={(table.getColumn("status")?.getFilterValue() as string) ?? ""}
           onChange={(event) =>
             table.getColumn("status")?.setFilterValue(event.target.value)
           }
           className="max-w-sm"
         />
-        <div className="ml-auto">
-          <NewOrderButton />
-        </div>
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button variant={"outline"} className="ml-5">

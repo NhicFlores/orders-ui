@@ -19,7 +19,7 @@ const DimensionsPage = () => {
   }, [setSummaryCard]);
 
   //get selected shape from order
-  const { glass_shape } = order.glassConfig;
+  const { glass_shape } = order.product_config;
 
   return (
     <div className='container mx-auto p-4'>

@@ -78,9 +78,6 @@ export default function ProfileForm({ user_id, profile }: ProfileFormProps) {
                     <FormLabel>Name</FormLabel>
                     <FormControl>
                       <Input
-                        defaultValue={
-                          profile && profile.name ? profile.name : ""
-                        }
                         {...field}
                         readOnly={!isEditEnabled}
                         className={!isEditEnabled ? "bg-slate-100" : "bg-white"}

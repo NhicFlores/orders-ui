@@ -22,6 +22,8 @@ export type UserProfile = {
     phone_num: string;
     alt_phone_num?: string;
     fax_num?: string;
+    isPrimary?: boolean;
+    isActive?: boolean;
   }
   
   export type ShippingInfo = {

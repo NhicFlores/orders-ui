@@ -5,6 +5,7 @@
 import { OrderColumns } from "./columns";
 import { DataTable } from "../../ui/components/data-table";
 import { fetchOrders } from "@/lib/data/data";
+import { NewOrderButton } from "@/app/ui/components/new-order-button";
 /*async function fetchOrders(): Promise<Order[]> {
   //once api layer is made we can move this function over
   return [
@@ -15,10 +16,22 @@ export default async function Page() {
   const orders = await fetchOrders();
   //console.log(typeof(Object.values(OrderStatus) as string[]));
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <main className="container flex flex-col items-center">
+      <div className="flex w-full border-b-2 p-2 items-center justify-end space-x-[450px]">
+        <h1 className="text-2xl font-bold">Order History</h1>
+        <div className="">
+          <NewOrderButton />
+        </div>
+      </div>
       <div className="container mx-auto py-10">
         <DataTable columns={OrderColumns} data={orders} />
       </div>
     </main>
   );
 }
+
+/**
+ *         <div className="ml-auto">
+          <NewOrderButton />
+        </div>
+ */

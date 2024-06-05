@@ -70,7 +70,6 @@ export default function UserForm({ user }: UserFormProps) {
                     <FormLabel>Email</FormLabel>
                     <FormControl>
                       <Input
-                        defaultValue={user.email}
                         {...field}
                         readOnly={!isEditEnabled}
                         className={!isEditEnabled ? "bg-slate-100" : "bg-white"}
@@ -93,9 +92,6 @@ export default function UserForm({ user }: UserFormProps) {
                     <FormControl>
                       <Input
                         type="password"
-                        defaultValue={
-                          isEditEnabled ? user.password : "********"
-                        }
                         {...field}
                         readOnly={!isEditEnabled}
                         className={!isEditEnabled ? "bg-slate-100" : "bg-white"}
