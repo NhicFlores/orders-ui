@@ -95,7 +95,7 @@ export const sizes = [
 export const colors = ["clear", "bronze", "green", "grey", "satin"];
 
 // product page
-// slectable cards - name - description
+// selectable cards - name - description
 
 export type Product = {
   id: string;
@@ -103,6 +103,9 @@ export type Product = {
   description?: string;
   imageSrc: StaticImageData;
   alt: string;
+  category?: string;
+  sub_category?: string;
+  price?: number;
 };
 
 export type GlassType = {

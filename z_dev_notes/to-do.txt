@@ -3,6 +3,16 @@
 
 - how to connect to azure db 
 
+- payment and shipping pages in order flow 
+ - tables showing payment and shipping options 
+
+- new order 
+ - new order definitions
+   - context definitions, type definitions 
+   - new order table  	
+    - sql script 
+ - new order actions 
+
 - submit dimensions to product specs 
  - function to unwrap context in dimension page 
  - validate data 

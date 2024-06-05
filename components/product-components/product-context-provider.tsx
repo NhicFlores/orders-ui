@@ -1,28 +1,25 @@
 'use client';
 import { glassTypes, shapeOptions } from "@/lib/data/product-placeholder-data";
-import { OrderStatus } from "@/lib/definitions/definitions";
+import { NewOrder, OrderStatus } from "@/lib/definitions/definitions";
 import { ProductContextType, ProductNav, SummaryCard } from "@/lib/definitions/product-context";
 import { createContext, useContext, useState } from "react";
 
 export const ProductContext = createContext<ProductContextType>({
     order: {
-        id: '',
-        customer_id: '',
+        user_id: '',
         order_name: '',
-        product_id: '',
-        quantity: 0,
-        price: 0,
-        date: '',
-        status: OrderStatus.Pending,
-        glassConfig: {
+        product_config: { //consider storing this in a separate table, so the order object is just a bunch of id's 
             id: '',
             glass_type: glassTypes[0],
             glass_shape: shapeOptions[0],
-            glass_dimensions: {},
+            glass_dimensions: [],
             glass_thickness: {},
             glass_tint: {},
             glass_options: {}
-        }
+        },
+        status: OrderStatus.Pending,
+        billing_info_id: '',
+        shipping_info_id: '',
     },
     setOrder: () => {},
     summaryCard: {
@@ -60,24 +57,21 @@ export default function ProductContextProvider({ children }: { children: React.R
         activeSection: 'Glass Type',
         setActiveSection: () => {}
     });
-    const [order, setOrder] = useState({
-        id: '',
-        customer_id: '',
+    const [order, setOrder] = useState<NewOrder>({
+        user_id: '',
         order_name: '',
-        product_id: '',
-        quantity: 0,
-        price: 0,
-        date: '',
-        status: OrderStatus.Pending,
-        glassConfig: {
+        product_config: {
             id: '',
             glass_type: glassTypes[0],
             glass_shape: shapeOptions[0],
-            glass_dimensions: {},
+            glass_dimensions: [],
             glass_thickness: {},
             glass_tint: {},
             glass_options: {}
-        }
+        },
+        status: OrderStatus.Pending,
+        billing_info_id: '',
+        shipping_info_id: '',
     });
     return (
         <ProductContext.Provider value={{ order, setOrder, summaryCard, setSummaryCard, productNav, setProductNav }}>

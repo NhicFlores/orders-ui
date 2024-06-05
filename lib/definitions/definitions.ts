@@ -1,14 +1,14 @@
 // definitions for data
 
 import {
-  Dimensions,
+  Dimension,
   GlassType,
   MiscOptions,
-  RequiredDimensions,
   Shape,
   Thickness,
   Tint,
 } from "@/lib/definitions/order-item-definitions";
+import { BillingInfo, ShippingInfo } from "./profile-definitions";
 
 // describes the shape of the data, and what data type each property should accept
 export enum OrderStatus {
@@ -18,16 +18,6 @@ export enum OrderStatus {
   Processing = "processing",
   Quote = "quote",
 }
-
-export type TestProduct = {
-  id: string;
-  name: string;
-  category: string;
-  description: string;
-  price: number;
-  // imageSrc: string;
-  // alt: string;
-};
 
 export type Order = {
   id: string;
@@ -40,18 +30,34 @@ export type Order = {
   status: OrderStatus;
   glassConfig: GlassConfiguration;
 };
-//quote: nullable field or status -
 
 export type OrderKeys = keyof Order;
+
+// NOTE: TODO: each order will have: 
+//   - unique id 
+//   - product list 
+//     - quantity per product 
+// for transferring to old system we need to split the order
+//   - order_id + product_id + i/quantity
+//   - 8634562 - 2345 - 1 / 10 
+export type NewOrder = {
+  user_id: string;
+  order_name: string;
+  product_config: GlassConfiguration;
+  billing_info_id: string;
+  shipping_info_id: string;
+  status: OrderStatus;
+}
 
 export type GlassConfiguration = {
   id: string;
   glass_type: GlassType;
   glass_shape: Shape;
-  glass_dimensions: RequiredDimensions;
+  glass_dimensions: Dimension[];
   glass_thickness: Thickness;
   glass_tint: Tint;
   glass_options: MiscOptions;
+  quantity?: number;
 };
 
 //this object is used to verify the data requested from db on edit forms

@@ -1,4 +1,4 @@
-import { Order } from "./definitions";
+import { NewOrder } from "./definitions";
 
 export type SummaryCard = {
     orderName: string;
@@ -23,8 +23,8 @@ export type ProductNav = {
 
 
 export type ProductContextType = {
-    order: Order;
-    setOrder: React.Dispatch<React.SetStateAction<Order>>;
+    order: NewOrder;
+    setOrder: React.Dispatch<React.SetStateAction<NewOrder>>;
     summaryCard: SummaryCard;
     setSummaryCard: React.Dispatch<React.SetStateAction<SummaryCard>>;
     productNav: ProductNav;

@@ -88,6 +88,32 @@ async function seedToken(client) {
   }
 }
 
+async function seedNewOrders(client) {
+  try {
+    await client.sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
+    // NOTE TODO: create new_orders table
+    const createTable = await client.sql`
+    CREATE TABLE IF NOT EXISTS new_orders (
+      id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
+      user_id UUID NOT NULL,
+      order_name VARCHAR(255) NOT NULL,
+      product_config JSONB NOT NULL,
+      billing_info_id INTEGER REFERENCES billing_info(id),
+      shipping_info_id INTEGER REFERENCES shipping_info(id),
+      status VARCHAR(255) NOT NULL,
+      date DATE NOT NULL,
+    );
+    `;
+
+    console.log(`Created "new_orders" table`);
+
+
+  } catch (error) {
+    console.error("Error seeding new_orders:", error);
+    throw error;
+  }
+}
+
 async function seedOrders(client) {
   try {
     await client.sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
