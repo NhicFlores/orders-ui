@@ -17,8 +17,10 @@ export default async function Page() {
   //console.log(typeof(Object.values(OrderStatus) as string[]));
   return (
     <main className="container flex flex-col items-center">
-      <div className="flex w-full border-b-2 p-2 items-center justify-end space-x-[450px]">
-        <h1 className="text-2xl font-bold">Order History</h1>
+      <div className="flex w-full border-b-2 p-2 items-center justify-between">
+        <div className="flex-grow flex justify-center">
+          <h1 className="text-2xl font-bold">Order History</h1>
+        </div>
         <div className="">
           <NewOrderButton />
         </div>
