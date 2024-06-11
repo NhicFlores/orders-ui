@@ -41,6 +41,7 @@ import {
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
 import Link from "next/link";
+import { fuzzyOrderFilter } from "./table/table-utils";
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
@@ -58,7 +59,7 @@ export function DataTable<TData, TValue>({
   const [columnVisibility, setColumnVisibility] =
     React.useState<VisibilityState>({});
   const [rowSelection, setRowSelection] = React.useState({});
-  const [globalFilter, setGlobalFilter] = React.useState<string>("");
+  //const [globalFilter, setGlobalFilter] = React.useState<string>("");
 
   const table = useReactTable({
     data,
@@ -71,17 +72,17 @@ export function DataTable<TData, TValue>({
     getFilteredRowModel: getFilteredRowModel(),
     onColumnVisibilityChange: setColumnVisibility,
     onRowSelectionChange: setRowSelection,
-    onGlobalFilterChange: setGlobalFilter,
-    // filterFns: {
-    //   fuzzy: fuzzyFilterFn,
-    // },
-    // globalFilterFn: fuzzyFilterFn,
+    //onGlobalFilterChange: setGlobalFilter,
+    filterFns: {
+      fuzzy: fuzzyOrderFilter,
+    },
+    globalFilterFn: fuzzyOrderFilter,
     state: {
       sorting,
       columnFilters,
       columnVisibility,
       rowSelection,
-      globalFilter,
+      //globalFilter,
     },
   });
   //NOTE TODO: conditionally render filter for existing columns
@@ -95,13 +96,6 @@ export function DataTable<TData, TValue>({
         <Input 
           placeholder="Search..."
           onChange={(event) => table.setGlobalFilter(event.target.value)}
-        />
-        <Input
-          placeholder="Filter status..." // NOTE TODO: make this dynamic
-          value={(table.getColumn("status")?.getFilterValue() as string) ?? ""}
-          onChange={(event) =>
-            table.getColumn("status")?.setFilterValue(event.target.value)
-          }
           className="max-w-sm"
         />
         <DropdownMenu>
@@ -173,7 +167,7 @@ export function DataTable<TData, TValue>({
                     </TableRow>
                     <CollapsibleContent asChild>
                       <tr className="p-4 bg-gray-100">
-                        <td>{JSON.stringify(row.original, null, 2)}</td>
+                        <td colSpan={row.getVisibleCells().length}>{JSON.stringify(row.original, null, 2)}</td>
                       </tr>
                     </CollapsibleContent>
                   </>

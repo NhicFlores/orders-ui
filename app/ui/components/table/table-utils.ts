@@ -1,6 +1,11 @@
-// import { rankItem } from "@tanstack/table-core";
-// import { FilterFn } from "@tanstack/react-table";
+import { Order } from "@/lib/definitions/definitions";
+import { rankItem } from "@tanstack/match-sorter-utils";
+import { FilterFn } from "@tanstack/react-table";
 
-// export const fuzzFilter: FilterFn = (row, columnId, value, addMeta) => {
-//     const itemRank = rankItem(row.getValue(columnId), value);
-// }
+export const fuzzyOrderFilter: FilterFn<Order> = (row, columnId, value, addMeta) => {
+    const itemRank = rankItem(row.getValue(columnId), value);
+
+    addMeta({ itemRank });
+
+    return itemRank.passed;
+}

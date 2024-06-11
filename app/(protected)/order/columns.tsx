@@ -187,6 +187,7 @@ export const OrderColumns: ColumnDef<Order>[] = [
     },
     cell: ({ row }) => {
       const date = row.getValue("date"); //NOTE TO DO: casting vs conversion
+      // NOTE TODO: format date before sending to db vs formatting on fetch 
       const formattedDate = formatDateToLocal(date as string);
       return <div>{formattedDate}</div>;
     },
