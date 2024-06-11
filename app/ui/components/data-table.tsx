@@ -58,6 +58,7 @@ export function DataTable<TData, TValue>({
   const [columnVisibility, setColumnVisibility] =
     React.useState<VisibilityState>({});
   const [rowSelection, setRowSelection] = React.useState({});
+  const [globalFilter, setGlobalFilter] = React.useState<string>("");
 
   const table = useReactTable({
     data,
@@ -70,11 +71,17 @@ export function DataTable<TData, TValue>({
     getFilteredRowModel: getFilteredRowModel(),
     onColumnVisibilityChange: setColumnVisibility,
     onRowSelectionChange: setRowSelection,
+    onGlobalFilterChange: setGlobalFilter,
+    // filterFns: {
+    //   fuzzy: fuzzyFilterFn,
+    // },
+    // globalFilterFn: fuzzyFilterFn,
     state: {
       sorting,
       columnFilters,
       columnVisibility,
       rowSelection,
+      globalFilter,
     },
   });
   //NOTE TODO: conditionally render filter for existing columns
@@ -85,6 +92,10 @@ export function DataTable<TData, TValue>({
         {table.getFilteredRowModel().rows.length} row(s) selected.
       </div>
       <div className="flex items-center justify-between py-4">
+        <Input 
+          placeholder="Search..."
+          onChange={(event) => table.setGlobalFilter(event.target.value)}
+        />
         <Input
           placeholder="Filter status..." // NOTE TODO: make this dynamic
           value={(table.getColumn("status")?.getFilterValue() as string) ?? ""}
