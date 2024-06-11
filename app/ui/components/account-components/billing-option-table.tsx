@@ -2,10 +2,18 @@
 import React, { useState } from "react"
 import BillingForm from "./billing-form"
 import { BillingInfo } from "@/lib/definitions/profile-definitions"
+import { ColumnDef } from "@tanstack/react-table"
 
-const BillingOptionTable = () => {
+interface BillingOptionTableProps {
+    billingData: BillingInfo[]
+    columns: ColumnDef<BillingInfo>[]
+}
+
+const BillingOptionTable = ({ billingData, columns}: BillingOptionTableProps) => {
     const [billingOptions, setBillingOptions] = useState<BillingInfo[]>([])
     const [expandedRow, setExpandedRow] = useState(null)
+
+    //const table = useReactTable({})
 
   return (
     <table>

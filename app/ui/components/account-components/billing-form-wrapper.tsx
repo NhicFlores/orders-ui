@@ -23,7 +23,8 @@ const BillingFormWrapper = async () => {
       </div>
       {/* <BillingForm user_id={ user.id} billing_info={billingOptions[0]}/> */}
       <div>
-        <DataTable columns={BillingInfoColumns} data={billingOptions} />
+        {/*<DataTable columns={BillingInfoColumns} data={billingOptions} />*/}
+        <BillingOptionTable billingData={billingOptions} columns={BillingInfoColumns}/>
       </div>
     </div>
   );
