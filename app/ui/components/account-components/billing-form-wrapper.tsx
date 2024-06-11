@@ -1,7 +1,7 @@
 import BillingForm from "@/app/ui/components/account-components/billing-form";
 import { Button } from "@/components/ui/button";
 import { PlusIcon } from "lucide-react";
-import BillingOptionTable from "./billing-option-table";
+import { BillingOptionTable } from "@/app/ui/components/account-components/billing-option-table";
 import { auth } from "@/auth";
 import { getBillingInfoById, getUserByID } from "@/lib/data/user-data";
 import { DataTable } from "../data-table";
@@ -23,8 +23,8 @@ const BillingFormWrapper = async () => {
       </div>
       {/* <BillingForm user_id={ user.id} billing_info={billingOptions[0]}/> */}
       <div>
-        {/*<DataTable columns={BillingInfoColumns} data={billingOptions} />*/}
-        <BillingOptionTable billingData={billingOptions} columns={BillingInfoColumns}/>
+        {/* <DataTable columns={BillingInfoColumns} data={billingOptions} /> */}
+        { <BillingOptionTable columns={BillingInfoColumns} data={billingOptions} /> }
       </div>
     </div>
   );
