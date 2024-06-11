@@ -34,11 +34,25 @@ export async function getUserProfileById(user_id: string) {
 
 export async function getBillingInfoById(user_id: string) {
   try {
-    const billingInfo = await sql<BillingInfo>`
+    const billingInfoData = await sql<BillingInfo>`
       SELECT * FROM billing_info 
       WHERE user_id=${user_id}`;
 
-    return billingInfo.rows;
+    //console.log(billingInfoData.rows[0]);
+    //console.log( typeof billingInfoData.rows[0].billing_addr);
+    return billingInfoData.rows.map(row => {
+      let billing_addr;
+      try {
+        billing_addr = typeof row.billing_addr === 'string' ? JSON.parse(row.billing_addr) : row.billing_addr;
+      } catch (error) {
+        billing_addr = row.billing_addr;
+      }
+      return {
+        ...row,
+        billing_addr,
+      };
+    });
+
   } catch (error) {
     console.error('Failed to fetch billing info:', error);
     throw new Error('Failed to fetch billing info.');

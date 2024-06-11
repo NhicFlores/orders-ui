@@ -171,6 +171,26 @@ This piece always takes this value in and sends that value out. Tested, done, an
 {...rest} used in props 
 rest is not a property that you define in your interface. Typescript automatically infers the type from the remainder properties (those you don't include in your destructure syntax
 
+if you type an object, such as the expected shape of the data in a fetch function, TS will expect that predefined type and it will show on 
+hover over the object. However, 'typeof' will actually check. 
+ex. 
+export async function getBillingInfoById(user_id: string) {
+  try {
+    const billingInfoData = await sql<BillingInfo>`
+      SELECT * FROM billing_info 
+      WHERE user_id=${user_id}`;
+
+    console.log( typeof billingInfoData.rows[0].billing_addr); // here typeof prints 'string'
+    return billingInfoData.rows.map(row => ({
+      ...row,
+      billing_addr: JSON.parse(row.billing_addr)// here i get a TS error saying "Argument of type 'Address' is not assignable to parameter of type 'string'."
+    }));
+
+  } catch (error) {
+    console.error('Failed to fetch billing info:', error);
+    throw new Error('Failed to fetch billing info.');
+  }
+}
 
 ------------------------------------ JavaScript ------------------------------------
 .slice() can be used to create a copy of an array 

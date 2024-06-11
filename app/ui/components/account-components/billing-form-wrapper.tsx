@@ -11,17 +11,13 @@ const BillingFormWrapper = async () => {
     const session = await auth();
     const user = await getUserByID(session?.user.id as string);
     const billingOptions = await getBillingInfoById(session?.user.id as string)
-    console.log(billingOptions)
+    //console.log(billingOptions[0])
+    //console.log(typeof billingOptions[0].billing_addr);
   return (
     <div>
-      <div className="w-full border-b-2 mb-4 flex justify-between">
-        <h1 className="text-2xl font-bold">Billing Options</h1>
-        <Button className="mb-1">
-          <PlusIcon size={16} />
-          <div className="pl-2">New Payment Option</div>
-        </Button>
+      <div>
+      { <BillingForm user_id={ user.id} billing_info={billingOptions[0]}/> }
       </div>
-      {/* <BillingForm user_id={ user.id} billing_info={billingOptions[0]}/> */}
       <div>
         {/* <DataTable columns={BillingInfoColumns} data={billingOptions} /> */}
         { <BillingOptionTable columns={BillingInfoColumns} data={billingOptions} /> }

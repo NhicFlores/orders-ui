@@ -41,6 +41,8 @@ import {
 } from "@/components/ui/collapsible";
 
 import { Button } from "@/components/ui/button";
+import BillingForm from "./billing-form";
+import { BillingInfo } from "@/lib/definitions/profile-definitions";
 
 interface BillingOptionTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
@@ -148,7 +150,9 @@ export function BillingOptionTable<TData, TValue>({
                     </TableRow>
                     <CollapsibleContent asChild>
                       <tr className="p-4 bg-gray-100">
-                        <td colSpan={row.getVisibleCells().length}>{JSON.stringify(row.original, null, 2)}</td>
+                        <td colSpan={row.getVisibleCells().length}>
+                          <BillingForm user_id="test" billing_info={row.original as BillingInfo}/>
+                        </td>
                       </tr>
                     </CollapsibleContent>
                   </>

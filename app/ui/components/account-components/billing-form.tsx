@@ -24,7 +24,8 @@ import { BillingInfo } from "@/lib/definitions/profile-definitions";
 
 interface BillingFormProps {
   user_id: string;
-  billing_info: BillingInfo | null;
+  billing_info?: BillingInfo | null;
+  mode?: "edit" | "view";
 }
 
 const BillingForm = ({ user_id, billing_info }: BillingFormProps) => {
@@ -37,34 +38,63 @@ const BillingForm = ({ user_id, billing_info }: BillingFormProps) => {
   async function handleFormSave(data: z.infer<typeof BillingInfoSchema>) {
     console.log("submit handler");
     createBillingInfo(user_id, data);
-    console.log(data);
+    //console.log(data);
     //insertBillingInfo();
   }
+
+  //console.log(billing_info);
+
+  const {
+    billing_addr,
+    payment_method,
+    purchase_order,
+    primary_contact_name,
+    primary_contact_email,
+    phone_num,
+    alt_phone_num,
+    fax_num,
+  } = billing_info || {
+    billing_addr: {
+      street: "",
+      apt_num: "",
+      city: "",
+      state: "",
+      zip: "",
+      country: "",
+    },
+    payment_method: "",
+    purchase_order: "",
+    primary_contact_name: "",
+    primary_contact_email: "",
+    phone_num: "",
+    alt_phone_num: "",
+    fax_num: "",
+  };
+
+  const { street, apt_num, city, state, zip, country } = billing_addr;
 
   const billingForm = useForm<z.infer<typeof BillingInfoSchema>>({
     resolver: zodResolver(BillingInfoSchema),
     defaultValues: {
       billing_addr: {
-        street: "",
-        apt_num: "",
-        city: "",
-        state: "",
-        zip: "",
-        country: "",
+        street: billing_info?.billing_addr?.street || "",
+        apt_num: billing_info?.billing_addr?.apt_num || "",
+        city: billing_info?.billing_addr?.city || "",
+        state: billing_info?.billing_addr?.state || "",
+        zip: billing_info?.billing_addr?.zip || "",
+        country: billing_info?.billing_addr?.country || "",
       },
-      payment_method: "",
-      purchase_order: "", //this is an order specific number so we might move it from here
-      primary_contact_name: "",
-      primary_contact_email: "",
-      phone_num: "",
-      alt_phone_num: "",
-      fax_num: "",
+      payment_method: billing_info?.payment_method || "",
+      purchase_order: billing_info?.purchase_order || "",
+      primary_contact_name: billing_info?.primary_contact_name || "",
+      primary_contact_email: billing_info?.primary_contact_email || "",
+      phone_num: billing_info?.phone_num || "",
+      alt_phone_num: billing_info?.alt_phone_num || "",
+      fax_num: billing_info?.fax_num || "",
     },
   });
   return (
     <div>
-      <div className="border rounded p-4">user id: {user_id}</div>
-
       <Form {...billingForm}>
         <form
           onSubmit={billingForm.handleSubmit(handleFormSave)}
