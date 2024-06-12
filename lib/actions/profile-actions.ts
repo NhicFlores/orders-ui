@@ -1,5 +1,5 @@
 "use server";
-import { ProfileRoute } from "@/routes";
+import { BillingRoute, ProfileRoute } from "@/routes";
 import {
   BillingInfoSchema,
   ProfileSchema,
@@ -8,6 +8,7 @@ import {
 } from "@/schema/form-schema";
 import { sql } from "@vercel/postgres";
 import { revalidatePath } from "next/cache";
+import { redirect } from "next/navigation";
 import { z } from "zod";
 
 export async function updateUser(
@@ -171,6 +172,9 @@ export async function createBillingInfo(
       message: "Database Error: Failed to create Billing Info.",
     };
   }
+
+  //revalidatePath(BillingRoute.href);
+  //redirect(BillingRoute.href);
 }
 
 export async function insertBillingInfo() {
@@ -247,7 +251,7 @@ export async function insertBillingInfo() {
  */
 export async function updateBillingInfo(
   user_id: string,
-  billing_info_id: string,
+  billing_info_id: number,
   formFields: z.infer<typeof BillingInfoSchema>
 ) {
   const validatedFields = BillingInfoSchema.safeParse(formFields);
@@ -270,17 +274,12 @@ export async function updateBillingInfo(
     fax_num,
   } = validatedFields.data;
 
+  const billing_addr_string = JSON.stringify(billing_addr);
+
   try {
     await sql`
             UPDATE billing_info
-            SET billing_addr_prim = ${
-              (billing_addr.street,
-              billing_addr.apt_num,
-              billing_addr.city,
-              billing_addr.state,
-              billing_addr.zip,
-              billing_addr.country)
-            },  
+            SET billing_addr_prim = ${billing_addr_string},  
                 payment_method = ${payment_method}, 
                 purchase_order = ${purchase_order}, 
                 primary_contact_name = ${primary_contact_name}, 
@@ -290,6 +289,7 @@ export async function updateBillingInfo(
                 fax_num = ${fax_num}
             WHERE user_id = ${user_id} AND id = ${billing_info_id}
         `;
+        console.log("---------------- updateBillingInfo: updated DB -----------------");
   } catch (error) {
     return {
       message: "Database Error: Failed to update Billing Info",

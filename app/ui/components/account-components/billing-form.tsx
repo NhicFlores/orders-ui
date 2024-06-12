@@ -12,31 +12,45 @@ import { Input } from "@/components/ui/input";
 import { BillingInfoSchema } from "@/schema/form-schema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Pencil } from "lucide-react";
-import React from "react";
+import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
 import { z } from "zod";
 import {
   createBillingInfo,
   insertBillingInfo,
+  updateBillingInfo,
 } from "@/lib/actions/profile-actions";
-import { BillingInfo } from "@/lib/definitions/profile-definitions";
+import { BillingInfo, BillingInfoDB } from "@/lib/definitions/profile-definitions";
 
 interface BillingFormProps {
   user_id: string;
-  billing_info?: BillingInfo;
-  mode?: "edit" | "view";
+  billing_info?: BillingInfoDB;
+  isNewForm?: boolean;
 }
 
-const BillingForm = ({ user_id, billing_info }: BillingFormProps) => {
-  const [isEditEnabled, setIsEditEnabled] = useState(false);
+const BillingForm = ({
+  user_id,
+  billing_info = {} as BillingInfoDB,
+  isNewForm,
+}: BillingFormProps) => {
+  const [isEditEnabled, setIsEditEnabled] = useState(isNewForm);
+  const [saveButtonDisabled, setSaveButtonDisabled] = useState(true);
 
-  async function ToggleEditEnabled() {
+  function ToggleEditEnabled() {
     setIsEditEnabled(!isEditEnabled);
   }
 
   const {
-    billing_addr = {},
+    id = -1,
+    billing_addr = {
+      street: "",
+      apt_num: "",
+      city: "",
+      state: "",
+      zip: "",
+      country: "",
+    },
     payment_method = "",
     purchase_order = "",
     primary_contact_name = "",
@@ -52,26 +66,37 @@ const BillingForm = ({ user_id, billing_info }: BillingFormProps) => {
     resolver: zodResolver(BillingInfoSchema),
     defaultValues: {
       billing_addr: {
-        street: street || "",
-        apt_num: apt_num || "",
-        city: city || "",
-        state: state || "",
-        zip: zip || "",
-        country: country || "",
+        street: street,
+        apt_num: apt_num,
+        city: city,
+        state: state,
+        zip: zip,
+        country: country,
       },
-      payment_method: payment_method || "",
-      purchase_order: purchase_order || "",
-      primary_contact_name: primary_contact_name || "",
-      primary_contact_email: primary_contact_email || "",
-      phone_num: phone_num || "",
-      alt_phone_num: alt_phone_num || "",
-      fax_num: fax_num || "",
+      payment_method: payment_method,
+      purchase_order: purchase_order,
+      primary_contact_name: primary_contact_name,
+      primary_contact_email: primary_contact_email,
+      phone_num: phone_num,
+      alt_phone_num: alt_phone_num,
+      fax_num: fax_num,
     },
   });
 
+  // const formValues = billingForm.watch();
+
+  // useEffect(() => {
+  //   console.log("form values changed");
+  //   console.log(formValues);
+  //   setSaveButtonDisabled(false);
+  // }, [formValues]);
+
   async function handleFormSave(data: z.infer<typeof BillingInfoSchema>) {
     console.log("submit handler");
-    createBillingInfo(user_id, data);
+    isNewForm ? 
+      createBillingInfo(user_id, data)
+      : updateBillingInfo(user_id, id, data);
+    setIsEditEnabled(!isEditEnabled);
     //console.log(data);
     //insertBillingInfo();
   }

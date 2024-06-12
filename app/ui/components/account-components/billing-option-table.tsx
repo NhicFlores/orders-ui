@@ -54,11 +54,7 @@ export function BillingOptionTable<TData, TValue>({
   data,
 }: BillingOptionTableProps<TData, TValue>) {
   const [sorting, setSorting] = React.useState<SortingState>([]);
-  const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
-    []
-  );
-  const [columnVisibility, setColumnVisibility] =
-    React.useState<VisibilityState>({});
+
   const [rowSelection, setRowSelection] = React.useState({});
 
   const table = useReactTable({
@@ -67,47 +63,15 @@ export function BillingOptionTable<TData, TValue>({
     getCoreRowModel: getCoreRowModel(),
     onSortingChange: setSorting,
     getSortedRowModel: getSortedRowModel(),
-    onColumnFiltersChange: setColumnFilters,
     getFilteredRowModel: getFilteredRowModel(),
-    onColumnVisibilityChange: setColumnVisibility,
     onRowSelectionChange: setRowSelection,
     state: {
       sorting,
-      columnFilters,
-      columnVisibility,
       rowSelection,
     },
   });
   return (
     <div>
-      <div className="flex items-center justify-between py-4">
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button variant={"outline"} className="ml-5">
-              Columns
-            </Button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent align="end">
-            {table
-              .getAllColumns()
-              .filter((column) => column.getCanHide())
-              .map((column) => {
-                return (
-                  <DropdownMenuCheckboxItem
-                    key={column.id}
-                    className="capitalize"
-                    checked={column.getIsVisible()}
-                    onCheckedChange={(value) =>
-                      column.toggleVisibility(!!value)
-                    }
-                  >
-                    {column.id}
-                  </DropdownMenuCheckboxItem>
-                );
-              })}
-          </DropdownMenuContent>
-        </DropdownMenu>
-      </div>
       <div className="rounded-md border">
         <Table>
           <TableHeader>
@@ -149,8 +113,8 @@ export function BillingOptionTable<TData, TValue>({
                       ))}
                     </TableRow>
                     <CollapsibleContent asChild>
-                      <tr className="p-4 bg-gray-100">
-                        <td colSpan={row.getVisibleCells().length}>
+                      <tr className="bg-slate-50">
+                        <td className="p-4 border" colSpan={row.getVisibleCells().length}>
                           <BillingForm user_id="test" billing_info={row.original as BillingInfo}/>
                         </td>
                       </tr>

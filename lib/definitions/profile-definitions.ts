@@ -25,12 +25,20 @@ export type UserProfile = {
     isPrimary?: boolean;
     isActive?: boolean;
   }
+
+  export type BillingInfoDB = BillingInfo & {
+    id: number;
+  };
   
   export type ShippingInfo = {
     delivery_addr: Address;
     is_job_site: boolean;
     note: string;
   }
+
+  export type ShippingInfoDB = ShippingInfo & {
+    id: number;
+  };
   
   export interface Address {
     street: string;
