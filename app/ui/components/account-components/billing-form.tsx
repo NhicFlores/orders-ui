@@ -24,7 +24,7 @@ import { BillingInfo } from "@/lib/definitions/profile-definitions";
 
 interface BillingFormProps {
   user_id: string;
-  billing_info?: BillingInfo | null;
+  billing_info?: BillingInfo;
   mode?: "edit" | "view";
 }
 
@@ -35,41 +35,16 @@ const BillingForm = ({ user_id, billing_info }: BillingFormProps) => {
     setIsEditEnabled(!isEditEnabled);
   }
 
-  async function handleFormSave(data: z.infer<typeof BillingInfoSchema>) {
-    console.log("submit handler");
-    createBillingInfo(user_id, data);
-    //console.log(data);
-    //insertBillingInfo();
-  }
-
-  //console.log(billing_info);
-
   const {
-    billing_addr,
-    payment_method,
-    purchase_order,
-    primary_contact_name,
-    primary_contact_email,
-    phone_num,
-    alt_phone_num,
-    fax_num,
-  } = billing_info || {
-    billing_addr: {
-      street: "",
-      apt_num: "",
-      city: "",
-      state: "",
-      zip: "",
-      country: "",
-    },
-    payment_method: "",
-    purchase_order: "",
-    primary_contact_name: "",
-    primary_contact_email: "",
-    phone_num: "",
-    alt_phone_num: "",
-    fax_num: "",
-  };
+    billing_addr = {},
+    payment_method = "",
+    purchase_order = "",
+    primary_contact_name = "",
+    primary_contact_email = "",
+    phone_num = "",
+    alt_phone_num = "",
+    fax_num = "",
+  } = billing_info;
 
   const { street, apt_num, city, state, zip, country } = billing_addr;
 
@@ -77,22 +52,30 @@ const BillingForm = ({ user_id, billing_info }: BillingFormProps) => {
     resolver: zodResolver(BillingInfoSchema),
     defaultValues: {
       billing_addr: {
-        street: billing_info?.billing_addr?.street || "",
-        apt_num: billing_info?.billing_addr?.apt_num || "",
-        city: billing_info?.billing_addr?.city || "",
-        state: billing_info?.billing_addr?.state || "",
-        zip: billing_info?.billing_addr?.zip || "",
-        country: billing_info?.billing_addr?.country || "",
+        street: street || "",
+        apt_num: apt_num || "",
+        city: city || "",
+        state: state || "",
+        zip: zip || "",
+        country: country || "",
       },
-      payment_method: billing_info?.payment_method || "",
-      purchase_order: billing_info?.purchase_order || "",
-      primary_contact_name: billing_info?.primary_contact_name || "",
-      primary_contact_email: billing_info?.primary_contact_email || "",
-      phone_num: billing_info?.phone_num || "",
-      alt_phone_num: billing_info?.alt_phone_num || "",
-      fax_num: billing_info?.fax_num || "",
+      payment_method: payment_method || "",
+      purchase_order: purchase_order || "",
+      primary_contact_name: primary_contact_name || "",
+      primary_contact_email: primary_contact_email || "",
+      phone_num: phone_num || "",
+      alt_phone_num: alt_phone_num || "",
+      fax_num: fax_num || "",
     },
   });
+
+  async function handleFormSave(data: z.infer<typeof BillingInfoSchema>) {
+    console.log("submit handler");
+    createBillingInfo(user_id, data);
+    //console.log(data);
+    //insertBillingInfo();
+  }
+
   return (
     <div>
       <Form {...billingForm}>
@@ -111,7 +94,11 @@ const BillingForm = ({ user_id, billing_info }: BillingFormProps) => {
                   <FormItem>
                     <FormLabel>Payment Method</FormLabel>
                     <FormControl>
-                      <Input {...field} />
+                      <Input
+                        readOnly={!isEditEnabled}
+                        className={!isEditEnabled ? "bg-slate-100" : "bg-white"}
+                        {...field}
+                      />
                     </FormControl>
                     <FormMessage>
                       {billingForm.formState.errors.payment_method?.message}
@@ -128,7 +115,11 @@ const BillingForm = ({ user_id, billing_info }: BillingFormProps) => {
                   <FormItem>
                     <FormLabel>Purchase Order</FormLabel>
                     <FormControl>
-                      <Input {...field} />
+                      <Input
+                        readOnly={!isEditEnabled}
+                        className={!isEditEnabled ? "bg-slate-100" : "bg-white"}
+                        {...field}
+                      />
                     </FormControl>
                     <FormMessage>
                       {billingForm.formState.errors.purchase_order?.message}
@@ -154,7 +145,13 @@ const BillingForm = ({ user_id, billing_info }: BillingFormProps) => {
                     <FormItem>
                       <FormLabel>Name</FormLabel>
                       <FormControl>
-                        <Input {...field} />
+                        <Input
+                          readOnly={!isEditEnabled}
+                          className={
+                            !isEditEnabled ? "bg-slate-100" : "bg-white"
+                          }
+                          {...field}
+                        />
                       </FormControl>
                       <FormMessage>
                         {
@@ -174,7 +171,13 @@ const BillingForm = ({ user_id, billing_info }: BillingFormProps) => {
                     <FormItem>
                       <FormLabel>Email</FormLabel>
                       <FormControl>
-                        <Input {...field} />
+                        <Input
+                          readOnly={!isEditEnabled}
+                          className={
+                            !isEditEnabled ? "bg-slate-100" : "bg-white"
+                          }
+                          {...field}
+                        />
                       </FormControl>
                       <FormMessage>
                         {
@@ -197,7 +200,13 @@ const BillingForm = ({ user_id, billing_info }: BillingFormProps) => {
                     <FormItem>
                       <FormLabel>Phone Number</FormLabel>
                       <FormControl>
-                        <Input {...field} />
+                        <Input
+                          readOnly={!isEditEnabled}
+                          className={
+                            !isEditEnabled ? "bg-slate-100" : "bg-white"
+                          }
+                          {...field}
+                        />
                       </FormControl>
                       <FormMessage>
                         {billingForm.formState.errors.phone_num?.message}
@@ -214,7 +223,13 @@ const BillingForm = ({ user_id, billing_info }: BillingFormProps) => {
                     <FormItem>
                       <FormLabel>Alternate Phone Number</FormLabel>
                       <FormControl>
-                        <Input {...field} />
+                        <Input
+                          readOnly={!isEditEnabled}
+                          className={
+                            !isEditEnabled ? "bg-slate-100" : "bg-white"
+                          }
+                          {...field}
+                        />
                       </FormControl>
                       <FormMessage>
                         {billingForm.formState.errors.alt_phone_num?.message}
@@ -231,7 +246,13 @@ const BillingForm = ({ user_id, billing_info }: BillingFormProps) => {
                     <FormItem>
                       <FormLabel>Fax Number</FormLabel>
                       <FormControl>
-                        <Input {...field} />
+                        <Input
+                          readOnly={!isEditEnabled}
+                          className={
+                            !isEditEnabled ? "bg-slate-100" : "bg-white"
+                          }
+                          {...field}
+                        />
                       </FormControl>
                       <FormMessage>
                         {billingForm.formState.errors.fax_num?.message}
@@ -257,7 +278,13 @@ const BillingForm = ({ user_id, billing_info }: BillingFormProps) => {
                     <FormItem>
                       <FormLabel>Street Address</FormLabel>
                       <FormControl>
-                        <Input {...field} />
+                        <Input
+                          readOnly={!isEditEnabled}
+                          className={
+                            !isEditEnabled ? "bg-slate-100" : "bg-white"
+                          }
+                          {...field}
+                        />
                       </FormControl>
                       <FormMessage>
                         {
@@ -277,7 +304,13 @@ const BillingForm = ({ user_id, billing_info }: BillingFormProps) => {
                     <FormItem>
                       <FormLabel>Apt/Suite/Lot</FormLabel>
                       <FormControl>
-                        <Input {...field} />
+                        <Input
+                          readOnly={!isEditEnabled}
+                          className={
+                            !isEditEnabled ? "bg-slate-100" : "bg-white"
+                          }
+                          {...field}
+                        />
                       </FormControl>
                       <FormMessage>
                         {
@@ -300,7 +333,13 @@ const BillingForm = ({ user_id, billing_info }: BillingFormProps) => {
                     <FormItem>
                       <FormLabel>City</FormLabel>
                       <FormControl>
-                        <Input {...field} />
+                        <Input
+                          readOnly={!isEditEnabled}
+                          className={
+                            !isEditEnabled ? "bg-slate-100" : "bg-white"
+                          }
+                          {...field}
+                        />
                       </FormControl>
                       <FormMessage>
                         {
@@ -320,7 +359,13 @@ const BillingForm = ({ user_id, billing_info }: BillingFormProps) => {
                     <FormItem>
                       <FormLabel>State</FormLabel>
                       <FormControl>
-                        <Input {...field} />
+                        <Input
+                          readOnly={!isEditEnabled}
+                          className={
+                            !isEditEnabled ? "bg-slate-100" : "bg-white"
+                          }
+                          {...field}
+                        />
                       </FormControl>
                       <FormMessage>
                         {
@@ -340,7 +385,13 @@ const BillingForm = ({ user_id, billing_info }: BillingFormProps) => {
                     <FormItem>
                       <FormLabel>Zip</FormLabel>
                       <FormControl>
-                        <Input {...field} />
+                        <Input
+                          readOnly={!isEditEnabled}
+                          className={
+                            !isEditEnabled ? "bg-slate-100" : "bg-white"
+                          }
+                          {...field}
+                        />
                       </FormControl>
                       <FormMessage>
                         {
@@ -360,7 +411,13 @@ const BillingForm = ({ user_id, billing_info }: BillingFormProps) => {
                     <FormItem>
                       <FormLabel>Country</FormLabel>
                       <FormControl>
-                        <Input {...field} />
+                        <Input
+                          readOnly={!isEditEnabled}
+                          className={
+                            !isEditEnabled ? "bg-slate-100" : "bg-white"
+                          }
+                          {...field}
+                        />
                       </FormControl>
                       <FormMessage>
                         {
@@ -377,7 +434,11 @@ const BillingForm = ({ user_id, billing_info }: BillingFormProps) => {
           <div className="flex justify-end">
             {isEditEnabled ? (
               <div className="space-x-4">
-                <Button type="reset" variant={"ghost"}>
+                <Button
+                  type="reset"
+                  variant={"ghost"}
+                  onClick={() => ToggleEditEnabled()}
+                >
                   Cancel
                 </Button>
                 <Button type="submit">Save</Button>

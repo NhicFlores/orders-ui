@@ -299,18 +299,20 @@ const billingInfoArray = [
 async function seedBillingInfo(client) {
   try {
     const createTable = await client.sql`
-    CREATE TABLE billing_info (
-      id SERIAL PRIMARY KEY,
-      user_id UUID REFERENCES users(id),
-      billing_addr address,
-      payment_method VARCHAR(255),
-      purchase_order VARCHAR(255),
-      primary_contact_name VARCHAR(255),
-      primary_contact_email VARCHAR(255),
-      phone_num VARCHAR(255),
-      alt_phone_num VARCHAR(255),
-      fax_num VARCHAR(255)
-    );
+      CREATE TABLE billing_info (
+        id SERIAL PRIMARY KEY,
+        user_id UUID REFERENCES users(id),
+        billing_addr VARCHAR(255),
+        payment_method VARCHAR(255),
+        purchase_order VARCHAR(255),
+        primary_contact_name VARCHAR(255),
+        primary_contact_email VARCHAR(255),
+        phone_num VARCHAR(255),
+        alt_phone_num VARCHAR(255),
+        fax_num VARCHAR(255),
+        isPrimary BOOLEAN DEFAULT false,
+        isActive BOOLEAN DEFAULT true
+      );
     `;
     console.log(`Created "billing_info" table`);
     return createTable;
@@ -373,15 +375,6 @@ async function sqlStatements() {
       password TEXT NOT NULL,
       role role DEFAULT 'USER' 
     );
-    
-    CREATE TYPE address AS (
-      street VARCHAR(255),
-      apt_num VARCHAR(255),
-      city VARCHAR(255),
-      state VARCHAR(255),
-      zip VARCHAR(255),
-      country VARCHAR(255)
-  );
 
   CREATE TABLE user_profile (
     id SERIAL PRIMARY KEY,
@@ -394,23 +387,33 @@ async function sqlStatements() {
 CREATE TABLE shipping_info (
   id SERIAL PRIMARY KEY,
   user_id UUID REFERENCES users(id),
-  delivery_addr address,
+  delivery_addr VARCHAR(255),
   is_job_site BOOLEAN,
   note TEXT
 );
 CREATE TABLE billing_info (
   id SERIAL PRIMARY KEY,
   user_id UUID REFERENCES users(id),
-  billing_addr address,
+  billing_addr VARCHAR(255),
   payment_method VARCHAR(255),
   purchase_order VARCHAR(255),
   primary_contact_name VARCHAR(255),
   primary_contact_email VARCHAR(255),
   phone_num VARCHAR(255),
   alt_phone_num VARCHAR(255),
-  fax_num VARCHAR(255)
+  fax_num VARCHAR(255),
+  isPrimary BOOLEAN DEFAULT false,
+  isActive BOOLEAN DEFAULT true
 );
------------For testing purposes only-----------
+    `;
+  } catch (error) {
+    console.error("Error creating tables:", error);
+    throw error;
+  }
+}
+
+/**
+ * -----------For testing purposes only-----------
 CREATE TABLE user_profile (
   id SERIAL PRIMARY KEY, ---------- UUID is less readable, more random than SERIAL. good for anonymity, but will make indexing take longer
   user_id UUID REFERENCES users(id),
@@ -420,9 +423,16 @@ CREATE TABLE user_profile (
   billing_info INTEGER REFERENCES billing_info(id),
   shipping_info INTEGER REFERENCES shipping_info(id)
 );
-    `;
-  } catch (error) {
-    console.error("Error creating tables:", error);
-    throw error;
-  }
-}
+ */
+
+/**
+ * ----------- Unused type -----------
+ *     CREATE TYPE address AS (
+      street VARCHAR(255),
+      apt_num VARCHAR(255),
+      city VARCHAR(255),
+      state VARCHAR(255),
+      zip VARCHAR(255),
+      country VARCHAR(255)
+  );
+ */

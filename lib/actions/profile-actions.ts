@@ -138,7 +138,7 @@ export async function createBillingInfo(
 
   // use JSON.stringify to store the address as a string in the database to properly serialize and deserialize the address object
   // const billing_addr_str = `(${billing_addr.street}, ${billing_addr.apt_num}, ${billing_addr.city}, ${billing_addr.state}, ${billing_addr.zip}, ${billing_addr.country})`;
-  const billing_addr_string = JSON.stringify(billing_addr);
+   const billing_addr_string = JSON.stringify(billing_addr);
 
   try {
     console.log("---------------- updating DB -----------------");
