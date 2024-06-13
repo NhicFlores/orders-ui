@@ -27,12 +27,14 @@ interface BillingFormProps {
   user_id: string;
   billing_info?: BillingInfoDB;
   isNewForm?: boolean;
+  toggleNewBillingForm?: () => void;
 }
 
 const BillingForm = ({
   user_id,
   billing_info = {} as BillingInfoDB,
   isNewForm,
+  toggleNewBillingForm,
 }: BillingFormProps) => {
   const [isEditEnabled, setIsEditEnabled] = useState(isNewForm);
   const [saveButtonDisabled, setSaveButtonDisabled] = useState(true);
@@ -92,11 +94,13 @@ const BillingForm = ({
   // }, [formValues]);
 
   async function handleFormSave(data: z.infer<typeof BillingInfoSchema>) {
-    console.log("submit handler");
+    //console.log("xxxx submit handler xxxx");
+
     isNewForm ? 
       createBillingInfo(user_id, data)
       : updateBillingInfo(user_id, id, data);
     setIsEditEnabled(!isEditEnabled);
+    toggleNewBillingForm && toggleNewBillingForm();
     //console.log(data);
     //insertBillingInfo();
   }
@@ -462,7 +466,10 @@ const BillingForm = ({
                 <Button
                   type="reset"
                   variant={"ghost"}
-                  onClick={() => ToggleEditEnabled()}
+                  onClick={() => {
+                    ToggleEditEnabled();
+                    toggleNewBillingForm && toggleNewBillingForm();
+                  }}
                 >
                   Cancel
                 </Button>

@@ -8,22 +8,12 @@ import * as React from "react";
 import {
   ColumnDef,
   SortingState,
-  VisibilityState,
   getSortedRowModel,
   flexRender,
   getCoreRowModel,
   useReactTable,
-  getPaginationRowModel,
-  ColumnFiltersState,
   getFilteredRowModel,
 } from "@tanstack/react-table";
-
-import {
-  DropdownMenu,
-  DropdownMenuCheckboxItem,
-  DropdownMenuContent,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 
 import {
   Table,
@@ -40,18 +30,19 @@ import {
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
 
-import { Button } from "@/components/ui/button";
 import BillingForm from "./billing-form";
-import { BillingInfo } from "@/lib/definitions/profile-definitions";
+import { BillingInfoDB } from "@/lib/definitions/profile-definitions";
 
 interface BillingOptionTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
   data: TData[];
+  user_id: string;
 }
 
 export function BillingOptionTable<TData, TValue>({
   columns,
   data,
+  user_id,
 }: BillingOptionTableProps<TData, TValue>) {
   const [sorting, setSorting] = React.useState<SortingState>([]);
 
@@ -115,7 +106,7 @@ export function BillingOptionTable<TData, TValue>({
                     <CollapsibleContent asChild>
                       <tr className="bg-slate-50">
                         <td className="p-4 border" colSpan={row.getVisibleCells().length}>
-                          <BillingForm user_id="test" billing_info={row.original as BillingInfo}/>
+                          <BillingForm user_id={user_id} billing_info={row.original as BillingInfoDB}/>
                         </td>
                       </tr>
                     </CollapsibleContent>

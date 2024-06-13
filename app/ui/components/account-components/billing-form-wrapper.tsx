@@ -3,9 +3,6 @@ import BillingForm from "@/app/ui/components/account-components/billing-form";
 import { Button } from "@/components/ui/button";
 import { PlusIcon } from "lucide-react";
 import { BillingOptionTable } from "@/app/ui/components/account-components/billing-option-table";
-import { auth } from "@/auth";
-import { getBillingInfoByUserId, getUserByID } from "@/lib/data/user-data";
-import { DataTable } from "../data-table";
 import { BillingInfoColumns } from "./billing-info-columns";
 import { BillingInfoDB } from "@/lib/definitions/profile-definitions";
 import { useState } from "react";
@@ -43,7 +40,7 @@ const BillingFormWrapper = ({
       </div>
       <div>
         {isNewBillingInfo && (
-          <BillingForm user_id={user_id} isNewForm={isNewBillingInfo} />
+          <BillingForm user_id={user_id} isNewForm={isNewBillingInfo} toggleNewBillingForm={toggleNewBillingForm}/>
         )}
       </div>
       <div>
@@ -52,6 +49,7 @@ const BillingFormWrapper = ({
           <BillingOptionTable
             columns={BillingInfoColumns}
             data={billing_data}
+            user_id={user_id}
           />
         )}
       </div>

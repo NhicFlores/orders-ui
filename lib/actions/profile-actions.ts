@@ -111,7 +111,7 @@ export async function deleteProfile(user_id: string) {
  * this function creates a new billing info object in the database
  * @param user_id current use id
  * @param formFields values from the billing info form
- * @returns 
+ * @returns
  */
 export async function createBillingInfo(
   user_id: string,
@@ -139,7 +139,7 @@ export async function createBillingInfo(
 
   // use JSON.stringify to store the address as a string in the database to properly serialize and deserialize the address object
   // const billing_addr_str = `(${billing_addr.street}, ${billing_addr.apt_num}, ${billing_addr.city}, ${billing_addr.state}, ${billing_addr.zip}, ${billing_addr.country})`;
-   const billing_addr_string = JSON.stringify(billing_addr);
+  const billing_addr_string = JSON.stringify(billing_addr);
 
   try {
     console.log("---------------- updating DB -----------------");
@@ -173,8 +173,7 @@ export async function createBillingInfo(
     };
   }
 
-  //revalidatePath(BillingRoute.href);
-  //redirect(BillingRoute.href);
+  revalidatePath(BillingRoute.href);
 }
 
 export async function insertBillingInfo() {
@@ -247,13 +246,14 @@ export async function insertBillingInfo() {
  * @param user_id current user id
  * @param billing_info_id id of the billing info object to update
  * @param formFields form values
- * @returns 
+ * @returns
  */
 export async function updateBillingInfo(
   user_id: string,
   billing_info_id: number,
   formFields: z.infer<typeof BillingInfoSchema>
 ) {
+  // console.log("---------------- updateBillingInfo function -----------------");
   const validatedFields = BillingInfoSchema.safeParse(formFields);
 
   if (!validatedFields.success) {
@@ -275,11 +275,11 @@ export async function updateBillingInfo(
   } = validatedFields.data;
 
   const billing_addr_string = JSON.stringify(billing_addr);
-
+  //console.log(typeof billing_info_id);
   try {
     await sql`
             UPDATE billing_info
-            SET billing_addr_prim = ${billing_addr_string},  
+            SET billing_addr = ${billing_addr_string},  
                 payment_method = ${payment_method}, 
                 purchase_order = ${purchase_order}, 
                 primary_contact_name = ${primary_contact_name}, 
@@ -289,12 +289,15 @@ export async function updateBillingInfo(
                 fax_num = ${fax_num}
             WHERE user_id = ${user_id} AND id = ${billing_info_id}
         `;
-        console.log("---------------- updateBillingInfo: updated DB -----------------");
+    // console.log(
+    //   "---------------- updateBillingInfo: updated DB -----------------"
+    // );
   } catch (error) {
     return {
       message: "Database Error: Failed to update Billing Info",
     };
   }
+  revalidatePath(BillingRoute.href);
 }
 
 export async function deleteBillingInfo(

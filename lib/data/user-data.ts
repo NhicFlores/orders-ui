@@ -39,7 +39,8 @@ export async function getBillingInfoByUserId(user_id: string) {
   try {
     const billingInfoData = await sql<BillingInfoDB>`
       SELECT * FROM billing_info 
-      WHERE user_id=${user_id}`;
+      WHERE user_id=${user_id}
+    `;
 
     //console.log(billingInfoData.rows[0]);
     //console.log( typeof billingInfoData.rows[0].billing_addr);
