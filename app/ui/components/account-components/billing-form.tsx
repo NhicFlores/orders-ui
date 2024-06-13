@@ -157,8 +157,8 @@ const BillingForm = ({
                 )}
               />
             </div>
+            {/** NOTE TODO: add 'make primary' input  */}
           </div>
-
           {/* ------------------- contact section ------------------- */}
           <div className="space-y-4">
             <div className="border-b-2">

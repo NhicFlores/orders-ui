@@ -28,6 +28,7 @@ export type UserProfile = {
 
   export type BillingInfoDB = BillingInfo & {
     id: number;
+    user_id: string;
   };
   
   export type ShippingInfo = {

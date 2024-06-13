@@ -1,4 +1,3 @@
-
 //client component containing <DataTable /> component
 
 "use client";
@@ -32,6 +31,8 @@ import {
 
 import BillingForm from "./billing-form";
 import { BillingInfoDB } from "@/lib/definitions/profile-definitions";
+import { Button } from "@/components/ui/button";
+import { ChevronDown } from "lucide-react";
 
 interface BillingOptionTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
@@ -93,20 +94,34 @@ export function BillingOptionTable<TData, TValue>({
                       data-state={row.getIsSelected() && "selected"}
                     >
                       {row.getVisibleCells().map((cell) => (
-                        <CollapsibleTrigger key={cell.id} asChild>
-                          <TableCell key={cell.id} className="text-center">
-                            {flexRender(
-                              cell.column.columnDef.cell,
-                              cell.getContext()
-                            )}
-                          </TableCell>
-                        </CollapsibleTrigger>
+                        <TableCell key={cell.id} className="text-center">
+                          {cell.column.id === "expander" ? (
+                            <CollapsibleTrigger asChild>
+                              <Button variant={"ghost"}>
+                                <ChevronDown size={18} />
+                              </Button>
+                            </CollapsibleTrigger>
+                          ) : (
+                            <div>
+                              {flexRender(
+                                cell.column.columnDef.cell,
+                                cell.getContext()
+                              )}
+                            </div>
+                          )}
+                        </TableCell>
                       ))}
                     </TableRow>
                     <CollapsibleContent asChild>
                       <tr className="bg-slate-50">
-                        <td className="p-4 border" colSpan={row.getVisibleCells().length}>
-                          <BillingForm user_id={user_id} billing_info={row.original as BillingInfoDB}/>
+                        <td
+                          className="p-4 border"
+                          colSpan={row.getVisibleCells().length}
+                        >
+                          <BillingForm
+                            user_id={user_id}
+                            billing_info={row.original as BillingInfoDB}
+                          />
                         </td>
                       </tr>
                     </CollapsibleContent>

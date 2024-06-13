@@ -1,28 +1,13 @@
 "use client";
-import { Checkbox } from "@/components/ui/checkbox";
-import { BillingInfo } from "@/lib/definitions/profile-definitions";
+import { Button } from "@/components/ui/button";
+import { deleteBillingInfo } from "@/lib/actions/profile-actions";
+import { BillingInfoDB } from "@/lib/definitions/profile-definitions";
 import { ColumnDef } from "@tanstack/react-table";
+import { Trash2, ChevronDown  } from "lucide-react";
 
-export const BillingInfoColumns: ColumnDef<BillingInfo>[] = [
+export const BillingInfoColumns: ColumnDef<BillingInfoDB>[] = [
     {
-        id: "select",
-        header: ({ table }) => (
-            <Checkbox
-                checked={
-                    table.getIsAllPageRowsSelected() ||
-                    (table.getIsSomePageRowsSelected() && "indeterminate")
-                }
-                onCheckedChange={(value) => table.toggleAllPageRowsSelected(!!value)}
-                aria-label="Select all"
-            />
-        ),
-        cell: ({ row }) => (
-            <Checkbox
-                checked={row.getIsSelected()}
-                onCheckedChange={(value) => row.toggleSelected(!!value)}
-                aria-label="select row"
-            />
-        ),
+        id: "expander",
     },
     { 
         accessorKey: "payment_method",
@@ -37,7 +22,17 @@ export const BillingInfoColumns: ColumnDef<BillingInfo>[] = [
         header: "Primary Contact Name",
     },
     {
-        accessorKey: "isActive",
-        header: "isActive",
-    }
+        id: "actions",
+        cell: ({ row }) => {
+            const billingInfo = row.original;
+            return (
+                <Button 
+                    variant={'ghost'}
+                    onClick={() => deleteBillingInfo(billingInfo.user_id , billingInfo.id)}
+                >
+                    <Trash2 size={18} />
+                </Button>
+            );
+        },
+    },
 ];

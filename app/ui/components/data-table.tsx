@@ -40,7 +40,7 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
-import Link from "next/link";
+
 import { fuzzyOrderFilter } from "./table/table-utils";
 
 interface DataTableProps<TData, TValue> {

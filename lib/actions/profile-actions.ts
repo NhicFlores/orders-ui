@@ -302,12 +302,18 @@ export async function updateBillingInfo(
 
 export async function deleteBillingInfo(
   user_id: string,
-  billing_info_id: string
+  billing_info_id: number
 ) {
-  await sql`
-        DELETE FROM billing_info
-        WHERE user_id = ${user_id} AND id = ${billing_info_id}
-    `;
+  try {
+    await sql`
+    DELETE FROM billing_info
+    WHERE user_id = ${user_id} AND id = ${billing_info_id}`;
+  } catch (error) {
+    return {
+      message: "Database Error: Failed to delete Billing Info",
+    };
+  }
+  revalidatePath(BillingRoute.href);
 }
 
 export async function createShippingInfo(
