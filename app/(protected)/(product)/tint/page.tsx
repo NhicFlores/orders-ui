@@ -4,7 +4,7 @@ import { tintOptions } from "@/lib/data/product-placeholder-data";
 import { useProductContext } from '@/components/product-components/product-context-provider';
 import ProductHeader from '@/components/product-components/product-header';
 import ProductGrid from '@/components/product-components/ProductGrid';
-import { DimensionRoute } from '@/routes';
+import { GlassThicknessRoute, OrderSummaryRoute } from '@/routes';
 
 const TintPage = () => {
   const { setSummaryCard } = useProductContext();
@@ -30,7 +30,7 @@ const TintPage = () => {
 
   return (
     <div className='p-4'>
-      <ProductHeader title="Select Tint" backRoute={DimensionRoute.href} continueRoute=''/>
+      <ProductHeader title="Select Tint" backRoute={GlassThicknessRoute.href} continueRoute={OrderSummaryRoute.href}/>
       <ProductGrid productList={productList} onSelect={handleSelect}/>
     </div>
   )
