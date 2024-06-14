@@ -1,9 +1,16 @@
 // welcome page 
-export const Landing = {
+export const LandingRoute = {
   label: "Glass Ordering",
   href: "/",
 };
 
+// public routes 
+export const TemplatesRoute = {
+  label: "Browse Templates",
+  href: "/browse_templates",
+};
+
+// protected routes
 export const DashboardRoute = {
   label: "Dashboard",
   href: "/dashboard",
@@ -60,6 +67,7 @@ export const ShapeRoute = {
     href: "/tint",
   };
 
+  // account routes
 export const ProfileRoute = {
     label: "Profile",
     href: "/profile",
@@ -70,20 +78,22 @@ export const BillingRoute = {
     href: "/billing",
   };
 
+  export const ShippingRoute = {
+    label: "Shipping",
+    href: "/shipping",
+  };
+
+  export const AccountRoutes = [
+    ProfileRoute,
+    BillingRoute,
+    ShippingRoute,
+  ]
+
 // header routes 
 export const HeaderRoutes = [
-  {
-    label: "Quotes",
-    href: "/quote",
-  },
-  {
-    label: "Orders",
-    href: "/order",
-  },
-  {
-    label: "Drafts",
-    href: "/drafts",
-  },
+  QuoteRoute,
+  OrderRoute,
+  DraftRoute,
 ];
 
 //dashboard nav links
@@ -96,17 +106,8 @@ export const DashboardNavLinks = [
     label: "Check Order Status",
     href: "/order",
   },
-  {
-    label: "Browse Templates",
-    href: "/browse_templates",
-  },
+  TemplatesRoute,
 ];
-
-// public routes 
-export const TemplatesRoute = {
-  label: "Browse Templates",
-  href: "/browse_templates",
-};
 
 // auth routes 
 export const LoginRoute = {
@@ -125,8 +126,8 @@ export const RegisterRoute = {
  * @type {string[]}
  */
 export const publicRoutes = [
-    "/",
-    "/browse_templates",
+    LandingRoute.href,
+    TemplatesRoute.href,
 ]
 
 /**
@@ -164,7 +165,7 @@ export const apiAuthPrefix = "/api/auth";
  * the default redirect path after logging in 
  * @type {string}
  */
-export const DEFAULT_LOGIN_REDIRECT = "/dashboard"
+export const DEFAULT_LOGIN_REDIRECT = DashboardRoute.href;
 
 //make either home or dashboard. dashboard will pull recent orders 
 //there isn't much need for a landing page once logged in 

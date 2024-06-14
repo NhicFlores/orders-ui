@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { UserRound } from "lucide-react";
 import Link from "next/link";
-import { BillingRoute, ProfileRoute } from "@/routes";
+import { AccountRoutes } from "@/routes";
 import { logOut } from "@/lib/actions/auth-actions";
 //get images into public
 // NOTE TODO: remove link from dropdown trigger and replace with account button
@@ -31,16 +31,13 @@ const ProfileButton = () => {
       <DropdownMenuContent>
         <DropdownMenuLabel>My Account</DropdownMenuLabel>
         <DropdownMenuSeparator />
-        <Link href={ProfileRoute.href} className="text-sm">
-          <DropdownMenuItem className="cursor-pointer">
-            {ProfileRoute.label}
-          </DropdownMenuItem>
-        </Link>
-        <Link href={BillingRoute.href}>
-          <DropdownMenuItem className="cursor-pointer">
-            {BillingRoute.label}
-          </DropdownMenuItem>
-        </Link>
+        {AccountRoutes.map((route, i) => (
+          <Link key={i} href={route.href}>
+            <DropdownMenuItem className="cursor-pointer">
+              {route.label}
+            </DropdownMenuItem>
+          </Link>
+        ))}
         <DropdownMenuItem className="cursor-pointer">Settings</DropdownMenuItem>
         <DropdownMenuSeparator />
         <DropdownMenuItem onClick={onLogoutClick} className="cursor-pointer">

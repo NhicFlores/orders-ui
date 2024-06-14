@@ -2,6 +2,7 @@
 import { Button } from "@/components/ui/button";
 import { PlusIcon } from "lucide-react";
 import { useState } from "react";
+import ShippingForm from "./shipping-form";
 
 export default function ShippingWrapper() {
   const [isNewShippingInfo, setIsNewShippingInfo] = useState(false);
@@ -26,7 +27,7 @@ export default function ShippingWrapper() {
       </div>
       <div>
         {isNewShippingInfo && (
-            <div>Shipping Form</div>
+            <ShippingForm/>
         )}
       </div>
       <div>
