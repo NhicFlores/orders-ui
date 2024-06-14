@@ -67,6 +67,10 @@ export const ShapeRoute = {
     href: "/tint",
   };
 
+  export const OrderSummaryRoute = {
+    href: "/order-summary",
+  };
+
   // account routes
 export const ProfileRoute = {
     label: "Profile",
