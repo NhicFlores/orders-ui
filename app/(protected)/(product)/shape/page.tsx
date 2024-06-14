@@ -1,11 +1,6 @@
 "use client";
-import {
-  Product,
-  Shape
-} from "@/lib/definitions/order-item-definitions";
-import {
-  shapeOptions
-} from "@/lib/data/product-placeholder-data";
+import { Product, Shape } from "@/lib/definitions/order-item-definitions";
+import { shapeOptions } from "@/lib/data/product-placeholder-data";
 import { useProductContext } from "@/components/product-components/product-context-provider";
 import ProductHeader from "@/components/product-components/product-header";
 import ProductGrid from "@/components/product-components/ProductGrid";
@@ -23,20 +18,28 @@ const ShapePage = () => {
       },
     }));
     // Add selected shape to order
-    setOrder((prev) => ({
-      ...prev,
-      glassConfig: {
-        ...prev.glassConfig,
-        glassShape: shapeOptions.find((shape) => shape.name === configOption),
-      },
-    }));
+    setOrder((prev) => {
+      const newShape = shapeOptions.find(
+        (shape) => shape.name === configOption
+      );
+      if (!newShape) {
+        throw new Error("Shape not found");
+      }
+      return {
+        ...prev,
+        product_config: {
+          ...prev.product_config,
+          glass_shape: newShape,
+        },
+      };
+    });
 
     console.log("selected shape: ", configOption);
     console.log("order: ", order);
     console.log("summaryCard: ", summaryCard);
   };
 
-  // NOTE TODO:on select, add shape to order 
+  // NOTE TODO:on select, add shape to order
 
   // const productList = shapeOptions.map((shape) => {
   //   return {
