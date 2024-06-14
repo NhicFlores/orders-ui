@@ -4,7 +4,7 @@ import { sql } from "@vercel/postgres";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { OrderRoute } from "@/routes";
-import { NewOrder } from "../definitions/definitions";
+import { NewOrder, TestOrder } from "../definitions/definitions";
 
 //updating the data displayed in the orders route,
 //so we need to clear this cache and trigger a new request to the server
@@ -182,4 +182,30 @@ export async function deleteOrder(id: string) {
         WHERE id = ${id}
     `;
   revalidatePath(OrderRoute.href);
+}
+
+// NOTE TEST FUNCTION
+export async function createTestOrder(order: TestOrder) {
+  console.log("-------------- CREATE TEST ORDER ACTION --------------");
+  console.log(order);
+  const date = new Date().toISOString().split("T")[0];
+  const { order_name, order_items, status } = order;
+
+  const order_items_string = JSON.stringify(order_items);
+  //console.log(order_items_string);
+  const someString = "test string";
+  try {
+    console.log("TRYING TO INSERT ORDER");
+    await sql`
+        INSERT INTO test_order (order_name, order_items, status)
+        VALUES (${order_name}, ${order_items_string}, ${status})
+    `;
+    console.log("INSERTED ORDER");
+  } catch (error) {
+    return {
+      message: "Database Error: Failed to create and Order.",
+    };
+  }
+  //revalidatePath(OrderRoute.href);
+  //redirect(OrderRoute.href);
 }

@@ -8,6 +8,7 @@ export const ProductContext = createContext<ProductContextType>({
     order: {
         user_id: '',
         order_name: '',
+        order_items: [],
         product_config: { //consider storing this in a separate table, so the order object is just a bunch of id's 
             id: '',
             glass_type: glassTypes[0],
@@ -60,6 +61,7 @@ export default function ProductContextProvider({ children }: { children: React.R
     const [order, setOrder] = useState<NewOrder>({
         user_id: '',
         order_name: '',
+        order_items: [],
         product_config: {
             id: '',
             glass_type: glassTypes[0],
@@ -69,7 +71,7 @@ export default function ProductContextProvider({ children }: { children: React.R
             glass_tint: {},
             glass_options: {}
         },
-        status: OrderStatus.Pending,
+        status: OrderStatus.Draft,
         billing_info_id: '',
         shipping_info_id: '',
     });

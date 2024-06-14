@@ -106,8 +106,6 @@ async function seedNewOrders(client) {
     `;
 
     console.log(`Created "new_orders" table`);
-
-
   } catch (error) {
     console.error("Error seeding new_orders:", error);
     throw error;
@@ -273,26 +271,40 @@ async function seedRevenue(client) {
 
 const billingInfoArray = [
   {
-    user_id: '14e57592-e422-4da6-be3b-fba670ce498d',
-    billing_addr: { street: '123 Main St', apt_num: 'Apt 1', city: 'New York', state: 'NY', zip: '10001', country: 'USA' },
-    payment_method: 'Credit Card',
-    purchase_order: 'PO12345',
-    primary_contact_name: 'John Doe',
-    primary_contact_email: 'john.doe@example.com',
-    phone_num: '123-456-7890',
-    alt_phone_num: '098-765-4321',
-    fax_num: '111-222-3333'
+    user_id: "14e57592-e422-4da6-be3b-fba670ce498d",
+    billing_addr: {
+      street: "123 Main St",
+      apt_num: "Apt 1",
+      city: "New York",
+      state: "NY",
+      zip: "10001",
+      country: "USA",
+    },
+    payment_method: "Credit Card",
+    purchase_order: "PO12345",
+    primary_contact_name: "John Doe",
+    primary_contact_email: "john.doe@example.com",
+    phone_num: "123-456-7890",
+    alt_phone_num: "098-765-4321",
+    fax_num: "111-222-3333",
   },
   {
-    user_id: '14e57592-e422-4da6-be3b-fba670ce498d',
-    billing_addr: { street: '456 Maple Ave', apt_num: 'Apt 2', city: 'Los Angeles', state: 'CA', zip: '90001', country: 'USA' },
-    payment_method: 'Debit Card',
-    purchase_order: 'PO23456',
-    primary_contact_name: 'Jane Smith',
-    primary_contact_email: 'jane.smith@example.com',
-    phone_num: '234-567-8901',
-    alt_phone_num: '109-876-5432',
-    fax_num: '222-333-4444'
+    user_id: "14e57592-e422-4da6-be3b-fba670ce498d",
+    billing_addr: {
+      street: "456 Maple Ave",
+      apt_num: "Apt 2",
+      city: "Los Angeles",
+      state: "CA",
+      zip: "90001",
+      country: "USA",
+    },
+    payment_method: "Debit Card",
+    purchase_order: "PO23456",
+    primary_contact_name: "Jane Smith",
+    primary_contact_email: "jane.smith@example.com",
+    phone_num: "234-567-8901",
+    alt_phone_num: "109-876-5432",
+    fax_num: "222-333-4444",
   },
 ];
 
@@ -321,18 +333,63 @@ async function seedBillingInfo(client) {
     throw error;
   }
 }
+// NOTE TEST SEED FUNCTIONS
+async function seedTestConfig(client) {
+  try {
+    //DROP TABLE IF EXISTS test_config
+    const createTable = await client.sql`
+      CREATE TABLE test_config (
+  id SERIAL PRIMARY KEY,
+  order_id INT NOT NULL,
+  glass_type VARCHAR(255) NOT NULL,
+  glass_shape VARCHAR(255) NOT NULL,
+  glass_dimensions VARCHAR(255) NOT NULL,
+  glass_thickness VARCHAR(255) NOT NULL,
+  glass_tint VARCHAR(255) NOT NULL,
+  fabrication_options VARCHAR(255) NOT NULL,
+  glass_options VARCHAR(255) NOT NULL,
+  quantity INT,
+  FOREIGN KEY (order_id) REFERENCES test_order(id)
+);
+`;
+    console.log(`Created "TestConfig" table`);
+    return createTable;
+  } catch (error) {
+    console.error("Error seeding TestConfig:", error);
+    throw error;
+  }
+}
+
+async function seedTestOrder(client) {
+  try {
+    //DROP TABLE IF EXISTS test_order;
+    const createTable = await client.sql`
+    CREATE TABLE test_order (
+  id SERIAL PRIMARY KEY,
+  order_name VARCHAR(255) NOT NULL,
+  order_items TEXT,
+  status VARCHAR(255) NOT NULL
+);
+`;
+    console.log(`Created "TestOrder" table`);
+    return createTable;
+  } catch (error) {
+    console.error("Error seeding TestOrder:", error);
+    throw error;
+  }
+}
 
 // INSERT INTO billing_info (
-//   user_id, 
-//   billing_addr, 
-//   payment_method, 
-//   purchase_order, 
-//   primary_contact_name, 
-//   primary_contact_email, 
-//   phone_num, 
-//   alt_phone_num, 
+//   user_id,
+//   billing_addr,
+//   payment_method,
+//   purchase_order,
+//   primary_contact_name,
+//   primary_contact_email,
+//   phone_num,
+//   alt_phone_num,
 //   fax_num
-// ) VALUES 
+// ) VALUES
 // ('14e57592-e422-4da6-be3b-fba670ce498d', ('123 Main St', 'Apt 1', 'New York', 'NY', '10001', 'USA'), 'Credit Card', 'PO12345', 'John Doe', 'john.doe@example.com', '123-456-7890', '098-765-4321', '111-222-3333'),
 // ('14e57592-e422-4da6-be3b-fba670ce498d', ('456 Maple Ave', 'Apt 2', 'Los Angeles', 'CA', '90001', 'USA'), 'Debit Card', 'PO23456', 'Jane Smith', 'jane.smith@example.com', '234-567-8901', '109-876-5432', '222-333-4444'),
 // ('14e57592-e422-4da6-be3b-fba670ce498d', ('789 Oak Dr', 'Apt 3', 'Chicago', 'IL', '60007', 'USA'), 'PayPal', 'PO34567', 'Bob Johnson', 'bob.johnson@example.com', '345-678-9012', '210-987-6543', '333-444-5555'),

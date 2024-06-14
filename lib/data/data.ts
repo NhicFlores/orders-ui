@@ -10,6 +10,7 @@ import {
   Order,
   OrderForm,
   OrderStatus,
+  TestOrder,
 } from "@/lib/definitions/definitions";
 import { formatCurrency } from "@/lib/utils";
 import { unstable_noStore as noStore } from "next/cache";
@@ -310,5 +311,18 @@ export async function fetchFilteredCustomers(query: string) {
   } catch (err) {
     console.error("Database Error:", err);
     throw new Error("Failed to fetch customer table.");
+  }
+}
+// NOTE TEST FUNCTION
+export async function fetchTestOrders() {
+  noStore();
+  try {
+    const data = await sql<TestOrder>`
+      SELECT * FROM test_orders
+      `;
+    return data.rows;
+  } catch (err) {
+    console.error("Database Error:", err);
+    throw new Error("Failed to fetch test order data");
   }
 }

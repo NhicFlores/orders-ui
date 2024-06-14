@@ -2,6 +2,7 @@
 
 import {
   Dimension,
+  FabricationOptions,
   GlassType,
   MiscOptions,
   Shape,
@@ -43,6 +44,7 @@ export type OrderKeys = keyof Order;
 export type NewOrder = {
   user_id: string;
   order_name: string;
+  order_items: GlassConfiguration[];
   product_config: GlassConfiguration;
   billing_info_id: string;
   shipping_info_id: string;
@@ -50,13 +52,30 @@ export type NewOrder = {
 }
 
 export type GlassConfiguration = {
-  id: string;
   glass_type: GlassType;
   glass_shape: Shape;
   glass_dimensions: Dimension[];
   glass_thickness: Thickness;
   glass_tint: Tint;
+  fabrication_options?: FabricationOptions;
   glass_options: MiscOptions;
+  quantity?: number;
+};
+//NOTE TEST TYPES
+export type TestOrder = {
+  order_name: string;
+  order_items: TestConfig[];
+  status: string;
+}
+
+export type TestConfig = {
+  glass_type: string;
+  glass_shape: string;
+  glass_dimensions: string;
+  glass_thickness: string;
+  glass_tint: string;
+  fabrication_options: string;
+  glass_options: string;
   quantity?: number;
 };
 

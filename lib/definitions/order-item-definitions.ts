@@ -179,8 +179,21 @@ export type Tint = {
   options_types?: MiscOptions[];
 };
 
+export type FabricationOptions = {
+  id?: string;
+  add_holes?: boolean;
+  add_cutouts?: boolean;
+  add_notches?: boolean;
+  add_mitered_edges?: boolean;
+  add_flat_polish?: boolean;
+  add_pencil_polish?: boolean;
+  add_bevel_edge?: boolean;
+  add_tempering?: boolean;
+  add_heat_strengthening?: boolean;
+  add_laminating?: boolean;
+}
+
 export type MiscOptions = {
   id?: string;
   add_tempered_logo?: boolean;
-  add_holes?: boolean;
 };
