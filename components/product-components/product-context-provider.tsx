@@ -10,7 +10,6 @@ export const ProductContext = createContext<ProductContextType>({
         order_name: '',
         order_items: [],
         product_config: { //consider storing this in a separate table, so the order object is just a bunch of id's 
-            id: '',
             glass_type: glassTypes[0],
             glass_shape: shapeOptions[0],
             glass_dimensions: [],
@@ -63,7 +62,6 @@ export default function ProductContextProvider({ children }: { children: React.R
         order_name: '',
         order_items: [],
         product_config: {
-            id: '',
             glass_type: glassTypes[0],
             glass_shape: shapeOptions[0],
             glass_dimensions: [],
