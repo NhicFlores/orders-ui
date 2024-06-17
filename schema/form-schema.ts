@@ -86,46 +86,46 @@ export const RegisterSchema = z.object({
 export const RequiredDimensionsSchema = z.object({
     radius: z.object({
         label: z.string(),
-        value: z.string()
+        value: z.string().min(1),
     }).optional(),
     offset: z.object({
         label: z.string(),
-        value: z.string()
+        value: z.string().min(1),
     }).optional(),
     edge_length: z.object({
         label: z.string(),
-        value: z.string()
+        value: z.string().min(1),
     }).optional(),
     base: z.object({
         label: z.string(),
-        value: z.string()
+        value: z.string().min(1),
     }).optional(),
     height: z.object({
         label: z.string(),
-        value: z.string()
+        value: z.string().min(1),
     }).optional(),
     sub_height: z.object({
         label: z.string(),
-        value: z.string()
+        value: z.string().min(1),
     }).optional(),
     left_sub_height: z.object({
         label: z.string(),
-        value: z.string()
+        value: z.string().min(1),
     }).optional(),
     right_sub_height: z.object({
         label: z.string(),
-        value: z.string()
+        value: z.string().min(1),
     }).optional(),
     top: z.object({
         label: z.string(),
-        value: z.string()
+        value: z.string().min(1),
     }).optional(),
     left_projection: z.object({
         label: z.string(),
-        value: z.string()
+        value: z.string().min(1),
     }).optional(),
     right_projection: z.object({
         label: z.string(),
-        value: z.string()
+        value: z.string().min(1),
     }).optional(),
 });

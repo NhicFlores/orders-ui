@@ -46,7 +46,7 @@ const GlassTypePage = () => {
   return (
     <div className='container mx-auto p-4'>
       <ProductHeader title="Glass Type" continueRoute={ShapeRoute.href}/>
-      <ProductGrid productList={productList} onSelect={handleSelection}/>
+      <ProductGrid productList={productList} onSelect={handleSelection} nextConfigRoute={ShapeRoute.href}/>
       <ProductFooter/>
     </div>
   )

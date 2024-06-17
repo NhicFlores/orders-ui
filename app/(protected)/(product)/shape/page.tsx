@@ -57,7 +57,7 @@ const ShapePage = () => {
         backRoute={GlassTypeRoute.href}
         continueRoute={DimensionRoute.href}
       />
-      <ProductGrid productList={shapeOptions} onSelect={handleSelect} />
+      <ProductGrid productList={shapeOptions} onSelect={handleSelect}  nextConfigRoute={DimensionRoute.href}/>
     </div>
   );
 };

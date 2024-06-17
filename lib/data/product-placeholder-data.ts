@@ -445,6 +445,15 @@ export const fractionRange: string[] = [
   "15 / 16",
 ];
 
+// hard code vs formatting display string for fraction 
+export const smallFractionRange: string[] = [
+  "⅛",
+  "¼",
+  "½",
+  "⅝",
+  "¾",
+];
+
 export const thicknessOptions: Thickness[] = [
   { id: "1", thickness: 1 / 8 },
   { id: "2", thickness: 5 / 32 },

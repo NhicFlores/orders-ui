@@ -31,7 +31,7 @@ const TintPage = () => {
   return (
     <div className='p-4'>
       <ProductHeader title="Select Tint" backRoute={GlassThicknessRoute.href} continueRoute={OrderSummaryRoute.href}/>
-      <ProductGrid productList={productList} onSelect={handleSelect}/>
+      <ProductGrid productList={productList} onSelect={handleSelect} nextConfigRoute={OrderSummaryRoute.href}/>
     </div>
   )
 }
