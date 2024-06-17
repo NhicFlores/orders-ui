@@ -43,6 +43,8 @@ import {
 
 import { fuzzyOrderFilter } from "./table/table-utils";
 
+
+
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
   data: TData[];
@@ -60,6 +62,7 @@ export function DataTable<TData, TValue>({
     React.useState<VisibilityState>({});
   const [rowSelection, setRowSelection] = React.useState({});
   //const [globalFilter, setGlobalFilter] = React.useState<string>("");
+  //const globalFilter = fuzzyOrderFilter;
 
   const table = useReactTable({
     data,
@@ -72,8 +75,16 @@ export function DataTable<TData, TValue>({
     getFilteredRowModel: getFilteredRowModel(),
     onColumnVisibilityChange: setColumnVisibility,
     onRowSelectionChange: setRowSelection,
+    //useGlobalFilter: true,
     //onGlobalFilterChange: setGlobalFilter,
     filterFns: {
+      // fuzzy: (row, columnId, value, addMeta) => {
+      //   const itemRank = rankItem(row.getValue(columnId), value);
+
+      //   addMeta({ itemRank });
+
+      //   return itemRank.passed;
+      // },
       fuzzy: fuzzyOrderFilter,
     },
     globalFilterFn: fuzzyOrderFilter,
