@@ -455,10 +455,10 @@ export const thicknessOptions: Thickness[] = [
 ];
 
 export const miscOptions: MiscOptions[] = [
-  { id: "1", add_tempered_logo: true, add_holes: false },
-  { id: "2", add_tempered_logo: false, add_holes: true },
-  { id: "3", add_tempered_logo: true, add_holes: true },
-  { id: "4", add_tempered_logo: false, add_holes: false },
+  { id: "1", add_tempered_logo: true },
+  { id: "2", add_tempered_logo: false},
+  { id: "3", add_tempered_logo: true},
+  { id: "4", add_tempered_logo: false},
 ];
 
 export const tintOptions: Tint[] = [
