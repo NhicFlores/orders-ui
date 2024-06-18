@@ -3,6 +3,8 @@
 
 - how to connect to azure db 
 
+- make dimension select elements 'required' <select required/>
+
 - payment and shipping pages in order flow 
  - tables showing payment and shipping options 
 

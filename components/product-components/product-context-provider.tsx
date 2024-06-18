@@ -38,7 +38,8 @@ export const ProductContext = createContext<ProductContextType>({
         activeSection: 'Glass Type',
         setActiveSection: () => {}
     },
-    setProductNav: () => {}
+    setProductNav: () => {},
+    updateOrderItemQuantity: () => {}
 });
 
 export default function ProductContextProvider({ children }: { children: React.ReactNode}) {
@@ -51,7 +52,7 @@ export default function ProductContextProvider({ children }: { children: React.R
             glassThickness: '',
             glassColor: ''
         },
-        productQuantity: 0
+        productQuantity: 1
     });
     const [productNav, setProductNav] = useState<ProductNav>({
         activeSection: 'Glass Type',
@@ -73,8 +74,26 @@ export default function ProductContextProvider({ children }: { children: React.R
         billing_info_id: '',
         shipping_info_id: '',
     });
+
+    const updateProductConfig = (key: string, value: any) => {
+        setOrder((prev) => ({
+            ...prev,
+            product_config: {
+                ...prev.product_config,
+                [key]: value
+            }
+        }));
+    }
+
+    const updateOrderItemQuantity = (quantity: number) => {
+        setSummaryCard(prevSummary => ({
+            ...prevSummary,
+            productQuantity: quantity
+        }))
+    }
+
     return (
-        <ProductContext.Provider value={{ order, setOrder, summaryCard, setSummaryCard, productNav, setProductNav }}>
+        <ProductContext.Provider value={{ order, setOrder, summaryCard, setSummaryCard, productNav, setProductNav, updateOrderItemQuantity }}>
             {children}
         </ProductContext.Provider>
     );

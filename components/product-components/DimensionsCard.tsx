@@ -1,3 +1,4 @@
+"use client";
 import { fractionRange, inchRange } from "@/lib/data/product-placeholder-data";
 import { Button } from "../ui/button";
 import {
@@ -20,7 +21,6 @@ import { Dimension, Shape } from "@/lib/definitions/order-item-definitions";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { GlassThicknessRoute } from "@/routes";
-import { RequiredDimensionsSchema } from "@/schema/form-schema";
 import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -61,18 +61,32 @@ const DimensionsCard = ({
 
   // console.log("--------- useEffect: Dimensions ---------")
   // console.log(dimensions);
+
+  // dynamically create the schema for the dimensions
   const DimensionSchema = z.object(
     Object.fromEntries(
       dimensions.map((dimension) => [
         dimension.label,
         z.object({
-          label: z.string(),
           wholeNumber: z.string().min(1),
           fraction: z.string().min(1),
         }),
       ])
     )
   )
+
+  const form = useForm({
+    resolver: zodResolver(DimensionSchema),
+    defaultValues: Object.fromEntries(
+      dimensions.map((dimension) => [
+        dimension.label,
+        {
+          wholeNumber: dimension.wholeNumber,
+          fraction: dimension.fraction,
+        },
+      ])
+    ),
+  });
 
   function handleDimensionChange(
     label: string,
@@ -91,15 +105,15 @@ const DimensionsCard = ({
             : { ...dimension, wholeNumber: value }
           : dimension
       );
-      console.log("X--------- setDimensions: Updated Dimensions ---------X");
-      console.log(updatedDimensions);
+      //console.log("X--------- setDimensions: Updated Dimensions ---------X");
+      //console.log(updatedDimensions);
       return updatedDimensions;
     });
   }
 
   useEffect(() => {
-    console.log("X-------- useEffect: Dimensions --------X");
-    console.log(dimensions);
+    //console.log("X-------- useEffect: Dimensions --------X");
+    //console.log(dimensions);
     let dimensionStrings = dimensions.map(
       ({ label, wholeNumber, fraction }) =>
         `${label}: ${wholeNumber} ${fraction}`
@@ -125,10 +139,11 @@ const DimensionsCard = ({
 
   // }
 
-  function onSubmit(data: z.infer<typeof RequiredDimensionsSchema>) {
-
+  function onSubmit(data: z.infer<typeof DimensionSchema>) {
+    console.log("---------- in submit handler --------------");
+    console.log("data: ", data);
   }
-  // onSubmit={form.handleSubmit}
+
   return (
     <Card className="w-[350px]">
       <CardHeader>
@@ -141,7 +156,7 @@ const DimensionsCard = ({
         <div>
           <Square width={200} height={200} />
         </div>
-        <form className="space-y-6" >
+        <form className="space-y-6">
           {reqDimensions.map((dimension, index) => {
             return (
               <div className="space-y-2" key={index}>
@@ -151,6 +166,7 @@ const DimensionsCard = ({
                     onValueChange={(value) =>
                       handleDimensionChange(dimension, value, false)
                     }
+                    required
                   >
                     <SelectTrigger id={dimension}>
                       <SelectValue
@@ -190,7 +206,7 @@ const DimensionsCard = ({
               </div>
             );
           })}
-          <div className="flex justify-between">
+          <div className="flex justify-between pb-4">
             <Button variant="outline">Back</Button>
             <Link href={GlassThicknessRoute.href}>
               <Button type="button">Continue</Button>

@@ -86,6 +86,18 @@ Components:
 since components are functions -> you can modify what parameters they take and what they return 
 can be defined as classes, 
 
+---------------------- hooks -----------------------
+
+context 
+use smaller contexts to reduce number of unnecessary renders: create contexts that preside over 
+specific modules and components can explicitly state if id depends on states in the context provided 
+- this means you create separate instances of contexts with in a single component if it relies on 
+different states, but the components that rely on one or the other are safe from re-renders 
+
+context tracks value using simple equality: 
+combine context with useMemo and useCallback in context provider definitions so that functions and states 
+don't trigger additional renders 
+https://thoughtspile.github.io/2021/10/04/react-context-dangers/ 
 
 ------------------------------------ NextJS ------------------------------------
 routing conventions 
@@ -409,6 +421,11 @@ reverts to its initial value. This means an omission in CSS shorthand can overri
 
 - DOM is where your CSS and the document's content meet up 
 
+------------------------------------ tailwind ------------------------------------ 
+for some grid like component - take a look at the OrderSummar.tsx component for example: 
+need to make some container fit minimum space required by content, but the content varies 
+and the container size needs be uniform 
+- use flex and give flex direction on outer container(<div></div>) then flex-grow in the inner container 
 
 ------------------------------------ Debugging -----------------------------------
 

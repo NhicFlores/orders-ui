@@ -29,4 +29,5 @@ export type ProductContextType = {
     setSummaryCard: React.Dispatch<React.SetStateAction<SummaryCard>>;
     productNav: ProductNav;
     setProductNav: React.Dispatch<React.SetStateAction<ProductNav>>;
+    updateOrderItemQuantity: (quantity: number) => void;
 }

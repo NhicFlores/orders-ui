@@ -40,6 +40,10 @@ function SummaryCard() {
             <div className="flex justify-between">
               <p>Glass Color</p>
               <p>{glassColor}</p>
+            </div>
+            <div className="flex justify-between">
+              <p>Quantity</p>
+              <p>{productQuantity}</p>
               </div>
           </div>
         </ScrollArea>

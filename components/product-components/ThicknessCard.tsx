@@ -17,6 +17,8 @@ import {
   SelectValue,
 } from "../ui/select";
 import { Square } from "lucide-react";
+import { TintRoute } from "@/routes";
+import Link from "next/link";
 
 /**
  * @typedef {Object} ThicknessCardProps
@@ -52,7 +54,7 @@ const ThicknessCard = ({ handleSelection }: ThicknessCardProps) => {
             <div className="flex space-x-2">
               <Select onValueChange={(value) => handleValueChange(value)} >
                 <SelectTrigger id="thickness">
-                  <SelectValue placeholder="1/8" />
+                  <SelectValue placeholder={<div className="text-muted-foreground">1/8</div>} />
                 </SelectTrigger>
                 <SelectContent>
                   {fractionRange.map((value, index) => (
@@ -64,11 +66,13 @@ const ThicknessCard = ({ handleSelection }: ThicknessCardProps) => {
               </Select>
             </div>
           </div>
-          <div className="flex justify-between">
+          <div className="flex justify-between pb-4">
             <Button variant="outline">Back</Button>
-            <Button type="submit">
+            <Link href={TintRoute.href}>
+            <Button type="button">
               Continue
             </Button>
+            </Link>
           </div>
         </form>
       </CardContent>
