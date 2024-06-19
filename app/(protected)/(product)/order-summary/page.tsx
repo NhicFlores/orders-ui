@@ -33,7 +33,8 @@ const newOrder = {
 
 export default async function OrderSummaryPage() {
   const testOrders = await fetchTestOrders();
-  
+  console.log("---------- Order Summary Page ----------")
+  console.log(testOrders);
   //const order_items = testOrders.map((order) => order.order_items);
 
   return (
@@ -44,7 +45,7 @@ export default async function OrderSummaryPage() {
         continueRoute=""
       />
 
-      <OrderSummary orderItems={testOrders[0].order_items}/>
+      <OrderSummary orderItems={testOrders[1].order_items}/>
     </main>
   );
 }

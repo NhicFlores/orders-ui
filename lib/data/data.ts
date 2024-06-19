@@ -20,15 +20,17 @@ import { unstable_noStore as noStore } from "next/cache";
 
 export async function fetchOrders() {
   noStore();
-  //console.log('made it to fetch orders yo');
+  // console.log("made it to fetch orders yo");
   try {
     const data = await sql<Order>`
         SELECT * FROM orders
         WHERE orders.status != ${OrderStatus.Draft} AND orders.status != ${OrderStatus.Quote}
         `;
+    // console.log("--------- got the orders ----------");
+    // console.log(data.rows[0]);
     return data.rows;
   } catch (err) {
-    console.error("Databse Error:", err);
+    console.error("Database Error:", err);
     throw new Error("Failed to fetch order data");
   }
 }
@@ -315,11 +317,46 @@ export async function fetchFilteredCustomers(query: string) {
 }
 // NOTE TEST FUNCTION
 export async function fetchTestOrders() {
-  noStore();
+  //noStore();
   try {
+    console.log("----------- fetching test orders ------------");
     const data = await sql<TestOrder>`
-      SELECT * FROM test_orders
+      SELECT * FROM test_order
       `;
+
+    // const orders = data.rows.map((order) => ({
+    //   ...order,
+    //   order_items: JSON.parse(order.order_items),
+    // }))
+    console.log("----------- got the test orders ------------");
+    
+    console.log("type of data: ", typeof data);
+    console.log(data);
+    
+    console.log("type of data rows: ", typeof data.rows);
+    console.log(data.rows);
+    
+    console.log("type of row elements: ", typeof data.rows[0]);
+    console.log(data.rows[0]);
+    
+    console.log("type of order items: ", typeof data.rows[0].order_items);
+    console.log(data.rows[0].order_items);
+
+    const parsedOrders = data.rows.map((order) => {
+      let order_items;
+      try {
+        order_items =
+          typeof order.order_items === "string"
+            ? JSON.parse(order.order_items)
+            : order.order_items;
+      } catch (error) {
+        order_items = order.order_items;
+      }
+      return {
+        ...order,
+        order_items,
+      };
+    });
     return data.rows;
   } catch (err) {
     console.error("Database Error:", err);

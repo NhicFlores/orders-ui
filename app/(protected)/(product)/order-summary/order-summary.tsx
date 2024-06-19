@@ -74,6 +74,10 @@ export default function OrderSummary({ orderItems }: orderSummaryProps) {
       </div>
     );
   }
+
+  console.log(orderItems);
+  console.log(typeof orderItems);
+
   return (
     <div className="space-y-6">
       <div className="flex justify-between w-full">
@@ -113,6 +117,10 @@ export default function OrderSummary({ orderItems }: orderSummaryProps) {
           <Button>Add Item</Button>
         </Link>
         <Button>Save Draft</Button>
+      </div>
+      <div>
+        <p>order item fields</p>
+        {orderItems[0].glass_type}
       </div>
     </div>
   );
