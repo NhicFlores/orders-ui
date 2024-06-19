@@ -86,6 +86,31 @@ Components:
 since components are functions -> you can modify what parameters they take and what they return 
 can be defined as classes, 
 
+Selector 
+function QuantityDropdown() {
+  const [quantity, setQuantity] = useState("1");
+
+  const handleChange = (event: { target: { value: string } }) => {
+    console.log(event.target.value);
+    setQuantity(event.target.value);
+    console.log(quantity);
+  };
+
+  return (
+    <select
+      value={quantity}
+      onChange={handleChange}
+      className="p-2 text-center w-12"
+    >
+      {[...Array(200)].map((_, i) => (
+        <option key={i} value={i + 1}>
+          {i + 1}
+        </option>
+      ))}
+    </select>
+  );
+}
+
 ---------------------- hooks -----------------------
 
 context 
@@ -119,6 +144,33 @@ Behind the scenes, Server Actions create a POST API endpoint. This is why you do
 How are actions handled differently than an async fetch function? look at data and actions files 
 
 how is FormData something we have access to but don't explicitly pass in an action  
+
+
+-server-side functions (like your fetchTestOrders function) are meant to be called on the server-side only. This is because they often require 
+access to environment variables or resources that are only available on the server-side, such as a database connection string.
+If you're trying to call fetchTestOrders from a client-side component, you'll need to create an API route that calls this function and returns the data. 
+Then, in your client-side component, you can fetch data from this API route.
+ex: 
+// pages/api/testOrders.ts
+import { NextApiRequest, NextApiResponse } from 'next';
+import { fetchTestOrders } from '../../data';
+
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+  if (req.method === 'GET') {
+    try {
+      const orders = await fetchTestOrders();
+      res.status(200).json(orders);
+    } catch (err) {
+      res.status(500).json({ message: err.message });
+    }
+  } else {
+    res.status(405).json({ message: 'Method not allowed' });
+  }
+}
+
+then in the client component, fetch the data from the API route 
+const res = await fetch('/api/testOrders');
+const orders = await res.json();
 
 Props from layout to Page components 
 - what is the purpose of the [key: string]: any; in 
@@ -426,6 +478,38 @@ for some grid like component - take a look at the OrderSummar.tsx component for 
 need to make some container fit minimum space required by content, but the content varies 
 and the container size needs be uniform 
 - use flex and give flex direction on outer container(<div></div>) then flex-grow in the inner container 
+
+
+  function orderItemDisplay() {
+    return (
+      <section className="border rounded-md my-4">
+        <div className="flex justify-between border-r">
+          <div className="flex flex-col bg-slate-100 w-full">
+            <h2 className="border p-4">Description</h2>
+            <div className="bg-white border p-4">{descriptionFormatter()}</div>
+          </div>
+          <div className="flex flex-col bg-slate-100 w-full">
+            <h2 className="border p-4">Dimensions</h2>
+            <div className="bg-white border p-4 flex-grow">
+              {dimensionsFormatter()}
+            </div>
+          </div>
+          <div className="flex flex-col bg-slate-100 w-full">
+            <h2 className="border p-4">Fabrication</h2>
+            <div className="flex-grow bg-white border p-4">
+              Fabrication Options
+            </div>
+          </div>
+          <div className="flex flex-col bg-slate-100">
+            <h2 className="border p-4">Quantity</h2>
+            <div className="flex-grow bg-white border p-4 ">
+              <QuantitySelector />
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+  }
 
 ------------------------------------ Debugging -----------------------------------
 

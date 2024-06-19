@@ -1,11 +1,8 @@
-"use client";
-import { Button } from "@/components/ui/button";
+
 import OrderSummary from "./order-summary";
 import ProductHeader from "@/components/product-components/product-header";
-import { GlassTypeRoute, TintRoute } from "@/routes";
-import { createTestOrder } from "@/lib/actions/actions";
-import { useProductContext } from "@/components/product-components/product-context-provider";
-import Link from "next/link";
+import { TintRoute } from "@/routes";
+import { fetchTestOrders } from "@/lib/data/data";
 
 const newOrder = {
   order_name: "Test Order 1",
@@ -34,10 +31,10 @@ const newOrder = {
   status: "Draft",
 };
 
-export default function OrderSummaryPage() {
-  const { order, setOrder, summaryCard, setSummaryCard } = useProductContext();
-
-  const { orderName, orderSpec, productQuantity } = summaryCard;
+export default async function OrderSummaryPage() {
+  const testOrders = await fetchTestOrders();
+  
+  //const order_items = testOrders.map((order) => order.order_items);
 
   return (
     <main className="lg:w-3/4 sm:w-full border rounded-md bg-white p-4 space-y-6">
@@ -46,19 +43,8 @@ export default function OrderSummaryPage() {
         backRoute={TintRoute.href}
         continueRoute=""
       />
-      <div className="flex justify-between w-full">
-        <h1 className="text-2xl font-bold">{newOrder.order_name}</h1>
-        <Button onClick={() => createTestOrder(newOrder)}>
-          Submit Order/Quote
-        </Button>
-      </div>
-      <OrderSummary orderDescription={orderSpec} />
-      <div className="flex justify-between">
-        <Link href={GlassTypeRoute.href}>
-          <Button>Add Item</Button>
-        </Link>
-        <Button>Save Draft</Button>
-      </div>
+
+      <OrderSummary orderItems={testOrders[0].order_items}/>
     </main>
   );
 }
