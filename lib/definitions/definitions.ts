@@ -1,25 +1,11 @@
 // definitions for data
 
 import {
-  Dimension,
-  FabricationOptions,
-  GlassType,
-  MiscOptions,
-  OrderItemDB,
-  Shape,
-  Thickness,
-  Tint,
+  GlassConfiguration,
+  OrderStatus,
 } from "@/lib/definitions/order-definitions";
-import { BillingInfo, ShippingInfo } from "./profile-definitions";
 
 // describes the shape of the data, and what data type each property should accept
-export enum OrderStatus {
-  Pending = "pending",
-  Draft = "draft",
-  Shipped = "shipped",
-  Processing = "processing",
-  Quote = "quote",
-}
 
 export type Order = {
   id: string;
@@ -35,66 +21,13 @@ export type Order = {
 
 export type OrderKeys = keyof Order;
 
-// NOTE: TODO: each order will have: 
-//   - unique id 
-//   - product list 
-//     - quantity per product 
+// NOTE: TODO: each order will have:
+//   - unique id
+//   - product list
+//     - quantity per product
 // for transferring to old system we need to split the order
 //   - order_id + product_id + i/quantity
-//   - 8634562 - 2345 - 1 / 10 
-export type NewOrder = {
-  user_id: string;
-  entered_by?: string;
-  order_name: string;
-  order_items: GlassConfiguration[];
-  product_config: GlassConfiguration;
-  billing_info_id: string;
-  shipping_info_id: string;
-  status: OrderStatus;
-}
-
-export type OrderDB = {
-  id: string;
-  customer_id: string;
-  date: string;
-};
-
-export type CustomerOrderTable = {
-  id: string;
-  entered_by: string;
-  order_name: string;
-  order_items: OrderItemDB[];
-  date: string;
-  status: OrderStatus;
-};
-
-export type GlassConfiguration = {
-  glass_type: GlassType;
-  glass_shape: Shape;
-  glass_dimensions: Dimension[];
-  glass_thickness: Thickness;
-  glass_tint: Tint;
-  fabrication_options?: FabricationOptions;
-  glass_options: MiscOptions;
-  quantity?: number;
-};
-//NOTE TEST TYPES
-export type TestOrder = {
-  order_name: string;
-  order_items: TestConfig[];
-  status: string;
-}
-
-export type TestConfig = {
-  glass_type: string;
-  glass_shape: string;
-  glass_dimensions: string;
-  glass_thickness: string;
-  glass_tint: string;
-  fabrication_options: string;
-  glass_options: string;
-  quantity?: number;
-};
+//   - 8634562 - 2345 - 1 / 10
 
 //this object is used to verify the data requested from db on edit forms
 export type OrderForm = {

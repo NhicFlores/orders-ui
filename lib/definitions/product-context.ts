@@ -1,4 +1,4 @@
-import { NewOrder } from "./definitions";
+import { NewOrder } from "./order-definitions";
 
 export type SummaryCard = {
     orderName: string;

@@ -17,13 +17,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { createTestOrder } from "@/lib/actions/actions";
-import {
-  GlassConfiguration,
-  Order,
-  TestConfig,
-  TestOrder,
-} from "@/lib/definitions/definitions";
+import { TestConfig } from "@/lib/definitions/order-definitions";
 import { GlassTypeRoute } from "@/routes";
 import Link from "next/link";
 

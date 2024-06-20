@@ -9,9 +9,8 @@ import {
   Revenue,
   Order,
   OrderForm,
-  OrderStatus,
-  TestOrder,
 } from "@/lib/definitions/definitions";
+import { OrderStatus, TestOrder } from "@/lib/definitions/order-definitions";
 import { formatCurrency } from "@/lib/utils";
 import { unstable_noStore as noStore } from "next/cache";
 

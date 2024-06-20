@@ -1,6 +1,6 @@
 'use client';
 import { glassTypes, shapeOptions } from "@/lib/data/product-placeholder-data";
-import { NewOrder, OrderStatus } from "@/lib/definitions/definitions";
+import { NewOrder, OrderStatus } from "@/lib/definitions/order-definitions";
 import { ProductContextType, ProductNav, SummaryCard } from "@/lib/definitions/product-context";
 import { createContext, useContext, useState } from "react";
 

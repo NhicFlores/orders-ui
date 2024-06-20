@@ -4,7 +4,7 @@ import { sql } from "@vercel/postgres";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { OrderRoute } from "@/routes";
-import { NewOrder, TestOrder } from "../definitions/definitions";
+import { NewOrder, TestOrder } from "../definitions/order-definitions";
 
 //updating the data displayed in the orders route,
 //so we need to clear this cache and trigger a new request to the server
