@@ -22,15 +22,15 @@ const GlassTypePage = () => {
   // this could all be done on a single page with one component 
   // if the render array is being monitored by state 
 
-  const productList = glassTypes.map((glassType) => {
-    return {
-      id: glassType.id,
-      name: glassType.name,
-      description: glassType.description,
-      imageSrc: glassType.imageSrc,
-      alt: glassType.alt,
-    } as Product;
-  });
+  // const productList = glassTypes.map((glassType) => {
+  //   return {
+  //     id: glassType.id,
+  //     name: glassType.name,
+  //     description: glassType.description,
+  //     imageSrc: glassType.imageSrc,
+  //     alt: glassType.alt,
+  //   } as Product;
+  // });
 
   const { setSummaryCard } = useProductContext();
   const handleSelection = (configOption: string) => {
@@ -46,7 +46,7 @@ const GlassTypePage = () => {
   return (
     <div className='container mx-auto p-4'>
       <ProductHeader title="Glass Type" continueRoute={ShapeRoute.href}/>
-      <ProductGrid productList={productList} onSelect={handleSelection} nextConfigRoute={ShapeRoute.href}/>
+      <ProductGrid productList={glassTypes} onSelect={handleSelection} nextConfigRoute={ShapeRoute.href}/>
       <ProductFooter/>
     </div>
   )

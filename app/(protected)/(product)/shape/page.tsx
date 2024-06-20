@@ -16,22 +16,22 @@ const ShapePage = () => {
         glassShape: configOption,
       },
     }));
-    // Add selected shape to order
-    setOrder((prev) => {
-      const newShape = shapeOptions.find(
-        (shape) => shape.name === configOption
-      );
-      if (!newShape) {
-        throw new Error("Shape not found");
-      }
-      return {
-        ...prev,
-        product_config: {
-          ...prev.product_config,
-          glass_shape: newShape,
-        },
-      };
-    });
+    // // Add selected shape to order
+    // setOrder((prev) => {
+    //   const newShape = shapeOptions.find(
+    //     (shape) => shape.name === configOption
+    //   );
+    //   if (!newShape) {
+    //     throw new Error("Shape not found");
+    //   }
+    //   return {
+    //     ...prev,
+    //     product_config: {
+    //       ...prev.product_config,
+    //       glass_shape: newShape,
+    //     },
+    //   };
+    // });
 
     console.log("selected shape: ", configOption);
     console.log("order: ", order);

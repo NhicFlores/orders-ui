@@ -104,7 +104,7 @@ export type Product = {
   sub_category?: string;
   price?: number;
 };
-
+// NOTE TODO: update types to be GlassType = Product & {shape_types: Shape[]}
 export type GlassType = {
   id: string;
   name: string;
