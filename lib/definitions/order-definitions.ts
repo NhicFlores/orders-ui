@@ -1,4 +1,5 @@
 import { StaticImageData } from "next/image";
+import { ShippingInfo } from "./profile-definitions";
 
 export enum OrderStatus {
   Pending = "pending",
@@ -12,37 +13,67 @@ export type NewOrder = {
   user_id: string;
   entered_by?: string;
   order_name: string;
-  order_items: GlassConfiguration[];
-  product_config: GlassConfiguration;
-  billing_info_id: string;
-  shipping_info_id: string;
-  status: OrderStatus;
-}
-
-export type OrderDB = {
-  id: string;
-  customer_id: string;
-  date: string;
-};
-
-export type CustomerOrderTable = {
-  id: string;
-  entered_by: string;
-  order_name: string;
-  order_items: OrderItemDB[];
-  date: string;
+  billing_info_id: string; //billing info id
+  shipping_info: ShippingInfo; //this will be stringified before being sent to the server
   status: OrderStatus;
 };
 
-export type GlassConfiguration = {
-  glass_type: GlassType;
-  glass_shape: Shape;
-  glass_dimensions: Dimension[];
-  glass_thickness: Thickness;
-  glass_tint: Tint;
-  fabrication_options?: FabricationOptions;
-  glass_options: MiscOptions;
-  quantity?: number;
+export type OrderItem = {
+  order_id: string;
+  type: string;
+  shape: string;
+  dimensions: string;
+  thickness: string;
+  tint: string;
+  fabrication_options?: string;
+  misc_options?: string;
+  note: string;
+  quantity: number;
+};
+
+export type OrderItemDB = {
+  id: string;
+};
+
+/*
+
+CREATE TABLE NewOrder (
+  id UUID PRIMARY KEY,
+  user_id UUID REFERENCES Users(id),
+  entered_by VARCHAR(255),
+  order_name VARCHAR(255) NOT NULL,
+  billing_info_id INTEGER REFERENCES BillingInfo(id),,
+  shipping_info TEXT NOT NULL, -- Assuming ShippingInfo is a JSON object
+  status VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE OrderItem (
+  id UUID PRIMARY KEY,
+  order_id UUID REFERENCES NewOrder(id),
+  type VARCHAR(255) NOT NULL,
+  shape VARCHAR(255) NOT NULL,
+  dimensions VARCHAR(255) NOT NULL,
+  thickness VARCHAR(255) NOT NULL,
+  tint VARCHAR(255) NOT NULL,
+  fabrication_options VARCHAR(255),
+  misc_options VARCHAR(255),
+  note VARCHAR(255) NOT NULL,
+  quantity INTEGER NOT NULL
+);
+
+*/
+
+export type CustomerOrderTable = NewOrder & {
+  id: string;
+  order_items: OrderItem[];
+  date: string;
+};
+
+export type AdminOrderTable = NewOrder & {
+  id: string;
+  customer_name?: string;
+  order_items: OrderItem[];
+  date: string;
 };
 
 //NOTE TEST TYPES
@@ -50,7 +81,7 @@ export type TestOrder = {
   order_name: string;
   order_items: TestConfig[];
   status: string;
-}
+};
 
 export type TestConfig = {
   glass_type: string;
@@ -62,23 +93,6 @@ export type TestConfig = {
   glass_options: string;
   quantity?: number;
 };
-
-interface order_item {
-  type: string[];
-  shape: string[];
-  dimensions: number[];
-  thickness: number[];
-  tint: string[];
-  edgework: string[];
-  note: string;
-}
-
-export type OrderItemDB = {
-  id: string;
-  description: string;
-  quantity: number;
-};
-
 
 export type Product = {
   id: string;
@@ -120,7 +134,6 @@ export type Dimension = {
   fraction: string;
 };
 
-
 export type Thickness = {
   id?: string;
   thickness?: number;
@@ -149,17 +162,28 @@ export type FabricationOptions = {
   add_tempering?: boolean;
   add_heat_strengthening?: boolean;
   add_laminating?: boolean;
-}
+};
 
 export type MiscOptions = {
   id?: string;
   add_tempered_logo?: boolean;
 };
 
+export type GlassConfiguration = {
+  glass_type: GlassType;
+  glass_shape: Shape;
+  glass_dimensions: Dimension[];
+  glass_thickness: Thickness;
+  glass_tint: Tint;
+  fabrication_options?: FabricationOptions;
+  glass_options: MiscOptions;
+  quantity?: number;
+};
+
 // -------------------------------------------------------------
 
 //any shapes that don't have these, will define their own dimensions interface
-// every shape can define its own dimensions - we still need standardized dimension names and definitions  
+// every shape can define its own dimensions - we still need standardized dimension names and definitions
 // export type RequiredDimensions = {
 //   radius?: {label: string, value: string};
 //   offset?: {label: string, value: string};
@@ -242,8 +266,6 @@ export type MiscOptions = {
 // };
 // //is category necessary on a product? maybe so it'll show up on the right pages
 // //category: "standard glass | store front price book | store front estimating";
-
-
 
 //glass type determines treatment and price
 //shape has a pricing factor
