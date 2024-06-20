@@ -3,7 +3,8 @@
 import { createOrder } from "@/lib/actions/actions";
 import { MyButton } from "../my-button";
 import Link from "next/link";
-import { CustomerField, OrderStatus } from "@/lib/definitions/definitions";
+import { CustomerField} from "@/lib/definitions/definitions";
+import { OrderStatus } from "@/lib/definitions/order-definitions";
 import { useFormState, useFormStatus } from "react-dom";
 
 export default function NewOrderForm({ customers }: {customers: CustomerField[]}){
