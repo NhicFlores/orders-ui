@@ -5,7 +5,7 @@ import {
   Shape,
   Thickness,
   Tint,
-} from "@/lib/definitions/order-item-definitions";
+} from "@/lib/definitions/order-definitions";
 
 export const glassTypes: GlassType[] = [
   {

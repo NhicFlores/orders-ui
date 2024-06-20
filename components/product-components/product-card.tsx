@@ -1,7 +1,7 @@
 import { cn } from '@/lib/utils'
 import { Card, CardContent, CardHeader, CardDescription, CardTitle } from '../ui/card'
 import Image from 'next/image';
-import { Product, Shape } from '@/lib/definitions/order-item-definitions';
+import { Product, Shape } from '@/lib/definitions/order-definitions';
 
 interface ProductCardProps {
     product: Product;

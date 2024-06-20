@@ -1,6 +1,6 @@
 import { StaticImageData } from "next/image";
 
-export type OrderItem = {
+export type OrderItemDB = {
   id: string;
   description: string;
   quantity: number;

@@ -5,10 +5,11 @@ import {
   FabricationOptions,
   GlassType,
   MiscOptions,
+  OrderItemDB,
   Shape,
   Thickness,
   Tint,
-} from "@/lib/definitions/order-item-definitions";
+} from "@/lib/definitions/order-definitions";
 import { BillingInfo, ShippingInfo } from "./profile-definitions";
 
 // describes the shape of the data, and what data type each property should accept
@@ -43,6 +44,7 @@ export type OrderKeys = keyof Order;
 //   - 8634562 - 2345 - 1 / 10 
 export type NewOrder = {
   user_id: string;
+  entered_by?: string;
   order_name: string;
   order_items: GlassConfiguration[];
   product_config: GlassConfiguration;
@@ -50,6 +52,21 @@ export type NewOrder = {
   shipping_info_id: string;
   status: OrderStatus;
 }
+
+export type OrderDB = {
+  id: string;
+  customer_id: string;
+  date: string;
+};
+
+export type CustomerOrderTable = {
+  id: string;
+  entered_by: string;
+  order_name: string;
+  order_items: OrderItemDB[];
+  date: string;
+  status: OrderStatus;
+};
 
 export type GlassConfiguration = {
   glass_type: GlassType;

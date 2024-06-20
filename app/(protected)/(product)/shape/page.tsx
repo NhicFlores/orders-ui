@@ -1,5 +1,4 @@
 "use client";
-import { Product, Shape } from "@/lib/definitions/order-item-definitions";
 import { shapeOptions } from "@/lib/data/product-placeholder-data";
 import { useProductContext } from "@/components/product-components/product-context-provider";
 import ProductHeader from "@/components/product-components/product-header";
