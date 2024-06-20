@@ -317,7 +317,7 @@ export async function fetchFilteredCustomers(query: string) {
 }
 // NOTE TEST FUNCTION
 export async function fetchTestOrders() {
-  //noStore();
+  noStore();
   try {
     console.log("----------- fetching test orders ------------");
     const data = await sql<TestOrder>`
@@ -357,6 +357,10 @@ export async function fetchTestOrders() {
         order_items,
       };
     });
+    console.log("type of parsed orders: ", typeof parsedOrders);
+    console.log(parsedOrders);
+    console.log("type of parsed order items: ");
+    console.log(typeof parsedOrders[0].order_items[0]);
     return data.rows;
   } catch (err) {
     console.error("Database Error:", err);

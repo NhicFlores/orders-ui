@@ -75,6 +75,7 @@ export default function OrderSummary({ orderItems }: orderSummaryProps) {
     );
   }
 
+  console.log("---------- Order Summary Component ----------");
   console.log(orderItems);
   console.log(typeof orderItems);
 
@@ -118,9 +119,9 @@ export default function OrderSummary({ orderItems }: orderSummaryProps) {
         </Link>
         <Button>Save Draft</Button>
       </div>
-      <div>
-        <p>order item fields</p>
-        {orderItems[0].glass_type}
+      <div className="border rounded-md p-4">
+        <p className="border-b">order item fields</p>
+        <p>{orderItems[0].glass_type}</p>
       </div>
     </div>
   );
