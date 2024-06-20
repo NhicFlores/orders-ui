@@ -2,6 +2,7 @@
 import DimensionsCard from '@/components/product-components/DimensionsCard'
 import { useProductContext } from '@/components/product-components/product-context-provider'
 import ProductHeader from '@/components/product-components/product-header'
+import { shapeOptions } from '@/lib/data/product-placeholder-data';
 import { ShapeRoute, GlassThicknessRoute } from '@/routes'
 import { useCallback } from 'react';
 
@@ -19,7 +20,7 @@ const DimensionsPage = () => {
   }, [setSummaryCard]);
 
   //get selected shape from order
-  const { glass_shape } = order.product_config;
+  const glass_shape = shapeOptions[0]; //order.product_config;
 
   return (
     <div className='container mx-auto p-4'>
