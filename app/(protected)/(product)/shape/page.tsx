@@ -6,39 +6,21 @@ import ProductGrid from "@/components/product-components/ProductGrid";
 import { DimensionRoute, GlassTypeRoute } from "@/routes";
 
 const ShapePage = () => {
-  const { order, setOrder, summaryCard, setSummaryCard } = useProductContext();
+  console.log("xxxxxxxxxxxxxxxxxxxxxxxx");
+  console.log("Shape Page Rendered");
+  console.log("xxxxxxxxxxxxxxxxxxxxxxxx"); 
+  const { setOrderItem } = useProductContext();
 
   const handleSelect = (configOption: string) => {
-    setSummaryCard((prev) => ({
+    setOrderItem((prev) => ({
       ...prev,
-      orderSpec: {
-        ...prev.orderSpec,
-        glassShape: configOption,
-      },
+      shape: configOption,
     }));
-    // // Add selected shape to order
-    // setOrder((prev) => {
-    //   const newShape = shapeOptions.find(
-    //     (shape) => shape.name === configOption
-    //   );
-    //   if (!newShape) {
-    //     throw new Error("Shape not found");
-    //   }
-    //   return {
-    //     ...prev,
-    //     product_config: {
-    //       ...prev.product_config,
-    //       glass_shape: newShape,
-    //     },
-    //   };
-    // });
 
-    console.log("selected shape: ", configOption);
-    console.log("order: ", order);
-    console.log("summaryCard: ", summaryCard);
+    // console.log("selected shape: ", configOption);
+    // console.log("order: ", order);
+    // console.log("summaryCard: ", summaryCard);
   };
-
-  // NOTE TODO:on select, add shape to order
 
   // const productList = shapeOptions.map((shape) => {
   //   return {
@@ -49,6 +31,9 @@ const ShapePage = () => {
   //   } as Product;
   // });
   // NOTE TODO: why do i not get a type error when i pass shapeOptions to ProductGrid
+  // Because shapeOptions is an array of objects that have the same shape as Product 
+  // so it is implicitly cast to Product[] because they share the same properties 
+  // so I refactored the Shape type to extend Product type
   return (
     <div className="container mx-auto p-4">
       <ProductHeader

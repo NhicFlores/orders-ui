@@ -5,15 +5,15 @@ import ThicknessCard from "@/components/product-components/ThicknessCard";
 import { DimensionRoute, TintRoute } from "@/routes";
 
 export default function GlassThicknessPage() {
-    const { setSummaryCard } = useProductContext();
+    console.log("xxxxxxxxxxxxxxxxxxxxxxxx");
+    console.log("Glass Thickness Page Rendered");
+    console.log("xxxxxxxxxxxxxxxxxxxxxxxx"); 
+    const { setOrderItem } = useProductContext();
 
     const handleSelection = (thickness: string) => {
-        setSummaryCard((prev) => ({
+        setOrderItem((prev) => ({
             ...prev,
-            orderSpec: {
-                ...prev.orderSpec,
-                glassThickness: thickness,
-            },
+            thickness: thickness,
         }));
     };
 

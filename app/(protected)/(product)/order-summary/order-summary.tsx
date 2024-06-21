@@ -17,7 +17,6 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { TestConfig } from "@/lib/definitions/order-definitions";
 import { GlassTypeRoute } from "@/routes";
 import Link from "next/link";
 
@@ -43,36 +42,20 @@ function QuantitySelector() {
   );
 }
 
-interface orderSummaryProps {
-  orderItems: TestConfig[];
-}
+export default function OrderSummary() {
+  // console.log("xxxxxxxxxxxxxxxxxxxxxxxx");
+  // console.log("Order Summary Component Rendered");
+  // console.log("xxxxxxxxxxxxxxxxxxxxxxxx");
 
-export default function OrderSummary({ orderItems }: orderSummaryProps) {
-  const { summaryCard } = useProductContext();
-  const { orderSpec } = summaryCard;
-
-  function descriptionFormatter() {
-    return (
-      <div>
-        <p>{orderSpec.glassThickness}&quot;</p>
-        <p>{orderSpec.glassColor}</p>
-        <p>{orderSpec.glassType}</p>
-      </div>
-    );
-  }
-
-  function dimensionsFormatter() {
-    return (
-      <div>
-        <p>{orderSpec.glassSize}</p>
-      </div>
-    );
-  }
+  const { orderItem, orderItems, setOrderItems } =
+    useProductContext();
 
   console.log("---------- Order Summary Component ----------");
+  console.log("---------- order items array ----------");
   console.log(orderItems);
-  console.log(typeof orderItems);
-
+  //console.log(typeof orderItems);
+  console.log("---------- order item ----------")
+  console.log(orderItem);
   return (
     <div className="space-y-6">
       <div className="flex justify-between w-full">
@@ -90,14 +73,22 @@ export default function OrderSummary({ orderItems }: orderSummaryProps) {
             </TableRow>
           </TableHeader>
           <TableBody>
-            <TableRow>
-              <TableCell>{descriptionFormatter()}</TableCell>
-              <TableCell>{dimensionsFormatter()}</TableCell>
-              <TableCell>Fabrication Options</TableCell>
-              <TableCell>
-                <QuantitySelector />
-              </TableCell>
-            </TableRow>
+            {orderItems.map((item, index) => (
+              <TableRow key={index}>
+                <TableCell>
+                  <p>{item.thickness}&quot;</p>
+                  <p>{item.tint}</p>
+                  <p>{item.type}</p>
+                </TableCell>
+                <TableCell>
+                  <p>{orderItem.dimensions}</p>
+                </TableCell>
+                <TableCell>{item.fabrication_options}</TableCell>
+                <TableCell>
+                  <QuantitySelector />
+                </TableCell>
+              </TableRow>
+            ))}
           </TableBody>
           <TableFooter>
             <TableRow>
@@ -113,10 +104,18 @@ export default function OrderSummary({ orderItems }: orderSummaryProps) {
         </Link>
         <Button>Save Draft</Button>
       </div>
-      <div className="border rounded-md p-4">
-        <p className="border-b">order item fields</p>
-        <p>{orderItems[0].glass_type}</p>
-      </div>
+      {orderItems.length > 0 && (
+        <div className="border rounded-md p-4">
+          <p>Order Items: {orderItems.length}</p>
+          <p className="border-b">order item fields</p>
+          <p>{orderItems[0].type}</p>
+          <p>{orderItems[0].shape}</p>
+          <p>{orderItems[0].dimensions}</p>
+          <p>{orderItems[0].thickness}</p>
+          <p>{orderItems[0].tint}</p>
+          <p>{orderItems[0].quantity}</p>
+        </div>
+      )}
     </div>
   );
 }

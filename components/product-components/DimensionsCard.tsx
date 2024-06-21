@@ -20,7 +20,7 @@ import { Square } from "lucide-react";
 import { Dimension, Shape } from "@/lib/definitions/order-definitions";
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { GlassThicknessRoute } from "@/routes";
+import { GlassThicknessRoute, ShapeRoute } from "@/routes";
 import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -32,15 +32,29 @@ import { zodResolver } from "@hookform/resolvers/zod";
  *
  */
 interface DimensionCardProps {
-  shape: Shape;
+  shape: Shape | undefined;
   handleSelection: (dimensionString: string) => void;
 }
 
-const DimensionsCard = ({
-  shape: { id, name, required_dimensions },
-  handleSelection,
-}: DimensionCardProps) => {
+const DimensionsCard = ({ shape, handleSelection }: DimensionCardProps) => {
+  // console.log("xxxxxxxxxxxxxxxxxxxxxxxx");
+  // console.log("Dimension Card Rendered");
+  // console.log("xxxxxxxxxxxxxxxxxxxxxxxx");
+
   const inchStrings = inchRange.map((value) => value.toString());
+
+  function isShape(obj: any): obj is Shape {
+    //return obj.hasOwnProperty("name") && obj.hasOwnProperty("required_dimensions");
+    return (
+      obj &&
+      typeof obj.name === "string" &&
+      Array.isArray(obj.required_dimensions)
+    );
+  }
+
+  const { name, required_dimensions } = isShape(shape)
+    ? shape
+    : { name: "Shape Not Found", required_dimensions: [] };
 
   // state to watch for changes in dropdown inputs
   // initialize dimensions state with required dimensions from shape
@@ -73,7 +87,7 @@ const DimensionsCard = ({
         }),
       ])
     )
-  )
+  );
 
   const form = useForm({
     resolver: zodResolver(DimensionSchema),
@@ -207,7 +221,9 @@ const DimensionsCard = ({
             );
           })}
           <div className="flex justify-between pb-4">
-            <Button variant="outline">Back</Button>
+            <Link href={ShapeRoute.href}>
+              <Button variant="outline">Back</Button>
+            </Link>
             <Link href={GlassThicknessRoute.href}>
               <Button type="button">Continue</Button>
             </Link>

@@ -32,10 +32,12 @@ const newOrder = {
 };
 
 export default async function OrderSummaryPage() {
-  const testOrders = await fetchTestOrders();
-  console.log("---------- Order Summary Page ----------")
-  console.log(testOrders);
-  console.log(typeof testOrders);
+  console.log("xxxxxxxxxxxxxxxxxxxxxxxx");
+  console.log("Order Summary Page Rendered");
+  console.log("xxxxxxxxxxxxxxxxxxxxxxxx");  // const testOrders = await fetchTestOrders();
+  // console.log("---------- Order Summary Page ----------")
+  // console.log(testOrders);
+  // console.log(typeof testOrders);
   //const order_items = testOrders.map((order) => order.order_items);
 
   return (
@@ -46,7 +48,7 @@ export default async function OrderSummaryPage() {
         continueRoute=""
       />
 
-      <OrderSummary orderItems={testOrders[1].order_items}/>
+      <OrderSummary />
     </main>
   );
 }

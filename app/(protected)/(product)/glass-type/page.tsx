@@ -1,18 +1,17 @@
 'use client';
-import React from 'react'
-import glassImage from '@/public/images/glass-verre.jpg';
+import React, { useEffect } from 'react'
 import ProductGrid from '@/components/product-components/ProductGrid';
 import ProductHeader from '@/components/product-components/product-header';
 import { ShapeRoute } from '@/routes';
 import ProductFooter from '@/components/product-components/product-footer';
 import { useProductContext } from '@/components/product-components/product-context-provider';
-import { Product } from '@/lib/definitions/order-definitions';
 import { glassTypes } from '@/lib/data/product-placeholder-data';
 
-// NOTE: if i make it an object, i can update different fields of the object 
 
 const GlassTypePage = () => {
-
+  console.log("xxxxxxxxxxxxxxxxxxxxxxxx");
+  console.log("Glass Type Page Rendered");
+  console.log("xxxxxxxxxxxxxxxxxxxxxxxx"); 
   //pass specification string as a prop 
   // if specification string has certain values 
   // set render array = to corresponding options array 
@@ -22,31 +21,29 @@ const GlassTypePage = () => {
   // this could all be done on a single page with one component 
   // if the render array is being monitored by state 
 
-  // const productList = glassTypes.map((glassType) => {
-  //   return {
-  //     id: glassType.id,
-  //     name: glassType.name,
-  //     description: glassType.description,
-  //     imageSrc: glassType.imageSrc,
-  //     alt: glassType.alt,
-  //   } as Product;
-  // });
-
-  const { setSummaryCard } = useProductContext();
-  const handleSelection = (configOption: string) => {
-    setSummaryCard((prev) => ({
+  const { setOrderItem } = useProductContext();
+  
+  const handleSelect = (configOption: string) => {
+    setOrderItem((prev) => ({
       ...prev,
-      orderSpec: {
-        ...prev.orderSpec,
-        glassType: configOption,
-      },
+      type: configOption,
     }));
   }
+
+  // useEffect(() => {
+  //   fetchGlassTypes();
+  // }, [])
+
+  // const fetchGlassTypes = async () => {
+  //   const res = await fetch('http://localhost:3000/api/glass-types')
+  //   const data = await res.json()
+  //   console.log(data)
+  // }
 
   return (
     <div className='container mx-auto p-4'>
       <ProductHeader title="Glass Type" continueRoute={ShapeRoute.href}/>
-      <ProductGrid productList={glassTypes} onSelect={handleSelection} nextConfigRoute={ShapeRoute.href}/>
+      <ProductGrid productList={glassTypes} onSelect={handleSelect} nextConfigRoute={ShapeRoute.href}/>
       <ProductFooter/>
     </div>
   )

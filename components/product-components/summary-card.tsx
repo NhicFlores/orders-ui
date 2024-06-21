@@ -1,49 +1,44 @@
-import { fetchCustomers } from "@/lib/data/data";
 import { ScrollArea } from "../ui/scroll-area";
 import { Card, CardContent, CardFooter, CardHeader } from "../ui/card";
 import { Button } from "../ui/button";
 import { useProductContext } from "./product-context-provider";
 
-interface SummaryCardProps {
-  selections: string[];
-}
-//NOTE TODO: implement props
+
 function SummaryCard() {
-  const { summaryCard } = useProductContext();
-  const { orderName, orderSpec, productQuantity } = summaryCard;
-  const { glassType, glassShape, glassSize, glassThickness, glassColor } =
-    orderSpec;
+  const { order, orderItem } = useProductContext();
+
+  const { type, shape, dimensions, thickness, tint, quantity } = orderItem;
   return (
     <Card className="w-full text-center shadow-md ">
       <CardHeader className="bg-slate-200">
-        <h1>Order name</h1>
+        <h1>{order.order_name}</h1>
       </CardHeader>
       <CardContent className="h-min-[100px]">
         <ScrollArea className="whitespace-nowrap p-2">
           <div className="space-y-4">
             <div className="flex justify-between">
               <p>Glass Type</p>
-              <p>{glassType}</p>
+              <p>{type}</p>
             </div>
             <div className="flex justify-between">
               <p>Glass Shape</p>
-              <p>{glassShape}</p>
+              <p>{shape}</p>
             </div>
             <div className="flex justify-between">
               <p>Glass Size</p>
-              <p>{glassSize}</p>
+              <p>{dimensions}</p>
             </div>
             <div className="flex justify-between">
               <p>Glass Thickness</p>
-              <p>{glassThickness}</p>
+              <p>{thickness}</p>
             </div>
             <div className="flex justify-between">
               <p>Glass Color</p>
-              <p>{glassColor}</p>
+              <p>{tint}</p>
             </div>
             <div className="flex justify-between">
               <p>Quantity</p>
-              <p>{productQuantity}</p>
+              <p>{quantity}</p>
               </div>
           </div>
         </ScrollArea>

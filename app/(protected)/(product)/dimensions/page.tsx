@@ -7,26 +7,27 @@ import { ShapeRoute, GlassThicknessRoute } from '@/routes'
 import { useCallback } from 'react';
 
 const DimensionsPage = () => {
-
-  const { order, setSummaryCard } = useProductContext();
+  console.log("xxxxxxxxxxxxxxxxxxxxxxxx");
+  console.log("Dimensions Page Rendered");
+  console.log("xxxxxxxxxxxxxxxxxxxxxxxx"); 
+  const { orderItem, setOrderItem } = useProductContext();
   const handleSelection = useCallback((dimensionString: string) => {
-    setSummaryCard((prev) => ({
+    setOrderItem((prev) => ({
       ...prev,
-      orderSpec: {
-        ...prev.orderSpec,
-        glassSize: dimensionString,
-      }
+      dimensions: dimensionString
     }))
-  }, [setSummaryCard]);
+  }, [ setOrderItem ]);
 
   //get selected shape from order
-  const glass_shape = shapeOptions[0]; //order.product_config;
+  const glass_shape = shapeOptions.find(shape => shape.name === orderItem.shape);
 
   return (
     <div className='container mx-auto p-4'>
       <ProductHeader title="Enter Dimensions" backRoute={ShapeRoute.href} continueRoute={GlassThicknessRoute.href} />
       <div className='flex justify-center'>
-        <DimensionsCard shape={glass_shape} handleSelection={handleSelection}/>
+        <DimensionsCard 
+        shape={glass_shape}
+        handleSelection={handleSelection}/>
       </div>
     </div>
   )

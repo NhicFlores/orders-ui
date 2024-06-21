@@ -1,18 +1,6 @@
 import { NewOrder, OrderItem } from "./order-definitions";
 
-export type SummaryCard = {
-    orderName: string;
-    orderSpec: SpecificationString;
-    productQuantity: number;
-}
 
-export type SpecificationString = {
-    glassType: string;
-    glassShape: string;
-    glassSize: string;
-    glassThickness: string;
-    glassColor: string;
-}
 
 // export type ProductNavSections = 'Glass Type' | 'Glass Shape' | 'Glass Size' | 'Glass Thickness' | 'Glass Color' | 'Summary';
 
@@ -28,8 +16,7 @@ export type ProductContextType = {
     orderItem: OrderItem;
     setOrderItem: React.Dispatch<React.SetStateAction<OrderItem>>;
     orderItems: OrderItem[];
-    summaryCard: SummaryCard;
-    setSummaryCard: React.Dispatch<React.SetStateAction<SummaryCard>>;
+    setOrderItems: React.Dispatch<React.SetStateAction<OrderItem[]>>;
     // productNav: ProductNav;
     // setProductNav: React.Dispatch<React.SetStateAction<ProductNav>>;
     updateOrderItemQuantity: (quantity: number) => void;

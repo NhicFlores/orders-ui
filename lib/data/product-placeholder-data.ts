@@ -18,7 +18,7 @@ export const glassTypes: GlassType[] = [
     shape_types: [],
     thickness_options: [],
     tint_types: [],
-    options_types: [],
+    misc_options: [],
   },
   {
     id: "2",
@@ -30,7 +30,7 @@ export const glassTypes: GlassType[] = [
     shape_types: [],
     thickness_options: [],
     tint_types: [],
-    options_types: [],
+    misc_options: [],
   },
   {
     id: "3",
@@ -42,7 +42,7 @@ export const glassTypes: GlassType[] = [
     shape_types: [],
     thickness_options: [],
     tint_types: [],
-    options_types: [],
+    misc_options: [],
   },
   {
     id: "4",
@@ -54,7 +54,7 @@ export const glassTypes: GlassType[] = [
     shape_types: [],
     thickness_options: [],
     tint_types: [],
-    options_types: [],
+    misc_options: [],
   },
   {
     id: "5",
@@ -66,7 +66,7 @@ export const glassTypes: GlassType[] = [
     shape_types: [],
     thickness_options: [],
     tint_types: [],
-    options_types: [],
+    misc_options: [],
   },
   {
     id: "6",
@@ -78,7 +78,7 @@ export const glassTypes: GlassType[] = [
     shape_types: [],
     thickness_options: [],
     tint_types: [],
-    options_types: [],
+    misc_options: [],
   },
   {
     id: "7",
@@ -90,7 +90,7 @@ export const glassTypes: GlassType[] = [
     shape_types: [],
     thickness_options: [],
     tint_types: [],
-    options_types: [],
+    misc_options: [],
   },
   {
     id: "8",
@@ -102,7 +102,7 @@ export const glassTypes: GlassType[] = [
     shape_types: [],
     thickness_options: [],
     tint_types: [],
-    options_types: [],
+    misc_options: [],
   },
   {
     id: "9",
@@ -114,7 +114,7 @@ export const glassTypes: GlassType[] = [
     shape_types: [],
     thickness_options: [],
     tint_types: [],
-    options_types: [],
+    misc_options: [],
   },
 ];
 
@@ -130,7 +130,7 @@ export const shapeOptions: Shape[] = [
     ],
     thickness_options: [],
     tint_types: [],
-    options_types: [],
+    misc_options: [],
   },
   {
     id: "2",
@@ -144,7 +144,7 @@ export const shapeOptions: Shape[] = [
     ],
     thickness_options: [],
     tint_types: [],
-    options_types: [],
+    misc_options: [],
   },
   {
     id: "3",
@@ -156,7 +156,7 @@ export const shapeOptions: Shape[] = [
     ],
     thickness_options: [],
     tint_types: [],
-    options_types: [],
+    misc_options: [],
   },
   {
     id: "4",
@@ -171,7 +171,7 @@ export const shapeOptions: Shape[] = [
     ],
     thickness_options: [],
     tint_types: [],
-    options_types: [],
+    misc_options: [],
   },
   {
     id: "5",
@@ -185,7 +185,7 @@ export const shapeOptions: Shape[] = [
     ],
     thickness_options: [],
     tint_types: [],
-    options_types: [],
+    misc_options: [],
   },
   {
     id: "6",
@@ -200,7 +200,7 @@ export const shapeOptions: Shape[] = [
     ],
     thickness_options: [],
     tint_types: [],
-    options_types: [],
+    misc_options: [],
   },
   {
     id: "7",
@@ -215,7 +215,7 @@ export const shapeOptions: Shape[] = [
     ],
     thickness_options: [],
     tint_types: [],
-    options_types: [],
+    misc_options: [],
   },
   {
     id: "8",
@@ -231,7 +231,7 @@ export const shapeOptions: Shape[] = [
     ],
     thickness_options: [],
     tint_types: [],
-    options_types: [],
+    misc_options: [],
   },
   {
     id: "9",
@@ -244,7 +244,7 @@ export const shapeOptions: Shape[] = [
       { label: "Radius", wholeNumber: "", fraction: "" },
     ],
     tint_types: [],
-    options_types: [],
+    misc_options: [],
   },
   {
     id: "10",
@@ -259,7 +259,7 @@ export const shapeOptions: Shape[] = [
     ],
     thickness_options: [],
     tint_types: [],
-    options_types: [],
+    misc_options: [],
   },
   {
     id: "11",
@@ -273,7 +273,7 @@ export const shapeOptions: Shape[] = [
     ],
     thickness_options: [],
     tint_types: [],
-    options_types: [],
+    misc_options: [],
   },
   {
     id: "12",
@@ -287,7 +287,7 @@ export const shapeOptions: Shape[] = [
     ],
     thickness_options: [],
     tint_types: [],
-    options_types: [],
+    misc_options: [],
   },
   {
     id: "13",
@@ -301,7 +301,7 @@ export const shapeOptions: Shape[] = [
     ],
     thickness_options: [],
     tint_types: [],
-    options_types: [],
+    misc_options: [],
   },
   {
     id: "14",
@@ -314,7 +314,7 @@ export const shapeOptions: Shape[] = [
       { label: "Radius", wholeNumber: "", fraction: "" },
     ],
     tint_types: [],
-    options_types: [],
+    misc_options: [],
   },
   {
     id: "15",
@@ -327,7 +327,7 @@ export const shapeOptions: Shape[] = [
       { label: "Radius", wholeNumber: "", fraction: "" },
     ],
     tint_types: [],
-    options_types: [],
+    misc_options: [],
   },
   {
     id: "16",
@@ -340,7 +340,7 @@ export const shapeOptions: Shape[] = [
       { label: "Radius", wholeNumber: "", fraction: "" },
     ],
     tint_types: [],
-    options_types: [],
+    misc_options: [],
   },
   {
     id: "17",
@@ -349,7 +349,7 @@ export const shapeOptions: Shape[] = [
     alt: "Quarter Round with Notch",
     thickness_options: [],
     tint_types: [],
-    options_types: [],
+    misc_options: [],
   },
   {
     id: "18",
@@ -358,7 +358,7 @@ export const shapeOptions: Shape[] = [
     alt: "Half-Circle",
     thickness_options: [],
     tint_types: [],
-    options_types: [],
+    misc_options: [],
   },
   {
     id: "19",
@@ -367,7 +367,7 @@ export const shapeOptions: Shape[] = [
     alt: "Half-Circle with Notch",
     thickness_options: [],
     tint_types: [],
-    options_types: [],
+    misc_options: [],
   },
   {
     id: "20",
@@ -376,7 +376,7 @@ export const shapeOptions: Shape[] = [
     alt: "Trapezoid",
     thickness_options: [],
     tint_types: [],
-    options_types: [],
+    misc_options: [],
   },
   {
     id: "21",
@@ -385,7 +385,7 @@ export const shapeOptions: Shape[] = [
     alt: "Parallelogram",
     thickness_options: [],
     tint_types: [],
-    options_types: [],
+    misc_options: [],
   },
   {
     id: "22",
@@ -394,7 +394,7 @@ export const shapeOptions: Shape[] = [
     alt: "Right Triangle",
     thickness_options: [],
     tint_types: [],
-    options_types: [],
+    misc_options: [],
   },
   {
     id: "23",
@@ -403,7 +403,7 @@ export const shapeOptions: Shape[] = [
     alt: "Triangle",
     thickness_options: [],
     tint_types: [],
-    options_types: [],
+    misc_options: [],
   },
   {
     id: "24",
@@ -412,7 +412,7 @@ export const shapeOptions: Shape[] = [
     alt: "Quad Arch",
     thickness_options: [],
     tint_types: [],
-    options_types: [],
+    misc_options: [],
   },
   {
     id: "25",
@@ -421,7 +421,7 @@ export const shapeOptions: Shape[] = [
     alt: "Irregular/Any Other Shape",
     thickness_options: [],
     tint_types: [],
-    options_types: [],
+    misc_options: [],
   },
 ];
 

@@ -105,27 +105,22 @@ export type Product = {
   price?: number;
 };
 // NOTE TODO: update types to be GlassType = Product & {shape_types: Shape[]}
-export type GlassType = {
-  id: string;
-  name: string;
-  description: string;
-  imageSrc: StaticImageData;
-  alt: string;
+export type GlassType = Product &{
   shape_types?: Shape[];
   thickness_options?: Thickness[];
   tint_types?: Tint[];
-  options_types?: MiscOptions[];
+  misc_options?: MiscOptions[];
 };
 
-export type Shape = {
-  id: string;
-  name: string;
-  imageSrc: StaticImageData;
-  alt: string;
+export type Shape = Product &{
   required_dimensions?: Dimension[];
   thickness_options?: Thickness[];
   tint_types?: Tint[];
-  options_types?: MiscOptions[];
+  misc_options?: MiscOptions[];
+};
+
+export type Tint = Product &{
+  misc_options?: MiscOptions[];
 };
 
 export type Dimension = {
@@ -138,17 +133,9 @@ export type Thickness = {
   id?: string;
   thickness?: number;
   tint_types?: Tint[];
-  options_types?: MiscOptions[];
+  misc_options?: MiscOptions[];
 };
 
-export type Tint = {
-  id?: string;
-  name?: string;
-  description?: string;
-  imageSrc?: StaticImageData;
-  alt?: string;
-  options_types?: MiscOptions[];
-};
 
 export type FabricationOptions = {
   id?: string;
