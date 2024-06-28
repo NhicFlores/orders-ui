@@ -45,6 +45,11 @@ export const DraftRoute = {
 };
 
 // product routes
+export const NewOrderNameRoute = {
+  label: "Order Name",
+  href: "/order-name",
+};
+
 export const GlassTypeRoute = {
   label: "Glass Type",
   href: "/glass-type",
@@ -104,7 +109,7 @@ export const HeaderRoutes = [
 export const DashboardNavLinks = [
   {
     label: "New Order",
-    href: GlassTypeRoute.href,
+    href: NewOrderNameRoute.href,
   },
   {
     label: "Check Order Status",

@@ -2,7 +2,7 @@
 import React, { useEffect } from 'react'
 import ProductGrid from '@/components/product-components/ProductGrid';
 import ProductHeader from '@/components/product-components/product-header';
-import { ShapeRoute } from '@/routes';
+import { NewOrderNameRoute, ShapeRoute } from '@/routes';
 import ProductFooter from '@/components/product-components/product-footer';
 import { useProductContext } from '@/components/product-components/product-context-provider';
 import { glassTypes } from '@/lib/data/product-placeholder-data';
@@ -42,7 +42,7 @@ const GlassTypePage = () => {
 
   return (
     <div className='container mx-auto p-4'>
-      <ProductHeader title="Glass Type" continueRoute={ShapeRoute.href}/>
+      <ProductHeader title="Glass Type" backRoute={NewOrderNameRoute.href} continueRoute={ShapeRoute.href}/>
       <ProductGrid productList={glassTypes} onSelect={handleSelect} nextConfigRoute={ShapeRoute.href}/>
       <ProductFooter/>
     </div>
