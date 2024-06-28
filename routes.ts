@@ -76,6 +76,10 @@ export const ShapeRoute = {
     href: "/order-summary",
   };
 
+  export const CheckoutRoute = {
+    href: "/checkout",
+  };
+
   // account routes
 export const ProfileRoute = {
     label: "Profile",

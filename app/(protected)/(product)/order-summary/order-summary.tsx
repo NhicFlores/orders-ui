@@ -17,7 +17,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { GlassTypeRoute } from "@/routes";
+import { CheckoutRoute, GlassTypeRoute } from "@/routes";
 import Link from "next/link";
 
 function QuantitySelector() {
@@ -60,7 +60,11 @@ export default function OrderSummary() {
     <div className="space-y-6">
       <div className="flex justify-between w-full">
         <h1 className="text-2xl font-bold">Order Name</h1>
-        <Button>Submit Order/Quote</Button>
+        <Button>
+          <Link href={CheckoutRoute.href}>
+            Checkout
+          </Link>
+        </Button>
       </div>
       <section className="border rounded-md">
         <Table>
