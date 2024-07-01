@@ -9,19 +9,36 @@ const ProductLayout = ({ children }: { children: React.ReactNode }) => {
   //className='bg-gray-100 basis-4/6'
   //call back for selection ids
   //pass ids to calculator
-  const showProductNav = false;
+  const showProductNav = true;
   return (
     <ProductContextProvider>
-      <main className="h-screen flex">
-        {showProductNav && <div className="basis-1/6 border-r-2 px-2">
-          <div className="border rounded-md p-4 text-center">
+      <main className="flex min-h-screen">
+        {showProductNav && 
+        <div className="px-2">
+          <div className="border 
+                          rounded-md 
+                          p-4 
+                          text-center"
+                          >
             product nav goes here
           </div>
         </div>}
-        <div className="bg-slate-100 basis-4/6 flex justify-center">
+        <div className="bg-slate-100 
+                          border 
+                          flex-1
+                          flex
+                          flex-col
+                          items-center 
+                          justify-center"
+                          >
           {children}
         </div>
-        <div className="flex flex-col basis-1/6 justify-center border-l-2 px-2">
+        <div className="flex 
+                        flex-col 
+                        max-h-screen 
+                        justify-center 
+                        px-2"
+                        >
           <SummaryCard/>
         </div>
       </main>
