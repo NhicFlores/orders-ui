@@ -1,8 +1,6 @@
-"use client";
 import React from "react";
 import SummaryCard from "@/components/product-components/summary-card";
 import ProductContextProvider from "@/components/product-components/product-context-provider";
-
 
 const ProductLayout = ({ children }: { children: React.ReactNode }) => {
   //set state for managing running total
@@ -12,34 +10,39 @@ const ProductLayout = ({ children }: { children: React.ReactNode }) => {
   const showProductNav = true;
   return (
     <ProductContextProvider>
-      <main className="flex min-h-screen">
-        {showProductNav && 
-        <div className="px-2">
-          <div className="border 
+      <main className="flex flex-1">
+        {showProductNav && (
+          <div className="px-2">
+            <div
+              className="border 
                           rounded-md 
                           p-4 
                           text-center"
-                          >
-            product nav goes here
+            >
+              product nav goes here
+            </div>
           </div>
-        </div>}
-        <div className="bg-slate-100 
-                          border 
-                          flex-1
-                          flex
-                          flex-col
-                          items-center 
-                          justify-center"
-                          >
+        )}
+        <div
+          className="bg-slate-100 
+                      border 
+                      flex-1
+                      flex
+                      flex-col
+                      items-center 
+                      overflow-y-auto"
+        >
           {children}
         </div>
-        <div className="flex 
+        <div
+          className="flex 
                         flex-col 
                         max-h-screen 
                         justify-center 
-                        px-2"
-                        >
-          <SummaryCard/>
+                        px-2
+                        "
+        >
+          <SummaryCard />
         </div>
       </main>
     </ProductContextProvider>

@@ -1,6 +1,6 @@
 import Header from "../ui/header";
 
-export default async function MainLayout({
+export default function ProtectedRoutesLayout({
   children,
 }: {
   children: React.ReactNode;
@@ -14,7 +14,7 @@ export default async function MainLayout({
       <div className="sticky top-0 z-50">
         <Header />
       </div>
-      <main className="overflow-y-auto">
+      <main className="flex-1 overflow-y-auto">
         {children}
       </main>
     </div>

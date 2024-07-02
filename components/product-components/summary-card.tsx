@@ -1,3 +1,4 @@
+"use client";
 import { ScrollArea } from "../ui/scroll-area";
 import { Card, CardContent, CardFooter, CardHeader } from "../ui/card";
 import { Button } from "../ui/button";
