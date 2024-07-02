@@ -141,7 +141,7 @@ expandable row
 		- we'll work out the business logic when we get there 
 
 
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx LOW PRIORITY xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx LOW PRIORITY/OPTIMIZATIONS xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 - how do conflicting layouts resolve 
 - nav bar should be part of the full screen height to avoid the scroll bar 
 
@@ -152,6 +152,7 @@ default values
 order name should default to UnNAMED DRAFT 
 form at the end for naming it
 
+find all places where i use nested Link/Button for navigation and use the asChild prop for the button 
 
 
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx DONE xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx

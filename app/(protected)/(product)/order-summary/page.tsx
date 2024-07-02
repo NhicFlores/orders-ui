@@ -1,4 +1,3 @@
-
 import OrderSummary from "./order-summary";
 import ProductHeader from "@/components/product-components/product-header";
 import { TintRoute } from "@/routes";
@@ -34,21 +33,24 @@ const newOrder = {
 export default async function OrderSummaryPage() {
   console.log("xxxxxxxxxxxxxxxxxxxxxxxx");
   console.log("Order Summary Page Rendered");
-  console.log("xxxxxxxxxxxxxxxxxxxxxxxx");  // const testOrders = await fetchTestOrders();
+  console.log("xxxxxxxxxxxxxxxxxxxxxxxx"); // const testOrders = await fetchTestOrders();
   // console.log("---------- Order Summary Page ----------")
   // console.log(testOrders);
   // console.log(typeof testOrders);
   //const order_items = testOrders.map((order) => order.order_items);
 
   return (
-    <main className="lg:w-3/4 sm:w-full border rounded-md bg-white p-4 space-y-6">
+    <main className="container p-4 space-y-4">
       <ProductHeader
         title="Order Summary"
         backRoute={TintRoute.href}
         continueRoute=""
       />
-
-      <OrderSummary />
+      <div className="flex flex-col items-center">
+        <div className="lg:w-3/4 sm:w-full border rounded-md bg-white p-4">
+          <OrderSummary />
+        </div>
+      </div>
     </main>
   );
 }

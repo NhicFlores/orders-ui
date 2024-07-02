@@ -41,7 +41,7 @@ const GlassTypePage = () => {
   // }
 
   return (
-    <div className='container p-4'>
+    <div className='container p-4 space-y-4'>
       <ProductHeader title="Glass Type" backRoute={NewOrderNameRoute.href} continueRoute={ShapeRoute.href}/>
       <ProductGrid productList={glassTypes} onSelect={handleSelect} nextConfigRoute={ShapeRoute.href}/>
       <ProductFooter/>

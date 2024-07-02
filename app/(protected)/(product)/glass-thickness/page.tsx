@@ -18,7 +18,7 @@ export default function GlassThicknessPage() {
     };
 
     return (
-        <div className="flex flex-col w-full">
+        <div className="container p-4 space-y-4">
             <ProductHeader title="Glass Thickness" backRoute={DimensionRoute.href} continueRoute={TintRoute.href}/>
             <div className="flex flex-col items-center">
                 <ThicknessCard handleSelection={handleSelection}/>

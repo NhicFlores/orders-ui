@@ -22,7 +22,7 @@ const DimensionsPage = () => {
   const glass_shape = shapeOptions.find(shape => shape.name === orderItem.shape);
 
   return (
-    <div className='container mx-auto p-4'>
+    <div className='container p-4 space-y-4'>
       <ProductHeader title="Enter Dimensions" backRoute={ShapeRoute.href} continueRoute={GlassThicknessRoute.href} />
       <div className='flex justify-center'>
         <DimensionsCard 

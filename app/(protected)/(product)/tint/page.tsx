@@ -38,7 +38,7 @@ const TintPage = () => {
   // console.log("xxxxxxxxxxxxxxxxxxxxxxxx");
 
   return (
-    <div className='p-4'>
+    <div className='container p-4 space-y-4'>
       <ProductHeader title="Select Tint" backRoute={GlassThicknessRoute.href} continueRoute={OrderSummaryRoute.href}/>
       <ProductGrid productList={tintOptions} onSelect={handleSelect} nextConfigRoute={OrderSummaryRoute.href}/>
     </div>

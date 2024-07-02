@@ -10,13 +10,13 @@ export default async function CheckoutPage() {
     const billingOptions = await getBillingInfoByUserId(session?.user.id as string);
 
   return (
-    <main className="lg:w-3/4 sm:w-full border rounded-md bg-white p-4 space-y-6">
+    <main className="container p-4 space-y-4">
       <ProductHeader
         title="Checkout"
         backRoute="/order-summary"
         continueRoute=""
       />
-      <div className="space-y-4">
+      <div className="border rounded-md bg-white p-4 space-y-4">
         <PaymentSection user_id={session?.user.id as string} billingOptions={billingOptions}/>
         <ShippingSection />
       </div>

@@ -14,9 +14,11 @@ export default function OrderNamePage() {
           </p>
         </div>
         <Input placeholder="Order Name" />
-        <Button>
-          <Link href={GlassTypeRoute.href}>Next</Link>
-        </Button>
+        <div>
+          <Link href={GlassTypeRoute.href}>
+            <Button>Next</Button>
+          </Link>
+        </div>
       </div>
     </div>
   );

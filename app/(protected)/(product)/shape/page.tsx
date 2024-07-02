@@ -35,7 +35,7 @@ const ShapePage = () => {
   // so it is implicitly cast to Product[] because they share the same properties 
   // so I refactored the Shape type to extend Product type
   return (
-    <div className="container mx-auto p-4">
+    <div className="container p-4 space-y-4">
       <ProductHeader
         title="Select Shape"
         backRoute={GlassTypeRoute.href}
