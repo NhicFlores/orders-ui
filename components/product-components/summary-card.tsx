@@ -9,11 +9,11 @@ function SummaryCard() {
 
   const { type, shape, dimensions, thickness, tint, quantity } = orderItem;
   return (
-    <Card className="w-full text-center shadow-md ">
-      <CardHeader className="bg-slate-200">
+    <Card className="w-full rounded-md text-center shadow-md ">
+      <CardHeader className="bg-slate-200 rounded-md rounded-b-none">
         <h1>{order.order_name}</h1>
       </CardHeader>
-      <CardContent className="h-min-[100px]">
+      <CardContent className="min-h-[100px]">
         <ScrollArea className="whitespace-nowrap p-2">
           <div className="space-y-4">
             <div className="flex justify-between">
@@ -43,7 +43,7 @@ function SummaryCard() {
           </div>
         </ScrollArea>
       </CardContent>
-      <CardFooter className="bg-slate-200 pt-4">
+      <CardFooter className="bg-slate-200 pt-4 rounded-md rounded-t-none">
         <div className="w-full space-y-4">
           <div className="flex justify-between">
             <p>Order Total</p>

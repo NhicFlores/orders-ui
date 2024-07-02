@@ -6,7 +6,7 @@ const ProfileLayout = async ({children}: {children: React.ReactNode}) => {
     //load all pages in route group based on authentication status and role 
     //const session = await auth();
   return (
-    <div className="w-full h-full flex flex-col items-center bg-slate-50">
+    <div className="w-full flex flex-col items-center bg-slate-50">
       {children}
     </div>
   )

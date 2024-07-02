@@ -5,8 +5,7 @@
 
 - make dimension select elements 'required' <select required/>
 
-- payment and shipping pages in order flow 
- - tables showing payment and shipping options 
+
 
 - new order 
  - new order definitions
@@ -15,10 +14,7 @@
     - sql script 
  - new order actions 
 
-- submit dimensions to product specs 
- - function to unwrap context in dimension page 
- - validate data 
- - format string for display 
+
 
 SummaryCard 
 - format order summary 
@@ -110,37 +106,7 @@ possible strategy for building glass config
 - use state management in parent component 
 
 
-component tree 
 
-product route - start with conditional rendering then extract to pages 
-layout 
-	- product header 
-		- title, back route, continue route 
-	- product navigation on left 
-		- stack of buttons with corresponding titles 
-		- maybe dropdowns with the options so people can go back and see 
-		- low priority 
-			- it will probably just have to erase any subsequent selections 
-			so we don't have issues with incompatible products and options 
-	- product grid center 
-		- product form 
-			- product card 
-				- name 
-				- image 
-				- description 
-			- specification card - dimensions and edgework can use this 
-				- instructions 
-				- diagram and labels 
-				- user input 
-					- label corresponding to dimension 
-					- dropdowns populated with arrays of possible values for length and fractions of inches 
-			- continue button 
-			- finish later button 
-			- back button 
-	- summary on right 
-		- based on certain selections 
-			- adding this selection will require a quote for accurate pricing 
-		- summary order form 
 
 images 
 - where to store product images 
@@ -245,6 +211,49 @@ create user profile
 	- consider one customer can have many users - keep many user_ide with email and password attached to 'customers' which stores company, shipping, billing, etc 
 		this won't work(smoothly) in the case that different users at different companies handle orders for different work sites
 		maybe we need user, company, and customer to allow for user to choose default order information 
+
+
+order config 
+component tree 
+product route - start with conditional rendering then extract to pages 
+layout 
+	- product header 
+		- title, back route, continue route 
+	- product navigation on left 
+		- stack of buttons with corresponding titles 
+		- maybe dropdowns with the options so people can go back and see 
+		- low priority 
+			- it will probably just have to erase any subsequent selections 
+			so we don't have issues with incompatible products and options 
+	- product grid center 
+		- product form 
+			- product card 
+				- name 
+				- image 
+				- description 
+			- specification card - dimensions and edgework can use this 
+				- instructions 
+				- diagram and labels 
+				- user input 
+					- label corresponding to dimension 
+					- dropdowns populated with arrays of possible values for length and fractions of inches 
+			- continue button 
+			- finish later button 
+			- back button 
+	- summary on right 
+		- based on certain selections 
+			- adding this selection will require a quote for accurate pricing 
+		- summary order form 
+
+product config 
+ - payment and shipping pages in order flow 
+ - tables showing payment and shipping options 
+
+- submit dimensions to product specs 
+ - function to unwrap context in dimension page 
+ - validate data 
+ - format string for display 
+
 
 data tables 
  - order route 
