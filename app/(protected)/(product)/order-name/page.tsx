@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function OrderNamePage() {
   return (
-    <div className="flex items-center">
+    <div className="min-h-full flex items-center">
       <div className="border p-4 rounded-md bg-white space-y-4">
         <div>
           <h1 className="text-lg font-bold">Order Name</h1>
