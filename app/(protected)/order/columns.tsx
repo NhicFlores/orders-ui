@@ -2,7 +2,7 @@
 "use client";
 
 import { ColumnDef, RowExpanding } from "@tanstack/react-table";
-import { Order } from "@/lib/definitions/definitions";
+import { Order_DEPRECATED } from "@/lib/definitions/definitions";
 import { ArrowUpDown, MoreHorizontal } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
@@ -29,7 +29,7 @@ import { formatDateToLocal } from "@/lib/utils";
   status: "pending" | "draft" | "shipped" | "processing";
 };*/
 //TODO: enable shift select
-export const OrderColumns: ColumnDef<Order>[] = [
+export const OrderColumns: ColumnDef<Order_DEPRECATED>[] = [
   {
     id: "select",
     header: ({ table }) => (
@@ -187,7 +187,7 @@ export const OrderColumns: ColumnDef<Order>[] = [
     },
     cell: ({ row }) => {
       const date = row.getValue("date"); //NOTE TO DO: casting vs conversion
-      // NOTE TODO: format date before sending to db vs formatting on fetch 
+      // NOTE TODO: format date before sending to db vs formatting on fetch
       const formattedDate = formatDateToLocal(date as string);
       return <div>{formattedDate}</div>;
     },

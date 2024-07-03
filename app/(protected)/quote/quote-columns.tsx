@@ -2,7 +2,7 @@
 "use client";
 
 import { ColumnDef, RowExpanding } from "@tanstack/react-table";
-import { Order } from "@/lib/definitions/definitions";
+import { Order_DEPRECATED } from "@/lib/definitions/definitions";
 import { ArrowUpDown, MoreHorizontal } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
@@ -36,7 +36,7 @@ type QuoteColumns = {
   date: string;
 };
 
-export const QuoteColumns: ColumnDef<Order>[] = [
+export const QuoteColumns: ColumnDef<Order_DEPRECATED>[] = [
   {
     id: "select",
     header: ({ table }) => (

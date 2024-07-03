@@ -7,7 +7,7 @@ import {
   InvoicesTable,
   LatestInvoiceRaw,
   Revenue,
-  Order,
+  Order_DEPRECATED,
   OrderForm,
 } from "@/lib/definitions/definitions";
 import { OrderStatus, TestOrder } from "@/lib/definitions/order-definitions";
@@ -21,7 +21,7 @@ export async function fetchOrders() {
   noStore();
   // console.log("made it to fetch orders yo");
   try {
-    const data = await sql<Order>`
+    const data = await sql<Order_DEPRECATED>`
         SELECT * FROM orders
         WHERE orders.status != ${OrderStatus.Draft} AND orders.status != ${OrderStatus.Quote}
         `;
@@ -37,7 +37,7 @@ export async function fetchOrders() {
 export async function fetchQuote() {
   // check the need for noStore on this function
   try {
-    const data = await sql<Order>`
+    const data = await sql<Order_DEPRECATED>`
         SELECT * FROM orders
         WHERE orders.status = ${OrderStatus.Quote};
       `;
@@ -57,7 +57,7 @@ export async function fetchQuote() {
 export async function fetchDraftOrders() {
   try {
     //NOTE: type your sql queries
-    const data = await sql<Order>`
+    const data = await sql<Order_DEPRECATED>`
       SELECT * FROM orders
       WHERE orders.status = ${OrderStatus.Draft}
     `;
@@ -328,16 +328,16 @@ export async function fetchTestOrders() {
     //   order_items: JSON.parse(order.order_items),
     // }))
     console.log("----------- got the test orders ------------");
-    
+
     console.log("type of data: ", typeof data);
     console.log(data);
-    
+
     console.log("type of data rows: ", typeof data.rows);
     console.log(data.rows);
-    
+
     console.log("type of row elements: ", typeof data.rows[0]);
     console.log(data.rows[0]);
-    
+
     console.log("type of order items: ", typeof data.rows[0].order_items);
     console.log(data.rows[0].order_items);
 

@@ -7,7 +7,7 @@ import {
 
 // describes the shape of the data, and what data type each property should accept
 
-export type Order = {
+export type Order_DEPRECATED = {
   id: string;
   customer_id: string;
   order_name: string;
@@ -19,7 +19,7 @@ export type Order = {
   glassConfig: GlassConfiguration;
 };
 
-export type OrderKeys = keyof Order;
+export type OrderKeys = keyof Order_DEPRECATED;
 
 // NOTE: TODO: each order will have:
 //   - unique id
