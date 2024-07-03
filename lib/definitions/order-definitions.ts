@@ -20,7 +20,7 @@ export type Order = {
 
 export type OrderItem = {
   order_id: string;
-  type: string;
+  glassType: string;
   shape: string;
   dimensions: string;
   thickness: string;

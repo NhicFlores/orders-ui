@@ -47,23 +47,20 @@ export default function OrderSummary() {
   // console.log("Order Summary Component Rendered");
   // console.log("xxxxxxxxxxxxxxxxxxxxxxxx");
 
-  const { orderItem, orderItems, setOrderItems } =
-    useProductContext();
+  const { orderItem, orderItems, setOrderItems } = useProductContext();
 
   console.log("---------- Order Summary Component ----------");
   console.log("---------- order items array ----------");
   console.log(orderItems);
   //console.log(typeof orderItems);
-  console.log("---------- order item ----------")
+  console.log("---------- order item ----------");
   console.log(orderItem);
   return (
     <div className="space-y-6">
       <div className="flex justify-between w-full">
         <h1 className="text-2xl font-bold">Order Name</h1>
         <Button>
-          <Link href={CheckoutRoute.href}>
-            Checkout
-          </Link>
+          <Link href={CheckoutRoute.href}>Checkout</Link>
         </Button>
       </div>
       <section className="border rounded-md">
@@ -82,7 +79,7 @@ export default function OrderSummary() {
                 <TableCell>
                   <p>{item.thickness}&quot;</p>
                   <p>{item.tint}</p>
-                  <p>{item.type}</p>
+                  <p>{item.glassType}</p>
                 </TableCell>
                 <TableCell>
                   <p>{orderItem.dimensions}</p>
@@ -112,7 +109,7 @@ export default function OrderSummary() {
         <div className="border rounded-md p-4">
           <p>Order Items: {orderItems.length}</p>
           <p className="border-b">order item fields</p>
-          <p>{orderItems[0].type}</p>
+          <p>{orderItems[0].glassType}</p>
           <p>{orderItems[0].shape}</p>
           <p>{orderItems[0].dimensions}</p>
           <p>{orderItems[0].thickness}</p>

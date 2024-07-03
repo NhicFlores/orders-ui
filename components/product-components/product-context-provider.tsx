@@ -30,7 +30,7 @@ export const ProductContext = createContext<ProductContextType>({
   setOrder: () => {},
   orderItem: {
     order_id: "",
-    type: "",
+    glassType: "",
     shape: "",
     dimensions: "",
     thickness: "",
@@ -82,7 +82,7 @@ export default function ProductContextProvider({
 
   const [orderItem, setOrderItem] = useState<OrderItem>({
     order_id: "",
-    type: "",
+    glassType: "",
     shape: "",
     dimensions: "",
     thickness: "",

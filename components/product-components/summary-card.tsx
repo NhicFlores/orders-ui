@@ -4,11 +4,17 @@ import { Card, CardContent, CardFooter, CardHeader } from "../ui/card";
 import { Button } from "../ui/button";
 import { useProductContext } from "./product-context-provider";
 
-
 function SummaryCard() {
   const { order, orderItem } = useProductContext();
 
-  const { type, shape, dimensions, thickness, tint, quantity } = orderItem;
+  const {
+    glassType: type,
+    shape,
+    dimensions,
+    thickness,
+    tint,
+    quantity,
+  } = orderItem;
   return (
     <Card className="w-full rounded-md text-center shadow-md ">
       <CardHeader className="bg-slate-200 rounded-md rounded-b-none">
@@ -40,7 +46,7 @@ function SummaryCard() {
             <div className="flex justify-between">
               <p>Quantity</p>
               <p>{quantity}</p>
-              </div>
+            </div>
           </div>
         </ScrollArea>
       </CardContent>
