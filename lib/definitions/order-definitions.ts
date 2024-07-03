@@ -31,37 +31,9 @@ export type OrderItem = {
   quantity: number;
 };
 
-export type OrderItemDB = {
+export type OrderItemDB = OrderItem &{
   id: string;
 };
-
-/*
-
-CREATE TABLE NewOrder (
-  id UUID PRIMARY KEY,
-  user_id UUID REFERENCES Users(id),
-  entered_by VARCHAR(255),
-  order_name VARCHAR(255) NOT NULL,
-  billing_info_id INTEGER REFERENCES BillingInfo(id),,
-  shipping_info TEXT NOT NULL, -- Assuming ShippingInfo is a JSON object
-  status VARCHAR(255) NOT NULL
-);
-
-CREATE TABLE OrderItem (
-  id UUID PRIMARY KEY,
-  order_id UUID REFERENCES NewOrder(id),
-  type VARCHAR(255) NOT NULL,
-  shape VARCHAR(255) NOT NULL,
-  dimensions VARCHAR(255) NOT NULL,
-  thickness VARCHAR(255) NOT NULL,
-  tint VARCHAR(255) NOT NULL,
-  fabrication_options VARCHAR(255),
-  misc_options VARCHAR(255),
-  note VARCHAR(255) NOT NULL,
-  quantity INTEGER NOT NULL
-);
-
-*/
 
 export type CustomerOrderTable = NewOrder & {
   id: string;

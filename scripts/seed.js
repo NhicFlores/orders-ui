@@ -8,45 +8,6 @@ const {
 } = require("@/lib/data/placeholder-data");
 const bcrypt = require("bcrypt");
 
-async function seedUsers(client) {
-  try {
-    await client.sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
-
-    const createTable = await client.sql`
-    CREATE TABLE IF NOT EXISTS users (
-      id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
-      email TEXT NOT NULL UNIQUE,
-      emailVerified DATE,
-      password TEXT NOT NULL,
-      role role DEFAULT 'USER' 
-    );
-      `;
-    console.log(`Created "users" table`);
-
-    // Insert data into the "users" table
-    const insertedUsers = await Promise.all(
-      users.map(async (user) => {
-        const hashedPassword = await bcrypt.hash(user.password, 10);
-        return client.sql`
-          INSERT INTO users (id, email, password)
-          VALUES (${user.id}, ${user.email}, ${hashedPassword})
-          ON CONFLICT (id) DO NOTHING;
-        `;
-      })
-    );
-
-    console.log(`Seeded ${insertedUsers.length} users`);
-
-    return {
-      createTable,
-      users: insertedUsers,
-    };
-  } catch (error) {
-    console.error("Error seeding users:", error);
-    throw error;
-  }
-}
-
 //NOTE TODO: finish token script
 async function seedToken(client) {
   try {
@@ -269,70 +230,6 @@ async function seedRevenue(client) {
   }
 }
 
-const billingInfoArray = [
-  {
-    user_id: "14e57592-e422-4da6-be3b-fba670ce498d",
-    billing_addr: {
-      street: "123 Main St",
-      apt_num: "Apt 1",
-      city: "New York",
-      state: "NY",
-      zip: "10001",
-      country: "USA",
-    },
-    payment_method: "Credit Card",
-    purchase_order: "PO12345",
-    primary_contact_name: "John Doe",
-    primary_contact_email: "john.doe@example.com",
-    phone_num: "123-456-7890",
-    alt_phone_num: "098-765-4321",
-    fax_num: "111-222-3333",
-  },
-  {
-    user_id: "14e57592-e422-4da6-be3b-fba670ce498d",
-    billing_addr: {
-      street: "456 Maple Ave",
-      apt_num: "Apt 2",
-      city: "Los Angeles",
-      state: "CA",
-      zip: "90001",
-      country: "USA",
-    },
-    payment_method: "Debit Card",
-    purchase_order: "PO23456",
-    primary_contact_name: "Jane Smith",
-    primary_contact_email: "jane.smith@example.com",
-    phone_num: "234-567-8901",
-    alt_phone_num: "109-876-5432",
-    fax_num: "222-333-4444",
-  },
-];
-
-async function seedBillingInfo(client) {
-  try {
-    const createTable = await client.sql`
-      CREATE TABLE billing_info (
-        id SERIAL PRIMARY KEY,
-        user_id UUID REFERENCES users(id),
-        billing_addr VARCHAR(255),
-        payment_method VARCHAR(255),
-        purchase_order VARCHAR(255),
-        primary_contact_name VARCHAR(255),
-        primary_contact_email VARCHAR(255),
-        phone_num VARCHAR(255),
-        alt_phone_num VARCHAR(255),
-        fax_num VARCHAR(255),
-        isPrimary BOOLEAN DEFAULT false,
-        isActive BOOLEAN DEFAULT true
-      );
-    `;
-    console.log(`Created "billing_info" table`);
-    return createTable;
-  } catch (error) {
-    console.error("Error seeding billing_info:", error);
-    throw error;
-  }
-}
 // NOTE TEST SEED FUNCTIONS
 async function seedTestConfig(client) {
   try {
@@ -415,59 +312,7 @@ main().catch((err) => {
   );
 });
 
-async function sqlStatements() {
-  try {
-    const createTables = await client.sql`
-    
-    DROP TABLE IF EXISTS shipping_info;
-    DROP TABLE IF EXISTS billing_info;
-    DROP TYPE IF EXISTS address;
-    DROP TABLE IF EXISTS user_profile;
-    DROP TABLE IF EXISTS users;
 
-    CREATE TABLE IF NOT EXISTS users (
-      id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
-      email TEXT NOT NULL UNIQUE,
-      emailVerified DATE,
-      password TEXT NOT NULL,
-      role role DEFAULT 'USER' 
-    );
-
-  CREATE TABLE user_profile (
-    id SERIAL PRIMARY KEY,
-    user_id UUID REFERENCES users(id),
-    name VARCHAR(255) NOT NULL,
-    company VARCHAR(255),
-    account_num VARCHAR(255),
-    phone_num VARCHAR(255)
-);
-CREATE TABLE shipping_info (
-  id SERIAL PRIMARY KEY,
-  user_id UUID REFERENCES users(id),
-  delivery_addr VARCHAR(255),
-  is_job_site BOOLEAN,
-  note TEXT
-);
-CREATE TABLE billing_info (
-  id SERIAL PRIMARY KEY,
-  user_id UUID REFERENCES users(id),
-  billing_addr VARCHAR(255),
-  payment_method VARCHAR(255),
-  purchase_order VARCHAR(255),
-  primary_contact_name VARCHAR(255),
-  primary_contact_email VARCHAR(255),
-  phone_num VARCHAR(255),
-  alt_phone_num VARCHAR(255),
-  fax_num VARCHAR(255),
-  isPrimary BOOLEAN DEFAULT false,
-  isActive BOOLEAN DEFAULT true
-);
-    `;
-  } catch (error) {
-    console.error("Error creating tables:", error);
-    throw error;
-  }
-}
 
 /**
  * -----------For testing purposes only-----------
