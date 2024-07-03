@@ -19,6 +19,7 @@ function SummaryCard() {
     <Card className="w-full rounded-md text-center shadow-md ">
       <CardHeader className="bg-slate-200 rounded-md rounded-b-none">
         <h1>{order.order_name}</h1>
+        <h1>Current Item</h1>
       </CardHeader>
       <CardContent className="min-h-[100px]">
         <ScrollArea className="whitespace-nowrap p-2">
