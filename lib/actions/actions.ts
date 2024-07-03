@@ -4,7 +4,7 @@ import { sql } from "@vercel/postgres";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { OrderRoute } from "@/routes";
-import { NewOrder, TestOrder } from "../definitions/order-definitions";
+import { Order, TestOrder } from "../definitions/order-definitions";
 
 //updating the data displayed in the orders route,
 //so we need to clear this cache and trigger a new request to the server
@@ -60,7 +60,7 @@ export type OrderFormState = {
   };
   message?: string | null;
 };
-// NOTE TODO: finish new order function 
+// NOTE TODO: finish new order function
 // export async function createNewOrder(order: NewOrder){
 //   const date = new Date().toISOString().split("T")[0];
 //   const { user_id, order_name, product_config, billing_info_id, shipping_info_id, status } = order;
@@ -78,7 +78,7 @@ export type OrderFormState = {
 //   }
 // }
 
-// create overload to handle create from summary card 
+// create overload to handle create from summary card
 export async function createOrder(
   prevState: OrderFormState,
   formData: FormData

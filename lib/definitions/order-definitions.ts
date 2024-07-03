@@ -9,7 +9,7 @@ export enum OrderStatus {
   Quote = "quote",
 }
 
-export type NewOrder = {
+export type Order = {
   user_id: string;
   entered_by?: string;
   order_name: string;
@@ -31,17 +31,17 @@ export type OrderItem = {
   quantity: number;
 };
 
-export type OrderItemDB = OrderItem &{
+export type OrderItemDB = OrderItem & {
   id: string;
 };
 
-export type CustomerOrderTable = NewOrder & {
+export type CustomerOrderTable = Order & {
   id: string;
   order_items: OrderItem[];
   date: string;
 };
 
-export type AdminOrderTable = NewOrder & {
+export type AdminOrderTable = Order & {
   id: string;
   customer_name?: string;
   order_items: OrderItem[];
@@ -77,21 +77,21 @@ export type Product = {
   price?: number;
 };
 // NOTE TODO: update types to be GlassType = Product & {shape_types: Shape[]}
-export type GlassType = Product &{
+export type GlassType = Product & {
   shape_types?: Shape[];
   thickness_options?: Thickness[];
   tint_types?: Tint[];
   misc_options?: MiscOptions[];
 };
 
-export type Shape = Product &{
+export type Shape = Product & {
   required_dimensions?: Dimension[];
   thickness_options?: Thickness[];
   tint_types?: Tint[];
   misc_options?: MiscOptions[];
 };
 
-export type Tint = Product &{
+export type Tint = Product & {
   misc_options?: MiscOptions[];
 };
 
@@ -107,7 +107,6 @@ export type Thickness = {
   tint_types?: Tint[];
   misc_options?: MiscOptions[];
 };
-
 
 export type FabricationOptions = {
   id?: string;

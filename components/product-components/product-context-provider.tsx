@@ -1,12 +1,10 @@
 "use client";
 import {
-  NewOrder,
+  Order,
   OrderItem,
   OrderStatus,
 } from "@/lib/definitions/order-definitions";
-import {
-  ProductContextType,
-} from "@/lib/definitions/product-context";
+import { ProductContextType } from "@/lib/definitions/product-context";
 import { createContext, useContext, useState } from "react";
 
 export const ProductContext = createContext<ProductContextType>({
@@ -62,7 +60,7 @@ export default function ProductContextProvider({
   //     activeSection: 'Glass Type',
   //     setActiveSection: () => {}
   // });
-  const [order, setOrder] = useState<NewOrder>({
+  const [order, setOrder] = useState<Order>({
     user_id: "",
     order_name: "untitled order",
     status: OrderStatus.Draft,
