@@ -118,8 +118,11 @@ async function seedUsers(client) {
             entered_by VARCHAR(255),
             order_name VARCHAR(255) NOT NULL,
             billing_info_id INTEGER REFERENCES billing_info(id),
-            shipping_info TEXT NOT NULL,
-            status VARCHAR(255) NOT NULL
+            shipping_info TEXT,
+            status VARCHAR(255) NOT NULL, 
+            date_created DATE NOT NULL,
+            date_updated DATE,
+            date_submitted DATE
         );
         `;
     } catch (error) {

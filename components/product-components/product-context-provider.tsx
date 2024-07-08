@@ -62,7 +62,7 @@ export default function ProductContextProvider({
   // });
   const [order, setOrder] = useState<Order>({
     user_id: "",
-    order_name: "untitled order",
+    order_name: "",
     status: OrderStatus.Draft,
     billing_info_id: "",
     shipping_info: {

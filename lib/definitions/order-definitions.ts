@@ -18,6 +18,13 @@ export type Order = {
   status: OrderStatus;
 };
 
+export type OrderDB = Order & {
+  id: string;
+  date_created: string;
+  date_updated: string;
+  date_submitted: string;
+};
+
 export type OrderItem = {
   order_id: string;
   glassType: string;
