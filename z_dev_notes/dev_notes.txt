@@ -124,6 +124,95 @@ combine context with useMemo and useCallback in context provider definitions so 
 don't trigger additional renders 
 https://thoughtspile.github.io/2021/10/04/react-context-dangers/ 
 
+
+updating state 
+
+- Q: can you explain the difference between the following two functions: 
+const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setOrder({ ...order, order_name: e.target.value });
+} 
+
+  const handleSelect = (configOption: string) => {
+setOrderItem((prev) => ({
+  ...prev,
+  glassType: configOption,
+}));
+
+A: The two functions, handleInputChange and handleSelect, serve different purposes and handle state updates in different ways within a React component. 
+Here's a breakdown of their differences:
+
+1: Purpose and Parameters:
+handleInputChange is designed to handle input change events, typically from an <input> element. It receives an event object (e) of type React.ChangeEvent<HTMLInputElement>, 
+which contains information about the change event, including the new value of the input.
+handleSelect, on the other hand, is designed to handle selection changes, possibly from a dropdown menu or a similar component. 
+It directly receives the selected option (configOption) as a string parameter.
+
+2. State Update Mechanism:
+handleInputChange directly updates the state by spreading the current order object and overriding the order_name property with the new value from the input field (e.target.value). This approach is straightforward and is used when the new state depends directly on the event's target value.
+handleSelect uses a functional update form to set the new state. It receives the previous state (prev) as a parameter and returns the new state. This pattern is particularly useful when the new state depends on the previous state. In this case, it spreads the previous orderItem state and updates the glassType property with the selected option.
+
+3. Use Cases:
+handleInputChange is typically used in text inputs where the user types in data. It's a common pattern for handling form inputs in React.
+handleSelect is more suited for handling selections from a list of options, such as dropdowns or radio buttons, where the value is directly provided rather than being part of an event object.
+
+4. State Being Updated:
+It's also worth noting that these functions update different pieces of state: handleInputChange updates an order object, specifically its order_name property, while handleSelect updates an orderItem object, specifically its glassType property. This implies they are managing different aspects of the application's state, possibly related to different parts of a form or different forms altogether.
+In summary, handleInputChange is tailored for text input changes, directly using the event's target value to update the state, while handleSelect is designed for selections, using the functional update form to safely update the state based on its previous value.
+
+
+- Q: can you go into more detail about how the functional update form works
+
+A: The functional update form in React is used to update the state based on the previous state in a more reliable way. 
+This approach is particularly useful when the new state depends on the old state. 
+It ensures that you are working with the most current state, especially in cases where state updates may be asynchronous or if there are multiple state updates happening in close succession.
+
+Here's a step-by-step explanation of how the functional update form works in the provided code snippet:
+
+Context and State Management: The code snippet is using a context (useProductContext) to manage global state across the application. 
+This context likely provides a way to update a specific part of the global state, in this case, the order item.
+
+The setOrderItem Function: This function is used to update the order item in the global state. It is obtained from the useProductContext hook, 
+indicating that setOrderItem is designed to modify the state related to the product order.
+
+Functional Update Syntax: When setOrderItem is called within handleSelect, it uses a function (prev => {...}) as its argument instead of 
+directly passing the new state object. This function receives the previous state (prev) as its parameter.
+
+Updating Based on Previous State: Inside the function, the previous state (prev) is spread (...prev) to copy all existing properties of the 
+order item into a new object. This ensures that all other properties of the order item remain unchanged except for the one being updated.
+
+Setting New State: The glassType property of the order item is then updated with the configOption argument passed to handleSelect. 
+This effectively creates a new state object for the order item, with the glassType property set to the selected option.
+
+Ensuring Current State: By using the functional update form, React guarantees that prev represents the most current state at the time of update, 
+even if there have been multiple setOrderItem calls or other state updates.
+
+Result: The result is a new state for the order item, with the updated glassType, which is then set as the new state through the context. 
+This method ensures that state updates are reliable and based on the most current state information.
+
+This approach is particularly useful in complex applications where state updates may depend on previous state values or when dealing with asynchronous state updates.
+
+
+- Q: would it be safer to use the functional update form pattern in the handleInputChange function? 
+
+Yes, using the functional update form is safer, especially when the new state depends on the old state. 
+This ensures that the state update is always based on the most current state, avoiding potential bugs 
+due to state updates being asynchronous. Here's how you can modify the handleInputChange function to use the functional update form:
+
+const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setOrder((currentOrder) => ({ ...currentOrder, order_name: e.target.value }));
+};
+
+The currentOrder variable in the handleInputChange function is defined as a parameter to the arrow function passed to setOrder. 
+This syntax is used for the functional update form of the state setter function (setOrder in this case) provided by React's useState 
+hook or a similar custom hook (like useProductContext in your code).
+
+Here's a breakdown of how it works:
+
+setOrder is a function that updates the state of order. It's provided by the useProductContext hook, which likely uses React's useState or useReducer under the hood to manage the state of the order.
+When you call setOrder with a function as an argument (instead of directly passing the new state), React invokes this function with the current state as its argument. This is what currentOrder represents.
+Inside this function, you can safely read currentOrder (which is the current state of order at the time the update is applied) and return the new state based on it. This pattern ensures that the update is always based on the most up-to-date state, avoiding potential issues with asynchronous state updates.
+In your specific case, currentOrder is not defined elsewhere in your code; it's dynamically provided by React at the time setOrder is called. This pattern is particularly useful when the new state depends on the old state, as it ensures that the update is always accurate, even if there have been other updates to the state in the meantime.
+
 ------------------------------------ NextJS ------------------------------------
 routing conventions 
 creating a folder with parenthesis allows you to create a shared layout, without adding another segment to the URL 

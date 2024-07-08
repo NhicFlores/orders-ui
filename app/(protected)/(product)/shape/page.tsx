@@ -1,27 +1,11 @@
-"use client";
-import { shapeOptions } from "@/lib/data/product-placeholder-data";
-import { useProductContext } from "@/components/product-components/product-context-provider";
 import ProductHeader from "@/components/product-components/product-header";
-import ProductGrid from "@/components/product-components/ProductGrid";
 import { DimensionRoute, GlassTypeRoute } from "@/routes";
+import ShapeGrid from "./shape-grid";
 
 const ShapePage = () => {
   console.log("xxxxxxxxxxxxxxxxxxxxxxxx");
   console.log("Shape Page Rendered");
   console.log("xxxxxxxxxxxxxxxxxxxxxxxx"); 
-  const { setOrderItem } = useProductContext();
-
-  const handleSelect = (configOption: string) => {
-    setOrderItem((prev) => ({
-      ...prev,
-      shape: configOption,
-    }));
-
-    // console.log("selected shape: ", configOption);
-    // console.log("order: ", order);
-    // console.log("summaryCard: ", summaryCard);
-  };
-
   // const productList = shapeOptions.map((shape) => {
   //   return {
   //     id: shape.id,
@@ -41,7 +25,7 @@ const ShapePage = () => {
         backRoute={GlassTypeRoute.href}
         continueRoute={DimensionRoute.href}
       />
-      <ProductGrid productList={shapeOptions} onSelect={handleSelect}  nextConfigRoute={DimensionRoute.href}/>
+      <ShapeGrid />
     </div>
   );
 };

@@ -1,37 +1,26 @@
-"use client";
-import { tintOptions } from "@/lib/data/product-placeholder-data";
-import { useProductContext } from '@/components/product-components/product-context-provider';
 import ProductHeader from '@/components/product-components/product-header';
-import ProductGrid from '@/components/product-components/ProductGrid';
 import { GlassThicknessRoute, OrderSummaryRoute } from '@/routes';
-import { useState } from "react";
+import TintGrid from './tint-grid';
+
 
 const TintPage = () => {
   // console.log("xxxxxxxxxxxxxxxxxxxxxxxx");
   // console.log("Tint Page Rendered");
   // console.log("xxxxxxxxxxxxxxxxxxxxxxxx"); 
-  const { setOrderItem, setOrderItems } = useProductContext();
   // const [count , setCount] = useState(0);
 
-  const handleSelect = (tint: string) => {
-    console.log("------------- Tint Selected: handleSelect called ------------");
-    // setOrderItem((prev) => ({ ...prev, tint }));
-    // orderItems.push(orderItem); // this is bad practice because it mutates the state
-    //setOrderItems((prev) => [...prev, orderItem]);
+  // const handleSelect = (tint: string) => {
+  //   console.log("------------- Tint Selected: handleSelect called ------------");
+  //   // setOrderItem((prev) => ({ ...prev, tint }));
+  //   // orderItems.push(orderItem); // this is bad practice because it mutates the state
+  //   //setOrderItems((prev) => [...prev, orderItem]);
 
-    setOrderItem((prev) => {
-      const updatedOrderItem = { ...prev, tint: tint };
-      // Update orderItems with the updatedOrderItem
-      setOrderItems((prevItems) => [...prevItems, updatedOrderItem]);
-      return updatedOrderItem;
-    });
-
-     // Check if the orderItem already exists in the array to avoid duplicates
-    // if (!orderItems.some(item => item === orderItem)) {
-    //   setOrderItems(prev => [...prev, updatedOrderItem]);
-    // }
-    // setCount((prevCount) => prevCount + 1);
-  };
+  //    // Check if the orderItem already exists in the array to avoid duplicates
+  //   // if (!orderItems.some(item => item === orderItem)) {
+  //   //   setOrderItems(prev => [...prev, updatedOrderItem]);
+  //   // }
+  //   // setCount((prevCount) => prevCount + 1);
+  // };
 
   // console.log("xxxxxxxxxxxxxxxxxxxxxxxx");
   // console.log("COUNT: ", count);
@@ -40,7 +29,7 @@ const TintPage = () => {
   return (
     <div className='container p-4 space-y-4'>
       <ProductHeader title="Select Tint" backRoute={GlassThicknessRoute.href} continueRoute={OrderSummaryRoute.href}/>
-      <ProductGrid productList={tintOptions} onSelect={handleSelect} nextConfigRoute={OrderSummaryRoute.href}/>
+      <TintGrid/>
     </div>
   )
 }

@@ -1,11 +1,8 @@
-"use client";
-import React, { useEffect } from "react";
-import ProductGrid from "@/components/product-components/ProductGrid";
+import React from "react";
 import ProductHeader from "@/components/product-components/product-header";
 import { NewOrderNameRoute, ShapeRoute } from "@/routes";
 import ProductFooter from "@/components/product-components/product-footer";
-import { useProductContext } from "@/components/product-components/product-context-provider";
-import { glassTypes } from "@/lib/data/product-placeholder-data";
+import GlassTypeGrid from "./glass-type-grid";
 
 const GlassTypePage = () => {
   console.log("xxxxxxxxxxxxxxxxxxxxxxxx");
@@ -20,14 +17,6 @@ const GlassTypePage = () => {
   // this could all be done on a single page with one component
   // if the render array is being monitored by state
 
-  const { setOrderItem } = useProductContext();
-
-  const handleSelect = (configOption: string) => {
-    setOrderItem((prev) => ({
-      ...prev,
-      glassType: configOption,
-    }));
-  };
 
   // useEffect(() => {
   //   fetchGlassTypes();
@@ -46,11 +35,7 @@ const GlassTypePage = () => {
         backRoute={NewOrderNameRoute.href}
         continueRoute={ShapeRoute.href}
       />
-      <ProductGrid
-        productList={glassTypes}
-        onSelect={handleSelect}
-        nextConfigRoute={ShapeRoute.href}
-      />
+      <GlassTypeGrid />
       <ProductFooter />
     </div>
   );

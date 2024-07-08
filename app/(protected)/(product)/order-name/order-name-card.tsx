@@ -10,7 +10,7 @@ export default function OrderNameCard() {
     const { order, setOrder } = useProductContext();
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setOrder((currentOrder) => ({ ...currentOrder, order_name: e.target.value }));
+        setOrder((prevOrder) => ({ ...prevOrder, order_name: e.target.value }));
     }
 
     return (
@@ -21,7 +21,7 @@ export default function OrderNameCard() {
             Give your order a descriptive name to stay organized
           </p>
         </div>
-        <Input placeholder="Order Name" onChange={handleInputChange}/>
+        <Input placeholder="Order Name" onChange={handleInputChange} value={order.order_name}/>
         <div>
           <Link href={GlassTypeRoute.href}>
             <Button>Next</Button>
