@@ -1,14 +1,12 @@
 const { db } = require("@vercel/postgres");
-const {
-  users,
-} = require("@/lib/data/placeholder-data");
+const { users } = require("@/lib/data/placeholder-data");
 const bcrypt = require("bcrypt");
 
 async function seedUsers(client) {
-    try {
-      await client.sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
-        //TODO: extendable permissions object for case-by-case basis
-      const createTable = await client.sql`
+  try {
+    await client.sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
+    //TODO: extendable permissions object for case-by-case basis
+    const createTable = await client.sql`
       CREATE TABLE IF NOT EXISTS users (
         id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
         email TEXT NOT NULL UNIQUE,
@@ -17,35 +15,35 @@ async function seedUsers(client) {
         role role DEFAULT 'USER' 
       );
         `;
-      console.log(`Created "users" table`);
-  
-      // Insert data into the "users" table
-      const insertedUsers = await Promise.all(
-        users.map(async (user) => {
-          const hashedPassword = await bcrypt.hash(user.password, 10);
-          return client.sql`
+    console.log(`Created "users" table`);
+
+    // Insert data into the "users" table
+    const insertedUsers = await Promise.all(
+      users.map(async (user) => {
+        const hashedPassword = await bcrypt.hash(user.password, 10);
+        return client.sql`
             INSERT INTO users (id, email, password)
             VALUES (${user.id}, ${user.email}, ${hashedPassword})
             ON CONFLICT (id) DO NOTHING;
           `;
-        })
-      );
-  
-      console.log(`Seeded ${insertedUsers.length} users`);
-  
-      return {
-        createTable,
-        users: insertedUsers,
-      };
-    } catch (error) {
-      console.error("Error seeding users:", error);
-      throw error;
-    }
-  }
+      })
+    );
 
-  async function seedUserProfiles(client) {
-    try {
-        const createTable = await client.sql`
+    console.log(`Seeded ${insertedUsers.length} users`);
+
+    return {
+      createTable,
+      users: insertedUsers,
+    };
+  } catch (error) {
+    console.error("Error seeding users:", error);
+    throw error;
+  }
+}
+
+async function seedUserProfiles(client) {
+  try {
+    const createTable = await client.sql`
           CREATE TABLE user_profile (
             id SERIAL PRIMARY KEY,
             user_id UUID REFERENCES users(id),
@@ -55,20 +53,20 @@ async function seedUsers(client) {
             phone_num VARCHAR(255)
           );
         `;
-        console.log(`Created "user_profile" table`);
+    console.log(`Created "user_profile" table`);
 
-        //here we can seed placeholder data 
+    //here we can seed placeholder data
 
-        return createTable;
-    } catch (error) {
-        console.error("Error seeding user_profile:", error);
-        throw error;
-    }
+    return createTable;
+  } catch (error) {
+    console.error("Error seeding user_profile:", error);
+    throw error;
   }
+}
 
-  async function seedShippingInfo(client) {
-    try{
-        const createTable = await client.sql`
+async function seedShippingInfo(client) {
+  try {
+    const createTable = await client.sql`
           CREATE TABLE shipping_info (
             id SERIAL PRIMARY KEY,
             user_id UUID REFERENCES users(id),
@@ -77,15 +75,15 @@ async function seedUsers(client) {
             note TEXT
           );
         `;
-    } catch (error) {
-        console.error("Error seeding shipping_info:", error);
-        throw error;
-    }
+  } catch (error) {
+    console.error("Error seeding shipping_info:", error);
+    throw error;
   }
-  
-  async function seedBillingInfo(client) {
-    try {
-      const createTable = await client.sql`
+}
+
+async function seedBillingInfo(client) {
+  try {
+    const createTable = await client.sql`
         CREATE TABLE billing_info (
           id SERIAL PRIMARY KEY,
           user_id UUID REFERENCES users(id),
@@ -101,17 +99,18 @@ async function seedUsers(client) {
           isActive BOOLEAN DEFAULT true
         );
       `;
-      console.log(`Created "billing_info" table`);
-      return createTable;
-    } catch (error) {
-      console.error("Error seeding billing_info:", error);
-      throw error;
-    }
+    console.log(`Created "billing_info" table`);
+    return createTable;
+  } catch (error) {
+    console.error("Error seeding billing_info:", error);
+    throw error;
   }
+}
 
-  async function seedOrders(client) {
-    try{
-        const createTable = await client.sql`
+async function seedOrders(client) {
+  try {
+    await client.sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
+    const createTable = await client.sql`
           CREATE TABLE orders (
             id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
             user_id UUID REFERENCES users(id),
@@ -125,15 +124,15 @@ async function seedUsers(client) {
             date_submitted DATE
         );
         `;
-    } catch (error) {
-        console.error("Error seeding orders:", error);
-        throw error;
-    }
+  } catch (error) {
+    console.error("Error seeding orders:", error);
+    throw error;
   }
+}
 
-  async function seedOrderItems(client) {
-    try{
-        const createTable = await client.sql`
+async function seedOrderItems(client) {
+  try {
+    const createTable = await client.sql`
           CREATE TABLE order_items (
             id SERIAL PRIMARY KEY,
             order_id UUID REFERENCES orders(id),
@@ -148,34 +147,33 @@ async function seedUsers(client) {
             quantity INTEGER NOT NULL
         );
         `;
-    } catch (error) {
-        console.error("Error seeding order items:", error);
-        throw error;
-    }
+  } catch (error) {
+    console.error("Error seeding order items:", error);
+    throw error;
   }
+}
 
+async function main() {
+  const client = await db.connect();
 
-  async function main() {
-    const client = await db.connect();
-  
-    await seedUsers(client);
-    await seedOrders(client);
+  await seedUsers(client);
+  await seedOrders(client);
 
-    await client.end();
-  }
-  
-  main().catch((err) => {
-    console.error(
-      "An error occurred while attempting to seed the database:",
-      err
-    );
-  });
+  await client.end();
+}
 
-  // all the tables that have been created 
+main().catch((err) => {
+  console.error(
+    "An error occurred while attempting to seed the database:",
+    err
+  );
+});
 
-  async function sqlStatements() {
-    try {
-      const createTables = await client.sql`
+// all the tables that have been created
+
+async function sqlStatements() {
+  try {
+    const createTables = await client.sql`
       
       DROP TABLE IF EXISTS shipping_info;
       DROP TABLE IF EXISTS billing_info;
@@ -223,8 +221,8 @@ async function seedUsers(client) {
       isActive BOOLEAN DEFAULT true
     );
       `;
-    } catch (error) {
-      console.error("Error creating tables:", error);
-      throw error;
-    }
+  } catch (error) {
+    console.error("Error creating tables:", error);
+    throw error;
   }
+}
