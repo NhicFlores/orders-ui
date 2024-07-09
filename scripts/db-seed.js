@@ -113,7 +113,7 @@ async function seedUsers(client) {
     try{
         const createTable = await client.sql`
           CREATE TABLE orders (
-            id UUID PRIMARY KEY,
+            id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
             user_id UUID REFERENCES users(id),
             entered_by VARCHAR(255),
             order_name VARCHAR(255) NOT NULL,
@@ -135,7 +135,7 @@ async function seedUsers(client) {
     try{
         const createTable = await client.sql`
           CREATE TABLE order_items (
-            id UUID PRIMARY KEY,
+            id SERIAL PRIMARY KEY,
             order_id UUID REFERENCES orders(id),
             glass_type VARCHAR(255) NOT NULL,
             shape VARCHAR(255) NOT NULL,

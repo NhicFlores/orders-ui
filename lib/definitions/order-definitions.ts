@@ -10,7 +10,6 @@ export enum OrderStatus {
 }
 
 export type Order = {
-  user_id: string;
   entered_by?: string;
   order_name: string;
   billing_info_id: string; //billing info id
@@ -20,6 +19,7 @@ export type Order = {
 
 export type OrderDB = Order & {
   id: string;
+  user_id: string;
   date_created: string;
   date_updated: string;
   date_submitted: string;

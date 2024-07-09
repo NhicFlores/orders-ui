@@ -7,7 +7,7 @@ const ProductLayout = ({ children }: { children: React.ReactNode }) => {
   //className='bg-gray-100 basis-4/6'
   //call back for selection ids
   //pass ids to calculator
-  const showProductNav = true;
+  const showProductNav = false;
   return (
     <ProductContextProvider>
       <main className="flex flex-1">

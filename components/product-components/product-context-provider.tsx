@@ -9,7 +9,6 @@ import { createContext, useContext, useState } from "react";
 
 export const ProductContext = createContext<ProductContextType>({
   order: {
-    user_id: "",
     order_name: "",
     status: OrderStatus.Pending,
     billing_info_id: "",
@@ -61,7 +60,6 @@ export default function ProductContextProvider({
   //     setActiveSection: () => {}
   // });
   const [order, setOrder] = useState<Order>({
-    user_id: "",
     order_name: "",
     status: OrderStatus.Draft,
     billing_info_id: "",

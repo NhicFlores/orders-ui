@@ -19,6 +19,7 @@ import {
 } from "@/components/ui/table";
 import { CheckoutRoute, GlassTypeRoute } from "@/routes";
 import Link from "next/link";
+import { createOrderDraft } from "../actions";
 
 function QuantitySelector() {
   const { updateOrderItemQuantity } = useProductContext();
@@ -47,7 +48,8 @@ export default function OrderSummary() {
   // console.log("Order Summary Component Rendered");
   // console.log("xxxxxxxxxxxxxxxxxxxxxxxx");
 
-  const { orderItem, orderItems, setOrderItems } = useProductContext();
+  //NOTE TODO SAVE DRAFT BUTTON
+  const { order, orderItem, orderItems, setOrderItems } = useProductContext();
 
   console.log("---------- Order Summary Component ----------");
   console.log("---------- order items array ----------");
@@ -103,7 +105,13 @@ export default function OrderSummary() {
         <Link href={GlassTypeRoute.href}>
           <Button>Add Item</Button>
         </Link>
-        <Button>Save Draft</Button>
+        <form action={async () => {
+          
+          const response = await createOrderDraft(order, orderItems);
+          console.log(response);
+        }}>
+          <Button>Save Draft</Button>
+        </form>
       </div>
       {orderItems.length > 0 && (
         <div className="border rounded-md p-4">
