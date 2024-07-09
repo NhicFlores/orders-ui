@@ -17,7 +17,7 @@ export default async function CheckoutPage() {
         continueRoute=""
       />
       <div className="border rounded-md bg-white p-4 space-y-4">
-        <PaymentSection user_id={session?.user.id as string} billingOptions={billingOptions}/>
+        <PaymentSection billingOptions={billingOptions}/>
         <ShippingSection />
       </div>
     </main>

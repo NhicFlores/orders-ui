@@ -8,12 +8,10 @@ import { BillingInfoDB } from "@/lib/definitions/profile-definitions";
 import { useState } from "react";
 
 interface BillingFormWrapperProps {
-  user_id: string;
   billing_data: BillingInfoDB[];
 }
 
 const BillingFormWrapper = ({
-  user_id,
   billing_data,
 }: BillingFormWrapperProps) => {
   const [isNewBillingInfo, setIsNewBillingInfo] = useState(false);
@@ -40,7 +38,7 @@ const BillingFormWrapper = ({
       </div>
       <div>
         {isNewBillingInfo && (
-          <BillingForm user_id={user_id} isNewForm={isNewBillingInfo} toggleNewBillingForm={toggleNewBillingForm}/>
+          <BillingForm isNewForm={isNewBillingInfo} toggleNewBillingForm={toggleNewBillingForm}/>
         )}
       </div>
       <div>
@@ -49,7 +47,6 @@ const BillingFormWrapper = ({
           <BillingOptionTable
             columns={BillingInfoColumns}
             data={billing_data}
-            user_id={user_id}
           />
         )}
       </div>

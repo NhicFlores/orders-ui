@@ -12,12 +12,10 @@ import { BillingInfoDB } from "@/lib/definitions/profile-definitions";
 import { useState } from "react";
 
 interface PaymentSectionProps {
-  user_id: string;
   billingOptions: BillingInfoDB[];
 }
 
 export default function PaymentSection({
-  user_id,
   billingOptions,
 }: PaymentSectionProps) {
   const [showPaymentForm, setShowPaymentForm] = useState(false);
@@ -52,7 +50,7 @@ export default function PaymentSection({
           Add Payment Option
         </Button>
       </div>
-      {showPaymentForm && <BillingForm user_id={user_id} isNewForm={showPaymentForm}/>}
+      {showPaymentForm && <BillingForm isNewForm={showPaymentForm}/>}
     </div>
   );
 }

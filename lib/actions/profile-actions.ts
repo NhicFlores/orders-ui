@@ -1,4 +1,5 @@
 "use server";
+import { auth } from "@/auth";
 import { BillingRoute, ProfileRoute } from "@/routes";
 import {
   BillingInfoSchema,
@@ -109,14 +110,20 @@ export async function deleteProfile(user_id: string) {
 
 /**
  * this function creates a new billing info object in the database
- * @param user_id current use id
  * @param formFields values from the billing info form
  * @returns
  */
 export async function createBillingInfo(
-  user_id: string,
   formFields: z.infer<typeof BillingInfoSchema>
 ) {
+
+  const session = await auth();
+  if (!session?.user.id) {
+    return redirect("/login");
+  }
+
+  const user_id = session.user.id;
+
   const validatedFields = BillingInfoSchema.safeParse(formFields);
 
   if (!validatedFields.success) {
@@ -249,7 +256,6 @@ export async function insertBillingInfo() {
  * @returns
  */
 export async function updateBillingInfo(
-  user_id: string,
   billing_info_id: number,
   formFields: z.infer<typeof BillingInfoSchema>
 ) {
@@ -262,6 +268,13 @@ export async function updateBillingInfo(
       message: "Missing Fields. Failed to update Billing Info",
     };
   }
+
+  const session = await auth();
+  if (!session?.user.id) {
+    return redirect("/login");
+  }
+
+  const user_id = session.user.id;
 
   const {
     billing_addr,

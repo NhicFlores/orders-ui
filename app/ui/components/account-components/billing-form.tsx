@@ -24,14 +24,12 @@ import {
 import { BillingInfo, BillingInfoDB } from "@/lib/definitions/profile-definitions";
 
 interface BillingFormProps {
-  user_id: string;
   billing_info?: BillingInfoDB;
   isNewForm?: boolean;
   toggleNewBillingForm?: () => void;
 }
 
 const BillingForm = ({
-  user_id,
   billing_info = {} as BillingInfoDB,
   isNewForm,
   toggleNewBillingForm,
@@ -97,8 +95,8 @@ const BillingForm = ({
     //console.log("xxxx submit handler xxxx");
 
     isNewForm ? 
-      createBillingInfo(user_id, data)
-      : updateBillingInfo(user_id, id, data);
+      createBillingInfo(data)
+      : updateBillingInfo(id, data);
     setIsEditEnabled(!isEditEnabled);
     toggleNewBillingForm && toggleNewBillingForm();
     //console.log(data);

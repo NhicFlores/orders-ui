@@ -37,13 +37,11 @@ import { ChevronDown } from "lucide-react";
 interface BillingOptionTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
   data: TData[];
-  user_id: string;
 }
 
 export function BillingOptionTable<TData, TValue>({
   columns,
   data,
-  user_id,
 }: BillingOptionTableProps<TData, TValue>) {
   const [sorting, setSorting] = React.useState<SortingState>([]);
 
@@ -119,7 +117,6 @@ export function BillingOptionTable<TData, TValue>({
                           colSpan={row.getVisibleCells().length}
                         >
                           <BillingForm
-                            user_id={user_id}
                             billing_info={row.original as BillingInfoDB}
                           />
                         </td>
