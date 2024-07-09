@@ -345,6 +345,30 @@ export async function getBillingInfoById(user_id: string) {
   }
 }
 
+i was getting the following error and over looked what the message was saying: 
+Type '(e: React.ChangeEvent<HTMLSelectElement>) => void' is not assignable to type '(value: string) => void'.
+  Types of parameters 'e' and 'value' are incompatible.
+    Type 'string' is not assignable to type 'ChangeEvent<HTMLSelectElement>'.ts(2322)
+index.d.mts(14, 5): The expected type comes from property 'onValueChange' which is declared here on type 'IntrinsicAttributes & SelectProps'
+
+this was thrown by <Select onValueChange={handlePaymentOptionChange}> 
+where handlePaymentOptionChange was defined as 
+  const handlePaymentOptionChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const selectedBillingOption = billingOptions.find(
+      (billingOption) => billingOption.id === Number(e.target.value)
+    );
+    setOrder((prevOrder) => ({
+      ...prevOrder,
+      billing_option: selectedBillingOption,
+    }));
+  };
+
+  what the error was saying was that onValueChange expects a function of type (value: string) => void
+  and i was giving it a function of type (e: React.ChangeEvent<HTMLSelectElement>) => void 
+
+  the Select component used here is a custom component that handles its own state and passes the value 
+  directly to the function, bypassing the need to handle the event and event.target ourselves 
+
 ------------------------------------ JavaScript ------------------------------------
 .slice() can be used to create a copy of an array 
 nextSquares = Squares.slice()

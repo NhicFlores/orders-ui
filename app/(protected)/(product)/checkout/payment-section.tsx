@@ -1,5 +1,6 @@
 "use client";
 import BillingForm from "@/app/ui/components/account-components/billing-form";
+import { useProductContext } from "@/components/product-components/product-context-provider";
 import { Button } from "@/components/ui/button";
 import {
   Select,
@@ -20,11 +21,23 @@ export default function PaymentSection({
 }: PaymentSectionProps) {
   const [showPaymentForm, setShowPaymentForm] = useState(false);
 
+  const { order, setOrder } = useProductContext();
+
+  const handlePaymentOptionChange = (value: string) => {
+    const selectedBillingOption = billingOptions.find(
+      (billingOption) => billingOption.id === Number(value)
+    );
+    setOrder((prevOrder) => ({
+      ...prevOrder,
+      billing_option: selectedBillingOption,
+    }));
+  };
+
   return (
     <div className="border rounded-md p-4 space-y-4">
       <div className="text-lg font-bold">Enter Payment Option</div>
       <div className="flex space-x-2">
-        <Select>
+        <Select onValueChange={handlePaymentOptionChange}>
           <SelectTrigger>
             <SelectValue placeholder="Select Payment Option" />
           </SelectTrigger>
