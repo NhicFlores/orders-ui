@@ -2,7 +2,6 @@
 "use client";
 
 import { ColumnDef, RowExpanding } from "@tanstack/react-table";
-import { Order_DEPRECATED } from "@/lib/definitions/definitions";
 import { ArrowUpDown, MoreHorizontal } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
@@ -17,6 +16,7 @@ import {
 import Link from "next/link";
 import { deleteOrder } from "@/lib/actions/actions";
 import { formatDateToLocal } from "@/lib/utils";
+import { OrderDB } from "@/lib/definitions/order-definitions";
 
 //NOTE TODO: enable shift select
 //NOTE TODO: draft form: save button with empty fields
@@ -38,7 +38,7 @@ import { formatDateToLocal } from "@/lib/utils";
 //     date: string;
 // };
 
-export const DraftColumns: ColumnDef<Order_DEPRECATED>[] = [
+export const DraftColumns: ColumnDef<OrderDB>[] = [
   {
     id: "select",
     header: ({ table }) => (
@@ -100,20 +100,6 @@ export const DraftColumns: ColumnDef<Order_DEPRECATED>[] = [
     },
   },
   {
-    accessorKey: "customer_id",
-    header: ({ column }) => {
-      return (
-        <Button
-          variant={"ghost"}
-          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-        >
-          Customer
-          <ArrowUpDown className="ml-2 h-4 w-4" />
-        </Button>
-      );
-    },
-  },
-  {
     accessorKey: "order_name",
     header: ({ column }) => {
       return (
@@ -127,58 +113,31 @@ export const DraftColumns: ColumnDef<Order_DEPRECATED>[] = [
       );
     },
   },
+  //NOTE TODO: product id's should all be changed to product description: we'll use order_item on backend
+  // {
+  //   accessorKey: "price",
+  //   header: ({ column }) => {
+  //     return (
+  //       <Button
+  //         variant={"ghost"}
+  //         onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+  //       >
+  //         <div className="text-right">Total</div>
+  //         <ArrowUpDown className="ml-2 h-4 w-4" />
+  //       </Button>
+  //     );
+  //   },
+  //   cell: ({ row }) => {
+  //     const price = parseFloat(row.getValue("price"));
+  //     const formatted = new Intl.NumberFormat("en-US", {
+  //       style: "currency",
+  //       currency: "USD",
+  //     }).format(price);
+  //     return <div className="text-right pr-5 font-medium">{formatted}</div>;
+  //   },
+  // },
   {
-    accessorKey: "product_id", //NOTE TODO: product id's should all be changed to product description: we'll use order_item on backend
-    header: ({ column }) => {
-      return (
-        <Button
-          variant={"ghost"}
-          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-        >
-          Product
-          <ArrowUpDown className="ml-2 h-4 w-4" />
-        </Button>
-      );
-    },
-  },
-  {
-    accessorKey: "quantity",
-    header: ({ column }) => {
-      return (
-        <Button
-          variant={"ghost"}
-          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-        >
-          Quantity
-          <ArrowUpDown className="ml-2 h-4 w-4" />
-        </Button>
-      );
-    },
-  },
-  {
-    accessorKey: "price",
-    header: ({ column }) => {
-      return (
-        <Button
-          variant={"ghost"}
-          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-        >
-          <div className="text-right">Total</div>
-          <ArrowUpDown className="ml-2 h-4 w-4" />
-        </Button>
-      );
-    },
-    cell: ({ row }) => {
-      const price = parseFloat(row.getValue("price"));
-      const formatted = new Intl.NumberFormat("en-US", {
-        style: "currency",
-        currency: "USD",
-      }).format(price);
-      return <div className="text-right pr-5 font-medium">{formatted}</div>;
-    },
-  },
-  {
-    accessorKey: "date",
+    accessorKey: "date_created",
     header: ({ column }) => {
       return (
         <Button
@@ -191,7 +150,7 @@ export const DraftColumns: ColumnDef<Order_DEPRECATED>[] = [
       );
     },
     cell: ({ row }) => {
-      const date = row.getValue("date"); //NOTE TO DO: casting vs conversion
+      const date = row.getValue("date_created"); //NOTE TO DO: casting vs conversion
       const formattedDate = formatDateToLocal(date as string);
       return <div>{formattedDate}</div>;
     },

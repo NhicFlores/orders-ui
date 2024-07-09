@@ -1,8 +1,8 @@
 //drafts route
 
-import { fetchDraftOrders } from "@/lib/data/data";
 import { DataTable } from "../../ui/components/data-table";
 import { DraftColumns } from "./draft-columns";
+import { fetchDraftOrders } from "./queries";
 
 export default async function Page() {
   const data = await fetchDraftOrders();

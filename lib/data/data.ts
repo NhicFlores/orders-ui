@@ -61,7 +61,8 @@ export async function fetchDraftOrders() {
       SELECT * FROM orders
       WHERE orders.status = ${OrderStatus.Draft}
     `;
-    console.log("got the drafts");
+    // console.log("got the drafts");
+    // console.log(data.rows);
     return data.rows;
   } catch (error) {
     console.error("Database Error: ", error);

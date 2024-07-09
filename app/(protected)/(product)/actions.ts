@@ -20,10 +20,10 @@ export async function createOrderDraft(order: Order, orderItems: OrderItem[]) {
         VALUES (${session.user.id}, ${order_name}, ${status}, ${date_created})
         RETURNING id
       `;
-    console.log("xxxxxxxxx Order inserted xxxxxxxxx");
-    console.log(queryResult);
-    orderId = queryResult.rows[0].id; // Assuming the id is returned as the first element
-    console.log(orderId);
+    // console.log("xxxxxxxxx Order inserted xxxxxxxxx");
+    // console.log(queryResult);
+    // orderId = queryResult.rows[0].id; // Assuming the id is returned as the first element
+    // console.log(orderId);
     // Insert each order item using the orderId
     for (const item of orderItems) {
       const {
