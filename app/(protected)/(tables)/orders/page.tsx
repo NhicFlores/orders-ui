@@ -3,7 +3,7 @@
 
 //className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-4 lg:grid-cols-8"
 import { OrderColumns } from "./columns";
-import { DataTable } from "../../ui/components/data-table";
+import { DataTable } from "../../../ui/components/data-table";
 import { fetchOrders } from "@/lib/data/data";
 import { NewOrderButton } from "@/app/ui/components/new-order-button";
 /*async function fetchOrders(): Promise<Order[]> {

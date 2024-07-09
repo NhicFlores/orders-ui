@@ -1,9 +1,9 @@
 //drafts route
 
 import { OrderStatus } from "@/lib/definitions/order-definitions";
-import { DataTable } from "../../ui/components/data-table";
+import { DataTable } from "../../../ui/components/data-table";
 import { DraftColumns } from "./draft-columns";
-import { fetchOrdersByStatus } from "./queries";
+import { fetchOrdersByStatus } from "../queries";
 
 export default async function Page() {
   const data = await fetchOrdersByStatus(OrderStatus.Draft);

@@ -16,7 +16,7 @@ export const DashboardRoute = {
   href: "/dashboard",
 };
 
-// lookup routes
+// table routes
 export const QuoteRoute = {
   label: "Quotes",
   href: "/quote",
@@ -36,7 +36,7 @@ export const EditOrderRoute = {
 
 export const OrderRoute = {
   label: "Orders",
-  href: "/order",
+  href: "/orders",
 };
 
 export const DraftRoute = {
@@ -117,7 +117,7 @@ export const DashboardNavLinks = [
   },
   {
     label: "Check Order Status",
-    href: "/order",
+    href: OrderRoute.href,
   },
   TemplatesRoute,
 ];
@@ -152,6 +152,7 @@ export const privateRoutes = [
     "/profile",
     "/quote",
     "/order",
+    "/orders",
     "/drafts",
     "/dashboard",
 ]

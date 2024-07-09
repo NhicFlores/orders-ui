@@ -1,7 +1,7 @@
 //quote route
 
 import { fetchQuote } from "@/lib/data/data";
-import { DataTable } from "../../ui/components/data-table";
+import { DataTable } from "@/app/ui/components/data-table"
 import { QuoteColumns } from "./quote-columns";
 
 export default async function Page() {
