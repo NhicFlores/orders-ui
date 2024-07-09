@@ -20,7 +20,7 @@ import { formatDateToLocal } from "@/lib/utils";
 
 //NOTE TODO: enable shift select
 //NOTE TODO: draft form: save button with empty fields
-//NOTE TODO: for conditional columns: concatonate arrays
+//NOTE TODO: for conditional columns: concatenate arrays
 //NOTE: client columns depend on how we want them to use the app
 //will they want to be able to put their own customer names attached to the order so they know where glass is going
 //more than likely, they'll keep that on their own systems, so PO is the column that they'll want
