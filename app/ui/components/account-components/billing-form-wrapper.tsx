@@ -17,7 +17,7 @@ const BillingFormWrapper = ({
   const [isNewBillingInfo, setIsNewBillingInfo] = useState(false);
 
   // NOTE TODO: pass this function to the billing form component
-  function toggleNewBillingForm() {
+  function toggleBillingForm() {
     setIsNewBillingInfo(!isNewBillingInfo);
   }
 
@@ -25,7 +25,7 @@ const BillingFormWrapper = ({
     <div>
       <div className="w-full border-b-2 mb-4 flex justify-between">
         <h1 className="text-2xl font-bold">Billing Options</h1>
-        <Button className="mb-1" onClick={toggleNewBillingForm}>
+        <Button className="mb-1" onClick={toggleBillingForm}>
           {isNewBillingInfo ? (
             <div>View Payment Options</div>
           ) : (
@@ -38,7 +38,7 @@ const BillingFormWrapper = ({
       </div>
       <div>
         {isNewBillingInfo && (
-          <BillingForm isNewForm={isNewBillingInfo} toggleNewBillingForm={toggleNewBillingForm}/>
+          <BillingForm isBlankForm={isNewBillingInfo} toggleBillingForm={toggleBillingForm}/>
         )}
       </div>
       <div>

@@ -25,16 +25,16 @@ import { BillingInfo, BillingInfoDB } from "@/lib/definitions/profile-definition
 
 interface BillingFormProps {
   billing_info?: BillingInfoDB;
-  isNewForm?: boolean;
-  toggleNewBillingForm?: () => void;
+  isBlankForm?: boolean;
+  toggleBillingForm?: () => void;
 }
 
 const BillingForm = ({
   billing_info = {} as BillingInfoDB,
-  isNewForm,
-  toggleNewBillingForm,
+  isBlankForm,
+  toggleBillingForm,
 }: BillingFormProps) => {
-  const [isEditEnabled, setIsEditEnabled] = useState(isNewForm);
+  const [isEditEnabled, setIsEditEnabled] = useState(isBlankForm);
   const [saveButtonDisabled, setSaveButtonDisabled] = useState(true);
 
   function ToggleEditEnabled() {
@@ -94,11 +94,11 @@ const BillingForm = ({
   async function handleFormSave(data: z.infer<typeof BillingInfoSchema>) {
     //console.log("xxxx submit handler xxxx");
 
-    isNewForm ? 
+    isBlankForm ? 
       createBillingInfo(data)
-      : updateBillingInfo(id, data);
+      : updateBillingInfo(id, data);//NOTE BUG: potential bug here, need to test if we can get call updateBillingInfo with id = -1
     setIsEditEnabled(!isEditEnabled);
-    toggleNewBillingForm && toggleNewBillingForm();
+    toggleBillingForm && toggleBillingForm();
     //console.log(data);
     //insertBillingInfo();
   }
@@ -466,7 +466,7 @@ const BillingForm = ({
                   variant={"ghost"}
                   onClick={() => {
                     ToggleEditEnabled();
-                    toggleNewBillingForm && toggleNewBillingForm();
+                    toggleBillingForm && toggleBillingForm();
                   }}
                 >
                   Cancel

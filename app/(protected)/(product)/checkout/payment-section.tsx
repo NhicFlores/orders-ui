@@ -23,6 +23,10 @@ export default function PaymentSection({
 
   const { order, setOrder } = useProductContext();
 
+  function togglePaymentForm() {
+    setShowPaymentForm(!showPaymentForm);
+  }
+
   const handlePaymentOptionChange = (value: string) => {
     const selectedBillingOption = billingOptions.find(
       (billingOption) => billingOption.id === Number(value)
@@ -59,11 +63,11 @@ export default function PaymentSection({
             ))}
           </SelectContent>
         </Select>
-        <Button onClick={() => setShowPaymentForm(!showPaymentForm)}>
+        <Button onClick={togglePaymentForm}>
           Add Payment Option
         </Button>
       </div>
-      {showPaymentForm && <BillingForm isNewForm={showPaymentForm} />}
+      {showPaymentForm && <BillingForm isBlankForm={showPaymentForm} />}
     </div>
   );
 }
