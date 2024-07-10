@@ -14,7 +14,6 @@ export const ProductContext = createContext<ProductContextType>({
     billing_info_id: "",
     shipping_info: {
       is_job_site: false,
-      isSameAsBilling: false,
       delivery_addr: {
         street: "",
         apt_num: "",
@@ -65,7 +64,6 @@ export default function ProductContextProvider({
     billing_info_id: "",
     shipping_info: {
       is_job_site: false,
-      isSameAsBilling: false,
       delivery_addr: {
         street: "",
         apt_num: "",

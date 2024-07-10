@@ -15,6 +15,7 @@ function SummaryCard() {
     tint,
     quantity,
   } = orderItem;
+  console.log(order.shipping_info.delivery_addr?.street)
   return (
     <Card className="w-full rounded-md text-center shadow-md ">
       <CardHeader className="bg-slate-200 rounded-md rounded-b-none">
@@ -60,6 +61,18 @@ function SummaryCard() {
           <div className="flex justify-between">
             <Button>Save</Button>
             <Button className="">Submit Order</Button>
+          </div>
+          <div className="border rounded-md p-4">
+            <p>billing info id</p>
+            <p>
+              {order.billing_info_id}
+            </p>
+          </div>
+          <div className="border rounded-md p-4">
+            <p>shipping info</p>
+            <p>
+              {order.shipping_info.delivery_addr?.street}
+            </p>
           </div>
         </div>
       </CardFooter>

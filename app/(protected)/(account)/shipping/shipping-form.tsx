@@ -1,4 +1,5 @@
 "use client";
+import { useProductContext } from "@/components/product-components/product-context-provider";
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -13,6 +14,7 @@ import {
   createShippingInfo,
   updateShippingInfo,
 } from "@/lib/actions/profile-actions";
+import { ShippingInfoDB } from "@/lib/definitions/profile-definitions";
 import { ShippingInfoSchema } from "@/schema/form-schema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Pencil } from "lucide-react";
@@ -30,6 +32,7 @@ export default function ShippingForm({
   isBlankForm,
 }: ShippingFormProps) {
   const [isEditEnabled, setIsEditEnabled] = useState(true);
+  const { order, setOrder } = useProductContext();
 
   function ToggleEditEnabled() {
     setIsEditEnabled(!isEditEnabled);
@@ -38,6 +41,7 @@ export default function ShippingForm({
   const shippingForm = useForm<z.infer<typeof ShippingInfoSchema>>({
     resolver: zodResolver(ShippingInfoSchema),
     defaultValues: {
+      is_job_site: false,
       delivery_addr: {
         street: "",
         apt_num: "",
@@ -51,9 +55,19 @@ export default function ShippingForm({
   });
 
   async function handleFormSave(data: z.infer<typeof ShippingInfoSchema>) {
-    
+
     isBlankForm ? createShippingInfo(data) : updateShippingInfo("", data);
     setIsEditEnabled(!isEditEnabled);
+    
+    //NOTE TODO: this is unsafe because the user input is being passed directly to the state
+    // and will get send to backend without validation or sanitization
+    // NOTE TODO: implement zod validation for the data
+    console.log(data)
+    setOrder((prevOrder) => ({
+      ...prevOrder,
+      shipping_info: data as ShippingInfoDB,
+    }))
+
   }
 
   return (

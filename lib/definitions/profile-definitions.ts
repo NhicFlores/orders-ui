@@ -32,7 +32,6 @@ export type BillingInfoDB = BillingInfo & {
 };
 
 export type ShippingInfo = {
-  isSameAsBilling: boolean;
   delivery_addr?: Address;
   is_job_site: boolean;
   note?: string;

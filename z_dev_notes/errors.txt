@@ -398,3 +398,24 @@ but i also didn't have a ui element hooked up to it yet so there
 was nothing listening to an error from the schema 
 
 I just made the field optional and it went through 
+
+--issue 
+i was trying to save the shipping info but the only part of the shipping address 
+that was showing up in the database was the country. I played around with it 
+and found that the way i was passing the values to the query string resulted 
+in only the last value being stored 
+    await sql`
+            INSERT INTO shipping_info (user_id, delivery_addr, is_job_site, note)
+            VALUES (${user_id}, 
+                ${
+                  (delivery_addr.street,
+                  delivery_addr.apt_num,
+                  delivery_addr.city,
+                  delivery_addr.state,
+                  delivery_addr.zip,
+                  delivery_addr.country,)
+                }, 
+                ${is_job_site}, 
+                ${note})
+        `;
+the fix was to stringify the address object and deserialize it in fetch function 
