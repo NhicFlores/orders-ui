@@ -71,7 +71,18 @@ export async function getShippingInfoById(user_id: string) {
       SELECT * FROM shipping_info 
       WHERE user_id=${user_id}`;
 
-    return shippingInfo.rows;
+    return shippingInfo.rows.map((row) => {
+      let delivery_addr;
+      try{
+        delivery_addr = JSON.parse(String(row.delivery_addr));
+      } catch (error) {
+        delivery_addr = row.delivery_addr;
+      }
+      return {
+        ...row,
+        delivery_addr
+      };
+    })
   } catch (error) {
     console.error("Failed to fetch shipping info:", error);
     throw new Error("Failed to fetch shipping info.");

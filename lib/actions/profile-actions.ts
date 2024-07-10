@@ -359,19 +359,13 @@ export async function createShippingInfo(
   }
 
   const { delivery_addr, is_job_site, note } = validatedFields.data;
-
+  //console.log("delivery_addr: ", delivery_addr)
+  const delivery_addr_string = JSON.stringify(delivery_addr);
   try {
     await sql`
             INSERT INTO shipping_info (user_id, delivery_addr, is_job_site, note)
             VALUES (${user_id}, 
-                ${
-                  (delivery_addr.street,
-                  delivery_addr.apt_num,
-                  delivery_addr.city,
-                  delivery_addr.state,
-                  delivery_addr.zip,
-                  delivery_addr.country)
-                }, 
+                ${delivery_addr_string}, 
                 ${is_job_site}, 
                 ${note})
         `;
@@ -399,18 +393,11 @@ export async function updateShippingInfo(
   }
 
   const { delivery_addr, is_job_site, note } = validatedFields.data;
-
+  const delivery_addr_string = JSON.stringify(delivery_addr);
   try {
     await sql`
             UPDATE shipping_info
-            SET delivery_addr = ${
-              (delivery_addr.street,
-              delivery_addr.apt_num,
-              delivery_addr.city,
-              delivery_addr.state,
-              delivery_addr.zip,
-              delivery_addr.country)
-            }, 
+            SET delivery_addr = ${delivery_addr_string}, 
                 is_job_site = ${is_job_site}, 
                 note = ${note}
             WHERE user_id = ${user_id} AND id = ${shipping_info_id}
