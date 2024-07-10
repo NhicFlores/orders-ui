@@ -29,7 +29,15 @@ export default function ShippingSection({
   }
 
   function handleShippingOptionChange(value: string) {
-    console.log(value);
+
+    const selectedShippingOption = shippingOptions.find(
+      (shippingOption) => shippingOption.id === Number(value)
+    );
+    
+    setOrder((prevOrder) => ({
+      ...prevOrder,
+      shipping_info: selectedShippingOption as ShippingInfoDB,
+    }));
   }
 
   return (
@@ -50,6 +58,9 @@ export default function ShippingSection({
                 <div key={shippingOption.id}>
                   <SelectItem value={String(shippingOption.id)}>
                     <div>
+                      <div>
+                        shipping option
+                      </div>
                       <div>
                         {shippingOption.delivery_addr?.street}
                         {shippingOption.delivery_addr?.apt_num &&
