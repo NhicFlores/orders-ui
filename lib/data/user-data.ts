@@ -5,7 +5,7 @@ import { User } from "@/lib/definitions/auth-definitions";
 import { unstable_noStore as noStore } from "next/cache";
 import {
   BillingInfoDB,
-  ShippingInfo,
+  ShippingInfoDB,
   UserProfile,
 } from "@/lib/definitions/profile-definitions";
 
@@ -67,7 +67,7 @@ export async function getBillingInfoByUserId(user_id: string) {
 
 export async function getShippingInfoById(user_id: string) {
   try {
-    const shippingInfo = await sql<ShippingInfo>`
+    const shippingInfo = await sql<ShippingInfoDB>`
       SELECT * FROM shipping_info 
       WHERE user_id=${user_id}`;
 

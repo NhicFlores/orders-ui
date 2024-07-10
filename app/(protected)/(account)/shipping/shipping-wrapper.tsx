@@ -5,17 +5,17 @@ import { useState } from "react";
 import ShippingForm from "./shipping-form";
 
 export default function ShippingWrapper() {
-  const [isNewShippingInfo, setIsNewShippingInfo] = useState(false);
+  const [showShippingForm, setShowShippingForm] = useState(false);
 
-  function toggleNewShippingForm() {
-    setIsNewShippingInfo(!isNewShippingInfo);
+  function toggleShippingForm() {
+    setShowShippingForm(!showShippingForm);
   }
   return (
     <div>
       <div className="flex justify-between w-full border-b-2 mb-4">
         <h1 className="text-2xl font-bold">Shipping Options</h1>
-        <Button className="mb-1" onClick={toggleNewShippingForm}>
-            {isNewShippingInfo ? (
+        <Button className="mb-1" onClick={toggleShippingForm}>
+            {showShippingForm ? (
                 <div>View Shipping Options</div>
             ) : (
                 <div className="flex">
@@ -26,12 +26,12 @@ export default function ShippingWrapper() {
         </Button>
       </div>
       <div>
-        {isNewShippingInfo && (
-            <ShippingForm/>
+        {showShippingForm && (
+            <ShippingForm toggleShippingForm={toggleShippingForm}/>
         )}
       </div>
       <div>
-        {!isNewShippingInfo && (
+        {!showShippingForm && (
             <div>Shipping Table</div>
         )}
       </div>

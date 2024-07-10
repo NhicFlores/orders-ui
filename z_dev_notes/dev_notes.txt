@@ -302,9 +302,11 @@ layout using <SessionProvider> must be server components -
 
 
 ------------------------------------ TypeScript ------------------------------------
+-
 similar to unwrapping in swift 
 profile && profile.company ? profile.company : "blank" 
 
+-
 classes vs types for data modeling - declarative code 
 
 classes 
@@ -315,15 +317,18 @@ How we instantiated const user: User = { above
 is declarative; we're declaring the object in its full state. 
 Imperative code, on the other hand, declares the object, then describes all of the steps to build it: 
 
+-
 immutable practices
 You can't really even test test a unit. It might work in a unit test without the other parts, but if other parts modify it, then your test is useless. 
 It becomes impossible to even identify all of the code paths. 
 Conversely, code using immutable practices grows in complexity linearly. 
 This piece always takes this value in and sends that value out. Tested, done, and on to the next part.
 
+-
 {...rest} used in props 
 rest is not a property that you define in your interface. Typescript automatically infers the type from the remainder properties (those you don't include in your destructure syntax
 
+-
 if you type an object, such as the expected shape of the data in a fetch function, TS will expect that predefined type and it will show on 
 hover over the object. However, 'typeof' will actually check. 
 ex. 
@@ -345,6 +350,7 @@ export async function getBillingInfoById(user_id: string) {
   }
 }
 
+-
 i was getting the following error and over looked what the message was saying: 
 Type '(e: React.ChangeEvent<HTMLSelectElement>) => void' is not assignable to type '(value: string) => void'.
   Types of parameters 'e' and 'value' are incompatible.
@@ -368,6 +374,18 @@ where handlePaymentOptionChange was defined as
 
   the Select component used here is a custom component that handles its own state and passes the value 
   directly to the function, bypassing the need to handle the event and event.target ourselves 
+
+-
+Bracket Notation (order["billing_option"]):
+
+Allows access to properties using a string. The string can be a variable, which makes this syntax more dynamic.
+Useful when the property name is not a valid identifier, such as containing spaces or starting with a digit, or when it's a reserved keyword.
+Can be used to access properties with names that are determined at runtime.
+Dot Notation (order.billing_option):
+
+More concise and easier to read for accessing known properties with valid identifier names.
+Cannot be used with property names that are not valid identifiers (e.g., containing spaces, starting with digits, or reserved keywords).
+The property name must be known at compile time.
 
 ------------------------------------ JavaScript ------------------------------------
 .slice() can be used to create a copy of an array 

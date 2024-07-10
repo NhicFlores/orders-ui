@@ -10,35 +10,65 @@ import {
 } from "@/components/ui/select";
 import { useState } from "react";
 import ShippingForm from "../../(account)/shipping/shipping-form";
+import { ShippingInfoDB } from "@/lib/definitions/profile-definitions";
+import { useProductContext } from "@/components/product-components/product-context-provider";
 
-export default function ShippingSection() {
-    const [showShippingForm, setShowShippingForm] = useState(false)
-    return (
-        <div className="border rounded p-4 space-y-4">
-        <div className="text-lg font-bold">Enter Shipping Address</div>
-        <div className="flex items-center gap-2">
-          <Checkbox />
-          <div>Same as billing address</div>
-        </div>
-        <div className="flex space-x-2">
-          <Select>
-            <SelectTrigger>
-              <SelectValue placeholder="Select Shipping Address" />
-            </SelectTrigger>
-            <SelectContent>
-              <div>
-                <SelectItem value="Credit Card">Address 1</SelectItem>
-              </div>
-              <div>
-                <SelectItem value="Paypal">Address 2</SelectItem>
-              </div>
-            </SelectContent>
-          </Select>
-          <Button onClick={() => setShowShippingForm(!showShippingForm)}>Add Shipping Address</Button>
-        </div>
-        {showShippingForm && (
-            <ShippingForm/>
-        )}
+interface ShippingSectionProps {
+  shippingOptions: ShippingInfoDB[];
+}
+
+export default function ShippingSection({
+  shippingOptions,
+}: ShippingSectionProps) {
+  const [showShippingForm, setShowShippingForm] = useState(false);
+
+  const { order, setOrder } = useProductContext();
+
+  function toggleShippingForm() {
+    setShowShippingForm(!showShippingForm);
+  }
+
+  function handleShippingOptionChange(value: string) {
+    console.log(value);
+  }
+
+  return (
+    <div className="border rounded p-4 space-y-4">
+      <div className="text-lg font-bold">Enter Shipping Address</div>
+      <div className="flex items-center gap-2">
+        <Checkbox />
+        <div>Same as billing address</div>
       </div>
-    )
+      <div className="flex space-x-2">
+        <Select onValueChange={handleShippingOptionChange}>
+          <SelectTrigger>
+            <SelectValue placeholder="Select Shipping Address" />
+          </SelectTrigger>
+          <SelectContent>
+            {shippingOptions.length > 0 ? (
+              shippingOptions.map((shippingOption) => (
+                <div key={shippingOption.id}>
+                  <SelectItem value={String(shippingOption.id)}>
+                    <div>
+                      <div>
+                        {shippingOption.delivery_addr?.street}
+                        {shippingOption.delivery_addr?.apt_num &&
+                          shippingOption.delivery_addr?.apt_num}
+                        {shippingOption.delivery_addr?.city}
+                      </div>
+                      <div>{shippingOption.is_job_site && "Job Site"}</div>
+                    </div>
+                  </SelectItem>
+                </div>
+              ))
+            ) : (
+              <div>No shipping addresses found</div>
+            )}
+          </SelectContent>
+        </Select>
+        <Button onClick={toggleShippingForm}>Add Shipping Address</Button>
+      </div>
+      {showShippingForm && <ShippingForm toggleShippingForm={toggleShippingForm}/>}
+    </div>
+  );
 }
