@@ -9,6 +9,10 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import {
+  createShippingInfo,
+  updateShippingInfo,
+} from "@/lib/actions/profile-actions";
 import { ShippingInfoSchema } from "@/schema/form-schema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Pencil } from "lucide-react";
@@ -18,9 +22,13 @@ import { z } from "zod";
 
 interface ShippingFormProps {
   toggleShippingForm: () => void;
+  isBlankForm?: boolean;
 }
 
-export default function ShippingForm({ toggleShippingForm }: ShippingFormProps) {
+export default function ShippingForm({
+  toggleShippingForm,
+  isBlankForm,
+}: ShippingFormProps) {
   const [isEditEnabled, setIsEditEnabled] = useState(true);
 
   function ToggleEditEnabled() {
@@ -42,10 +50,19 @@ export default function ShippingForm({ toggleShippingForm }: ShippingFormProps) 
     },
   });
 
+  async function handleFormSave(data: z.infer<typeof ShippingInfoSchema>) {
+    
+    isBlankForm ? createShippingInfo(data) : updateShippingInfo("", data);
+    setIsEditEnabled(!isEditEnabled);
+  }
+
   return (
     <div>
       <Form {...shippingForm}>
-        <form className="space-y-4">
+        <form
+          onSubmit={shippingForm.handleSubmit(handleFormSave)}
+          className="space-y-4"
+        >
           <div className="flex justify-between gap-8">
             <FormField
               control={shippingForm.control}

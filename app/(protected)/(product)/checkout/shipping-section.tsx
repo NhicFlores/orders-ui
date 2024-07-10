@@ -68,7 +68,7 @@ export default function ShippingSection({
         </Select>
         <Button onClick={toggleShippingForm}>Add Shipping Address</Button>
       </div>
-      {showShippingForm && <ShippingForm toggleShippingForm={toggleShippingForm}/>}
+      {showShippingForm && <ShippingForm isBlankForm={showShippingForm} toggleShippingForm={toggleShippingForm}/>}
     </div>
   );
 }

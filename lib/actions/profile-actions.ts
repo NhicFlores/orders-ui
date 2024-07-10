@@ -12,6 +12,15 @@ import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { z } from "zod";
 
+
+async function validateUser(){
+  const session = await auth();
+  if (!session?.user.id) {
+    return redirect("/login");
+  }
+  return session.user.id;
+}
+
 export async function updateUser(
   user_id: string,
   formFields: z.infer<typeof UserSchema>
@@ -329,10 +338,17 @@ export async function deleteBillingInfo(
   revalidatePath(BillingRoute.href);
 }
 
+/**
+ * function for creating a new shipping info object in the database
+ * @param formFields form values
+ * @returns
+ */
 export async function createShippingInfo(
-  user_id: string,
   formFields: z.infer<typeof ShippingInfoSchema>
 ) {
+
+  const user_id = await validateUser();
+
   const validatedFields = ShippingInfoSchema.safeParse(formFields);
 
   if (!validatedFields.success) {
@@ -367,10 +383,12 @@ export async function createShippingInfo(
 }
 
 export async function updateShippingInfo(
-  user_id: string,
   shipping_info_id: string,
   formFields: z.infer<typeof ShippingInfoSchema>
 ) {
+
+  const user_id = await validateUser();
+
   const validatedFields = ShippingInfoSchema.safeParse(formFields);
 
   if (!validatedFields.success) {

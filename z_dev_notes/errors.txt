@@ -382,3 +382,19 @@ So, you should include setSummaryCard in the dependency array of useCallback.
 
 This way, handleSelection will have the same reference until setSummaryCard changes, which should not happen as setSummaryCard is 
 stable and doesn't change across re-renders. This will prevent unnecessary re-renders of DimensionsCard.
+
+
+
+--issue 
+trying to save new shipping address from form in checkout page 
+had the server action in the submit handler, had the submit handler 
+hooked up to the form onSubmit={shippingForm.handleSubmit(handleFormSave)}
+
+i put logs in the server action and the client side submit handler 
+but i was getting no errors, or logs, and it wasn't submitting 
+
+I checked the schema, and there was a field that wasn't optional 
+but i also didn't have a ui element hooked up to it yet so there 
+was nothing listening to an error from the schema 
+
+I just made the field optional and it went through 
