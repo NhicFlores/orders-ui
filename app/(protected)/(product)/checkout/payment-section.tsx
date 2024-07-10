@@ -29,7 +29,7 @@ export default function PaymentSection({
     );
     setOrder((prevOrder) => ({
       ...prevOrder,
-      billing_option: selectedBillingOption,
+      billing_info_id: value,
     }));
   };
 
@@ -63,7 +63,7 @@ export default function PaymentSection({
           Add Payment Option
         </Button>
       </div>
-      {showPaymentForm && <BillingForm isNewForm={showPaymentForm}/>}
+      {showPaymentForm && <BillingForm isNewForm={showPaymentForm} />}
     </div>
   );
 }
