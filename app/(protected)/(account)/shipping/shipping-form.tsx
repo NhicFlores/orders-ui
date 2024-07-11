@@ -23,16 +23,18 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 
 interface ShippingFormProps {
+  shippingInfo?: ShippingInfoDB;
   toggleShippingForm: () => void;
   isBlankForm?: boolean;
 }
 
 export default function ShippingForm({
+  shippingInfo,
   toggleShippingForm,
   isBlankForm,
 }: ShippingFormProps) {
   const [isEditEnabled, setIsEditEnabled] = useState(true);
-  const { order, setOrder } = useProductContext();
+  const { setOrder } = useProductContext();
 
   function ToggleEditEnabled() {
     setIsEditEnabled(!isEditEnabled);
@@ -40,7 +42,7 @@ export default function ShippingForm({
 
   const shippingForm = useForm<z.infer<typeof ShippingInfoSchema>>({
     resolver: zodResolver(ShippingInfoSchema),
-    defaultValues: {
+    defaultValues: shippingInfo ? shippingInfo : {
       is_job_site: false,
       delivery_addr: {
         street: "",

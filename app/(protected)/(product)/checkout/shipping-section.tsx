@@ -21,8 +21,9 @@ export default function ShippingSection({
   shippingOptions,
 }: ShippingSectionProps) {
   const [showShippingForm, setShowShippingForm] = useState(false);
+  const [selectedShippingOption, setSelectedShippingOption ] = useState<ShippingInfoDB>();
 
-  const { order, setOrder } = useProductContext();
+  const { setOrder } = useProductContext();
 
   function toggleShippingForm() {
     setShowShippingForm(!showShippingForm);
@@ -30,13 +31,16 @@ export default function ShippingSection({
 
   function handleShippingOptionChange(value: string) {
 
-    const selectedShippingOption = shippingOptions.find(
+    const newSelectedShippingOption = shippingOptions.find(
       (shippingOption) => shippingOption.id === Number(value)
     );
     
+    setSelectedShippingOption(newSelectedShippingOption);
+    setShowShippingForm(!!newSelectedShippingOption);
+
     setOrder((prevOrder) => ({
       ...prevOrder,
-      shipping_info: selectedShippingOption as ShippingInfoDB,
+      shipping_info: newSelectedShippingOption as ShippingInfoDB,
     }));
   }
 
@@ -79,7 +83,7 @@ export default function ShippingSection({
         </Select>
         <Button onClick={toggleShippingForm}>Add Shipping Address</Button>
       </div>
-      {showShippingForm && <ShippingForm isBlankForm={showShippingForm} toggleShippingForm={toggleShippingForm}/>}
+      {showShippingForm && <ShippingForm key={selectedShippingOption?.id} shippingInfo={selectedShippingOption} isBlankForm={!selectedShippingOption} toggleShippingForm={toggleShippingForm}/>}
     </div>
   );
 }
