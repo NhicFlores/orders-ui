@@ -51,12 +51,12 @@ export default function OrderSummary() {
   //NOTE TODO SAVE DRAFT BUTTON
   const { order, orderItem, orderItems, setOrderItems } = useProductContext();
 
-  console.log("---------- Order Summary Component ----------");
-  console.log("---------- order items array ----------");
-  console.log(orderItems);
-  //console.log(typeof orderItems);
-  console.log("---------- order item ----------");
-  console.log(orderItem);
+  // console.log("---------- Order Summary Component ----------");
+  // console.log("---------- order items array ----------");
+  // console.log(orderItems);
+  // //console.log(typeof orderItems);
+  // console.log("---------- order item ----------");
+  // console.log(orderItem);
   return (
     <div className="space-y-6">
       <div className="flex justify-between w-full">

@@ -1,3 +1,4 @@
+import { OrderStatus } from "@/lib/definitions/order-definitions";
 import { z } from "zod";
 
 //NOTE TODO: email validation, phone number validation - regex might work
@@ -153,3 +154,33 @@ export const RequiredDimensionsSchema = z.object({
     })
     .optional(),
 });
+
+export const OrderSchema = z.object({
+  id: z.string(),
+  user_id: z.string(),
+  entered_by: z.string().optional(),
+  order_name: z.string(),
+  billing_info_id: z.string(),
+  shipping_info: ShippingInfoSchema,
+  status: z.nativeEnum(OrderStatus, { invalid_type_error: "Please select an order status." }),
+  date_created: z.string(),
+  date_updated: z.string(),
+  date_submitted: z.string(),
+})
+
+export const CreateOrder = OrderSchema.omit({ id: true, user_id: true, date_created: true, date_updated: true, date_submitted: true });
+
+
+export const OrderItemSchema = z.object({
+  id: z.string(),
+  order_id: z.string(),
+  glassType: z.string(),
+  shape: z.string(),
+  dimensions: z.string(),
+  thickness: z.string(),
+  tint: z.string(),
+  fabrication_options: z.string().optional(),
+  misc_options: z.string().optional(),
+  note: z.string(),
+  quantity: z.number(),
+})

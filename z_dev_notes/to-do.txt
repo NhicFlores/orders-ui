@@ -5,6 +5,17 @@
 
 - make dimension select elements 'required' <select required/>
 
+NEXT 
+- shipping info table
+	- delete shipping info objects 
+- on checkout 
+	- when payment or shipping are chosen, expand the form populated with data 
+	from the chosen object 
+	- when 'same as billing address' checkbox is checked, the shipping form 
+	is expanded and populated with the corresponding data 
+		- pull the data from the order context object 
+- refactor schemas into more discrete, un-nested objects 
+- research: refactor product order route into multi-step form? 
 
 
 - new order 
@@ -14,7 +25,8 @@
     - sql script 
  - new order actions 
 
-
+- data validation and sanitization 
+client side and server side validation for all inputs 
 
 SummaryCard 
 - format order summary 

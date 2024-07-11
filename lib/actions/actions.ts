@@ -19,7 +19,7 @@ const OrderFormSchema = z.object({
   id: z.string(),
   customer_id: z.string({
     invalid_type_error: "Please select a customer.",
-  }),
+  }),//.regex(/^[0-9]+$/, { message: "Please select a customer." })
   order_name: z.string({
     invalid_type_error: "Please enter an order name.",
   }),
