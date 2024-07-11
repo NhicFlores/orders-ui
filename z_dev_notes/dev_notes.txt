@@ -391,16 +391,29 @@ The property name must be known at compile time.
 .slice() can be used to create a copy of an array 
 nextSquares = Squares.slice()
 
-Immutability makes complex features much easier to implement. Later in this tutorial, you will implement a “time travel” feature that lets you review the game’s history and “jump back” to past moves. This functionality isn’t specific to games—an ability to undo and redo certain actions is a common requirement for apps. Avoiding direct data mutation lets you keep previous versions of the data intact, and reuse them later.
+Immutability makes complex features much easier to implement. Later in this tutorial, 
+you will implement a “time travel” feature that lets you review the game’s history and “jump back” to past moves. 
+This functionality isn’t specific to games—an ability to undo and redo certain actions is a common requirement for apps. 
+Avoiding direct data mutation lets you keep previous versions of the data intact, and reuse them later.
 
-There is also another benefit of immutability. By default, all child components re-render automatically when the state of a parent component changes. This includes even the child components that weren’t affected by the change. Although re-rendering is not by itself noticeable to the user (you shouldn’t actively try to avoid it!), you might want to skip re-rendering a part of the tree that clearly wasn’t affected by it for performance reasons. Immutability makes it very cheap for components to compare whether their data has changed or not. You can learn more about how React chooses when to re-render a component in the memo API reference.
+There is also another benefit of immutability. By default, all child components re-render automatically 
+when the state of a parent component changes. This includes even the child components that weren’t affected by the change. 
+Although re-rendering is not by itself noticeable to the user (you shouldn’t actively try to avoid it!), 
+you might want to skip re-rendering a part of the tree that clearly wasn’t affected by it for performance reasons. 
+Immutability makes it very cheap for components to compare whether their data has changed or not. 
+You can learn more about how React chooses when to re-render a component in the memo API reference.
 
 when creating new arrays we can use the spreader operator 
 - You can read the ...history spread syntax as “enumerate all the items in array”.
 
-JavaScript supports closures which means an inner function (e.g. handleClick) has access to variables and functions defined in a outer function (e.g. Board). The handleClick function can read the squares state and call the setSquares method because they are both defined inside of the Board function - to my understanding, 'closures' is what allows nested functions to access the constants and states defined in the outer function 
+JavaScript supports closures which means an inner function (e.g. handleClick) has access to variables and functions 
+defined in a outer function (e.g. Board). The handleClick function can read the squares state and call the setSquares 
+method because they are both defined inside of the Board function - to my understanding, 'closures' is what allows nested 
+functions to access the constants and states defined in the outer function 
 
-when passing functions, you just pass the name. when you include the parenthesis function() you are calling it. This can cause infinite loops when calling functions instead of passing them when trying to pass them as props, causing the component to re-render, which changes the state, which triggers another re-render and so on 
+when passing functions, you just pass the name. when you include the parenthesis function() you are calling it. 
+This can cause infinite loops when calling functions instead of passing them when trying to pass them as props, 
+causing the component to re-render, which changes the state, which triggers another re-render and so on 
 
 when passing a function as a prop, and you need a parameter, use arrow functions so as not to call the function when rendering the component 
 the code after the => “arrow” will run, calling handleClick(0).
@@ -651,6 +664,50 @@ PORT 4000 npm run dev
 ------------------------------------ Security ------------------------------------
 bcrypt 
 incorporating a salt to protect against rainbow table attacks 
+
+
+-best practices for data validation 
+Best practices for user input validation and sanitization include:
+
+1. Validate Input Format and Type: 
+Ensure that the input matches the expected format and type. Use libraries like Zod for structured data validation to enforce these rules.
+
+2. Sanitize Input: 
+Remove or escape harmful characters that could be used for SQL injection, XSS attacks, etc. Libraries like DOMPurify (for browser environments) or sanitize-html (Node.js) can help with HTML input.
+
+3. Use Schema Validation: 
+For complex data structures, use schema validation (e.g., Zod, Joi, or Yup) to validate the structure and content of the data.
+
+4. Enforce Business Logic Rules: 
+Beyond format and type, ensure the input adheres to your application's business rules (e.g., a user's age must be over 18).
+
+5. Limit Input Size: 
+Set reasonable limits on the size of the input to prevent denial-of-service attacks.
+
+6. Client-Side Validation for UX: 
+Use client-side validation to provide immediate feedback to the user. This improves the user experience but should not be relied upon for security.
+
+7. Server-Side Validation for Security: 
+Always validate and sanitize input on the server side before processing or storing it. This is your last line of defense against malicious input.
+
+8. Use Prepared Statements for Database Queries: 
+To prevent SQL injection, use prepared statements and parameterized queries when interacting with databases.
+
+9. Regularly Update Validation Libraries: 
+Keep your validation and sanitization libraries up to date to protect against newly discovered vulnerabilities.
+
+10. Log Validation Failures: 
+Monitor and log validation failures to detect potential attack attempts.
+
+Regarding where to perform validation and sanitization:
+
+Client-Side Validation: Is primarily for improving user experience. It provides immediate feedback 
+but can be bypassed by an attacker.
+Server-Side Validation: Is crucial for security. It ensures that even if client-side validation is bypassed, 
+the application does not process malicious input.
+In your case, since you're already using Zod for data validation, you're following a good practice for structuring and validating 
+your data. However, ensure that you also sanitize user inputs, especially those that will be included in HTML or database queries, 
+and always perform these checks on the server side to ensure security.
 
 --------------------------------------- Git ---------------------------------------
 
