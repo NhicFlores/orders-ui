@@ -20,17 +20,28 @@ export default function PaymentSection({
   billingOptions,
 }: PaymentSectionProps) {
   const [showPaymentForm, setShowPaymentForm] = useState(false);
+  const [selectedBillingOption, setSelectedBillingOption] = useState<BillingInfoDB>();
 
-  const { order, setOrder } = useProductContext();
+  const { setOrder } = useProductContext();
 
-  function togglePaymentForm() {
-    setShowPaymentForm(!showPaymentForm);
+  function toggleBlankPaymentForm() {
+    setSelectedBillingOption(undefined);
+    if(!showPaymentForm) {
+      setShowPaymentForm(true);
+    }
   }
 
   const handlePaymentOptionChange = (value: string) => {
+    
     const selectedBillingOption = billingOptions.find(
       (billingOption) => billingOption.id === Number(value)
     );
+    
+    setSelectedBillingOption(selectedBillingOption);
+    // null or undefined are falsy values, however, not null doesn't mean it's truthy so we need to use !! to convert it to a boolean
+    // the first '!' will convert it to a boolean and the second '!' will negate it, turning it to true when the value isn't null 
+    setShowPaymentForm(!!selectedBillingOption);
+
     setOrder((prevOrder) => ({
       ...prevOrder,
       billing_info_id: value,
@@ -63,11 +74,11 @@ export default function PaymentSection({
             ))}
           </SelectContent>
         </Select>
-        <Button onClick={togglePaymentForm}>
+        <Button onClick={toggleBlankPaymentForm}>
           Add Payment Option
         </Button>
       </div>
-      {showPaymentForm && <BillingForm isBlankForm={showPaymentForm} />}
+      {showPaymentForm && <BillingForm key={selectedBillingOption?.id} isBlankForm={!selectedBillingOption} billing_info={selectedBillingOption}/>}
     </div>
   );
 }

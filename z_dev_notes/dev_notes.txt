@@ -79,6 +79,12 @@ If no key is specified, React will report an error and use the array index as a 
 
 Keys do not need to be globally unique; they only need to be unique between components and their siblings.
 
+Keys do  not need to be explicitly defined in custom component props. You can use them to give components a stable identity.
+For example, when change the payment option selection in the checkout page, the billing form would not re-render. Without adding 
+a key property to the billing form props, in the invocation of the <BillingForm/> i add a key property <BillingForm key={selection.id}
+so that when the selection changed, and subsequently the id changed, react would know to rerender the component 
+
+
 Functional Components 
 Remember to use Functional components only when there are no dependencies between components or there aren't many! 
 

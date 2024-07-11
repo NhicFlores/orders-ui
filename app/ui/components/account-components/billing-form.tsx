@@ -30,7 +30,7 @@ interface BillingFormProps {
 }
 
 const BillingForm = ({
-  billing_info = {} as BillingInfoDB,
+  billing_info,
   isBlankForm,
   toggleBillingForm,
 }: BillingFormProps) => {
@@ -58,7 +58,7 @@ const BillingForm = ({
     phone_num = "",
     alt_phone_num = "",
     fax_num = "",
-  } = billing_info;
+  } = billing_info ? billing_info : {};
 
   const { street, apt_num, city, state, zip, country } = billing_addr;
 
