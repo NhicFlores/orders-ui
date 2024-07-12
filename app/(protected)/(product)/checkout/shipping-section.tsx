@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/select";
 import { useState } from "react";
 import ShippingForm from "../../(account)/shipping/shipping-form";
-import { ShippingInfoDB } from "@/lib/definitions/profile-definitions";
+import { ShippingInfo, ShippingInfoDB } from "@/lib/definitions/profile-definitions";
 import { useProductContext } from "@/components/product-components/product-context-provider";
 
 interface ShippingSectionProps {
@@ -22,10 +22,10 @@ export default function ShippingSection({
 }: ShippingSectionProps) {
   const [showShippingForm, setShowShippingForm] = useState(false);
   const [selectedShippingOption, setSelectedShippingOption] =
-    useState<ShippingInfoDB>();
-  const [formData, setFormData] = useState<ShippingInfoDB>();
+    useState<ShippingInfo | ShippingInfoDB>();
+  const [formData, setFormData] = useState<ShippingInfo | ShippingInfoDB>();
 
-  const { setOrder } = useProductContext();
+  const { order, setOrder } = useProductContext();
 
   function handleNewShippingButtonClicked() {
     setFormData(undefined);
@@ -42,6 +42,14 @@ export default function ShippingSection({
 
   function handleCheckBoxClick(){
     //NOTE TODO: populate shipping form with billing address
+    const shipping = {
+      delivery_addr: order.billing_info_id.billing_addr,
+      is_job_site: false,
+      note: "",
+    };
+    setSelectedShippingOption(shipping);
+    setFormData(shipping);
+    setShowShippingForm(!!shipping);
   }
 
   function handleShippingOptionChange(value: string) {
@@ -104,7 +112,7 @@ export default function ShippingSection({
       </div>
       {showShippingForm && (
         <ShippingForm
-          key={formData?.id}
+          key={(formData as ShippingInfoDB).id}
           shippingInfo={formData}
           isBlankForm={!formData}
           toggleShippingForm={toggleShippingForm}

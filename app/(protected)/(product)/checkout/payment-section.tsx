@@ -52,7 +52,7 @@ export default function PaymentSection({
 
     setOrder((prevOrder) => ({
       ...prevOrder,
-      billing_info_id: value,
+      billing_info_id: newSelectedBillingOption!,
     }));
   };
 

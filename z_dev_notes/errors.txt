@@ -419,3 +419,18 @@ in only the last value being stored
                 ${note})
         `;
 the fix was to stringify the address object and deserialize it in fetch function 
+
+
+
+-issue 
+
+Unhandled Runtime Error: 
+  Error: Objects are not valid as a React child (found: object with keys {}). 
+  If you meant to render a collection of children, use an array instead.
+
+this happened after changing the type of order.billing_info_id to BillingInfo | BillingInfoDB 
+because in the summary card I had passed order.billing_info_id to a <p></p> element to show the id 
+once i changed it to the full object, react was getting an object as a child. what made it difficult was 
+that the error didn't tell me where that object was getting passed to react. I searched for billing_info_id 
+in the project and went through each file until I opened up the order summary component, which finally 
+threw an error once it was opened. 

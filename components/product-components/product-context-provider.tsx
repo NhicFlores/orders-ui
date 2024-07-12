@@ -5,49 +5,52 @@ import {
   OrderStatus,
 } from "@/lib/definitions/order-definitions";
 import { ProductContextType } from "@/lib/definitions/product-context";
+import { BillingInfo } from "@/lib/definitions/profile-definitions";
 import { createContext, useContext, useState } from "react";
 
-export const ProductContext = createContext<ProductContextType>({
-  order: {
-    order_name: "",
-    status: OrderStatus.Pending,
-    billing_info_id: "",
-    shipping_info: {
-      is_job_site: false,
-      delivery_addr: {
-        street: "",
-        apt_num: "",
-        city: "",
-        state: "",
-        zip: "",
-        country: "",
-      },
-      note: "",
-    },
-  },
-  setOrder: () => {},
-  orderItem: {
-    order_id: "",
-    glassType: "",
-    shape: "",
-    dimensions: "",
-    thickness: "",
-    tint: "",
-    fabrication_options: "",
-    misc_options: "",
-    note: "",
-    quantity: 0,
-  },
-  setOrderItem: () => {},
-  orderItems: [],
-  setOrderItems: () => {},
-  // productNav: {
-  //     activeSection: 'Glass Type',
-  //     setActiveSection: () => {}
-  // },
-  // setProductNav: () => {},
-  updateOrderItemQuantity: () => {},
-});
+// {
+//   order: {
+//     order_name: "",
+//     status: OrderStatus.Pending,
+//     billing_info_id: "",
+//     shipping_info: {
+//       is_job_site: false,
+//       delivery_addr: {
+//         street: "",
+//         apt_num: "",
+//         city: "",
+//         state: "",
+//         zip: "",
+//         country: "",
+//       },
+//       note: "",
+//     },
+//   },
+//   setOrder: () => {},
+//   orderItem: {
+//     order_id: "",
+//     glassType: "",
+//     shape: "",
+//     dimensions: "",
+//     thickness: "",
+//     tint: "",
+//     fabrication_options: "",
+//     misc_options: "",
+//     note: "",
+//     quantity: 0,
+//   },
+//   setOrderItem: () => {},
+//   orderItems: [],
+//   setOrderItems: () => {},
+//   // productNav: {
+//   //     activeSection: 'Glass Type',
+//   //     setActiveSection: () => {}
+//   // },
+//   // setProductNav: () => {},
+//   updateOrderItemQuantity: () => {},
+// }
+
+export const ProductContext = createContext<ProductContextType>({} as ProductContextType);
 
 export default function ProductContextProvider({
   children,
@@ -61,7 +64,25 @@ export default function ProductContextProvider({
   const [order, setOrder] = useState<Order>({
     order_name: "",
     status: OrderStatus.Draft,
-    billing_info_id: "",
+    billing_info_id: {
+      billing_addr: {
+        street: "",
+        apt_num: "",
+        city: "",
+        state: "",
+        zip: "",
+        country: "",
+      },
+      payment_method: "",
+      purchase_order: "",
+      primary_contact_name: "",
+      primary_contact_email: "",
+      phone_num: "",
+      alt_phone_num: "",
+      fax_num: "",
+      isPrimary: false,
+      isActive: false,
+    },
     shipping_info: {
       is_job_site: false,
       delivery_addr: {

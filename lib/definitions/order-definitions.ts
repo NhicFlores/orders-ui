@@ -1,5 +1,5 @@
 import { StaticImageData } from "next/image";
-import { ShippingInfo } from "./profile-definitions";
+import { BillingInfo, BillingInfoDB, ShippingInfo, ShippingInfoDB } from "./profile-definitions";
 
 export enum OrderStatus {
   Pending = "pending",
@@ -12,8 +12,8 @@ export enum OrderStatus {
 export type Order = {
   entered_by?: string;
   order_name: string;
-  billing_info_id: string; //billing info id
-  shipping_info: ShippingInfo; //this will be stringified before being sent to the server
+  billing_info_id: BillingInfo | BillingInfoDB; //only the id will be used in db query 
+  shipping_info: ShippingInfo | ShippingInfoDB; //this will be stringified before being sent to the server
   status: OrderStatus;
 };
 

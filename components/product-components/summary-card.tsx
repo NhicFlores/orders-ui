@@ -15,9 +15,9 @@ function SummaryCard() {
     tint,
     quantity,
   } = orderItem;
-  console.log(order.shipping_info.delivery_addr?.street)
+
   return (
-    <Card className="w-full rounded-md text-center shadow-md ">
+    <Card className="w-full rounded-md text-center shadow-md max-w-[350px]">
       <CardHeader className="bg-slate-200 rounded-md rounded-b-none">
         <h1>{order.order_name}</h1>
         <h1>Current Item</h1>
@@ -64,8 +64,8 @@ function SummaryCard() {
           </div>
           <div className="border rounded-md p-4">
             <p>billing info id</p>
-            <p>
-              {order.billing_info_id}
+            <p className="break-all">
+              {JSON.stringify(order.billing_info_id)}
             </p>
           </div>
           <div className="border rounded-md p-4">
