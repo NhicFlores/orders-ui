@@ -3,9 +3,10 @@ import { ScrollArea } from "../ui/scroll-area";
 import { Card, CardContent, CardFooter, CardHeader } from "../ui/card";
 import { Button } from "../ui/button";
 import { useProductContext } from "./product-context-provider";
+import { createOrder } from "@/app/(protected)/(product)/actions";
 
 function SummaryCard() {
-  const { order, orderItem } = useProductContext();
+  const { order, orderItem, orderItems } = useProductContext();
 
   const {
     glassType: type,
@@ -15,6 +16,10 @@ function SummaryCard() {
     tint,
     quantity,
   } = orderItem;
+
+  async function handleSubmitOrderButtonClicked() {
+    const query_result = await createOrder(order, orderItems);
+  }
 
   return (
     <Card className="w-full rounded-md text-center shadow-md max-w-[350px]">
@@ -60,7 +65,7 @@ function SummaryCard() {
           </div>
           <div className="flex justify-between">
             <Button>Save</Button>
-            <Button className="">Submit Order</Button>
+            <Button onClick={handleSubmitOrderButtonClicked}>Submit Order</Button>
           </div>
           <div className="border rounded-md p-4">
             <p>billing info id</p>

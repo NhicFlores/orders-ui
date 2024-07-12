@@ -1,7 +1,7 @@
 "use server";
 
 import { auth } from "@/auth";
-import { Order, OrderItem } from "@/lib/definitions/order-definitions";
+import { Order, OrderItem, OrderStatus } from "@/lib/definitions/order-definitions";
 import { CreateOrder } from "@/schema/form-schema";
 import { sql } from "@vercel/postgres";
 
@@ -13,7 +13,6 @@ async function ValidateUser(){
 
 //NOTE TODO: implement transaction for data integrity
 export async function createOrderDraft(order: Order, orderItems: OrderItem[]) {
-
 
   const validatedFields = CreateOrder.safeParse({
     order_name: order.order_name,
@@ -59,6 +58,86 @@ export async function createOrderDraft(order: Order, orderItems: OrderItem[]) {
     }
 
     return { message: "Order and Order Items created successfully." };
+  } catch (error) {
+    console.error(error);
+
+    // Attempt to manually roll back by deleting the order if it was created
+    if (orderId) {
+      await sql`
+          DELETE FROM orders WHERE id = ${orderId}
+        `;
+    }
+
+    return {
+      message:
+        "Database Error: Failed to create Order and Order Items. Changes rolled back.",
+    };
+  }
+}
+
+export async function createOrder(order: Order, orderItems: OrderItem[]) {
+
+  const user_id = await ValidateUser() as string; 
+
+  const { order_name, billing_info_id, shipping_info } = order;
+  
+  //NOTE TODO: add data validation for order and order items 
+  const validatedFields = CreateOrder.safeParse({
+    order_name: order_name,
+    billing_info_id: billing_info_id,
+    shipping_info: shipping_info,
+  });
+  
+  const billing_info_id_string = JSON.stringify(billing_info_id);
+  const shipping_info_string = JSON.stringify(shipping_info);
+  
+  const status = OrderStatus.Pending;
+
+  const date_created = new Date().toISOString().split("T")[0];
+  const date_submitted = new Date().toISOString().split("T")[0];
+  
+  let orderId: string | null = null;
+  try {
+    // Insert the order and return the generated id
+    const queryResult = await sql<{ id: string }>`
+        INSERT INTO orders (user_id, 
+                            order_name, 
+                            billing_info_id, 
+                            shipping_info, 
+                            status, 
+                            date_created, 
+                            date_submitted)
+        VALUES (${user_id}, 
+                ${order_name}, 
+                ${billing_info_id_string}, 
+                ${shipping_info_string}, 
+                ${status}, 
+                ${date_created}, 
+                ${date_submitted})
+        RETURNING id
+      `;
+
+    orderId = queryResult.rows[0].id; 
+
+    for (const item of orderItems) {
+      const {
+        glassType,
+        shape,
+        dimensions,
+        thickness,
+        tint,
+        fabrication_options,
+        misc_options,
+        note,
+        quantity,
+      } = item;
+      await sql`
+          INSERT INTO order_items (order_id, glass_type, shape, dimensions, thickness, tint, fabrication_options, misc_options, note, quantity)
+          VALUES (${orderId}, ${glassType}, ${shape}, ${dimensions}, ${thickness}, ${tint}, ${fabrication_options}, ${misc_options}, ${note}, ${quantity})
+        `;
+    }
+
+    return { message: "Order and Order Items created successfully.", order_id: orderId };
   } catch (error) {
     console.error(error);
 

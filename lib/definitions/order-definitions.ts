@@ -1,12 +1,23 @@
 import { StaticImageData } from "next/image";
 import { BillingInfo, BillingInfoDB, ShippingInfo, ShippingInfoDB } from "./profile-definitions";
 
+/**
+ * Order Status
+ * @enum {string}
+ * @readonly
+ * @export
+ */
 export enum OrderStatus {
+  /** Submitted but not yet viewed by admin. */
   Pending = "pending",
-  Draft = "draft",
-  Shipped = "shipped",
+  /** Saved by the user but not yet submitted. */
+  Draft = "draft", 
+  /** Submitted as a quote. */
+  Quote = "quote", 
+  /** Viewed by admin but not yet shipped. */
   Processing = "processing",
-  Quote = "quote",
+  /** Shipped but not yet received. */
+  Shipped = "shipped",
 }
 
 export type Order = {
@@ -21,7 +32,7 @@ export type OrderDB = Order & {
   id: string;
   user_id: string;
   date_created: string;
-  date_updated: string;
+  date_updated?: string;
   date_submitted: string;
 };
 
