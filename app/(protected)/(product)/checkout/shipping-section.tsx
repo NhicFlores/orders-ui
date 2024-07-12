@@ -21,26 +21,45 @@ export default function ShippingSection({
   shippingOptions,
 }: ShippingSectionProps) {
   const [showShippingForm, setShowShippingForm] = useState(false);
-  const [selectedShippingOption, setSelectedShippingOption ] = useState<ShippingInfoDB>();
+  const [selectedShippingOption, setSelectedShippingOption] =
+    useState<ShippingInfoDB>();
+  const [formData, setFormData] = useState<ShippingInfoDB>();
 
   const { setOrder } = useProductContext();
 
+  function handleNewShippingButtonClicked() {
+    setFormData(undefined);
+    if (!showShippingForm) {
+      setShowShippingForm(true);
+    }
+  }
+
   function toggleShippingForm() {
-    setShowShippingForm(!showShippingForm);
+    selectedShippingOption
+      ? setFormData(selectedShippingOption)
+      : setShowShippingForm(!showShippingForm);
+  }
+
+  function handleCheckBoxClick(){
+    //NOTE TODO: populate shipping form with billing address
   }
 
   function handleShippingOptionChange(value: string) {
-
     const newSelectedShippingOption = shippingOptions.find(
       (shippingOption) => shippingOption.id === Number(value)
     );
-    
+
     setSelectedShippingOption(newSelectedShippingOption);
+    setFormData(newSelectedShippingOption);
     setShowShippingForm(!!newSelectedShippingOption);
 
     setOrder((prevOrder) => ({
       ...prevOrder,
-      shipping_info: newSelectedShippingOption as ShippingInfoDB,
+      //NOTE POTENTIAL BUG: currently being saved without id from backend
+      //not sure that we really care since this is a simple object we 
+      //can deserialize and we only need the id's to be able to query the db 
+      //for the shipping options table 
+      shipping_info: newSelectedShippingOption as ShippingInfoDB,  
     }));
   }
 
@@ -48,7 +67,7 @@ export default function ShippingSection({
     <div className="border rounded p-4 space-y-4">
       <div className="text-lg font-bold">Enter Shipping Address</div>
       <div className="flex items-center gap-2">
-        <Checkbox />
+        <Checkbox onClick={handleCheckBoxClick}/>
         <div>Same as billing address</div>
       </div>
       <div className="flex space-x-2">
@@ -62,9 +81,7 @@ export default function ShippingSection({
                 <div key={shippingOption.id}>
                   <SelectItem value={String(shippingOption.id)}>
                     <div>
-                      <div>
-                        shipping option
-                      </div>
+                      <div>shipping option</div>
                       <div>
                         {shippingOption.delivery_addr?.street}
                         {shippingOption.delivery_addr?.apt_num &&
@@ -81,9 +98,18 @@ export default function ShippingSection({
             )}
           </SelectContent>
         </Select>
-        <Button onClick={toggleShippingForm}>Add Shipping Address</Button>
+        <Button onClick={handleNewShippingButtonClicked}>
+          New Shipping Address
+        </Button>
       </div>
-      {showShippingForm && <ShippingForm key={selectedShippingOption?.id} shippingInfo={selectedShippingOption} isBlankForm={!selectedShippingOption} toggleShippingForm={toggleShippingForm}/>}
+      {showShippingForm && (
+        <ShippingForm
+          key={formData?.id}
+          shippingInfo={formData}
+          isBlankForm={!formData}
+          toggleShippingForm={toggleShippingForm}
+        />
+      )}
     </div>
   );
 }

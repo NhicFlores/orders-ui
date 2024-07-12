@@ -33,7 +33,7 @@ export default function ShippingForm({
   toggleShippingForm,
   isBlankForm,
 }: ShippingFormProps) {
-  const [isEditEnabled, setIsEditEnabled] = useState(true);
+  const [isEditEnabled, setIsEditEnabled] = useState(isBlankForm);
   const { setOrder } = useProductContext();
 
   function ToggleEditEnabled() {
@@ -42,34 +42,34 @@ export default function ShippingForm({
 
   const shippingForm = useForm<z.infer<typeof ShippingInfoSchema>>({
     resolver: zodResolver(ShippingInfoSchema),
-    defaultValues: shippingInfo ? shippingInfo : {
-      is_job_site: false,
-      delivery_addr: {
-        street: "",
-        apt_num: "",
-        city: "",
-        state: "",
-        zip: "",
-        country: "",
-      },
-      note: "",
-    },
+    defaultValues: shippingInfo
+      ? shippingInfo
+      : {
+          is_job_site: false,
+          delivery_addr: {
+            street: "",
+            apt_num: "",
+            city: "",
+            state: "",
+            zip: "",
+            country: "",
+          },
+          note: "",
+        },
   });
 
   async function handleFormSave(data: z.infer<typeof ShippingInfoSchema>) {
-
-    isBlankForm ? createShippingInfo(data) : updateShippingInfo("", data);
+    isBlankForm ? createShippingInfo(data) : updateShippingInfo(shippingInfo!.id, data);
     setIsEditEnabled(!isEditEnabled);
-    
+
     //NOTE TODO: this is unsafe because the user input is being passed directly to the state
     // and will get send to backend without validation or sanitization
     // NOTE TODO: implement zod validation for the data
-    console.log(data)
+    console.log(data);
     setOrder((prevOrder) => ({
       ...prevOrder,
       shipping_info: data as ShippingInfoDB,
-    }))
-
+    }));
   }
 
   return (
@@ -87,7 +87,11 @@ export default function ShippingForm({
                 <FormItem className="w-full">
                   <FormLabel htmlFor="street">Street</FormLabel>
                   <FormControl>
-                    <Input {...field} />
+                    <Input
+                      readOnly={!isEditEnabled}
+                      className={!isEditEnabled ? "bg-slate-100" : "bg-white"}
+                      {...field}
+                    />
                   </FormControl>
                   <FormMessage>
                     {
@@ -107,7 +111,11 @@ export default function ShippingForm({
                     Apt/Suite/Lot
                   </FormLabel>
                   <FormControl>
-                    <Input {...field} />
+                    <Input
+                      readOnly={!isEditEnabled}
+                      className={!isEditEnabled ? "bg-slate-100" : "bg-white"}
+                      {...field}
+                    />
                   </FormControl>
                   <FormMessage>
                     {
@@ -127,7 +135,11 @@ export default function ShippingForm({
                 <FormItem className="w-full">
                   <FormLabel htmlFor="city">City</FormLabel>
                   <FormControl>
-                    <Input {...field} />
+                    <Input
+                      readOnly={!isEditEnabled}
+                      className={!isEditEnabled ? "bg-slate-100" : "bg-white"}
+                      {...field}
+                    />
                   </FormControl>
                   <FormMessage>
                     {shippingForm.formState.errors.delivery_addr?.city?.message}
@@ -142,7 +154,11 @@ export default function ShippingForm({
                 <FormItem>
                   <FormLabel htmlFor="state">State</FormLabel>
                   <FormControl>
-                    <Input {...field} />
+                    <Input
+                      readOnly={!isEditEnabled}
+                      className={!isEditEnabled ? "bg-slate-100" : "bg-white"}
+                      {...field}
+                    />
                   </FormControl>
                   <FormMessage>
                     {
@@ -160,7 +176,11 @@ export default function ShippingForm({
                 <FormItem>
                   <FormLabel htmlFor="zip">Zip</FormLabel>
                   <FormControl>
-                    <Input {...field} />
+                    <Input
+                      readOnly={!isEditEnabled}
+                      className={!isEditEnabled ? "bg-slate-100" : "bg-white"}
+                      {...field}
+                    />
                   </FormControl>
                   <FormMessage>
                     {shippingForm.formState.errors.delivery_addr?.zip?.message}
@@ -175,7 +195,11 @@ export default function ShippingForm({
                 <FormItem>
                   <FormLabel htmlFor="country">Country</FormLabel>
                   <FormControl>
-                    <Input {...field} />
+                    <Input
+                      readOnly={!isEditEnabled}
+                      className={!isEditEnabled ? "bg-slate-100" : "bg-white"}
+                      {...field}
+                    />
                   </FormControl>
                   <FormMessage>
                     {
@@ -195,7 +219,12 @@ export default function ShippingForm({
                 <FormItem>
                   <FormLabel htmlFor="note">Note</FormLabel>
                   <FormControl>
-                    <Input type="text" {...field} />
+                    <Input
+                      readOnly={!isEditEnabled}
+                      className={!isEditEnabled ? "bg-slate-100" : "bg-white"}
+                      type="text"
+                      {...field}
+                    />
                   </FormControl>
                   <FormMessage>
                     {shippingForm.formState.errors.note?.message}
@@ -212,7 +241,7 @@ export default function ShippingForm({
                   variant={"ghost"}
                   onClick={() => {
                     ToggleEditEnabled();
-                    toggleShippingForm();
+                    isBlankForm && toggleShippingForm && toggleShippingForm();
                   }}
                 >
                   Cancel

@@ -9,13 +9,18 @@ NEXT
 - shipping info table
 	- delete shipping info objects 
 - on checkout 
-	- when payment or shipping are chosen, expand the form populated with data 
+	-x- when payment or shipping are chosen, expand the form populated with data 
 	from the chosen object 
 	- when 'same as billing address' checkbox is checked, the shipping form 
 	is expanded and populated with the corresponding data 
 		- pull the data from the order context object 
 - refactor schemas into more discrete, un-nested objects 
-- research: refactor product order route into multi-step form? 
+-x research: refactor product order route into multi-step form?
+	- no need right now, it would just add more redundant code since 
+		everything would stay the same except each product page would also 
+		need to be wrapped by the form 
+		- this might be enough reason to make a generic form wrapper down the line 
+	- the validation on order submission is enough 
 
 
 - new order 

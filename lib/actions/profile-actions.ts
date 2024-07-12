@@ -377,7 +377,7 @@ export async function createShippingInfo(
 }
 
 export async function updateShippingInfo(
-  shipping_info_id: string,
+  shipping_info_id: number,
   formFields: z.infer<typeof ShippingInfoSchema>
 ) {
 
@@ -411,7 +411,7 @@ export async function updateShippingInfo(
 
 export async function deleteShippingInfo(
   user_id: string,
-  shipping_info_id: string
+  shipping_info_id: number
 ) {
   await sql`
         DELETE FROM shipping_info

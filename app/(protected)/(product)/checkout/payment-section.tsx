@@ -20,27 +20,35 @@ export default function PaymentSection({
   billingOptions,
 }: PaymentSectionProps) {
   const [showPaymentForm, setShowPaymentForm] = useState(false);
-  const [selectedBillingOption, setSelectedBillingOption] = useState<BillingInfoDB>();
+  const [selectedBillingOption, setSelectedBillingOption] =
+    useState<BillingInfoDB>();
+  const [formData, setFormData] = useState<BillingInfoDB>();
 
   const { setOrder } = useProductContext();
 
-  function toggleBlankPaymentForm() {
-    setSelectedBillingOption(undefined);
-    if(!showPaymentForm) {
+  function handleNewPaymentButtonClicked() {
+    setFormData(undefined);
+    if (!showPaymentForm) {
       setShowPaymentForm(true);
     }
   }
 
+  function toggleBillingForm() {
+    selectedBillingOption
+      ? setFormData(selectedBillingOption)
+      : setShowPaymentForm(!showPaymentForm);
+  }
+
   const handlePaymentOptionChange = (value: string) => {
-    
-    const selectedBillingOption = billingOptions.find(
+    const newSelectedBillingOption = billingOptions.find(
       (billingOption) => billingOption.id === Number(value)
     );
-    
-    setSelectedBillingOption(selectedBillingOption);
+
+    setSelectedBillingOption(newSelectedBillingOption);
+    setFormData(newSelectedBillingOption);
     // null or undefined are falsy values, however, not null doesn't mean it's truthy so we need to use !! to convert it to a boolean
-    // the first '!' will convert it to a boolean and the second '!' will negate it, turning it to true when the value isn't null 
-    setShowPaymentForm(!!selectedBillingOption);
+    // the first '!' will convert it to a boolean and the second '!' will negate it, turning it to true when the value isn't null
+    setShowPaymentForm(!!newSelectedBillingOption);
 
     setOrder((prevOrder) => ({
       ...prevOrder,
@@ -74,11 +82,18 @@ export default function PaymentSection({
             ))}
           </SelectContent>
         </Select>
-        <Button onClick={toggleBlankPaymentForm}>
-          Add Payment Option
+        <Button onClick={handleNewPaymentButtonClicked}>
+          New Payment Option
         </Button>
       </div>
-      {showPaymentForm && <BillingForm key={selectedBillingOption?.id} isBlankForm={!selectedBillingOption} billing_info={selectedBillingOption}/>}
+      {showPaymentForm && (
+        <BillingForm
+          key={formData?.id}
+          isBlankForm={!formData}
+          billing_info={formData}
+          toggleBillingForm={toggleBillingForm}
+        />
+      )}
     </div>
   );
 }

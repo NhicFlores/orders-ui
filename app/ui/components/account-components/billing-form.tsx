@@ -41,45 +41,24 @@ const BillingForm = ({
     setIsEditEnabled(!isEditEnabled);
   }
 
-  const {
-    id = -1,
-    billing_addr = {
-      street: "",
-      apt_num: "",
-      city: "",
-      state: "",
-      zip: "",
-      country: "",
-    },
-    payment_method = "",
-    purchase_order = "",
-    primary_contact_name = "",
-    primary_contact_email = "",
-    phone_num = "",
-    alt_phone_num = "",
-    fax_num = "",
-  } = billing_info ? billing_info : {};
-
-  const { street, apt_num, city, state, zip, country } = billing_addr;
-
   const billingForm = useForm<z.infer<typeof BillingInfoSchema>>({
     resolver: zodResolver(BillingInfoSchema),
-    defaultValues: {
+    defaultValues: billing_info ? billing_info : {
       billing_addr: {
-        street: street,
-        apt_num: apt_num,
-        city: city,
-        state: state,
-        zip: zip,
-        country: country,
+        street: "",
+        apt_num: "",
+        city: "",
+        state: "",
+        zip: "",
+        country: "",
       },
-      payment_method: payment_method,
-      purchase_order: purchase_order,
-      primary_contact_name: primary_contact_name,
-      primary_contact_email: primary_contact_email,
-      phone_num: phone_num,
-      alt_phone_num: alt_phone_num,
-      fax_num: fax_num,
+      payment_method:"",
+      purchase_order: "",
+      primary_contact_name: "",
+      primary_contact_email: "",
+      phone_num:"",
+      alt_phone_num: "",
+      fax_num: "",
     },
   });
 
@@ -96,9 +75,8 @@ const BillingForm = ({
 
     isBlankForm ? 
       createBillingInfo(data)
-      : updateBillingInfo(id, data);//NOTE BUG: potential bug here, need to test if we can get call updateBillingInfo with id = -1
+      : updateBillingInfo(billing_info!.id, data);//NOTE BUG: potential bug here, need to test if we can get call updateBillingInfo with id = -1
     setIsEditEnabled(!isEditEnabled);
-    toggleBillingForm && toggleBillingForm();
     //console.log(data);
     //insertBillingInfo();
   }
@@ -466,7 +444,7 @@ const BillingForm = ({
                   variant={"ghost"}
                   onClick={() => {
                     ToggleEditEnabled();
-                    toggleBillingForm && toggleBillingForm();
+                    isBlankForm && toggleBillingForm && toggleBillingForm();
                   }}
                 >
                   Cancel
