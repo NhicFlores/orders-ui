@@ -42,8 +42,8 @@ import {
 } from "@/components/ui/collapsible";
 
 import { fuzzyOrderFilter } from "./table/table-utils";
-
-
+import OrderDetailTable from "@/app/(protected)/(tables)/order-detail-table";
+import { OrderDetailColumns } from "@/app/(protected)/(tables)/order-detail-columns";
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
@@ -104,7 +104,7 @@ export function DataTable<TData, TValue>({
         {table.getFilteredRowModel().rows.length} row(s) selected.
       </div>
       <div className="flex items-center justify-between py-4">
-        <Input 
+        <Input
           placeholder="Search..."
           onChange={(event) => table.setGlobalFilter(event.target.value)}
           className="max-w-sm"
@@ -177,8 +177,10 @@ export function DataTable<TData, TValue>({
                       ))}
                     </TableRow>
                     <CollapsibleContent asChild>
-                      <tr className="p-4 bg-gray-100">
-                        <td colSpan={row.getVisibleCells().length}>{JSON.stringify(row.original, null, 2)}</td>
+                      <tr className="p-4 bg-slate-100">
+                        <td colSpan={row.getVisibleCells().length}>
+                          <OrderDetailTable />
+                        </td>
                       </tr>
                     </CollapsibleContent>
                   </>

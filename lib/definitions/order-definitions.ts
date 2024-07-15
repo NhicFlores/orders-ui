@@ -53,10 +53,19 @@ export type OrderItemDB = OrderItem & {
   id: string;
 };
 
-export type CustomerOrderTable = Order & {
-  id: string;
+export type CustomerOrderTable = {
+  // properties from orders table
+  order_id: string; //order_id
+  order_name: string;
+  status: OrderStatus;
+  shipping_info: ShippingInfo;
+  date_created: string;
+  date_updated?: string;
+  date_submitted: string;
+  // properties from billing_info table
+  billing_info: BillingInfo;
+  // properties from order_items table
   order_items: OrderItem[];
-  date: string;
 };
 
 export type AdminOrderTable = Order & {
