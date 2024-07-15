@@ -4,8 +4,9 @@
 //className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-4 lg:grid-cols-8"
 import { OrderColumns } from "./columns";
 import { DataTable } from "../../../ui/components/data-table";
-import { fetchOrders } from "@/lib/data/data";
+//import { fetchOrders } from "@/lib/data/data";
 import { NewOrderButton } from "@/app/ui/components/new-order-button";
+import { fetchOrders } from "@/app/(protected)/(tables)/queries";
 /*async function fetchOrders(): Promise<Order[]> {
   //once api layer is made we can move this function over
   return [
@@ -14,6 +15,7 @@ import { NewOrderButton } from "@/app/ui/components/new-order-button";
 
 export default async function Page() {
   const orders = await fetchOrders();
+
   //console.log(typeof(Object.values(OrderStatus) as string[]));
   return (
     <main className="container flex flex-col items-center">

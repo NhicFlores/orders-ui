@@ -17,6 +17,7 @@ import {
 import Link from "next/link";
 import { deleteOrder } from "@/lib/actions/actions";
 import { formatDateToLocal } from "@/lib/utils";
+import { OrderDB } from "@/lib/definitions/order-definitions";
 
 /*export type Order = {
   id: string;
@@ -29,7 +30,7 @@ import { formatDateToLocal } from "@/lib/utils";
   status: "pending" | "draft" | "shipped" | "processing";
 };*/
 //TODO: enable shift select
-export const OrderColumns: ColumnDef<Order_DEPRECATED>[] = [
+export const OrderColumns: ColumnDef<OrderDB>[] = [
   {
     id: "select",
     header: ({ table }) => (
@@ -90,24 +91,10 @@ export const OrderColumns: ColumnDef<Order_DEPRECATED>[] = [
       );
     },
   },
-  {
-    accessorKey: "id",
-    header: "ID",
-  },
-  {
-    accessorKey: "customer_id",
-    header: ({ column }) => {
-      return (
-        <Button
-          variant={"ghost"}
-          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-        >
-          Customer
-          <ArrowUpDown className="ml-2 h-4 w-4" />
-        </Button>
-      );
-    },
-  },
+  // {
+  //   accessorKey: "id",
+  //   header: "ID",
+  // },
   {
     accessorKey: "order_name",
     header: ({ column }) => {
@@ -122,71 +109,71 @@ export const OrderColumns: ColumnDef<Order_DEPRECATED>[] = [
       );
     },
   },
+  // {
+  //   accessorKey: "product_id",
+  //   header: ({ column }) => {
+  //     return (
+  //       <Button
+  //         variant={"ghost"}
+  //         onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+  //       >
+  //         Product
+  //         <ArrowUpDown className="ml-2 h-4 w-4" />
+  //       </Button>
+  //     );
+  //   },
+  // },
+  // {
+  //   accessorKey: "quantity",
+  //   header: ({ column }) => {
+  //     return (
+  //       <Button
+  //         variant={"ghost"}
+  //         onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+  //       >
+  //         Quantity
+  //         <ArrowUpDown className="ml-2 h-4 w-4" />
+  //       </Button>
+  //     );
+  //   },
+  // },
+  // {
+  //   accessorKey: "price",
+  //   header: ({ column }) => {
+  //     return (
+  //       <Button
+  //         variant={"ghost"}
+  //         onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+  //       >
+  //         <div className="text-right">Total</div>
+  //         <ArrowUpDown className="ml-2 h-4 w-4" />
+  //       </Button>
+  //     );
+  //   },
+  //   cell: ({ row }) => {
+  //     const price = parseFloat(row.getValue("price"));
+  //     const formatted = new Intl.NumberFormat("en-US", {
+  //       style: "currency",
+  //       currency: "USD",
+  //     }).format(price);
+  //     return <div className="text-right pr-5 font-medium">{formatted}</div>;
+  //   },
+  // },
   {
-    accessorKey: "product_id",
+    accessorKey: "date_submitted",
     header: ({ column }) => {
       return (
         <Button
           variant={"ghost"}
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
-          Product
-          <ArrowUpDown className="ml-2 h-4 w-4" />
-        </Button>
-      );
-    },
-  },
-  {
-    accessorKey: "quantity",
-    header: ({ column }) => {
-      return (
-        <Button
-          variant={"ghost"}
-          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-        >
-          Quantity
-          <ArrowUpDown className="ml-2 h-4 w-4" />
-        </Button>
-      );
-    },
-  },
-  {
-    accessorKey: "price",
-    header: ({ column }) => {
-      return (
-        <Button
-          variant={"ghost"}
-          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-        >
-          <div className="text-right">Total</div>
+          Date Ordered
           <ArrowUpDown className="ml-2 h-4 w-4" />
         </Button>
       );
     },
     cell: ({ row }) => {
-      const price = parseFloat(row.getValue("price"));
-      const formatted = new Intl.NumberFormat("en-US", {
-        style: "currency",
-        currency: "USD",
-      }).format(price);
-      return <div className="text-right pr-5 font-medium">{formatted}</div>;
-    },
-  },
-  {
-    accessorKey: "date",
-    header: ({ column }) => {
-      return (
-        <Button
-          variant={"ghost"}
-          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-        >
-          Date
-          <ArrowUpDown className="ml-2 h-4 w-4" />
-        </Button>
-      );
-    },
-    cell: ({ row }) => {
-      const date = row.getValue("date"); //NOTE TO DO: casting vs conversion
+      const date = row.getValue("date_submitted"); //NOTE TO DO: casting vs conversion
       // NOTE TODO: format date before sending to db vs formatting on fetch
       const formattedDate = formatDateToLocal(date as string);
       return <div>{formattedDate}</div>;

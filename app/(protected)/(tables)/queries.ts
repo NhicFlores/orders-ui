@@ -17,3 +17,16 @@ export async function fetchOrdersByStatus(status: OrderStatus) {
     throw new Error("Database Error: Failed to fetch draft orders");
   }
 }
+
+export async function fetchOrders() {
+  try {
+    const data = await sql<OrderDB>`
+            SELECT * FROM orders
+            WHERE status != ${OrderStatus.Draft} AND status != ${OrderStatus.Quote}
+        `;
+    console.log(data.rows);
+    return data.rowCount > 0 ? data.rows : [];
+  } catch (error) {
+    throw new Error("Database Error: Failed to fetch orders");
+  }
+}
