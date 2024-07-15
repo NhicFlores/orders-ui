@@ -10,11 +10,11 @@ import {
 } from "@/components/ui/select";
 import { useState } from "react";
 import ShippingForm from "../../(account)/shipping/shipping-form";
-import { ShippingInfo, ShippingInfoDB } from "@/lib/definitions/profile-definitions";
+import { ShippingInfo } from "@/lib/definitions/profile-definitions";
 import { useProductContext } from "@/components/product-components/product-context-provider";
 
 interface ShippingSectionProps {
-  shippingOptions: ShippingInfoDB[];
+  shippingOptions: ShippingInfo[];
 }
 
 export default function ShippingSection({
@@ -22,8 +22,8 @@ export default function ShippingSection({
 }: ShippingSectionProps) {
   const [showShippingForm, setShowShippingForm] = useState(false);
   const [selectedShippingOption, setSelectedShippingOption] =
-    useState<ShippingInfo | ShippingInfoDB>();
-  const [formData, setFormData] = useState<ShippingInfo | ShippingInfoDB>();
+    useState<ShippingInfo>();
+  const [formData, setFormData] = useState<ShippingInfo>();
 
   const { order, setOrder } = useProductContext();
 
@@ -40,7 +40,7 @@ export default function ShippingSection({
       : setShowShippingForm(!showShippingForm);
   }
 
-  function handleCheckBoxClick(){
+  function handleCheckBoxClick() {
     //NOTE TODO: populate shipping form with billing address
     const shipping = {
       delivery_addr: order.billing_info_id.billing_addr,
@@ -61,21 +61,22 @@ export default function ShippingSection({
     setFormData(newSelectedShippingOption);
     setShowShippingForm(!!newSelectedShippingOption);
 
-    setOrder((prevOrder) => ({
-      ...prevOrder,
-      //NOTE POTENTIAL BUG: currently being saved without id from backend
-      //not sure that we really care since this is a simple object we 
-      //can deserialize and we only need the id's to be able to query the db 
-      //for the shipping options table 
-      shipping_info: newSelectedShippingOption as ShippingInfoDB,  
-    }));
+    newSelectedShippingOption &&
+      setOrder((prevOrder) => ({
+        ...prevOrder,
+        //NOTE POTENTIAL BUG: currently being saved without id from backend
+        //not sure that we really care since this is a simple object we
+        //can deserialize and we only need the id's to be able to query the db
+        //for the shipping options table
+        shipping_info: newSelectedShippingOption,
+      }));
   }
 
   return (
     <div className="border rounded p-4 space-y-4">
       <div className="text-lg font-bold">Enter Shipping Address</div>
       <div className="flex items-center gap-2">
-        <Checkbox onClick={handleCheckBoxClick}/>
+        <Checkbox onClick={handleCheckBoxClick} />
         <div>Same as billing address</div>
       </div>
       <div className="flex space-x-2">
@@ -112,7 +113,7 @@ export default function ShippingSection({
       </div>
       {showShippingForm && (
         <ShippingForm
-          key={(formData as ShippingInfoDB).id}
+          key={formData?.id}
           shippingInfo={formData}
           isBlankForm={!formData}
           toggleShippingForm={toggleShippingForm}

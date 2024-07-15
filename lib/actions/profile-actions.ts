@@ -323,9 +323,11 @@ export async function updateBillingInfo(
 }
 
 export async function deleteBillingInfo(
-  user_id: string,
   billing_info_id: number
 ) {
+
+  const user_id = await validateUser();
+
   try {
     await sql`
     DELETE FROM billing_info

@@ -16,7 +16,6 @@ import {
 } from "@/lib/actions/profile-actions";
 import {
   ShippingInfo,
-  ShippingInfoDB,
 } from "@/lib/definitions/profile-definitions";
 import { ShippingInfoSchema } from "@/schema/form-schema";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -26,7 +25,7 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 
 interface ShippingFormProps {
-  shippingInfo?: ShippingInfo | ShippingInfoDB;
+  shippingInfo?: ShippingInfo;
   toggleShippingForm: () => void;
   isBlankForm?: boolean;
 }
@@ -64,7 +63,7 @@ export default function ShippingForm({
   async function handleFormSave(data: z.infer<typeof ShippingInfoSchema>) {
     isBlankForm
       ? createShippingInfo(data)
-      : updateShippingInfo((shippingInfo as ShippingInfoDB).id, data);
+      : shippingInfo?.id && updateShippingInfo(shippingInfo.id, data);
     setIsEditEnabled(!isEditEnabled);
 
     //NOTE TODO: this is unsafe because the user input is being passed directly to the state
@@ -73,7 +72,7 @@ export default function ShippingForm({
     console.log(data);
     setOrder((prevOrder) => ({
       ...prevOrder,
-      shipping_info: data as ShippingInfoDB,
+      shipping_info: data as ShippingInfo,
     }));
   }
 

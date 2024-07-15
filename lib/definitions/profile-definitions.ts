@@ -14,6 +14,8 @@ export type UserProfile = {
 
 //could have a check for if phone number
 export type BillingInfo = {
+  id?: number;
+  user_id?: string;
   billing_addr: Address;
   payment_method: string;
   purchase_order?: string;
@@ -26,19 +28,11 @@ export type BillingInfo = {
   isActive?: boolean;
 };
 
-export type BillingInfoDB = BillingInfo & {
-  id: number;
-  user_id: string;
-};
-
 export type ShippingInfo = {
+  id?: number;
   delivery_addr?: Address;
   is_job_site: boolean;
   note?: string;
-};
-
-export type ShippingInfoDB = ShippingInfo & {
-  id: number;
 };
 
 export interface Address {

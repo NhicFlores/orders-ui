@@ -4,8 +4,8 @@ import { sql } from "@vercel/postgres";
 import { User } from "@/lib/definitions/auth-definitions";
 import { unstable_noStore as noStore } from "next/cache";
 import {
-  BillingInfoDB,
-  ShippingInfoDB,
+  BillingInfo,
+  ShippingInfo,
   UserProfile,
 } from "@/lib/definitions/profile-definitions";
 
@@ -37,7 +37,7 @@ export async function getUserProfileById(user_id: string) {
 
 export async function getBillingInfoByUserId(user_id: string) {
   try {
-    const billingInfoData = await sql<BillingInfoDB>`
+    const billingInfoData = await sql<BillingInfo>`
       SELECT * FROM billing_info 
       WHERE user_id=${user_id}
     `;
@@ -67,7 +67,7 @@ export async function getBillingInfoByUserId(user_id: string) {
 
 export async function getShippingInfoById(user_id: string) {
   try {
-    const shippingInfo = await sql<ShippingInfoDB>`
+    const shippingInfo = await sql<ShippingInfo>`
       SELECT * FROM shipping_info 
       WHERE user_id=${user_id}`;
 

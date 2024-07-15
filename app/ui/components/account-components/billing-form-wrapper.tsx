@@ -4,11 +4,11 @@ import { Button } from "@/components/ui/button";
 import { PlusIcon } from "lucide-react";
 import { BillingOptionTable } from "@/app/ui/components/account-components/billing-option-table";
 import { BillingInfoColumns } from "./billing-info-columns";
-import { BillingInfoDB } from "@/lib/definitions/profile-definitions";
+import { BillingInfo } from "@/lib/definitions/profile-definitions";
 import { useState } from "react";
 
 interface BillingFormWrapperProps {
-  billing_data: BillingInfoDB[];
+  billing_data: BillingInfo[];
 }
 
 const BillingFormWrapper = ({

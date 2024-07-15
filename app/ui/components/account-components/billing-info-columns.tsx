@@ -1,11 +1,11 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import { deleteBillingInfo } from "@/lib/actions/profile-actions";
-import { BillingInfoDB } from "@/lib/definitions/profile-definitions";
+import { BillingInfo } from "@/lib/definitions/profile-definitions";
 import { ColumnDef } from "@tanstack/react-table";
-import { Trash2, ChevronDown  } from "lucide-react";
+import { Trash2  } from "lucide-react";
 
-export const BillingInfoColumns: ColumnDef<BillingInfoDB>[] = [
+export const BillingInfoColumns: ColumnDef<BillingInfo>[] = [
     {
         id: "expander",
     },
@@ -28,7 +28,7 @@ export const BillingInfoColumns: ColumnDef<BillingInfoDB>[] = [
             return (
                 <Button 
                     variant={'ghost'}
-                    onClick={() => deleteBillingInfo(billingInfo.user_id , billingInfo.id)}
+                    onClick={() => deleteBillingInfo(billingInfo.id!)}
                 >
                     <Trash2 size={18} />
                 </Button>

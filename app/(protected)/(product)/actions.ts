@@ -109,7 +109,7 @@ export async function createOrder(order: Order, orderItems: OrderItem[]) {
                             date_submitted)
         VALUES (${user_id}, 
                 ${order_name}, 
-                ${billing_info_id_string}, 
+                ${billing_info_id.id? billing_info_id.id : null}, 
                 ${shipping_info_string}, 
                 ${status}, 
                 ${date_created}, 

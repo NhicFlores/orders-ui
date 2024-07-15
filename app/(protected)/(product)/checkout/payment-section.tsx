@@ -9,11 +9,11 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { BillingInfoDB } from "@/lib/definitions/profile-definitions";
+import { BillingInfo } from "@/lib/definitions/profile-definitions";
 import { useState } from "react";
 
 interface PaymentSectionProps {
-  billingOptions: BillingInfoDB[];
+  billingOptions: BillingInfo[];
 }
 
 export default function PaymentSection({
@@ -21,8 +21,8 @@ export default function PaymentSection({
 }: PaymentSectionProps) {
   const [showPaymentForm, setShowPaymentForm] = useState(false);
   const [selectedBillingOption, setSelectedBillingOption] =
-    useState<BillingInfoDB>();
-  const [formData, setFormData] = useState<BillingInfoDB>();
+    useState<BillingInfo>();
+  const [formData, setFormData] = useState<BillingInfo>();
 
   const { setOrder } = useProductContext();
 
@@ -50,10 +50,11 @@ export default function PaymentSection({
     // the first '!' will convert it to a boolean and the second '!' will negate it, turning it to true when the value isn't null
     setShowPaymentForm(!!newSelectedBillingOption);
 
-    setOrder((prevOrder) => ({
-      ...prevOrder,
-      billing_info_id: newSelectedBillingOption!,
-    }));
+    newSelectedBillingOption &&
+      setOrder((prevOrder) => ({
+        ...prevOrder,
+        billing_info_id: newSelectedBillingOption,
+      }));
   };
 
   return (

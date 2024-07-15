@@ -21,10 +21,10 @@ import {
   insertBillingInfo,
   updateBillingInfo,
 } from "@/lib/actions/profile-actions";
-import { BillingInfo, BillingInfoDB } from "@/lib/definitions/profile-definitions";
+import { BillingInfo } from "@/lib/definitions/profile-definitions";
 
 interface BillingFormProps {
-  billing_info?: BillingInfoDB;
+  billing_info?: BillingInfo;
   isBlankForm?: boolean;
   toggleBillingForm?: () => void;
 }
@@ -75,8 +75,9 @@ const BillingForm = ({
 
     isBlankForm ? 
       createBillingInfo(data)
-      : updateBillingInfo(billing_info!.id, data);//NOTE BUG: potential bug here, need to test if we can get call updateBillingInfo with id = -1
-    setIsEditEnabled(!isEditEnabled);
+      : billing_info?.id && updateBillingInfo(billing_info.id, data);//NOTE BUG: potential bug here, need to test if we can get call updateBillingInfo with id = -1
+    //NOTE TODO: add error handling
+      setIsEditEnabled(!isEditEnabled);
     //console.log(data);
     //insertBillingInfo();
   }
