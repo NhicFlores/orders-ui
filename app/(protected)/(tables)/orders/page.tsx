@@ -6,7 +6,7 @@ import { OrderColumns } from "./columns";
 import { DataTable } from "../../../ui/components/data-table";
 //import { fetchOrders } from "@/lib/data/data";
 import { NewOrderButton } from "@/app/ui/components/new-order-button";
-import { fetchOrders } from "@/app/(protected)/(tables)/queries";
+import { fetchOrders, fetchOrderTableData } from "@/app/(protected)/(tables)/queries";
 /*async function fetchOrders(): Promise<Order[]> {
   //once api layer is made we can move this function over
   return [
@@ -15,7 +15,7 @@ import { fetchOrders } from "@/app/(protected)/(tables)/queries";
 
 export default async function Page() {
   const orders = await fetchOrders();
-
+  const tableData = await fetchOrderTableData();
   //console.log(typeof(Object.values(OrderStatus) as string[]));
   return (
     <main className="container flex flex-col items-center">
@@ -28,7 +28,7 @@ export default async function Page() {
         </div>
       </div>
       <div className="container mx-auto py-10">
-        <DataTable columns={OrderColumns} data={orders} />
+        <DataTable columns={OrderColumns} data={tableData} />
       </div>
     </main>
   );

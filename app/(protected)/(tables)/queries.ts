@@ -1,6 +1,10 @@
 "use server";
 
-import { CustomerOrderTable, OrderDB, OrderStatus } from "@/lib/definitions/order-definitions";
+import {
+  CustomerOrderTable,
+  OrderDB,
+  OrderStatus,
+} from "@/lib/definitions/order-definitions";
 import { sql } from "@vercel/postgres";
 
 export async function fetchOrdersByStatus(status: OrderStatus) {
@@ -48,11 +52,115 @@ export async function fetchOrderTableData() {
   try {
     // SQL query to fetch data from orders, billing_info, and order_items tables
     const data = await sql<CustomerOrderTable>`
-        
+      SELECT 
+        o.id AS order_id, 
+        o.order_name, 
+        o.status, 
+        o.shipping_info, 
+        o.date_created, 
+        o.date_updated, 
+        o.date_submitted,
+        json_build_object(
+            'billing_addr', bi.billing_addr,
+            'payment_method', bi.payment_method,
+            'purchase_order', bi.purchase_order,
+            'primary_contact_name', bi.primary_contact_name,
+            'primary_contact_email', bi.primary_contact_email,
+            'phone_num', bi.phone_num,
+            'alt_phone_num', bi.alt_phone_num,
+            'fax_num', bi.fax_num,
+            'isPrimary', bi.isPrimary,
+            'isActive', bi.isActive
+        ) AS billing_info,
+        json_agg(
+            json_build_object(
+                'id', oi.id,
+                'glass_type', oi.glass_type,
+                'shape', oi.shape,
+                'dimensions', oi.dimensions,
+                'thickness', oi.thickness,
+                'tint', oi.tint,
+                'fabrication_options', oi.fabrication_options,
+                'misc_options', oi.misc_options,
+                'note', oi.note,
+                'quantity', oi.quantity
+            )
+        ) FILTER (WHERE oi.id IS NOT NULL) AS order_items
+      FROM 
+          orders o
+      LEFT JOIN 
+          billing_info bi ON o.billing_info_id = bi.id
+      LEFT JOIN 
+          order_items oi ON o.id = oi.order_id
+      GROUP BY 
+          o.id, bi.id
     `;
+    console.log("xxxxxxx customer order table data xxxxxxx");
+    console.log(data.rows.length);
     console.log(data.rows);
     return data.rowCount && data.rowCount > 0 ? data.rows : [];
   } catch (error) {
     throw new Error("Database Error: Failed to fetch order table data");
   }
 }
+
+/*
+        SELECT o.id as order_id,
+                o.order_name,
+                o.status,
+                o.shipping_info,
+                o.date_created,
+                o.date_updated,
+                o.date_submitted,
+                b.*,
+                json_agg(oi) as order_items
+        FROM orders o
+        JOIN billing_info b ON o.billing_info_id = b.id
+        LEFT JOIN order_items oi ON o.id = oi.order_id
+        GROUP BY o.id, b.id
+*/
+
+/**
+ *       SELECT 
+        o.id AS order_id, 
+        o.order_name, 
+        o.status, 
+        o.shipping_info, 
+        o.date_created, 
+        o.date_updated, 
+        o.date_submitted,
+        json_build_object(
+            'billing_addr', bi.billing_addr,
+            'payment_method', bi.payment_method,
+            'purchase_order', bi.purchase_order,
+            'primary_contact_name', bi.primary_contact_name,
+            'primary_contact_email', bi.primary_contact_email,
+            'phone_num', bi.phone_num,
+            'alt_phone_num', bi.alt_phone_num,
+            'fax_num', bi.fax_num,
+            'isPrimary', bi.isPrimary,
+            'isActive', bi.isActive
+        ) AS billing_info,
+        json_agg(
+            json_build_object(
+                'id', oi.id,
+                'glass_type', oi.glass_type,
+                'shape', oi.shape,
+                'dimensions', oi.dimensions,
+                'thickness', oi.thickness,
+                'tint', oi.tint,
+                'fabrication_options', oi.fabrication_options,
+                'misc_options', oi.misc_options,
+                'note', oi.note,
+                'quantity', oi.quantity
+            )
+        ) AS order_items
+      FROM 
+          orders o
+      JOIN 
+          billing_info bi ON o.billing_info_id = bi.id
+      JOIN 
+          order_items oi ON o.id = oi.order_id
+      GROUP BY 
+          o.id, bi.id
+ */

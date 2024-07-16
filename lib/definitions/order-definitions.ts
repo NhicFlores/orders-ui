@@ -53,6 +53,10 @@ export type OrderItemDB = OrderItem & {
   id: string;
 };
 
+/**
+ * This type is used to strongly type the sql query that fetches data 
+ * for the customer order table. 
+ */
 export type CustomerOrderTable = {
   // properties from orders table
   order_id: string; //order_id

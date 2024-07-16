@@ -2,7 +2,6 @@
 "use client";
 
 import { ColumnDef, RowExpanding } from "@tanstack/react-table";
-import { Order_DEPRECATED } from "@/lib/definitions/definitions";
 import { ArrowUpDown, MoreHorizontal } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
@@ -17,20 +16,10 @@ import {
 import Link from "next/link";
 import { deleteOrder } from "@/lib/actions/actions";
 import { formatDateToLocal } from "@/lib/utils";
-import { OrderDB } from "@/lib/definitions/order-definitions";
+import { CustomerOrderTable } from "@/lib/definitions/order-definitions";
 
-/*export type Order = {
-  id: string;
-  customer_id: string;
-  order_name: string;
-  product_id: string;
-  amount: number;
-  price: number;
-  date: string;
-  status: "pending" | "draft" | "shipped" | "processing";
-};*/
 //TODO: enable shift select
-export const OrderColumns: ColumnDef<OrderDB>[] = [
+export const OrderColumns: ColumnDef<CustomerOrderTable>[] = [
   {
     id: "select",
     header: ({ table }) => (
@@ -67,11 +56,11 @@ export const OrderColumns: ColumnDef<OrderDB>[] = [
           <DropdownMenuContent align="end">
             <DropdownMenuLabel>Actions</DropdownMenuLabel>
             <DropdownMenuItem
-              onClick={() => navigator.clipboard.writeText(order.id)}
+              onClick={() => navigator.clipboard.writeText(order.order_id)}
             >
               Copy order ID
             </DropdownMenuItem>
-            <Link href={`/order/${order.id}/edit`}>
+            <Link href={`/order/${order.order_id}/edit`}>
               <DropdownMenuItem>Edit Order</DropdownMenuItem>
             </Link>
             <DropdownMenuSeparator />
@@ -81,7 +70,7 @@ export const OrderColumns: ColumnDef<OrderDB>[] = [
             {/** NOTE HOW TO Server Actions are not limited to <form> and can be invoked from event handlers, useEffect, third-party libraries, and other form elements like <button> **/}
 
             <DropdownMenuItem
-              onClick={() => deleteOrder(order.id)}
+              onClick={() => deleteOrder(order.order_id)}
               className="focus:bg-red-500 focus:text-white"
             >
               Delete Order
