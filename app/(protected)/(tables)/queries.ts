@@ -12,7 +12,7 @@ export async function fetchOrdersByStatus(status: OrderStatus) {
     //2024-07-09T05:00:00.000Z
     //2024-05-01T05:00:00.000Z
     console.log(data.rows);
-    return data.rowCount > 0 ? data.rows : [];
+    return data.rowCount && data.rowCount > 0 ? data.rows : [];
   } catch (error) {
     throw new Error("Database Error: Failed to fetch draft orders");
   }
@@ -25,7 +25,7 @@ export async function fetchOrders() {
             WHERE status != ${OrderStatus.Draft} AND status != ${OrderStatus.Quote}
         `;
     console.log(data.rows);
-    return data.rowCount > 0 ? data.rows : [];
+    return data.rowCount && data.rowCount > 0 ? data.rows : [];
   } catch (error) {
     throw new Error("Database Error: Failed to fetch orders");
   }
@@ -38,7 +38,7 @@ export async function fetchOrderItems(orderId: string) {
         WHERE order_id = ${orderId}
     `;
     console.log(data.rows);
-    return data.rowCount > 0 ? data.rows : [];
+    return data.rowCount && data.rowCount > 0 ? data.rows : [];
   } catch (error) {
     throw new Error("Database Error: Failed to fetch order items");
   }
@@ -51,7 +51,7 @@ export async function fetchOrderTableData() {
         
     `;
     console.log(data.rows);
-    return data.rowCount > 0 ? data.rows : [];
+    return data.rowCount && data.rowCount > 0 ? data.rows : [];
   } catch (error) {
     throw new Error("Database Error: Failed to fetch order table data");
   }
