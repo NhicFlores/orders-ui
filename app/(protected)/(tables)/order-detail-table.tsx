@@ -7,7 +7,10 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { OrderItem } from "@/lib/definitions/order-definitions";
-import { BillingInfo, ShippingInfo } from "@/lib/definitions/profile-definitions";
+import {
+  BillingInfo,
+  ShippingInfo,
+} from "@/lib/definitions/profile-definitions";
 import {
   ColumnDef,
   SortingState,
@@ -24,20 +27,26 @@ interface OrderDetailTableProps {
   shippingInfo: ShippingInfo;
 }
 
-export default function OrderDetailTable({ orderItems, billingInfo, shippingInfo }: OrderDetailTableProps) {
-//   const table = useReactTable({
-//     data,
-//     columns,
-//     getCoreRowModel: getCoreRowModel(),
-//   });
+export default function OrderDetailTable({
+  orderItems,
+  billingInfo,
+  shippingInfo,
+}: OrderDetailTableProps) {
+  //   const table = useReactTable({
+  //     data,
+  //     columns,
+  //     getCoreRowModel: getCoreRowModel(),
+  //   });
 
   return (
     <div>
       <Table>
         <TableHeader>
+          <TableRow>
             <TableHead>Order Items</TableHead>
             <TableHead>Billing Information</TableHead>
             <TableHead>Shipping</TableHead>
+          </TableRow>
         </TableHeader>
         <TableBody>
           <TableRow>
@@ -62,9 +71,7 @@ export default function OrderDetailTable({ orderItems, billingInfo, shippingInfo
               <div>{JSON.stringify(billingInfo.billing_addr)}</div>
             </TableCell>
             <TableCell>
-              <div>
-                {shippingInfo.is_job_site ? "Job Site" : "Home"}
-              </div>
+              <div>{shippingInfo.is_job_site ? "Job Site" : "Home"}</div>
               <div>{shippingInfo.note}</div>
               <div>{JSON.stringify(shippingInfo.delivery_addr)}</div>
             </TableCell>

@@ -95,10 +95,22 @@ export async function fetchOrderTableData() {
       GROUP BY 
           o.id, bi.id
     `;
-    console.log("xxxxxxx customer order table data xxxxxxx");
-    console.log(data.rows.length);
-    console.log(data.rows);
-    return data.rowCount && data.rowCount > 0 ? data.rows : [];
+
+    const tableData = data.rows.map((row) => {
+      //NOTE TODO: what is best practice for parsing JSON data
+      const billing_addr = JSON.parse(String(row.billing_info.billing_addr));
+      const shipping_info = JSON.parse(String(row.shipping_info));
+      return {
+        ...row,
+        billing_info: {
+          ...row.billing_info,
+          billing_addr,
+        },
+        shipping_info,
+      };
+    });
+
+    return tableData;
   } catch (error) {
     throw new Error("Database Error: Failed to fetch order table data");
   }
