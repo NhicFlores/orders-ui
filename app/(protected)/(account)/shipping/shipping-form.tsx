@@ -26,7 +26,7 @@ import { z } from "zod";
 
 interface ShippingFormProps {
   shippingInfo?: ShippingInfo;
-  toggleShippingForm: () => void;
+  toggleShippingForm?: () => void;
   isBlankForm?: boolean;
 }
 

@@ -412,9 +412,9 @@ export async function updateShippingInfo(
 }
 
 export async function deleteShippingInfo(
-  user_id: string,
   shipping_info_id: number
 ) {
+  const user_id = await validateUser();
   await sql`
         DELETE FROM shipping_info
         WHERE user_id = ${user_id} AND id = ${shipping_info_id}
