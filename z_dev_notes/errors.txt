@@ -434,3 +434,7 @@ once i changed it to the full object, react was getting an object as a child. wh
 that the error didn't tell me where that object was getting passed to react. I searched for billing_info_id 
 in the project and went through each file until I opened up the order summary component, which finally 
 threw an error once it was opened. 
+
+-issue 
+TypeError: Cannot read properties of undefined (reading 'map') 
+- trying to read order_items from CustomerOrderTable object 

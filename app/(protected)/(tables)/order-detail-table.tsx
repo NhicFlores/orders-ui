@@ -71,7 +71,7 @@ export default function OrderDetailTable({
               <div>{JSON.stringify(billingInfo.billing_addr)}</div>
             </TableCell>
             <TableCell>
-              <div>{shippingInfo.is_job_site ? "Job Site" : "Home"}</div>
+              {shippingInfo.is_job_site && <div>{shippingInfo.is_job_site ? "Job Site" : "Home"}</div>}
               <div>{shippingInfo.note}</div>
               <div>{JSON.stringify(shippingInfo.delivery_addr)}</div>
             </TableCell>

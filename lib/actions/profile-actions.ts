@@ -1,6 +1,6 @@
 "use server";
 import { auth } from "@/auth";
-import { BillingRoute, ProfileRoute } from "@/routes";
+import { BillingRoute, ProfileRoute, ShippingRoute } from "@/routes";
 import {
   BillingInfoSchema,
   ProfileSchema,
@@ -419,4 +419,6 @@ export async function deleteShippingInfo(
         DELETE FROM shipping_info
         WHERE user_id = ${user_id} AND id = ${shipping_info_id}
     `;
+
+  revalidatePath(ShippingRoute.href)
 }
