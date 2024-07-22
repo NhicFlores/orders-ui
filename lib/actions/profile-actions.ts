@@ -12,8 +12,7 @@ import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { z } from "zod";
 
-
-async function validateUser(){
+async function validateUser() {
   const session = await auth();
   if (!session?.user.id) {
     return redirect("/login");
@@ -123,16 +122,12 @@ export async function deleteProfile(user_id: string) {
  * @returns
  */
 export async function createBillingInfo(
-  formFields: z.infer<typeof BillingInfoSchema>
+  formFields: z.infer<typeof BillingInfoSchema>,
+  pathToRevalidate: string
 ) {
-
-  const session = await auth();
-  if (!session?.user.id) {
-    return redirect("/login");
-  }
-
-  const user_id = session.user.id;
-
+  const user_id = await validateUser();
+  //NOTE TODO: for testing purposes, we should split up the validation into 
+  //separate function 
   const validatedFields = BillingInfoSchema.safeParse(formFields);
 
   if (!validatedFields.success) {
@@ -157,10 +152,10 @@ export async function createBillingInfo(
   // const billing_addr_str = `(${billing_addr.street}, ${billing_addr.apt_num}, ${billing_addr.city}, ${billing_addr.state}, ${billing_addr.zip}, ${billing_addr.country})`;
   const billing_addr_string = JSON.stringify(billing_addr);
 
+  let billing_info_id = '';
   try {
     console.log("---------------- updating DB -----------------");
-    console.log("billing_addr: ", billing_addr);
-    await sql`
+    const queryResult = await sql<{ id: string }>`
         INSERT INTO billing_info (
             user_id, 
             billing_addr, 
@@ -172,24 +167,31 @@ export async function createBillingInfo(
             alt_phone_num, 
             fax_num
           )
-            VALUES (${user_id}, 
-                ${billing_addr_string}, 
-                ${payment_method}, 
-                ${purchase_order}, 
-                ${primary_contact_name}, 
-                ${primary_contact_email}, 
-                ${phone_num}, 
-                ${alt_phone_num}, 
-                ${fax_num})
+        VALUES (${user_id}, 
+            ${billing_addr_string}, 
+            ${payment_method}, 
+            ${purchase_order}, 
+            ${primary_contact_name}, 
+            ${primary_contact_email}, 
+            ${phone_num}, 
+            ${alt_phone_num}, 
+            ${fax_num})
+        RETURNING id;
         `;
     console.log("---------------- updated DB -----------------");
+    billing_info_id = queryResult.rows[0].id;
   } catch (error) {
     return {
-      message: "Database Error: Failed to create Billing Info.",
+      id: billing_info_id,
+      error: "Database Error: Failed to create Billing Info.",
     };
   }
 
-  revalidatePath(BillingRoute.href);
+  revalidatePath(pathToRevalidate);
+  return {
+    id: billing_info_id,
+    success: "Your order has been submitted.",
+  };
 }
 
 export async function insertBillingInfo() {
@@ -322,10 +324,7 @@ export async function updateBillingInfo(
   revalidatePath(BillingRoute.href);
 }
 
-export async function deleteBillingInfo(
-  billing_info_id: number
-) {
-
+export async function deleteBillingInfo(billing_info_id: number) {
   const user_id = await validateUser();
 
   try {
@@ -348,7 +347,6 @@ export async function deleteBillingInfo(
 export async function createShippingInfo(
   formFields: z.infer<typeof ShippingInfoSchema>
 ) {
-
   const user_id = await validateUser();
 
   const validatedFields = ShippingInfoSchema.safeParse(formFields);
@@ -382,7 +380,6 @@ export async function updateShippingInfo(
   shipping_info_id: number,
   formFields: z.infer<typeof ShippingInfoSchema>
 ) {
-
   const user_id = await validateUser();
 
   const validatedFields = ShippingInfoSchema.safeParse(formFields);
@@ -411,14 +408,12 @@ export async function updateShippingInfo(
   }
 }
 
-export async function deleteShippingInfo(
-  shipping_info_id: number
-) {
+export async function deleteShippingInfo(shipping_info_id: number) {
   const user_id = await validateUser();
   await sql`
         DELETE FROM shipping_info
         WHERE user_id = ${user_id} AND id = ${shipping_info_id}
     `;
 
-  revalidatePath(ShippingRoute.href)
+  revalidatePath(ShippingRoute.href);
 }

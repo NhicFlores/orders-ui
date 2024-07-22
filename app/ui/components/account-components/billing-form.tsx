@@ -22,20 +22,23 @@ import {
   updateBillingInfo,
 } from "@/lib/actions/profile-actions";
 import { BillingInfo } from "@/lib/definitions/profile-definitions";
+import { BillingRoute, CheckoutRoute } from "@/routes";
+import { useProductContext } from "@/components/product-components/product-context-provider";
 
 interface BillingFormProps {
   billing_info?: BillingInfo;
   isBlankForm?: boolean;
   toggleBillingForm?: () => void;
+  handlePaymentOptionChange?: (billing_id: string) => void;
 }
 
 const BillingForm = ({
   billing_info,
   isBlankForm,
   toggleBillingForm,
+  handlePaymentOptionChange,
 }: BillingFormProps) => {
   const [isEditEnabled, setIsEditEnabled] = useState(isBlankForm);
-  const [saveButtonDisabled, setSaveButtonDisabled] = useState(true);
 
   function ToggleEditEnabled() {
     setIsEditEnabled(!isEditEnabled);
@@ -43,23 +46,25 @@ const BillingForm = ({
 
   const billingForm = useForm<z.infer<typeof BillingInfoSchema>>({
     resolver: zodResolver(BillingInfoSchema),
-    defaultValues: billing_info ? billing_info : {
-      billing_addr: {
-        street: "",
-        apt_num: "",
-        city: "",
-        state: "",
-        zip: "",
-        country: "",
-      },
-      payment_method:"",
-      purchase_order: "",
-      primary_contact_name: "",
-      primary_contact_email: "",
-      phone_num:"",
-      alt_phone_num: "",
-      fax_num: "",
-    },
+    defaultValues: billing_info
+      ? billing_info
+      : {
+          billing_addr: {
+            street: "",
+            apt_num: "",
+            city: "",
+            state: "",
+            zip: "",
+            country: "",
+          },
+          payment_method: "",
+          purchase_order: "",
+          primary_contact_name: "",
+          primary_contact_email: "",
+          phone_num: "",
+          alt_phone_num: "",
+          fax_num: "",
+        },
   });
 
   // const formValues = billingForm.watch();
@@ -71,16 +76,47 @@ const BillingForm = ({
   // }, [formValues]);
 
   async function handleFormSave(data: z.infer<typeof BillingInfoSchema>) {
-    //console.log("xxxx submit handler xxxx");
+    // const pathToRevalidate = handlePaymentOptionChange
+    //   ? CheckoutRoute.href
+    //   : BillingRoute.href;
+    // let billing_info_id: string | {};
+    // billing_info
+    //   ? updateBillingInfo(billing_info.id!, data)
+    //   : billing_info_id = await createBillingInfo(data, pathToRevalidate);
+    // handlePaymentOptionChange && billing_info_id && handlePaymentOptionChange(billing_info_id as string);
 
-    isBlankForm ? 
-      createBillingInfo(data)
-      : billing_info?.id && updateBillingInfo(billing_info.id, data);//NOTE BUG: potential bug here, need to test if we can get call updateBillingInfo with id = -1
+    //NOTE BUG: potential bug here, need to test if we can get call updateBillingInfo with id = -1
+    isBlankForm
+      ? createBillingInfo(data, BillingRoute.href)
+      : billing_info?.id && updateBillingInfo(billing_info.id, data); 
     //NOTE TODO: add error handling
-      setIsEditEnabled(!isEditEnabled);
-    //console.log(data);
-    //insertBillingInfo();
+    setIsEditEnabled(!isEditEnabled);
   }
+
+  // const { setOrder } = useProductContext();
+  // async function handleFormSubmit(data: z.infer<typeof BillingInfoSchema>) {
+  //   try {
+  //     if (!!billing_info) {
+  //       console.log("updating billing info with id: ", billing_info.id);
+  //       await updateBillingInfo(billing_info.id!, data);
+  //     } else if (handlePaymentOptionChange) {
+  //       console.log("creating billing info for checkout");
+  //       const db_result = await createBillingInfo(data, CheckoutRoute.href);
+  //       console.log("query result: ", db_result);
+  //       //handlePaymentOptionChange(billing_info_id as string);
+  //       const billing_data = { ...data, id: billing_info_id as number };
+  //       billing_info_id && setOrder((prevOrder) => ({
+  //         ...prevOrder,
+  //         billing_info_id: billing_data as BillingInfo,
+  //       }));
+  //     } else {
+  //       console.log("creating billing info for billing options");
+  //       await createBillingInfo(data, BillingRoute.href);
+  //     }
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // }
 
   return (
     <div>
