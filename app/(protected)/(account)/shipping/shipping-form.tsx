@@ -1,6 +1,7 @@
 "use client";
 import { useProductContext } from "@/components/product-components/product-context-provider";
 import { Button } from "@/components/ui/button";
+import { Checkbox } from "@/components/ui/checkbox";
 import {
   Form,
   FormField,
@@ -14,9 +15,7 @@ import {
   createShippingInfo,
   updateShippingInfo,
 } from "@/lib/actions/profile-actions";
-import {
-  ShippingInfo,
-} from "@/lib/definitions/profile-definitions";
+import { ShippingInfo } from "@/lib/definitions/profile-definitions";
 import { ShippingInfoSchema } from "@/schema/form-schema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Pencil } from "lucide-react";

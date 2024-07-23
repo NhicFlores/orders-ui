@@ -24,6 +24,7 @@ export default function ShippingSection({
   const [selectedShippingOption, setSelectedShippingOption] =
     useState<ShippingInfo>();
   const [formData, setFormData] = useState<ShippingInfo>();
+  const [isJobSite, setIsJobSite] = useState(false);
 
   const { order, setOrder } = useProductContext();
 
@@ -70,6 +71,14 @@ export default function ShippingSection({
         //for the shipping options table
         shipping_info: newSelectedShippingOption,
       }));
+  }
+
+  function handleJobSiteClick() {
+    setIsJobSite(!isJobSite);
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      is_job_site: !prevFormData?.is_job_site,
+    }));
   }
 
   return (
