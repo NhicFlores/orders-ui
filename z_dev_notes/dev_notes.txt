@@ -241,6 +241,11 @@ How are actions handled differently than an async fetch function? look at data a
 how is FormData something we have access to but don't explicitly pass in an action  
 
 
+FORMS
+- using server actions in forms provides 'progressive enhancement'  
+- progressive enhancement means the page can work with or without JavaScript enabled. For forms, using the useFormState hook enables progressive enhancement 
+
+
 -server-side functions (like your fetchTestOrders function) are meant to be called on the server-side only. This is because they often require 
 access to environment variables or resources that are only available on the server-side, such as a database connection string.
 If you're trying to call fetchTestOrders from a client-side component, you'll need to create an API route that calls this function and returns the data. 
@@ -437,6 +442,107 @@ wrap elements in Link, rather than putting Link in an element: this way, if you 
 <><>: fragments can be used to avoid unnecessarily adding extra nodes to the DOM 
 
 
+------------------------------------- Database -------------------------------------
+
+drizzle: Typescript API to resemble native SQL 
+- typesafe queries and results 
+- can trigger migrations from command line 
+- supports transactions 
+- supports raw sql queries 
+- flexible schema that can be used to generate types 
+  export type Item = typeof table.$inferSelect 
+
+integrating Drizzle into nextjs with vercel/postgres driver 
+https://orm.drizzle.team/docs/get-started-postgresql#vercel-postgres
+https://vercel.com/docs/storage/vercel-postgres/using-an-orm#drizzle
+
+- installation 
+  npm i drizzle-orm @vercel/postgres
+  npm i -D drizzle-kit
+
+- configuration 
+  - create drizzle.config.ts file 
+    
+    import { defineConfig } from "drizzle-kit";
+
+    export default defineConfig({
+      dialect: "postgresql", //dialect is required 
+      schema: "./src/drizzle/schema.ts",
+      out: "./src/drizzle/migrations",
+      // driver: "" drive is not required because Drizzle has 
+      // native support for PostgreSQL with pg, postgres,
+      // vercel-postgres, and neon drivers 
+      dbCredentials: {
+        url: process.env.DATABASE_URL as string,
+      },
+      verbose: true,//when running the migration, it will print out the SQL queries that are being executed
+      strict: true,//
+    });
+
+  - Create a schema.ts file for your database tables:
+    import { drizzle } from 'drizzle-orm/vercel-postgres';
+    import { sql } from '@vercel/postgres';
+    import {
+      pgTable,
+      serial,
+      text,
+      timestamp,
+      uniqueIndex,
+    } from 'drizzle-orm/pg-core';
+    
+    export const CustomersTable = pgTable(
+      'customers',
+      {
+        id: serial('id').primaryKey(),
+        name: text('name').notNull(),
+        email: text('email').notNull(),
+        image: text('image').notNull(),
+        createdAt: timestamp('createdAt').defaultNow().notNull(),
+      },
+      (customers) => {
+        return {
+          uniqueIdx: uniqueIndex('unique_idx').on(customers.email),
+        };
+      },
+    );
+
+  - install next/env to load env variables outside the next.js runtime 
+    npm i @next/env 
+  
+  - create envConfig.ts file 
+    import { loadEnvConfig } from '@next/env';
+ 
+    const projectDir = process.cwd();
+    loadEnvConfig(projectDir);
+  
+  - generate tables with drizzle-kit 
+    npx drizzle-kit push 
+  
+  - create db.ts file to implement client to query db  
+    import '@/drizzle/envConfig';
+    import { drizzle } from 'drizzle-orm/vercel-postgres';
+    import { sql } from '@vercel/postgres';
+    import * as schema from './schema';
+    
+    export const db = drizzle(sql, { schema });
+    
+    export const getUsers = async () => {
+      return db.query.users.findMany();
+    };
+
+- drizzle implementation overview 
+  - two main ways to update database schema 
+    generate and migrate for projects that require migration files 
+    Push : for fast prototyping or if project doesn't require migration files 
+
+  - two main ways to query data 
+    sql-like : for sql-like query building 
+    relational: for ORM-like syntax for fetching data that always outputs 1 sql query  
+
+- methodology 1
+  https://www.youtube.com/watch?v=G5B7gsLLGvQ&ab_channel=FullStackBook 
+
+
 ------------------------------------- PostgreSQL ---------------------------------------- 
 issue where my update billing info wasn't working: adding the billing_addr field to the update sql statement 
 would stop it from updating but no errors were thrown. 
@@ -454,6 +560,24 @@ ex. await sql<Order>`sql statement`;
 ex. const partialUser = user.partial();
 can also specify which properties to make optional 
 .required makes every property required 
+
+can use drizzle-zod to generate zod schemas from table definitions 
+https://orm.drizzle.team/docs/zod 
+
+
+------------------------------------ Docker ------------------------------------
+- virtualization: taking chunks of hardware resources from a host machine 
+to allocate to running a separate operating system 
+  - hypervisor: manages virtualization; starting them, shutting them own, 
+  resource allocation; VMware, Virtual Box
+
+- containerization: the solution to the need to run processes in isolation 
+  - chroot command: unix command that changed the root directory for a specific
+  process and its children, creating a confined environment useful for testing, 
+  debugging, or enhancing security 
+  - rlimit: data structure used to define resource limits; https://linux.die.net/man/2/setrlimit 
+  - docker: program to manage lifecycle of containers 
+
 
 ------------------------------------ Auth ------------------------------------
 
