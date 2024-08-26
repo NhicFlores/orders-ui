@@ -8,7 +8,7 @@ export default async function Page({ params }: { params: { id:string } }) {
         fetchOrderById(id),
         fetchCustomers()
     ]);
-
+    // NOTE: DEPRECATED
     return (
         <main>
             <EditOrderForm order={order} customers={customers}/>     

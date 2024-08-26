@@ -57,7 +57,7 @@ export default function ProfileForm({ user_id, profile }: ProfileFormProps) {
     //createProfile(user_id, data);
     setIsEditEnabled(!isEditEnabled);
   }
-  //create multiple forms - one for customer info, billing info, delivery info
+  // NOTE: can use multi-step forms for registration or profile routes - one for customer info, billing info, delivery info
   //pass that form data from each back to the action
   //in action, build the object you're going to send back to the db
   // can use onChange to enable save button
