@@ -262,7 +262,7 @@ export async function fetchInvoiceById(id: string) {
     throw new Error("Failed to fetch invoice.");
   }
 }
-
+// NOTE: deprecated
 export async function fetchCustomers() {
   //noStore();
   try {
@@ -274,7 +274,8 @@ export async function fetchCustomers() {
       ORDER BY name ASC
     `;
 
-    const customers = data.rows;
+    //const customers = data.rows;
+    const customers: CustomerField[] = [{ id: "1", name: "Fetched Customer" }];
     return customers;
   } catch (err) {
     console.error("Database Error:", err);

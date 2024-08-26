@@ -1,0 +1,16 @@
+services:
+  db-service:
+    image: postgres:latest
+    restart: always
+    container_name: db-container
+    environment:
+      POSTGRES_USER: dev
+      POSTGRES_PASSWORD: dev
+      POSTGRES_DB: orders-db
+    ports:
+      - "5432:5432"
+    volumes:
+      - db-data:/var/lib/postgresql/data
+
+volumes:
+  db-data:
