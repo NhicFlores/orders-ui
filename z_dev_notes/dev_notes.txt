@@ -15,6 +15,10 @@ testing - Jest
 
 versioning dependencies 
 
+everytime i run drizzle-kit push, it tries to run against the vercel postgres db instead of the local 
+dockerized database - maybe i can specific NODE_ENV when i run 
+  - npm run dev => NODE_ENV=development npm run dev 
+  - example from geeksforgeeks: NODE_ENV=production node app.js
 
 ------------------------------------ Web Dev Concepts ---------------------------------- 
 Two environments code runs on: client and server 
@@ -311,6 +315,13 @@ https://nextjs.org/docs/app/building-your-application/routing/middleware#matcher
 <SessionProvider> must wrap the children using useSession() - however all pages in the 
 layout using <SessionProvider> must be server components - 
 
+
+
+scripts 
+dev: runs next dev to start Next.js in development mode.
+build: runs next build to build the application for production usage.
+start: runs next start to start a Next.js production server.
+lint: runs next lint to set up Next.js' built-in ESLint configuration.
 
 ------------------------------------ TypeScript ------------------------------------
 -
@@ -847,3 +858,14 @@ i got the cannot lock ref error. it didn't like my auth/ ref because on remote t
 folder didn't exist but there was a branch named auth and the refs were getting mixed up 
 I deleted the auth branch from remote, ran git remote prune origin, then tried to push 
 and set upstream for auth/auth-providers and it worked 
+
+-------------------------------------- Environment variables ----------------------------------- 
+The greater React ecosystem treats NODE_ENV as a convention, only permitting three (3) values:
+
+production: When your application is built with next build
+development: When your application is run with next dev
+test: When your application is being tested (e.g. jest)
+
+
+dotenv is just for managing env variables during development, allowing you to test production 
+without actually having to be in production. it is not used in deployed production environment  

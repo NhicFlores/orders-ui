@@ -8,9 +8,13 @@ const DashboardPage = async () => {
   // console.log("----------------- IN DASHBOARD ---------------")
   // console.log(JSON.stringify(session?.user.role)); //string 
   // console.log(typeof session?.user.role) //string
+  // console.log("-x-x-x-x- Environment: ", process.env.NODE_ENV)
   return (
     <div className="flex flex-col justify-center items-center sm:mt-10 lg:mb-0 lg:mt-30 lg:w-auto lg:grid-rows-3 lg:text-center">
       <DashboardNavStack/>
+      <div className="border p-4 rounded-md">
+        Environment: {process.env.NODE_ENV}
+      </div>
     </div>
   )
 }

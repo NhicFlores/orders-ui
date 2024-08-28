@@ -12,6 +12,7 @@
 - run migrations against vercel db 
 	- use db: push on local db 
 	- once changes to schema are finalized, generate migration and run against vercel db 
+08-27
 - update fetch queries to use updated types and references 
 
 - admin portal for viewing aggregate data 

@@ -1,0 +1,14 @@
+08-27 
+install postgres.js as a dev dependency to hook up to db in docker for local development 
+    npm install postgres --save-dev
+08-28-24 
+deleted existing tables in vercel postgres 
+ran npx drizzle-kit push 
+successfully created all tables, however, 'order-handling' schema was not created 
+
+dbSchema does not work for vercel postgres, though it works for the dockerized pg database 
+
+for vercel postgres => schema.ts export const createTable = pgTableCreator((name) => `image-gallery_${name}`);
+        drizzle.config.ts : export default { schema: , dialect: , dbCredentials: , tablesFilter: ["image-gallery_*"], } satisfies Config; 
+    - this just makes table names with a standardized prefix: all tables exist in the same schema, but the tablesFilter param 
+    gets only the tables with the specified prefix 

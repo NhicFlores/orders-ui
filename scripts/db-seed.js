@@ -178,8 +178,11 @@ async function sqlStatements() {
       DROP TABLE IF EXISTS shipping_info;
       DROP TABLE IF EXISTS billing_info;
       DROP TYPE IF EXISTS address;
-      DROP TABLE IF EXISTS user_profile;
+      DROP TABLE IF EXISTS order_items;
+      DROP TABLE IF EXISTS orders;
+      DROP TABLE IF EXISTS user_profiles;
       DROP TABLE IF EXISTS users;
+      DROP TYPE IF EXISTS role;
   
       CREATE TABLE IF NOT EXISTS users (
         id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,

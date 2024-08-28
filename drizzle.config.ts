@@ -17,6 +17,7 @@ export default defineConfig({
         ? process.env.DEV_SCHEMA
         : process.env.PROD_SCHEMA,
   },
+  schemaFilter: ["order-handling"],
   verbose: true,
   strict: true,
 });
