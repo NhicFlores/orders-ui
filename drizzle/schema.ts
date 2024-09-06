@@ -16,9 +16,9 @@ import {
 } from "drizzle-orm/pg-core";
 
 export const dbSchema = pgSchema(
-  process.env.NODE_ENV === "development"
-    ? process.env.DEV_SCHEMA!
-    : process.env.PROD_SCHEMA!
+  process.env.NODE_ENV === "production"
+    ? process.env.PROD_SCHEMA!
+    : process.env.DEV_SCHEMA!
 );
 
 export const UserRole = dbSchema.enum("user_role", ["ADMIN", "USER"]);

@@ -2,22 +2,25 @@ import { defineConfig } from "drizzle-kit";
 
 export default defineConfig({
   dialect: "postgresql",
-  schema: "./drizzle/schema.ts",
-  out: "./drizzle/migrations",
+  schema: process.env.SCHEMA_PATH!,
+  out:
+    process.env.NODE_ENV === "production"
+      ? process.env.PROD_MIGRATIONS_OUT!
+      : process.env.MIGRATIONS_OUT!,
   dbCredentials: {
     url:
-      process.env.NODE_ENV === "development"
-        ? process.env.DOCKER_POSTGRES_URL!
-        : process.env.POSTGRES_URL!,
+      process.env.NODE_ENV === "production"
+        ? process.env.POSTGRES_URL!
+        : process.env.DOCKER_POSTGRES_URL!,
   },
   migrations: {
-    table: "__drizzle_migrations",
+    table: process.env.MIGRATIONS_TABLE!,
     schema:
-      process.env.NODE_ENV === "development"
-        ? process.env.DEV_SCHEMA
-        : process.env.PROD_SCHEMA,
+      process.env.NODE_ENV === "production"
+        ? process.env.PROD_SCHEMA!
+        : process.env.DEV_SCHEMA!,
   },
-  schemaFilter: ["order-handling"],
+  //schemaFilter: ["order-handling"],
   verbose: true,
   strict: true,
 });

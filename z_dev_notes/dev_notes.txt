@@ -560,6 +560,13 @@ would stop it from updating but no errors were thrown.
 - fix : PostgreSQL expects the update to be a string not a tuple so I had to update my syntax in createBillingInfo form 
 
 
+commands
+- check available schema 
+SELECT nspname
+FROM pg_catalog.pg_namespace;
+
+
+
 ------------------------------------ Data fetching ------------------------------------
 type sql queries - edefault seems to be 'query result row'
 when some components like datatable, and columns definitions are expecting an 

@@ -7,7 +7,14 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "seed": "node -r dotenv/config ./scripts/seed.js"
+    "seed": "node -r dotenv/config ./scripts/seed.js",
+    "push": "drizzle-kit push",
+    "generate": "drizzle-kit generate",
+    "migrate": "drizzle-kit migrate",
+    "drop": "drizzle-kit drop",
+    "check": "drizzle-kit check",
+    "up": "drizzle-kit up",
+    "studio": "drizzle-kit studio"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.3.4",
