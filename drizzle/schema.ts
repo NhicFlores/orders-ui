@@ -14,7 +14,7 @@ import {
   uuid,
   varchar,
 } from "drizzle-orm/pg-core";
-
+//NOTE TODO: debug: process.env.NODE_ENV === 'development' ? process.env.DEV_SCHEMA! : process.env.PROD_SCHEMA!
 export const dbSchema = pgSchema(
   process.env.NODE_ENV === "production"
     ? process.env.PROD_SCHEMA!
@@ -57,6 +57,7 @@ export const ShippingInfoTable = dbSchema.table("shipping_info", {
   isJobSite: boolean("isJobSite").notNull().default(false),
   note: varchar("note", { length: 255 }),
 });
+
 // users can add and delete billing info at any time
 // relevant billing info will be serialized and stored in the order table
 // one-to-many with user table

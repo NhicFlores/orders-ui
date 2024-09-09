@@ -12,3 +12,9 @@ for vercel postgres => schema.ts export const createTable = pgTableCreator((name
         drizzle.config.ts : export default { schema: , dialect: , dbCredentials: , tablesFilter: ["image-gallery_*"], } satisfies Config; 
     - this just makes table names with a standardized prefix: all tables exist in the same schema, but the tablesFilter param 
     gets only the tables with the specified prefix 
+
+
+09-08-2024 
+after generating and running migrations, i tried to open drizzle studio 
+and got the following error 
+    There is not enough information to infer relation "__prod-orders__.orders.order_items_orderId"
