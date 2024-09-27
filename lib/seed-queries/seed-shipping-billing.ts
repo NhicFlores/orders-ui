@@ -4,7 +4,7 @@ import { shippingInfoArray } from "../seed-data/shipping-info";
 import { billingInfoArray } from "../seed-data/billing-info";
 
 
-export const seedShippingInfo = async () => {
+export const SeedShippingInfo = async () => {
   console.log("seeding shipping info ...");
 
   try {

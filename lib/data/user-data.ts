@@ -14,7 +14,7 @@ export async function getUserByID(id: string) {
   // NOTE what's the difference between typing the sql statement
   // return and casting the value in the return statement
   try {
-    const user = await sql<User>`SELECT * FROM users WHERE id=${id}`;
+    const user = await sql<User>`SELECT * FROM "prod-orders".users WHERE id=${id}`;
     return user.rows[0]; //as User
   } catch (error) {
     console.error("Failed to fetch user:", error);

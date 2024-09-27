@@ -2,6 +2,7 @@ import { sql } from "drizzle-orm";
 import { db } from "@/drizzle/db";
 import { users } from "@/lib/seed-data/users";
 import { profiles } from "@/lib/seed-data/user_profiles";
+import bcrypt from "bcrypt";
 
 export async function SeedUsers() {
   console.log("seeding users ...");
@@ -13,6 +14,7 @@ export async function SeedUsers() {
       //trx.insert(UserTable).values(users).execute();
 
       for (const user of users) {
+        const hashedPassword = await bcrypt.hash(user.password, 10);
         await trx.execute(
           sql`INSERT INTO "prod-orders".users 
                       (id, 
@@ -21,7 +23,7 @@ export async function SeedUsers() {
                       role) 
           VALUES (${user.id},
                   ${user.email},
-                  ${user.password},
+                  ${hashedPassword},
                   ${user.role})`
           //[user.id, user.email, user.password, user.role]
         );
