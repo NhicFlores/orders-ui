@@ -1,9 +1,10 @@
 //PROFILE PAGE INFO
 
 export type UserProfile = {
-  id: string;
+  id: number;
   user_id: string; //this is the user id
-  name: string;
+  first_name: string;
+  last_name: string;
   company?: string;
   account_num: string; //accounting handles these - do users need access to this
   //or is this only on the admin side
@@ -14,23 +15,29 @@ export type UserProfile = {
 
 //could have a check for if phone number
 export type BillingInfo = {
-  id?: number;
-  user_id?: string;
-  billing_addr: Address;
+  id: number;
+  user_id: string;
+  address: string;
+  city: string;
+  state: string;
+  zip: string;
   payment_method: string;
-  purchase_order?: string;
+  purchase_order: string;
   primary_contact_name: string;
   primary_contact_email: string;
-  phone_num: string;
-  alt_phone_num?: string;
-  fax_num?: string;
-  isPrimary?: boolean;
-  isActive?: boolean;
+  primary_contact_phone: string;
+  fax_num: string;
+  is_primary: boolean;
+  is_active: boolean;
 };
 
 export type ShippingInfo = {
-  id?: number;
-  delivery_addr?: Address;
+  id: number;
+  user_id: string;
+  address: string;
+  city: string;
+  state: string;
+  zip: string;
   is_job_site: boolean;
   note?: string;
 };
