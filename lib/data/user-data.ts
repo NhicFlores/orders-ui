@@ -8,13 +8,26 @@ import {
   ShippingInfo,
   UserProfile,
 } from "@/lib/definitions/profile-definitions";
+import { LogData } from "../utils";
+
+const schemaName = process.env.PROD_SCHEMA;//process.env.NODE_ENV === "production" ? process.env.PROD_SCHEMA : process.env.DEV_SCHEMA;
 
 export async function getUserByID(id: string) {
   // noStore();
   // NOTE what's the difference between typing the sql statement
   // return and casting the value in the return statement
+  console.log("USER-DATA.TS - getUserByID()");
+  LogData({
+    fileName: "user-data.ts",
+    functionName: "getUserByID",
+    params: { id },
+  })
+
   try {
-    const user = await sql<User>`SELECT * FROM "prod-orders".users WHERE id=${id}`;
+    console.log("SCHEMA NAME:", schemaName);
+    const user = await sql<User>`SELECT * FROM "${schemaName}".users WHERE id=${id}`;
+    console.log("USER:", user.rows[0]);
+    console.log("USER TYPE:", typeof user.rows[0]);
     return user.rows[0]; //as User
   } catch (error) {
     console.error("Failed to fetch user:", error);
@@ -44,21 +57,22 @@ export async function getBillingInfoByUserId(user_id: string) {
 
     //console.log(billingInfoData.rows[0]);
     //console.log( typeof billingInfoData.rows[0].billing_addr);
-    return billingInfoData.rows.map((row) => {
-      let billing_addr;
-      try {
-        billing_addr =
-          typeof row.billing_addr === "string"
-            ? JSON.parse(row.billing_addr)
-            : row.billing_addr;
-      } catch (error) {
-        billing_addr = row.billing_addr;
-      }
-      return {
-        ...row,
-        billing_addr,
-      };
-    });
+    return billingInfoData.rows;
+    // return billingInfoData.rows.map((row) => {
+    //   let billing_addr;
+    //   try {
+    //     billing_addr =
+    //       typeof row.billing_addr === "string"
+    //         ? JSON.parse(row.billing_addr)
+    //         : row.billing_addr;
+    //   } catch (error) {
+    //     billing_addr = row.billing_addr;
+    //   }
+    //   return {
+    //     ...row,
+    //     billing_addr,
+    //   };
+    // });
   } catch (error) {
     console.error("Failed to fetch billing info:", error);
     throw new Error("Failed to fetch billing info.");
@@ -70,19 +84,20 @@ export async function getShippingInfoById(user_id: string) {
     const shippingInfo = await sql<ShippingInfo>`
       SELECT * FROM shipping_info 
       WHERE user_id=${user_id}`;
-
-    return shippingInfo.rows.map((row) => {
-      let delivery_addr;
-      try{
-        delivery_addr = JSON.parse(String(row.delivery_addr));
-      } catch (error) {
-        delivery_addr = row.delivery_addr;
-      }
-      return {
-        ...row,
-        delivery_addr
-      };
-    })
+    
+    return shippingInfo.rows;
+    // return shippingInfo.rows.map((row) => {
+    //   let delivery_addr;
+    //   try{
+    //     delivery_addr = JSON.parse(String(row.delivery_addr));
+    //   } catch (error) {
+    //     delivery_addr = row.delivery_addr;
+    //   }
+    //   return {
+    //     ...row,
+    //     delivery_addr
+    //   };
+    // })
   } catch (error) {
     console.error("Failed to fetch shipping info:", error);
     throw new Error("Failed to fetch shipping info.");

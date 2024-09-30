@@ -19,7 +19,7 @@ export const { auth, signIn, signOut } = NextAuth({
       async authorize(credentials) {
         const parsedCredentials = LoginSchema.safeParse(credentials);
         // console.log("------------- PARSED CREDENTIALS ----------------");
-
+        console.log("AUTH.TS - NEXT AUTH - CREDENTIALS - AUTHORIZE");
         if (parsedCredentials.success) {
           const { email, password } = parsedCredentials.data;
           const user = await getUser(email);

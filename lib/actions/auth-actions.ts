@@ -13,7 +13,7 @@ export async function authenticate(
   prevState: string | undefined,
   formData: FormData
 ) {
-  console.log("IN SERVER ACTION");
+  console.log("AUTH-ACTIONS.TS - AUTHENTICATE");
 
   // const validatedFields = LoginSchema.safeParse({
   //     email: formData.get('email'),
@@ -108,7 +108,7 @@ export async function registerUser(formFields: z.infer<typeof RegisterSchema>) {
 
   try {
     await sql`
-            INSERT INTO users (email, password)
+            INSERT INTO "prod-orders".users (email, password)
             VALUES (${email}, ${hashedPassword})
         `;
   } catch (error) {
@@ -127,10 +127,10 @@ export async function registerUser(formFields: z.infer<typeof RegisterSchema>) {
 }
 
 export async function getUser(email: string): Promise<User | undefined> {
-  console.log("IN AUTH - getUser()");
+  console.log("AUTH-ACTIONS.TS - getUser()");
   try {
     const user = await sql<User>`
-            SELECT * FROM users 
+            SELECT * FROM "prod-orders".users 
             WHERE email=${email}
         `;
     return user.rows[0];
