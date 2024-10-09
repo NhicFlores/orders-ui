@@ -1,12 +1,12 @@
 {
-  "id": "bb6ca39c-a122-4618-a8b6-ae5c46db045a",
+  "id": "98382238-f6c6-4c72-9e64-e41039a54fb9",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "7",
   "dialect": "postgresql",
   "tables": {
-    "prod-orders.billing_info": {
+    "dev-orders.billing_info": {
       "name": "billing_info",
-      "schema": "prod-orders",
+      "schema": "dev-orders",
       "columns": {
         "id": {
           "name": "id",
@@ -101,7 +101,7 @@
           "name": "billing_info_user_id_users_id_fk",
           "tableFrom": "billing_info",
           "tableTo": "users",
-          "schemaTo": "prod-orders",
+          "schemaTo": "dev-orders",
           "columnsFrom": [
             "user_id"
           ],
@@ -115,9 +115,9 @@
       "compositePrimaryKeys": {},
       "uniqueConstraints": {}
     },
-    "prod-orders.glass_inventory_item": {
+    "dev-orders.glass_inventory_item": {
       "name": "glass_inventory_item",
-      "schema": "prod-orders",
+      "schema": "dev-orders",
       "columns": {
         "id": {
           "name": "id",
@@ -198,7 +198,7 @@
           "name": "glass_inventory_item_updated_by_users_id_fk",
           "tableFrom": "glass_inventory_item",
           "tableTo": "users",
-          "schemaTo": "prod-orders",
+          "schemaTo": "dev-orders",
           "columnsFrom": [
             "updated_by"
           ],
@@ -212,9 +212,9 @@
       "compositePrimaryKeys": {},
       "uniqueConstraints": {}
     },
-    "prod-orders.invoices": {
+    "dev-orders.invoices": {
       "name": "invoices",
-      "schema": "prod-orders",
+      "schema": "dev-orders",
       "columns": {
         "id": {
           "name": "id",
@@ -259,7 +259,7 @@
           "name": "invoices_user_id_users_id_fk",
           "tableFrom": "invoices",
           "tableTo": "users",
-          "schemaTo": "prod-orders",
+          "schemaTo": "dev-orders",
           "columnsFrom": [
             "user_id"
           ],
@@ -273,7 +273,7 @@
           "name": "invoices_order_id_orders_id_fk",
           "tableFrom": "invoices",
           "tableTo": "orders",
-          "schemaTo": "prod-orders",
+          "schemaTo": "dev-orders",
           "columnsFrom": [
             "order_id"
           ],
@@ -287,9 +287,9 @@
       "compositePrimaryKeys": {},
       "uniqueConstraints": {}
     },
-    "prod-orders.order_items": {
+    "dev-orders.order_items": {
       "name": "order_items",
-      "schema": "prod-orders",
+      "schema": "dev-orders",
       "columns": {
         "id": {
           "name": "id",
@@ -334,7 +334,7 @@
           "name": "order_items_order_id_orders_id_fk",
           "tableFrom": "order_items",
           "tableTo": "orders",
-          "schemaTo": "prod-orders",
+          "schemaTo": "dev-orders",
           "columnsFrom": [
             "order_id"
           ],
@@ -348,7 +348,7 @@
           "name": "order_items_product_type_id_products_id_fk",
           "tableFrom": "order_items",
           "tableTo": "products",
-          "schemaTo": "prod-orders",
+          "schemaTo": "dev-orders",
           "columnsFrom": [
             "product_type_id"
           ],
@@ -362,9 +362,9 @@
       "compositePrimaryKeys": {},
       "uniqueConstraints": {}
     },
-    "prod-orders.orders": {
+    "dev-orders.orders": {
       "name": "orders",
-      "schema": "prod-orders",
+      "schema": "dev-orders",
       "columns": {
         "id": {
           "name": "id",
@@ -433,7 +433,7 @@
           "name": "orders_user_id_users_id_fk",
           "tableFrom": "orders",
           "tableTo": "users",
-          "schemaTo": "prod-orders",
+          "schemaTo": "dev-orders",
           "columnsFrom": [
             "user_id"
           ],
@@ -447,9 +447,9 @@
       "compositePrimaryKeys": {},
       "uniqueConstraints": {}
     },
-    "prod-orders.products": {
+    "dev-orders.products": {
       "name": "products",
-      "schema": "prod-orders",
+      "schema": "dev-orders",
       "columns": {
         "id": {
           "name": "id",
@@ -505,9 +505,9 @@
       "compositePrimaryKeys": {},
       "uniqueConstraints": {}
     },
-    "prod-orders.shipping_info": {
+    "dev-orders.shipping_info": {
       "name": "shipping_info",
-      "schema": "prod-orders",
+      "schema": "dev-orders",
       "columns": {
         "id": {
           "name": "id",
@@ -565,7 +565,7 @@
           "name": "shipping_info_user_id_users_id_fk",
           "tableFrom": "shipping_info",
           "tableTo": "users",
-          "schemaTo": "prod-orders",
+          "schemaTo": "dev-orders",
           "columnsFrom": [
             "user_id"
           ],
@@ -579,9 +579,9 @@
       "compositePrimaryKeys": {},
       "uniqueConstraints": {}
     },
-    "prod-orders.user_profiles": {
+    "dev-orders.user_profiles": {
       "name": "user_profiles",
-      "schema": "prod-orders",
+      "schema": "dev-orders",
       "columns": {
         "id": {
           "name": "id",
@@ -632,7 +632,7 @@
           "name": "user_profiles_user_id_users_id_fk",
           "tableFrom": "user_profiles",
           "tableTo": "users",
-          "schemaTo": "prod-orders",
+          "schemaTo": "dev-orders",
           "columnsFrom": [
             "user_id"
           ],
@@ -646,9 +646,9 @@
       "compositePrimaryKeys": {},
       "uniqueConstraints": {}
     },
-    "prod-orders.users": {
+    "dev-orders.users": {
       "name": "users",
-      "schema": "prod-orders",
+      "schema": "dev-orders",
       "columns": {
         "id": {
           "name": "id",
@@ -672,7 +672,7 @@
         "role": {
           "name": "role",
           "type": "user_role",
-          "typeSchema": "prod-orders",
+          "typeSchema": "dev-orders",
           "primaryKey": false,
           "notNull": false,
           "default": "'USER'"
@@ -693,9 +693,9 @@
     }
   },
   "enums": {
-    "prod-orders.user_role": {
+    "dev-orders.user_role": {
       "name": "user_role",
-      "schema": "prod-orders",
+      "schema": "dev-orders",
       "values": [
         "ADMIN",
         "USER"
@@ -703,7 +703,7 @@
     }
   },
   "schemas": {
-    "prod-orders": "prod-orders"
+    "dev-orders": "dev-orders"
   },
   "sequences": {},
   "_meta": {

@@ -33,9 +33,18 @@ CREATE TABLE IF NOT EXISTS "prod-orders"."glass_inventory_item" (
 	"compatible_products" jsonb NOT NULL,
 	"quantity_available" integer NOT NULL,
 	"quantity_incoming" jsonb,
-	"date_created" timestamp NOT NULL,
-	"date_updated" timestamp NOT NULL,
+	"date_created" timestamp with time zone NOT NULL,
+	"date_updated" timestamp with time zone NOT NULL,
 	"updated_by" uuid NOT NULL
+);
+--> statement-breakpoint
+CREATE TABLE IF NOT EXISTS "prod-orders"."invoices" (
+	"id" uuid PRIMARY KEY NOT NULL,
+	"user_id" uuid NOT NULL,
+	"order_id" uuid NOT NULL,
+	"date_created" timestamp with time zone NOT NULL,
+	"status" varchar(255) NOT NULL,
+	"amount" numeric(10, 2) NOT NULL
 );
 --> statement-breakpoint
 CREATE TABLE IF NOT EXISTS "prod-orders"."order_items" (
@@ -54,9 +63,10 @@ CREATE TABLE IF NOT EXISTS "prod-orders"."orders" (
 	"billing_info" jsonb NOT NULL,
 	"shipping_info" jsonb NOT NULL,
 	"status" varchar(255) NOT NULL,
-	"date_created" timestamp NOT NULL,
-	"date_updated" timestamp NOT NULL,
-	"date_submitted" timestamp
+	"date_created" timestamp with time zone NOT NULL,
+	"date_updated" timestamp with time zone NOT NULL,
+	"date_submitted" timestamp with time zone,
+	"date_shipped" timestamp with time zone
 );
 --> statement-breakpoint
 CREATE TABLE IF NOT EXISTS "prod-orders"."products" (
@@ -66,8 +76,8 @@ CREATE TABLE IF NOT EXISTS "prod-orders"."products" (
 	"alt" varchar(255),
 	"description" varchar(255),
 	"config_options" jsonb,
-	"date_created" timestamp NOT NULL,
-	"date_updated" timestamp NOT NULL
+	"date_created" timestamp with time zone NOT NULL,
+	"date_updated" timestamp with time zone NOT NULL
 );
 --> statement-breakpoint
 CREATE TABLE IF NOT EXISTS "prod-orders"."shipping_info" (
@@ -107,6 +117,18 @@ END $$;
 --> statement-breakpoint
 DO $$ BEGIN
  ALTER TABLE "prod-orders"."glass_inventory_item" ADD CONSTRAINT "glass_inventory_item_updated_by_users_id_fk" FOREIGN KEY ("updated_by") REFERENCES "prod-orders"."users"("id") ON DELETE no action ON UPDATE no action;
+EXCEPTION
+ WHEN duplicate_object THEN null;
+END $$;
+--> statement-breakpoint
+DO $$ BEGIN
+ ALTER TABLE "prod-orders"."invoices" ADD CONSTRAINT "invoices_user_id_users_id_fk" FOREIGN KEY ("user_id") REFERENCES "prod-orders"."users"("id") ON DELETE cascade ON UPDATE no action;
+EXCEPTION
+ WHEN duplicate_object THEN null;
+END $$;
+--> statement-breakpoint
+DO $$ BEGIN
+ ALTER TABLE "prod-orders"."invoices" ADD CONSTRAINT "invoices_order_id_orders_id_fk" FOREIGN KEY ("order_id") REFERENCES "prod-orders"."orders"("id") ON DELETE cascade ON UPDATE no action;
 EXCEPTION
  WHEN duplicate_object THEN null;
 END $$;
