@@ -37,3 +37,9 @@ export function LogData(data: {
   console.log(data);
   console.log("------------ END OF LOG ------------");
 }
+
+export function getSchemaName(){
+  return process.env.NODE_ENV === "production"
+    ? process.env.PROD_SCHEMA!
+    : process.env.DEV_SCHEMA!;
+};

@@ -2,6 +2,8 @@ import { sql } from "drizzle-orm";
 import { db } from "@/drizzle/db";
 import { ordersArray } from "../seed-data/orders";
 import { orderItemsArray } from "../seed-data/order-items";
+import { invoicesArray } from "../seed-data/invoices";
+import { getSchemaName } from "../utils";
 
 export async function SeedOrders() {
   console.log("seeding orders ...");
@@ -12,7 +14,7 @@ export async function SeedOrders() {
         const serializedBillingInfo = JSON.stringify(order.billing_info);
         const serializedShippingInfo = JSON.stringify(order.shipping_info);
         await trx.execute(
-          sql`INSERT INTO "prod-orders".orders 
+          sql`INSERT INTO "${sql.raw(getSchemaName())}".orders 
                       (id,
                       "user_id",
                       "order_name",
@@ -33,7 +35,7 @@ export async function SeedOrders() {
                     ${order.date_submitted ? order.date_submitted : null})`
         );
       }
-      console.log("Orders seeded successfully");
+      console.log(`${ordersArray.length} Orders seeded successfully`);
     });
   } catch (error) {
     console.error(error);
@@ -41,14 +43,14 @@ export async function SeedOrders() {
 }
 
 export async function SeedOrderItems() {
-    console.log("seeding order items ..."); 
+  console.log("seeding order items ...");
 
-    try {
-        await db.transaction(async (trx) =>{
-            for (const item of orderItemsArray) {
-                const serializedProductConfig = JSON.stringify(item.product_config);
-                await trx.execute(
-                    sql`INSERT INTO "prod-orders".order_items
+  try {
+    await db.transaction(async (trx) => {
+      for (const item of orderItemsArray) {
+        const serializedProductConfig = JSON.stringify(item.product_config);
+        await trx.execute(
+          sql`INSERT INTO "${sql.raw(getSchemaName())}".order_items
                         (id,
                         "order_id",
                         "product_type_id",
@@ -61,11 +63,40 @@ export async function SeedOrderItems() {
                                 ${serializedProductConfig},
                                 ${item.quantity},
                                 ${item.note})`
-                )
-            }
-            console.log("Order items seeded successfully");
-        })
-    } catch (error) {
-        console.error(error);
-    }
+        );
+      }
+      console.log(`${orderItemsArray.length} Order items seeded successfully`);
+    });
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+export async function SeedInvoices() {
+  console.log("seeding invoices ...");
+
+  try {
+    await db.transaction(async (trx) => {
+      for (const invoice of invoicesArray) {
+        await trx.execute(
+          sql`INSERT INTO "${sql.raw(getSchemaName())}"."invoices"
+                                  (id,
+                        user_id,
+                        order_id,
+                        date_created,
+                        status,
+                        amount)
+              VALUES (${invoice.id},
+                      ${invoice.user_id},
+                      ${invoice.order_id},
+                      ${invoice.date_created},
+                      ${invoice.status},
+                      ${invoice.amount})`
+        );
+      }
+      console.log(`${invoicesArray.length} Invoices seeded successfully`);
+    });
+  } catch (error) {
+    console.error(error);
+  }
 }

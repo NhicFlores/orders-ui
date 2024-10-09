@@ -3,6 +3,7 @@ import { db } from "@/drizzle/db";
 import { users } from "@/lib/seed-data/users";
 import { profiles } from "@/lib/seed-data/user_profiles";
 import bcrypt from "bcrypt";
+import { getSchemaName } from "../utils";
 
 export async function SeedUsers() {
   console.log("seeding users ...");
@@ -16,7 +17,7 @@ export async function SeedUsers() {
       for (const user of users) {
         const hashedPassword = await bcrypt.hash(user.password, 10);
         await trx.execute(
-          sql`INSERT INTO "prod-orders".users 
+          sql`INSERT INTO "${sql.raw(getSchemaName())}".users 
                       (id, 
                       email, 
                       password, 
@@ -28,7 +29,7 @@ export async function SeedUsers() {
           //[user.id, user.email, user.password, user.role]
         );
       }
-      console.log("Users seeded successfully");
+      console.log(`${users.length} Users seeded successfully`);
     });
   } catch (error) {
     console.error(error);
@@ -42,7 +43,7 @@ export async function SeedUserProfiles() {
     await db.transaction(async (trx) => {
       for (const profile of profiles) {
         await trx.execute(
-          sql`INSERT INTO "prod-orders".user_profiles 
+          sql`INSERT INTO "${sql.raw(getSchemaName())}".user_profiles 
               (id, 
               "user_id", 
               "first_name", 
@@ -59,7 +60,7 @@ export async function SeedUserProfiles() {
                     ${profile.phone_num})`
         );
       }
-      console.log("User profiles seeded successfully");
+      console.log(`${profiles.length} User Profiles seeded successfully`);
     });
   } catch (error) {
     console.error(error);
