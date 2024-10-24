@@ -15,7 +15,7 @@ import {
   createShippingInfo,
   updateShippingInfo,
 } from "@/lib/actions/profile-actions";
-import { ShippingInfo } from "@/lib/definitions/profile-definitions";
+import { ShippingInfoWithoutIds, UserShippingInformation } from "@/lib/definitions/data-model";
 import { ShippingInfoSchema } from "@/schema/form-schema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Pencil } from "lucide-react";
@@ -24,7 +24,7 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 
 interface ShippingFormProps {
-  shippingInfo?: ShippingInfo;
+  shippingInfo?: UserShippingInformation;
   toggleShippingForm?: () => void;
   isBlankForm?: boolean;
 }
@@ -46,15 +46,13 @@ export default function ShippingForm({
     defaultValues: shippingInfo
       ? shippingInfo
       : {
+          street: "",
+          apt_num: "",
+          city: "",
+          state: "",
+          zip: "",
+          country: "",
           is_job_site: false,
-          delivery_addr: {
-            street: "",
-            apt_num: "",
-            city: "",
-            state: "",
-            zip: "",
-            country: "",
-          },
           note: "",
         },
   });
@@ -65,13 +63,12 @@ export default function ShippingForm({
       : shippingInfo?.id && updateShippingInfo(shippingInfo.id, data);
     setIsEditEnabled(!isEditEnabled);
 
-    //NOTE TODO: this is unsafe because the user input is being passed directly to the state
-    // and will get send to backend without validation or sanitization
-    // NOTE TODO: implement zod validation for the data
-    console.log(data);
+    // console.log(data);
+    const { street, apt_num, city, state, zip, is_job_site, note } = data;
+    // const
     setOrder((prevOrder) => ({
       ...prevOrder,
-      shipping_info: data as ShippingInfo,
+      shipping_info: data as ShippingInfoWithoutIds,
     }));
   }
 
@@ -85,7 +82,7 @@ export default function ShippingForm({
           <div className="flex justify-between gap-8">
             <FormField
               control={shippingForm.control}
-              name="delivery_addr.street"
+              name="street"
               render={({ field }) => (
                 <FormItem className="w-full">
                   <FormLabel htmlFor="street">Street</FormLabel>
@@ -97,22 +94,17 @@ export default function ShippingForm({
                     />
                   </FormControl>
                   <FormMessage>
-                    {
-                      shippingForm.formState.errors.delivery_addr?.street
-                        ?.message
-                    }
+                    {shippingForm.formState.errors.street?.message}
                   </FormMessage>
                 </FormItem>
               )}
             />
             <FormField
               control={shippingForm.control}
-              name="delivery_addr.apt_num"
+              name="apt_num"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel htmlFor="delivery_addr.apt_num">
-                    Apt/Suite/Lot
-                  </FormLabel>
+                  <FormLabel htmlFor="apt_num">Apt/Suite/Lot</FormLabel>
                   <FormControl>
                     <Input
                       readOnly={!isEditEnabled}
@@ -121,10 +113,7 @@ export default function ShippingForm({
                     />
                   </FormControl>
                   <FormMessage>
-                    {
-                      shippingForm.formState.errors.delivery_addr?.apt_num
-                        ?.message
-                    }
+                    {shippingForm.formState.errors.apt_num?.message}
                   </FormMessage>
                 </FormItem>
               )}
@@ -133,7 +122,7 @@ export default function ShippingForm({
           <div className="flex justify-between space-x-8">
             <FormField
               control={shippingForm.control}
-              name="delivery_addr.city"
+              name="city"
               render={({ field }) => (
                 <FormItem className="w-full">
                   <FormLabel htmlFor="city">City</FormLabel>
@@ -145,14 +134,14 @@ export default function ShippingForm({
                     />
                   </FormControl>
                   <FormMessage>
-                    {shippingForm.formState.errors.delivery_addr?.city?.message}
+                    {shippingForm.formState.errors.city?.message}
                   </FormMessage>
                 </FormItem>
               )}
             />
             <FormField
               control={shippingForm.control}
-              name="delivery_addr.state"
+              name="state"
               render={({ field }) => (
                 <FormItem>
                   <FormLabel htmlFor="state">State</FormLabel>
@@ -164,17 +153,14 @@ export default function ShippingForm({
                     />
                   </FormControl>
                   <FormMessage>
-                    {
-                      shippingForm.formState.errors.delivery_addr?.state
-                        ?.message
-                    }
+                    {shippingForm.formState.errors.state?.message}
                   </FormMessage>
                 </FormItem>
               )}
             />
             <FormField
               control={shippingForm.control}
-              name="delivery_addr.zip"
+              name="zip"
               render={({ field }) => (
                 <FormItem>
                   <FormLabel htmlFor="zip">Zip</FormLabel>
@@ -186,14 +172,14 @@ export default function ShippingForm({
                     />
                   </FormControl>
                   <FormMessage>
-                    {shippingForm.formState.errors.delivery_addr?.zip?.message}
+                    {shippingForm.formState.errors.zip?.message}
                   </FormMessage>
                 </FormItem>
               )}
             />
             <FormField
               control={shippingForm.control}
-              name="delivery_addr.country"
+              name="country"
               render={({ field }) => (
                 <FormItem>
                   <FormLabel htmlFor="country">Country</FormLabel>
@@ -205,10 +191,7 @@ export default function ShippingForm({
                     />
                   </FormControl>
                   <FormMessage>
-                    {
-                      shippingForm.formState.errors.delivery_addr?.country
-                        ?.message
-                    }
+                    {shippingForm.formState.errors.country?.message}
                   </FormMessage>
                 </FormItem>
               )}

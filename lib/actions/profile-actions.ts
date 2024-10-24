@@ -126,8 +126,8 @@ export async function createBillingInfo(
   pathToRevalidate: string
 ) {
   const user_id = await validateUser();
-  //NOTE TODO: for testing purposes, we should split up the validation into 
-  //separate function 
+  //NOTE TODO: for testing purposes, we should split up the validation into
+  //separate function
   const validatedFields = BillingInfoSchema.safeParse(formFields);
 
   if (!validatedFields.success) {
@@ -152,7 +152,7 @@ export async function createBillingInfo(
   // const billing_addr_str = `(${billing_addr.street}, ${billing_addr.apt_num}, ${billing_addr.city}, ${billing_addr.state}, ${billing_addr.zip}, ${billing_addr.country})`;
   const billing_addr_string = JSON.stringify(billing_addr);
 
-  let billing_info_id = '';
+  let billing_info_id = "";
   try {
     console.log("---------------- updating DB -----------------");
     const queryResult = await sql<{ id: string }>`
@@ -358,14 +358,19 @@ export async function createShippingInfo(
     };
   }
 
-  const { delivery_addr, is_job_site, note } = validatedFields.data;
+  const { street, apt_num, city, state, zip, is_job_site, note } =
+    validatedFields.data;
   //console.log("delivery_addr: ", delivery_addr)
-  const delivery_addr_string = JSON.stringify(delivery_addr);
+  // const delivery_addr_string = JSON.stringify(delivery_addr);
   try {
     await sql`
             INSERT INTO shipping_info (user_id, delivery_addr, is_job_site, note)
             VALUES (${user_id}, 
-                ${delivery_addr_string}, 
+                ${street},
+                ${apt_num},
+                ${city},
+                ${state},
+                ${zip}, 
                 ${is_job_site}, 
                 ${note})
         `;
@@ -391,12 +396,16 @@ export async function updateShippingInfo(
     };
   }
 
-  const { delivery_addr, is_job_site, note } = validatedFields.data;
-  const delivery_addr_string = JSON.stringify(delivery_addr);
+  const { street, apt_num, city, state, zip, is_job_site, note } =
+    validatedFields.data;
   try {
     await sql`
             UPDATE shipping_info
-            SET delivery_addr = ${delivery_addr_string}, 
+            SET street = ${street},
+                apt_num = ${apt_num},
+                city = ${city},
+                state = ${state},
+                zip = ${zip}, 
                 is_job_site = ${is_job_site}, 
                 note = ${note}
             WHERE user_id = ${user_id} AND id = ${shipping_info_id}

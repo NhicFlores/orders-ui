@@ -1,3 +1,4 @@
+// DEPRECATED: These types are no longer in use 
 import { StaticImageData } from "next/image";
 import { BillingInfo, ShippingInfo } from "./profile-definitions";
 
@@ -8,16 +9,20 @@ import { BillingInfo, ShippingInfo } from "./profile-definitions";
  * @export
  */
 export enum OrderStatus {
-  /** Submitted but not yet viewed by admin. */
-  Pending = "pending",
   /** Saved by the user but not yet submitted. */
-  Draft = "draft", 
+  Draft = "DRAFT", 
+  /** Submitted but not yet viewed by admin. */
+  Pending = "PENDING",
   /** Submitted as a quote. */
-  Quote = "quote", 
+  Quote = "QUOTE", 
   /** Viewed by admin but not yet shipped. */
-  Processing = "processing",
+  Processing = "PROCESSING",
   /** Shipped but not yet received. */
-  Shipped = "shipped",
+  Shipped = "SHIPPED",
+  /** Received by customer. */
+  DELIVERED = "DELIVERED",
+  /** Cancelled by user or admin. */
+  Cancelled = "CANCELLED",
 } // NOTE TODO: add 'CANCELLED', 'DELIVERED' status 
 // NOTE TODO: revise statuses to be more descriptive 
 // - NEW, AWAITING CONFIRMATION, CONFIRMED, IN PRODUCTION, SHIPPED, DELIVERED 

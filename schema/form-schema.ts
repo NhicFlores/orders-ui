@@ -49,14 +49,12 @@ export const BillingInfoSchema = z.object({
 });
 
 export const ShippingInfoSchema = z.object({
-  delivery_addr: z.object({
-    street: z.string(),
-    apt_num: z.string().optional(),
-    city: z.string(),
-    state: z.string(),
-    zip: z.string().length(5),
-    country: z.string(),
-  }),
+  street: z.string(),
+  apt_num: z.string().optional(),
+  city: z.string(),
+  state: z.string(),
+  zip: z.string().length(5),
+  country: z.string(),
   is_job_site: z.boolean().optional(),
   note: z
     .string({
@@ -162,14 +160,21 @@ export const OrderSchema = z.object({
   order_name: z.string(),
   billing_info_id: z.string(),
   shipping_info: ShippingInfoSchema,
-  status: z.nativeEnum(OrderStatus, { invalid_type_error: "Please select an order status." }),
+  status: z.nativeEnum(OrderStatus, {
+    invalid_type_error: "Please select an order status.",
+  }),
   date_created: z.string(),
   date_updated: z.string(),
   date_submitted: z.string(),
-})
+});
 
-export const CreateOrder = OrderSchema.omit({ id: true, user_id: true, date_created: true, date_updated: true, date_submitted: true });
-
+export const CreateOrder = OrderSchema.omit({
+  id: true,
+  user_id: true,
+  date_created: true,
+  date_updated: true,
+  date_submitted: true,
+});
 
 export const OrderItemSchema = z.object({
   id: z.string(),
@@ -183,4 +188,4 @@ export const OrderItemSchema = z.object({
   misc_options: z.string().optional(),
   note: z.string(),
   quantity: z.number(),
-})
+});

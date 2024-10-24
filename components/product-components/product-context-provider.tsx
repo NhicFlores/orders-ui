@@ -1,11 +1,12 @@
 "use client";
 import {
+  NewOrder,
+  NewOrderItem,
   Order,
   OrderItem,
   OrderStatus,
-} from "@/lib/definitions/order-definitions";
+} from "@/lib/definitions/data-model";
 import { ProductContextType } from "@/lib/definitions/product-context";
-import { BillingInfo } from "@/lib/definitions/profile-definitions";
 import { createContext, useContext, useState } from "react";
 
 // {
@@ -50,7 +51,9 @@ import { createContext, useContext, useState } from "react";
 //   updateOrderItemQuantity: () => {},
 // }
 
-export const ProductContext = createContext<ProductContextType>({} as ProductContextType);
+export const ProductContext = createContext<ProductContextType>(
+  {} as ProductContextType
+);
 
 export default function ProductContextProvider({
   children,
@@ -61,53 +64,46 @@ export default function ProductContextProvider({
   //     activeSection: 'Glass Type',
   //     setActiveSection: () => {}
   // });
-  const [order, setOrder] = useState<Order>({
+  const [order, setOrder] = useState<NewOrder | Order>({
+    user_id: null, // NOTE TODO: where should the user id be set - server or client side?
     order_name: "",
-    status: OrderStatus.Draft,
-    billing_info_id: {
-      billing_addr: {
-        street: "",
-        apt_num: "",
-        city: "",
-        state: "",
-        zip: "",
-        country: "",
-      },
+    billing_data: {
+      street: "",
+      apt_num: "",
+      city: "",
+      state: "",
+      zip: "",
       payment_method: "",
       purchase_order: "",
       primary_contact_name: "",
       primary_contact_email: "",
-      phone_num: "",
-      alt_phone_num: "",
+      primary_contact_phone: "",
       fax_num: "",
-      isPrimary: false,
-      isActive: false,
+      is_primary: false,
+      is_active: false,
     },
-    shipping_info: {
+    shipping_data: {
+      street: "",
+      apt_num: "",
+      city: "",
+      state: "",
+      zip: "",
       is_job_site: false,
-      delivery_addr: {
-        street: "",
-        apt_num: "",
-        city: "",
-        state: "",
-        zip: "",
-        country: "",
-      },
       note: "",
     },
+    status: OrderStatus.Draft,
+    date_created: new Date(),
+    date_updated: new Date(),
+    date_submitted: null,
+    date_shipped: null,
+    date_delivered: null,
   });
 
-  const [orderItem, setOrderItem] = useState<OrderItem>({
-    order_id: "",
-    glassType: "",
-    shape: "",
-    dimensions: "",
-    thickness: "",
-    tint: "",
-    fabrication_options: "",
-    misc_options: "",
-    note: "",
+  const [orderItem, setOrderItem] = useState<NewOrderItem | OrderItem>({
+    product_type_id: "",
+    product_config: {},
     quantity: 1,
+    note: "",
   });
 
   const [orderItems, setOrderItems] = useState<OrderItem[]>([]);
