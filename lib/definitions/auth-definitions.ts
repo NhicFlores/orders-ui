@@ -13,7 +13,7 @@ export enum Role {
 }
 
 //CREATE TYPE role AS ENUM ('USER', 'ADMIN');
-
+// UNUSED 
 export type Account = {
   id: string;
   userID: string;
@@ -27,7 +27,7 @@ export type Account = {
   //provider: string;
   //providerAccountId: string;
 };
-
+// UNUSED 
 export type Session = {
   id: string;
   sessionToken: string;
@@ -37,6 +37,7 @@ export type Session = {
 // used for email verification and password reset
 // instead of generating a UUID, hash the users email
 // to generate a unique token
+// UNUSED 
 export type VerificationToken = {
   id: string;
   email: string;

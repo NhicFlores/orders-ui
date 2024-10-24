@@ -19,6 +19,8 @@ export enum OrderStatus {
   /** Shipped but not yet received. */
   Shipped = "shipped",
 } // NOTE TODO: add 'CANCELLED', 'DELIVERED' status 
+// NOTE TODO: revise statuses to be more descriptive 
+// - NEW, AWAITING CONFIRMATION, CONFIRMED, IN PRODUCTION, SHIPPED, DELIVERED 
 
 export type Order = {
   entered_by?: string;
