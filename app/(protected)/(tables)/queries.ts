@@ -1,6 +1,7 @@
 "use server";
 import { Order, OrderStatus } from "@/lib/definitions/data-model";
 import { sql } from "@vercel/postgres";
+import { OrderTableData } from "./orders/columns";
 
 export async function fetchOrdersByStatus(status: OrderStatus) {
   try {
@@ -46,37 +47,7 @@ export async function fetchOrderItems(orderId: string) {
 export async function fetchOrderTableData() {
   try {
     // SQL query to fetch data from orders, billing_info, and order_items tables
-    const data = await sql<{
-      order_id: string;
-      order_name: string;
-      status: OrderStatus;
-      shipping_info: string;
-      date_created: string;
-      date_updated: string;
-      date_submitted: string;
-      billing_info: {
-        street: string;
-        apt_num: string;
-        city: string;
-        state: string;
-        zip: string;
-        payment_method: string;
-        purchase_order: string;
-        primary_contact_name: string;
-        primary_contact_email: string;
-        phone_num: string;
-        alt_phone_num: string;
-        fax_num: string;
-        isPrimary: boolean;
-        isActive: boolean;
-      };
-      order_items: {
-        id: string;
-        product_config: string;
-        quantity: number;
-        note: string;
-      }[];
-    }>`
+    const data = await sql<OrderTableData>`
       SELECT 
         o.id AS order_id, 
         o.order_name, 

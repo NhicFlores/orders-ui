@@ -16,9 +16,43 @@ import {
 import Link from "next/link";
 import { deleteOrder } from "@/lib/actions/actions";
 import { formatDateToLocal } from "@/lib/utils";
-import { Order } from "@/lib/definitions/data-model";
+import { Order, OrderStatus } from "@/lib/definitions/data-model";
 //TODO: enable shift select
-export const OrderColumns: ColumnDef<Order>[] = [
+
+// NOT TODO: this may be a temporary type definition
+export type OrderTableData = {
+  order_id: string;
+  order_name: string;
+  status: OrderStatus;
+  shipping_info: string;
+  date_created: string;
+  date_updated: string;
+  date_submitted: string;
+  billing_info: {
+    street: string;
+    apt_num: string;
+    city: string;
+    state: string;
+    zip: string;
+    payment_method: string;
+    purchase_order: string;
+    primary_contact_name: string;
+    primary_contact_email: string;
+    phone_num: string;
+    alt_phone_num: string;
+    fax_num: string;
+    isPrimary: boolean;
+    isActive: boolean;
+  };
+  order_items: {
+    id: string;
+    product_config: string;
+    quantity: number;
+    note: string;
+  }[];
+};
+
+export const OrderColumns: ColumnDef<OrderTableData>[] = [
   {
     id: "select",
     header: ({ table }) => (
@@ -43,7 +77,7 @@ export const OrderColumns: ColumnDef<Order>[] = [
     id: "actions",
     cell: ({ row }) => {
       const order = row.original;
-      //const deleteOrderWithId = deleteOrder.bind(null, order.id);
+      //const deleteOrderWithId = deleteOrder.bind(null, order.order_id);
       return (
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
@@ -55,11 +89,11 @@ export const OrderColumns: ColumnDef<Order>[] = [
           <DropdownMenuContent align="end">
             <DropdownMenuLabel>Actions</DropdownMenuLabel>
             <DropdownMenuItem
-              onClick={() => navigator.clipboard.writeText(order.id)}
+              onClick={() => navigator.clipboard.writeText(order.order_id)}
             >
               Copy order ID
             </DropdownMenuItem>
-            <Link href={`/order/${order.id}/edit`}>
+            <Link href={`/order/${order.order_id}/edit`}>
               <DropdownMenuItem>Edit Order</DropdownMenuItem>
             </Link>
             <DropdownMenuSeparator />
@@ -69,7 +103,7 @@ export const OrderColumns: ColumnDef<Order>[] = [
             {/** NOTE HOW TO Server Actions are not limited to <form> and can be invoked from event handlers, useEffect, third-party libraries, and other form elements like <button> **/}
 
             <DropdownMenuItem
-              onClick={() => deleteOrder(order.id)}
+              onClick={() => deleteOrder(order.order_id)}
               className="focus:bg-red-500 focus:text-white"
             >
               Delete Order
