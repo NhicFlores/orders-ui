@@ -5,10 +5,10 @@ import { useState } from "react";
 import ShippingForm from "./shipping-form";
 import { ShippingTable } from "./shipping-table";
 import { ShippingColumns } from "./shipping-columns";
-import { ShippingInfo } from "@/lib/definitions/profile-definitions";
+import { UserShippingInformation } from "@/lib/definitions/data-model";
 
 interface ShippingContentProps {
-  shippingOptions: ShippingInfo[];
+  shippingOptions: UserShippingInformation[];
 }
 
 export default function ShippingContent({ shippingOptions }: ShippingContentProps) {

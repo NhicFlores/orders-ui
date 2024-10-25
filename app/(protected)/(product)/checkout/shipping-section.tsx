@@ -10,11 +10,11 @@ import {
 } from "@/components/ui/select";
 import { useState } from "react";
 import ShippingForm from "../../(account)/shipping/shipping-form";
-import { ShippingInfo } from "@/lib/definitions/profile-definitions";
 import { useProductContext } from "@/components/product-components/product-context-provider";
+import { UserShippingInformation } from "@/lib/definitions/data-model";
 
 interface ShippingSectionProps {
-  shippingOptions: ShippingInfo[];
+  shippingOptions: UserShippingInformation[];
 }
 
 export default function ShippingSection({
@@ -22,8 +22,8 @@ export default function ShippingSection({
 }: ShippingSectionProps) {
   const [showShippingForm, setShowShippingForm] = useState(false);
   const [selectedShippingOption, setSelectedShippingOption] =
-    useState<ShippingInfo>();
-  const [formData, setFormData] = useState<ShippingInfo>();
+    useState<UserShippingInformation>();
+  const [formData, setFormData] = useState<UserShippingInformation>();
   const [isJobSite, setIsJobSite] = useState(false);
 
   const { order, setOrder } = useProductContext();
@@ -44,7 +44,11 @@ export default function ShippingSection({
   function handleCheckBoxClick() {
     //NOTE TODO: populate shipping form with billing address
     const shipping = {
-      delivery_addr: order.billing_info_id.billing_addr,
+      street: order.billing_data.street,
+      apt_num: order.billing_data.apt_num,
+      city: order.billing_data.city,
+      state: order.billing_data.state,
+      zip: order.billing_data.zip,
       is_job_site: false,
       note: "",
     };
@@ -73,13 +77,13 @@ export default function ShippingSection({
       }));
   }
 
-  function handleJobSiteClick() {
-    setIsJobSite(!isJobSite);
-    setFormData((prevFormData) => ({
-      ...prevFormData,
-      is_job_site: !prevFormData?.is_job_site,
-    }));
-  }
+  // function handleJobSiteClick() {
+  //   setIsJobSite(!isJobSite);
+  //   setFormData((prevFormData) => ({
+  //     ...prevFormData,
+  //     is_job_site: !prevFormData?.is_job_site,
+  //   }));
+  // }
 
   return (
     <div className="border rounded p-4 space-y-4">
@@ -101,10 +105,9 @@ export default function ShippingSection({
                     <div>
                       <div>shipping option</div>
                       <div>
-                        {shippingOption.delivery_addr?.street}
-                        {shippingOption.delivery_addr?.apt_num &&
-                          shippingOption.delivery_addr?.apt_num}
-                        {shippingOption.delivery_addr?.city}
+                        {shippingOption.street}
+                        {shippingOption.apt_num && shippingOption.apt_num}
+                        {shippingOption.city}
                       </div>
                       <div>{shippingOption.is_job_site && "Job Site"}</div>
                     </div>

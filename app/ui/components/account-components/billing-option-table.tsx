@@ -30,9 +30,9 @@ import {
 } from "@/components/ui/collapsible";
 
 import BillingForm from "./billing-form";
-import { BillingInfo } from "@/lib/definitions/profile-definitions";
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
+import { UserBillingInformation } from "@/lib/definitions/data-model";
 
 interface BillingOptionTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
@@ -117,7 +117,7 @@ export function BillingOptionTable<TData, TValue>({
                           colSpan={row.getVisibleCells().length}
                         >
                           <BillingForm
-                            billing_info={row.original as BillingInfo}
+                            billing_info={row.original as UserBillingInformation}
                           />
                         </td>
                       </tr>

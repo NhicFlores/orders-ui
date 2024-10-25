@@ -64,12 +64,12 @@ export async function createProfile(
     };
   }
 
-  const { name, company, account_num, phone_num } = validatedFields.data;
+  const { first_name, last_name, company, account_num, phone_num } = validatedFields.data;
 
   try {
     await sql`
-            INSERT INTO user_profile (user_id, name, company, account_num, phone_num)
-            VALUES (${user_id}, ${name}, ${company}, ${account_num}, ${phone_num})
+            INSERT INTO user_profiles (user_id, first_name, last_name, company, account_num, phone_num)
+            VALUES (${user_id}, ${first_name}, ${last_name}, ${company}, ${account_num}, ${phone_num})
         `;
   } catch (error) {
     return {
@@ -94,12 +94,12 @@ export async function updateProfile(
     };
   }
 
-  const { name, company, account_num, phone_num } = validatedFields.data;
+  const { first_name, last_name, company, account_num, phone_num } = validatedFields.data;
 
   try {
     await sql`
-            UPDATE user_profile
-            SET name = ${name}, company = ${company}, account_num = ${account_num}, phone_num = ${phone_num}
+            UPDATE user_profiles
+            SET first_name = ${first_name}, last_name = ${last_name}, company = ${company}, account_num = ${account_num}, phone_num = ${phone_num}
             WHERE user_id = ${user_id}
         `;
   } catch (error) {
@@ -111,7 +111,7 @@ export async function updateProfile(
 
 export async function deleteProfile(user_id: string) {
   await sql`
-        DELETE FROM user_profile
+        DELETE FROM user_profiles
         WHERE user_id = ${user_id}
     `;
 }
@@ -138,43 +138,52 @@ export async function createBillingInfo(
   }
   console.log("---------------- createBillingInfo -----------------");
   const {
-    billing_addr,
+    street,
+    apt_num,
+    city,
+    state,
+    zip,
     payment_method,
     purchase_order,
     primary_contact_name,
     primary_contact_email,
-    phone_num,
-    alt_phone_num,
+    primary_contact_phone_num,
     fax_num,
   } = validatedFields.data;
 
   // use JSON.stringify to store the address as a string in the database to properly serialize and deserialize the address object
   // const billing_addr_str = `(${billing_addr.street}, ${billing_addr.apt_num}, ${billing_addr.city}, ${billing_addr.state}, ${billing_addr.zip}, ${billing_addr.country})`;
-  const billing_addr_string = JSON.stringify(billing_addr);
+  // const billing_addr_string = JSON.stringify(billing_addr);
 
-  let billing_info_id = "";
+  let billing_info_id;
   try {
     console.log("---------------- updating DB -----------------");
     const queryResult = await sql<{ id: string }>`
-        INSERT INTO billing_info (
+        INSERT INTO user_billing_information (
             user_id, 
-            billing_addr, 
+            street,
+            apt_num,
+            city,
+            state,
+            zip, 
             payment_method, 
             purchase_order, 
             primary_contact_name, 
             primary_contact_email, 
-            phone_num, 
-            alt_phone_num, 
+            primary_contact_phone_num, 
             fax_num
           )
         VALUES (${user_id}, 
-            ${billing_addr_string}, 
+            ${street},
+            ${apt_num},
+            ${city},
+            ${state},
+            ${zip}, 
             ${payment_method}, 
             ${purchase_order}, 
             ${primary_contact_name}, 
             ${primary_contact_email}, 
-            ${phone_num}, 
-            ${alt_phone_num}, 
+            ${primary_contact_phone_num},  
             ${fax_num})
         RETURNING id;
         `;
@@ -200,15 +209,18 @@ export async function insertBillingInfo() {
       "---------------- inserting into BillingInfo -----------------"
     );
     await sql`
-        INSERT INTO billing_info (
+        INSERT INTO user_billing_information (
             user_id, 
-            billing_addr, 
+            street,
+            apt_num,
+            city,
+            state,
+            zip, 
             payment_method, 
             purchase_order, 
             primary_contact_name, 
             primary_contact_email, 
-            phone_num, 
-            alt_phone_num, 
+            primary_contact_phone_num, 
             fax_num
           ) VALUES 
           (
@@ -288,28 +300,34 @@ export async function updateBillingInfo(
   const user_id = session.user.id;
 
   const {
-    billing_addr,
+    street,
+    apt_num,
+    city,
+    state,
+    zip,
     payment_method,
     purchase_order,
     primary_contact_name,
     primary_contact_email,
-    phone_num,
-    alt_phone_num,
+    primary_contact_phone_num,
     fax_num,
   } = validatedFields.data;
 
-  const billing_addr_string = JSON.stringify(billing_addr);
+  // const billing_addr_string = JSON.stringify(billing_addr);
   //console.log(typeof billing_info_id);
   try {
     await sql`
-            UPDATE billing_info
-            SET billing_addr = ${billing_addr_string},  
+            UPDATE user_billing_information
+            SET street = ${street},
+                apt_num = ${apt_num},
+                city = ${city},
+                state = ${state},
+                zip = ${zip},  
                 payment_method = ${payment_method}, 
                 purchase_order = ${purchase_order}, 
                 primary_contact_name = ${primary_contact_name}, 
                 primary_contact_email = ${primary_contact_email}, 
-                phone_num = ${phone_num}, 
-                alt_phone_num = ${alt_phone_num}, 
+                primary_contact_phone_num = ${primary_contact_phone_num}, 
                 fax_num = ${fax_num}
             WHERE user_id = ${user_id} AND id = ${billing_info_id}
         `;
@@ -329,7 +347,7 @@ export async function deleteBillingInfo(billing_info_id: number) {
 
   try {
     await sql`
-    DELETE FROM billing_info
+    DELETE FROM user_billing_information
     WHERE user_id = ${user_id} AND id = ${billing_info_id}`;
   } catch (error) {
     return {
@@ -364,7 +382,7 @@ export async function createShippingInfo(
   // const delivery_addr_string = JSON.stringify(delivery_addr);
   try {
     await sql`
-            INSERT INTO shipping_info (user_id, delivery_addr, is_job_site, note)
+            INSERT INTO user_shipping_information (user_id, street, apt_num, city, state, zip, is_job_site, note)
             VALUES (${user_id}, 
                 ${street},
                 ${apt_num},
@@ -400,7 +418,7 @@ export async function updateShippingInfo(
     validatedFields.data;
   try {
     await sql`
-            UPDATE shipping_info
+            UPDATE user_shipping_information
             SET street = ${street},
                 apt_num = ${apt_num},
                 city = ${city},
@@ -420,7 +438,7 @@ export async function updateShippingInfo(
 export async function deleteShippingInfo(shipping_info_id: number) {
   const user_id = await validateUser();
   await sql`
-        DELETE FROM shipping_info
+        DELETE FROM user_shipping_information
         WHERE user_id = ${user_id} AND id = ${shipping_info_id}
     `;
 

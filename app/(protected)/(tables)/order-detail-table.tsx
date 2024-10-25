@@ -6,11 +6,12 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { OrderItem } from "@/lib/definitions/order-definitions";
 import {
-  BillingInfo,
-  ShippingInfo,
-} from "@/lib/definitions/profile-definitions";
+  UserBillingInformation,
+  UserShippingInformation,
+} from "@/lib/definitions/data-model";
+import { OrderItem } from "@/lib/definitions/order-definitions";
+
 import {
   ColumnDef,
   SortingState,
@@ -23,8 +24,8 @@ import {
 
 interface OrderDetailTableProps {
   orderItems: OrderItem[];
-  billingInfo: BillingInfo;
-  shippingInfo: ShippingInfo;
+  billingInfo: UserBillingInformation;
+  shippingInfo: UserShippingInformation;
 }
 
 export default function OrderDetailTable({
@@ -68,12 +69,14 @@ export default function OrderDetailTable({
             <TableCell>
               <div>{billingInfo.purchase_order}</div>
               <div>{billingInfo.payment_method}</div>
-              <div>{JSON.stringify(billingInfo.billing_addr)}</div>
+              <div>{JSON.stringify(billingInfo.street)}</div>
             </TableCell>
             <TableCell>
-              {shippingInfo.is_job_site && <div>{shippingInfo.is_job_site ? "Job Site" : "Home"}</div>}
+              {shippingInfo.is_job_site && (
+                <div>{shippingInfo.is_job_site ? "Job Site" : "Home"}</div>
+              )}
               <div>{shippingInfo.note}</div>
-              <div>{JSON.stringify(shippingInfo.delivery_addr)}</div>
+              <div>{JSON.stringify(shippingInfo.street)}</div>
             </TableCell>
           </TableRow>
         </TableBody>

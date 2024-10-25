@@ -9,11 +9,11 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { BillingInfo } from "@/lib/definitions/profile-definitions";
+import { UserBillingInformation } from "@/lib/definitions/data-model";
 import { useState } from "react";
 
 interface PaymentSectionProps {
-  billingOptions: BillingInfo[];
+  billingOptions: UserBillingInformation[];
 }
 
 export default function PaymentSection({
@@ -21,8 +21,8 @@ export default function PaymentSection({
 }: PaymentSectionProps) {
   const [showPaymentForm, setShowPaymentForm] = useState(false);
   const [selectedBillingOption, setSelectedBillingOption] =
-    useState<BillingInfo>();
-  const [formData, setFormData] = useState<BillingInfo>();
+    useState<UserBillingInformation>();
+  const [formData, setFormData] = useState<UserBillingInformation>();
 
   const { setOrder } = useProductContext();
 
@@ -72,10 +72,10 @@ export default function PaymentSection({
                   <div>
                     <div>{billingOption.purchase_order}</div>
                     <div>
-                      {billingOption.billing_addr.street}
-                      {billingOption.billing_addr.apt_num &&
-                        billingOption.billing_addr.apt_num}
-                      {billingOption.billing_addr.city}
+                      {billingOption.street}
+                      {billingOption.apt_num &&
+                        billingOption.apt_num}
+                      {billingOption.city}
                     </div>
                   </div>
                 </SelectItem>

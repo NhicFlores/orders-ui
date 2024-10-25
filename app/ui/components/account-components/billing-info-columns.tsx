@@ -1,11 +1,11 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import { deleteBillingInfo } from "@/lib/actions/profile-actions";
-import { BillingInfo } from "@/lib/definitions/profile-definitions";
+import { UserBillingInformation } from "@/lib/definitions/data-model";
 import { ColumnDef } from "@tanstack/react-table";
 import { Trash2  } from "lucide-react";
 
-export const BillingInfoColumns: ColumnDef<BillingInfo>[] = [
+export const BillingInfoColumns: ColumnDef<UserBillingInformation>[] = [
     {
         id: "expander",
     },

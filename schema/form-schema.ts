@@ -12,8 +12,11 @@ export const UserSchema = z.object({
 });
 
 export const ProfileSchema = z.object({
-  name: z.string().min(1, {
-    message: "please enter your name",
+  first_name: z.string().min(1, {
+    message: "please enter your first name",
+  }),
+  last_name: z.string().min(1, {
+    message: "please enter your last name",
   }),
   company: z
     .string({
@@ -29,22 +32,18 @@ export const ProfileSchema = z.object({
 });
 
 export const BillingInfoSchema = z.object({
-  billing_addr: z.object({
-    street: z.string(),
-    apt_num: z.string().optional(),
-    city: z.string(),
-    state: z.string({
-      invalid_type_error: "Please choose a state.",
-    }),
-    zip: z.string().length(5),
-    country: z.string(),
+  street: z.string(),
+  apt_num: z.string().optional(),
+  city: z.string(),
+  state: z.string({
+    invalid_type_error: "Please choose a state.",
   }),
+  zip: z.string().length(5),
   payment_method: z.string(),
   purchase_order: z.string().optional(),
   primary_contact_name: z.string(),
   primary_contact_email: z.string().email(),
-  phone_num: z.string(),
-  alt_phone_num: z.string().optional(),
+  primary_contact_phone_num: z.string(),
   fax_num: z.string().optional(),
 });
 

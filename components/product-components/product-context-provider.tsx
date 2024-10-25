@@ -99,14 +99,16 @@ export default function ProductContextProvider({
     date_delivered: null,
   });
 
-  const [orderItem, setOrderItem] = useState<NewOrderItem | OrderItem>({
+  const [orderItem, setOrderItem] = useState<OrderItem | NewOrderItem>({
     product_type_id: "",
     product_config: {},
     quantity: 1,
     note: "",
   });
 
-  const [orderItems, setOrderItems] = useState<OrderItem[]>([]);
+  const [orderItems, setOrderItems] = useState<OrderItem[] | NewOrderItem[]>(
+    []
+  );
 
   const updateOrderItemQuantity = (quantity: number) => {
     setOrderItem((prev) => ({

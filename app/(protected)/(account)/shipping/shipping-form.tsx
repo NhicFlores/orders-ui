@@ -64,11 +64,9 @@ export default function ShippingForm({
     setIsEditEnabled(!isEditEnabled);
 
     // console.log(data);
-    const { street, apt_num, city, state, zip, is_job_site, note } = data;
-    // const
     setOrder((prevOrder) => ({
       ...prevOrder,
-      shipping_info: data as ShippingInfoWithoutIds,
+      shipping_data: data as ShippingInfoWithoutIds,
     }));
   }
 

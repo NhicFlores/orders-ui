@@ -21,12 +21,12 @@ import {
   insertBillingInfo,
   updateBillingInfo,
 } from "@/lib/actions/profile-actions";
-import { BillingInfo } from "@/lib/definitions/profile-definitions";
 import { BillingRoute, CheckoutRoute } from "@/routes";
 import { useProductContext } from "@/components/product-components/product-context-provider";
+import { UserBillingInformation } from "@/lib/definitions/data-model";
 
 interface BillingFormProps {
-  billing_info?: BillingInfo;
+  billing_info?: UserBillingInformation;
   isBlankForm?: boolean;
   toggleBillingForm?: () => void;
   handlePaymentOptionChange?: (billing_id: string) => void;
@@ -49,20 +49,16 @@ const BillingForm = ({
     defaultValues: billing_info
       ? billing_info
       : {
-          billing_addr: {
-            street: "",
-            apt_num: "",
-            city: "",
-            state: "",
-            zip: "",
-            country: "",
-          },
+          street: "",
+          apt_num: "",
+          city: "",
+          state: "",
+          zip: "",
           payment_method: "",
           purchase_order: "",
           primary_contact_name: "",
           primary_contact_email: "",
-          phone_num: "",
-          alt_phone_num: "",
+          primary_contact_phone_num: "",
           fax_num: "",
         },
   });
@@ -88,7 +84,7 @@ const BillingForm = ({
     //NOTE BUG: potential bug here, need to test if we can get call updateBillingInfo with id = -1
     isBlankForm
       ? createBillingInfo(data, BillingRoute.href)
-      : billing_info?.id && updateBillingInfo(billing_info.id, data); 
+      : billing_info?.id && updateBillingInfo(billing_info.id, data);
     //NOTE TODO: add error handling
     setIsEditEnabled(!isEditEnabled);
   }
@@ -237,7 +233,7 @@ const BillingForm = ({
               <div className="w-full">
                 <FormField
                   control={billingForm.control}
-                  name="phone_num"
+                  name="primary_contact_phone_num"
                   render={({ field }) => (
                     <FormItem>
                       <FormLabel>Phone Number</FormLabel>
@@ -251,30 +247,10 @@ const BillingForm = ({
                         />
                       </FormControl>
                       <FormMessage>
-                        {billingForm.formState.errors.phone_num?.message}
-                      </FormMessage>
-                    </FormItem>
-                  )}
-                />
-              </div>
-              <div className="w-full">
-                <FormField
-                  control={billingForm.control}
-                  name="alt_phone_num"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Alternate Phone Number</FormLabel>
-                      <FormControl>
-                        <Input
-                          readOnly={!isEditEnabled}
-                          className={
-                            !isEditEnabled ? "bg-slate-100" : "bg-white"
-                          }
-                          {...field}
-                        />
-                      </FormControl>
-                      <FormMessage>
-                        {billingForm.formState.errors.alt_phone_num?.message}
+                        {
+                          billingForm.formState.errors.primary_contact_phone_num
+                            ?.message
+                        }
                       </FormMessage>
                     </FormItem>
                   )}
@@ -315,7 +291,7 @@ const BillingForm = ({
               <div className="w-full">
                 <FormField
                   control={billingForm.control}
-                  name="billing_addr.street"
+                  name="street"
                   render={({ field }) => (
                     <FormItem>
                       <FormLabel>Street Address</FormLabel>
@@ -329,10 +305,7 @@ const BillingForm = ({
                         />
                       </FormControl>
                       <FormMessage>
-                        {
-                          billingForm.formState.errors.billing_addr?.street
-                            ?.message
-                        }
+                        {billingForm.formState.errors.street?.message}
                       </FormMessage>
                     </FormItem>
                   )}
@@ -341,7 +314,7 @@ const BillingForm = ({
               <div className="w-1/3">
                 <FormField
                   control={billingForm.control}
-                  name="billing_addr.apt_num"
+                  name="apt_num"
                   render={({ field }) => (
                     <FormItem>
                       <FormLabel>Apt/Suite/Lot</FormLabel>
@@ -355,10 +328,7 @@ const BillingForm = ({
                         />
                       </FormControl>
                       <FormMessage>
-                        {
-                          billingForm.formState.errors.billing_addr?.apt_num
-                            ?.message
-                        }
+                        {billingForm.formState.errors.apt_num?.message}
                       </FormMessage>
                     </FormItem>
                   )}
@@ -370,7 +340,7 @@ const BillingForm = ({
               <div className="w-full">
                 <FormField
                   control={billingForm.control}
-                  name="billing_addr.city"
+                  name="city"
                   render={({ field }) => (
                     <FormItem>
                       <FormLabel>City</FormLabel>
@@ -384,10 +354,7 @@ const BillingForm = ({
                         />
                       </FormControl>
                       <FormMessage>
-                        {
-                          billingForm.formState.errors.billing_addr?.city
-                            ?.message
-                        }
+                        {billingForm.formState.errors.city?.message}
                       </FormMessage>
                     </FormItem>
                   )}
@@ -396,7 +363,7 @@ const BillingForm = ({
               <div className="w-1/3">
                 <FormField
                   control={billingForm.control}
-                  name="billing_addr.state"
+                  name="state"
                   render={({ field }) => (
                     <FormItem>
                       <FormLabel>State</FormLabel>
@@ -410,10 +377,7 @@ const BillingForm = ({
                         />
                       </FormControl>
                       <FormMessage>
-                        {
-                          billingForm.formState.errors.billing_addr?.state
-                            ?.message
-                        }
+                        {billingForm.formState.errors.state?.message}
                       </FormMessage>
                     </FormItem>
                   )}
@@ -422,7 +386,7 @@ const BillingForm = ({
               <div className="w-1/3">
                 <FormField
                   control={billingForm.control}
-                  name="billing_addr.zip"
+                  name="zip"
                   render={({ field }) => (
                     <FormItem>
                       <FormLabel>Zip</FormLabel>
@@ -436,36 +400,7 @@ const BillingForm = ({
                         />
                       </FormControl>
                       <FormMessage>
-                        {
-                          billingForm.formState.errors.billing_addr?.zip
-                            ?.message
-                        }
-                      </FormMessage>
-                    </FormItem>
-                  )}
-                />
-              </div>
-              <div className="w-1/3">
-                <FormField
-                  control={billingForm.control}
-                  name="billing_addr.country"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Country</FormLabel>
-                      <FormControl>
-                        <Input
-                          readOnly={!isEditEnabled}
-                          className={
-                            !isEditEnabled ? "bg-slate-100" : "bg-white"
-                          }
-                          {...field}
-                        />
-                      </FormControl>
-                      <FormMessage>
-                        {
-                          billingForm.formState.errors.billing_addr?.country
-                            ?.message
-                        }
+                        {billingForm.formState.errors.zip?.message}
                       </FormMessage>
                     </FormItem>
                   )}
