@@ -16,11 +16,13 @@ import {
 // NOTE TODO: optimize date types - check why drizzle is inferring { mode: string }
 // SET TIMEZONE in db connection
 
-export const dbSchema = pgSchema(
-  process.env.NODE_ENV === "production"
-    ? process.env.PROD_SCHEMA!
-    : process.env.DEV_SCHEMA!
-);
+// NOTE UNDO: hardcoding schema 
+// export const dbSchema = pgSchema(
+//   process.env.NODE_ENV === "production"
+//     ? process.env.PROD_SCHEMA!
+//     : process.env.DEV_SCHEMA!
+// );
+export const dbSchema = pgSchema("prod-orders");
 // NOTE TODO: is this the best place to throw this error
 if (!dbSchema.schemaName) {
   throw new Error("Schema not found");

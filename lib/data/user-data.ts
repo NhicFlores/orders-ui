@@ -20,7 +20,7 @@ export async function getUserByID(id: string) {
 
   try {
     console.log("SCHEMA NAME:", schemaName);
-    const user = await sql<User>`SELECT * FROM "${schemaName}".users WHERE id=${id}`;
+    const user = await sql<User>`SELECT * FROM "prod-orders".users WHERE id=${id}`;
     console.log("USER:", user.rows[0]);
     console.log("USER TYPE:", typeof user.rows[0]);
     return user.rows[0]; //as User
