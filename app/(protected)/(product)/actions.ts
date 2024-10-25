@@ -64,7 +64,7 @@ export async function createOrderDraft(order: Order | NewOrder, orderItems: Orde
   }
 }
 
-export async function createOrder(order: Order, orderItems: OrderItem[]) {
+export async function createOrder(order: NewOrder, orderItems: NewOrderItem[]) {
   const user_id = (await ValidateUser()) as string;
 
   const { order_name, billing_data, shipping_data } = order;

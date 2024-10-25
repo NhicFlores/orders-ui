@@ -2,7 +2,7 @@ export type Invoice = {
   id: string;
   user_id: string;
   order_id: string;
-  date_created: Date;
+  date_created: Date | string; // Adjusted to allow string for JSON compatibility
   // date_created_tz: Date;
   status: string;
   amount: number;

@@ -9,11 +9,7 @@ function SummaryCard() {
   const { order, orderItem, orderItems } = useProductContext();
 
   const {
-    glassType: type,
-    shape,
-    dimensions,
-    thickness,
-    tint,
+    product_config,
     quantity,
   } = orderItem;
 
@@ -31,24 +27,8 @@ function SummaryCard() {
         <ScrollArea className="whitespace-nowrap p-2">
           <div className="space-y-4">
             <div className="flex justify-between">
-              <p>Glass Type</p>
-              <p>{type}</p>
-            </div>
-            <div className="flex justify-between">
-              <p>Glass Shape</p>
-              <p>{shape}</p>
-            </div>
-            <div className="flex justify-between">
-              <p>Glass Size</p>
-              <p>{dimensions}</p>
-            </div>
-            <div className="flex justify-between">
-              <p>Glass Thickness</p>
-              <p>{thickness}</p>
-            </div>
-            <div className="flex justify-between">
-              <p>Glass Color</p>
-              <p>{tint}</p>
+              <p>Product Config</p>
+              <p>{product_config}</p>
             </div>
             <div className="flex justify-between">
               <p>Quantity</p>
@@ -70,13 +50,13 @@ function SummaryCard() {
           <div className="border rounded-md p-4">
             <p>billing info id</p>
             <p className="break-all">
-              {JSON.stringify(order.billing_info_id)}
+              {JSON.stringify(order.billing_data)}
             </p>
           </div>
           <div className="border rounded-md p-4">
             <p>shipping info</p>
             <p>
-              {order.shipping_info.delivery_addr?.street}
+              {order.shipping_data?.street}
             </p>
           </div>
         </div>

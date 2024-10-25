@@ -1,10 +1,11 @@
 'use client'
-
+// DEPRECATED 
 import { updateOrder } from "@/lib/actions/actions";
 import { MyButton } from "../my-button";
 import Link from "next/link";
 import { CustomerField, OrderForm } from "@/lib/definitions/definitions";
 import { useFormState, useFormStatus } from "react-dom";
+import { OrderStatus } from "@/lib/definitions/order-definitions";
 
 export default function EditOrderForm({ 
     order, 
@@ -13,6 +14,7 @@ export default function EditOrderForm({
     order: OrderForm; 
     customers: CustomerField[];
 }){
+  console.log("EDIT ORDER FORM: DEPRECATED");
   const initialState = {message: "", errors: {}};
   const updateOrderWithID = updateOrder.bind(null, order.id);
   const [state, dispatch] = useFormState(updateOrderWithID, initialState);  
@@ -144,7 +146,7 @@ export default function EditOrderForm({
                   name="status"
                   type='radio'
                   value="pending"
-                  checked={order.status === 'pending' ? true: false}
+                  checked={order.status === OrderStatus.Pending ? true: false}
                   className="h-4 w-4 cursor-pointer border-gray-300 bg-gray-100 text-gray-600 focus:ring-2"
                 />
                 <label
@@ -160,7 +162,7 @@ export default function EditOrderForm({
                   name="status"
                   type="radio"
                   value="draft"
-                  checked={order.status === 'draft' ? true: false}
+                  checked={order.status === OrderStatus.Draft ? true: false}
                   className="h-4 w-4 cursor-pointer border-gray-300 bg-gray-100 text-gray-600 focus:ring-2"
                 />
                 <label
@@ -176,7 +178,7 @@ export default function EditOrderForm({
                   name="status"
                   type="radio"
                   value="processing"
-                  checked={order.status === 'processing' ? true: false}
+                  checked={order.status === OrderStatus.Processing ? true: false}
                   className="h-4 w-4 cursor-pointer border-gray-300 bg-gray-100 text-gray-600 focus:ring-2"
                 />
                 <label
@@ -192,7 +194,7 @@ export default function EditOrderForm({
                   name="status"
                   type="radio"
                   value="shipped"
-                  checked={order.status === 'shipped' ? true: false}
+                  checked={order.status === OrderStatus.Shipped ? true: false}
                   className="h-4 w-4 cursor-pointer border-gray-300 bg-gray-100 text-gray-600 focus:ring-2"
                 />
                 <label
