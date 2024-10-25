@@ -79,14 +79,14 @@ export default function OrderSummary() {
             {orderItems.map((item, index) => (
               <TableRow key={index}>
                 <TableCell>
-                  <p>{item.thickness}&quot;</p>
-                  <p>{item.tint}</p>
-                  <p>{item.glassType}</p>
+                  <p>{item.product_config.thickness}&quot;</p>
+                  <p>{item.product_config.tint}</p>
+                  <p>{item.product_config.glassType}</p>
                 </TableCell>
                 <TableCell>
-                  <p>{orderItem.dimensions}</p>
+                  <p>{orderItem.product_config.dimensions}</p>
                 </TableCell>
-                <TableCell>{item.fabrication_options}</TableCell>
+                <TableCell>{item.product_config.fabrication_options}</TableCell>
                 <TableCell>
                   <QuantitySelector />
                 </TableCell>
@@ -117,11 +117,7 @@ export default function OrderSummary() {
         <div className="border rounded-md p-4">
           <p>Order Items: {orderItems.length}</p>
           <p className="border-b">order item fields</p>
-          <p>{orderItems[0].glassType}</p>
-          <p>{orderItems[0].shape}</p>
-          <p>{orderItems[0].dimensions}</p>
-          <p>{orderItems[0].thickness}</p>
-          <p>{orderItems[0].tint}</p>
+          <p>{orderItems[0].product_config}</p>
           <p>{orderItems[0].quantity}</p>
         </div>
       )}

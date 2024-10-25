@@ -18,7 +18,7 @@ export default function DimensionCard() {
 
   //get selected shape from order
   const glass_shape = shapeOptions.find(
-    (shape) => shape.name === orderItem.shape
+    (shape) => orderItem.product_config.shape ? shape.name === orderItem.product_config.shape : false
   );
 
   return (
