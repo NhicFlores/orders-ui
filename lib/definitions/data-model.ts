@@ -2,8 +2,13 @@ export type User = {
   id: string;
   email: string;
   password: string;
-  role: string;
+  role: Role;
 };
+
+export enum Role {
+  ADMIN = "ADMIN",
+  USER = "USER",
+}
 
 export type UserProfile = {
   id: number;
@@ -101,7 +106,7 @@ interface quantityIncoming {
   supplier_id: string;
   expected_arrival_date: Date;
 }
-// front-end only 
+// front-end only
 export enum OrderStatus {
   /** Saved by the user but not yet submitted. */
   Draft = "DRAFT",

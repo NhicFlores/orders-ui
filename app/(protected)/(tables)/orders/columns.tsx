@@ -16,10 +16,9 @@ import {
 import Link from "next/link";
 import { deleteOrder } from "@/lib/actions/actions";
 import { formatDateToLocal } from "@/lib/utils";
-import { CustomerOrderTable } from "@/lib/definitions/order-definitions";
-
+import { Order } from "@/lib/definitions/data-model";
 //TODO: enable shift select
-export const OrderColumns: ColumnDef<CustomerOrderTable>[] = [
+export const OrderColumns: ColumnDef<Order>[] = [
   {
     id: "select",
     header: ({ table }) => (
@@ -56,11 +55,11 @@ export const OrderColumns: ColumnDef<CustomerOrderTable>[] = [
           <DropdownMenuContent align="end">
             <DropdownMenuLabel>Actions</DropdownMenuLabel>
             <DropdownMenuItem
-              onClick={() => navigator.clipboard.writeText(order.order_id)}
+              onClick={() => navigator.clipboard.writeText(order.id)}
             >
               Copy order ID
             </DropdownMenuItem>
-            <Link href={`/order/${order.order_id}/edit`}>
+            <Link href={`/order/${order.id}/edit`}>
               <DropdownMenuItem>Edit Order</DropdownMenuItem>
             </Link>
             <DropdownMenuSeparator />
@@ -70,7 +69,7 @@ export const OrderColumns: ColumnDef<CustomerOrderTable>[] = [
             {/** NOTE HOW TO Server Actions are not limited to <form> and can be invoked from event handlers, useEffect, third-party libraries, and other form elements like <button> **/}
 
             <DropdownMenuItem
-              onClick={() => deleteOrder(order.order_id)}
+              onClick={() => deleteOrder(order.id)}
               className="focus:bg-red-500 focus:text-white"
             >
               Delete Order

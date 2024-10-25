@@ -1,14 +1,9 @@
 // fetch functions
 // fetch functions for users
 import { sql } from "@vercel/postgres";
-import { User } from "@/lib/definitions/auth-definitions";
 import { unstable_noStore as noStore } from "next/cache";
-import {
-  BillingInfo,
-  ShippingInfo,
-  UserProfile,
-} from "@/lib/definitions/profile-definitions";
 import { LogData } from "../utils";
+import { User, UserBillingInformation, UserProfile, UserShippingInformation } from "../definitions/data-model";
 
 const schemaName = process.env.PROD_SCHEMA;//process.env.NODE_ENV === "production" ? process.env.PROD_SCHEMA : process.env.DEV_SCHEMA;
 
@@ -38,7 +33,7 @@ export async function getUserByID(id: string) {
 export async function getUserProfileById(user_id: string) {
   try {
     const userProfile = await sql<UserProfile>`
-      SELECT * FROM user_profile 
+      SELECT * FROM user_profiles 
       WHERE user_id=${user_id}`;
 
     return userProfile.rows[0];
@@ -50,8 +45,8 @@ export async function getUserProfileById(user_id: string) {
 
 export async function getBillingInfoByUserId(user_id: string) {
   try {
-    const billingInfoData = await sql<BillingInfo>`
-      SELECT * FROM billing_info 
+    const billingInfoData = await sql<UserBillingInformation>`
+      SELECT * FROM user_billing_information 
       WHERE user_id=${user_id}
     `;
 
@@ -81,8 +76,8 @@ export async function getBillingInfoByUserId(user_id: string) {
 
 export async function getShippingInfoById(user_id: string) {
   try {
-    const shippingInfo = await sql<ShippingInfo>`
-      SELECT * FROM shipping_info 
+    const shippingInfo = await sql<UserShippingInformation>`
+      SELECT * FROM user_shipping_information 
       WHERE user_id=${user_id}`;
     
     return shippingInfo.rows;

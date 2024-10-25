@@ -1,3 +1,4 @@
+// THIS FILE IS DEPRECATED 
 export type User = {
   id: string;
   email: string;

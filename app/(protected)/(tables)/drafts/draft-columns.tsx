@@ -1,6 +1,5 @@
 //client component containing column definitions
 "use client";
-
 import { ColumnDef, RowExpanding } from "@tanstack/react-table";
 import { ArrowUpDown, MoreHorizontal } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -16,7 +15,7 @@ import {
 import Link from "next/link";
 import { deleteOrder } from "@/lib/actions/actions";
 import { formatDateToLocal } from "@/lib/utils";
-import { OrderDB } from "@/lib/definitions/order-definitions";
+import { Order } from "@/lib/definitions/data-model";
 
 //NOTE TODO: enable shift select
 //NOTE TODO: draft form: save button with empty fields
@@ -38,7 +37,7 @@ import { OrderDB } from "@/lib/definitions/order-definitions";
 //     date: string;
 // };
 
-export const DraftColumns: ColumnDef<OrderDB>[] = [
+export const DraftColumns: ColumnDef<Order>[] = [
   {
     id: "select",
     header: ({ table }) => (

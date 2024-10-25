@@ -15,10 +15,10 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { ProfileSchema } from "@/schema/form-schema";
-import { UserProfile } from "@/lib/definitions/profile-definitions";
 import { useState } from "react";
 import { Pencil } from "lucide-react";
 import { createProfile, updateProfile } from "@/lib/actions/profile-actions";
+import { UserProfile } from "@/lib/definitions/data-model";
 
 interface ProfileFormProps {
   user_id: string;
@@ -31,7 +31,8 @@ export default function ProfileForm({ user_id, profile }: ProfileFormProps) {
   const profileForm = useForm<z.infer<typeof ProfileSchema>>({
     resolver: zodResolver(ProfileSchema),
     defaultValues: {
-      name: profile && profile.name ? profile.name : "",
+      first_name: profile && profile.first_name ? profile.first_name : "",
+      last_name: profile && profile.last_name ? profile.last_name : "",
       company: profile && profile.company ? profile.company : "",
       account_num: profile && profile.account_num ? profile.account_num : "",
       phone_num: profile && profile.phone_num ? profile.phone_num : "",
@@ -72,7 +73,7 @@ export default function ProfileForm({ user_id, profile }: ProfileFormProps) {
             <div className="w-full">
               <FormField
                 control={profileForm.control}
-                name="name"
+                name="first_name"
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel>Name</FormLabel>
@@ -84,7 +85,28 @@ export default function ProfileForm({ user_id, profile }: ProfileFormProps) {
                       />
                     </FormControl>
                     <FormMessage>
-                      {profileForm.formState.errors.name?.message}
+                      {profileForm.formState.errors.first_name?.message}
+                    </FormMessage>
+                  </FormItem>
+                )}
+              />
+            </div>
+            <div className="w-full">
+              <FormField
+                control={profileForm.control}
+                name="last_name"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Name</FormLabel>
+                    <FormControl>
+                      <Input
+                        {...field}
+                        readOnly={!isEditEnabled}
+                        className={!isEditEnabled ? "bg-slate-100" : "bg-white"}
+                      />
+                    </FormControl>
+                    <FormMessage>
+                      {profileForm.formState.errors.last_name?.message}
                     </FormMessage>
                   </FormItem>
                 )}

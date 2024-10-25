@@ -13,6 +13,7 @@ import {
 import { OrderStatus, TestOrder } from "@/lib/definitions/order-definitions";
 import { formatCurrency } from "@/lib/utils";
 import { unstable_noStore as noStore } from "next/cache";
+import { Order } from "../definitions/data-model";
 
 //create fetch functions for orders where status = draft, quote
 //refactor - fetch data file for each tab to keep my fetch types separate
@@ -37,7 +38,7 @@ export async function fetchOrders() {
 export async function fetchQuote() {
   // check the need for noStore on this function
   try {
-    const data = await sql<Order_DEPRECATED>`
+    const data = await sql<Order>`
         SELECT * FROM orders
         WHERE orders.status = ${OrderStatus.Quote};
       `;

@@ -1,4 +1,4 @@
-import { OrderStatus } from "@/lib/definitions/order-definitions";
+import { OrderStatus } from "@/lib/definitions/data-model";
 import { z } from "zod";
 
 //NOTE TODO: email validation, phone number validation - regex might work

@@ -7,10 +7,10 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import {
+  OrderItem,
   UserBillingInformation,
   UserShippingInformation,
 } from "@/lib/definitions/data-model";
-import { OrderItem } from "@/lib/definitions/order-definitions";
 
 import {
   ColumnDef,
@@ -54,15 +54,9 @@ export default function OrderDetailTable({
             <TableCell>
               {orderItems.map((orderItem, index) => (
                 <div key={index}>
-                  <div>{orderItem.glassType}</div>
-                  <div>{orderItem.shape}</div>
-                  <div>{orderItem.dimensions}</div>
-                  <div>{orderItem.thickness}</div>
-                  <div>{orderItem.tint}</div>
-                  <div>{orderItem.fabrication_options}</div>
-                  <div>{orderItem.misc_options}</div>
-                  <div>{orderItem.note}</div>
+                  <div>{JSON.stringify(orderItem.product_config)}</div>
                   <div>{orderItem.quantity}</div>
+                  <div>{orderItem.note}</div>
                 </div>
               ))}
             </TableCell>

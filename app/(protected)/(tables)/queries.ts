@@ -1,15 +1,10 @@
 "use server";
-
-import {
-  CustomerOrderTable,
-  OrderDB,
-  OrderStatus,
-} from "@/lib/definitions/order-definitions";
+import { Order, OrderStatus } from "@/lib/definitions/data-model";
 import { sql } from "@vercel/postgres";
 
 export async function fetchOrdersByStatus(status: OrderStatus) {
   try {
-    const data = await sql<OrderDB>`
+    const data = await sql<Order>`
             SELECT * FROM orders
             WHERE status = ${status}
         `;
@@ -24,7 +19,7 @@ export async function fetchOrdersByStatus(status: OrderStatus) {
 
 export async function fetchOrders() {
   try {
-    const data = await sql<OrderDB>`
+    const data = await sql<Order>`
             SELECT * FROM orders
             WHERE status != ${OrderStatus.Draft} AND status != ${OrderStatus.Quote}
         `;
@@ -51,7 +46,37 @@ export async function fetchOrderItems(orderId: string) {
 export async function fetchOrderTableData() {
   try {
     // SQL query to fetch data from orders, billing_info, and order_items tables
-    const data = await sql<CustomerOrderTable>`
+    const data = await sql<{
+      order_id: string;
+      order_name: string;
+      status: OrderStatus;
+      shipping_info: string;
+      date_created: string;
+      date_updated: string;
+      date_submitted: string;
+      billing_info: {
+        street: string;
+        apt_num: string;
+        city: string;
+        state: string;
+        zip: string;
+        payment_method: string;
+        purchase_order: string;
+        primary_contact_name: string;
+        primary_contact_email: string;
+        phone_num: string;
+        alt_phone_num: string;
+        fax_num: string;
+        isPrimary: boolean;
+        isActive: boolean;
+      };
+      order_items: {
+        id: string;
+        product_config: string;
+        quantity: number;
+        note: string;
+      }[];
+    }>`
       SELECT 
         o.id AS order_id, 
         o.order_name, 
@@ -61,7 +86,11 @@ export async function fetchOrderTableData() {
         o.date_updated, 
         o.date_submitted,
         json_build_object(
-            'billing_addr', bi.billing_addr,
+            'street', bi.street,
+            'apt_num', bi.apt_num,
+            'city', bi.city,
+            'state', bi.state,
+            'zip', bi.zip
             'payment_method', bi.payment_method,
             'purchase_order', bi.purchase_order,
             'primary_contact_name', bi.primary_contact_name,
@@ -75,15 +104,9 @@ export async function fetchOrderTableData() {
         json_agg(
             json_build_object(
                 'id', oi.id,
-                'glass_type', oi.glass_type,
-                'shape', oi.shape,
-                'dimensions', oi.dimensions,
-                'thickness', oi.thickness,
-                'tint', oi.tint,
-                'fabrication_options', oi.fabrication_options,
-                'misc_options', oi.misc_options,
-                'note', oi.note,
+                'product_config', oi.product_config,
                 'quantity', oi.quantity
+                'note', oi.note,
             )
         ) FILTER (WHERE oi.id IS NOT NULL) AS order_items
       FROM 
@@ -98,14 +121,14 @@ export async function fetchOrderTableData() {
 
     const tableData = data.rows.map((row) => {
       //NOTE TODO: what is best practice for parsing JSON data
-      const billing_addr = JSON.parse(String(row.billing_info.billing_addr));
+      // const billing_addr = JSON.parse(String(row.billing_info.billing_addr));
       const shipping_info = JSON.parse(String(row.shipping_info));
       return {
         ...row,
-        billing_info: {
-          ...row.billing_info,
-          billing_addr,
-        },
+        // billing_info: {
+        //   ...row.billing_info,
+        //   billing_addr,
+        // },
         shipping_info,
       };
     });

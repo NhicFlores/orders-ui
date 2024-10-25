@@ -1,6 +1,6 @@
 import NextAuth, { DefaultSession } from "next-auth";
 import { JWT } from "next-auth/jwt";
-import { Role } from "@/lib/definitions/auth-definitions";
+import { Role } from "@/lib/definitions/data-model";
 
 /**
  * modul extension to add additional properties to Session and JWT 

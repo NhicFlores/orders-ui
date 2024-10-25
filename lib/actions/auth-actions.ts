@@ -3,9 +3,9 @@ import { z } from "zod";
 import { sql } from "@vercel/postgres";
 import { LoginSchema, RegisterSchema } from "@/schema/form-schema";
 import bcrypt from "bcrypt";
-import { User } from "@/lib/definitions/auth-definitions";
 import { signIn, signOut } from "@/auth";
 import { AuthError } from "next-auth";
+import { User } from "../definitions/data-model";
 
 // -------------------- Authentication ------------------
 
