@@ -2,25 +2,19 @@ import { sql } from "drizzle-orm";
 import {
   boolean,
   check,
-  date,
   decimal,
   integer,
   jsonb,
-  pgEnum,
   pgSchema,
-  pgTable,
-  primaryKey,
-  real,
   serial,
+  text,
   timestamp,
-  uniqueIndex,
   uuid,
   varchar,
 } from "drizzle-orm/pg-core";
 
-// NOTE TODO: optimize date types - use timestamptz instead of timestamp
+// NOTE TODO: optimize date types - check why drizzle is inferring { mode: string }
 // SET TIMEZONE in db connection
-// NOTE TOD: use CHECK constraints instead of enums
 
 export const dbSchema = pgSchema(
   process.env.NODE_ENV === "production"
@@ -133,7 +127,10 @@ export const GlassInventoryTable = dbSchema.table("glass_inventory_item", {
   shapes: jsonb("shapes").notNull(), // list of shape IDs
   tint: jsonb("tint").notNull(), // list of available tints
   // list of products this glass can be used for
-  compatible_products: jsonb("compatible_products").notNull(),
+  compatible_products: text("compatible_products")
+    .array()
+    .notNull()
+    .default(sql`ARRAY[]::text[]`),
   quantity_available: integer("quantity_available").notNull(),
   // quantity_on_premise: integer("quantity"),
   // quantity_on_order: integer("quantity"),

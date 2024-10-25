@@ -1,120 +1,9 @@
 {
-  "id": "bb6ca39c-a122-4618-a8b6-ae5c46db045a",
+  "id": "248cf3b7-c89f-4efa-889c-ecaa922c66e4",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "7",
   "dialect": "postgresql",
   "tables": {
-    "prod-orders.billing_info": {
-      "name": "billing_info",
-      "schema": "prod-orders",
-      "columns": {
-        "id": {
-          "name": "id",
-          "type": "serial",
-          "primaryKey": true,
-          "notNull": true
-        },
-        "user_id": {
-          "name": "user_id",
-          "type": "uuid",
-          "primaryKey": false,
-          "notNull": true
-        },
-        "address": {
-          "name": "address",
-          "type": "varchar(255)",
-          "primaryKey": false,
-          "notNull": true
-        },
-        "city": {
-          "name": "city",
-          "type": "varchar(255)",
-          "primaryKey": false,
-          "notNull": true
-        },
-        "state": {
-          "name": "state",
-          "type": "varchar(255)",
-          "primaryKey": false,
-          "notNull": true
-        },
-        "zip": {
-          "name": "zip",
-          "type": "varchar(255)",
-          "primaryKey": false,
-          "notNull": true
-        },
-        "payment_method": {
-          "name": "payment_method",
-          "type": "varchar(255)",
-          "primaryKey": false,
-          "notNull": true
-        },
-        "purchase_order": {
-          "name": "purchase_order",
-          "type": "varchar(255)",
-          "primaryKey": false,
-          "notNull": false
-        },
-        "primary_contact_name": {
-          "name": "primary_contact_name",
-          "type": "varchar(255)",
-          "primaryKey": false,
-          "notNull": false
-        },
-        "primary_contact_email": {
-          "name": "primary_contact_email",
-          "type": "varchar(255)",
-          "primaryKey": false,
-          "notNull": false
-        },
-        "primary_contact_phone": {
-          "name": "primary_contact_phone",
-          "type": "varchar(255)",
-          "primaryKey": false,
-          "notNull": false
-        },
-        "fax_num": {
-          "name": "fax_num",
-          "type": "varchar(255)",
-          "primaryKey": false,
-          "notNull": false
-        },
-        "is_primary": {
-          "name": "is_primary",
-          "type": "boolean",
-          "primaryKey": false,
-          "notNull": true,
-          "default": false
-        },
-        "is_active": {
-          "name": "is_active",
-          "type": "boolean",
-          "primaryKey": false,
-          "notNull": true,
-          "default": true
-        }
-      },
-      "indexes": {},
-      "foreignKeys": {
-        "billing_info_user_id_users_id_fk": {
-          "name": "billing_info_user_id_users_id_fk",
-          "tableFrom": "billing_info",
-          "tableTo": "users",
-          "schemaTo": "prod-orders",
-          "columnsFrom": [
-            "user_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
-          "onDelete": "cascade",
-          "onUpdate": "no action"
-        }
-      },
-      "compositePrimaryKeys": {},
-      "uniqueConstraints": {}
-    },
     "prod-orders.glass_inventory_item": {
       "name": "glass_inventory_item",
       "schema": "prod-orders",
@@ -123,7 +12,8 @@
           "name": "id",
           "type": "uuid",
           "primaryKey": true,
-          "notNull": true
+          "notNull": true,
+          "default": "gen_random_uuid()"
         },
         "name": {
           "name": "name",
@@ -157,9 +47,10 @@
         },
         "compatible_products": {
           "name": "compatible_products",
-          "type": "jsonb",
+          "type": "text[]",
           "primaryKey": false,
-          "notNull": true
+          "notNull": true,
+          "default": "ARRAY[]::text[]"
         },
         "quantity_available": {
           "name": "quantity_available",
@@ -220,7 +111,8 @@
           "name": "id",
           "type": "uuid",
           "primaryKey": true,
-          "notNull": true
+          "notNull": true,
+          "default": "gen_random_uuid()"
         },
         "user_id": {
           "name": "user_id",
@@ -370,7 +262,8 @@
           "name": "id",
           "type": "uuid",
           "primaryKey": true,
-          "notNull": true
+          "notNull": true,
+          "default": "gen_random_uuid()"
         },
         "user_id": {
           "name": "user_id",
@@ -384,14 +277,14 @@
           "primaryKey": false,
           "notNull": true
         },
-        "billing_info": {
-          "name": "billing_info",
+        "billing_data": {
+          "name": "billing_data",
           "type": "jsonb",
           "primaryKey": false,
           "notNull": true
         },
-        "shipping_info": {
-          "name": "shipping_info",
+        "shipping_data": {
+          "name": "shipping_data",
           "type": "jsonb",
           "primaryKey": false,
           "notNull": true
@@ -425,6 +318,12 @@
           "type": "timestamp with time zone",
           "primaryKey": false,
           "notNull": false
+        },
+        "date_delivered": {
+          "name": "date_delivered",
+          "type": "timestamp with time zone",
+          "primaryKey": false,
+          "notNull": false
         }
       },
       "indexes": {},
@@ -455,7 +354,8 @@
           "name": "id",
           "type": "uuid",
           "primaryKey": true,
-          "notNull": true
+          "notNull": true,
+          "default": "gen_random_uuid()"
         },
         "type": {
           "name": "type",
@@ -505,8 +405,8 @@
       "compositePrimaryKeys": {},
       "uniqueConstraints": {}
     },
-    "prod-orders.shipping_info": {
-      "name": "shipping_info",
+    "prod-orders.user_billing_information": {
+      "name": "user_billing_information",
       "schema": "prod-orders",
       "columns": {
         "id": {
@@ -521,11 +421,17 @@
           "primaryKey": false,
           "notNull": true
         },
-        "address": {
-          "name": "address",
+        "street": {
+          "name": "street",
           "type": "varchar(255)",
           "primaryKey": false,
           "notNull": true
+        },
+        "apt_num": {
+          "name": "apt_num",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": false
         },
         "city": {
           "name": "city",
@@ -545,25 +451,62 @@
           "primaryKey": false,
           "notNull": true
         },
-        "is_job_site": {
-          "name": "is_job_site",
+        "payment_method": {
+          "name": "payment_method",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "purchase_order": {
+          "name": "purchase_order",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "primary_contact_name": {
+          "name": "primary_contact_name",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "primary_contact_email": {
+          "name": "primary_contact_email",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "primary_contact_phone": {
+          "name": "primary_contact_phone",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "fax_num": {
+          "name": "fax_num",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "is_primary": {
+          "name": "is_primary",
           "type": "boolean",
           "primaryKey": false,
           "notNull": true,
           "default": false
         },
-        "note": {
-          "name": "note",
-          "type": "varchar(255)",
+        "is_active": {
+          "name": "is_active",
+          "type": "boolean",
           "primaryKey": false,
-          "notNull": false
+          "notNull": true,
+          "default": true
         }
       },
       "indexes": {},
       "foreignKeys": {
-        "shipping_info_user_id_users_id_fk": {
-          "name": "shipping_info_user_id_users_id_fk",
-          "tableFrom": "shipping_info",
+        "user_billing_information_user_id_users_id_fk": {
+          "name": "user_billing_information_user_id_users_id_fk",
+          "tableFrom": "user_billing_information",
           "tableTo": "users",
           "schemaTo": "prod-orders",
           "columnsFrom": [
@@ -646,6 +589,86 @@
       "compositePrimaryKeys": {},
       "uniqueConstraints": {}
     },
+    "prod-orders.user_shipping_information": {
+      "name": "user_shipping_information",
+      "schema": "prod-orders",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "serial",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "user_id": {
+          "name": "user_id",
+          "type": "uuid",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "street": {
+          "name": "street",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "apt_num": {
+          "name": "apt_num",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "city": {
+          "name": "city",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "state": {
+          "name": "state",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "zip": {
+          "name": "zip",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "is_job_site": {
+          "name": "is_job_site",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true,
+          "default": false
+        },
+        "note": {
+          "name": "note",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "user_shipping_information_user_id_users_id_fk": {
+          "name": "user_shipping_information_user_id_users_id_fk",
+          "tableFrom": "user_shipping_information",
+          "tableTo": "users",
+          "schemaTo": "prod-orders",
+          "columnsFrom": [
+            "user_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {}
+    },
     "prod-orders.users": {
       "name": "users",
       "schema": "prod-orders",
@@ -671,8 +694,7 @@
         },
         "role": {
           "name": "role",
-          "type": "user_role",
-          "typeSchema": "prod-orders",
+          "type": "varchar(255)",
           "primaryKey": false,
           "notNull": false,
           "default": "'USER'"
@@ -692,16 +714,7 @@
       }
     }
   },
-  "enums": {
-    "prod-orders.user_role": {
-      "name": "user_role",
-      "schema": "prod-orders",
-      "values": [
-        "ADMIN",
-        "USER"
-      ]
-    }
-  },
+  "enums": {},
   "schemas": {
     "prod-orders": "prod-orders"
   },

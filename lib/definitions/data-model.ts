@@ -20,6 +20,18 @@ export type UserProfile = {
   phone_num?: string;
 };
 
+export type UserShippingInformation = {
+  id?: number;
+  user_id?: string;
+  street: string;
+  apt_num?: string;
+  city: string;
+  state: string;
+  zip: string;
+  is_job_site: boolean;
+  note: string;
+};
+
 export type UserBillingInformation = {
   id: number;
   user_id: string;
@@ -39,18 +51,7 @@ export type UserBillingInformation = {
   is_active: boolean;
 };
 
-export type UserShippingInformation = {
-  id?: number;
-  user_id?: string;
-  street: string;
-  apt_num?: string;
-  city: string;
-  state: string;
-  zip: string;
-  is_job_site: boolean;
-  note: string;
-};
-
+// used when generating billing info for orders 
 export const payment_method_codes = [
   "CREDIT",
   "DEBIT",
