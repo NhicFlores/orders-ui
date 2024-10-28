@@ -2,12 +2,12 @@ export type User = {
   id: string;
   email: string;
   password: string;
-  role: Role;
+  role: UserRole;
 };
 
-export enum Role {
-  ADMIN = "ADMIN",
-  USER = "USER",
+export enum UserRole {
+  Admin = "ADMIN",
+  User = "USER",
 }
 
 export type UserProfile = {
@@ -24,7 +24,7 @@ export type UserShippingInformation = {
   id?: number;
   user_id?: string;
   street: string;
-  apt_num?: string;
+  apt_num?: string | null;
   city: string;
   state: string;
   zip: string;
@@ -36,7 +36,7 @@ export type UserBillingInformation = {
   id: number;
   user_id: string;
   street: string;
-  apt_num?: string;
+  apt_num?: string | null;
   city: string;
   state: string;
   zip: string;
@@ -51,7 +51,7 @@ export type UserBillingInformation = {
   is_active: boolean;
 };
 
-// used when generating billing info for orders 
+// used when generating billing info for orders
 export const payment_method_codes = [
   "CREDIT",
   "DEBIT",

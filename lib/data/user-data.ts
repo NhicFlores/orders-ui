@@ -12,17 +12,17 @@ export async function getUserByID(id: string) {
   // NOTE what's the difference between typing the sql statement
   // return and casting the value in the return statement
   console.log("USER-DATA.TS - getUserByID()");
-  LogData({
-    fileName: "user-data.ts",
-    functionName: "getUserByID",
-    params: { id },
-  })
+  // LogData({
+  //   fileName: "user-data.ts",
+  //   functionName: "getUserByID",
+  //   params: { id },
+  // })
 
   try {
     console.log("SCHEMA NAME:", schemaName);
     const user = await sql<User>`SELECT * FROM "prod-orders".users WHERE id=${id}`;
-    console.log("USER:", user.rows[0]);
-    console.log("USER TYPE:", typeof user.rows[0]);
+    // console.log("USER:", user.rows[0]);
+    // console.log("USER TYPE:", typeof user.rows[0]);
     return user.rows[0]; //as User
   } catch (error) {
     console.error("Failed to fetch user:", error);

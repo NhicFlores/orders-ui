@@ -28,7 +28,7 @@ function SummaryCard() {
           <div className="space-y-4">
             <div className="flex justify-between">
               <p>Product Config</p>
-              <p>{product_config}</p>
+              <p>{JSON.stringify(product_config)}</p>
             </div>
             <div className="flex justify-between">
               <p>Quantity</p>
