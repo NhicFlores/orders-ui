@@ -51,7 +51,6 @@ export default function ShippingForm({
           city: "",
           state: "",
           zip: "",
-          country: "",
           is_job_site: false,
           note: "",
         },
@@ -108,6 +107,7 @@ export default function ShippingForm({
                       readOnly={!isEditEnabled}
                       className={!isEditEnabled ? "bg-slate-100" : "bg-white"}
                       {...field}
+                      value={field.value ?? ""}
                     />
                   </FormControl>
                   <FormMessage>
@@ -171,25 +171,6 @@ export default function ShippingForm({
                   </FormControl>
                   <FormMessage>
                     {shippingForm.formState.errors.zip?.message}
-                  </FormMessage>
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={shippingForm.control}
-              name="country"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel htmlFor="country">Country</FormLabel>
-                  <FormControl>
-                    <Input
-                      readOnly={!isEditEnabled}
-                      className={!isEditEnabled ? "bg-slate-100" : "bg-white"}
-                      {...field}
-                    />
-                  </FormControl>
-                  <FormMessage>
-                    {shippingForm.formState.errors.country?.message}
                   </FormMessage>
                 </FormItem>
               )}

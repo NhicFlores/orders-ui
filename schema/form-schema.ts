@@ -49,11 +49,10 @@ export const BillingInfoSchema = z.object({
 
 export const ShippingInfoSchema = z.object({
   street: z.string(),
-  apt_num: z.string().optional(),
+  apt_num: z.string().optional().nullable(),
   city: z.string(),
   state: z.string(),
   zip: z.string().length(5),
-  country: z.string(),
   is_job_site: z.boolean().optional(),
   note: z
     .string({
