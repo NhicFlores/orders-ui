@@ -15,7 +15,11 @@ import {
   createShippingInfo,
   updateShippingInfo,
 } from "@/lib/actions/profile-actions";
-import { ShippingInfoWithoutIds, UserShippingInformation } from "@/lib/definitions/data-model";
+import {
+  ShippingInfo,
+  ShippingInfoWithoutIds,
+  UserShippingInformation,
+} from "@/lib/definitions/data-model";
 import { ShippingInfoSchema } from "@/schema/form-schema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Pencil } from "lucide-react";
@@ -24,7 +28,7 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 
 interface ShippingFormProps {
-  shippingInfo?: UserShippingInformation;
+  shippingInfo?: ShippingInfo;
   toggleShippingForm?: () => void;
   isBlankForm?: boolean;
 }
@@ -57,9 +61,11 @@ export default function ShippingForm({
   });
 
   async function handleFormSave(data: z.infer<typeof ShippingInfoSchema>) {
-    isBlankForm
-      ? createShippingInfo(data)
-      : shippingInfo?.id && updateShippingInfo(shippingInfo.id, data);
+    if (isBlankForm) {
+      await createShippingInfo(data);
+    } else if ((shippingInfo as UserShippingInformation)?.id) {
+      await updateShippingInfo((shippingInfo as UserShippingInformation)?.id, data);
+    }
     setIsEditEnabled(!isEditEnabled);
 
     // console.log(data);
@@ -67,6 +73,10 @@ export default function ShippingForm({
       ...prevOrder,
       shipping_data: data as ShippingInfoWithoutIds,
     }));
+  }
+
+  function isShippingInfoWithId(info: ShippingInfo | undefined): info is UserShippingInformation {
+    return (info as UserShippingInformation).id !== undefined;
   }
 
   return (

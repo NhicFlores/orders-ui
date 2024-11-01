@@ -43,7 +43,7 @@ export const BillingInfoSchema = z.object({
   purchase_order: z.string().optional(),
   primary_contact_name: z.string(),
   primary_contact_email: z.string().email(),
-  primary_contact_phone_num: z.string(),
+  primary_contact_phone: z.string(),
   fax_num: z.string().optional(),
 });
 

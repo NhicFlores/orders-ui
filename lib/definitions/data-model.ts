@@ -21,8 +21,8 @@ export type UserProfile = {
 };
 
 export type UserShippingInformation = {
-  id?: number;
-  user_id?: string;
+  id: number;
+  user_id: string;
   street: string;
   apt_num?: string | null;
   city: string;
@@ -36,7 +36,7 @@ export type UserBillingInformation = {
   id: number;
   user_id: string;
   street: string;
-  apt_num?: string | null;
+  apt_num?: string;
   city: string;
   state: string;
   zip: string;
@@ -136,6 +136,9 @@ export type BillingInfoWithoutIds = Omit<
   UserBillingInformation,
   "id" | "user_id"
 >;
+
+export type ShippingInfo = UserShippingInformation | ShippingInfoWithoutIds;
+export type BillingInfo = UserBillingInformation | BillingInfoWithoutIds;
 
 export type Order = {
   id: string;

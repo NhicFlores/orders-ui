@@ -11,7 +11,7 @@ import {
 import { useState } from "react";
 import ShippingForm from "../../(account)/shipping/shipping-form";
 import { useProductContext } from "@/components/product-components/product-context-provider";
-import { UserShippingInformation } from "@/lib/definitions/data-model";
+import { ShippingInfo, UserShippingInformation } from "@/lib/definitions/data-model";
 
 interface ShippingSectionProps {
   shippingOptions: UserShippingInformation[];
@@ -22,8 +22,8 @@ export default function ShippingSection({
 }: ShippingSectionProps) {
   const [showShippingForm, setShowShippingForm] = useState(false);
   const [selectedShippingOption, setSelectedShippingOption] =
-    useState<UserShippingInformation>();
-  const [formData, setFormData] = useState<UserShippingInformation>();
+    useState<ShippingInfo>();
+  const [formData, setFormData] = useState<ShippingInfo>();
   const [isJobSite, setIsJobSite] = useState(false);
 
   const { order, setOrder } = useProductContext();
@@ -125,7 +125,7 @@ export default function ShippingSection({
       </div>
       {showShippingForm && (
         <ShippingForm
-          key={formData?.id}
+          // key={formData?.id}
           shippingInfo={formData}
           isBlankForm={!formData}
           toggleShippingForm={toggleShippingForm}

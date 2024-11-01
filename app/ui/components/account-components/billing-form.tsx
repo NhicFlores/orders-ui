@@ -58,7 +58,7 @@ const BillingForm = ({
           purchase_order: "",
           primary_contact_name: "",
           primary_contact_email: "",
-          primary_contact_phone_num: "",
+          primary_contact_phone: "",
           fax_num: "",
         },
   });
@@ -233,7 +233,7 @@ const BillingForm = ({
               <div className="w-full">
                 <FormField
                   control={billingForm.control}
-                  name="primary_contact_phone_num"
+                  name="primary_contact_phone"
                   render={({ field }) => (
                     <FormItem>
                       <FormLabel>Phone Number</FormLabel>
@@ -248,7 +248,7 @@ const BillingForm = ({
                       </FormControl>
                       <FormMessage>
                         {
-                          billingForm.formState.errors.primary_contact_phone_num
+                          billingForm.formState.errors.primary_contact_phone
                             ?.message
                         }
                       </FormMessage>
