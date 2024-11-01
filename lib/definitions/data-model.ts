@@ -66,7 +66,7 @@ export const payment_method_codes = [
 //   type: string;
 // };
 
-export type Product = {
+export type InventoryProduct = {
   id: string;
   type: string;
   image_url: string;
@@ -78,9 +78,10 @@ export type Product = {
   // unit:
   date_created: Date;
   date_updated: Date;
+  updated_by: string;
 };
 
-export type GlassInventoryItem = {
+export type InventoryGlassItem = {
   id: string;
   name: string;
   description: string;
@@ -127,21 +128,21 @@ export enum OrderStatus {
 // NOTE TODO: revise statuses to be more descriptive
 // - NEW, AWAITING CONFIRMATION, CONFIRMED, IN PRODUCTION, SHIPPED, DELIVERED
 
-export type BillingInfoWithoutIds = Omit<
-  UserBillingInformation,
-  "id" | "user_id"
->;
 export type ShippingInfoWithoutIds = Omit<
   UserShippingInformation,
+  "id" | "user_id"
+>;
+export type BillingInfoWithoutIds = Omit<
+  UserBillingInformation,
   "id" | "user_id"
 >;
 
 export type Order = {
   id: string;
-  user_id: string | null;
+  user_id: string;
   order_name: string;
-  billing_data: BillingInfoWithoutIds;
   shipping_data: ShippingInfoWithoutIds;
+  billing_data: BillingInfoWithoutIds;
   status: OrderStatus;
   date_created: Date;
   date_updated: Date;
@@ -164,7 +165,7 @@ export type OrderItem = {
 
 export type NewOrderItem = Omit<OrderItem, "id" | "order_id">;
 
-export type Invoice = {
+export type OrderInvoice = {
   id: string;
   user_id: string;
   order_id: string;
