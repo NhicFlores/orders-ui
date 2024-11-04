@@ -38,8 +38,13 @@ export function LogData(data: {
   console.log("------------ END OF LOG ------------");
 }
 
-export function getSchemaName(){
-  return process.env.NODE_ENV === "production"
-    ? process.env.PROD_SCHEMA!
-    : process.env.DEV_SCHEMA!;
+export function getSchemaName() {
+  return "prod-orders"; // NOTE TODO: UNDO 
+  // return process.env.NODE_ENV === "production"
+  //   ? process.env.PROD_SCHEMA!
+  //   : process.env.DEV_SCHEMA!;
+}
+
+export const FlipCoin = () => {
+  return Math.random() > 0.5;
 };

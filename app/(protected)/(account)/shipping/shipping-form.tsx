@@ -63,8 +63,8 @@ export default function ShippingForm({
   async function handleFormSave(data: z.infer<typeof ShippingInfoSchema>) {
     if (isBlankForm) {
       await createShippingInfo(data);
-    } else if ((shippingInfo as UserShippingInformation)?.id) {
-      await updateShippingInfo((shippingInfo as UserShippingInformation)?.id, data);
+    } else if (isShippingInfoWithId(shippingInfo)) {
+      await updateShippingInfo(shippingInfo.id, data);
     }
     setIsEditEnabled(!isEditEnabled);
 
@@ -75,7 +75,9 @@ export default function ShippingForm({
     }));
   }
 
-  function isShippingInfoWithId(info: ShippingInfo | undefined): info is UserShippingInformation {
+  function isShippingInfoWithId(
+    info: ShippingInfo | undefined
+  ): info is UserShippingInformation {
     return (info as UserShippingInformation).id !== undefined;
   }
 

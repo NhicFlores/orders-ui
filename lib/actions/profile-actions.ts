@@ -147,7 +147,7 @@ export async function createBillingInfo(
     purchase_order,
     primary_contact_name,
     primary_contact_email,
-    primary_contact_phone_num,
+    primary_contact_phone,
     fax_num,
   } = validatedFields.data;
 
@@ -170,7 +170,7 @@ export async function createBillingInfo(
             purchase_order, 
             primary_contact_name, 
             primary_contact_email, 
-            primary_contact_phone_num, 
+            primary_contact_phone, 
             fax_num
           )
         VALUES (${user_id}, 
@@ -183,7 +183,7 @@ export async function createBillingInfo(
             ${purchase_order}, 
             ${primary_contact_name}, 
             ${primary_contact_email}, 
-            ${primary_contact_phone_num},  
+            ${primary_contact_phone},  
             ${fax_num})
         RETURNING id;
         `;
@@ -309,7 +309,7 @@ export async function updateBillingInfo(
     purchase_order,
     primary_contact_name,
     primary_contact_email,
-    primary_contact_phone_num,
+    primary_contact_phone,
     fax_num,
   } = validatedFields.data;
 
@@ -327,7 +327,7 @@ export async function updateBillingInfo(
                 purchase_order = ${purchase_order}, 
                 primary_contact_name = ${primary_contact_name}, 
                 primary_contact_email = ${primary_contact_email}, 
-                primary_contact_phone_num = ${primary_contact_phone_num}, 
+                primary_contact_phone = ${primary_contact_phone}, 
                 fax_num = ${fax_num}
             WHERE user_id = ${user_id} AND id = ${billing_info_id}
         `;

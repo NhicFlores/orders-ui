@@ -65,7 +65,7 @@ export default function ProductContextProvider({
   //     setActiveSection: () => {}
   // });
   const [order, setOrder] = useState<NewOrder | Order>({
-    user_id: null, // NOTE TODO: where should the user id be set - server or client side?
+    user_id: "", // NOTE TODO: where should the user id be set - server or client side?
     order_name: "",
     billing_data: {
       street: "",
