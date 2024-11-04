@@ -39,7 +39,8 @@ export function LogData(data: {
 }
 
 export function getSchemaName() {
-  return "prod-orders"; // NOTE TODO: UNDO 
+  // return "dev-orders"; // NOTE TODO: UNDO
+  return "prod-orders"; // NOTE TODO: UNDO
   // return process.env.NODE_ENV === "production"
   //   ? process.env.PROD_SCHEMA!
   //   : process.env.DEV_SCHEMA!;

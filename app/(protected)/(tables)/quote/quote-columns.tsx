@@ -79,9 +79,9 @@ export const QuoteColumns: ColumnDef<Order>[] = [
             >
               Copy order ID
             </DropdownMenuItem>
-            <Link href={`/order/${order.id}/edit`}>
+            {/* <Link href={`/order/${order.id}/edit`}>
               <DropdownMenuItem>Edit Order</DropdownMenuItem>
-            </Link>
+            </Link> */}
             <DropdownMenuSeparator />
             <DropdownMenuItem>View customer</DropdownMenuItem>
             <DropdownMenuItem>View product details</DropdownMenuItem>
@@ -191,7 +191,7 @@ export const QuoteColumns: ColumnDef<Order>[] = [
       );
     },
     cell: ({ row }) => {
-      const date = row.getValue("date"); //NOTE TO DO: casting vs conversion
+      const date = row.getValue("date_created"); //NOTE TO DO: casting vs conversion
       const formattedDate = formatDateToLocal(date as string);
       return <div>{formattedDate}</div>;
     },

@@ -127,7 +127,11 @@ export async function registerUser(formFields: z.infer<typeof RegisterSchema>) {
 }
 
 export async function getUser(email: string): Promise<User | undefined> {
+  console.log(" ");
+  console.log("----");
   console.log("AUTH-ACTIONS.TS - getUser()");
+  console.log(" ");
+  console.log("----");
   try {
     const user = await sql<User>`
             SELECT * FROM "prod-orders".users 

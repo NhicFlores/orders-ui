@@ -1,4 +1,5 @@
 import { OrderStatus, UserRole } from "@/lib/definitions/data-model";
+import { getSchemaName } from "@/lib/utils";
 import { sql } from "drizzle-orm";
 import {
   boolean,
@@ -18,12 +19,12 @@ import {
 // SET TIMEZONE in db connection
 
 // NOTE UNDO: hardcoding schema
-export const dbSchema = pgSchema(
-  process.env.NODE_ENV === "production"
-    ? process.env.PROD_SCHEMA!
-    : process.env.DEV_SCHEMA!
-);
-// export const dbSchema = pgSchema("prod-orders");
+export const dbSchema = pgSchema(getSchemaName());
+// export const dbSchema = pgSchema(
+//   process.env.NODE_ENV === "production"
+//     ? process.env.PROD_SCHEMA!
+//     : process.env.DEV_SCHEMA!
+// );
 // NOTE TODO: is this the best place to throw this error
 if (!dbSchema.schemaName) {
   throw new Error("Schema not found");
