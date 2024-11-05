@@ -15,43 +15,10 @@ import {
 } from "@/components/ui/dropdown-menu";
 import Link from "next/link";
 import { deleteOrder } from "@/lib/actions/actions";
-import { formatDateToLocal } from "@/lib/utils";
+import { formatDateStringToLocal, formatDateToLocal } from "@/lib/utils";
 import { Order, OrderStatus } from "@/lib/definitions/data-model";
+
 //TODO: enable shift select
-
-// NOT TODO: this may be a temporary type definition
-export type OrderTableData = {
-  order_id: string;
-  order_name: string;
-  status: OrderStatus;
-  shipping_info: string;
-  date_created: string;
-  date_updated: string;
-  date_submitted: string;
-  billing_info: {
-    street: string;
-    apt_num: string;
-    city: string;
-    state: string;
-    zip: string;
-    payment_method: string;
-    purchase_order: string;
-    primary_contact_name: string;
-    primary_contact_email: string;
-    phone_num: string;
-    alt_phone_num: string;
-    fax_num: string;
-    isPrimary: boolean;
-    isActive: boolean;
-  };
-  order_items: {
-    id: string;
-    product_config: string;
-    quantity: number;
-    note: string;
-  }[];
-};
-
 export const OrderColumns: ColumnDef<Order>[] = [
   {
     id: "select",
@@ -182,6 +149,20 @@ export const OrderColumns: ColumnDef<Order>[] = [
   //   },
   // },
   {
+    accessorKey: "status",
+    header: ({ column }) => {
+      return (
+        <Button
+          variant={"ghost"}
+          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+        >
+          Status
+          <ArrowUpDown className="ml-2 h-4 w-4" />
+        </Button>
+      );
+    },
+  },
+  {
     accessorKey: "date_submitted",
     header: ({ column }) => {
       return (
@@ -195,24 +176,88 @@ export const OrderColumns: ColumnDef<Order>[] = [
       );
     },
     cell: ({ row }) => {
-      const date = row.getValue("date_submitted"); //NOTE TO DO: casting vs conversion
+      const date = row.original.date_submitted; //NOTE TO DO: casting vs conversion
       // NOTE TODO: format date before sending to db vs formatting on fetch
-      const formattedDate = formatDateToLocal(date as string);
-      return <div>{formattedDate}</div>;
+      const cellData = date ? formatDateToLocal(new Date(date)) : "N/A";
+      return <div>{cellData}</div>;
     },
   },
   {
-    accessorKey: "status",
+    accessorKey: "date_created",
     header: ({ column }) => {
       return (
         <Button
           variant={"ghost"}
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
-          Status
+          Date Created
           <ArrowUpDown className="ml-2 h-4 w-4" />
         </Button>
       );
+    },
+    cell: ({ row }) => {
+      const date = row.original.date_created; //NOTE TO DO: casting vs conversion
+      // NOTE TODO: format date before sending to db vs formatting on fetch
+      const formattedDate = formatDateToLocal(new Date(date));
+      return <div>{formattedDate}</div>;
+    },
+  },
+  {
+    accessorKey: "date_updated",
+    header: ({ column }) => {
+      return (
+        <Button
+          variant={"ghost"}
+          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+        >
+          Date Updated
+          <ArrowUpDown className="ml-2 h-4 w-4" />
+        </Button>
+      );
+    },
+    cell: ({ row }) => {
+      const date = row.original.date_updated; //NOTE TO DO: casting vs conversion
+      // NOTE TODO: format date before sending to db vs formatting on fetch
+      const formattedDate = formatDateToLocal(new Date(date));
+      return <div>{formattedDate}</div>;
+    },
+  },
+  {
+    accessorKey: "date_shipped",
+    header: ({ column }) => {
+      return (
+        <Button
+          variant={"ghost"}
+          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+        >
+          Date Shipped
+          <ArrowUpDown className="ml-2 h-4 w-4" />
+        </Button>
+      );
+    },
+    cell: ({ row }) => {
+      const date = row.original.date_shipped;
+      const cellData = date ? formatDateToLocal(new Date(date)) : "N/A";
+      return <div>{cellData}</div>;
+    },
+  },
+  {
+    accessorKey: "date_delivered",
+    header: ({ column }) => {
+      return (
+        <Button
+          variant={"ghost"}
+          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+        >
+          Date Delivered
+          <ArrowUpDown className="ml-2 h-4 w-4" />
+        </Button>
+      );
+    },
+    cell: ({ row }) => {
+      const date = row.original.date_delivered;
+      const cellData = date ? formatDateToLocal(new Date(date)) : "N/A";
+      return <div>{cellData}</div>;
     },
   },
 ];

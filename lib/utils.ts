@@ -14,7 +14,7 @@ export const formatCurrency = (amount: number) => {
   });
 };
 
-export const formatDateToLocal = (
+export const formatDateStringToLocal = (
   dateStr: string,
   locale: string = "en-US"
 ) => {
@@ -28,15 +28,18 @@ export const formatDateToLocal = (
   return formatter.format(date);
 };
 
-export function LogData(data: {
-  fileName: string;
-  functionName: string;
-  params: any;
-}) {
-  console.log("------------ LOGGING DATA ------------");
-  console.log(data);
-  console.log("------------ END OF LOG ------------");
-}
+export const formatDateToLocal = (
+  dateValue: Date,
+  locale: string = "en-US"
+) => {
+  const options: Intl.DateTimeFormatOptions = {
+    day: "numeric",
+    month: "short",
+    year: "numeric",
+  };
+  const formatter = new Intl.DateTimeFormat(locale, options);
+  return formatter.format(dateValue);
+};
 
 export function getSchemaName() {
   // return "dev-orders"; // NOTE TODO: UNDO
@@ -49,3 +52,19 @@ export function getSchemaName() {
 export const FlipCoin = () => {
   return Math.random() > 0.5;
 };
+
+export function LogData(data: {
+  fileName: string;
+  functionName: string;
+  params: any;
+}) {
+  console.log("------------ LOGGING DATA ------------");
+  console.log(data);
+  console.log("------------ END OF LOG ------------");
+}
+
+export function consoleLogSpacer() {
+  console.log("");
+  console.log("----------------------------------------");
+  console.log("");
+}

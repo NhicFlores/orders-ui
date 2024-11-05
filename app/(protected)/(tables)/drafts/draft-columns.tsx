@@ -14,7 +14,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import Link from "next/link";
 import { deleteOrder } from "@/lib/actions/actions";
-import { formatDateToLocal } from "@/lib/utils";
+import { formatDateStringToLocal } from "@/lib/utils";
 import { Order } from "@/lib/definitions/data-model";
 
 //NOTE TODO: enable shift select
@@ -150,7 +150,7 @@ export const DraftColumns: ColumnDef<Order>[] = [
     },
     cell: ({ row }) => {
       const date = row.getValue("date_created"); //NOTE TO DO: casting vs conversion
-      const formattedDate = formatDateToLocal(date as string);
+      const formattedDate = formatDateStringToLocal(date as string);
       return <div>{formattedDate}</div>;
     },
   },

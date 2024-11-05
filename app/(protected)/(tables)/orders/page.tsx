@@ -15,7 +15,6 @@ import { fetchOrders, fetchOrdersByStatus } from "../queries";
 }*/
 
 export default async function Page() {
-  // const orders = await fetchOrders();
   const tableData = await fetchOrders();
   //console.log(typeof(Object.values(OrderStatus) as string[]));
   return (

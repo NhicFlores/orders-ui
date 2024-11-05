@@ -1,9 +1,40 @@
 "use server";
-import { Order, OrderStatus } from "@/lib/definitions/data-model";
-import { OrderTableData } from "./orders/columns";
 import { db } from "@/drizzle/db";
-import { OrderTable } from "@/drizzle/schema";
 import { eq } from "drizzle-orm";
+import { OrderTable, UserProfileTable } from "@/drizzle/schema";
+import { Order, OrderStatus } from "@/lib/definitions/data-model";
+
+export type OrderTableData = {
+  order_id: string;
+  order_name: string;
+  status: OrderStatus;
+  shipping_info: string;
+  date_created: string;
+  date_updated: string;
+  date_submitted: string;
+  billing_info: {
+    street: string;
+    apt_num: string;
+    city: string;
+    state: string;
+    zip: string;
+    payment_method: string;
+    purchase_order: string;
+    primary_contact_name: string;
+    primary_contact_email: string;
+    phone_num: string;
+    alt_phone_num: string;
+    fax_num: string;
+    isPrimary: boolean;
+    isActive: boolean;
+  };
+  order_items: {
+    id: string;
+    product_config: string;
+    quantity: number;
+    note: string;
+  }[];
+};
 
 export async function fetchOrders() {
   try {
@@ -18,8 +49,16 @@ export async function fetchOrders() {
         date_created: OrderTable.date_created,
         date_updated: OrderTable.date_updated,
         date_submitted: OrderTable.date_submitted,
+        date_shipped: OrderTable.date_shipped,
+        date_delivered: OrderTable.date_delivered,
+        ordered_by_first_name: UserProfileTable.first_name,
+        ordered_by_last_name: UserProfileTable.last_name,
       })
-      .from(OrderTable);
+      .from(OrderTable)
+      .innerJoin(
+        UserProfileTable,
+        eq(OrderTable.user_id, UserProfileTable.user_id)
+      );
     //2024-07-09T05:00:00.000Z
     //2024-05-01T05:00:00.000Z
     // console.log(data.rows);

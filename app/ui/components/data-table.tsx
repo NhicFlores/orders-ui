@@ -179,7 +179,7 @@ export function DataTable<TData, TValue>({
                     <CollapsibleContent asChild>
                       <tr className="p-4 bg-slate-100">
                         <td colSpan={row.getVisibleCells().length}>
-                          <OrderDetailTable orderItems={row.original.order_items} billingInfo={row.original.billing_info} shippingInfo={row.original.shipping_info}/>
+                          <OrderDetailTable orderItems={row.original.order_items} billingInfo={row.original.billing_data} shippingInfo={row.original.shipping_data}/>
                         </td>
                       </tr>
                     </CollapsibleContent>
