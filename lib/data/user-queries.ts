@@ -1,6 +1,6 @@
 import { db } from "@/drizzle/db";
 import { UserTable } from "@/drizzle/schema";
-
+// NOTE: deprecated 
 export async function GetUserEmails() {
   console.log("---- fetching users ----");
 

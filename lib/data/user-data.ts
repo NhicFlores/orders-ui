@@ -2,15 +2,28 @@
 // fetch functions for users
 import { sql } from "@vercel/postgres";
 import { unstable_noStore as noStore } from "next/cache";
-import { LogData } from "../utils";
-import { User, UserBillingInformation, UserProfile, UserShippingInformation } from "../definitions/data-model";
+import { getSchemaName, LogData } from "../utils";
+import {
+  User,
+  UserBillingInformation,
+  UserProfile,
+  UserShippingInformation,
+} from "../definitions/data-model";
+import { db } from "@/drizzle/db";
+import {
+  UserBillingInformationTable,
+  UserProfileTable,
+  UserShippingInformationTable,
+} from "@/drizzle/schema";
+import { eq } from "drizzle-orm";
 
-const schemaName = process.env.PROD_SCHEMA;//process.env.NODE_ENV === "production" ? process.env.PROD_SCHEMA : process.env.DEV_SCHEMA;
+const schemaName = getSchemaName(); //process.env.NODE_ENV === "production" ? process.env.PROD_SCHEMA : process.env.DEV_SCHEMA;
 
 export async function getUserByID(id: string) {
   // noStore();
   // NOTE what's the difference between typing the sql statement
   // return and casting the value in the return statement
+
   console.log("USER-DATA.TS - getUserByID()");
   // LogData({
   //   fileName: "user-data.ts",
@@ -20,8 +33,9 @@ export async function getUserByID(id: string) {
 
   try {
     console.log("SCHEMA NAME:", schemaName);
-    const user = await sql<User>`SELECT * FROM "prod-orders".users WHERE id=${id}`;
-    // console.log("USER:", user.rows[0]);
+    const user =
+      await sql<User>`SELECT * FROM "prod-orders".users WHERE id=${id}`;
+    console.log("USER:", user.rows[0]);
     // console.log("USER TYPE:", typeof user.rows[0]);
     return user.rows[0]; //as User
   } catch (error) {
@@ -32,11 +46,24 @@ export async function getUserByID(id: string) {
 
 export async function getUserProfileById(user_id: string) {
   try {
-    const userProfile = await sql<UserProfile>`
-      SELECT * FROM user_profiles 
-      WHERE user_id=${user_id}`;
+    const result = await db
+      .select()
+      .from(UserProfileTable)
+      .where(eq(UserProfileTable.user_id, user_id));
 
-    return userProfile.rows[0];
+    // console.log("USER PROFILE:", result);
+
+    const userProfile = result[0];
+
+    return {
+      id: userProfile.id,
+      user_id: userProfile.user_id,
+      first_name: userProfile.first_name,
+      last_name: userProfile.last_name,
+      company: userProfile.company ?? "",
+      account_num: userProfile.account_num ?? "",
+      phone_num: userProfile.phone_num ?? "",
+    };
   } catch (error) {
     console.error("Failed to fetch user profile:", error);
     throw new Error("Failed to fetch user profile.");
@@ -45,14 +72,13 @@ export async function getUserProfileById(user_id: string) {
 
 export async function getBillingInfoByUserId(user_id: string) {
   try {
-    const billingInfoData = await sql<UserBillingInformation>`
-      SELECT * FROM user_billing_information 
-      WHERE user_id=${user_id}
-    `;
+    const result = await db
+      .select()
+      .from(UserBillingInformationTable)
+      .where(eq(UserBillingInformationTable.user_id, user_id));
 
-    //console.log(billingInfoData.rows[0]);
-    //console.log( typeof billingInfoData.rows[0].billing_addr);
-    return billingInfoData.rows;
+    console.log("BILLING INFO:", result);
+    return result;
     // return billingInfoData.rows.map((row) => {
     //   let billing_addr;
     //   try {
@@ -76,11 +102,11 @@ export async function getBillingInfoByUserId(user_id: string) {
 
 export async function getShippingInfoById(user_id: string) {
   try {
-    const shippingInfo = await sql<UserShippingInformation>`
-      SELECT * FROM user_shipping_information 
-      WHERE user_id=${user_id}`;
-    
-    return shippingInfo.rows;
+    const result = await db
+      .select()
+      .from(UserShippingInformationTable)
+      .where(eq(UserShippingInformationTable.user_id, user_id));
+    console.log("SHIPPING INFO:", result);
     // return shippingInfo.rows.map((row) => {
     //   let delivery_addr;
     //   try{
@@ -93,6 +119,7 @@ export async function getShippingInfoById(user_id: string) {
     //     delivery_addr
     //   };
     // })
+    return result;
   } catch (error) {
     console.error("Failed to fetch shipping info:", error);
     throw new Error("Failed to fetch shipping info.");
