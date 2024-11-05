@@ -1,5 +1,3 @@
-import { OrderStatus, UserRole } from "@/lib/definitions/data-model";
-import { getSchemaName } from "@/lib/utils";
 import { sql } from "drizzle-orm";
 import {
   boolean,
@@ -15,16 +13,20 @@ import {
   varchar,
 } from "drizzle-orm/pg-core";
 
+import { getSchemaName } from "../lib/utils";
+import { OrderStatus, UserRole } from "@/lib/definitions/data-model";
+
 // NOTE TODO: optimize date types - check why drizzle is inferring { mode: string }
 // SET TIMEZONE in db connection
 
-// NOTE UNDO: hardcoding schema
 export const dbSchema = pgSchema(getSchemaName());
+// NOTE UNDO: hardcoding schema
 // export const dbSchema = pgSchema(
 //   process.env.NODE_ENV === "production"
 //     ? process.env.PROD_SCHEMA!
 //     : process.env.DEV_SCHEMA!
 // );
+// export const dbSchema = pgSchema("prod-orders");
 // NOTE TODO: is this the best place to throw this error
 if (!dbSchema.schemaName) {
   throw new Error("Schema not found");
@@ -41,14 +43,14 @@ export const UserTable = dbSchema.table(
     password: varchar("password", { length: 255 }).notNull(),
     role: varchar("role", { length: 255 }).default("USER"),
   },
-  (table) => ({
-    checkConstraint: check(
+  (table) => [
+    check(
       "USER_ROLE_CHECK",
       sql`${table.role} = '${sql.raw(UserRole.Admin)}' OR ${
         table.role
       } = '${sql.raw(UserRole.User)}'`
     ),
-  })
+  ]
 );
 // user profile and and user tables could be one table, but the profile is
 // more likely to change, so if i keep them separate, the user
@@ -166,8 +168,8 @@ export const OrderTable = dbSchema.table(
     date_shipped: timestamp("date_shipped", { withTimezone: true }),
     date_delivered: timestamp("date_delivered", { withTimezone: true }),
   },
-  (table) => ({
-    checkConstraint: check(
+  (table) => [
+    check(
       "ORDER_STATUS_CHECK",
       sql`${table.status} = '${sql.raw(OrderStatus.Draft)}' OR ${
         table.status
@@ -179,7 +181,7 @@ export const OrderTable = dbSchema.table(
         OrderStatus.Delivered
       )}' OR ${table.status} = '${sql.raw(OrderStatus.Cancelled)}'`
     ),
-  })
+  ]
 );
 // one-to-many with order table
 export const OrderItemTable = dbSchema.table("order_items", {

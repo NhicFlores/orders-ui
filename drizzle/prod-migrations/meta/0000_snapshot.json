@@ -1,5 +1,5 @@
 {
-  "id": "28fd62db-12e5-410b-8fd8-58139f9d3669",
+  "id": "dd32bb7e-42b7-42b3-a863-a1a40722697f",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "7",
   "dialect": "postgresql",
@@ -85,7 +85,10 @@
       "indexes": {},
       "foreignKeys": {},
       "compositePrimaryKeys": {},
-      "uniqueConstraints": {}
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
     },
     "prod-orders.inventory_products": {
       "name": "inventory_products",
@@ -150,7 +153,10 @@
       "indexes": {},
       "foreignKeys": {},
       "compositePrimaryKeys": {},
-      "uniqueConstraints": {}
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
     },
     "prod-orders.order_invoices": {
       "name": "order_invoices",
@@ -226,7 +232,10 @@
         }
       },
       "compositePrimaryKeys": {},
-      "uniqueConstraints": {}
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
     },
     "prod-orders.order_items": {
       "name": "order_items",
@@ -301,7 +310,10 @@
         }
       },
       "compositePrimaryKeys": {},
-      "uniqueConstraints": {}
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
     },
     "prod-orders.orders": {
       "name": "orders",
@@ -393,7 +405,15 @@
         }
       },
       "compositePrimaryKeys": {},
-      "uniqueConstraints": {}
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {
+        "ORDER_STATUS_CHECK": {
+          "name": "ORDER_STATUS_CHECK",
+          "value": "\"orders\".\"status\" = 'DRAFT' OR \"orders\".\"status\" = 'PENDING' OR \"orders\".\"status\" = 'QUOTE' OR \"orders\".\"status\" = 'PROCESSING' OR \"orders\".\"status\" = 'SHIPPED' OR \"orders\".\"status\" = 'DELIVERED' OR \"orders\".\"status\" = 'CANCELLED'"
+        }
+      },
+      "isRLSEnabled": false
     },
     "prod-orders.user_billing_information": {
       "name": "user_billing_information",
@@ -510,7 +530,10 @@
         }
       },
       "compositePrimaryKeys": {},
-      "uniqueConstraints": {}
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
     },
     "prod-orders.user_profiles": {
       "name": "user_profiles",
@@ -577,7 +600,10 @@
         }
       },
       "compositePrimaryKeys": {},
-      "uniqueConstraints": {}
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
     },
     "prod-orders.user_shipping_information": {
       "name": "user_shipping_information",
@@ -657,7 +683,10 @@
         }
       },
       "compositePrimaryKeys": {},
-      "uniqueConstraints": {}
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
     },
     "prod-orders.users": {
       "name": "users",
@@ -701,7 +730,15 @@
             "email"
           ]
         }
-      }
+      },
+      "policies": {},
+      "checkConstraints": {
+        "USER_ROLE_CHECK": {
+          "name": "USER_ROLE_CHECK",
+          "value": "\"users\".\"role\" = 'ADMIN' OR \"users\".\"role\" = 'USER'"
+        }
+      },
+      "isRLSEnabled": false
     }
   },
   "enums": {},
@@ -709,6 +746,9 @@
     "prod-orders": "prod-orders"
   },
   "sequences": {},
+  "roles": {},
+  "policies": {},
+  "views": {},
   "_meta": {
     "columns": {},
     "schemas": {},

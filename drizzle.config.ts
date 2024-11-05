@@ -16,10 +16,10 @@ import { defineConfig } from "drizzle-kit";
 //   },
 //   migrations: {
 //     table: process.env.MIGRATIONS_TABLE!,
-//     schema: process.env.DEV_SCHEMA!,
-//     // process.env.NODE_ENV === "production"
-//     //   ? process.env.PROD_SCHEMA!
-//     //   : process.env.DEV_SCHEMA!,
+//     schema:
+//       process.env.NODE_ENV === "production"
+//         ? process.env.PROD_SCHEMA!
+//         : process.env.DEV_SCHEMA!,
 //   },
 //   //schemaFilter: ["order-handling"],
 //   verbose: true,
@@ -43,13 +43,13 @@ import { defineConfig } from "drizzle-kit";
 //   strict: true,
 // });
 
-// prod config 
+// prod config
 export default defineConfig({
   dialect: "postgresql",
   schema: process.env.SCHEMA_PATH!,
   out: process.env.PROD_MIGRATIONS_OUT!,
   dbCredentials: {
-    url: process.env.DOCKER_POSTGRES_URL!,
+    url: process.env.POSTGRES_URL!,
   },
   migrations: {
     table: process.env.MIGRATIONS_TABLE!,
