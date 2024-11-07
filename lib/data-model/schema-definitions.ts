@@ -1,5 +1,5 @@
 export type User = {
-  id: string;
+  user_id: string;
   email: string;
   password: string;
   role: UserRole;
@@ -11,7 +11,7 @@ export enum UserRole {
 }
 
 export type UserProfile = {
-  id: number;
+  profile_id: number;
   user_id: string;
   first_name: string;
   last_name: string;
@@ -21,7 +21,7 @@ export type UserProfile = {
 };
 
 export type UserShippingInformation = {
-  id: number;
+  shipping_info_id: number;
   user_id: string;
   street: string;
   apt_num?: string | null;
@@ -33,10 +33,10 @@ export type UserShippingInformation = {
 };
 
 export type UserBillingInformation = {
-  id: number;
+  billing_info_id: number;
   user_id: string;
   street: string;
-  apt_num?: string;
+  apt_num?: string | null;
   city: string;
   state: string;
   zip: string;
@@ -67,7 +67,7 @@ export const payment_method_codes = [
 // };
 
 export type InventoryProduct = {
-  id: string;
+  product_id: string;
   type: string;
   image_url: string;
   alt: string;
@@ -82,7 +82,7 @@ export type InventoryProduct = {
 };
 
 export type InventoryGlassItem = {
-  id: string;
+  glass_id: string;
   name: string;
   description: string;
   thickness: string[];
@@ -130,18 +130,15 @@ export enum OrderStatus {
 
 export type ShippingInfoWithoutIds = Omit<
   UserShippingInformation,
-  "id" | "user_id"
+  "shipping_info_id" | "user_id"
 >;
 export type BillingInfoWithoutIds = Omit<
   UserBillingInformation,
-  "id" | "user_id"
+  "billing_info_id" | "user_id"
 >;
 
-export type ShippingInfo = UserShippingInformation | ShippingInfoWithoutIds;
-export type BillingInfo = UserBillingInformation | BillingInfoWithoutIds;
-
 export type Order = {
-  id: string;
+  order_id: string;
   user_id: string;
   order_name: string;
   shipping_data: ShippingInfoWithoutIds;
@@ -155,10 +152,10 @@ export type Order = {
 };
 
 // front-end only
-export type NewOrder = Omit<Order, "id">;
+export type NewOrder = Omit<Order, "order_id">;
 
 export type OrderItem = {
-  id: number;
+  order_item_id: number;
   order_id: string;
   product_type_id: string; // uuid
   product_config: any; // jsonb
@@ -166,10 +163,10 @@ export type OrderItem = {
   note: string;
 };
 
-export type NewOrderItem = Omit<OrderItem, "id" | "order_id">;
+export type NewOrderItem = Omit<OrderItem, "order_item_id" | "order_id">;
 
 export type OrderInvoice = {
-  id: string;
+  order_invoice_id: string;
   user_id: string;
   order_id: string;
   date_created: Date;
