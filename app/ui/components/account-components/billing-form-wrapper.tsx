@@ -5,15 +5,13 @@ import { PlusIcon } from "lucide-react";
 import { BillingOptionTable } from "@/app/ui/components/account-components/billing-option-table";
 import { BillingInfoColumns } from "./billing-info-columns";
 import { useState } from "react";
-import { UserBillingInformation } from "@/lib/definitions/data-model";
+import { UserBillingInformation } from "@/lib/data-model/schema-definitions";
 
 interface BillingFormWrapperProps {
   billing_data: UserBillingInformation[];
 }
 
-const BillingFormWrapper = ({
-  billing_data,
-}: BillingFormWrapperProps) => {
+const BillingFormWrapper = ({ billing_data }: BillingFormWrapperProps) => {
   const [isNewBillingInfo, setIsNewBillingInfo] = useState(false);
 
   // NOTE TODO: pass this function to the billing form component
@@ -38,7 +36,10 @@ const BillingFormWrapper = ({
       </div>
       <div>
         {isNewBillingInfo && (
-          <BillingForm isBlankForm={isNewBillingInfo} toggleBillingForm={toggleBillingForm}/>
+          <BillingForm
+            isBlankForm={isNewBillingInfo}
+            toggleBillingForm={toggleBillingForm}
+          />
         )}
       </div>
       <div>

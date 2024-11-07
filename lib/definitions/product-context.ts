@@ -1,6 +1,11 @@
 // export type ProductNavSections = 'Glass Type' | 'Glass Shape' | 'Glass Size' | 'Glass Thickness' | 'Glass Color' | 'Summary';
 
-import { NewOrder, NewOrderItem, Order, OrderItem } from "./data-model";
+import {
+  NewOrder,
+  NewOrderItem,
+  Order,
+  OrderItem,
+} from "../data-model/schema-definitions";
 
 // export type ProductNav = {
 //     activeSection: ProductNavSections;

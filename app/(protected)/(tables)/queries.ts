@@ -2,7 +2,7 @@
 import { db } from "@/drizzle/db";
 import { eq } from "drizzle-orm";
 import { OrderTable, UserProfileTable } from "@/drizzle/schema";
-import { Order, OrderStatus } from "@/lib/definitions/data-model";
+import { Order, OrderStatus } from "@/lib/data-model/schema-definitions";
 
 export type OrderTableData = {
   order_id: string;
@@ -40,7 +40,7 @@ export async function fetchOrders() {
   try {
     const orders = await db
       .select({
-        id: OrderTable.id,
+        order_id: OrderTable.order_id,
         user_id: OrderTable.user_id,
         order_name: OrderTable.order_name,
         status: OrderTable.status,
@@ -74,7 +74,7 @@ export async function fetchOrdersByStatus(status: OrderStatus) {
   try {
     const data = await db
       .select({
-        id: OrderTable.id,
+        order_id: OrderTable.order_id,
         user_id: OrderTable.user_id,
         order_name: OrderTable.order_name,
         status: OrderTable.status,

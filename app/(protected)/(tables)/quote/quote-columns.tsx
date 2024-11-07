@@ -16,7 +16,7 @@ import {
 import Link from "next/link";
 import { deleteOrder } from "@/lib/actions/actions";
 import { formatDateStringToLocal } from "@/lib/utils";
-import { Order } from "@/lib/definitions/data-model";
+import { Order } from "@/lib/data-model/schema-definitions";
 
 //NOTE TODO: enable shift select
 //NOTE TODO: draft form: save button with empty fields
@@ -63,7 +63,7 @@ export const QuoteColumns: ColumnDef<Order>[] = [
     id: "actions",
     cell: ({ row }) => {
       const order = row.original;
-      //const deleteOrderWithId = deleteOrder.bind(null, order.id);
+      //const deleteOrderWithId = deleteOrder.bind(null, order.order_id);
       return (
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
@@ -75,11 +75,11 @@ export const QuoteColumns: ColumnDef<Order>[] = [
           <DropdownMenuContent align="end">
             <DropdownMenuLabel>Actions</DropdownMenuLabel>
             <DropdownMenuItem
-              onClick={() => navigator.clipboard.writeText(order.id)}
+              onClick={() => navigator.clipboard.writeText(order.order_id)}
             >
               Copy order ID
             </DropdownMenuItem>
-            {/* <Link href={`/order/${order.id}/edit`}>
+            {/* <Link href={`/order/${order.order_id}/edit`}>
               <DropdownMenuItem>Edit Order</DropdownMenuItem>
             </Link> */}
             <DropdownMenuSeparator />
@@ -89,7 +89,7 @@ export const QuoteColumns: ColumnDef<Order>[] = [
             {/** NOTE HOW TO Server Actions are not limited to <form> and can be invoked from event handlers, useEffect, third-party libraries, and other form elements like <button> **/}
 
             <DropdownMenuItem
-              onClick={() => deleteOrder(order.id)}
+              onClick={() => deleteOrder(order.order_id)}
               className="focus:bg-red-500 focus:text-white"
             >
               Delete Order

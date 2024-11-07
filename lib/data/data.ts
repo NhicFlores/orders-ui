@@ -13,7 +13,7 @@ import {
 import { OrderStatus, TestOrder } from "@/lib/definitions/order-definitions";
 import { formatCurrency } from "@/lib/utils";
 import { unstable_noStore as noStore } from "next/cache";
-import { Order } from "../definitions/data-model";
+import { Order } from "../data-model/schema-definitions";
 
 //create fetch functions for orders where status = draft, quote
 //refactor - fetch data file for each tab to keep my fetch types separate

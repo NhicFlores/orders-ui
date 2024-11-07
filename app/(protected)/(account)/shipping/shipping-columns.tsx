@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { deleteShippingInfo } from "@/lib/actions/profile-actions";
-import { UserShippingInformation } from "@/lib/definitions/data-model";
+import { UserShippingInformation } from "@/lib/data-model/schema-definitions";
 import { ColumnDef } from "@tanstack/react-table";
 import { Trash2 } from "lucide-react";
 
@@ -32,7 +32,7 @@ export const ShippingColumns: ColumnDef<UserShippingInformation>[] = [
       return (
         <Button
           variant={"ghost"}
-          onClick={() => deleteShippingInfo(shippingInfo.id!)}
+          onClick={() => deleteShippingInfo(shippingInfo.shipping_info_id!)}
         >
           <Trash2 size={18} />
         </Button>

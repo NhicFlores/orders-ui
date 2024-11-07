@@ -18,7 +18,7 @@ import { ProfileSchema } from "@/schema/form-schema";
 import { useState } from "react";
 import { Pencil } from "lucide-react";
 import { createProfile, updateProfile } from "@/lib/actions/profile-actions";
-import { UserProfile } from "@/lib/definitions/data-model";
+import { UserProfile } from "@/lib/data-model/schema-definitions";
 
 interface ProfileFormProps {
   user_id: string;

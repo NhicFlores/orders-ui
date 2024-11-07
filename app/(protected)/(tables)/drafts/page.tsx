@@ -3,7 +3,7 @@
 import { DataTable } from "../../../ui/components/data-table";
 import { DraftColumns } from "./draft-columns";
 import { fetchOrdersByStatus } from "../queries";
-import { OrderStatus } from "@/lib/definitions/data-model";
+import { OrderStatus } from "@/lib/data-model/schema-definitions";
 
 export default async function Page() {
   const data = await fetchOrdersByStatus(OrderStatus.Draft);

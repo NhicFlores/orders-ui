@@ -19,7 +19,7 @@ import {
   ShippingInfo,
   ShippingInfoWithoutIds,
   UserShippingInformation,
-} from "@/lib/definitions/data-model";
+} from "@/lib/data-model/schema-definitions";
 import { ShippingInfoSchema } from "@/schema/form-schema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Pencil } from "lucide-react";
@@ -64,7 +64,7 @@ export default function ShippingForm({
     if (isBlankForm) {
       await createShippingInfo(data);
     } else if (isShippingInfoWithId(shippingInfo)) {
-      await updateShippingInfo(shippingInfo.id, data);
+      await updateShippingInfo(shippingInfo.shipping_info_id, data);
     }
     setIsEditEnabled(!isEditEnabled);
 
@@ -78,7 +78,7 @@ export default function ShippingForm({
   function isShippingInfoWithId(
     info: ShippingInfo | undefined
   ): info is UserShippingInformation {
-    return (info as UserShippingInformation).id !== undefined;
+    return (info as UserShippingInformation).shipping_info_id !== undefined;
   }
 
   return (

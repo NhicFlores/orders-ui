@@ -5,13 +5,15 @@ import { useState } from "react";
 import ShippingForm from "./shipping-form";
 import { ShippingTable } from "./shipping-table";
 import { ShippingColumns } from "./shipping-columns";
-import { UserShippingInformation } from "@/lib/definitions/data-model";
+import { UserShippingInformation } from "@/lib/data-model/schema-definitions";
 
 interface ShippingContentProps {
   shippingOptions: UserShippingInformation[];
 }
 
-export default function ShippingContent({ shippingOptions }: ShippingContentProps) {
+export default function ShippingContent({
+  shippingOptions,
+}: ShippingContentProps) {
   const [showShippingForm, setShowShippingForm] = useState(false);
 
   function toggleShippingForm() {
@@ -37,7 +39,11 @@ export default function ShippingContent({ shippingOptions }: ShippingContentProp
           <ShippingForm isBlankForm toggleShippingForm={toggleShippingForm} />
         )}
       </div>
-      <div>{!showShippingForm && <ShippingTable columns={ShippingColumns} data={shippingOptions}/>}</div>
+      <div>
+        {!showShippingForm && (
+          <ShippingTable columns={ShippingColumns} data={shippingOptions} />
+        )}
+      </div>
     </div>
   );
 }

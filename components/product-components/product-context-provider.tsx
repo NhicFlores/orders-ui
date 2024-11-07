@@ -5,7 +5,7 @@ import {
   Order,
   OrderItem,
   OrderStatus,
-} from "@/lib/definitions/data-model";
+} from "@/lib/data-model/schema-definitions";
 import { ProductContextType } from "@/lib/definitions/product-context";
 import { createContext, useContext, useState } from "react";
 

@@ -8,7 +8,7 @@ import {
   UserBillingInformation,
   UserProfile,
   UserShippingInformation,
-} from "../definitions/data-model";
+} from "../data-model/schema-definitions";
 import { db } from "@/drizzle/db";
 import {
   UserBillingInformationTable,

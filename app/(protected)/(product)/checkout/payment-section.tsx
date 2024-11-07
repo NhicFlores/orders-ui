@@ -9,7 +9,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { UserBillingInformation } from "@/lib/definitions/data-model";
+import { UserBillingInformation } from "@/lib/data-model/schema-definitions";
 import { useState } from "react";
 
 interface PaymentSectionProps {
@@ -73,8 +73,7 @@ export default function PaymentSection({
                     <div>{billingOption.purchase_order}</div>
                     <div>
                       {billingOption.street}
-                      {billingOption.apt_num &&
-                        billingOption.apt_num}
+                      {billingOption.apt_num && billingOption.apt_num}
                       {billingOption.city}
                     </div>
                   </div>

@@ -23,7 +23,7 @@ import {
 } from "@/lib/actions/profile-actions";
 import { BillingRoute, CheckoutRoute } from "@/routes";
 import { useProductContext } from "@/components/product-components/product-context-provider";
-import { UserBillingInformation } from "@/lib/definitions/data-model";
+import { UserBillingInformation } from "@/lib/data-model/schema-definitions";
 
 interface BillingFormProps {
   billing_info?: UserBillingInformation;

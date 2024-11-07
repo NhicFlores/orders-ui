@@ -32,7 +32,7 @@ import {
 import BillingForm from "./billing-form";
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
-import { UserBillingInformation } from "@/lib/definitions/data-model";
+import { UserBillingInformation } from "@/lib/data-model/schema-definitions";
 
 interface BillingOptionTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
@@ -117,7 +117,9 @@ export function BillingOptionTable<TData, TValue>({
                           colSpan={row.getVisibleCells().length}
                         >
                           <BillingForm
-                            billing_info={row.original as UserBillingInformation}
+                            billing_info={
+                              row.original as UserBillingInformation
+                            }
                           />
                         </td>
                       </tr>

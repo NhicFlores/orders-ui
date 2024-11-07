@@ -32,7 +32,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
 import ShippingForm from "./shipping-form";
-import { UserShippingInformation } from "@/lib/definitions/data-model";
+import { UserShippingInformation } from "@/lib/data-model/schema-definitions";
 
 interface ShippingOptionTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];

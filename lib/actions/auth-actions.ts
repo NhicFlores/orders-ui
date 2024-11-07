@@ -5,7 +5,7 @@ import { LoginSchema, RegisterSchema } from "@/schema/form-schema";
 import bcrypt from "bcrypt";
 import { signIn, signOut } from "@/auth";
 import { AuthError } from "next-auth";
-import { User } from "../definitions/data-model";
+import { User } from "../data-model/schema-definitions";
 
 // -------------------- Authentication ------------------
 

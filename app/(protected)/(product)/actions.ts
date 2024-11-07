@@ -1,6 +1,12 @@
 "use server";
 import { auth } from "@/auth";
-import { NewOrder, NewOrderItem, Order, OrderItem, OrderStatus } from "@/lib/definitions/data-model";
+import {
+  NewOrder,
+  NewOrderItem,
+  Order,
+  OrderItem,
+  OrderStatus,
+} from "@/lib/data-model/schema-definitions";
 import { CreateOrder } from "@/schema/form-schema";
 import { sql } from "@vercel/postgres";
 
@@ -11,7 +17,10 @@ async function ValidateUser() {
 }
 
 //NOTE TODO: implement transaction for data integrity
-export async function createOrderDraft(order: Order | NewOrder, orderItems: OrderItem[] | NewOrderItem[]) {
+export async function createOrderDraft(
+  order: Order | NewOrder,
+  orderItems: OrderItem[] | NewOrderItem[]
+) {
   const validatedFields = CreateOrder.safeParse({
     order_name: order.order_name,
     billing_info_id: order.billing_data,

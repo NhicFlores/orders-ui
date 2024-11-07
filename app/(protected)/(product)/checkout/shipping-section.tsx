@@ -11,7 +11,10 @@ import {
 import { useState } from "react";
 import ShippingForm from "../../(account)/shipping/shipping-form";
 import { useProductContext } from "@/components/product-components/product-context-provider";
-import { ShippingInfo, UserShippingInformation } from "@/lib/definitions/data-model";
+import {
+  ShippingInfo,
+  UserShippingInformation,
+} from "@/lib/data-model/schema-definitions";
 
 interface ShippingSectionProps {
   shippingOptions: UserShippingInformation[];

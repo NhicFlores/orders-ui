@@ -10,7 +10,7 @@ import {
   OrderItem,
   UserBillingInformation,
   UserShippingInformation,
-} from "@/lib/definitions/data-model";
+} from "@/lib/data-model/schema-definitions";
 
 import {
   ColumnDef,

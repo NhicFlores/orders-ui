@@ -20,6 +20,8 @@ export type UserProfile = {
   phone_num?: string;
 };
 
+export type ShippingInfo = UserShippingInformation | ShippingInfoWithoutIds;
+
 export type UserShippingInformation = {
   shipping_info_id: number;
   user_id: string;
@@ -31,6 +33,8 @@ export type UserShippingInformation = {
   is_job_site: boolean;
   note: string;
 };
+
+export type BillingInfo = UserBillingInformation | BillingInfoWithoutIds;
 
 export type UserBillingInformation = {
   billing_info_id: number;
