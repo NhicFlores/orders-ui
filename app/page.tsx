@@ -1,15 +1,15 @@
 import { Button } from "@/components/ui/button";
 import SignInButton from "@/components/landing_page/sign-in-button";
-// import { seedUserInfo } from "@/lib/seed-queries/seed-users";
-// import {
-//   seedGlassInventory,
-//   seedProducts,
-// } from "@/lib/seed-queries/seed-product-inventory";
-// import { seedOrderInfo } from "@/lib/seed-queries/seed-orders-items";
+import { seedUserInfo } from "@/lib/seed-queries/seed-users";
+import {
+  seedGlassInventory,
+  seedProducts,
+} from "@/lib/seed-queries/seed-product-inventory";
+import { seedOrderInfo } from "@/lib/seed-queries/seed-orders-items";
 
 //landing page
 export default async function Home() {
-  // console.log("---- starting seeding process ... ----");
+  console.log("---- starting seeding process ... ----");
   // await seedUserInfo();
   // await seedProducts();
   // await seedGlassInventory();
