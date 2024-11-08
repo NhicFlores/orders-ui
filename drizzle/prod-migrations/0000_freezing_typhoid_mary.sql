@@ -1,7 +1,7 @@
-CREATE SCHEMA IF NOT EXISTS "prod-orders";
+CREATE SCHEMA IF NOT EXISTS "dev-schema";
 --> statement-breakpoint
-CREATE TABLE IF NOT EXISTS "prod-orders"."inventory_glass_item" (
-	"id" uuid PRIMARY KEY DEFAULT gen_random_uuid() NOT NULL,
+CREATE TABLE IF NOT EXISTS "dev-schema"."inventory_glass_item" (
+	"glass_id" uuid PRIMARY KEY DEFAULT gen_random_uuid() NOT NULL,
 	"name" varchar(255) NOT NULL,
 	"description" varchar(255),
 	"thickness" jsonb NOT NULL,
@@ -15,8 +15,8 @@ CREATE TABLE IF NOT EXISTS "prod-orders"."inventory_glass_item" (
 	"updated_by" varchar NOT NULL
 );
 --> statement-breakpoint
-CREATE TABLE IF NOT EXISTS "prod-orders"."inventory_products" (
-	"id" uuid PRIMARY KEY DEFAULT gen_random_uuid() NOT NULL,
+CREATE TABLE IF NOT EXISTS "dev-schema"."inventory_products" (
+	"product_id" uuid PRIMARY KEY DEFAULT gen_random_uuid() NOT NULL,
 	"type" varchar(255) NOT NULL,
 	"image_url" varchar(255),
 	"alt" varchar(255),
@@ -27,8 +27,8 @@ CREATE TABLE IF NOT EXISTS "prod-orders"."inventory_products" (
 	"updated_by" varchar NOT NULL
 );
 --> statement-breakpoint
-CREATE TABLE IF NOT EXISTS "prod-orders"."order_invoices" (
-	"id" uuid PRIMARY KEY DEFAULT gen_random_uuid() NOT NULL,
+CREATE TABLE IF NOT EXISTS "dev-schema"."order_invoices" (
+	"order_invoice_id" uuid PRIMARY KEY DEFAULT gen_random_uuid() NOT NULL,
 	"user_id" uuid NOT NULL,
 	"order_id" uuid NOT NULL,
 	"date_created" timestamp with time zone NOT NULL,
@@ -36,8 +36,8 @@ CREATE TABLE IF NOT EXISTS "prod-orders"."order_invoices" (
 	"amount" numeric(10, 2) NOT NULL
 );
 --> statement-breakpoint
-CREATE TABLE IF NOT EXISTS "prod-orders"."order_items" (
-	"id" serial PRIMARY KEY NOT NULL,
+CREATE TABLE IF NOT EXISTS "dev-schema"."order_items" (
+	"order_item_id" serial PRIMARY KEY NOT NULL,
 	"order_id" uuid NOT NULL,
 	"product_type_id" uuid NOT NULL,
 	"product_config" jsonb NOT NULL,
@@ -45,8 +45,8 @@ CREATE TABLE IF NOT EXISTS "prod-orders"."order_items" (
 	"note" varchar(255)
 );
 --> statement-breakpoint
-CREATE TABLE IF NOT EXISTS "prod-orders"."orders" (
-	"id" uuid PRIMARY KEY DEFAULT gen_random_uuid() NOT NULL,
+CREATE TABLE IF NOT EXISTS "dev-schema"."orders" (
+	"order_id" uuid PRIMARY KEY DEFAULT gen_random_uuid() NOT NULL,
 	"user_id" uuid NOT NULL,
 	"order_name" varchar(255) NOT NULL,
 	"shipping_data" jsonb NOT NULL,
@@ -60,8 +60,8 @@ CREATE TABLE IF NOT EXISTS "prod-orders"."orders" (
 	CONSTRAINT "ORDER_STATUS_CHECK" CHECK ("orders"."status" = 'DRAFT' OR "orders"."status" = 'PENDING' OR "orders"."status" = 'QUOTE' OR "orders"."status" = 'PROCESSING' OR "orders"."status" = 'SHIPPED' OR "orders"."status" = 'DELIVERED' OR "orders"."status" = 'CANCELLED')
 );
 --> statement-breakpoint
-CREATE TABLE IF NOT EXISTS "prod-orders"."user_billing_information" (
-	"id" serial PRIMARY KEY NOT NULL,
+CREATE TABLE IF NOT EXISTS "dev-schema"."user_billing_information" (
+	"billing_info_id" serial PRIMARY KEY NOT NULL,
 	"user_id" uuid NOT NULL,
 	"street" varchar(255) NOT NULL,
 	"apt_num" varchar(255),
@@ -78,8 +78,8 @@ CREATE TABLE IF NOT EXISTS "prod-orders"."user_billing_information" (
 	"is_active" boolean DEFAULT true NOT NULL
 );
 --> statement-breakpoint
-CREATE TABLE IF NOT EXISTS "prod-orders"."user_profiles" (
-	"id" serial PRIMARY KEY NOT NULL,
+CREATE TABLE IF NOT EXISTS "dev-schema"."user_profiles" (
+	"profile_id" serial PRIMARY KEY NOT NULL,
 	"user_id" uuid NOT NULL,
 	"first_name" varchar(255) NOT NULL,
 	"last_name" varchar(255) NOT NULL,
@@ -88,8 +88,8 @@ CREATE TABLE IF NOT EXISTS "prod-orders"."user_profiles" (
 	"phone_num" varchar(255)
 );
 --> statement-breakpoint
-CREATE TABLE IF NOT EXISTS "prod-orders"."user_shipping_information" (
-	"id" serial PRIMARY KEY NOT NULL,
+CREATE TABLE IF NOT EXISTS "dev-schema"."user_shipping_information" (
+	"shipping_info_id" serial PRIMARY KEY NOT NULL,
 	"user_id" uuid NOT NULL,
 	"street" varchar(255) NOT NULL,
 	"apt_num" varchar(255),
@@ -100,8 +100,8 @@ CREATE TABLE IF NOT EXISTS "prod-orders"."user_shipping_information" (
 	"note" varchar(255)
 );
 --> statement-breakpoint
-CREATE TABLE IF NOT EXISTS "prod-orders"."users" (
-	"id" uuid PRIMARY KEY DEFAULT gen_random_uuid() NOT NULL,
+CREATE TABLE IF NOT EXISTS "dev-schema"."users" (
+	"user_id" uuid PRIMARY KEY DEFAULT gen_random_uuid() NOT NULL,
 	"email" varchar(255) NOT NULL,
 	"password" varchar(255) NOT NULL,
 	"role" varchar(255) DEFAULT 'USER',
@@ -110,49 +110,49 @@ CREATE TABLE IF NOT EXISTS "prod-orders"."users" (
 );
 --> statement-breakpoint
 DO $$ BEGIN
- ALTER TABLE "prod-orders"."order_invoices" ADD CONSTRAINT "order_invoices_user_id_users_id_fk" FOREIGN KEY ("user_id") REFERENCES "prod-orders"."users"("id") ON DELETE cascade ON UPDATE no action;
+ ALTER TABLE "dev-schema"."order_invoices" ADD CONSTRAINT "order_invoices_user_id_users_user_id_fk" FOREIGN KEY ("user_id") REFERENCES "dev-schema"."users"("user_id") ON DELETE cascade ON UPDATE no action;
 EXCEPTION
  WHEN duplicate_object THEN null;
 END $$;
 --> statement-breakpoint
 DO $$ BEGIN
- ALTER TABLE "prod-orders"."order_invoices" ADD CONSTRAINT "order_invoices_order_id_orders_id_fk" FOREIGN KEY ("order_id") REFERENCES "prod-orders"."orders"("id") ON DELETE cascade ON UPDATE no action;
+ ALTER TABLE "dev-schema"."order_invoices" ADD CONSTRAINT "order_invoices_order_id_orders_order_id_fk" FOREIGN KEY ("order_id") REFERENCES "dev-schema"."orders"("order_id") ON DELETE cascade ON UPDATE no action;
 EXCEPTION
  WHEN duplicate_object THEN null;
 END $$;
 --> statement-breakpoint
 DO $$ BEGIN
- ALTER TABLE "prod-orders"."order_items" ADD CONSTRAINT "order_items_order_id_orders_id_fk" FOREIGN KEY ("order_id") REFERENCES "prod-orders"."orders"("id") ON DELETE cascade ON UPDATE no action;
+ ALTER TABLE "dev-schema"."order_items" ADD CONSTRAINT "order_items_order_id_orders_order_id_fk" FOREIGN KEY ("order_id") REFERENCES "dev-schema"."orders"("order_id") ON DELETE cascade ON UPDATE no action;
 EXCEPTION
  WHEN duplicate_object THEN null;
 END $$;
 --> statement-breakpoint
 DO $$ BEGIN
- ALTER TABLE "prod-orders"."order_items" ADD CONSTRAINT "order_items_product_type_id_inventory_products_id_fk" FOREIGN KEY ("product_type_id") REFERENCES "prod-orders"."inventory_products"("id") ON DELETE cascade ON UPDATE no action;
+ ALTER TABLE "dev-schema"."order_items" ADD CONSTRAINT "order_items_product_type_id_inventory_products_product_id_fk" FOREIGN KEY ("product_type_id") REFERENCES "dev-schema"."inventory_products"("product_id") ON DELETE cascade ON UPDATE no action;
 EXCEPTION
  WHEN duplicate_object THEN null;
 END $$;
 --> statement-breakpoint
 DO $$ BEGIN
- ALTER TABLE "prod-orders"."orders" ADD CONSTRAINT "orders_user_id_users_id_fk" FOREIGN KEY ("user_id") REFERENCES "prod-orders"."users"("id") ON DELETE cascade ON UPDATE no action;
+ ALTER TABLE "dev-schema"."orders" ADD CONSTRAINT "orders_user_id_users_user_id_fk" FOREIGN KEY ("user_id") REFERENCES "dev-schema"."users"("user_id") ON DELETE cascade ON UPDATE no action;
 EXCEPTION
  WHEN duplicate_object THEN null;
 END $$;
 --> statement-breakpoint
 DO $$ BEGIN
- ALTER TABLE "prod-orders"."user_billing_information" ADD CONSTRAINT "user_billing_information_user_id_users_id_fk" FOREIGN KEY ("user_id") REFERENCES "prod-orders"."users"("id") ON DELETE cascade ON UPDATE no action;
+ ALTER TABLE "dev-schema"."user_billing_information" ADD CONSTRAINT "user_billing_information_user_id_users_user_id_fk" FOREIGN KEY ("user_id") REFERENCES "dev-schema"."users"("user_id") ON DELETE cascade ON UPDATE no action;
 EXCEPTION
  WHEN duplicate_object THEN null;
 END $$;
 --> statement-breakpoint
 DO $$ BEGIN
- ALTER TABLE "prod-orders"."user_profiles" ADD CONSTRAINT "user_profiles_user_id_users_id_fk" FOREIGN KEY ("user_id") REFERENCES "prod-orders"."users"("id") ON DELETE cascade ON UPDATE no action;
+ ALTER TABLE "dev-schema"."user_profiles" ADD CONSTRAINT "user_profiles_user_id_users_user_id_fk" FOREIGN KEY ("user_id") REFERENCES "dev-schema"."users"("user_id") ON DELETE cascade ON UPDATE no action;
 EXCEPTION
  WHEN duplicate_object THEN null;
 END $$;
 --> statement-breakpoint
 DO $$ BEGIN
- ALTER TABLE "prod-orders"."user_shipping_information" ADD CONSTRAINT "user_shipping_information_user_id_users_id_fk" FOREIGN KEY ("user_id") REFERENCES "prod-orders"."users"("id") ON DELETE cascade ON UPDATE no action;
+ ALTER TABLE "dev-schema"."user_shipping_information" ADD CONSTRAINT "user_shipping_information_user_id_users_user_id_fk" FOREIGN KEY ("user_id") REFERENCES "dev-schema"."users"("user_id") ON DELETE cascade ON UPDATE no action;
 EXCEPTION
  WHEN duplicate_object THEN null;
 END $$;

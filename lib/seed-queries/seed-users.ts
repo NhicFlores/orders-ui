@@ -21,7 +21,7 @@ export async function seedUserInfo() {
 
         userCount++;
         console.log(`x Seeding user ${userCount}...`);
-        const seedUserId = user.id;
+        const seedUserId = user.user_id;
         const hashedPassword = await bcrypt.hash(user.password, 10);
         // <{id: string}>
         const result = await trx.execute(
@@ -32,11 +32,11 @@ export async function seedUserInfo() {
           VALUES (${user.email},
                   ${hashedPassword},
                   ${user.role})
-          RETURNING id`
+          RETURNING user_id`
         );
 
-        const dbUserId = result.rows[0].id;
-        console.log(`----- Inserted user with seed id: ${user.id} -----`);
+        const dbUserId = result.rows[0].user_id;
+        console.log(`----- Inserted user with seed id: ${user.user_id} -----`);
         console.log(`----- Database generated id: ${dbUserId} -----`);
 
         // await seedUserProfile(user.id, dbUserId, trx);

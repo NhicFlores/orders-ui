@@ -43,7 +43,7 @@ export async function seedProducts() {
 
 export async function seedGlassInventory() {
   const productIds = await db
-    .select({ id: InventoryProductTable.id })
+    .select({ product_id: InventoryProductTable.product_id })
     .from(InventoryProductTable);
   // console.log("Product IDs: ", productIds);
   // const userIds = await GetUserIds();
@@ -59,12 +59,12 @@ export async function seedGlassInventory() {
         let compatibleProducts: string[] = [];
         for (const product of productIds) {
           if (FlipCoin()) {
-            compatibleProducts.push(product.id);
+            compatibleProducts.push(product.product_id);
           }
         }
         if (compatibleProducts.length === 0) {
-          compatibleProducts.push(productIds[0].id);
-          compatibleProducts.push(productIds[1].id);
+          compatibleProducts.push(productIds[0].product_id);
+          compatibleProducts.push(productIds[1].product_id);
         }
         // console.log("Compatible Products: ", compatibleProducts);
         const serializedCompatibleProducts = JSON.stringify(compatibleProducts);

@@ -1,15 +1,15 @@
 {
-  "id": "dd32bb7e-42b7-42b3-a863-a1a40722697f",
+  "id": "98788915-190b-4d50-8aa0-282dea92f551",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "7",
   "dialect": "postgresql",
   "tables": {
-    "prod-orders.inventory_glass_item": {
+    "dev-schema.inventory_glass_item": {
       "name": "inventory_glass_item",
-      "schema": "prod-orders",
+      "schema": "dev-schema",
       "columns": {
-        "id": {
-          "name": "id",
+        "glass_id": {
+          "name": "glass_id",
           "type": "uuid",
           "primaryKey": true,
           "notNull": true,
@@ -90,12 +90,12 @@
       "checkConstraints": {},
       "isRLSEnabled": false
     },
-    "prod-orders.inventory_products": {
+    "dev-schema.inventory_products": {
       "name": "inventory_products",
-      "schema": "prod-orders",
+      "schema": "dev-schema",
       "columns": {
-        "id": {
-          "name": "id",
+        "product_id": {
+          "name": "product_id",
           "type": "uuid",
           "primaryKey": true,
           "notNull": true,
@@ -158,12 +158,12 @@
       "checkConstraints": {},
       "isRLSEnabled": false
     },
-    "prod-orders.order_invoices": {
+    "dev-schema.order_invoices": {
       "name": "order_invoices",
-      "schema": "prod-orders",
+      "schema": "dev-schema",
       "columns": {
-        "id": {
-          "name": "id",
+        "order_invoice_id": {
+          "name": "order_invoice_id",
           "type": "uuid",
           "primaryKey": true,
           "notNull": true,
@@ -202,30 +202,30 @@
       },
       "indexes": {},
       "foreignKeys": {
-        "order_invoices_user_id_users_id_fk": {
-          "name": "order_invoices_user_id_users_id_fk",
+        "order_invoices_user_id_users_user_id_fk": {
+          "name": "order_invoices_user_id_users_user_id_fk",
           "tableFrom": "order_invoices",
           "tableTo": "users",
-          "schemaTo": "prod-orders",
+          "schemaTo": "dev-schema",
           "columnsFrom": [
             "user_id"
           ],
           "columnsTo": [
-            "id"
+            "user_id"
           ],
           "onDelete": "cascade",
           "onUpdate": "no action"
         },
-        "order_invoices_order_id_orders_id_fk": {
-          "name": "order_invoices_order_id_orders_id_fk",
+        "order_invoices_order_id_orders_order_id_fk": {
+          "name": "order_invoices_order_id_orders_order_id_fk",
           "tableFrom": "order_invoices",
           "tableTo": "orders",
-          "schemaTo": "prod-orders",
+          "schemaTo": "dev-schema",
           "columnsFrom": [
             "order_id"
           ],
           "columnsTo": [
-            "id"
+            "order_id"
           ],
           "onDelete": "cascade",
           "onUpdate": "no action"
@@ -237,12 +237,12 @@
       "checkConstraints": {},
       "isRLSEnabled": false
     },
-    "prod-orders.order_items": {
+    "dev-schema.order_items": {
       "name": "order_items",
-      "schema": "prod-orders",
+      "schema": "dev-schema",
       "columns": {
-        "id": {
-          "name": "id",
+        "order_item_id": {
+          "name": "order_item_id",
           "type": "serial",
           "primaryKey": true,
           "notNull": true
@@ -280,30 +280,30 @@
       },
       "indexes": {},
       "foreignKeys": {
-        "order_items_order_id_orders_id_fk": {
-          "name": "order_items_order_id_orders_id_fk",
+        "order_items_order_id_orders_order_id_fk": {
+          "name": "order_items_order_id_orders_order_id_fk",
           "tableFrom": "order_items",
           "tableTo": "orders",
-          "schemaTo": "prod-orders",
+          "schemaTo": "dev-schema",
           "columnsFrom": [
             "order_id"
           ],
           "columnsTo": [
-            "id"
+            "order_id"
           ],
           "onDelete": "cascade",
           "onUpdate": "no action"
         },
-        "order_items_product_type_id_inventory_products_id_fk": {
-          "name": "order_items_product_type_id_inventory_products_id_fk",
+        "order_items_product_type_id_inventory_products_product_id_fk": {
+          "name": "order_items_product_type_id_inventory_products_product_id_fk",
           "tableFrom": "order_items",
           "tableTo": "inventory_products",
-          "schemaTo": "prod-orders",
+          "schemaTo": "dev-schema",
           "columnsFrom": [
             "product_type_id"
           ],
           "columnsTo": [
-            "id"
+            "product_id"
           ],
           "onDelete": "cascade",
           "onUpdate": "no action"
@@ -315,12 +315,12 @@
       "checkConstraints": {},
       "isRLSEnabled": false
     },
-    "prod-orders.orders": {
+    "dev-schema.orders": {
       "name": "orders",
-      "schema": "prod-orders",
+      "schema": "dev-schema",
       "columns": {
-        "id": {
-          "name": "id",
+        "order_id": {
+          "name": "order_id",
           "type": "uuid",
           "primaryKey": true,
           "notNull": true,
@@ -389,16 +389,16 @@
       },
       "indexes": {},
       "foreignKeys": {
-        "orders_user_id_users_id_fk": {
-          "name": "orders_user_id_users_id_fk",
+        "orders_user_id_users_user_id_fk": {
+          "name": "orders_user_id_users_user_id_fk",
           "tableFrom": "orders",
           "tableTo": "users",
-          "schemaTo": "prod-orders",
+          "schemaTo": "dev-schema",
           "columnsFrom": [
             "user_id"
           ],
           "columnsTo": [
-            "id"
+            "user_id"
           ],
           "onDelete": "cascade",
           "onUpdate": "no action"
@@ -415,12 +415,12 @@
       },
       "isRLSEnabled": false
     },
-    "prod-orders.user_billing_information": {
+    "dev-schema.user_billing_information": {
       "name": "user_billing_information",
-      "schema": "prod-orders",
+      "schema": "dev-schema",
       "columns": {
-        "id": {
-          "name": "id",
+        "billing_info_id": {
+          "name": "billing_info_id",
           "type": "serial",
           "primaryKey": true,
           "notNull": true
@@ -514,16 +514,16 @@
       },
       "indexes": {},
       "foreignKeys": {
-        "user_billing_information_user_id_users_id_fk": {
-          "name": "user_billing_information_user_id_users_id_fk",
+        "user_billing_information_user_id_users_user_id_fk": {
+          "name": "user_billing_information_user_id_users_user_id_fk",
           "tableFrom": "user_billing_information",
           "tableTo": "users",
-          "schemaTo": "prod-orders",
+          "schemaTo": "dev-schema",
           "columnsFrom": [
             "user_id"
           ],
           "columnsTo": [
-            "id"
+            "user_id"
           ],
           "onDelete": "cascade",
           "onUpdate": "no action"
@@ -535,12 +535,12 @@
       "checkConstraints": {},
       "isRLSEnabled": false
     },
-    "prod-orders.user_profiles": {
+    "dev-schema.user_profiles": {
       "name": "user_profiles",
-      "schema": "prod-orders",
+      "schema": "dev-schema",
       "columns": {
-        "id": {
-          "name": "id",
+        "profile_id": {
+          "name": "profile_id",
           "type": "serial",
           "primaryKey": true,
           "notNull": true
@@ -584,16 +584,16 @@
       },
       "indexes": {},
       "foreignKeys": {
-        "user_profiles_user_id_users_id_fk": {
-          "name": "user_profiles_user_id_users_id_fk",
+        "user_profiles_user_id_users_user_id_fk": {
+          "name": "user_profiles_user_id_users_user_id_fk",
           "tableFrom": "user_profiles",
           "tableTo": "users",
-          "schemaTo": "prod-orders",
+          "schemaTo": "dev-schema",
           "columnsFrom": [
             "user_id"
           ],
           "columnsTo": [
-            "id"
+            "user_id"
           ],
           "onDelete": "cascade",
           "onUpdate": "no action"
@@ -605,12 +605,12 @@
       "checkConstraints": {},
       "isRLSEnabled": false
     },
-    "prod-orders.user_shipping_information": {
+    "dev-schema.user_shipping_information": {
       "name": "user_shipping_information",
-      "schema": "prod-orders",
+      "schema": "dev-schema",
       "columns": {
-        "id": {
-          "name": "id",
+        "shipping_info_id": {
+          "name": "shipping_info_id",
           "type": "serial",
           "primaryKey": true,
           "notNull": true
@@ -667,16 +667,16 @@
       },
       "indexes": {},
       "foreignKeys": {
-        "user_shipping_information_user_id_users_id_fk": {
-          "name": "user_shipping_information_user_id_users_id_fk",
+        "user_shipping_information_user_id_users_user_id_fk": {
+          "name": "user_shipping_information_user_id_users_user_id_fk",
           "tableFrom": "user_shipping_information",
           "tableTo": "users",
-          "schemaTo": "prod-orders",
+          "schemaTo": "dev-schema",
           "columnsFrom": [
             "user_id"
           ],
           "columnsTo": [
-            "id"
+            "user_id"
           ],
           "onDelete": "cascade",
           "onUpdate": "no action"
@@ -688,12 +688,12 @@
       "checkConstraints": {},
       "isRLSEnabled": false
     },
-    "prod-orders.users": {
+    "dev-schema.users": {
       "name": "users",
-      "schema": "prod-orders",
+      "schema": "dev-schema",
       "columns": {
-        "id": {
-          "name": "id",
+        "user_id": {
+          "name": "user_id",
           "type": "uuid",
           "primaryKey": true,
           "notNull": true,
@@ -743,7 +743,7 @@
   },
   "enums": {},
   "schemas": {
-    "prod-orders": "prod-orders"
+    "dev-schema": "dev-schema"
   },
   "sequences": {},
   "roles": {},

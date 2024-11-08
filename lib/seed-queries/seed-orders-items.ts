@@ -10,12 +10,12 @@ import { inventoryProductSeed } from "../seed-data/seed-inventory-products";
 import { getSchemaName } from "../utils";
 import { GetUserEmails } from "../data/user-queries";
 
-function matchUserId(seedId: string, dbUsers: { id: string; email: string }[]) {
+function matchUserId(seedId: string, dbUsers: { user_id: string; email: string }[]) {
   for (const seedUser of usersSeed) {
-    if (seedUser.id === seedId) {
+    if (seedUser.user_id === seedId) {
       for (const dbUser of dbUsers) {
         if (dbUser.email === seedUser.email) {
-          return dbUser.id;
+          return dbUser.user_id;
         }
       }
     }
@@ -32,13 +32,13 @@ function matchUserId(seedId: string, dbUsers: { id: string; email: string }[]) {
 
 function matchProductId(
   seedId: string,
-  dbProducts: { id: string; type: string }[]
+  dbProducts: { product_id: string; type: string }[]
 ) {
   for (const seedProduct of inventoryProductSeed) {
-    if (seedProduct.id === seedId) {
+    if (seedProduct.product_id === seedId) {
       for (const dbProduct of dbProducts) {
         if (dbProduct.type === seedProduct.type) {
-          return dbProduct.id;
+          return dbProduct.product_id;
         }
       }
     }
@@ -50,7 +50,7 @@ export async function seedOrderInfo() {
   const dbUsers = await GetUserEmails();
   const dbProducts = await db
     .select({
-      id: InventoryProductTable.id,
+      product_id: InventoryProductTable.product_id,
       type: InventoryProductTable.type,
     })
     .from(InventoryProductTable);
@@ -110,15 +110,15 @@ export async function seedOrderInfo() {
                     ${order.date_submitted ? order.date_submitted : null},
                     ${order.date_shipped ? order.date_shipped : null},
                     ${order.date_delivered ? order.date_delivered : null})
-            RETURNING id`
+            RETURNING order_id`
         );
 
-        const orderId = result.rows[0].id;
+        const orderId = result.rows[0].order_id;
         console.log(`Inserted order with Order ID: ${orderId}`);
         // consoleLogSpacer();
         let itemsCount = 0;
         for (const item of orderItemsSeed) {
-          if (order.id === item.order_id) {
+          if (order.order_id === item.order_id) {
             console.log("xxx SEEDING ORDER ITEMS xxx");
             itemsCount++;
             let productTypeId = matchProductId(
@@ -148,7 +148,7 @@ export async function seedOrderInfo() {
         // consoleLogSpacer();
         let invoiceCount = 0;
         for (const invoice of orderInvoiceSeed) {
-          if (invoice.order_id === order.id) {
+          if (invoice.order_id === order.order_id) {
             console.log("xxx SEEDING INVOICE xxx");
             invoiceCount++;
             await trx.execute(
