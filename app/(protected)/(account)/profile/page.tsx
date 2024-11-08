@@ -13,7 +13,7 @@ export default async function ProfilePage() {
     <main className="lg:w-1/2 sm:w-full bg-white border rounded-md p-6">
       <Container>
         <UserForm user={user} />
-        <ProfileForm user_id={user.id} profile={profile} />
+        <ProfileForm user_id={user.user_id} profile={profile} />
       </Container>
     </main>
   );

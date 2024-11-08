@@ -47,7 +47,10 @@ const BillingForm = ({
   const billingForm = useForm<z.infer<typeof BillingInfoSchema>>({
     resolver: zodResolver(BillingInfoSchema),
     defaultValues: billing_info
-      ? billing_info
+      ? {
+        ...billing_info,
+        apt_num: billing_info.apt_num ?? "",
+      }
       : {
           street: "",
           apt_num: "",
@@ -84,7 +87,8 @@ const BillingForm = ({
     //NOTE BUG: potential bug here, need to test if we can get call updateBillingInfo with id = -1
     isBlankForm
       ? createBillingInfo(data, BillingRoute.href)
-      : billing_info?.id && updateBillingInfo(billing_info.id, data);
+      : billing_info?.billing_info_id &&
+        updateBillingInfo(billing_info?.billing_info_id, data);
     //NOTE TODO: add error handling
     setIsEditEnabled(!isEditEnabled);
   }

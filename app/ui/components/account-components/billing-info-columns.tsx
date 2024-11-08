@@ -28,7 +28,7 @@ export const BillingInfoColumns: ColumnDef<UserBillingInformation>[] = [
       return (
         <Button
           variant={"ghost"}
-          onClick={() => deleteBillingInfo(billingInfo.id!)}
+          onClick={() => deleteBillingInfo(billingInfo.billing_info_id!)}
         >
           <Trash2 size={18} />
         </Button>

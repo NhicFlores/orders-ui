@@ -62,7 +62,7 @@ export default function ShippingSection({
 
   function handleShippingOptionChange(value: string) {
     const newSelectedShippingOption = shippingOptions.find(
-      (shippingOption) => shippingOption.id === Number(value)
+      (shippingOption) => shippingOption.shipping_info_id === Number(value)
     );
 
     setSelectedShippingOption(newSelectedShippingOption);
@@ -103,8 +103,8 @@ export default function ShippingSection({
           <SelectContent>
             {shippingOptions.length > 0 ? (
               shippingOptions.map((shippingOption) => (
-                <div key={shippingOption.id}>
-                  <SelectItem value={String(shippingOption.id)}>
+                <div key={shippingOption.shipping_info_id}>
+                  <SelectItem value={String(shippingOption.shipping_info_id)}>
                     <div>
                       <div>shipping option</div>
                       <div>

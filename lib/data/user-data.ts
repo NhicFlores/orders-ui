@@ -34,7 +34,7 @@ export async function getUserByID(id: string) {
   try {
     console.log("SCHEMA NAME:", schemaName);
     const user =
-      await sql<User>`SELECT * FROM "prod-orders".users WHERE id=${id}`;
+      await sql<User>`SELECT * FROM "prod-orders".users WHERE user_id=${id}`;
     console.log("USER:", user.rows[0]);
     // console.log("USER TYPE:", typeof user.rows[0]);
     return user.rows[0]; //as User
@@ -56,7 +56,7 @@ export async function getUserProfileById(user_id: string) {
     const userProfile = result[0];
 
     return {
-      id: userProfile.id,
+      profile_id: userProfile.profile_id,
       user_id: userProfile.user_id,
       first_name: userProfile.first_name,
       last_name: userProfile.last_name,
@@ -78,7 +78,7 @@ export async function getBillingInfoByUserId(user_id: string) {
       .where(eq(UserBillingInformationTable.user_id, user_id));
 
     console.log("BILLING INFO:", result);
-    return result;
+    return result as UserBillingInformation[];
     // return billingInfoData.rows.map((row) => {
     //   let billing_addr;
     //   try {
@@ -119,7 +119,7 @@ export async function getShippingInfoById(user_id: string) {
     //     delivery_addr
     //   };
     // })
-    return result;
+    return result as UserShippingInformation[];
   } catch (error) {
     console.error("Failed to fetch shipping info:", error);
     throw new Error("Failed to fetch shipping info.");

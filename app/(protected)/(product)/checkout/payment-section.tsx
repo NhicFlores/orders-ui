@@ -41,7 +41,7 @@ export default function PaymentSection({
 
   const handlePaymentOptionChange = (value: string) => {
     const newSelectedBillingOption = billingOptions.find(
-      (billingOption) => billingOption.id === Number(value)
+      (billingOption) => billingOption.billing_info_id === Number(value)
     );
 
     setSelectedBillingOption(newSelectedBillingOption);
@@ -67,8 +67,8 @@ export default function PaymentSection({
           </SelectTrigger>
           <SelectContent>
             {billingOptions.map((billingOption) => (
-              <div key={billingOption.id}>
-                <SelectItem value={String(billingOption.id)}>
+              <div key={billingOption.billing_info_id}>
+                <SelectItem value={String(billingOption.billing_info_id)}>
                   <div>
                     <div>{billingOption.purchase_order}</div>
                     <div>
@@ -88,7 +88,7 @@ export default function PaymentSection({
       </div>
       {showPaymentForm && (
         <BillingForm
-          key={formData?.id}
+          key={formData?.billing_info_id}
           isBlankForm={!formData}
           billing_info={formData}
           toggleBillingForm={toggleBillingForm}
