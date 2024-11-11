@@ -53,7 +53,7 @@ export default defineConfig({
   },
   migrations: {
     table: process.env.MIGRATIONS_TABLE!,
-    schema: process.env.PROD_SCHEMA!,
+    schema: process.env.DEV_SCHEMA!,
   },
   //schemaFilter: ["order-handling"],
   verbose: true,
