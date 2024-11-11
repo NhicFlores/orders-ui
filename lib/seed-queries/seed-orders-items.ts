@@ -10,12 +10,12 @@
 // import { getSchemaName } from "../utils";
 // import { GetUserEmails } from "../data/user-queries";
 
-// function matchUserId(seedId: string, dbUsers: { user_id: string; email: string }[]) {
+// function matchUserId(seedId: string, dbUsers: { id: string; email: string }[]) {
 //   for (const seedUser of usersSeed) {
-//     if (seedUser.user_id === seedId) {
+//     if (seedUser.id === seedId) {
 //       for (const dbUser of dbUsers) {
 //         if (dbUser.email === seedUser.email) {
-//           return dbUser.user_id;
+//           return dbUser.id;
 //         }
 //       }
 //     }

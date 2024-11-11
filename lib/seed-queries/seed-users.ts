@@ -21,7 +21,7 @@
 
 //         userCount++;
 //         console.log(`x Seeding user ${userCount}...`);
-//         const seedUserId = user.user_id;
+//         const seedUserId = user.id;
 //         const hashedPassword = await bcrypt.hash(user.password, 10);
 //         // <{id: string}>
 //         const result = await trx.execute(
@@ -32,11 +32,11 @@
 //           VALUES (${user.email},
 //                   ${hashedPassword},
 //                   ${user.role})
-//           RETURNING user_id`
+//           RETURNING id`
 //         );
 
-//         const dbUserId = result.rows[0].user_id;
-//         console.log(`----- Inserted user with seed id: ${user.user_id} -----`);
+//         const dbUserId = result.rows[0].id;
+//         console.log(`----- Inserted user with seed id: ${user.id} -----`);
 //         console.log(`----- Database generated id: ${dbUserId} -----`);
 
 //         // await seedUserProfile(user.id, dbUserId, trx);

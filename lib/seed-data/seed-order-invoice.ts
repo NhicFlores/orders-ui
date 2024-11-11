@@ -1,1467 +1,1331 @@
 // import { OrderInvoice } from "../data-model/schema-definitions";
 // export const orderInvoiceSeed: OrderInvoice[] = [
 //   {
-//     "order_invoice_id": "df988817-b160-47b8-9fce-8b8f0b1cf6b4",
-//     "user_id": "3a4fbf3e-161b-4aba-bdda-49d994edcd81",
-//     "order_id": "72250a45-70fa-423e-9340-6b667deea048",
-//     "date_created": "2024-11-06T00:40:39.229Z",
-//     "status": "PENDING",
-//     "amount": 710.05
+//     "order_invoice_id": "3c0b272e-21dd-4477-95a8-7db7c56e1eb9",
+//     "user_id": "c929e811-06ea-45db-bb7d-576af5baf7dd",
+//     "order_id": "134f9872-aa74-4720-a446-05a2381c6d89",
+//     "date_created": "2024-11-06T15:49:27.138Z",
+//     "status": "PAID",
+//     "amount": 130467.45
 //   },
 //   {
-//     "order_invoice_id": "227ddbd8-c000-4c6a-b370-c4949d3abff0",
-//     "user_id": "3a4fbf3e-161b-4aba-bdda-49d994edcd81",
-//     "order_id": "8092f41b-3034-49a4-a3d7-ddc5912bea6b",
-//     "date_created": "2024-10-21T05:24:58.619Z",
+//     "order_invoice_id": "ef0b884b-db79-4541-a42c-595473e46f38",
+//     "user_id": "c929e811-06ea-45db-bb7d-576af5baf7dd",
+//     "order_id": "d4ebff63-9083-47a0-a13a-e5f313d2deff",
+//     "date_created": "2024-11-07T07:21:18.732Z",
 //     "status": "PENDING",
-//     "amount": 741355.31
+//     "amount": 716.97
 //   },
 //   {
-//     "order_invoice_id": "996e9d4d-c14e-4f27-8cb8-ffc93d7418b9",
-//     "user_id": "3a4fbf3e-161b-4aba-bdda-49d994edcd81",
-//     "order_id": "52c170d8-628e-45de-8fd2-5309d82f2c24",
-//     "date_created": "2024-10-09T21:59:51.635Z",
+//     "order_invoice_id": "ee2141ab-9e75-4786-95cc-349a73a4fbd3",
+//     "user_id": "c929e811-06ea-45db-bb7d-576af5baf7dd",
+//     "order_id": "69cc0ffa-f090-4027-955d-c101e720698d",
+//     "date_created": "2024-11-04T09:11:56.629Z",
 //     "status": "PAID",
-//     "amount": 671.05
+//     "amount": 578903.67
 //   },
 //   {
-//     "order_invoice_id": "fcc2b738-6592-4bc8-840e-b7d79d1e6dd7",
-//     "user_id": "3a4fbf3e-161b-4aba-bdda-49d994edcd81",
-//     "order_id": "807861f0-92e9-4922-965c-f8f196d8cfcf",
-//     "date_created": "2024-10-25T10:55:10.690Z",
-//     "status": "PAID",
-//     "amount": 518399.11
+//     "order_invoice_id": "9b6338e4-4147-4284-9301-99f4bf39f204",
+//     "user_id": "c929e811-06ea-45db-bb7d-576af5baf7dd",
+//     "order_id": "00f16aea-7906-42bb-890f-eb4f52755c0e",
+//     "date_created": "2024-07-01T18:03:54.728Z",
+//     "status": "PENDING",
+//     "amount": 46756.86
 //   },
 //   {
-//     "order_invoice_id": "abb5ef8f-94c8-41fc-86ef-fdec66490d85",
-//     "user_id": "3a4fbf3e-161b-4aba-bdda-49d994edcd81",
-//     "order_id": "f20eaa2d-ac3a-4cbd-94e0-7a14bccd61c1",
-//     "date_created": "2024-11-08T10:58:31.067Z",
+//     "order_invoice_id": "83faa9b1-2da0-458e-a61a-6098c207ebe3",
+//     "user_id": "c929e811-06ea-45db-bb7d-576af5baf7dd",
+//     "order_id": "b2fea2b2-d782-426a-99ce-b0840187553a",
+//     "date_created": "2024-10-25T02:45:23.757Z",
 //     "status": "PAID",
-//     "amount": 316058.41
+//     "amount": 266741.77
 //   },
 //   {
-//     "order_invoice_id": "9323ca6f-a112-4213-9dc2-048d74c3cef0",
-//     "user_id": "3a4fbf3e-161b-4aba-bdda-49d994edcd81",
-//     "order_id": "5998c0a4-b448-4ade-8266-a33803853414",
-//     "date_created": "2024-10-23T09:00:03.985Z",
-//     "status": "PAID",
-//     "amount": 630.1
+//     "order_invoice_id": "4abea8ca-c2a8-44e6-a78d-6bd3c8422b2a",
+//     "user_id": "c929e811-06ea-45db-bb7d-576af5baf7dd",
+//     "order_id": "c1d385ef-cbe4-4aca-9ba7-b513d6942eb5",
+//     "date_created": "2024-10-27T10:39:32.607Z",
+//     "status": "PENDING",
+//     "amount": 127160.28
 //   },
 //   {
-//     "order_invoice_id": "baed2994-c3a8-4978-8606-8fe3e72ccba9",
-//     "user_id": "3a4fbf3e-161b-4aba-bdda-49d994edcd81",
-//     "order_id": "fea865dc-8f4b-4da5-9fb3-bca3f9d299ea",
-//     "date_created": "2024-10-25T05:50:26.357Z",
+//     "order_invoice_id": "7213425f-61a0-4d1f-938f-25d6f0463da8",
+//     "user_id": "c929e811-06ea-45db-bb7d-576af5baf7dd",
+//     "order_id": "4fae58bd-2fce-4994-a790-9f8e9e73c8f3",
+//     "date_created": "2024-11-09T09:35:26.746Z",
 //     "status": "PENDING",
-//     "amount": 500.18
+//     "amount": 661146.89
 //   },
 //   {
-//     "order_invoice_id": "ce31c125-ced7-4eeb-a66a-e768bd37e4f9",
-//     "user_id": "3a4fbf3e-161b-4aba-bdda-49d994edcd81",
-//     "order_id": "0088808b-7572-4c8c-a4e5-87e7948fcc54",
-//     "date_created": "2024-11-07T16:09:36.283Z",
+//     "order_invoice_id": "ec9b7116-6616-4baf-8519-ebfec5a06efd",
+//     "user_id": "c929e811-06ea-45db-bb7d-576af5baf7dd",
+//     "order_id": "bde30968-7047-43ac-8c09-08010da5dc52",
+//     "date_created": "2024-11-08T03:56:40.515Z",
 //     "status": "PENDING",
-//     "amount": 497445.18
+//     "amount": 283594.08
 //   },
 //   {
-//     "order_invoice_id": "1fa6e7bb-5b5d-46d9-8145-b6e244650be7",
-//     "user_id": "3a4fbf3e-161b-4aba-bdda-49d994edcd81",
-//     "order_id": "ecc3d967-17ee-4d9b-b477-48816ac3fb80",
-//     "date_created": "2024-10-25T11:17:09.960Z",
+//     "order_invoice_id": "26ae9a21-ae89-41f6-b876-c4aedd508424",
+//     "user_id": "c929e811-06ea-45db-bb7d-576af5baf7dd",
+//     "order_id": "757f7499-78a3-40d3-8fbf-23b2ab3c4f00",
+//     "date_created": "2024-11-11T13:31:28.401Z",
 //     "status": "PENDING",
-//     "amount": 601133.86
+//     "amount": 462278.13
 //   },
 //   {
-//     "order_invoice_id": "048c19ad-6945-44e5-8540-430b98065f26",
-//     "user_id": "3a4fbf3e-161b-4aba-bdda-49d994edcd81",
-//     "order_id": "dff3d4c5-8e83-4433-87f5-c89b7ea587fc",
-//     "date_created": "2024-11-07T20:06:19.354Z",
+//     "order_invoice_id": "f73d5092-020a-439a-8433-f422cca0c735",
+//     "user_id": "c929e811-06ea-45db-bb7d-576af5baf7dd",
+//     "order_id": "7db34fb8-5de0-4b80-bb07-1078ec22c68b",
+//     "date_created": "2024-11-11T06:39:56.964Z",
 //     "status": "PAID",
-//     "amount": 1058.13
+//     "amount": 262736.23
 //   },
 //   {
-//     "order_invoice_id": "72a340f3-abc8-4ce4-8122-f16932f2cfbe",
-//     "user_id": "3a4fbf3e-161b-4aba-bdda-49d994edcd81",
-//     "order_id": "97884d3d-c654-4582-9e72-2a74d081cab2",
-//     "date_created": "2024-11-04T06:39:07.635Z",
-//     "status": "PAID",
-//     "amount": 726.54
+//     "order_invoice_id": "6e7a0134-0aa6-465c-bb95-a8577006bdc4",
+//     "user_id": "c929e811-06ea-45db-bb7d-576af5baf7dd",
+//     "order_id": "55aa310d-79ef-42fd-8abf-ace91340562d",
+//     "date_created": "2024-10-16T03:05:27.853Z",
+//     "status": "PENDING",
+//     "amount": 555.95
 //   },
 //   {
-//     "order_invoice_id": "31ae28a2-bd87-45b8-9743-54a2aaff8541",
-//     "user_id": "beb6dcdc-92d5-4bdf-8dfc-b7f39762df22",
-//     "order_id": "1b5e37d1-8c4c-4a64-a4b6-6a8bc5bb5399",
-//     "date_created": "2024-06-12T17:30:34.760Z",
+//     "order_invoice_id": "a4a9d21e-5888-47dd-8f51-637e505b86fc",
+//     "user_id": "c929e811-06ea-45db-bb7d-576af5baf7dd",
+//     "order_id": "c16fc65a-77ca-43c5-8b2b-e76a74ef135d",
+//     "date_created": "2024-10-06T13:44:52.243Z",
 //     "status": "PENDING",
-//     "amount": 765.7
+//     "amount": 579.47
 //   },
 //   {
-//     "order_invoice_id": "d9ee1017-7e3e-415f-8aa4-6ade417df4bd",
-//     "user_id": "beb6dcdc-92d5-4bdf-8dfc-b7f39762df22",
-//     "order_id": "84e64640-5187-47c3-a12c-cef425de103c",
-//     "date_created": "2024-10-26T02:03:16.852Z",
+//     "order_invoice_id": "3ae306a1-9f9a-48ba-8782-1eaf52f87409",
+//     "user_id": "c929e811-06ea-45db-bb7d-576af5baf7dd",
+//     "order_id": "2f9ae55a-fe70-429b-8209-3b64854a7e35",
+//     "date_created": "2024-11-09T00:43:05.477Z",
 //     "status": "PENDING",
-//     "amount": 229
+//     "amount": 675.86
 //   },
 //   {
-//     "order_invoice_id": "d6112265-282e-4607-a254-febf0e726e07",
-//     "user_id": "beb6dcdc-92d5-4bdf-8dfc-b7f39762df22",
-//     "order_id": "27dd6e77-05d3-4c44-ad99-51e46ff37533",
-//     "date_created": "2024-11-03T07:06:42.801Z",
-//     "status": "PAID",
-//     "amount": 1040.8
+//     "order_invoice_id": "4426354d-4a8f-4a68-bc07-1c482379ce9f",
+//     "user_id": "c929e811-06ea-45db-bb7d-576af5baf7dd",
+//     "order_id": "9f216672-3f76-4689-ad08-0e09ca2b00d7",
+//     "date_created": "2024-11-04T02:12:52.893Z",
+//     "status": "PENDING",
+//     "amount": 70477.8
 //   },
 //   {
-//     "order_invoice_id": "1a7f26e6-bdd7-41cb-b4dd-61eec4f547d2",
-//     "user_id": "beb6dcdc-92d5-4bdf-8dfc-b7f39762df22",
-//     "order_id": "4db1fcb3-0d64-4868-ae9b-1f5c28a8aa03",
-//     "date_created": "2024-11-02T00:59:16.203Z",
+//     "order_invoice_id": "87286197-95a2-465e-9d3b-771aa2124c4a",
+//     "user_id": "c929e811-06ea-45db-bb7d-576af5baf7dd",
+//     "order_id": "dcf3336b-c64a-4095-a0c2-0745d6a93b15",
+//     "date_created": "2024-10-19T08:43:10.372Z",
 //     "status": "PAID",
-//     "amount": 32913.47
-//   },
-//   {
-//     "order_invoice_id": "165d4c90-5a6e-4b19-8b00-7ac52b8bf942",
-//     "user_id": "beb6dcdc-92d5-4bdf-8dfc-b7f39762df22",
-//     "order_id": "f313cae5-4a4b-4ec0-b2a9-9762693c5a9a",
-//     "date_created": "2023-12-26T02:34:14.118Z",
-//     "status": "PENDING",
-//     "amount": 967.06
+//     "amount": 394.26
 //   },
 //   {
-//     "order_invoice_id": "c10cf72f-9f93-496f-8b48-92aa9fb8617b",
-//     "user_id": "beb6dcdc-92d5-4bdf-8dfc-b7f39762df22",
-//     "order_id": "f55649c5-81bf-43f4-a7e0-07ca2898b1f3",
-//     "date_created": "2024-11-08T18:41:28.813Z",
+//     "order_invoice_id": "30990c4f-ad9a-46b1-8a7f-f29689c2cf0f",
+//     "user_id": "c929e811-06ea-45db-bb7d-576af5baf7dd",
+//     "order_id": "8bb76797-a875-42ab-bade-d145be0a24d3",
+//     "date_created": "2024-11-10T18:53:11.154Z",
 //     "status": "PENDING",
-//     "amount": 530966.77
+//     "amount": 59924.33
 //   },
 //   {
-//     "order_invoice_id": "2701f2fb-9ba7-4e67-9d65-b2e826df6809",
-//     "user_id": "beb6dcdc-92d5-4bdf-8dfc-b7f39762df22",
-//     "order_id": "a67a7eb7-81cd-4c1e-a36c-6b4fa5652551",
-//     "date_created": "2024-10-22T11:47:44.431Z",
+//     "order_invoice_id": "3f7148c7-edc1-4008-a51a-8212acf079da",
+//     "user_id": "c929e811-06ea-45db-bb7d-576af5baf7dd",
+//     "order_id": "0d1fa66d-6ef2-4bba-96b0-7eccd301fd32",
+//     "date_created": "2024-10-14T08:56:32.105Z",
 //     "status": "PAID",
-//     "amount": 299515.42
+//     "amount": 1096.69
 //   },
 //   {
-//     "order_invoice_id": "12dbeb85-dd1a-4604-aec9-64bdf826bc59",
-//     "user_id": "beb6dcdc-92d5-4bdf-8dfc-b7f39762df22",
-//     "order_id": "53a19a23-d940-4c82-a76a-94b73ee41b6a",
-//     "date_created": "2024-10-28T20:00:15.467Z",
+//     "order_invoice_id": "ee89b59c-495d-49f3-bc04-18a71f69fedc",
+//     "user_id": "c929e811-06ea-45db-bb7d-576af5baf7dd",
+//     "order_id": "b4571fc1-15e7-4369-bcae-5aa4d674fa7b",
+//     "date_created": "2024-11-08T18:51:34.599Z",
 //     "status": "PAID",
-//     "amount": 891627.42
+//     "amount": 901.22
 //   },
 //   {
-//     "order_invoice_id": "a64da9fc-834d-448f-bf88-a722445c542a",
-//     "user_id": "beb6dcdc-92d5-4bdf-8dfc-b7f39762df22",
-//     "order_id": "e722628b-e26c-4b2b-b0ac-05e88055e748",
-//     "date_created": "2024-11-08T05:46:15.777Z",
+//     "order_invoice_id": "f0756643-7752-4acb-8a40-802ee63417f1",
+//     "user_id": "c929e811-06ea-45db-bb7d-576af5baf7dd",
+//     "order_id": "5bb60d0d-e4ee-4036-9cd8-2a3a92b9b676",
+//     "date_created": "2024-11-10T11:31:50.810Z",
 //     "status": "PENDING",
-//     "amount": 487.26
+//     "amount": 555.93
 //   },
 //   {
-//     "order_invoice_id": "8ee67bfe-2e9e-42ec-9aa7-76cc083346ec",
-//     "user_id": "beb6dcdc-92d5-4bdf-8dfc-b7f39762df22",
-//     "order_id": "f68a4e88-e4e4-4d9d-96c2-7fa19ee4f907",
-//     "date_created": "2024-11-05T08:59:31.541Z",
+//     "order_invoice_id": "40550c2e-feb8-4e68-bb98-be272b0f0495",
+//     "user_id": "7f0c5617-94fd-4edb-bab9-eeb68ceebf2f",
+//     "order_id": "b7aa3df8-afc3-4505-a792-a5bc4c9664cd",
+//     "date_created": "2024-11-09T21:28:49.837Z",
 //     "status": "PENDING",
-//     "amount": 915.01
+//     "amount": 301.99
 //   },
 //   {
-//     "order_invoice_id": "28b50e7b-20f7-4503-a213-041d637acebd",
-//     "user_id": "beb6dcdc-92d5-4bdf-8dfc-b7f39762df22",
-//     "order_id": "ebb01f22-6c40-4d5f-9c8c-2073395b8d2b",
-//     "date_created": "2024-11-05T20:08:40.541Z",
+//     "order_invoice_id": "8d83d133-947a-4802-b5d4-b9c857289e2e",
+//     "user_id": "7f0c5617-94fd-4edb-bab9-eeb68ceebf2f",
+//     "order_id": "1ab26122-e3b1-4391-b120-1eba2a803159",
+//     "date_created": "2024-11-03T09:16:23.024Z",
 //     "status": "PAID",
-//     "amount": 171.89
-//   },
-//   {
-//     "order_invoice_id": "a67edcc5-87b2-4b7a-8d41-f6344b1a7935",
-//     "user_id": "beb6dcdc-92d5-4bdf-8dfc-b7f39762df22",
-//     "order_id": "8e22cc60-a9d0-43a1-9534-e48675bab629",
-//     "date_created": "2024-09-10T05:19:14.801Z",
-//     "status": "PENDING",
-//     "amount": 411.3
+//     "amount": 569112.18
 //   },
 //   {
-//     "order_invoice_id": "f161ca4c-dd8f-48ae-9127-bac634834993",
-//     "user_id": "beb6dcdc-92d5-4bdf-8dfc-b7f39762df22",
-//     "order_id": "6b70fb01-5320-45b8-a3f6-78d868c667db",
-//     "date_created": "2024-11-02T09:42:03.195Z",
+//     "order_invoice_id": "f71604ff-c84f-4cb9-8061-28859c865d78",
+//     "user_id": "7f0c5617-94fd-4edb-bab9-eeb68ceebf2f",
+//     "order_id": "a0af2e0c-f1b8-4778-be58-14c07695f0da",
+//     "date_created": "2024-11-07T11:50:07.818Z",
 //     "status": "PENDING",
-//     "amount": 1115.55
+//     "amount": 255367.59
 //   },
 //   {
-//     "order_invoice_id": "d79d9bc6-432f-4d3c-8e78-018e1a492fdc",
-//     "user_id": "beb6dcdc-92d5-4bdf-8dfc-b7f39762df22",
-//     "order_id": "7c0eeb9a-1207-4072-b801-687e138e16fd",
-//     "date_created": "2024-11-08T19:14:51.825Z",
+//     "order_invoice_id": "7a225ebe-51dd-4b10-b64a-6e1b5fccbed1",
+//     "user_id": "7f0c5617-94fd-4edb-bab9-eeb68ceebf2f",
+//     "order_id": "a7cb3173-ea9a-4e13-bf43-dfd814478b5b",
+//     "date_created": "2024-11-11T11:26:51.684Z",
 //     "status": "PENDING",
-//     "amount": 215.11
+//     "amount": 908097.78
 //   },
 //   {
-//     "order_invoice_id": "0a0d4fcd-6867-436e-b2a3-7c0a0cc4c235",
-//     "user_id": "beb6dcdc-92d5-4bdf-8dfc-b7f39762df22",
-//     "order_id": "345777ef-8897-4c4e-9d54-e90bc7edf117",
-//     "date_created": "2024-11-07T17:36:14.479Z",
+//     "order_invoice_id": "bc997a01-af2e-46d6-9fd2-9f0f3680adb7",
+//     "user_id": "7f0c5617-94fd-4edb-bab9-eeb68ceebf2f",
+//     "order_id": "0cbc1268-f166-4425-bb15-669aa6d5c635",
+//     "date_created": "2024-11-06T17:39:21.720Z",
 //     "status": "PAID",
-//     "amount": 457224.53
+//     "amount": 489.34
 //   },
 //   {
-//     "order_invoice_id": "5ed81c95-e83b-4feb-afc2-6786ac7961c1",
-//     "user_id": "beb6dcdc-92d5-4bdf-8dfc-b7f39762df22",
-//     "order_id": "a67e5a13-7473-4df9-b55e-7f9bfb2ad0fb",
-//     "date_created": "2024-11-03T08:55:12.521Z",
-//     "status": "PAID",
-//     "amount": 426.88
+//     "order_invoice_id": "1d2597e1-1da7-4239-946d-7c688d361b16",
+//     "user_id": "7f0c5617-94fd-4edb-bab9-eeb68ceebf2f",
+//     "order_id": "4d99f51a-df4c-4bd9-9051-24849901a87b",
+//     "date_created": "2024-10-25T08:25:14.819Z",
+//     "status": "PENDING",
+//     "amount": 916.61
 //   },
 //   {
-//     "order_invoice_id": "d9f3fec6-8933-438d-afd4-6bcc0b8e7809",
-//     "user_id": "beb6dcdc-92d5-4bdf-8dfc-b7f39762df22",
-//     "order_id": "8dc45bfb-d014-46cd-855e-95ccbc4c4dc0",
-//     "date_created": "2024-11-04T14:30:17.268Z",
+//     "order_invoice_id": "b59f1b9b-fe5e-4bdf-ba08-465aec727d86",
+//     "user_id": "7f0c5617-94fd-4edb-bab9-eeb68ceebf2f",
+//     "order_id": "eff9c1cb-6749-4ce3-9df9-18c007204cbd",
+//     "date_created": "2024-10-27T22:57:35.112Z",
 //     "status": "PAID",
-//     "amount": 508871.88
+//     "amount": 684036.62
 //   },
 //   {
-//     "order_invoice_id": "df10dc0d-df39-47a1-a97c-74266a204956",
-//     "user_id": "beb6dcdc-92d5-4bdf-8dfc-b7f39762df22",
-//     "order_id": "54ca4397-155c-4a8d-a012-4e6fdc9df453",
-//     "date_created": "2024-11-06T05:37:58.686Z",
+//     "order_invoice_id": "348dcc17-840f-4437-beac-0db0a15f235d",
+//     "user_id": "7f0c5617-94fd-4edb-bab9-eeb68ceebf2f",
+//     "order_id": "4f481ad5-1389-493e-96e3-55d5fcfcce92",
+//     "date_created": "2024-10-26T07:07:00.373Z",
 //     "status": "PENDING",
-//     "amount": 12418.24
+//     "amount": 888934.91
 //   },
 //   {
-//     "order_invoice_id": "15e7fbbb-b25e-407a-8adb-859cbe258530",
-//     "user_id": "beb6dcdc-92d5-4bdf-8dfc-b7f39762df22",
-//     "order_id": "4c987d7b-ffee-40d7-aa78-7508b1ea3674",
-//     "date_created": "2024-10-30T17:33:03.585Z",
+//     "order_invoice_id": "e364f797-c49a-4db3-832a-e218de1da2da",
+//     "user_id": "7f0c5617-94fd-4edb-bab9-eeb68ceebf2f",
+//     "order_id": "b6fcf2ff-e55a-4000-9ca6-a51ca6e4bee1",
+//     "date_created": "2024-10-30T09:28:08.421Z",
 //     "status": "PENDING",
-//     "amount": 677.66
+//     "amount": 211304.64
 //   },
 //   {
-//     "order_invoice_id": "1ebc97a7-f0ca-406f-a0c6-dd8c8964c2ef",
-//     "user_id": "beb6dcdc-92d5-4bdf-8dfc-b7f39762df22",
-//     "order_id": "308b8526-aacd-4cdc-9a2c-581bc5c03197",
-//     "date_created": "2024-10-29T04:01:46.253Z",
+//     "order_invoice_id": "c4e6adb0-59f6-4a00-90ba-48d9468be8cb",
+//     "user_id": "7f0c5617-94fd-4edb-bab9-eeb68ceebf2f",
+//     "order_id": "76d3a185-b9dd-439f-8ca1-c8133c692021",
+//     "date_created": "2024-10-15T15:07:06.833Z",
 //     "status": "PAID",
-//     "amount": 228745.12
+//     "amount": 361095.32
 //   },
 //   {
-//     "order_invoice_id": "600d8e3e-5bc5-4efd-90e4-f0bb98367f03",
-//     "user_id": "beb6dcdc-92d5-4bdf-8dfc-b7f39762df22",
-//     "order_id": "e2c2acf0-d200-4b0c-a4c3-bbb28716208a",
-//     "date_created": "2024-11-02T15:03:46.576Z",
-//     "status": "PENDING",
-//     "amount": 464182
+//     "order_invoice_id": "ffd02d2e-4a50-4666-a3d6-38e41891191f",
+//     "user_id": "7f0c5617-94fd-4edb-bab9-eeb68ceebf2f",
+//     "order_id": "473a311f-7e2f-45b5-bd70-0a2b592a3407",
+//     "date_created": "2024-10-23T00:46:31.681Z",
+//     "status": "PAID",
+//     "amount": 37422.69
 //   },
 //   {
-//     "order_invoice_id": "c20629cd-fc13-4a24-8225-dcfdfdce32f1",
-//     "user_id": "beb6dcdc-92d5-4bdf-8dfc-b7f39762df22",
-//     "order_id": "87fb55de-af81-4ba1-9fc1-00c82569aa4e",
-//     "date_created": "2024-10-21T18:23:13.958Z",
+//     "order_invoice_id": "333c1245-bba8-4c4c-b2e6-40c3cbf8c609",
+//     "user_id": "7f0c5617-94fd-4edb-bab9-eeb68ceebf2f",
+//     "order_id": "f8220cf8-ac1a-444b-b465-84957274ca63",
+//     "date_created": "2024-10-20T11:04:02.883Z",
 //     "status": "PAID",
-//     "amount": 875208.96
+//     "amount": 275111.36
 //   },
 //   {
-//     "order_invoice_id": "2825b401-3b21-487c-b658-fcae41fa0f53",
-//     "user_id": "beb6dcdc-92d5-4bdf-8dfc-b7f39762df22",
-//     "order_id": "42523dad-f7db-4bb3-bc8a-050d3cd5d60b",
-//     "date_created": "2024-10-30T03:33:26.949Z",
-//     "status": "PAID",
-//     "amount": 1079.1
+//     "order_invoice_id": "34987661-ae5f-4c29-a8ac-ff13cbb4ba8e",
+//     "user_id": "aaf39235-6b39-418f-acf6-ae8989f52942",
+//     "order_id": "7cf08ea8-4a0d-4239-b047-62ec2e710dae",
+//     "date_created": "2024-11-03T08:13:09.528Z",
+//     "status": "PENDING",
+//     "amount": 1098.75
 //   },
 //   {
-//     "order_invoice_id": "56f499ba-9bbc-4e32-b672-ba99dc2fff3e",
-//     "user_id": "beb6dcdc-92d5-4bdf-8dfc-b7f39762df22",
-//     "order_id": "bd927b9e-d62c-44e5-8ef1-58676914d4fd",
-//     "date_created": "2024-10-29T14:59:51.593Z",
+//     "order_invoice_id": "2b150840-75af-4452-aa6d-f5f73e0d279b",
+//     "user_id": "aaf39235-6b39-418f-acf6-ae8989f52942",
+//     "order_id": "71b8e45b-beb1-4284-a07c-4719d9457a38",
+//     "date_created": "2024-11-09T02:22:49.751Z",
 //     "status": "PENDING",
-//     "amount": 838.61
+//     "amount": 190.99
 //   },
 //   {
-//     "order_invoice_id": "2e920927-cb7c-4760-89fc-59b3db29bd91",
-//     "user_id": "896eb81a-e21a-4683-927f-0743bdf760dc",
-//     "order_id": "bd3c4af0-9969-4559-be2f-1a61eeb80789",
-//     "date_created": "2024-11-07T12:19:27.821Z",
+//     "order_invoice_id": "1625c34f-f9d3-4570-a530-095f80322012",
+//     "user_id": "aaf39235-6b39-418f-acf6-ae8989f52942",
+//     "order_id": "3de69d8f-8db2-47b0-b876-a6a95e426db4",
+//     "date_created": "2024-11-11T14:11:39.860Z",
 //     "status": "PENDING",
-//     "amount": 674.49
+//     "amount": 473.3
 //   },
 //   {
-//     "order_invoice_id": "331fd136-cdba-4d02-acf3-e39dce38182c",
-//     "user_id": "896eb81a-e21a-4683-927f-0743bdf760dc",
-//     "order_id": "18a4d905-24cf-45fa-bbf9-5c86651f3f97",
-//     "date_created": "2024-11-07T07:42:35.683Z",
+//     "order_invoice_id": "1bffefab-1ec0-45c2-ac89-33e35003fe4e",
+//     "user_id": "aaf39235-6b39-418f-acf6-ae8989f52942",
+//     "order_id": "7f39ac4e-4f44-4e04-9191-7690c2d7db34",
+//     "date_created": "2024-11-01T02:48:47.810Z",
 //     "status": "PENDING",
-//     "amount": 1007.18
+//     "amount": 399950.11
 //   },
 //   {
-//     "order_invoice_id": "822f7644-3b20-4b3f-b9e7-38d5c21e3501",
-//     "user_id": "896eb81a-e21a-4683-927f-0743bdf760dc",
-//     "order_id": "f5bd2832-757d-48d3-ae6e-1fcd8ed800cb",
-//     "date_created": "2024-10-29T10:23:06.340Z",
-//     "status": "PAID",
-//     "amount": 931806.05
+//     "order_invoice_id": "dce649a5-e7cf-4332-9be3-8ecaef1d1e81",
+//     "user_id": "f55c8c66-c26e-4dfd-8157-62042dfa21ee",
+//     "order_id": "e8ad3773-29cc-4911-a2b8-a8e1f72f3f3c",
+//     "date_created": "2024-11-01T02:20:09.041Z",
+//     "status": "PENDING",
+//     "amount": 162.71
 //   },
 //   {
-//     "order_invoice_id": "75c33302-6ff6-408d-b0f7-c1408be24264",
-//     "user_id": "896eb81a-e21a-4683-927f-0743bdf760dc",
-//     "order_id": "3d3aa5d1-29d5-4665-8ef4-ccd73931f50a",
-//     "date_created": "2024-10-06T11:22:35.501Z",
-//     "status": "PAID",
-//     "amount": 142.91
+//     "order_invoice_id": "31f377b9-6dd0-4ae2-90dd-ec946f64b23b",
+//     "user_id": "f55c8c66-c26e-4dfd-8157-62042dfa21ee",
+//     "order_id": "de7462c4-f7e9-4346-a96f-8983245c049d",
+//     "date_created": "2024-11-02T00:53:39.543Z",
+//     "status": "PENDING",
+//     "amount": 1119.18
 //   },
 //   {
-//     "order_invoice_id": "b1de118e-774e-4a30-b293-7b4bfe4c5463",
-//     "user_id": "896eb81a-e21a-4683-927f-0743bdf760dc",
-//     "order_id": "9120a836-c041-4224-9972-06ae39ed3f96",
-//     "date_created": "2024-10-29T05:40:05.376Z",
+//     "order_invoice_id": "0ee92c46-e4af-426a-9e30-ed91cabe9747",
+//     "user_id": "f55c8c66-c26e-4dfd-8157-62042dfa21ee",
+//     "order_id": "f723cc7f-59ea-4241-b62a-478bfd4d0bc3",
+//     "date_created": "2024-11-09T08:57:09.062Z",
 //     "status": "PENDING",
-//     "amount": 103392.45
+//     "amount": 1040.46
 //   },
 //   {
-//     "order_invoice_id": "75f9eb91-dcdf-4a57-89bf-bf7cd92c3b09",
-//     "user_id": "896eb81a-e21a-4683-927f-0743bdf760dc",
-//     "order_id": "a8d498c4-0f65-495e-a7f9-229ba2ad675f",
-//     "date_created": "2024-08-08T15:40:35.935Z",
+//     "order_invoice_id": "20b5c2c9-cd02-47b5-b1ea-b5b05835014b",
+//     "user_id": "f55c8c66-c26e-4dfd-8157-62042dfa21ee",
+//     "order_id": "f6a04e26-786d-40c4-a305-5f3949745ce9",
+//     "date_created": "2024-11-08T23:31:07.764Z",
 //     "status": "PAID",
-//     "amount": 451823.89
+//     "amount": 1051.4
 //   },
 //   {
-//     "order_invoice_id": "2c271073-6374-4178-9f35-e0710d4e10d6",
-//     "user_id": "896eb81a-e21a-4683-927f-0743bdf760dc",
-//     "order_id": "6d2a6187-8744-4754-ab34-44b8967a602b",
-//     "date_created": "2024-11-06T05:00:06.697Z",
-//     "status": "PAID",
-//     "amount": 944.51
+//     "order_invoice_id": "6c71f142-7f08-460a-9791-8da75abc187a",
+//     "user_id": "f55c8c66-c26e-4dfd-8157-62042dfa21ee",
+//     "order_id": "88e743c7-7be0-4839-b071-a6a6f483bc8c",
+//     "date_created": "2024-11-07T17:21:42.905Z",
+//     "status": "PENDING",
+//     "amount": 864558.02
 //   },
 //   {
-//     "order_invoice_id": "3903388b-a1cc-431c-87ef-252abba1149f",
-//     "user_id": "896eb81a-e21a-4683-927f-0743bdf760dc",
-//     "order_id": "906bb97f-f7de-4d92-8279-f5b0076c672e",
-//     "date_created": "2024-10-13T09:44:28.214Z",
+//     "order_invoice_id": "bb5806e2-76a2-462a-aacb-443fe7d55022",
+//     "user_id": "f55c8c66-c26e-4dfd-8157-62042dfa21ee",
+//     "order_id": "8238dc30-8691-4afc-8fe4-67452896b682",
+//     "date_created": "2024-11-11T08:12:32.024Z",
 //     "status": "PAID",
-//     "amount": 705496.31
+//     "amount": 216.89
 //   },
 //   {
-//     "order_invoice_id": "bb9bcafd-4112-4c36-9894-4c5a2b6b32c3",
-//     "user_id": "896eb81a-e21a-4683-927f-0743bdf760dc",
-//     "order_id": "73ff963c-cd92-4371-a38f-27cd13440af9",
-//     "date_created": "2024-10-09T20:39:23.521Z",
+//     "order_invoice_id": "4ddde6ba-a522-450a-b0f1-181af692ad8a",
+//     "user_id": "f55c8c66-c26e-4dfd-8157-62042dfa21ee",
+//     "order_id": "80ca6396-e5e9-4fb4-81c9-75866929dffe",
+//     "date_created": "2024-11-10T22:17:27.989Z",
 //     "status": "PENDING",
-//     "amount": 579.7
+//     "amount": 838655.24
 //   },
 //   {
-//     "order_invoice_id": "4d936229-0f90-45b6-8bda-18c666b3a413",
-//     "user_id": "b1aae693-32bf-4357-9d18-65702f9d9be1",
-//     "order_id": "5ca0df32-1eab-44bf-a212-1b2f1e9710ea",
-//     "date_created": "2024-10-23T04:00:40.122Z",
+//     "order_invoice_id": "a8f044b8-70a2-4866-8873-dc8be45692aa",
+//     "user_id": "f55c8c66-c26e-4dfd-8157-62042dfa21ee",
+//     "order_id": "115772ab-d749-4d71-89f6-0391cab8163a",
+//     "date_created": "2024-11-05T22:14:27.449Z",
 //     "status": "PENDING",
-//     "amount": 103403.17
+//     "amount": 358.76
 //   },
 //   {
-//     "order_invoice_id": "ffc6ee43-fc2e-42a9-b92d-0aa4f8f00746",
-//     "user_id": "b1aae693-32bf-4357-9d18-65702f9d9be1",
-//     "order_id": "9cc9a616-ffeb-4410-8520-2c45dc1a2e17",
-//     "date_created": "2024-11-08T07:42:52.033Z",
+//     "order_invoice_id": "b0ef600d-f151-446f-83e7-c509bff205f5",
+//     "user_id": "f55c8c66-c26e-4dfd-8157-62042dfa21ee",
+//     "order_id": "129ee1f0-c4c2-4f7d-bf44-ce940cd1f343",
+//     "date_created": "2024-11-09T12:53:02.421Z",
 //     "status": "PENDING",
-//     "amount": 837122.5
-//   },
-//   {
-//     "order_invoice_id": "a91bbff4-845d-4e9c-b5d1-393804b41217",
-//     "user_id": "b1aae693-32bf-4357-9d18-65702f9d9be1",
-//     "order_id": "e30d5c22-1cbf-4bc4-b2cf-a1a7b7da3887",
-//     "date_created": "2024-11-07T05:42:49.149Z",
-//     "status": "PAID",
-//     "amount": 533463.31
-//   },
-//   {
-//     "order_invoice_id": "612d948f-101f-4c42-86dc-af2a99b4b809",
-//     "user_id": "b1aae693-32bf-4357-9d18-65702f9d9be1",
-//     "order_id": "3cecba6e-c09d-4347-99e8-1a3fc7099b0d",
-//     "date_created": "2024-11-06T21:06:56.278Z",
-//     "status": "PAID",
-//     "amount": 999.21
-//   },
-//   {
-//     "order_invoice_id": "f556bbef-43e9-4910-afb1-79f02abfc8be",
-//     "user_id": "b1aae693-32bf-4357-9d18-65702f9d9be1",
-//     "order_id": "37326508-f6af-48d1-8dcc-b00fdc5dd5df",
-//     "date_created": "2024-11-05T12:30:56.715Z",
-//     "status": "PAID",
-//     "amount": 368762.04
+//     "amount": 342.25
 //   },
 //   {
-//     "order_invoice_id": "d1898a5c-c54a-4f76-98fb-602f5375cb5e",
-//     "user_id": "b1aae693-32bf-4357-9d18-65702f9d9be1",
-//     "order_id": "00f228e0-c891-41e0-9428-4c5ee93372fd",
-//     "date_created": "2024-11-07T01:31:12.158Z",
+//     "order_invoice_id": "862f68b3-c4e8-42cf-ada9-002d66aaf633",
+//     "user_id": "f55c8c66-c26e-4dfd-8157-62042dfa21ee",
+//     "order_id": "00b0541e-98f3-40eb-b945-90082af27abb",
+//     "date_created": "2024-10-06T00:03:03.651Z",
 //     "status": "PENDING",
-//     "amount": 810234.94
+//     "amount": 399293.27
 //   },
 //   {
-//     "order_invoice_id": "49ec7725-e599-4bf3-a70c-c141ba46965e",
-//     "user_id": "b1aae693-32bf-4357-9d18-65702f9d9be1",
-//     "order_id": "5c6eb213-8248-49e5-8476-8289a4284449",
-//     "date_created": "2024-11-03T19:00:45.031Z",
+//     "order_invoice_id": "8ab3919f-9a67-48d2-88ab-58c9fc650fd0",
+//     "user_id": "f55c8c66-c26e-4dfd-8157-62042dfa21ee",
+//     "order_id": "b1d632df-5f59-4aa9-84ed-197a5a1bae09",
+//     "date_created": "2024-11-11T13:20:30.948Z",
 //     "status": "PAID",
-//     "amount": 587.28
+//     "amount": 648.2
 //   },
 //   {
-//     "order_invoice_id": "2bab8408-78ed-4a0f-8870-3e1417ee190c",
-//     "user_id": "b1aae693-32bf-4357-9d18-65702f9d9be1",
-//     "order_id": "483e9b2a-c26b-4e5f-a53b-b24f068135d1",
-//     "date_created": "2024-10-30T22:01:58.790Z",
-//     "status": "PENDING",
-//     "amount": 966.83
-//   },
-//   {
-//     "order_invoice_id": "e1985531-b926-4bde-bbeb-cddf09eeb952",
-//     "user_id": "b1aae693-32bf-4357-9d18-65702f9d9be1",
-//     "order_id": "96138f0b-8568-46c0-8012-dc594ed356e3",
-//     "date_created": "2024-10-28T06:38:00.670Z",
+//     "order_invoice_id": "989d8c3a-dceb-4100-bc30-b7d239fbbc74",
+//     "user_id": "f55c8c66-c26e-4dfd-8157-62042dfa21ee",
+//     "order_id": "edebe917-691a-4f7b-a8dd-4cd314da4ec9",
+//     "date_created": "2024-10-28T05:01:05.372Z",
 //     "status": "PAID",
-//     "amount": 84856.31
-//   },
-//   {
-//     "order_invoice_id": "a683a047-86ca-4b72-b1fc-41a2ed9e06c4",
-//     "user_id": "b1aae693-32bf-4357-9d18-65702f9d9be1",
-//     "order_id": "51f0bb84-c942-410e-a921-0c5d9d0dc857",
-//     "date_created": "2024-10-29T14:08:21.460Z",
-//     "status": "PENDING",
-//     "amount": 409.3
+//     "amount": 311743.54
 //   },
 //   {
-//     "order_invoice_id": "aba78950-03be-4e50-9a33-1ec0d4eee394",
-//     "user_id": "b1aae693-32bf-4357-9d18-65702f9d9be1",
-//     "order_id": "f7be12a4-3f15-4df9-8936-3b023b55b9c3",
-//     "date_created": "2024-11-04T17:03:31.162Z",
+//     "order_invoice_id": "18399609-7ca7-41f7-b936-3fed06a28bd7",
+//     "user_id": "f55c8c66-c26e-4dfd-8157-62042dfa21ee",
+//     "order_id": "7c5afef9-4ed9-4221-90bf-60252ff9e4f6",
+//     "date_created": "2024-11-04T03:22:02.207Z",
 //     "status": "PENDING",
-//     "amount": 334.33
+//     "amount": 866029.65
 //   },
 //   {
-//     "order_invoice_id": "5f47b9cf-820f-4468-8a7e-760fa9949bf5",
-//     "user_id": "b1aae693-32bf-4357-9d18-65702f9d9be1",
-//     "order_id": "48b2dbb0-693a-4eca-9b14-6bdb1d924b6d",
-//     "date_created": "2024-11-01T12:54:24.073Z",
+//     "order_invoice_id": "8ec07bbe-a516-49a7-981f-ed718b7fbdc3",
+//     "user_id": "f55c8c66-c26e-4dfd-8157-62042dfa21ee",
+//     "order_id": "57b00d16-de0a-401e-8e25-86f9eb60c195",
+//     "date_created": "2024-11-03T12:12:16.449Z",
 //     "status": "PAID",
-//     "amount": 864.06
+//     "amount": 470239.32
 //   },
 //   {
-//     "order_invoice_id": "b45dc197-c4d1-4725-b82c-556d4cd282a1",
-//     "user_id": "b1aae693-32bf-4357-9d18-65702f9d9be1",
-//     "order_id": "621b0e84-75db-4197-8694-9aae2a5073be",
-//     "date_created": "2024-11-02T11:55:30.516Z",
+//     "order_invoice_id": "ba576df5-240d-482e-bc04-54bb26d431ff",
+//     "user_id": "f55c8c66-c26e-4dfd-8157-62042dfa21ee",
+//     "order_id": "12b043d3-a146-47c2-8d9d-5f3eb00daeb8",
+//     "date_created": "2024-10-27T06:12:09.669Z",
 //     "status": "PAID",
-//     "amount": 568846.92
+//     "amount": 606.91
 //   },
 //   {
-//     "order_invoice_id": "64b67f96-9113-4b5b-9f51-d11cf68228ef",
-//     "user_id": "b1aae693-32bf-4357-9d18-65702f9d9be1",
-//     "order_id": "819f3a21-ece4-4589-88c9-2ca562e0d354",
-//     "date_created": "2024-10-31T10:46:19.622Z",
+//     "order_invoice_id": "c752d0bb-7f94-4654-b5ab-31222aa578f5",
+//     "user_id": "f55c8c66-c26e-4dfd-8157-62042dfa21ee",
+//     "order_id": "2fbaf3cc-241c-4b7f-b8c9-54526c72efe9",
+//     "date_created": "2024-11-10T03:01:12.194Z",
 //     "status": "PAID",
-//     "amount": 483.31
+//     "amount": 915.99
 //   },
 //   {
-//     "order_invoice_id": "37a4a7c1-d22d-45f9-8522-097d27dc7e89",
-//     "user_id": "b1aae693-32bf-4357-9d18-65702f9d9be1",
-//     "order_id": "64076f7c-851f-470b-999c-fd2d9bec9806",
-//     "date_created": "2024-11-04T13:42:22.063Z",
+//     "order_invoice_id": "510202f0-c5a9-458b-a776-3eceea334137",
+//     "user_id": "f55c8c66-c26e-4dfd-8157-62042dfa21ee",
+//     "order_id": "8019388e-c30e-4996-9cb2-99fd11263029",
+//     "date_created": "2024-11-05T08:30:33.435Z",
 //     "status": "PAID",
-//     "amount": 339002.75
+//     "amount": 704.09
 //   },
 //   {
-//     "order_invoice_id": "39968d84-c2ff-47c4-a59d-d5ed29a4de78",
-//     "user_id": "b1aae693-32bf-4357-9d18-65702f9d9be1",
-//     "order_id": "d93f3169-ea2f-4370-8262-0e8d48ad1de0",
-//     "date_created": "2024-10-09T10:54:50.007Z",
+//     "order_invoice_id": "99b33f61-8a84-4855-b898-e23a716a19ba",
+//     "user_id": "f55c8c66-c26e-4dfd-8157-62042dfa21ee",
+//     "order_id": "0258c0b9-993a-4f0e-b07a-187cc0cfc95f",
+//     "date_created": "2024-11-10T09:06:42.692Z",
 //     "status": "PENDING",
-//     "amount": 223051.31
+//     "amount": 355.54
 //   },
 //   {
-//     "order_invoice_id": "eb258163-31ae-4da1-be8b-fae1e8a34281",
-//     "user_id": "7f5e43db-9971-4633-92e2-e0a35b71caa5",
-//     "order_id": "a82d62c8-83e8-4987-9857-69d351456880",
-//     "date_created": "2024-10-13T12:22:58.465Z",
+//     "order_invoice_id": "5a609458-84ff-4164-bee5-ecf0edf6029c",
+//     "user_id": "f55c8c66-c26e-4dfd-8157-62042dfa21ee",
+//     "order_id": "cee960b6-8120-4b13-b47c-761e38aa34e2",
+//     "date_created": "2024-09-22T01:28:25.127Z",
 //     "status": "PENDING",
-//     "amount": 497067.41
+//     "amount": 644213.95
 //   },
 //   {
-//     "order_invoice_id": "51e90b53-ba30-44e5-bd11-389f8e78161e",
-//     "user_id": "7f5e43db-9971-4633-92e2-e0a35b71caa5",
-//     "order_id": "468c7c14-ffd6-43fe-a687-e0944bb9288d",
-//     "date_created": "2024-11-03T04:45:23.616Z",
+//     "order_invoice_id": "6eca778f-2b7d-40d5-92a3-c9ae277c6f08",
+//     "user_id": "f55c8c66-c26e-4dfd-8157-62042dfa21ee",
+//     "order_id": "85ec2057-d9cf-4162-b2eb-c299a4c5e6ca",
+//     "date_created": "2024-11-02T15:47:42.708Z",
 //     "status": "PENDING",
-//     "amount": 789.91
+//     "amount": 393209.47
 //   },
 //   {
-//     "order_invoice_id": "07e484a1-dd80-4efa-8dcf-9dcb09046ebb",
-//     "user_id": "7f5e43db-9971-4633-92e2-e0a35b71caa5",
-//     "order_id": "de6fcbbc-6153-4658-8aae-edb61221bddd",
-//     "date_created": "2024-08-14T08:27:06.497Z",
+//     "order_invoice_id": "7aad960e-937a-4fb3-b4b0-c715428c84cf",
+//     "user_id": "f55c8c66-c26e-4dfd-8157-62042dfa21ee",
+//     "order_id": "1061330c-66b9-458e-9823-84bace94eb8f",
+//     "date_created": "2024-11-07T08:59:25.904Z",
 //     "status": "PENDING",
-//     "amount": 172970.76
+//     "amount": 755809.22
 //   },
 //   {
-//     "order_invoice_id": "ad9a2a8c-bc81-41e1-920e-15aae576744a",
-//     "user_id": "7f5e43db-9971-4633-92e2-e0a35b71caa5",
-//     "order_id": "6f02514a-ab6e-49c0-be91-dc6f9e2abbbf",
-//     "date_created": "2024-10-24T22:18:14.109Z",
+//     "order_invoice_id": "fbe9e365-096c-451c-b931-491af19e0de8",
+//     "user_id": "f55c8c66-c26e-4dfd-8157-62042dfa21ee",
+//     "order_id": "b1acc15f-71da-48a4-90cd-9c3b72966fff",
+//     "date_created": "2024-11-10T08:36:15.231Z",
 //     "status": "PAID",
-//     "amount": 313843.15
+//     "amount": 865743.75
 //   },
 //   {
-//     "order_invoice_id": "b7917754-f926-470d-8b43-967427f391d4",
-//     "user_id": "7f5e43db-9971-4633-92e2-e0a35b71caa5",
-//     "order_id": "59f41969-e8fc-435d-96a5-7cfc0e00c966",
-//     "date_created": "2024-11-07T10:50:15.709Z",
-//     "status": "PENDING",
-//     "amount": 636779.23
+//     "order_invoice_id": "f0ac29d6-5a47-48d0-aa16-13a50ce45eef",
+//     "user_id": "f55c8c66-c26e-4dfd-8157-62042dfa21ee",
+//     "order_id": "d49f0dc4-405e-443c-8094-bad80906352e",
+//     "date_created": "2024-11-02T01:48:08.853Z",
+//     "status": "PAID",
+//     "amount": 348338.49
 //   },
 //   {
-//     "order_invoice_id": "e96c61c8-2f8b-4318-9514-b9e50888dee2",
-//     "user_id": "7f5e43db-9971-4633-92e2-e0a35b71caa5",
-//     "order_id": "2ee02357-6a9d-483a-823a-afb33820d3c6",
-//     "date_created": "2024-11-05T23:24:31.338Z",
+//     "order_invoice_id": "010b026a-9d97-4a15-938c-52fce155d2a4",
+//     "user_id": "f93a6ce2-7591-4558-b16f-1cc6c9c2c188",
+//     "order_id": "255064c4-28f1-4a2d-8ebe-b875c67e5217",
+//     "date_created": "2024-10-12T21:41:06.739Z",
 //     "status": "PENDING",
-//     "amount": 617983.01
+//     "amount": 133528.59
 //   },
 //   {
-//     "order_invoice_id": "e12d49a3-44a5-4bad-878c-82100e370c73",
-//     "user_id": "7f5e43db-9971-4633-92e2-e0a35b71caa5",
-//     "order_id": "9524f3e7-a364-43b3-a67a-85a5de6aa87e",
-//     "date_created": "2024-11-08T15:33:39.634Z",
+//     "order_invoice_id": "721785a5-f3ea-4533-82c8-405bc0fa0edc",
+//     "user_id": "f93a6ce2-7591-4558-b16f-1cc6c9c2c188",
+//     "order_id": "28f7e920-ef55-41f5-8650-e0ece5c26f02",
+//     "date_created": "2024-10-31T02:27:14.554Z",
 //     "status": "PENDING",
-//     "amount": 411.84
+//     "amount": 99883.41
 //   },
 //   {
-//     "order_invoice_id": "210d41f8-3696-4de0-b5fb-0c29b205c4f2",
-//     "user_id": "7f5e43db-9971-4633-92e2-e0a35b71caa5",
-//     "order_id": "c77c56c7-e046-4442-8751-2e56921f450f",
-//     "date_created": "2024-11-08T19:08:57.915Z",
+//     "order_invoice_id": "9591e64b-fcdc-4c0f-81bd-5b9b529e8ff9",
+//     "user_id": "f93a6ce2-7591-4558-b16f-1cc6c9c2c188",
+//     "order_id": "9fb06bb4-856e-48a3-ac13-9f42041332a9",
+//     "date_created": "2024-11-05T17:28:45.875Z",
 //     "status": "PAID",
-//     "amount": 814297.65
+//     "amount": 210.65
 //   },
 //   {
-//     "order_invoice_id": "a3d4db8b-6259-4f1c-8bb0-5d83e7ee9458",
-//     "user_id": "7f5e43db-9971-4633-92e2-e0a35b71caa5",
-//     "order_id": "8ff5034a-a8c4-47c8-b457-4779e779d94f",
-//     "date_created": "2024-10-19T20:01:48.262Z",
-//     "status": "PENDING",
-//     "amount": 236.23
+//     "order_invoice_id": "c7c1e99d-a8f8-431b-a510-e06a51036e32",
+//     "user_id": "6b4ddc0b-7655-4569-bae9-ce756ed0b884",
+//     "order_id": "288358d9-84b8-4cf2-90f4-de73dbccc56c",
+//     "date_created": "2024-11-11T12:15:36.432Z",
+//     "status": "PAID",
+//     "amount": 850139.95
 //   },
 //   {
-//     "order_invoice_id": "a7dc70ba-3404-4591-9cdb-476d15f3ec49",
-//     "user_id": "7f5e43db-9971-4633-92e2-e0a35b71caa5",
-//     "order_id": "d42a138c-3452-4228-8234-9a4e3c3fa448",
-//     "date_created": "2024-10-31T15:46:43.056Z",
+//     "order_invoice_id": "b981e207-a478-4a68-b1e2-7d67211e7299",
+//     "user_id": "6b4ddc0b-7655-4569-bae9-ce756ed0b884",
+//     "order_id": "76fb9456-0708-4840-b3c9-63ba3c857d28",
+//     "date_created": "2024-11-04T10:14:40.082Z",
 //     "status": "PAID",
-//     "amount": 965.45
+//     "amount": 523902.89
 //   },
 //   {
-//     "order_invoice_id": "8da552de-0c76-4cbe-94bc-635092ef0ef7",
-//     "user_id": "7f5e43db-9971-4633-92e2-e0a35b71caa5",
-//     "order_id": "2ee70860-bd23-4fa4-ad23-869f47649a8c",
-//     "date_created": "2024-11-05T05:53:04.562Z",
+//     "order_invoice_id": "74118567-a442-42cf-88fb-f466b518675a",
+//     "user_id": "6b4ddc0b-7655-4569-bae9-ce756ed0b884",
+//     "order_id": "67816781-e4c3-4a4e-b1f8-65fe07a537c8",
+//     "date_created": "2024-11-10T23:57:27.357Z",
 //     "status": "PENDING",
-//     "amount": 844533.12
+//     "amount": 469449.36
 //   },
 //   {
-//     "order_invoice_id": "239e624a-3202-47af-97bd-6db724389046",
-//     "user_id": "792d71cc-c78d-47c5-8af0-46ea1dcc3c03",
-//     "order_id": "e84b83ba-a7a8-4222-9cd7-37f476bf7a6b",
-//     "date_created": "2024-11-05T03:11:44.091Z",
+//     "order_invoice_id": "dfe4daea-8908-42bf-940c-a6712e094f38",
+//     "user_id": "6b4ddc0b-7655-4569-bae9-ce756ed0b884",
+//     "order_id": "33501b2f-877f-45a1-8e34-7118b5c6c119",
+//     "date_created": "2024-10-21T05:53:47.203Z",
 //     "status": "PAID",
-//     "amount": 521814.82
-//   },
-//   {
-//     "order_invoice_id": "b267ee48-c10c-4c1b-9a8d-91629f9f357c",
-//     "user_id": "792d71cc-c78d-47c5-8af0-46ea1dcc3c03",
-//     "order_id": "e8b66785-4170-4112-ae7a-c4ab20fb3b9a",
-//     "date_created": "2024-11-01T04:00:11.867Z",
-//     "status": "PENDING",
-//     "amount": 1002.39
+//     "amount": 747801.52
 //   },
 //   {
-//     "order_invoice_id": "f5ea9fb8-6f0f-4e74-95d6-36e6bcb0d03a",
-//     "user_id": "792d71cc-c78d-47c5-8af0-46ea1dcc3c03",
-//     "order_id": "4348d7a0-7f46-4d2f-a831-7fdc8b380933",
-//     "date_created": "2024-10-31T01:32:32.914Z",
+//     "order_invoice_id": "bcbd6b82-924b-462f-948d-babf957c2422",
+//     "user_id": "6b4ddc0b-7655-4569-bae9-ce756ed0b884",
+//     "order_id": "6ce79305-f35c-46a8-a359-aa0b5d134b5c",
+//     "date_created": "2024-10-08T23:00:03.113Z",
 //     "status": "PAID",
-//     "amount": 410562.65
+//     "amount": 223455.56
 //   },
 //   {
-//     "order_invoice_id": "5bdfbe92-5397-4d09-91fa-559bfef7bb5a",
-//     "user_id": "792d71cc-c78d-47c5-8af0-46ea1dcc3c03",
-//     "order_id": "696fd7ad-3234-4a8c-a0e9-9e923c36251a",
-//     "date_created": "2024-10-18T13:04:30.408Z",
-//     "status": "PENDING",
-//     "amount": 229.01
+//     "order_invoice_id": "aa017e6a-87c8-4fc1-a87a-889f4bb8f816",
+//     "user_id": "6b4ddc0b-7655-4569-bae9-ce756ed0b884",
+//     "order_id": "63eacc4d-da05-40a1-b59e-3bc877dac728",
+//     "date_created": "2024-10-29T00:23:41.164Z",
+//     "status": "PAID",
+//     "amount": 205.74
 //   },
 //   {
-//     "order_invoice_id": "f20e343d-8fb7-4146-b0d8-ad454e0b247c",
-//     "user_id": "792d71cc-c78d-47c5-8af0-46ea1dcc3c03",
-//     "order_id": "3c6e484e-e187-4cd3-8ccf-56a474d112be",
-//     "date_created": "2024-11-06T08:34:31.010Z",
+//     "order_invoice_id": "b3735605-1b3e-46a9-99f0-78f14541f8dd",
+//     "user_id": "6b4ddc0b-7655-4569-bae9-ce756ed0b884",
+//     "order_id": "d25c9c71-0251-4958-b3d7-ba57cca8f151",
+//     "date_created": "2024-10-27T08:10:09.034Z",
 //     "status": "PENDING",
-//     "amount": 448.22
+//     "amount": 182.87
 //   },
 //   {
-//     "order_invoice_id": "e4d2f5d8-75a5-4d88-bbdc-2509de29b5db",
-//     "user_id": "792d71cc-c78d-47c5-8af0-46ea1dcc3c03",
-//     "order_id": "837634ef-372a-4fbc-9003-0dca91bf9f3d",
-//     "date_created": "2024-11-08T01:00:18.219Z",
+//     "order_invoice_id": "f49e6141-62e1-423f-8f68-5f1188be5859",
+//     "user_id": "6b4ddc0b-7655-4569-bae9-ce756ed0b884",
+//     "order_id": "0d40cef8-3571-4b61-94c0-6ef16a050d18",
+//     "date_created": "2024-11-08T02:05:57.340Z",
 //     "status": "PENDING",
-//     "amount": 1061.49
+//     "amount": 354.93
 //   },
 //   {
-//     "order_invoice_id": "0064906b-59e2-4f94-83df-f828444d5888",
-//     "user_id": "792d71cc-c78d-47c5-8af0-46ea1dcc3c03",
-//     "order_id": "3ec4cced-d7a7-41b7-a291-d6a925141882",
-//     "date_created": "2024-11-03T20:48:56.855Z",
+//     "order_invoice_id": "dab86f96-937d-4d4c-9467-3d59fe3331d3",
+//     "user_id": "6b4ddc0b-7655-4569-bae9-ce756ed0b884",
+//     "order_id": "62763db4-575f-406f-8f74-3e55aaf34dcb",
+//     "date_created": "2024-11-10T14:12:47.295Z",
 //     "status": "PENDING",
-//     "amount": 305.91
+//     "amount": 922286.45
 //   },
 //   {
-//     "order_invoice_id": "e84a0b92-17f1-4b77-b3fd-9cab1ec3a82a",
-//     "user_id": "e6612619-2f0e-4770-94a2-82953a2ff3c2",
-//     "order_id": "3dc74ad3-02a0-478c-ae7a-1945ff78805a",
-//     "date_created": "2024-11-06T08:10:50.405Z",
+//     "order_invoice_id": "244d3127-8842-4cb8-b9e3-13ff857042d0",
+//     "user_id": "df3be787-f5f4-4892-a829-170e9838743b",
+//     "order_id": "eb42ca08-a48d-487e-af4e-b87df9411905",
+//     "date_created": "2024-11-08T20:16:18.787Z",
 //     "status": "PENDING",
-//     "amount": 924613.52
+//     "amount": 523096.23
 //   },
 //   {
-//     "order_invoice_id": "be3d3f71-caf7-4bb1-8ee5-0a13d5786e70",
-//     "user_id": "e6612619-2f0e-4770-94a2-82953a2ff3c2",
-//     "order_id": "3514438c-06be-46e2-aee0-8725a9504776",
-//     "date_created": "2024-11-08T18:42:02.095Z",
-//     "status": "PENDING",
-//     "amount": 391446.81
+//     "order_invoice_id": "c76ce2a0-2f74-41a4-bfed-f5579d196702",
+//     "user_id": "df3be787-f5f4-4892-a829-170e9838743b",
+//     "order_id": "a0f7696c-f4e6-4a1a-b578-254f28ac62f9",
+//     "date_created": "2024-11-11T12:00:12.053Z",
+//     "status": "PAID",
+//     "amount": 865.7
 //   },
 //   {
-//     "order_invoice_id": "53cd94eb-f9a5-491d-b212-8850682e81e1",
-//     "user_id": "e6612619-2f0e-4770-94a2-82953a2ff3c2",
-//     "order_id": "a99a2ca5-02c3-4660-8e4c-386a6f6b5574",
-//     "date_created": "2024-10-18T15:32:51.725Z",
+//     "order_invoice_id": "63a85d82-09e6-4625-bff3-24581cfa162c",
+//     "user_id": "df3be787-f5f4-4892-a829-170e9838743b",
+//     "order_id": "427e9527-516a-4dc9-953b-6fe344cd73bd",
+//     "date_created": "2024-11-07T10:22:46.440Z",
 //     "status": "PAID",
-//     "amount": 66390.8
+//     "amount": 773389.08
 //   },
 //   {
-//     "order_invoice_id": "a446f521-bd2f-4e4b-8c45-63c94613a029",
-//     "user_id": "e6612619-2f0e-4770-94a2-82953a2ff3c2",
-//     "order_id": "7a411736-f12d-458d-b9a0-cd8e556744c0",
-//     "date_created": "2024-10-17T20:07:52.112Z",
+//     "order_invoice_id": "5075e3c1-94a1-4a02-b6ae-99625f6e7c96",
+//     "user_id": "df3be787-f5f4-4892-a829-170e9838743b",
+//     "order_id": "24ea840a-4f2c-43de-8872-ddae8f525930",
+//     "date_created": "2024-11-09T06:37:14.716Z",
 //     "status": "PENDING",
-//     "amount": 699.73
+//     "amount": 412.8
 //   },
 //   {
-//     "order_invoice_id": "cb2942df-a590-4ee4-8450-3f89eaa90deb",
-//     "user_id": "e6612619-2f0e-4770-94a2-82953a2ff3c2",
-//     "order_id": "ab25e62e-27dd-4351-87ba-da4e2b0e223e",
-//     "date_created": "2024-11-02T07:41:26.481Z",
-//     "status": "PAID",
-//     "amount": 979195.35
-//   },
-//   {
-//     "order_invoice_id": "4233cf7b-2ea4-4e3e-a563-959c3b6bf312",
-//     "user_id": "dca189db-b20c-4d9f-a0e3-b6ed28ca1840",
-//     "order_id": "b3db90c2-1d0f-4621-9659-979fbdfa4d66",
-//     "date_created": "2024-11-04T02:23:35.625Z",
+//     "order_invoice_id": "b599fb99-06f3-4b95-bd7a-caa0f720f46f",
+//     "user_id": "df3be787-f5f4-4892-a829-170e9838743b",
+//     "order_id": "97f6ad72-567b-4c1a-99fe-1626dbdeaa8a",
+//     "date_created": "2024-11-10T07:02:37.377Z",
 //     "status": "PENDING",
-//     "amount": 938770.54
+//     "amount": 780775.72
 //   },
 //   {
-//     "order_invoice_id": "2db52cda-9d86-4dab-bcfd-10b560e06cdf",
-//     "user_id": "dca189db-b20c-4d9f-a0e3-b6ed28ca1840",
-//     "order_id": "adb13aa3-1804-46fc-a46a-69afad0acd4d",
-//     "date_created": "2024-10-25T04:02:20.475Z",
+//     "order_invoice_id": "f0cbc5bd-2b01-42e4-bc67-82846cb01b61",
+//     "user_id": "df3be787-f5f4-4892-a829-170e9838743b",
+//     "order_id": "01024c9b-910b-4a36-acb2-e811a007830b",
+//     "date_created": "2024-11-04T08:01:15.363Z",
 //     "status": "PAID",
-//     "amount": 655.86
+//     "amount": 611757.27
 //   },
 //   {
-//     "order_invoice_id": "173c3e13-0233-4da0-b944-0a476829dbea",
-//     "user_id": "dca189db-b20c-4d9f-a0e3-b6ed28ca1840",
-//     "order_id": "7538b8d1-fb15-44c3-9657-d75a0c7e77e3",
-//     "date_created": "2024-10-24T14:45:17.278Z",
+//     "order_invoice_id": "ccf65ae3-4439-4ae7-abf6-ed7e0fb09f80",
+//     "user_id": "df3be787-f5f4-4892-a829-170e9838743b",
+//     "order_id": "71519c98-9d91-4b09-8036-a33803888edc",
+//     "date_created": "2024-10-29T16:32:59.659Z",
 //     "status": "PAID",
-//     "amount": 169184.1
+//     "amount": 558.49
 //   },
 //   {
-//     "order_invoice_id": "35ccf3a4-a7d3-44e8-adf8-8e30ff13f0bc",
-//     "user_id": "dca189db-b20c-4d9f-a0e3-b6ed28ca1840",
-//     "order_id": "e0c4bd00-89f7-4659-a57c-169d5a188225",
-//     "date_created": "2024-11-06T20:45:07.530Z",
-//     "status": "PENDING",
-//     "amount": 888.96
+//     "order_invoice_id": "cedbb1ed-d502-4551-9a36-d6e16fcf256c",
+//     "user_id": "df3be787-f5f4-4892-a829-170e9838743b",
+//     "order_id": "76a9713b-d5cd-4860-bbac-e1211cf387c7",
+//     "date_created": "2024-11-11T13:27:24.628Z",
+//     "status": "PAID",
+//     "amount": 273.63
 //   },
 //   {
-//     "order_invoice_id": "56f33237-a7a0-410d-8059-457f9b15b136",
-//     "user_id": "dca189db-b20c-4d9f-a0e3-b6ed28ca1840",
-//     "order_id": "96aceb95-ebb5-4b2c-8d77-6c4c902aa9d5",
-//     "date_created": "2024-11-07T22:21:07.190Z",
-//     "status": "PENDING",
-//     "amount": 707
+//     "order_invoice_id": "70566861-ff90-4849-8c85-d824656885ff",
+//     "user_id": "df3be787-f5f4-4892-a829-170e9838743b",
+//     "order_id": "9a6d83b2-cc34-4d05-bf25-51eb42e30b36",
+//     "date_created": "2024-10-10T06:52:50.379Z",
+//     "status": "PAID",
+//     "amount": 639.81
 //   },
 //   {
-//     "order_invoice_id": "eaacbbf3-b313-480f-8f05-4276de81cef5",
-//     "user_id": "dca189db-b20c-4d9f-a0e3-b6ed28ca1840",
-//     "order_id": "0e412953-c2e9-41b9-bde7-784afe3a2f3b",
-//     "date_created": "2024-10-27T04:33:40.404Z",
+//     "order_invoice_id": "df88e12b-bf4a-47cc-b66e-026769f9f183",
+//     "user_id": "df3be787-f5f4-4892-a829-170e9838743b",
+//     "order_id": "b899ece7-4f05-4a20-8a75-da3700813202",
+//     "date_created": "2024-11-09T14:43:31.716Z",
 //     "status": "PAID",
-//     "amount": 1007.16
+//     "amount": 251.1
 //   },
 //   {
-//     "order_invoice_id": "cd1f92c9-70e1-43b7-ae64-afd6f6da9e1e",
-//     "user_id": "dca189db-b20c-4d9f-a0e3-b6ed28ca1840",
-//     "order_id": "b7b25f88-08fa-498a-bdfe-9f78715a2a5e",
-//     "date_created": "2024-08-29T06:05:23.599Z",
+//     "order_invoice_id": "6f4cc1f9-b005-411a-bd9c-842e055295d7",
+//     "user_id": "df3be787-f5f4-4892-a829-170e9838743b",
+//     "order_id": "dd67a220-7e93-4b5e-ae67-7fdf3f3c1bf7",
+//     "date_created": "2024-11-09T13:44:12.504Z",
 //     "status": "PENDING",
-//     "amount": 524.93
+//     "amount": 423727.48
 //   },
 //   {
-//     "order_invoice_id": "9630a61e-eda3-414f-9dfd-e4c578b15e44",
-//     "user_id": "dca189db-b20c-4d9f-a0e3-b6ed28ca1840",
-//     "order_id": "6ba023d3-89f6-420b-80fe-b565bac5d13f",
-//     "date_created": "2024-11-08T17:35:09.727Z",
+//     "order_invoice_id": "663b3976-2b49-4ba7-9c60-d921e9ed9f85",
+//     "user_id": "df3be787-f5f4-4892-a829-170e9838743b",
+//     "order_id": "47cfc621-eca4-4bb2-ae6e-c23f90018e00",
+//     "date_created": "2024-10-19T21:11:16.262Z",
 //     "status": "PENDING",
-//     "amount": 549260.3
-//   },
-//   {
-//     "order_invoice_id": "d3d23389-7100-4b24-941a-f188907ca199",
-//     "user_id": "dca189db-b20c-4d9f-a0e3-b6ed28ca1840",
-//     "order_id": "00f70cf4-a9a8-4a55-8c58-53fe15a42815",
-//     "date_created": "2024-10-13T07:32:45.086Z",
-//     "status": "PAID",
-//     "amount": 656669.47
-//   },
-//   {
-//     "order_invoice_id": "f31eb262-9b5c-428f-9ae2-37f1aeceb8ec",
-//     "user_id": "3d29e1b1-fb3a-4eaa-a80c-b2432ec0f95d",
-//     "order_id": "450ea3ac-0621-478f-8e99-0ff63049047d",
-//     "date_created": "2024-11-02T23:35:17.748Z",
-//     "status": "PAID",
-//     "amount": 162.34
+//     "amount": 993.03
 //   },
 //   {
-//     "order_invoice_id": "fe40adb4-e788-4447-acfd-956b3e9e4e44",
-//     "user_id": "3d29e1b1-fb3a-4eaa-a80c-b2432ec0f95d",
-//     "order_id": "3423bbba-a564-42d0-b512-9984d662b55a",
-//     "date_created": "2024-11-07T06:56:26.803Z",
+//     "order_invoice_id": "be9e1831-4be1-43fa-a3ee-530f4aa980d7",
+//     "user_id": "df3be787-f5f4-4892-a829-170e9838743b",
+//     "order_id": "83cdcfc9-df80-476d-b21d-5995485617dd",
+//     "date_created": "2024-10-25T16:27:53.385Z",
 //     "status": "PENDING",
-//     "amount": 836401.73
+//     "amount": 329416.11
 //   },
 //   {
-//     "order_invoice_id": "c7ababb9-071d-4aab-891b-53f979f92c87",
-//     "user_id": "3d29e1b1-fb3a-4eaa-a80c-b2432ec0f95d",
-//     "order_id": "8ce243f4-69d4-46c9-9841-9db322fbaf84",
-//     "date_created": "2024-11-04T13:43:48.320Z",
+//     "order_invoice_id": "4f2fdf1c-b0a3-4fc5-8aae-36016ffb6620",
+//     "user_id": "df3be787-f5f4-4892-a829-170e9838743b",
+//     "order_id": "cf8b8f62-c6a2-49ad-81f0-24acf7e23b20",
+//     "date_created": "2024-10-29T16:05:05.230Z",
 //     "status": "PENDING",
-//     "amount": 20918.82
+//     "amount": 314.35
 //   },
 //   {
-//     "order_invoice_id": "621e834a-cd52-408b-88c9-8c3591017e3f",
-//     "user_id": "3d29e1b1-fb3a-4eaa-a80c-b2432ec0f95d",
-//     "order_id": "835d1437-5753-49df-8af5-9d785f51ebbc",
-//     "date_created": "2024-11-01T19:36:46.949Z",
-//     "status": "PAID",
-//     "amount": 675.47
+//     "order_invoice_id": "55656491-dd5a-40a0-88ee-8d2892670567",
+//     "user_id": "1495e8b3-2342-49de-b138-998018239e6c",
+//     "order_id": "a61853ca-d67b-43c0-9d69-24c2a2460c62",
+//     "date_created": "2024-11-06T08:37:34.938Z",
+//     "status": "PENDING",
+//     "amount": 1017.6
 //   },
 //   {
-//     "order_invoice_id": "460928e1-fc47-42bc-9c4b-3059a543c642",
-//     "user_id": "3d29e1b1-fb3a-4eaa-a80c-b2432ec0f95d",
-//     "order_id": "9efdcac6-6958-470b-9752-c0ea54424460",
-//     "date_created": "2024-10-10T23:59:10.407Z",
+//     "order_invoice_id": "7da91dbd-b3cc-4170-9f19-4a41f708ab89",
+//     "user_id": "1495e8b3-2342-49de-b138-998018239e6c",
+//     "order_id": "2eca330a-ab17-48cf-9cbc-ee274b00d1eb",
+//     "date_created": "2024-09-02T02:57:31.786Z",
 //     "status": "PENDING",
-//     "amount": 889.46
+//     "amount": 406581.15
 //   },
 //   {
-//     "order_invoice_id": "88e1a6f1-b25f-4064-b6a8-29dfdb96e482",
-//     "user_id": "3d29e1b1-fb3a-4eaa-a80c-b2432ec0f95d",
-//     "order_id": "a3bb4e58-aeaf-4a12-8568-f56fdab849fb",
-//     "date_created": "2024-10-21T22:49:48.806Z",
+//     "order_invoice_id": "cd7b6097-2293-4a5d-ab6e-474032bdfe69",
+//     "user_id": "1495e8b3-2342-49de-b138-998018239e6c",
+//     "order_id": "b5643c23-c4ca-44bd-90c8-0955a55fd543",
+//     "date_created": "2024-10-11T19:00:44.528Z",
 //     "status": "PENDING",
-//     "amount": 976.04
+//     "amount": 536912.48
 //   },
 //   {
-//     "order_invoice_id": "24018f39-0ad5-4681-8e11-8ca254437166",
-//     "user_id": "4558a4ab-80aa-4f78-bcba-f091935b844c",
-//     "order_id": "bf2c05fa-46a8-475b-b39f-c557843a9e45",
-//     "date_created": "2024-10-17T07:45:35.704Z",
+//     "order_invoice_id": "55eb5849-6969-4a3e-b4da-efd1758466c8",
+//     "user_id": "1495e8b3-2342-49de-b138-998018239e6c",
+//     "order_id": "bae057f5-1849-4427-bccc-76a72522654a",
+//     "date_created": "2024-10-10T00:16:37.550Z",
 //     "status": "PENDING",
-//     "amount": 148.11
+//     "amount": 387.21
 //   },
 //   {
-//     "order_invoice_id": "5f1179b9-c0d1-496f-8586-503652f022db",
-//     "user_id": "4558a4ab-80aa-4f78-bcba-f091935b844c",
-//     "order_id": "c1ef6cf3-37b3-4e34-8e49-e31c4c8fe839",
-//     "date_created": "2024-11-06T00:45:40.728Z",
+//     "order_invoice_id": "8802ad2e-058e-434d-824d-1982376463da",
+//     "user_id": "1495e8b3-2342-49de-b138-998018239e6c",
+//     "order_id": "feba7f01-1c66-439b-8f59-17e8b1ebb7ea",
+//     "date_created": "2024-11-10T17:44:06.019Z",
 //     "status": "PAID",
-//     "amount": 895837.04
+//     "amount": 819.56
 //   },
 //   {
-//     "order_invoice_id": "16b0da21-6e66-4f9f-9573-9fdeba7c36f1",
-//     "user_id": "4558a4ab-80aa-4f78-bcba-f091935b844c",
-//     "order_id": "ba98d69c-e930-461f-961f-56ab98732fc1",
-//     "date_created": "2024-11-07T02:09:05.721Z",
+//     "order_invoice_id": "d13d186c-a295-423e-b8ab-bbe174239a56",
+//     "user_id": "5c195fda-52e5-4a34-87bb-1387e49297ef",
+//     "order_id": "cd80f482-fec0-43a5-8046-bcd12cb69e5c",
+//     "date_created": "2024-10-26T09:20:34.514Z",
 //     "status": "PENDING",
-//     "amount": 991694.37
+//     "amount": 562.41
 //   },
 //   {
-//     "order_invoice_id": "187cb541-96dc-4eaa-9608-15ea7861da15",
-//     "user_id": "4558a4ab-80aa-4f78-bcba-f091935b844c",
-//     "order_id": "96766c8f-25f5-4260-908e-40e22dba60b2",
-//     "date_created": "2024-11-06T05:39:53.588Z",
-//     "status": "PAID",
-//     "amount": 183.83
+//     "order_invoice_id": "0878a8ed-409c-477a-91fd-6cd6539af1c3",
+//     "user_id": "5c195fda-52e5-4a34-87bb-1387e49297ef",
+//     "order_id": "a4454b4c-a333-4d62-a738-ee588824a20e",
+//     "date_created": "2024-11-10T07:50:36.154Z",
+//     "status": "PENDING",
+//     "amount": 342121.47
 //   },
 //   {
-//     "order_invoice_id": "1fe4b620-2ac9-45cc-8307-9927e7832945",
-//     "user_id": "3eee438d-c708-4662-8069-0eb9b4fd9c1c",
-//     "order_id": "3ab2ee22-26ac-4add-9266-2a9f6a732dd0",
-//     "date_created": "2024-11-04T14:18:35.184Z",
+//     "order_invoice_id": "c82225f4-434c-4c91-b2fb-0d57e6d9e89e",
+//     "user_id": "5c195fda-52e5-4a34-87bb-1387e49297ef",
+//     "order_id": "8ac90018-5013-47f4-af62-1f00b4476fd9",
+//     "date_created": "2024-10-26T16:34:00.902Z",
 //     "status": "PENDING",
-//     "amount": 789.04
+//     "amount": 1064.44
 //   },
 //   {
-//     "order_invoice_id": "9c744c35-f2c7-4d82-88bb-500512c638cc",
-//     "user_id": "3eee438d-c708-4662-8069-0eb9b4fd9c1c",
-//     "order_id": "c16cdbfa-adae-4eb2-82ed-1f334012697b",
-//     "date_created": "2023-12-19T11:13:21.076Z",
+//     "order_invoice_id": "2fce0527-25aa-4cd0-ac7a-ea0d9adc7d3f",
+//     "user_id": "5c195fda-52e5-4a34-87bb-1387e49297ef",
+//     "order_id": "73af3693-dd7a-46e0-8f3a-7ce339fc4a59",
+//     "date_created": "2024-11-07T16:56:52.565Z",
 //     "status": "PENDING",
-//     "amount": 844.16
+//     "amount": 452369.16
 //   },
 //   {
-//     "order_invoice_id": "8d88d518-ffb8-48ae-86ed-aefd0a249f71",
-//     "user_id": "3eee438d-c708-4662-8069-0eb9b4fd9c1c",
-//     "order_id": "824cf25d-faf6-4311-8d2e-d1c108b2d691",
-//     "date_created": "2024-10-15T06:12:09.480Z",
+//     "order_invoice_id": "a9696051-701a-419f-8cad-57db37de3eaa",
+//     "user_id": "5c195fda-52e5-4a34-87bb-1387e49297ef",
+//     "order_id": "fc1b5bd9-cf7b-4101-9f05-8e75093cb34a",
+//     "date_created": "2024-11-04T11:50:51.563Z",
 //     "status": "PENDING",
-//     "amount": 634.27
+//     "amount": 157738.77
 //   },
 //   {
-//     "order_invoice_id": "e4425905-82ba-43b8-8c56-ffc64981319c",
-//     "user_id": "3eee438d-c708-4662-8069-0eb9b4fd9c1c",
-//     "order_id": "7def6712-df3e-4cec-a709-0cf7dd258aff",
-//     "date_created": "2024-11-08T05:49:19.013Z",
-//     "status": "PAID",
-//     "amount": 623854.97
+//     "order_invoice_id": "b05f0463-8f57-45f8-8e42-ba40ecc53385",
+//     "user_id": "5c195fda-52e5-4a34-87bb-1387e49297ef",
+//     "order_id": "2eecf9bf-a908-4677-87f3-88a30236f426",
+//     "date_created": "2024-11-11T06:43:03.953Z",
+//     "status": "PENDING",
+//     "amount": 734.53
 //   },
 //   {
-//     "order_invoice_id": "429b858b-1572-48b1-a3ef-2b776323751b",
-//     "user_id": "3eee438d-c708-4662-8069-0eb9b4fd9c1c",
-//     "order_id": "d08d8005-a5b5-4c64-b950-3d897500aa15",
-//     "date_created": "2024-11-08T18:34:35.263Z",
+//     "order_invoice_id": "b5da2e2d-2286-4151-abb2-94d77fec15f5",
+//     "user_id": "5c195fda-52e5-4a34-87bb-1387e49297ef",
+//     "order_id": "8c60c30b-2750-49b7-b240-60c333fb101f",
+//     "date_created": "2024-11-10T05:59:00.029Z",
 //     "status": "PAID",
-//     "amount": 177969.86
+//     "amount": 749699.36
 //   },
 //   {
-//     "order_invoice_id": "550d0c43-425a-449d-b40f-4b13b589177d",
-//     "user_id": "3eee438d-c708-4662-8069-0eb9b4fd9c1c",
-//     "order_id": "0b73f8a3-0e49-4389-bd84-4af312532472",
-//     "date_created": "2024-10-14T17:40:05.436Z",
-//     "status": "PAID",
-//     "amount": 1007.96
+//     "order_invoice_id": "053b46b2-4253-49da-ae0e-901a18e10bf3",
+//     "user_id": "5c195fda-52e5-4a34-87bb-1387e49297ef",
+//     "order_id": "346da126-040a-47fc-9789-7c4e11720760",
+//     "date_created": "2024-10-28T10:33:41.188Z",
+//     "status": "PENDING",
+//     "amount": 816466.7
 //   },
 //   {
-//     "order_invoice_id": "d271b8c0-eeab-47bb-97bf-5123374f35c9",
-//     "user_id": "3eee438d-c708-4662-8069-0eb9b4fd9c1c",
-//     "order_id": "d08c4449-742e-4f87-b3a6-2cfb0157af07",
-//     "date_created": "2024-11-08T15:48:45.730Z",
-//     "status": "PAID",
-//     "amount": 702602.14
+//     "order_invoice_id": "87337c1d-5d19-408c-80e5-9762e59e961b",
+//     "user_id": "f9ec927d-05bd-476e-a482-c55e74447b7f",
+//     "order_id": "0fb26188-9126-4422-8e9e-0425e0eb7d33",
+//     "date_created": "2024-10-26T17:45:47.184Z",
+//     "status": "PENDING",
+//     "amount": 369.76
 //   },
 //   {
-//     "order_invoice_id": "0ca7ef6f-0a0c-44d8-b20d-f21a07892e5a",
-//     "user_id": "3eee438d-c708-4662-8069-0eb9b4fd9c1c",
-//     "order_id": "ca3dc10e-787f-4922-ba42-60c053d819c7",
-//     "date_created": "2024-11-08T16:16:38.383Z",
+//     "order_invoice_id": "9acecc25-06f0-4346-ba11-184519b2b139",
+//     "user_id": "f9ec927d-05bd-476e-a482-c55e74447b7f",
+//     "order_id": "c8bb48c0-4703-4384-bf3a-74839fb5944b",
+//     "date_created": "2024-10-28T23:27:33.868Z",
 //     "status": "PAID",
-//     "amount": 546.88
+//     "amount": 220.66
 //   },
 //   {
-//     "order_invoice_id": "6c546b9d-ce08-4d73-84c3-df3ed107a1a6",
-//     "user_id": "3eee438d-c708-4662-8069-0eb9b4fd9c1c",
-//     "order_id": "f05e0f03-ab94-41b9-8268-c820b10fef64",
-//     "date_created": "2024-10-28T21:33:47.367Z",
+//     "order_invoice_id": "c25bbeae-4ab3-483e-a0d0-4a9ab1f7b9db",
+//     "user_id": "f9ec927d-05bd-476e-a482-c55e74447b7f",
+//     "order_id": "764d606d-0534-445b-bc15-f735b49aabe6",
+//     "date_created": "2024-11-11T00:51:21.564Z",
 //     "status": "PENDING",
-//     "amount": 1026.27
-//   },
-//   {
-//     "order_invoice_id": "3a40a70f-1ec4-42f6-b03a-af42dd95d1bb",
-//     "user_id": "3eee438d-c708-4662-8069-0eb9b4fd9c1c",
-//     "order_id": "fe5b14f0-6133-465b-8d22-5c549c135966",
-//     "date_created": "2024-02-29T09:39:23.988Z",
-//     "status": "PAID",
-//     "amount": 764450.63
+//     "amount": 49771.31
 //   },
 //   {
-//     "order_invoice_id": "3f74f941-7cf9-4687-b328-d12ae4e512f5",
-//     "user_id": "3eee438d-c708-4662-8069-0eb9b4fd9c1c",
-//     "order_id": "5af4aa7b-e1d3-41ac-94a0-f83b6e8022a2",
-//     "date_created": "2024-11-02T16:10:12.384Z",
+//     "order_invoice_id": "9f90d7cd-1961-4da8-9ea7-e90eafe79d66",
+//     "user_id": "f9ec927d-05bd-476e-a482-c55e74447b7f",
+//     "order_id": "a00db0fb-02a8-4b6d-8810-9540c5db3649",
+//     "date_created": "2024-11-09T19:46:54.186Z",
 //     "status": "PAID",
-//     "amount": 71230.55
+//     "amount": 863499.01
 //   },
 //   {
-//     "order_invoice_id": "efe0c883-4ec9-40c1-a4bb-c172a230a86c",
-//     "user_id": "3eee438d-c708-4662-8069-0eb9b4fd9c1c",
-//     "order_id": "f0f2d9d6-2502-4b18-8996-011eead31d57",
-//     "date_created": "2024-10-22T21:52:56.360Z",
+//     "order_invoice_id": "8f5d5ee6-7dbe-47bb-8199-6bcf07a56c64",
+//     "user_id": "f9ec927d-05bd-476e-a482-c55e74447b7f",
+//     "order_id": "eae54dc4-efe2-4b2b-967f-85eb24d95823",
+//     "date_created": "2024-11-10T19:05:33.133Z",
 //     "status": "PENDING",
-//     "amount": 864417.61
-//   },
-//   {
-//     "order_invoice_id": "6fa405a1-9b68-4b92-8c9f-14d3103f5090",
-//     "user_id": "3eee438d-c708-4662-8069-0eb9b4fd9c1c",
-//     "order_id": "e55891c3-5ee0-483d-b90b-b176d1261806",
-//     "date_created": "2024-10-17T20:09:42.801Z",
-//     "status": "PAID",
-//     "amount": 530059.92
+//     "amount": 482175.45
 //   },
 //   {
-//     "order_invoice_id": "e2cf3c88-3ef4-4549-8551-572ed70c134d",
-//     "user_id": "3eee438d-c708-4662-8069-0eb9b4fd9c1c",
-//     "order_id": "095acc9b-53dd-44ab-b5dc-2a276719883a",
-//     "date_created": "2024-09-21T02:33:35.924Z",
+//     "order_invoice_id": "c3412954-8366-4165-a767-49f713bd4e85",
+//     "user_id": "f9ec927d-05bd-476e-a482-c55e74447b7f",
+//     "order_id": "ff4fe0fb-48e7-4f3d-8c62-726ed2f76dba",
+//     "date_created": "2024-11-10T21:37:20.499Z",
 //     "status": "PAID",
-//     "amount": 454529.67
-//   },
-//   {
-//     "order_invoice_id": "192362a1-608f-42ee-87bd-82caf257505c",
-//     "user_id": "3eee438d-c708-4662-8069-0eb9b4fd9c1c",
-//     "order_id": "522826bf-5a6b-40f4-808c-e9e84824e695",
-//     "date_created": "2024-11-07T12:56:11.190Z",
-//     "status": "PENDING",
-//     "amount": 112763.36
+//     "amount": 702.84
 //   },
 //   {
-//     "order_invoice_id": "ef263997-f0e3-4060-a901-da9be7fe4e8e",
-//     "user_id": "3eee438d-c708-4662-8069-0eb9b4fd9c1c",
-//     "order_id": "4f3ff8fa-bf2a-4f11-8e04-5f3a90b32eec",
-//     "date_created": "2024-10-17T09:50:41.863Z",
+//     "order_invoice_id": "5d31aafb-616f-4e46-a1f3-69e3be7644d0",
+//     "user_id": "f9ec927d-05bd-476e-a482-c55e74447b7f",
+//     "order_id": "b3c1b280-7704-4059-aaf2-b19d27f6fa1d",
+//     "date_created": "2024-11-02T12:39:21.494Z",
 //     "status": "PENDING",
-//     "amount": 1021.71
+//     "amount": 452.29
 //   },
 //   {
-//     "order_invoice_id": "15b0e241-b771-40cf-9a35-781e6e750dd4",
-//     "user_id": "3eee438d-c708-4662-8069-0eb9b4fd9c1c",
-//     "order_id": "60aa52ec-49ec-4f20-92d7-9c9f5d476973",
-//     "date_created": "2024-11-04T12:42:36.796Z",
+//     "order_invoice_id": "282c2d0d-4cab-43b4-832e-c26a7a565da7",
+//     "user_id": "f9ec927d-05bd-476e-a482-c55e74447b7f",
+//     "order_id": "cbe909ef-57e0-46ac-9de2-da99fb0c6029",
+//     "date_created": "2024-10-23T22:58:42.455Z",
 //     "status": "PENDING",
-//     "amount": 423.13
+//     "amount": 803030.43
 //   },
 //   {
-//     "order_invoice_id": "27ed5067-7af1-4478-9b01-d27258572941",
-//     "user_id": "3eee438d-c708-4662-8069-0eb9b4fd9c1c",
-//     "order_id": "73850065-782d-4aa0-80e3-8b06aab75dab",
-//     "date_created": "2024-10-22T12:55:47.805Z",
+//     "order_invoice_id": "effc3a25-a5b6-40b6-b95a-06748000e6d1",
+//     "user_id": "f9ec927d-05bd-476e-a482-c55e74447b7f",
+//     "order_id": "326b0320-13d1-46ab-b105-6f44ef292a3d",
+//     "date_created": "2024-10-09T10:41:16.874Z",
 //     "status": "PENDING",
-//     "amount": 204.22
+//     "amount": 962.18
 //   },
 //   {
-//     "order_invoice_id": "517432ba-0d13-4d90-ab1c-fce423df74f6",
-//     "user_id": "3eee438d-c708-4662-8069-0eb9b4fd9c1c",
-//     "order_id": "92b79fd8-1176-4859-bd06-0758819e047e",
-//     "date_created": "2023-11-17T17:11:26.821Z",
+//     "order_invoice_id": "c502e6eb-4256-4135-8544-a75133159e0f",
+//     "user_id": "f9ec927d-05bd-476e-a482-c55e74447b7f",
+//     "order_id": "47e66a2e-cf02-41e1-b5e0-5dbff33662b9",
+//     "date_created": "2024-04-22T00:46:47.046Z",
 //     "status": "PENDING",
-//     "amount": 244.67
+//     "amount": 294374.42
 //   },
 //   {
-//     "order_invoice_id": "8097acd2-bbad-411b-9e56-676095bb3ee4",
-//     "user_id": "b8813eec-2edc-4ba8-a07c-d0a6c5463284",
-//     "order_id": "c529e325-37af-484f-b34a-7b20a74e39b6",
-//     "date_created": "2024-11-08T16:32:02.748Z",
+//     "order_invoice_id": "9b73a495-0b63-4cd0-90ee-99888343aa04",
+//     "user_id": "f9ec927d-05bd-476e-a482-c55e74447b7f",
+//     "order_id": "f21556a5-77e7-42fa-8084-1d372c3f53f9",
+//     "date_created": "2024-09-25T00:24:34.667Z",
 //     "status": "PAID",
-//     "amount": 662.27
-//   },
-//   {
-//     "order_invoice_id": "58cf4c5c-f9b2-4f47-94f3-a8d6fbdbcf1e",
-//     "user_id": "b8813eec-2edc-4ba8-a07c-d0a6c5463284",
-//     "order_id": "4c73bef2-a7bf-4331-9834-123de077651c",
-//     "date_created": "2024-11-08T15:17:14.578Z",
-//     "status": "PENDING",
-//     "amount": 692269.13
-//   },
-//   {
-//     "order_invoice_id": "4bdcdca6-3cec-4c11-96b5-271488d63bea",
-//     "user_id": "b8813eec-2edc-4ba8-a07c-d0a6c5463284",
-//     "order_id": "41c3dd91-b1ae-4e70-852a-d95bef5a32e7",
-//     "date_created": "2024-11-08T09:23:21.434Z",
-//     "status": "PENDING",
-//     "amount": 736.01
+//     "amount": 265878.13
 //   },
 //   {
-//     "order_invoice_id": "44f3cc0c-24e3-4154-9550-40db07c2e43a",
-//     "user_id": "b8813eec-2edc-4ba8-a07c-d0a6c5463284",
-//     "order_id": "842f690b-bd7c-4d0e-bfbe-72a73a501220",
-//     "date_created": "2024-10-19T11:01:46.185Z",
+//     "order_invoice_id": "f27ce428-b32a-4e3c-9b42-f5b587a2d0a9",
+//     "user_id": "f9ec927d-05bd-476e-a482-c55e74447b7f",
+//     "order_id": "b985069e-918f-497d-acf1-11cc1d9b097b",
+//     "date_created": "2024-10-17T10:43:13.281Z",
 //     "status": "PENDING",
-//     "amount": 948048.6
+//     "amount": 805.47
 //   },
 //   {
-//     "order_invoice_id": "10aecf4c-6287-4ed1-a9c1-3acd34e60e37",
-//     "user_id": "b8813eec-2edc-4ba8-a07c-d0a6c5463284",
-//     "order_id": "04ea214a-8c26-4944-b347-7f47595ae725",
-//     "date_created": "2024-10-25T07:32:57.257Z",
+//     "order_invoice_id": "eb8de99e-a1e1-44ed-b0a4-252e7a0f0b9b",
+//     "user_id": "f9ec927d-05bd-476e-a482-c55e74447b7f",
+//     "order_id": "3d27ee21-b6a6-4af5-8fd0-67c627ccf4a1",
+//     "date_created": "2024-11-06T20:44:23.337Z",
 //     "status": "PAID",
-//     "amount": 699401.95
+//     "amount": 886.03
 //   },
 //   {
-//     "order_invoice_id": "d5755a62-b4f9-433a-aecd-aa72c50c31af",
-//     "user_id": "b8813eec-2edc-4ba8-a07c-d0a6c5463284",
-//     "order_id": "5f629e0d-f414-437f-8be0-f75fb75de6e2",
-//     "date_created": "2024-10-22T20:13:42.789Z",
+//     "order_invoice_id": "e5b1c351-86f3-4183-a92f-53b94aadcd45",
+//     "user_id": "f9ec927d-05bd-476e-a482-c55e74447b7f",
+//     "order_id": "e3c8e5a5-685c-444b-98fd-288e56aeaa5f",
+//     "date_created": "2024-11-05T11:14:18.865Z",
 //     "status": "PAID",
-//     "amount": 581198.69
+//     "amount": 625760.99
 //   },
 //   {
-//     "order_invoice_id": "6a9b3ba7-c921-4c15-ad6a-565dd1398952",
-//     "user_id": "b8813eec-2edc-4ba8-a07c-d0a6c5463284",
-//     "order_id": "023d3dc8-c164-4979-ac66-9f116922aef1",
-//     "date_created": "2024-11-03T09:11:49.441Z",
-//     "status": "PAID",
-//     "amount": 656.9
-//   },
-//   {
-//     "order_invoice_id": "af192b5e-d9d9-4aa4-b102-ffb729ebe5bd",
-//     "user_id": "b8813eec-2edc-4ba8-a07c-d0a6c5463284",
-//     "order_id": "68ead51f-55d9-4498-87bd-325df660161e",
-//     "date_created": "2024-10-28T19:12:42.332Z",
+//     "order_invoice_id": "9529305b-9f88-4e46-991f-e8e3fe2ad900",
+//     "user_id": "f9ec927d-05bd-476e-a482-c55e74447b7f",
+//     "order_id": "6c9e7837-fae8-4c71-af80-f21daf306a71",
+//     "date_created": "2024-11-02T00:04:09.709Z",
 //     "status": "PENDING",
-//     "amount": 639.85
+//     "amount": 502724.01
 //   },
 //   {
-//     "order_invoice_id": "b9be1aa4-b9e7-408e-9fbd-c1c8ce11b55b",
-//     "user_id": "b8813eec-2edc-4ba8-a07c-d0a6c5463284",
-//     "order_id": "3b8285b3-c695-47f1-b900-a7acd1b4c711",
-//     "date_created": "2024-10-24T09:29:35.382Z",
+//     "order_invoice_id": "5dbebe81-eea6-401f-b437-7bd0f18a70b9",
+//     "user_id": "f9ec927d-05bd-476e-a482-c55e74447b7f",
+//     "order_id": "f90252aa-549b-444b-af73-6924b4f60b1b",
+//     "date_created": "2024-10-23T00:10:02.865Z",
 //     "status": "PENDING",
-//     "amount": 681.45
-//   },
-//   {
-//     "order_invoice_id": "7773225c-bd35-47e2-9aa0-93c36420ba6e",
-//     "user_id": "b8813eec-2edc-4ba8-a07c-d0a6c5463284",
-//     "order_id": "1e34cbff-609c-4a05-adcd-5d78e3635423",
-//     "date_created": "2024-10-22T02:17:10.193Z",
-//     "status": "PAID",
-//     "amount": 441.67
+//     "amount": 208310.56
 //   },
 //   {
-//     "order_invoice_id": "21f1ea11-27ca-40f0-8e0c-3275f0306ba4",
-//     "user_id": "b8813eec-2edc-4ba8-a07c-d0a6c5463284",
-//     "order_id": "2ecc1668-487d-4333-880a-f1e40b3cfa17",
-//     "date_created": "2024-11-01T02:40:14.703Z",
+//     "order_invoice_id": "a5a609b2-7925-4fd8-8c97-d30c179b0d1c",
+//     "user_id": "f9ec927d-05bd-476e-a482-c55e74447b7f",
+//     "order_id": "baaf5281-9500-46ca-ac36-10933ac43477",
+//     "date_created": "2024-10-27T21:52:31.833Z",
 //     "status": "PENDING",
-//     "amount": 656.25
+//     "amount": 304.48
 //   },
 //   {
-//     "order_invoice_id": "2c279daf-3543-4153-a758-724e58b6cbb3",
-//     "user_id": "b8813eec-2edc-4ba8-a07c-d0a6c5463284",
-//     "order_id": "1fcba623-d159-48ec-9f9f-c60e9e1e2801",
-//     "date_created": "2024-10-07T10:00:34.146Z",
+//     "order_invoice_id": "b77e62a9-fd21-4b88-9be6-362393f17ce0",
+//     "user_id": "f9ec927d-05bd-476e-a482-c55e74447b7f",
+//     "order_id": "6074989f-ec3b-4c9a-8e48-870ad40d0895",
+//     "date_created": "2024-11-07T11:28:43.483Z",
 //     "status": "PENDING",
-//     "amount": 784539
+//     "amount": 296.3
 //   },
 //   {
-//     "order_invoice_id": "75bfe134-3ab1-4fca-8550-3f655b55cd2f",
-//     "user_id": "b8813eec-2edc-4ba8-a07c-d0a6c5463284",
-//     "order_id": "11c72f94-bb0d-4abb-b08e-60b73ea0dc1e",
-//     "date_created": "2024-10-25T12:48:44.740Z",
+//     "order_invoice_id": "7238305d-4b60-4f8c-8c05-005b26da62ca",
+//     "user_id": "f9ec927d-05bd-476e-a482-c55e74447b7f",
+//     "order_id": "7992ea30-b53d-4b88-beb0-594c329ad47e",
+//     "date_created": "2024-11-01T23:21:46.570Z",
 //     "status": "PENDING",
-//     "amount": 303.05
-//   },
-//   {
-//     "order_invoice_id": "6ac00af8-d243-4c77-9e03-d280afa75282",
-//     "user_id": "b8813eec-2edc-4ba8-a07c-d0a6c5463284",
-//     "order_id": "cfe3a3af-9f14-4ea7-939c-ba4b5dfcd175",
-//     "date_created": "2024-10-30T07:14:46.763Z",
-//     "status": "PAID",
-//     "amount": 648403.86
+//     "amount": 932.79
 //   },
 //   {
-//     "order_invoice_id": "07e068ab-8657-47e4-a787-dbb108005a81",
-//     "user_id": "b8813eec-2edc-4ba8-a07c-d0a6c5463284",
-//     "order_id": "a0a06336-840f-4744-997a-ad306e46a528",
-//     "date_created": "2024-11-04T15:40:29.744Z",
+//     "order_invoice_id": "f7a3edbb-f46b-46e4-9592-d03ffe776e77",
+//     "user_id": "f9ec927d-05bd-476e-a482-c55e74447b7f",
+//     "order_id": "7520bb8e-cf51-41a3-bdcd-218b81436315",
+//     "date_created": "2024-11-07T18:47:42.865Z",
 //     "status": "PAID",
-//     "amount": 994258.76
+//     "amount": 578.73
 //   },
 //   {
-//     "order_invoice_id": "0f9105e8-8f81-4071-9600-7160c96aa48a",
-//     "user_id": "b8813eec-2edc-4ba8-a07c-d0a6c5463284",
-//     "order_id": "f2e2d42c-c21b-49c2-897a-47ddf054e752",
-//     "date_created": "2024-10-21T22:21:48.067Z",
+//     "order_invoice_id": "9df1755d-88b7-46d5-b597-058d9c14090e",
+//     "user_id": "f9ec927d-05bd-476e-a482-c55e74447b7f",
+//     "order_id": "d4af5322-30ea-4bbe-8d9a-dfcfd1378f21",
+//     "date_created": "2024-11-10T16:16:17.115Z",
 //     "status": "PAID",
-//     "amount": 326.73
+//     "amount": 555055.72
 //   },
 //   {
-//     "order_invoice_id": "4ca7091c-8b4b-4b6b-a9fe-fe83568652a5",
-//     "user_id": "b8813eec-2edc-4ba8-a07c-d0a6c5463284",
-//     "order_id": "e08a146e-c1f4-477e-aec6-b1e8258b5422",
-//     "date_created": "2024-10-28T20:17:37.526Z",
+//     "order_invoice_id": "3b907ff7-a2f4-4b0a-bf89-2b1034110254",
+//     "user_id": "5b691032-5b13-4f68-bb1e-18f579a63e44",
+//     "order_id": "b7e9017b-fdac-4c7d-9cae-a139c57d033e",
+//     "date_created": "2024-06-27T18:16:52.410Z",
 //     "status": "PENDING",
-//     "amount": 1041.87
+//     "amount": 362.24
 //   },
 //   {
-//     "order_invoice_id": "a4d07386-122d-4f0a-bc5d-f3c7a2bd5c1a",
-//     "user_id": "b8813eec-2edc-4ba8-a07c-d0a6c5463284",
-//     "order_id": "982f1318-da4e-4fe9-9a18-8fb9dc68bece",
-//     "date_created": "2024-10-30T06:44:11.100Z",
-//     "status": "PAID",
-//     "amount": 1046.82
+//     "order_invoice_id": "6cb409cd-e445-40b4-bc62-64646fedd787",
+//     "user_id": "5b691032-5b13-4f68-bb1e-18f579a63e44",
+//     "order_id": "7fde8916-a8aa-4dd1-acba-bd328e4dabdf",
+//     "date_created": "2024-10-17T03:59:22.433Z",
+//     "status": "PENDING",
+//     "amount": 1097.03
 //   },
 //   {
-//     "order_invoice_id": "ada415ed-5130-474f-a0ae-615ed6b17307",
-//     "user_id": "b8813eec-2edc-4ba8-a07c-d0a6c5463284",
-//     "order_id": "be05fd9e-4f16-4583-b258-123bce4dd23d",
-//     "date_created": "2024-10-31T10:03:51.963Z",
+//     "order_invoice_id": "d5112ffb-5797-4b16-a400-236efb52d60d",
+//     "user_id": "5d0b494c-c43f-41e7-aa24-58bfbed30e7b",
+//     "order_id": "e7989b22-ee82-4189-823e-b2d602b2b555",
+//     "date_created": "2024-11-06T06:21:06.914Z",
 //     "status": "PAID",
-//     "amount": 591425.89
+//     "amount": 211.6
 //   },
 //   {
-//     "order_invoice_id": "e3421ab9-a771-4109-b18b-efc2d60a71ed",
-//     "user_id": "1dd97223-4533-4c54-87d8-714cf7801663",
-//     "order_id": "77400120-63d4-4f6e-b87f-4ff0b2392aae",
-//     "date_created": "2024-11-06T21:20:55.958Z",
-//     "status": "PAID",
-//     "amount": 480168.51
+//     "order_invoice_id": "741b359c-7519-44e8-80dc-caaeb172258b",
+//     "user_id": "5d0b494c-c43f-41e7-aa24-58bfbed30e7b",
+//     "order_id": "6314b375-5109-41a3-9ba0-bbd3bdfa87bb",
+//     "date_created": "2024-11-11T03:53:10.628Z",
+//     "status": "PENDING",
+//     "amount": 372515.77
 //   },
 //   {
-//     "order_invoice_id": "c20c4abc-d045-488f-82cc-6b3ca888e202",
-//     "user_id": "1dd97223-4533-4c54-87d8-714cf7801663",
-//     "order_id": "c558666c-d5bb-432c-b13e-07ef9197f085",
-//     "date_created": "2024-11-02T19:07:29.115Z",
+//     "order_invoice_id": "215aedf4-50d5-4b74-94c9-f6202363a209",
+//     "user_id": "5d0b494c-c43f-41e7-aa24-58bfbed30e7b",
+//     "order_id": "79d057b8-034f-4ab7-8e90-8ba8210699c2",
+//     "date_created": "2024-11-08T17:53:38.761Z",
 //     "status": "PAID",
-//     "amount": 162229.7
+//     "amount": 808307.04
 //   },
 //   {
-//     "order_invoice_id": "ba53a140-1049-41d1-8609-f633d17e2b0d",
-//     "user_id": "1dd97223-4533-4c54-87d8-714cf7801663",
-//     "order_id": "fabce144-ab7c-4cf3-9147-5d5a582966a1",
-//     "date_created": "2024-11-07T14:11:20.149Z",
+//     "order_invoice_id": "da9a3902-3f2b-4d48-a459-c390d22adb6e",
+//     "user_id": "5d0b494c-c43f-41e7-aa24-58bfbed30e7b",
+//     "order_id": "b7cbd29c-f79e-4f14-b71a-c48d705feb65",
+//     "date_created": "2024-07-03T02:54:44.741Z",
 //     "status": "PAID",
-//     "amount": 121424.37
+//     "amount": 840965.47
 //   },
 //   {
-//     "order_invoice_id": "6d2d9072-d2d0-4ca9-9855-6c52c6f7550a",
-//     "user_id": "1dd97223-4533-4c54-87d8-714cf7801663",
-//     "order_id": "d8d62b36-0ad7-45bc-a901-8a2aa134ffae",
-//     "date_created": "2024-10-18T04:16:43.033Z",
+//     "order_invoice_id": "25643fb9-ab39-4a62-98d5-53bb43694f22",
+//     "user_id": "5d0b494c-c43f-41e7-aa24-58bfbed30e7b",
+//     "order_id": "efa87c8c-753a-4d97-872c-610eedbd35a4",
+//     "date_created": "2024-11-04T14:19:05.640Z",
 //     "status": "PENDING",
-//     "amount": 857339.42
+//     "amount": 876367.11
 //   },
 //   {
-//     "order_invoice_id": "cd116e69-1d47-4f21-9935-d4fe60f946cf",
-//     "user_id": "1dd97223-4533-4c54-87d8-714cf7801663",
-//     "order_id": "ba266725-b807-4d23-a0d8-b3a91b1cfb0e",
-//     "date_created": "2024-10-14T09:53:28.047Z",
-//     "status": "PENDING",
-//     "amount": 301.12
+//     "order_invoice_id": "76b08a05-19a2-4f0c-a201-f3da2270fa6f",
+//     "user_id": "65cb1603-5ec7-48f1-a374-d348713562e1",
+//     "order_id": "ae8a9731-99ae-4d4c-87d8-d8ce80c822a9",
+//     "date_created": "2024-10-26T23:19:37.373Z",
+//     "status": "PAID",
+//     "amount": 398.63
 //   },
 //   {
-//     "order_invoice_id": "616ae5dc-8ff8-4a3d-a24e-617439a0bf9b",
-//     "user_id": "1dd97223-4533-4c54-87d8-714cf7801663",
-//     "order_id": "aaca251a-6981-41fe-8a86-ae654c5056a2",
-//     "date_created": "2024-11-08T19:07:34.285Z",
-//     "status": "PENDING",
-//     "amount": 358.35
+//     "order_invoice_id": "9c88502f-14d0-4a57-ba65-2e2894bd8fe0",
+//     "user_id": "65cb1603-5ec7-48f1-a374-d348713562e1",
+//     "order_id": "769d687b-6f7e-4de1-bb3d-c575a29ff530",
+//     "date_created": "2024-10-31T21:20:07.646Z",
+//     "status": "PAID",
+//     "amount": 211132.45
 //   },
 //   {
-//     "order_invoice_id": "eea1b976-444f-4757-88f6-6efff5464103",
-//     "user_id": "1dd97223-4533-4c54-87d8-714cf7801663",
-//     "order_id": "7e54ea56-7e23-4f6e-b687-4b5fc2fa0d5f",
-//     "date_created": "2024-11-06T18:23:46.558Z",
+//     "order_invoice_id": "1d0f19ce-9bf7-4dcb-8efb-8893b5ade405",
+//     "user_id": "65cb1603-5ec7-48f1-a374-d348713562e1",
+//     "order_id": "7a92f8cd-e169-4121-8bfe-5a694c99e0f5",
+//     "date_created": "2024-11-11T11:28:31.783Z",
 //     "status": "PENDING",
-//     "amount": 353.2
+//     "amount": 383.49
 //   },
 //   {
-//     "order_invoice_id": "611abd1e-0bcd-47a2-a492-70e44097d181",
-//     "user_id": "1dd97223-4533-4c54-87d8-714cf7801663",
-//     "order_id": "1f7a8057-c4ea-42cf-b62a-867f9680e4b5",
-//     "date_created": "2024-10-17T04:13:35.839Z",
-//     "status": "PAID",
-//     "amount": 603.94
+//     "order_invoice_id": "055d8f21-94c5-4ed8-9690-6bc9510456ef",
+//     "user_id": "65cb1603-5ec7-48f1-a374-d348713562e1",
+//     "order_id": "704ce485-c24a-450a-b431-5e597268285e",
+//     "date_created": "2024-11-03T13:56:21.767Z",
+//     "status": "PENDING",
+//     "amount": 935658.4
 //   },
 //   {
-//     "order_invoice_id": "9a95348b-0419-48a3-9176-ba9d0b162719",
-//     "user_id": "1dd97223-4533-4c54-87d8-714cf7801663",
-//     "order_id": "7cb72206-9d51-4687-8aa1-759b669d90e9",
-//     "date_created": "2024-11-08T06:03:47.979Z",
+//     "order_invoice_id": "78a15c13-b8a3-42c4-90f0-98a47d6fffed",
+//     "user_id": "65cb1603-5ec7-48f1-a374-d348713562e1",
+//     "order_id": "a9707c41-fe5c-4eed-a0dd-c8b3594792a8",
+//     "date_created": "2024-10-10T10:09:34.493Z",
 //     "status": "PAID",
-//     "amount": 445.27
+//     "amount": 646627.74
 //   },
 //   {
-//     "order_invoice_id": "f836c83d-8743-4092-b4d7-59f57e868420",
-//     "user_id": "1dd97223-4533-4c54-87d8-714cf7801663",
-//     "order_id": "dbb8bb3a-ed31-437d-93de-f04405e7a000",
-//     "date_created": "2024-10-26T15:34:42.018Z",
+//     "order_invoice_id": "be52f757-69e6-4055-a2ae-15a51088b37e",
+//     "user_id": "65cb1603-5ec7-48f1-a374-d348713562e1",
+//     "order_id": "ffe8562a-8fe7-4245-9a2e-7ea85c6d5971",
+//     "date_created": "2024-10-28T12:27:58.779Z",
 //     "status": "PAID",
-//     "amount": 289.03
+//     "amount": 866.84
 //   },
 //   {
-//     "order_invoice_id": "4adce3ef-045f-499e-b1ea-d78d7dd827eb",
-//     "user_id": "1dd97223-4533-4c54-87d8-714cf7801663",
-//     "order_id": "da209bb0-ecd4-4348-8fb2-a3fdde8df68f",
-//     "date_created": "2024-11-07T22:41:40.407Z",
+//     "order_invoice_id": "caacf540-5f44-40a5-838c-d83f7db631d4",
+//     "user_id": "65cb1603-5ec7-48f1-a374-d348713562e1",
+//     "order_id": "e8534ffc-923f-43ab-aa5a-62e4bbb3c1b5",
+//     "date_created": "2024-10-30T10:08:30.731Z",
 //     "status": "PENDING",
-//     "amount": 536525.27
+//     "amount": 267.37
 //   },
 //   {
-//     "order_invoice_id": "4ce4c8f7-d084-4f94-ad2b-793f4b180a85",
-//     "user_id": "1dd97223-4533-4c54-87d8-714cf7801663",
-//     "order_id": "32d753e0-5e46-40af-9226-f22ddbb92866",
-//     "date_created": "2024-11-04T16:37:03.734Z",
+//     "order_invoice_id": "fe2fe4d8-edb6-419f-830d-c96b9d2750d0",
+//     "user_id": "65cb1603-5ec7-48f1-a374-d348713562e1",
+//     "order_id": "1246bfde-71e3-463c-a0a9-c04769071a2a",
+//     "date_created": "2024-11-09T10:21:55.413Z",
 //     "status": "PAID",
-//     "amount": 1044.25
+//     "amount": 716.11
 //   },
 //   {
-//     "order_invoice_id": "e6dc6d5a-388e-42ba-a0ce-c444220624a8",
-//     "user_id": "1dd97223-4533-4c54-87d8-714cf7801663",
-//     "order_id": "9f4ea464-072c-4b3c-aa9f-3e91d0169f31",
-//     "date_created": "2024-11-08T16:52:23.555Z",
+//     "order_invoice_id": "c5e84e85-382c-440a-9daa-36beb80cb174",
+//     "user_id": "65cb1603-5ec7-48f1-a374-d348713562e1",
+//     "order_id": "00f78d33-80ff-42b7-91b1-8824a543681f",
+//     "date_created": "2024-10-20T15:19:56.782Z",
 //     "status": "PAID",
-//     "amount": 542.11
+//     "amount": 888537.38
 //   },
 //   {
-//     "order_invoice_id": "c6b9cbaa-c7c1-4566-a998-51b07ad8e981",
-//     "user_id": "1dd97223-4533-4c54-87d8-714cf7801663",
-//     "order_id": "ebc32b88-4d55-4f3a-8a54-fb8a683c296f",
-//     "date_created": "2024-11-04T16:30:28.302Z",
-//     "status": "PENDING",
-//     "amount": 453827.12
+//     "order_invoice_id": "73962211-d6e4-4f8b-a510-c8843b835fd4",
+//     "user_id": "65cb1603-5ec7-48f1-a374-d348713562e1",
+//     "order_id": "2c4fd222-e28c-489d-8965-13ecc0f164d9",
+//     "date_created": "2024-11-04T21:01:25.369Z",
+//     "status": "PAID",
+//     "amount": 805.75
 //   },
 //   {
-//     "order_invoice_id": "afb9a86e-981a-4e78-be2d-b3cd847c1f05",
-//     "user_id": "1dd97223-4533-4c54-87d8-714cf7801663",
-//     "order_id": "35fbecde-c7ba-4788-a703-e8ff708d7273",
-//     "date_created": "2024-11-07T10:20:15.337Z",
+//     "order_invoice_id": "7e3fea70-482e-41b7-97c3-a93c58805a6f",
+//     "user_id": "65cb1603-5ec7-48f1-a374-d348713562e1",
+//     "order_id": "3543a5f2-cd78-4547-8b8f-ccdd0376c1c0",
+//     "date_created": "2024-11-09T20:36:47.062Z",
 //     "status": "PENDING",
-//     "amount": 313.62
+//     "amount": 725.3
 //   },
 //   {
-//     "order_invoice_id": "18c6ee2c-9211-49e3-a212-2390cddf60cf",
-//     "user_id": "1dd97223-4533-4c54-87d8-714cf7801663",
-//     "order_id": "9a4d043c-9658-495f-ba24-f14cff6cfde3",
-//     "date_created": "2024-11-06T16:12:40.291Z",
+//     "order_invoice_id": "85c8c104-7ad7-4852-897d-b64704617911",
+//     "user_id": "65cb1603-5ec7-48f1-a374-d348713562e1",
+//     "order_id": "af65fb47-0647-4704-ad0d-33bb51778213",
+//     "date_created": "2024-11-04T05:34:05.960Z",
 //     "status": "PAID",
-//     "amount": 665.2
+//     "amount": 658.4
 //   },
 //   {
-//     "order_invoice_id": "3bcd8fa7-11fc-4417-a160-f9fe44455dad",
-//     "user_id": "1dd97223-4533-4c54-87d8-714cf7801663",
-//     "order_id": "bcd325ad-cb97-4b11-bbae-f8b69bea8467",
-//     "date_created": "2024-10-24T17:21:45.598Z",
+//     "order_invoice_id": "7835e696-13ae-4dfe-87b4-f9b6774d9e1f",
+//     "user_id": "65cb1603-5ec7-48f1-a374-d348713562e1",
+//     "order_id": "f3b2d01b-6532-48dc-a3fa-bf095d5c7a59",
+//     "date_created": "2024-11-04T01:13:21.183Z",
 //     "status": "PAID",
-//     "amount": 582426.99
+//     "amount": 1027.14
 //   },
 //   {
-//     "order_invoice_id": "5b0a26c1-26ad-48b6-a7d9-0235af5fe967",
-//     "user_id": "1dd97223-4533-4c54-87d8-714cf7801663",
-//     "order_id": "950dd19d-e465-46cb-b486-01ee46d39942",
-//     "date_created": "2024-10-29T06:15:58.733Z",
+//     "order_invoice_id": "f23aedbb-906f-4d84-a18b-2bdac4709d43",
+//     "user_id": "65cb1603-5ec7-48f1-a374-d348713562e1",
+//     "order_id": "8b7c7283-59fb-4b38-9390-05c48bda0b41",
+//     "date_created": "2024-10-25T05:42:04.523Z",
 //     "status": "PAID",
-//     "amount": 966819.62
+//     "amount": 392.75
 //   },
 //   {
-//     "order_invoice_id": "ba40e9b7-a5a6-4242-bbea-2be5931ed36a",
-//     "user_id": "1dd97223-4533-4c54-87d8-714cf7801663",
-//     "order_id": "252cf3c0-a257-4424-b406-14fa6ff77784",
-//     "date_created": "2024-11-02T21:00:30.366Z",
+//     "order_invoice_id": "864e5678-94e2-45ba-8a30-73422c961387",
+//     "user_id": "65cb1603-5ec7-48f1-a374-d348713562e1",
+//     "order_id": "d955f423-b46c-4c56-abb2-312e3b8324aa",
+//     "date_created": "2024-11-11T05:53:05.695Z",
 //     "status": "PAID",
-//     "amount": 822.69
+//     "amount": 228747.38
 //   },
 //   {
-//     "order_invoice_id": "121e8e0c-3423-417a-99cb-09f03544c8d5",
-//     "user_id": "1dd97223-4533-4c54-87d8-714cf7801663",
-//     "order_id": "40b53503-378a-4fd5-9dea-25c7cf05d6a4",
-//     "date_created": "2024-11-08T05:15:53.817Z",
+//     "order_invoice_id": "0e207880-5744-4af4-8e4a-a1a442f328ce",
+//     "user_id": "65cb1603-5ec7-48f1-a374-d348713562e1",
+//     "order_id": "d6f5e301-37ba-4154-bb8a-f4c71d0efd50",
+//     "date_created": "2024-10-02T16:34:30.647Z",
 //     "status": "PAID",
-//     "amount": 810.09
+//     "amount": 535341.94
 //   },
 //   {
-//     "order_invoice_id": "6d907c6c-4af8-467d-b47f-e086f4306293",
-//     "user_id": "1dd97223-4533-4c54-87d8-714cf7801663",
-//     "order_id": "ce469d23-6d5a-4821-8c2e-b4e0ec22033e",
-//     "date_created": "2024-11-06T08:19:36.392Z",
-//     "status": "PAID",
-//     "amount": 317.65
+//     "order_invoice_id": "34491089-4a29-453e-ac6e-e848028886c6",
+//     "user_id": "21b90f0b-de52-4a1a-b9e5-7e01cbd1d348",
+//     "order_id": "9da321e9-00a4-4c9e-b16d-d5c20ae325ae",
+//     "date_created": "2024-05-21T03:10:39.924Z",
+//     "status": "PENDING",
+//     "amount": 321357.08
 //   },
 //   {
-//     "order_invoice_id": "957fb34c-a1bc-4f02-a56b-069f0c31cfe8",
-//     "user_id": "1dd97223-4533-4c54-87d8-714cf7801663",
-//     "order_id": "36148470-da86-45ab-8ec0-0deb84e6b2d1",
-//     "date_created": "2024-11-01T21:09:09.651Z",
-//     "status": "PAID",
-//     "amount": 288824.97
+//     "order_invoice_id": "9371f367-475d-42c7-9985-b8765c9676d1",
+//     "user_id": "21b90f0b-de52-4a1a-b9e5-7e01cbd1d348",
+//     "order_id": "7c7b8b73-d2fb-49ab-aceb-ca46a7bed6bb",
+//     "date_created": "2024-10-31T23:39:49.319Z",
+//     "status": "PENDING",
+//     "amount": 131972.78
 //   },
 //   {
-//     "order_invoice_id": "3492797e-04c1-409b-af8b-7d7d155ffbde",
-//     "user_id": "5d697a40-db85-4d6b-ac64-d4506376f400",
-//     "order_id": "f9b6c6bc-bb67-462f-bb93-7513c6a08fcd",
-//     "date_created": "2024-10-27T14:27:33.073Z",
-//     "status": "PENDING",
-//     "amount": 1111.76
+//     "order_invoice_id": "8612ba98-5f30-45f4-a5a6-15f160447085",
+//     "user_id": "21b90f0b-de52-4a1a-b9e5-7e01cbd1d348",
+//     "order_id": "a9fe7485-fb5f-4521-b8b7-efee839e82d3",
+//     "date_created": "2024-11-01T09:47:44.543Z",
+//     "status": "PAID",
+//     "amount": 640629.51
 //   },
 //   {
-//     "order_invoice_id": "05b39c1c-3318-47f2-9cdf-e44928f8e840",
-//     "user_id": "5d697a40-db85-4d6b-ac64-d4506376f400",
-//     "order_id": "108a8b3f-a839-4fa5-83d8-b734a9a8cc68",
-//     "date_created": "2024-11-07T15:54:00.076Z",
+//     "order_invoice_id": "5201e913-156c-4277-878d-03cffc4302fd",
+//     "user_id": "21b90f0b-de52-4a1a-b9e5-7e01cbd1d348",
+//     "order_id": "e270c461-4345-4330-bec8-efd543b68874",
+//     "date_created": "2024-10-30T16:22:52.855Z",
 //     "status": "PENDING",
-//     "amount": 360694.61
+//     "amount": 773183.15
 //   },
 //   {
-//     "order_invoice_id": "1cddb1b1-53f0-4d6c-8f4e-f4503a61804a",
-//     "user_id": "5d697a40-db85-4d6b-ac64-d4506376f400",
-//     "order_id": "4725d6f8-d490-4b20-8132-be99ddbdf1de",
-//     "date_created": "2024-10-22T18:49:07.389Z",
+//     "order_invoice_id": "68d322f4-49d9-4bc5-b2e0-0328492a2945",
+//     "user_id": "21b90f0b-de52-4a1a-b9e5-7e01cbd1d348",
+//     "order_id": "56c4c220-7eb7-4f1b-acff-46ef509dd4df",
+//     "date_created": "2024-11-11T13:59:19.224Z",
 //     "status": "PAID",
-//     "amount": 831023.68
+//     "amount": 404200.84
 //   },
 //   {
-//     "order_invoice_id": "2931b1e3-b996-47da-b472-4c9ca2363122",
-//     "user_id": "5d697a40-db85-4d6b-ac64-d4506376f400",
-//     "order_id": "2a23c473-cd49-45ff-9111-8aae81c77c96",
-//     "date_created": "2024-10-20T03:46:22.940Z",
+//     "order_invoice_id": "f42bc585-fef9-436e-9e74-6c9a309ef58b",
+//     "user_id": "21b90f0b-de52-4a1a-b9e5-7e01cbd1d348",
+//     "order_id": "aab94d1b-3b04-4aa5-9177-f0cacfc29865",
+//     "date_created": "2024-08-08T17:37:39.583Z",
 //     "status": "PENDING",
-//     "amount": 431.02
+//     "amount": 629699.48
 //   },
 //   {
-//     "order_invoice_id": "278c7400-0fc2-4b21-8cb7-36d8b00f5099",
-//     "user_id": "5d697a40-db85-4d6b-ac64-d4506376f400",
-//     "order_id": "bf1e59db-f1ed-4cbb-9612-f3bc677e21f6",
-//     "date_created": "2024-11-05T03:48:20.569Z",
-//     "status": "PENDING",
-//     "amount": 656626.49
+//     "order_invoice_id": "a127c95a-5448-4a3c-b4e8-3c771f2acecd",
+//     "user_id": "21b90f0b-de52-4a1a-b9e5-7e01cbd1d348",
+//     "order_id": "e2a603d4-07ff-4a31-ad99-6f7a9998b50c",
+//     "date_created": "2024-11-09T16:32:10.920Z",
+//     "status": "PAID",
+//     "amount": 414571.57
 //   },
 //   {
-//     "order_invoice_id": "f20c9c31-fc6e-44b4-ac57-c840093d58ee",
-//     "user_id": "5d697a40-db85-4d6b-ac64-d4506376f400",
-//     "order_id": "d877bcfe-9dd7-4176-821c-3afed49e0373",
-//     "date_created": "2024-11-08T13:34:29.331Z",
+//     "order_invoice_id": "79048c25-6be1-4628-b898-ace623935e27",
+//     "user_id": "21b90f0b-de52-4a1a-b9e5-7e01cbd1d348",
+//     "order_id": "361d9582-d58c-4086-8e92-3e1c4eea9f9e",
+//     "date_created": "2024-10-23T04:11:27.209Z",
 //     "status": "PAID",
-//     "amount": 300.03
+//     "amount": 685.45
 //   },
 //   {
-//     "order_invoice_id": "622cf4ea-3179-4e92-a0a9-d74f16b0bb07",
-//     "user_id": "5d697a40-db85-4d6b-ac64-d4506376f400",
-//     "order_id": "f84ff898-022a-4aed-b1c5-fdcd964d2ee5",
-//     "date_created": "2024-11-04T21:59:23.143Z",
+//     "order_invoice_id": "75d809c6-385b-4721-8866-cbbd5aea4d43",
+//     "user_id": "a1b56ee9-81f2-4915-a303-070083e5bc10",
+//     "order_id": "2014fdb2-25a6-4845-ab7c-091fed36e749",
+//     "date_created": "2024-11-11T00:51:01.567Z",
 //     "status": "PAID",
-//     "amount": 141.84
+//     "amount": 22920.02
 //   },
 //   {
-//     "order_invoice_id": "c751c7c4-d96e-4586-aea9-58f9b7202fe5",
-//     "user_id": "5d697a40-db85-4d6b-ac64-d4506376f400",
-//     "order_id": "1821cf15-665f-4a8b-9871-3e952f14b740",
-//     "date_created": "2024-05-18T00:59:55.329Z",
+//     "order_invoice_id": "c840fe7c-6fa6-4dc9-8acb-d29d42f04b8b",
+//     "user_id": "a1b56ee9-81f2-4915-a303-070083e5bc10",
+//     "order_id": "eb3b6055-b49c-46fb-b03c-5ccfbe074507",
+//     "date_created": "2024-10-19T20:49:59.315Z",
 //     "status": "PAID",
-//     "amount": 540.05
+//     "amount": 933961.26
 //   },
 //   {
-//     "order_invoice_id": "7520c484-4b76-4fbe-a974-c61e5d97f52c",
-//     "user_id": "5d697a40-db85-4d6b-ac64-d4506376f400",
-//     "order_id": "14358dea-6704-48a0-be82-d1ed91179fad",
-//     "date_created": "2024-11-08T19:18:05.032Z",
+//     "order_invoice_id": "c4fd8db6-7041-4605-99b1-7b0619feceea",
+//     "user_id": "a1b56ee9-81f2-4915-a303-070083e5bc10",
+//     "order_id": "c5c1b6a5-ef4c-4374-90df-a2ea0b042570",
+//     "date_created": "2024-11-09T15:34:43.748Z",
 //     "status": "PAID",
-//     "amount": 525199.85
+//     "amount": 874.99
 //   },
 //   {
-//     "order_invoice_id": "3726ca69-d16c-4225-a621-866b23d6cb0c",
-//     "user_id": "5d697a40-db85-4d6b-ac64-d4506376f400",
-//     "order_id": "6e88d89a-696c-49fc-a32e-cb83f97b4dcc",
-//     "date_created": "2024-10-17T16:42:33.080Z",
-//     "status": "PAID",
-//     "amount": 228.94
+//     "order_invoice_id": "76ad161a-9e63-4fe6-9414-1dbc1972fb9c",
+//     "user_id": "a1b56ee9-81f2-4915-a303-070083e5bc10",
+//     "order_id": "2f4228fc-2b9a-4acc-9153-4b7646249d13",
+//     "date_created": "2024-11-04T08:54:55.389Z",
+//     "status": "PENDING",
+//     "amount": 46979.42
 //   },
 //   {
-//     "order_invoice_id": "9e02d1a4-59be-4e12-89da-2698af82b698",
-//     "user_id": "b4e524c1-a7a3-4e7f-99fa-7ac630956d8c",
-//     "order_id": "8db24293-2362-4222-b6b3-77bd6c22bc61",
-//     "date_created": "2024-11-03T02:44:50.841Z",
+//     "order_invoice_id": "ed7cdd66-79ab-44b0-a644-358d6b88bb7a",
+//     "user_id": "a1b56ee9-81f2-4915-a303-070083e5bc10",
+//     "order_id": "69a29556-2a7d-46cc-81d9-f6b667dd2ef7",
+//     "date_created": "2024-11-04T22:41:39.962Z",
 //     "status": "PENDING",
-//     "amount": 734770.92
+//     "amount": 393.69
 //   },
 //   {
-//     "order_invoice_id": "935ac302-39da-48f1-84eb-52e1f36529d7",
-//     "user_id": "b4e524c1-a7a3-4e7f-99fa-7ac630956d8c",
-//     "order_id": "bee7945c-7735-42d7-894e-91d3aa5fe290",
-//     "date_created": "2024-09-03T04:08:31.220Z",
-//     "status": "PAID",
-//     "amount": 502.26
+//     "order_invoice_id": "6c8d35d8-b75f-4ab1-ad49-e6141a0d8851",
+//     "user_id": "a1b56ee9-81f2-4915-a303-070083e5bc10",
+//     "order_id": "72212f13-ba7c-4fcd-b9a4-346f8f5e173b",
+//     "date_created": "2024-10-03T06:17:44.657Z",
+//     "status": "PENDING",
+//     "amount": 368.83
 //   },
 //   {
-//     "order_invoice_id": "41bf0307-5970-4122-bc88-101098f42482",
-//     "user_id": "b4e524c1-a7a3-4e7f-99fa-7ac630956d8c",
-//     "order_id": "921862e8-1e6e-41b8-9e78-530d65b378e0",
-//     "date_created": "2024-10-09T19:46:55.925Z",
+//     "order_invoice_id": "e2c6d185-29c9-4d5d-a313-2a4d1aa05f78",
+//     "user_id": "a1b56ee9-81f2-4915-a303-070083e5bc10",
+//     "order_id": "42e91789-7e70-4440-b0f1-1af20b8d1ed5",
+//     "date_created": "2024-10-23T10:02:25.626Z",
 //     "status": "PAID",
-//     "amount": 558.7
+//     "amount": 829451.78
 //   },
 //   {
-//     "order_invoice_id": "2ec5fe2d-7a25-4cf0-bf97-222ad84a4c82",
-//     "user_id": "b4e524c1-a7a3-4e7f-99fa-7ac630956d8c",
-//     "order_id": "e63aaebf-5e2f-45f7-9aa9-b41f0d91c463",
-//     "date_created": "2024-04-06T13:23:33.232Z",
+//     "order_invoice_id": "59dea0fd-b76d-4964-90bc-e3ae5b75036d",
+//     "user_id": "a1b56ee9-81f2-4915-a303-070083e5bc10",
+//     "order_id": "4387ae32-f235-4d30-8d8b-3746a76a1bde",
+//     "date_created": "2024-11-05T06:22:06.186Z",
 //     "status": "PENDING",
-//     "amount": 589.94
+//     "amount": 353927.92
 //   },
 //   {
-//     "order_invoice_id": "1851b3e5-3a12-4077-bad3-669f41cd90e4",
-//     "user_id": "b4e524c1-a7a3-4e7f-99fa-7ac630956d8c",
-//     "order_id": "254a31f8-9068-4acf-94a9-12f2439a0a23",
-//     "date_created": "2024-10-15T05:23:54.507Z",
-//     "status": "PAID",
-//     "amount": 855.79
+//     "order_invoice_id": "2e0a84f9-aff2-46b2-81c8-adca21714331",
+//     "user_id": "a1b56ee9-81f2-4915-a303-070083e5bc10",
+//     "order_id": "5aee4c2b-8d2f-4a16-aa42-3a77e09c1953",
+//     "date_created": "2024-10-24T23:03:29.571Z",
+//     "status": "PENDING",
+//     "amount": 1105.04
+//   },
+//   {
+//     "order_invoice_id": "40a80b49-4e5a-4e52-80be-29fed6b7318c",
+//     "user_id": "a1b56ee9-81f2-4915-a303-070083e5bc10",
+//     "order_id": "b751f9ba-73bf-4752-a113-0e290b39233f",
+//     "date_created": "2024-11-08T07:14:16.508Z",
+//     "status": "PENDING",
+//     "amount": 863829.91
 //   },
 //   {
-//     "order_invoice_id": "c16032e1-c0db-4794-8eb7-8d6df6901ef9",
-//     "user_id": "b4e524c1-a7a3-4e7f-99fa-7ac630956d8c",
-//     "order_id": "21254c45-37f9-45b8-8bb0-9845e3b93623",
-//     "date_created": "2024-11-02T05:31:37.395Z",
+//     "order_invoice_id": "d1c5fb75-cfa7-4d54-bc6b-ace9a850b108",
+//     "user_id": "a1b56ee9-81f2-4915-a303-070083e5bc10",
+//     "order_id": "0ef8bbac-615f-47cd-9468-5f7ebb6f5491",
+//     "date_created": "2024-11-10T20:43:48.912Z",
 //     "status": "PAID",
-//     "amount": 916.09
+//     "amount": 966.66
 //   },
 //   {
-//     "order_invoice_id": "7b63233c-ae81-4c4d-b1f7-70acf6fe179a",
-//     "user_id": "b4e524c1-a7a3-4e7f-99fa-7ac630956d8c",
-//     "order_id": "a380205d-379f-4692-9d72-7338f0517c7b",
-//     "date_created": "2024-11-08T22:01:48.136Z",
+//     "order_invoice_id": "fa58dec5-7e9b-44db-958b-98da48f1db16",
+//     "user_id": "a1b56ee9-81f2-4915-a303-070083e5bc10",
+//     "order_id": "51850d39-f9ae-48be-b597-ede89c256253",
+//     "date_created": "2024-10-16T07:14:32.550Z",
 //     "status": "PAID",
-//     "amount": 1105.23
+//     "amount": 132.28
 //   },
 //   {
-//     "order_invoice_id": "fe23a2fe-bd3b-438f-be2b-99a36c0a5c3c",
-//     "user_id": "b4e524c1-a7a3-4e7f-99fa-7ac630956d8c",
-//     "order_id": "1aba3c3b-357c-430a-b298-872ada534d6c",
-//     "date_created": "2024-10-07T09:08:36.948Z",
+//     "order_invoice_id": "e5720273-ddbf-4001-a658-726cb6620962",
+//     "user_id": "a1b56ee9-81f2-4915-a303-070083e5bc10",
+//     "order_id": "fb1df6cc-f26f-495b-b06b-8b063a996861",
+//     "date_created": "2024-10-19T05:38:10.473Z",
 //     "status": "PENDING",
-//     "amount": 515.59
+//     "amount": 715519.06
 //   },
 //   {
-//     "order_invoice_id": "f525b868-480c-4847-89b8-7d12342da314",
-//     "user_id": "b4e524c1-a7a3-4e7f-99fa-7ac630956d8c",
-//     "order_id": "c3dbcb11-d221-4bd8-bb54-34a6abaac91f",
-//     "date_created": "2024-10-12T23:54:02.656Z",
+//     "order_invoice_id": "abd39ad4-bf4c-487a-b0ab-652f1fa38ba4",
+//     "user_id": "a1b56ee9-81f2-4915-a303-070083e5bc10",
+//     "order_id": "ede55f3c-f763-4246-89cc-481564816049",
+//     "date_created": "2024-10-30T07:28:55.702Z",
 //     "status": "PENDING",
-//     "amount": 672.06
+//     "amount": 379.27
 //   },
 //   {
-//     "order_invoice_id": "6acffeb6-acd5-4b76-aee4-cfb51b577354",
-//     "user_id": "b4e524c1-a7a3-4e7f-99fa-7ac630956d8c",
-//     "order_id": "79f886ab-7d73-4a92-ad52-6c5877945a55",
-//     "date_created": "2024-08-25T00:27:56.698Z",
-//     "status": "PAID",
-//     "amount": 170052.35
+//     "order_invoice_id": "ffcd55f2-fd90-4bbb-b167-c6b05d4d0beb",
+//     "user_id": "a1b56ee9-81f2-4915-a303-070083e5bc10",
+//     "order_id": "73705b0b-8bd0-431d-be17-55cdaf55ae35",
+//     "date_created": "2024-10-23T19:49:23.293Z",
+//     "status": "PENDING",
+//     "amount": 425.18
+//   },
+//   {
+//     "order_invoice_id": "ef98b8c8-faf3-44ca-86fe-4151aca7fb31",
+//     "user_id": "a1b56ee9-81f2-4915-a303-070083e5bc10",
+//     "order_id": "4a349ebd-db94-4d6f-b6ab-b8c82d3610fb",
+//     "date_created": "2024-11-11T14:58:32.951Z",
+//     "status": "PENDING",
+//     "amount": 564.82
 //   },
 //   {
-//     "order_invoice_id": "8164a3b7-c840-460e-8182-63f58839f344",
-//     "user_id": "b4e524c1-a7a3-4e7f-99fa-7ac630956d8c",
-//     "order_id": "f96c2f09-affa-4e4c-a4e6-ad6cb86bb765",
-//     "date_created": "2024-10-30T11:32:20.208Z",
+//     "order_invoice_id": "e94d13d7-3a6b-4e22-91e0-88888bfb6fe3",
+//     "user_id": "a1b56ee9-81f2-4915-a303-070083e5bc10",
+//     "order_id": "cd4d1f41-c337-4fbe-bba7-d8535f84282f",
+//     "date_created": "2024-11-09T05:28:11.901Z",
 //     "status": "PAID",
-//     "amount": 808.32
+//     "amount": 969775.2
 //   }
 // ];
