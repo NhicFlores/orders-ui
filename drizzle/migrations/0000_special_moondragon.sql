@@ -101,7 +101,7 @@ CREATE TABLE IF NOT EXISTS "dev-schema"."user_shipping_information" (
 );
 --> statement-breakpoint
 CREATE TABLE IF NOT EXISTS "dev-schema"."users" (
-	"user_id" uuid PRIMARY KEY DEFAULT gen_random_uuid() NOT NULL,
+	"id" uuid PRIMARY KEY DEFAULT gen_random_uuid() NOT NULL,
 	"email" varchar(255) NOT NULL,
 	"password" varchar(255) NOT NULL,
 	"role" varchar(255) DEFAULT 'USER',
@@ -110,7 +110,7 @@ CREATE TABLE IF NOT EXISTS "dev-schema"."users" (
 );
 --> statement-breakpoint
 DO $$ BEGIN
- ALTER TABLE "dev-schema"."order_invoices" ADD CONSTRAINT "order_invoices_user_id_users_user_id_fk" FOREIGN KEY ("user_id") REFERENCES "dev-schema"."users"("user_id") ON DELETE cascade ON UPDATE no action;
+ ALTER TABLE "dev-schema"."order_invoices" ADD CONSTRAINT "order_invoices_user_id_users_id_fk" FOREIGN KEY ("user_id") REFERENCES "dev-schema"."users"("id") ON DELETE cascade ON UPDATE no action;
 EXCEPTION
  WHEN duplicate_object THEN null;
 END $$;
@@ -134,25 +134,25 @@ EXCEPTION
 END $$;
 --> statement-breakpoint
 DO $$ BEGIN
- ALTER TABLE "dev-schema"."orders" ADD CONSTRAINT "orders_user_id_users_user_id_fk" FOREIGN KEY ("user_id") REFERENCES "dev-schema"."users"("user_id") ON DELETE cascade ON UPDATE no action;
+ ALTER TABLE "dev-schema"."orders" ADD CONSTRAINT "orders_user_id_users_id_fk" FOREIGN KEY ("user_id") REFERENCES "dev-schema"."users"("id") ON DELETE cascade ON UPDATE no action;
 EXCEPTION
  WHEN duplicate_object THEN null;
 END $$;
 --> statement-breakpoint
 DO $$ BEGIN
- ALTER TABLE "dev-schema"."user_billing_information" ADD CONSTRAINT "user_billing_information_user_id_users_user_id_fk" FOREIGN KEY ("user_id") REFERENCES "dev-schema"."users"("user_id") ON DELETE cascade ON UPDATE no action;
+ ALTER TABLE "dev-schema"."user_billing_information" ADD CONSTRAINT "user_billing_information_user_id_users_id_fk" FOREIGN KEY ("user_id") REFERENCES "dev-schema"."users"("id") ON DELETE cascade ON UPDATE no action;
 EXCEPTION
  WHEN duplicate_object THEN null;
 END $$;
 --> statement-breakpoint
 DO $$ BEGIN
- ALTER TABLE "dev-schema"."user_profiles" ADD CONSTRAINT "user_profiles_user_id_users_user_id_fk" FOREIGN KEY ("user_id") REFERENCES "dev-schema"."users"("user_id") ON DELETE cascade ON UPDATE no action;
+ ALTER TABLE "dev-schema"."user_profiles" ADD CONSTRAINT "user_profiles_user_id_users_id_fk" FOREIGN KEY ("user_id") REFERENCES "dev-schema"."users"("id") ON DELETE cascade ON UPDATE no action;
 EXCEPTION
  WHEN duplicate_object THEN null;
 END $$;
 --> statement-breakpoint
 DO $$ BEGIN
- ALTER TABLE "dev-schema"."user_shipping_information" ADD CONSTRAINT "user_shipping_information_user_id_users_user_id_fk" FOREIGN KEY ("user_id") REFERENCES "dev-schema"."users"("user_id") ON DELETE cascade ON UPDATE no action;
+ ALTER TABLE "dev-schema"."user_shipping_information" ADD CONSTRAINT "user_shipping_information_user_id_users_id_fk" FOREIGN KEY ("user_id") REFERENCES "dev-schema"."users"("id") ON DELETE cascade ON UPDATE no action;
 EXCEPTION
  WHEN duplicate_object THEN null;
 END $$;

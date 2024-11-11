@@ -17,21 +17,24 @@ export const { auth, signIn, signOut } = NextAuth({
   providers: [
     Credentials({
       async authorize(credentials) {
+        // console.log(credentials);
         const parsedCredentials = LoginSchema.safeParse(credentials);
+        // console.log("XXXX --- PARSED CREDENTIALS",parsedCredentials);
         // console.log("------------- PARSED CREDENTIALS ----------------");
         console.log("AUTH.TS - NEXT AUTH - CREDENTIALS - AUTHORIZE");
         if (parsedCredentials.success) {
+          console.log("---- CREDENTIALS SUCCESS ----"); 
           const { email, password } = parsedCredentials.data;
           const user = await getUser(email);
-          console.log("USER:", user);
+          // console.log("USER:", user);
           if (!user) return null;
           const passwordsMatch = await bcrypt.compare(password, user.password);
           console.log("USER FOUND");
           if (passwordsMatch) return user;
         }
 
-        //console.log('USER NOT AUTHENTICATED')
-        //console.log('Invalid Credentials');
+        // console.log('USER NOT AUTHENTICATED')
+        // console.log('Invalid Credentials');
         return null;
       },
     }),

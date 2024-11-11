@@ -44,7 +44,7 @@ export default function UserForm({ user }: UserFormProps) {
       return;
     }
 
-    updateUser(user.user_id, data);
+    updateUser(user.id, data);
     //await new Promise((resolve) => setTimeout(resolve, 3000));
     setIsEditEnabled(!isEditEnabled);
   }

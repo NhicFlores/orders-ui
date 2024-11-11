@@ -27,27 +27,10 @@ import { defineConfig } from "drizzle-kit";
 // });
 
 // dev config
-// export default defineConfig({
-//   dialect: "postgresql",
-//   schema: process.env.SCHEMA_PATH!,
-//   out: process.env.MIGRATIONS_OUT!,
-//   dbCredentials: {
-//     url: process.env.POSTGRES_URL!,
-//   },
-//   migrations: {
-//     table: process.env.MIGRATIONS_TABLE!,
-//     schema: process.env.DEV_SCHEMA!,
-//   },
-//   //schemaFilter: ["order-handling"],
-//   verbose: true,
-//   strict: true,
-// });
-
-// prod config
 export default defineConfig({
   dialect: "postgresql",
   schema: process.env.SCHEMA_PATH!,
-  out: process.env.PROD_MIGRATIONS_OUT!,
+  out: process.env.MIGRATIONS_OUT!,
   dbCredentials: {
     url: process.env.POSTGRES_URL!,
   },
@@ -59,3 +42,20 @@ export default defineConfig({
   verbose: true,
   strict: true,
 });
+
+// prod config
+// export default defineConfig({
+//   dialect: "postgresql",
+//   schema: process.env.SCHEMA_PATH!,
+//   out: process.env.PROD_MIGRATIONS_OUT!,
+//   dbCredentials: {
+//     url: process.env.POSTGRES_URL!,
+//   },
+//   migrations: {
+//     table: process.env.MIGRATIONS_TABLE!,
+//     schema: process.env.PROD_SCHEMA!,
+//   },
+//   //schemaFilter: ["order-handling"],
+//   verbose: true,
+//   strict: true,
+// });

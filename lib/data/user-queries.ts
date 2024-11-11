@@ -6,7 +6,7 @@ export async function GetUserEmails() {
 
   try {
     const users = await db
-      .select({ user_id: UserTable.user_id, email: UserTable.email })
+      .select({ id: UserTable.id, email: UserTable.email })
       .from(UserTable);
     // console.log(users);
     // const user = users[0] as User;

@@ -6,6 +6,7 @@ import bcrypt from "bcrypt";
 import { signIn, signOut } from "@/auth";
 import { AuthError } from "next-auth";
 import { User } from "../data-model/schema-definitions";
+import { getSchemaName } from "../utils";
 
 // -------------------- Authentication ------------------
 
@@ -129,14 +130,20 @@ export async function registerUser(formFields: z.infer<typeof RegisterSchema>) {
 export async function getUser(email: string): Promise<User | undefined> {
   console.log(" ");
   console.log("----");
+  console.log("XXXX");
+  console.log(" ");
   console.log("AUTH-ACTIONS.TS - getUser()");
   console.log(" ");
+  console.log("XXXX");
   console.log("----");
+  console.log(" ");
   try {
+    // NOTE TODO: UPDATE QUERY TO USE DRIZZLE 
     const user = await sql<User>`
-            SELECT * FROM "prod-orders".users 
+            SELECT * FROM "dev-schema".users 
             WHERE email=${email}
         `;
+    console.log("XXXX ---- USER: ", user);
     return user.rows[0];
   } catch (error) {
     console.error("Failed to fetch user: ", error);

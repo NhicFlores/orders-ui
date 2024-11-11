@@ -1,5 +1,5 @@
 {
-  "id": "98788915-190b-4d50-8aa0-282dea92f551",
+  "id": "d5fa273d-ea49-4817-afa6-f80b972b2165",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "7",
   "dialect": "postgresql",
@@ -202,8 +202,8 @@
       },
       "indexes": {},
       "foreignKeys": {
-        "order_invoices_user_id_users_user_id_fk": {
-          "name": "order_invoices_user_id_users_user_id_fk",
+        "order_invoices_user_id_users_id_fk": {
+          "name": "order_invoices_user_id_users_id_fk",
           "tableFrom": "order_invoices",
           "tableTo": "users",
           "schemaTo": "dev-schema",
@@ -211,7 +211,7 @@
             "user_id"
           ],
           "columnsTo": [
-            "user_id"
+            "id"
           ],
           "onDelete": "cascade",
           "onUpdate": "no action"
@@ -389,8 +389,8 @@
       },
       "indexes": {},
       "foreignKeys": {
-        "orders_user_id_users_user_id_fk": {
-          "name": "orders_user_id_users_user_id_fk",
+        "orders_user_id_users_id_fk": {
+          "name": "orders_user_id_users_id_fk",
           "tableFrom": "orders",
           "tableTo": "users",
           "schemaTo": "dev-schema",
@@ -398,7 +398,7 @@
             "user_id"
           ],
           "columnsTo": [
-            "user_id"
+            "id"
           ],
           "onDelete": "cascade",
           "onUpdate": "no action"
@@ -514,8 +514,8 @@
       },
       "indexes": {},
       "foreignKeys": {
-        "user_billing_information_user_id_users_user_id_fk": {
-          "name": "user_billing_information_user_id_users_user_id_fk",
+        "user_billing_information_user_id_users_id_fk": {
+          "name": "user_billing_information_user_id_users_id_fk",
           "tableFrom": "user_billing_information",
           "tableTo": "users",
           "schemaTo": "dev-schema",
@@ -523,7 +523,7 @@
             "user_id"
           ],
           "columnsTo": [
-            "user_id"
+            "id"
           ],
           "onDelete": "cascade",
           "onUpdate": "no action"
@@ -584,8 +584,8 @@
       },
       "indexes": {},
       "foreignKeys": {
-        "user_profiles_user_id_users_user_id_fk": {
-          "name": "user_profiles_user_id_users_user_id_fk",
+        "user_profiles_user_id_users_id_fk": {
+          "name": "user_profiles_user_id_users_id_fk",
           "tableFrom": "user_profiles",
           "tableTo": "users",
           "schemaTo": "dev-schema",
@@ -593,7 +593,7 @@
             "user_id"
           ],
           "columnsTo": [
-            "user_id"
+            "id"
           ],
           "onDelete": "cascade",
           "onUpdate": "no action"
@@ -667,8 +667,8 @@
       },
       "indexes": {},
       "foreignKeys": {
-        "user_shipping_information_user_id_users_user_id_fk": {
-          "name": "user_shipping_information_user_id_users_user_id_fk",
+        "user_shipping_information_user_id_users_id_fk": {
+          "name": "user_shipping_information_user_id_users_id_fk",
           "tableFrom": "user_shipping_information",
           "tableTo": "users",
           "schemaTo": "dev-schema",
@@ -676,7 +676,7 @@
             "user_id"
           ],
           "columnsTo": [
-            "user_id"
+            "id"
           ],
           "onDelete": "cascade",
           "onUpdate": "no action"
@@ -692,8 +692,8 @@
       "name": "users",
       "schema": "dev-schema",
       "columns": {
-        "user_id": {
-          "name": "user_id",
+        "id": {
+          "name": "id",
           "type": "uuid",
           "primaryKey": true,
           "notNull": true,

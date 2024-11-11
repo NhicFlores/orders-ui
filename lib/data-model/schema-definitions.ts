@@ -1,5 +1,5 @@
 export type User = {
-  user_id: string;
+  id: string;
   email: string;
   password: string;
   role: UserRole;
@@ -20,8 +20,6 @@ export type UserProfile = {
   phone_num?: string;
 };
 
-export type ShippingInfo = UserShippingInformation | ShippingInfoWithoutIds;
-
 export type UserShippingInformation = {
   shipping_info_id: number;
   user_id: string;
@@ -34,7 +32,12 @@ export type UserShippingInformation = {
   note: string;
 };
 
-export type BillingInfo = UserBillingInformation | BillingInfoWithoutIds;
+export type ShippingInfoWithoutIds = Omit<
+  UserShippingInformation,
+  "shipping_info_id" | "user_id"
+>;
+
+export type ShippingInfo = UserShippingInformation | ShippingInfoWithoutIds;
 
 export type UserBillingInformation = {
   billing_info_id: number;
@@ -54,6 +57,13 @@ export type UserBillingInformation = {
   is_primary: boolean;
   is_active: boolean;
 };
+
+export type BillingInfoWithoutIds = Omit<
+  UserBillingInformation,
+  "billing_info_id" | "user_id"
+>;
+
+export type BillingInfo = UserBillingInformation | BillingInfoWithoutIds;
 
 // used when generating billing info for orders
 export const payment_method_codes = [
@@ -131,15 +141,6 @@ export enum OrderStatus {
 }
 // NOTE TODO: revise statuses to be more descriptive
 // - NEW, AWAITING CONFIRMATION, CONFIRMED, IN PRODUCTION, SHIPPED, DELIVERED
-
-export type ShippingInfoWithoutIds = Omit<
-  UserShippingInformation,
-  "shipping_info_id" | "user_id"
->;
-export type BillingInfoWithoutIds = Omit<
-  UserBillingInformation,
-  "billing_info_id" | "user_id"
->;
 
 export type Order = {
   order_id: string;

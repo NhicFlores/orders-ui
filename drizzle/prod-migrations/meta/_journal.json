@@ -1,13 +1,5 @@
 {
   "version": "7",
   "dialect": "postgresql",
-  "entries": [
-    {
-      "idx": 0,
-      "version": "7",
-      "when": 1731106986969,
-      "tag": "0000_freezing_typhoid_mary",
-      "breakpoints": true
-    }
-  ]
+  "entries": []
 }

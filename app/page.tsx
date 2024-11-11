@@ -9,7 +9,7 @@ import SignInButton from "@/components/landing_page/sign-in-button";
 
 //landing page
 export default async function Home() {
-  // console.log("---- starting seeding process ... ----"); 
+  // console.log("---- STARTING SEEDING PROCESS ... ----");
   // await seedUserInfo();
   // await seedProducts();
   // await seedGlassInventory();

@@ -14,6 +14,7 @@ import {
   UserBillingInformationTable,
   UserProfileTable,
   UserShippingInformationTable,
+  UserTable,
 } from "@/drizzle/schema";
 import { eq } from "drizzle-orm";
 
@@ -32,12 +33,11 @@ export async function getUserByID(id: string) {
   // })
 
   try {
-    console.log("SCHEMA NAME:", schemaName);
-    const user =
-      await sql<User>`SELECT * FROM "prod-orders".users WHERE user_id=${id}`;
-    console.log("USER:", user.rows[0]);
+    // console.log("SCHEMA NAME:", schemaName);
+    const user = await db.select().from(UserTable).where(eq(UserTable.id, id));
+    // console.log("USER:", user);
     // console.log("USER TYPE:", typeof user.rows[0]);
-    return user.rows[0]; //as User
+    return user; //as User
   } catch (error) {
     console.error("Failed to fetch user:", error);
     throw new Error("Failed to fetch user.");
