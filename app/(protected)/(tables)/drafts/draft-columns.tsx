@@ -36,7 +36,7 @@ import { Order } from "@/lib/data-model/schema-definitions";
 //     total: number;
 //     date: string;
 // };
-
+// NOTE: DEPRECATED 
 export const DraftColumns: ColumnDef<Order>[] = [
   {
     id: "select",

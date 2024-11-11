@@ -17,9 +17,10 @@ import Link from "next/link";
 import { deleteOrder } from "@/lib/actions/actions";
 import { formatDateStringToLocal, formatDateToLocal } from "@/lib/utils";
 import { Order, OrderStatus } from "@/lib/data-model/schema-definitions";
+import { OrderDetails } from "@/lib/data-model/data-definitions";
 
 //TODO: enable shift select
-export const OrderColumns: ColumnDef<Order>[] = [
+export const OrderColumns: ColumnDef<OrderDetails>[] = [
   {
     id: "select",
     header: ({ table }) => (
@@ -97,35 +98,10 @@ export const OrderColumns: ColumnDef<Order>[] = [
         </Button>
       );
     },
+    cell: ({ row }) => {
+      return <div>{row.original.order_name}</div>;
+    },
   },
-  // {
-  //   accessorKey: "product_id",
-  //   header: ({ column }) => {
-  //     return (
-  //       <Button
-  //         variant={"ghost"}
-  //         onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-  //       >
-  //         Product
-  //         <ArrowUpDown className="ml-2 h-4 w-4" />
-  //       </Button>
-  //     );
-  //   },
-  // },
-  // {
-  //   accessorKey: "quantity",
-  //   header: ({ column }) => {
-  //     return (
-  //       <Button
-  //         variant={"ghost"}
-  //         onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-  //       >
-  //         Quantity
-  //         <ArrowUpDown className="ml-2 h-4 w-4" />
-  //       </Button>
-  //     );
-  //   },
-  // },
   // {
   //   accessorKey: "price",
   //   header: ({ column }) => {
@@ -161,9 +137,36 @@ export const OrderColumns: ColumnDef<Order>[] = [
         </Button>
       );
     },
+    cell: ({ row }) => {
+      const status = row.original.status;
+      return <div>{status}</div>;
+    },
+  },
+  {
+    accessorKey: "amount",
+    header: ({ column }) => {
+      return (
+        <Button
+          variant={"ghost"}
+          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+        >
+          Amount
+          <ArrowUpDown className="ml-2 h-4 w-4" />
+        </Button>
+      );
+    },
+    cell: ({ row }) => {
+      const amount = row.original.amount;
+      const formatted = new Intl.NumberFormat("en-US", {
+        style: "currency",
+        currency: "USD",
+      }).format(amount);
+      return <div>{formatted}</div>;
+    }
   },
   {
     accessorKey: "date_submitted",
+    
     header: ({ column }) => {
       return (
         <Button

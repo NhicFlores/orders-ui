@@ -39,7 +39,7 @@ export async function getUserByID(id: string) {
       .select()
       .from(UserTable)
       .where(eq(UserTable.id, id));
-    console.log("USER QUERY RESULT:", result);
+    // console.log("USER QUERY RESULT:", result);
     // console.log("USER TYPE:", typeof user.rows[0]);
 
     return result[0] as User;

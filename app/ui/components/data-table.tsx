@@ -91,7 +91,7 @@ export function DataTable<TData, TValue>({
     state: {
       sorting,
       columnFilters,
-      columnVisibility,
+      columnVisibility, // NOTE TODO: SET DEFAULT VISIBILITY FOR SPECIFIC COLUMNS
       rowSelection,
       //globalFilter,
     },
@@ -179,7 +179,11 @@ export function DataTable<TData, TValue>({
                     <CollapsibleContent asChild>
                       <tr className="p-4 bg-slate-100">
                         <td colSpan={row.getVisibleCells().length}>
-                          <OrderDetailTable orderItems={row.original.order_items} billingInfo={row.original.billing_data} shippingInfo={row.original.shipping_data}/>
+                          <OrderDetailTable
+                            orderItems={row.original.order_items}
+                            billingInfo={row.original.billing_data}
+                            shippingInfo={row.original.shipping_data}
+                          />
                         </td>
                       </tr>
                     </CollapsibleContent>

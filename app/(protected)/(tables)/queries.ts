@@ -1,40 +1,20 @@
 "use server";
 import { db } from "@/drizzle/db";
-import { eq } from "drizzle-orm";
-import { OrderTable, UserProfileTable } from "@/drizzle/schema";
-import { Order, OrderStatus } from "@/lib/data-model/schema-definitions";
-
-export type OrderTableData = {
-  order_id: string;
-  order_name: string;
-  status: OrderStatus;
-  shipping_info: string;
-  date_created: string;
-  date_updated: string;
-  date_submitted: string;
-  billing_info: {
-    street: string;
-    apt_num: string;
-    city: string;
-    state: string;
-    zip: string;
-    payment_method: string;
-    purchase_order: string;
-    primary_contact_name: string;
-    primary_contact_email: string;
-    phone_num: string;
-    alt_phone_num: string;
-    fax_num: string;
-    isPrimary: boolean;
-    isActive: boolean;
-  };
-  order_items: {
-    id: string;
-    product_config: string;
-    quantity: number;
-    note: string;
-  }[];
-};
+import { eq, sql } from "drizzle-orm";
+import {
+  OrderInvoiceTable,
+  OrderItemTable,
+  OrderTable,
+  UserProfileTable,
+} from "@/drizzle/schema";
+import {
+  BillingInfoWithoutIds,
+  Order,
+  OrderItem,
+  OrderStatus,
+  ShippingInfoWithoutIds,
+} from "@/lib/data-model/schema-definitions";
+import { OrderDetails } from "@/lib/data-model/data-definitions";
 
 export async function fetchOrders() {
   try {
@@ -91,6 +71,169 @@ export async function fetchOrdersByStatus(status: OrderStatus) {
     // console.log(data.rows);
     // return data.rowCount && data.rowCount > 0 ? data.rows : [];
     return data as Order[];
+  } catch (error) {
+    // return [];
+    throw new Error("Database Error: Failed to fetch draft orders");
+  }
+}
+
+export async function fetchOrderTableData(): Promise<OrderDetails[]> {
+  try {
+    const result = await db
+      .select({
+        order_id: OrderTable.order_id,
+        user_id: OrderTable.user_id,
+        order_name: OrderTable.order_name,
+        shipping_data: OrderTable.shipping_data,
+        billing_data: OrderTable.billing_data,
+        status: OrderTable.status,
+        date_created: OrderTable.date_created,
+        date_updated: OrderTable.date_updated,
+        date_submitted: OrderTable.date_submitted,
+        date_shipped: OrderTable.date_shipped,
+        date_delivered: OrderTable.date_delivered,
+        invoice_amount: OrderInvoiceTable.amount,
+        order_invoice_id: OrderInvoiceTable.order_invoice_id,
+        ordered_by:
+          sql`${UserProfileTable.first_name} || ' ' || ${UserProfileTable.last_name}`.as(
+            "ordered_by"
+          ),
+        order_item: OrderItemTable,
+      })
+      .from(OrderTable)
+      .leftJoin(
+        UserProfileTable,
+        eq(OrderTable.user_id, UserProfileTable.user_id)
+      )
+      .leftJoin(
+        OrderInvoiceTable,
+        eq(OrderTable.order_id, OrderInvoiceTable.order_id)
+      )
+      .leftJoin(
+        OrderItemTable,
+        eq(OrderTable.order_id, OrderItemTable.order_id)
+      );
+
+    const reducedResult = result.reduce<OrderDetails[]>((acc, row) => {
+      const orderDetails = {
+        order_id: row.order_id,
+        user_id: row.user_id,
+        order_name: row.order_name,
+        shipping_data: row.shipping_data as ShippingInfoWithoutIds,
+        billing_data: row.billing_data as BillingInfoWithoutIds,
+        status: row.status as OrderStatus,
+        date_created: row.date_created,
+        date_updated: row.date_updated,
+        date_submitted: row.date_submitted,
+        date_shipped: row.date_shipped,
+        date_delivered: row.date_delivered,
+        amount: row.invoice_amount ? parseFloat(row.invoice_amount) : 0,
+        order_invoice_id: row.order_invoice_id ? row.order_invoice_id : "",
+        ordered_by: row.ordered_by as string,
+        order_items: [],
+      };
+      const orderItem = row.order_item as OrderItem;
+
+      let existingOrderInfo = acc.find(
+        (o) => o.order_id === orderDetails.order_id
+      );
+
+      if (!existingOrderInfo) {
+        existingOrderInfo = orderDetails;
+        acc.push(existingOrderInfo);
+      }
+
+      if (orderItem) {
+        existingOrderInfo.order_items.push(orderItem);
+      }
+
+      return acc;
+    }, []);
+
+    return reducedResult;
+  } catch (error) {
+    // return [];
+    throw new Error("Database Error: Failed to fetch draft orders");
+  }
+}
+
+export async function getOrderDetailsByStatus(
+  status: OrderStatus
+): Promise<OrderDetails[]> {
+  try {
+    const result = await db
+      .select({
+        order_id: OrderTable.order_id,
+        user_id: OrderTable.user_id,
+        order_name: OrderTable.order_name,
+        shipping_data: OrderTable.shipping_data,
+        billing_data: OrderTable.billing_data,
+        status: OrderTable.status,
+        date_created: OrderTable.date_created,
+        date_updated: OrderTable.date_updated,
+        date_submitted: OrderTable.date_submitted,
+        date_shipped: OrderTable.date_shipped,
+        date_delivered: OrderTable.date_delivered,
+        invoice_amount: OrderInvoiceTable.amount,
+        order_invoice_id: OrderInvoiceTable.order_invoice_id,
+        ordered_by:
+          sql`${UserProfileTable.first_name} || ' ' || ${UserProfileTable.last_name}`.as(
+            "ordered_by"
+          ),
+        order_item: OrderItemTable,
+      })
+      .from(OrderTable)
+      .where(eq(OrderTable.status, status))
+      .leftJoin(
+        UserProfileTable,
+        eq(OrderTable.user_id, UserProfileTable.user_id)
+      )
+      .leftJoin(
+        OrderInvoiceTable,
+        eq(OrderTable.order_id, OrderInvoiceTable.order_id)
+      )
+      .leftJoin(
+        OrderItemTable,
+        eq(OrderTable.order_id, OrderItemTable.order_id)
+      );
+
+    const reducedResult = result.reduce<OrderDetails[]>((acc, row) => {
+      const orderDetails = {
+        order_id: row.order_id,
+        user_id: row.user_id,
+        order_name: row.order_name,
+        shipping_data: row.shipping_data as ShippingInfoWithoutIds,
+        billing_data: row.billing_data as BillingInfoWithoutIds,
+        status: row.status as OrderStatus,
+        date_created: row.date_created,
+        date_updated: row.date_updated,
+        date_submitted: row.date_submitted,
+        date_shipped: row.date_shipped,
+        date_delivered: row.date_delivered,
+        amount: row.invoice_amount ? parseFloat(row.invoice_amount) : 0,
+        order_invoice_id: row.order_invoice_id ? row.order_invoice_id : "",
+        ordered_by: row.ordered_by as string,
+        order_items: [],
+      };
+      const orderItem = row.order_item as OrderItem;
+
+      let existingOrderInfo = acc.find(
+        (o) => o.order_id === orderDetails.order_id
+      );
+
+      if (!existingOrderInfo) {
+        existingOrderInfo = orderDetails;
+        acc.push(existingOrderInfo);
+      }
+
+      if (orderItem) {
+        existingOrderInfo.order_items.push(orderItem);
+      }
+
+      return acc;
+    }, []);
+
+    return reducedResult;
   } catch (error) {
     // return [];
     throw new Error("Database Error: Failed to fetch draft orders");

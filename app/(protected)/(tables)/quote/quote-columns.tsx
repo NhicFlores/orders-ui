@@ -37,7 +37,7 @@ import { Order } from "@/lib/data-model/schema-definitions";
 //   total: number;
 //   date: string;
 // };
-
+// NOTE: DEPRECATED 
 export const QuoteColumns: ColumnDef<Order>[] = [
   {
     id: "select",
