@@ -1,8 +1,5 @@
 //quote route
-
-import { fetchQuote } from "@/lib/data/data";
 import { DataTable } from "@/app/ui/components/data-table";
-import { QuoteColumns } from "./quote-columns";
 import { OrderColumns } from "../orders/columns";
 import { getOrderDetailsByStatus } from "../queries";
 import { OrderStatus } from "@/lib/data-model/schema-definitions";

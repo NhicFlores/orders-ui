@@ -102,6 +102,20 @@ export const OrderColumns: ColumnDef<OrderDetails>[] = [
       return <div>{row.original.order_name}</div>;
     },
   },
+  {
+    accessorKey: "ordered_by",
+    header: ({ column }) => {
+      return (
+        <Button
+          variant={"ghost"}
+          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+        >
+          Ordered By
+          <ArrowUpDown className="ml-2 h-4 w-4" />
+        </Button>
+      );
+    }
+  },
   // {
   //   accessorKey: "price",
   //   header: ({ column }) => {

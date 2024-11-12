@@ -1,8 +1,7 @@
 //drafts route
 
 import { DataTable } from "../../../ui/components/data-table";
-import { DraftColumns } from "./draft-columns";
-import { fetchOrdersByStatus, getOrderDetailsByStatus } from "../queries";
+import { getOrderDetailsByStatus } from "../queries";
 import { OrderStatus } from "@/lib/data-model/schema-definitions";
 import { OrderColumns } from "../orders/columns";
 

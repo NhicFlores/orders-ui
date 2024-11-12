@@ -2,8 +2,6 @@
 
 "use client";
 
-import * as React from "react";
-
 import {
   ColumnDef,
   SortingState,
@@ -44,6 +42,9 @@ import {
 import { fuzzyOrderFilter } from "./table/table-utils";
 import OrderDetailTable from "@/app/(protected)/(tables)/order-detail-table";
 import { OrderDetailColumns } from "@/app/(protected)/(tables)/order-detail-columns";
+import { OrderStatus } from "@/lib/data-model/schema-definitions";
+import { useState } from "react";
+import { OrderDetails } from "@/lib/data-model/data-definitions";
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
@@ -54,15 +55,41 @@ export function DataTable<TData, TValue>({
   columns,
   data,
 }: DataTableProps<TData, TValue>) {
-  const [sorting, setSorting] = React.useState<SortingState>([]);
-  const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
+  const [sorting, setSorting] = useState<SortingState>([]);
+  const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>(
     []
   );
   const [columnVisibility, setColumnVisibility] =
-    React.useState<VisibilityState>({});
-  const [rowSelection, setRowSelection] = React.useState({});
-  //const [globalFilter, setGlobalFilter] = React.useState<string>("");
+    useState<VisibilityState>({
+      select: true,
+      actions: true,
+      order_name: true,
+      ordered_by: true,
+      status: true,
+      amount: true,
+      date_submitted: true,
+      date_created: false,
+      date_updated: false,
+      date_shipped: false,
+      date_delivered: false, // NOTE TODO: CAN SET THIS UP DYNAMICALLY WITH USER SETTINGS
+    });
+  const [rowSelection, setRowSelection] = useState({});
+  //const [globalFilter, setGlobalFilter] = useState<string>("");
   //const globalFilter = fuzzyOrderFilter;
+
+    //NOTE TODO: conditionally render filter for existing columns
+  //NOTE TODO: FILTER ROWS BY STATUS AND DATE RANGE
+  const initialVisibleStatus = Object.values(OrderStatus).map((status) => {
+    return { value: status, visible: true };
+  })
+  const [visibleStatus, setVisibleStatus] = useState(initialVisibleStatus);
+
+  // const typedData = data as OrderDetails[]; 
+  const filteredData = data.filter((order) => {
+    return visibleStatus.some((status) => {
+      return status.visible && order.status === status.value;
+    });
+  }) 
 
   const table = useReactTable({
     data,
@@ -95,8 +122,11 @@ export function DataTable<TData, TValue>({
       rowSelection,
       //globalFilter,
     },
+    // initialState: {
+    //   columnVisibility: {}
+    // }
   });
-  //NOTE TODO: conditionally render filter for existing columns
+
   return (
     <div>
       <div className="flex-1 text-sm text-muted-foreground">
@@ -109,32 +139,62 @@ export function DataTable<TData, TValue>({
           onChange={(event) => table.setGlobalFilter(event.target.value)}
           className="max-w-sm"
         />
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button variant={"outline"} className="ml-5">
-              Columns
-            </Button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent align="end">
-            {table
-              .getAllColumns()
-              .filter((column) => column.getCanHide())
-              .map((column) => {
+        <div>
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant={"outline"}>Status</Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end">
+              {visibleStatus.map((status, index) => {
                 return (
-                  <DropdownMenuCheckboxItem
-                    key={column.id}
-                    className="capitalize"
-                    checked={column.getIsVisible()}
-                    onCheckedChange={(value) =>
-                      column.toggleVisibility(!!value)
-                    }
+                  <DropdownMenuCheckboxItem 
+                    key={index}
+                    checked={status.visible}
+                    onCheckedChange={(value) => {
+                      setVisibleStatus((prev) => {
+                        return prev.map((prevStatus) => {
+                          if (prevStatus.value === status.value) {
+                            return { ...prevStatus, visible: !!value };
+                          }
+                          return prevStatus;
+                        });
+                      });
+                      //table.setGlobalFilter(status.value || OrderStatus.Quote);
+                    }}
                   >
-                    {column.id}
+                    {status.value}
                   </DropdownMenuCheckboxItem>
                 );
               })}
-          </DropdownMenuContent>
-        </DropdownMenu>
+            </DropdownMenuContent>
+          </DropdownMenu>
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant={"outline"} className="ml-5">
+                Columns
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end">
+              {table
+                .getAllColumns()
+                .filter((column) => column.getCanHide())
+                .map((column) => {
+                  return (
+                    <DropdownMenuCheckboxItem
+                      key={column.id}
+                      className="capitalize"
+                      checked={column.getIsVisible()}
+                      onCheckedChange={(value) =>
+                        column.toggleVisibility(!!value)
+                      }
+                    >
+                      {column.id}
+                    </DropdownMenuCheckboxItem>
+                  );
+                })}
+            </DropdownMenuContent>
+          </DropdownMenu>
+        </div>
       </div>
       <div className="rounded-md border">
         <Table>
