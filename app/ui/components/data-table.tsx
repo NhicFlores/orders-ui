@@ -80,19 +80,19 @@ export function DataTable<TData, TValue>({
     //NOTE TODO: conditionally render filter for existing columns
   //NOTE TODO: FILTER ROWS BY STATUS AND DATE RANGE
   const initialVisibleStatus = Object.values(OrderStatus).map((status) => {
-    return { value: status, visible: true };
+    return { value: status, visible: (status === OrderStatus.Cancelled) ? false : true };
   })
   const [visibleStatus, setVisibleStatus] = useState(initialVisibleStatus);
 
   // const typedData = data as OrderDetails[]; 
-  const filteredData = data.filter((order) => {
-    return visibleStatus.some((status) => {
-      return status.visible && order.status === status.value;
-    });
-  }) 
+  // const filteredData = data.filter((order) => {
+  //   return visibleStatus.some((status) => {
+  //     return status.visible && order.status === status.value;
+  //   });
+  // }) 
 
   const table = useReactTable({
-    data,
+    data, // filtered data 
     columns,
     getCoreRowModel: getCoreRowModel(),
     getPaginationRowModel: getPaginationRowModel(),

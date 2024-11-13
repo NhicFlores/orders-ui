@@ -176,7 +176,8 @@ export const OrderColumns: ColumnDef<OrderDetails>[] = [
         currency: "USD",
       }).format(amount);
       return <div>{formatted}</div>;
-    }
+    },
+    // filterFn: ({ row, })
   },
   {
     accessorKey: "date_submitted",
