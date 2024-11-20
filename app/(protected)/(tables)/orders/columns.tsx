@@ -1,7 +1,7 @@
 //client component containing column definitions
 "use client";
 
-import { ColumnDef, RowExpanding } from "@tanstack/react-table";
+import { ColumnDef, FilterFn, Row, RowExpanding } from "@tanstack/react-table";
 import { ArrowUpDown, MoreHorizontal } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
@@ -18,6 +18,10 @@ import { deleteOrder } from "@/lib/actions/actions";
 import { formatDateStringToLocal, formatDateToLocal } from "@/lib/utils";
 import { Order, OrderStatus } from "@/lib/data-model/schema-definitions";
 import { OrderDetails } from "@/lib/data-model/data-definitions";
+
+// const FilterOutStatus: FilterFn = (row: Row, columnId: string, filterValue: string, addMeta: (meta: any) => void) => {
+//   return row.original.status !== filterValue;
+// }
 
 //TODO: enable shift select
 export const OrderColumns: ColumnDef<OrderDetails>[] = [
@@ -155,6 +159,9 @@ export const OrderColumns: ColumnDef<OrderDetails>[] = [
       const status = row.original.status;
       return <div>{status}</div>;
     },
+    filterFn: (row, columnId, filterValue) => {
+      return row.getValue(columnId) === filterValue ? false : true;
+    }
   },
   {
     accessorKey: "amount",

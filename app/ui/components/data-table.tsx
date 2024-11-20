@@ -118,7 +118,7 @@ export function DataTable<TData, TValue>({
     state: {
       sorting,
       columnFilters,
-      columnVisibility, // NOTE TODO: SET DEFAULT VISIBILITY FOR SPECIFIC COLUMNS
+      columnVisibility,
       rowSelection,
       //globalFilter,
     },
@@ -126,6 +126,9 @@ export function DataTable<TData, TValue>({
     //   columnVisibility: {}
     // }
   });
+  // NOTE: CONTINUE IMPLEMENTATION 
+  // https://github.com/TanStack/table/discussions/4133 
+  // https://tanstack.com/table/latest/docs/guide/column-filtering 
 
   return (
     <div>
@@ -142,7 +145,9 @@ export function DataTable<TData, TValue>({
         <div>
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button variant={"outline"}>Status</Button>
+              <Button variant={"outline"}>
+                Status
+              </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
               {visibleStatus.map((status, index) => {
@@ -159,6 +164,7 @@ export function DataTable<TData, TValue>({
                           return prevStatus;
                         });
                       });
+                      
                       //table.setGlobalFilter(status.value || OrderStatus.Quote);
                     }}
                   >
