@@ -45,6 +45,7 @@ import { OrderDetailColumns } from "@/app/(protected)/(tables)/order-detail-colu
 import { OrderStatus } from "@/lib/data-model/schema-definitions";
 import { useState } from "react";
 import { OrderDetails } from "@/lib/data-model/data-definitions";
+import { statusFilter } from "@/app/(protected)/(tables)/orders/columns";
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
@@ -56,43 +57,60 @@ export function DataTable<TData, TValue>({
   data,
 }: DataTableProps<TData, TValue>) {
   const [sorting, setSorting] = useState<SortingState>([]);
-  const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>(
-    []
-  );
-  const [columnVisibility, setColumnVisibility] =
-    useState<VisibilityState>({
-      select: true,
-      actions: true,
-      order_name: true,
-      ordered_by: true,
-      status: true,
-      amount: true,
-      date_submitted: true,
-      date_created: false,
-      date_updated: false,
-      date_shipped: false,
-      date_delivered: false, // NOTE TODO: CAN SET THIS UP DYNAMICALLY WITH USER SETTINGS
-    });
+  const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
+  const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({
+    select: true,
+    actions: true,
+    order_name: true,
+    ordered_by: true,
+    status: true,
+    amount: true,
+    date_submitted: true,
+    date_created: false,
+    date_updated: false,
+    date_shipped: false,
+    date_delivered: false, // NOTE TODO: CAN SET THIS UP DYNAMICALLY WITH USER SETTINGS
+  });
   const [rowSelection, setRowSelection] = useState({});
   //const [globalFilter, setGlobalFilter] = useState<string>("");
   //const globalFilter = fuzzyOrderFilter;
 
-    //NOTE TODO: conditionally render filter for existing columns
+  //NOTE TODO: conditionally render filter for existing columns
   //NOTE TODO: FILTER ROWS BY STATUS AND DATE RANGE
   const initialVisibleStatus = Object.values(OrderStatus).map((status) => {
-    return { value: status, visible: (status === OrderStatus.Cancelled) ? false : true };
-  })
+    return {
+      statusValue: status,
+      isVisible: status === OrderStatus.Cancelled ? false : true,
+    };
+  });
   const [visibleStatus, setVisibleStatus] = useState(initialVisibleStatus);
 
-  // const typedData = data as OrderDetails[]; 
+  function toggleStatusVisibility(
+    status: {
+      statusValue: string;
+      isVisible: boolean;
+    },
+    value: boolean
+  ) {
+    setVisibleStatus((prev) => {
+      return prev.map((prevStatus) => {
+        if (prevStatus.statusValue === status.statusValue) {
+          return { ...prevStatus, isVisible: value };
+        }
+        return prevStatus;
+      });
+    });
+  }
+
+  // const typedData = data as OrderDetails[];
   // const filteredData = data.filter((order) => {
   //   return visibleStatus.some((status) => {
   //     return status.visible && order.status === status.value;
   //   });
-  // }) 
+  // })
 
   const table = useReactTable({
-    data, // filtered data 
+    data, // filtered data
     columns,
     getCoreRowModel: getCoreRowModel(),
     getPaginationRowModel: getPaginationRowModel(),
@@ -113,6 +131,9 @@ export function DataTable<TData, TValue>({
       //   return itemRank.passed;
       // },
       fuzzy: fuzzyOrderFilter,
+      statusFilter: statusFilter, // (row, columnId, filterValue) => {
+      //   return filterValue ? row.original.status !== filterValue : false;
+      // },
     },
     globalFilterFn: fuzzyOrderFilter,
     state: {
@@ -126,9 +147,9 @@ export function DataTable<TData, TValue>({
     //   columnVisibility: {}
     // }
   });
-  // NOTE: CONTINUE IMPLEMENTATION 
-  // https://github.com/TanStack/table/discussions/4133 
-  // https://tanstack.com/table/latest/docs/guide/column-filtering 
+  // NOTE: CONTINUE IMPLEMENTATION
+  // https://github.com/TanStack/table/discussions/4133
+  // https://tanstack.com/table/latest/docs/guide/column-filtering
 
   return (
     <div>
@@ -145,30 +166,29 @@ export function DataTable<TData, TValue>({
         <div>
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button variant={"outline"}>
-                Status
-              </Button>
+              <Button variant={"outline"}>Status</Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
               {visibleStatus.map((status, index) => {
                 return (
-                  <DropdownMenuCheckboxItem 
+                  <DropdownMenuCheckboxItem
                     key={index}
-                    checked={status.visible}
+                    checked={status.isVisible}
                     onCheckedChange={(value) => {
-                      setVisibleStatus((prev) => {
-                        return prev.map((prevStatus) => {
-                          if (prevStatus.value === status.value) {
-                            return { ...prevStatus, visible: !!value };
-                          }
-                          return prevStatus;
-                        });
-                      });
-                      
+                      // value corresponds to the internal state of the checkbox
+                      // to make sure both the isVisible property of the status object and
+                      // which status value is filtered out, rely on this 'value' provided
+                      // by the onCheckedChange callback
+                      // console.log("value", value);
+                      toggleStatusVisibility(status, value);
+                      table
+                        .getColumn("status")
+                        ?.setFilterValue(value ? null : status.statusValue); 
+                        // NOTE TODO: FIX FILTER; should be able to filter out multiple statues at a time 
                       //table.setGlobalFilter(status.value || OrderStatus.Quote);
                     }}
                   >
-                    {status.value}
+                    {status.statusValue}
                   </DropdownMenuCheckboxItem>
                 );
               })}

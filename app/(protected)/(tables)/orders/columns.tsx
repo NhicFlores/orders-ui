@@ -19,9 +19,9 @@ import { formatDateStringToLocal, formatDateToLocal } from "@/lib/utils";
 import { Order, OrderStatus } from "@/lib/data-model/schema-definitions";
 import { OrderDetails } from "@/lib/data-model/data-definitions";
 
-// const FilterOutStatus: FilterFn = (row: Row, columnId: string, filterValue: string, addMeta: (meta: any) => void) => {
-//   return row.original.status !== filterValue;
-// }
+export const statusFilter: FilterFn<OrderDetails> = (row: Row<OrderDetails>, columnId: string, filterValue: string, addMeta: (meta: any) => void) => {
+  return filterValue ? !(row.original.status === filterValue) : true;
+}
 
 //TODO: enable shift select
 export const OrderColumns: ColumnDef<OrderDetails>[] = [
@@ -159,9 +159,9 @@ export const OrderColumns: ColumnDef<OrderDetails>[] = [
       const status = row.original.status;
       return <div>{status}</div>;
     },
-    filterFn: (row, columnId, filterValue) => {
-      return row.getValue(columnId) === filterValue ? false : true;
-    }
+    filterFn: statusFilter // (row, columnId, filterValue) => {
+    //   return row.original.status === filterValue ? false : true;
+    // }
   },
   {
     accessorKey: "amount",
