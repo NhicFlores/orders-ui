@@ -19,8 +19,8 @@ import { formatDateStringToLocal, formatDateToLocal } from "@/lib/utils";
 import { Order, OrderStatus } from "@/lib/data-model/schema-definitions";
 import { OrderDetails } from "@/lib/data-model/data-definitions";
 
-export const statusFilter: FilterFn<OrderDetails> = (row: Row<OrderDetails>, columnId: string, filterValue: string, addMeta: (meta: any) => void) => {
-  return filterValue ? !(row.original.status === filterValue) : true;
+export const statusFilter: FilterFn<OrderDetails> = (row: Row<OrderDetails>, columnId: string, filterValue: string[], addMeta: (meta: any) => void) => {
+  return filterValue.includes(row.original.status) ? false : true;
 }
 
 //TODO: enable shift select

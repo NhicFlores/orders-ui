@@ -84,7 +84,8 @@ export function DataTable<TData, TValue>({
     };
   });
   const [visibleStatus, setVisibleStatus] = useState(initialVisibleStatus);
-
+  // NOTE TODO: set state of array of statuses to filter out
+  // filter function looks at this state to determine which statuses to filter out
   function toggleStatusVisibility(
     status: {
       statusValue: string;
