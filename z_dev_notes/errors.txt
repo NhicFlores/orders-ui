@@ -438,3 +438,11 @@ threw an error once it was opened.
 -issue 
 TypeError: Cannot read properties of undefined (reading 'map') 
 - trying to read order_items from CustomerOrderTable object 
+
+- issue 
+error: Cross-Origin Request Blocked: The Same Origin Policy disallows reading the remote resource at https://localhost:4983/init. (Reason: CORS request did not succeed). Status code: (null). 
+
+- https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS/Errors 
+- https://stackoverflow.com/questions/55897099/cross-origin-request-blocked-the-same-origin-policy-disallows-reading-the-remot 
+- https://medium.com/zero-equals-false/using-cors-in-express-cac7e29b005b 
+- https://williambert.online/2013/06/allow-cors-with-localhost-in-chrome/ 

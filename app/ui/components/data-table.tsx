@@ -76,7 +76,19 @@ export function DataTable<TData, TValue>({
   //const globalFilter = fuzzyOrderFilter;
 
   //NOTE TODO: conditionally render filter for existing columns
-  //NOTE TODO: FILTER ROWS BY STATUS AND DATE RANGE
+  //NOTE TODO: SORT ROWS BY STATUS AND DATE RANGE
+
+  // get all available status values into a string array 
+  // for each status, render a dropdown element with a checkbox 
+  // create a filter status array 
+  // when checkbox is checked, add status to filter status array 
+  // pass filter status array to table to filter out statuses 
+
+  const statusValues = Object.values(OrderStatus); 
+  // let statusFilterValues = 
+  // if i filter out a status using a state passed to the table, the whole table will re-render
+  // if i filter out the status from the rows, the table will still re-render 
+
   const initialVisibleStatus = Object.values(OrderStatus).map((status) => {
     return {
       statusValue: status,
@@ -93,6 +105,12 @@ export function DataTable<TData, TValue>({
     },
     value: boolean
   ) {
+    // TODO: where to call table to pass updated status filter state
+    // table
+    //   .getColumn("status")
+    //   ?.setFilterValue(value ? null : status.statusValue);
+    // CHALLENGE: state update functions are asynchronous and the table needs to 
+    // update when the state is updated 
     setVisibleStatus((prev) => {
       return prev.map((prevStatus) => {
         if (prevStatus.statusValue === status.statusValue) {
@@ -102,6 +120,8 @@ export function DataTable<TData, TValue>({
       });
     });
   }
+
+
 
   // const typedData = data as OrderDetails[];
   // const filteredData = data.filter((order) => {
@@ -184,8 +204,8 @@ export function DataTable<TData, TValue>({
                       toggleStatusVisibility(status, value);
                       table
                         .getColumn("status")
-                        ?.setFilterValue(value ? null : status.statusValue); 
-                        // NOTE TODO: FIX FILTER; should be able to filter out multiple statues at a time 
+                        ?.setFilterValue(value ? null : status.statusValue);
+                      // NOTE TODO: FIX FILTER; should be able to filter out multiple statues at a time
                       //table.setGlobalFilter(status.value || OrderStatus.Quote);
                     }}
                   >
