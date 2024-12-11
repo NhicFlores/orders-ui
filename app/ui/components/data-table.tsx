@@ -45,13 +45,13 @@ import { OrderDetailColumns } from "@/app/(protected)/(tables)/order-detail-colu
 import { OrderStatus } from "@/lib/data-model/schema-definitions";
 import { useState } from "react";
 import { OrderDetails } from "@/lib/data-model/data-definitions";
-import { statusFilter } from "@/app/(protected)/(tables)/orders/columns";
+import { visibleStatusFilter } from "@/app/(protected)/(tables)/orders/columns";
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
   data: TData[];
 }
-
+// NOTE TODO: calculate performance impact of client-side operations on data 
 export function DataTable<TData, TValue>({
   columns,
   data,
@@ -78,16 +78,16 @@ export function DataTable<TData, TValue>({
   //NOTE TODO: conditionally render filter for existing columns
   //NOTE TODO: SORT ROWS BY STATUS AND DATE RANGE
 
-  // get all available status values into a string array 
-  // for each status, render a dropdown element with a checkbox 
-  // create a filter status array 
-  // when checkbox is checked, add status to filter status array 
-  // pass filter status array to table to filter out statuses 
+  // get all available status values into a string array
+  // for each status, render a dropdown element with a checkbox
+  // create a filter status array
+  // when checkbox is checked, add status to filter status array
+  // pass filter status array to table to filter out statuses
 
-  const statusValues = Object.values(OrderStatus); 
-  // let statusFilterValues = 
+  const statusValues = Object.values(OrderStatus);
+  // let statusFilterValues =
   // if i filter out a status using a state passed to the table, the whole table will re-render
-  // if i filter out the status from the rows, the table will still re-render 
+  // if i filter out the status from the rows, the table will still re-render
 
   const initialVisibleStatus = Object.values(OrderStatus).map((status) => {
     return {
@@ -109,8 +109,8 @@ export function DataTable<TData, TValue>({
     // table
     //   .getColumn("status")
     //   ?.setFilterValue(value ? null : status.statusValue);
-    // CHALLENGE: state update functions are asynchronous and the table needs to 
-    // update when the state is updated 
+    // CHALLENGE: state update functions are asynchronous and the table needs to
+    // update when the state is updated
     setVisibleStatus((prev) => {
       return prev.map((prevStatus) => {
         if (prevStatus.statusValue === status.statusValue) {
@@ -121,14 +121,12 @@ export function DataTable<TData, TValue>({
     });
   }
 
-
-
   // const typedData = data as OrderDetails[];
-  // const filteredData = data.filter((order) => {
-  //   return visibleStatus.some((status) => {
-  //     return status.visible && order.status === status.value;
-  //   });
-  // })
+  const filteredData = data.filter((order) => {
+    return visibleStatus.some((status) => {
+      return status.visible && order.status === status.value;
+    });
+  })
 
   const table = useReactTable({
     data, // filtered data
@@ -152,7 +150,7 @@ export function DataTable<TData, TValue>({
       //   return itemRank.passed;
       // },
       fuzzy: fuzzyOrderFilter,
-      statusFilter: statusFilter, // (row, columnId, filterValue) => {
+      statusFilter: visibleStatusFilter, // (row, columnId, filterValue) => {
       //   return filterValue ? row.original.status !== filterValue : false;
       // },
     },

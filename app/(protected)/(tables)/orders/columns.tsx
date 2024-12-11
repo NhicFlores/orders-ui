@@ -19,9 +19,14 @@ import { formatDateStringToLocal, formatDateToLocal } from "@/lib/utils";
 import { Order, OrderStatus } from "@/lib/data-model/schema-definitions";
 import { OrderDetails } from "@/lib/data-model/data-definitions";
 
-export const statusFilter: FilterFn<OrderDetails> = (row: Row<OrderDetails>, columnId: string, filterValue: string[], addMeta: (meta: any) => void) => {
-  return filterValue.includes(row.original.status) ? false : true;
-}
+export const visibleStatusFilter: FilterFn<OrderDetails> = (
+  row: Row<OrderDetails>,
+  columnId: string,
+  filterValue: string[],
+  addMeta: (meta: any) => void
+) => {
+  return filterValue.includes(row.original.status);
+};
 
 //TODO: enable shift select
 export const OrderColumns: ColumnDef<OrderDetails>[] = [
@@ -118,7 +123,7 @@ export const OrderColumns: ColumnDef<OrderDetails>[] = [
           <ArrowUpDown className="ml-2 h-4 w-4" />
         </Button>
       );
-    }
+    },
   },
   // {
   //   accessorKey: "price",
@@ -159,7 +164,7 @@ export const OrderColumns: ColumnDef<OrderDetails>[] = [
       const status = row.original.status;
       return <div>{status}</div>;
     },
-    filterFn: statusFilter // (row, columnId, filterValue) => {
+    filterFn: visibleStatusFilter, // (row, columnId, filterValue) => {
     //   return row.original.status === filterValue ? false : true;
     // }
   },
@@ -188,7 +193,7 @@ export const OrderColumns: ColumnDef<OrderDetails>[] = [
   },
   {
     accessorKey: "date_submitted",
-    
+
     header: ({ column }) => {
       return (
         <Button
