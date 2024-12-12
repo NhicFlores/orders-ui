@@ -84,8 +84,8 @@ export function DataTable<TData, TValue>({
   // when checkbox is checked, add status to filter status array
   // pass filter status array to table to filter out statuses
 
-  const statusValues = Object.values(OrderStatus);
-  // let statusFilterValues =
+  // const statusValues = Object.values(OrderStatus);
+  let statusFilterValues: string[] = [];
   // if i filter out a status using a state passed to the table, the whole table will re-render
   // if i filter out the status from the rows, the table will still re-render
 
@@ -120,16 +120,17 @@ export function DataTable<TData, TValue>({
       });
     });
   }
-
+  // this cause website to hang, might be caught in asynchronous state update loop 
   // const typedData = data as OrderDetails[];
-  const filteredData = data.filter((order) => {
-    return visibleStatus.some((status) => {
-      return status.visible && order.status === status.value;
-    });
-  })
+  // const filteredData = typedData.filter((order) => {
+  //   console.log("---- FILTERING ----");
+  //   return visibleStatus.some((status) => {
+  //     return status.isVisible && order.status === status.statusValue;
+  //   });
+  // })
 
   const table = useReactTable({
-    data, // filtered data
+    data: data, //filteredData, // filtered data
     columns,
     getCoreRowModel: getCoreRowModel(),
     getPaginationRowModel: getPaginationRowModel(),
@@ -199,10 +200,11 @@ export function DataTable<TData, TValue>({
                       // which status value is filtered out, rely on this 'value' provided
                       // by the onCheckedChange callback
                       // console.log("value", value);
-                      toggleStatusVisibility(status, value);
+                      toggleStatusVisibility(status, value); // does this need to be awaited? 
+                      // statusFilterValues.push(status.statusValue)
                       table
                         .getColumn("status")
-                        ?.setFilterValue(value ? null : status.statusValue);
+                        ?.setFilterValue(value ? null : visibleStatus);
                       // NOTE TODO: FIX FILTER; should be able to filter out multiple statues at a time
                       //table.setGlobalFilter(status.value || OrderStatus.Quote);
                     }}

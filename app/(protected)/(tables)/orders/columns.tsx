@@ -19,13 +19,29 @@ import { formatDateStringToLocal, formatDateToLocal } from "@/lib/utils";
 import { Order, OrderStatus } from "@/lib/data-model/schema-definitions";
 import { OrderDetails } from "@/lib/data-model/data-definitions";
 
+export type StatusObject = {
+  statusValue: string;
+  isVisible: boolean;
+};
+
+// filterValue is an array of statuses of type { statusValue: string, isVisible: boolean }
 export const visibleStatusFilter: FilterFn<OrderDetails> = (
   row: Row<OrderDetails>,
   columnId: string,
-  filterValue: string[],
+  filterValue: StatusObject[],
   addMeta: (meta: any) => void
 ) => {
-  return filterValue.includes(row.original.status);
+  // console.log("---- filterValue ----", filterValue);
+  // update this to check the visible property of the status object if the
+  // status of the row equals the status value
+  return filterValue
+    ? filterValue.forEach((status) => {
+      console.log("---- status ----", status);
+        if (status.statusValue === row.original.status) {
+          return status.isVisible ? status.isVisible : true;
+        }
+      })
+    : true;
 };
 
 //TODO: enable shift select
