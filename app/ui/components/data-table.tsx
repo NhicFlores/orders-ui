@@ -43,7 +43,7 @@ import { fuzzyOrderFilter } from "./table/table-utils";
 import OrderDetailTable from "@/app/(protected)/(tables)/order-detail-table";
 import { OrderDetailColumns } from "@/app/(protected)/(tables)/order-detail-columns";
 import { OrderStatus } from "@/lib/data-model/schema-definitions";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { OrderDetails } from "@/lib/data-model/data-definitions";
 import { visibleStatusFilter } from "@/app/(protected)/(tables)/orders/columns";
 
@@ -51,7 +51,7 @@ interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
   data: TData[];
 }
-// NOTE TODO: calculate performance impact of client-side operations on data 
+// NOTE TODO: calculate performance impact of client-side operations on data
 export function DataTable<TData, TValue>({
   columns,
   data,
@@ -84,8 +84,8 @@ export function DataTable<TData, TValue>({
   // when checkbox is checked, add status to filter status array
   // pass filter status array to table to filter out statuses
 
-  // const statusValues = Object.values(OrderStatus);
-  let statusFilterValues: string[] = [];
+  let statusValues = Object.values(OrderStatus);
+  // let statusFilterValues: string[] = [];
   // if i filter out a status using a state passed to the table, the whole table will re-render
   // if i filter out the status from the rows, the table will still re-render
 
@@ -120,7 +120,12 @@ export function DataTable<TData, TValue>({
       });
     });
   }
-  // this cause website to hang, might be caught in asynchronous state update loop 
+  // block-scoped variable table used before its initialization 
+  // useEffect(() => {
+  //   table.getColumn("status")?.setFilterValue(visibleStatus);
+  // }, [table, visibleStatus]);
+
+  // this cause website to hang, might be caught in asynchronous state update loop
   // const typedData = data as OrderDetails[];
   // const filteredData = typedData.filter((order) => {
   //   console.log("---- FILTERING ----");
@@ -171,6 +176,10 @@ export function DataTable<TData, TValue>({
   // https://github.com/TanStack/table/discussions/4133
   // https://tanstack.com/table/latest/docs/guide/column-filtering
 
+  useEffect(() => {
+    table.getColumn("status")?.setFilterValue(visibleStatus);
+  }, [table, visibleStatus]);
+
   return (
     <div>
       <div className="flex-1 text-sm text-muted-foreground">
@@ -200,13 +209,12 @@ export function DataTable<TData, TValue>({
                       // which status value is filtered out, rely on this 'value' provided
                       // by the onCheckedChange callback
                       // console.log("value", value);
-                      toggleStatusVisibility(status, value); // does this need to be awaited? 
+                      toggleStatusVisibility(status, value); // does this need to be awaited?
                       // statusFilterValues.push(status.statusValue)
-                      table
-                        .getColumn("status")
-                        ?.setFilterValue(value ? null : visibleStatus);
+
                       // NOTE TODO: FIX FILTER; should be able to filter out multiple statues at a time
                       //table.setGlobalFilter(status.value || OrderStatus.Quote);
+                      // note todo: try passing the array of visible statuses to global filter
                     }}
                   >
                     {status.statusValue}

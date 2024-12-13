@@ -31,15 +31,16 @@ export const visibleStatusFilter: FilterFn<OrderDetails> = (
   filterValue: StatusObject[],
   addMeta: (meta: any) => void
 ) => {
-  // console.log("---- filterValue ----", filterValue);
+  console.log("---- filterValue ----", filterValue);
   // update this to check the visible property of the status object if the
   // status of the row equals the status value
   return filterValue
-    ? filterValue.forEach((status) => {
+    ? filterValue.some((status) => {
       console.log("---- status ----", status);
         if (status.statusValue === row.original.status) {
-          return status.isVisible ? status.isVisible : true;
+          return status.isVisible;
         }
+        return false;
       })
     : true;
 };
