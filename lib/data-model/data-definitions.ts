@@ -6,6 +6,11 @@ import {
     UserProfile,
   } from "./schema-definitions";
   
+  export type StatusDetails = {
+    statusValue: string;
+    isVisible: boolean;
+  };
+
   export type OrderDetails = Order &
     Pick<OrderInvoice, "amount" | "order_invoice_id"> & {
       ordered_by: string; //UserProfile.first_name + UserProfile.last_name

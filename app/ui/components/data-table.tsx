@@ -39,13 +39,12 @@ import {
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
 
-import { fuzzyOrderFilter } from "./table/table-utils";
+import { fuzzyOrderFilter, statusColumnFilter } from "./table/table-utils";
 import OrderDetailTable from "@/app/(protected)/(tables)/order-detail-table";
 import { OrderDetailColumns } from "@/app/(protected)/(tables)/order-detail-columns";
 import { OrderStatus } from "@/lib/data-model/schema-definitions";
 import { useEffect, useState } from "react";
-import { OrderDetails } from "@/lib/data-model/data-definitions";
-import { visibleStatusFilter } from "@/app/(protected)/(tables)/orders/columns";
+import { StatusDetails } from "@/lib/data-model/data-definitions";
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
@@ -78,26 +77,18 @@ export function DataTable<TData, TValue>({
   //NOTE TODO: conditionally render filter for existing columns
   //NOTE TODO: SORT ROWS BY STATUS AND DATE RANGE
 
-  // get all available status values into a string array
-  // for each status, render a dropdown element with a checkbox
-  // create a filter status array
-  // when checkbox is checked, add status to filter status array
-  // pass filter status array to table to filter out statuses
-
-  let statusValues = Object.values(OrderStatus);
-  // let statusFilterValues: string[] = [];
-  // if i filter out a status using a state passed to the table, the whole table will re-render
-  // if i filter out the status from the rows, the table will still re-render
 
   const initialVisibleStatus = Object.values(OrderStatus).map((status) => {
+    // NOTE: here we can implement user settings to determine which statuses are visible 
     return {
       statusValue: status,
       isVisible: status === OrderStatus.Cancelled ? false : true,
     };
   });
-  const [visibleStatus, setVisibleStatus] = useState(initialVisibleStatus);
-  // NOTE TODO: set state of array of statuses to filter out
-  // filter function looks at this state to determine which statuses to filter out
+  // state variable for status visibility 
+  const [visibleStatus, setVisibleStatus] = useState<StatusDetails[]>(initialVisibleStatus);
+
+  // function to toggle status visibility
   function toggleStatusVisibility(
     status: {
       statusValue: string;
@@ -105,12 +96,6 @@ export function DataTable<TData, TValue>({
     },
     value: boolean
   ) {
-    // TODO: where to call table to pass updated status filter state
-    // table
-    //   .getColumn("status")
-    //   ?.setFilterValue(value ? null : status.statusValue);
-    // CHALLENGE: state update functions are asynchronous and the table needs to
-    // update when the state is updated
     setVisibleStatus((prev) => {
       return prev.map((prevStatus) => {
         if (prevStatus.statusValue === status.statusValue) {
@@ -120,7 +105,7 @@ export function DataTable<TData, TValue>({
       });
     });
   }
-  // block-scoped variable table used before its initialization 
+  // block-scoped variable table used before its initialization
   // useEffect(() => {
   //   table.getColumn("status")?.setFilterValue(visibleStatus);
   // }, [table, visibleStatus]);
@@ -135,8 +120,8 @@ export function DataTable<TData, TValue>({
   // })
 
   const table = useReactTable({
-    data: data, //filteredData, // filtered data
-    columns,
+    data: data,
+    columns: columns,
     getCoreRowModel: getCoreRowModel(),
     getPaginationRowModel: getPaginationRowModel(),
     onSortingChange: setSorting,
@@ -155,8 +140,10 @@ export function DataTable<TData, TValue>({
 
       //   return itemRank.passed;
       // },
+      // NOTE TODO: experiment with removing fuzzy filter for global filter 
       fuzzy: fuzzyOrderFilter,
-      statusFilter: visibleStatusFilter, // (row, columnId, filterValue) => {
+      // status filter
+      statusFilter: statusColumnFilter, // (row, columnId, filterValue) => {
       //   return filterValue ? row.original.status !== filterValue : false;
       // },
     },
@@ -176,7 +163,9 @@ export function DataTable<TData, TValue>({
   // https://github.com/TanStack/table/discussions/4133
   // https://tanstack.com/table/latest/docs/guide/column-filtering
 
+  // useEffect to watch for changes in visibleStatus state to trigger filter update on status column
   useEffect(() => {
+    // pass the visibleStatus state to the status column filter function 
     table.getColumn("status")?.setFilterValue(visibleStatus);
   }, [table, visibleStatus]);
 
@@ -199,6 +188,7 @@ export function DataTable<TData, TValue>({
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
               {visibleStatus.map((status, index) => {
+                // dropdown menu for status filter
                 return (
                   <DropdownMenuCheckboxItem
                     key={index}
@@ -209,12 +199,9 @@ export function DataTable<TData, TValue>({
                       // which status value is filtered out, rely on this 'value' provided
                       // by the onCheckedChange callback
                       // console.log("value", value);
-                      toggleStatusVisibility(status, value); // does this need to be awaited?
-                      // statusFilterValues.push(status.statusValue)
-
-                      // NOTE TODO: FIX FILTER; should be able to filter out multiple statues at a time
-                      //table.setGlobalFilter(status.value || OrderStatus.Quote);
-                      // note todo: try passing the array of visible statuses to global filter
+                      // state updates happen asynchronously, but do not return a promise so
+                      // you cannot use async/await syntax
+                      toggleStatusVisibility(status, value);
                     }}
                   >
                     {status.statusValue}
@@ -243,6 +230,7 @@ export function DataTable<TData, TValue>({
                         column.toggleVisibility(!!value)
                       }
                     >
+                      {/* create toString function for column names  */}
                       {column.id}
                     </DropdownMenuCheckboxItem>
                   );

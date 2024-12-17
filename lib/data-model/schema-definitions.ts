@@ -122,6 +122,7 @@ interface quantityIncoming {
   supplier_id: string;
   expected_arrival_date: Date;
 }
+
 // front-end only
 export enum OrderStatus {
   /** Saved by the user but not yet submitted. */

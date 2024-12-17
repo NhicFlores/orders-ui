@@ -17,33 +17,8 @@ import Link from "next/link";
 import { deleteOrder } from "@/lib/actions/actions";
 import { formatDateStringToLocal, formatDateToLocal } from "@/lib/utils";
 import { Order, OrderStatus } from "@/lib/data-model/schema-definitions";
-import { OrderDetails } from "@/lib/data-model/data-definitions";
-
-export type StatusObject = {
-  statusValue: string;
-  isVisible: boolean;
-};
-
-// filterValue is an array of statuses of type { statusValue: string, isVisible: boolean }
-export const visibleStatusFilter: FilterFn<OrderDetails> = (
-  row: Row<OrderDetails>,
-  columnId: string,
-  filterValue: StatusObject[],
-  addMeta: (meta: any) => void
-) => {
-  console.log("---- filterValue ----", filterValue);
-  // update this to check the visible property of the status object if the
-  // status of the row equals the status value
-  return filterValue
-    ? filterValue.some((status) => {
-      console.log("---- status ----", status);
-        if (status.statusValue === row.original.status) {
-          return status.isVisible;
-        }
-        return false;
-      })
-    : true;
-};
+import { OrderDetails, StatusDetails } from "@/lib/data-model/data-definitions";
+import { statusColumnFilter } from "@/app/ui/components/table/table-utils";
 
 //TODO: enable shift select
 export const OrderColumns: ColumnDef<OrderDetails>[] = [
@@ -181,7 +156,8 @@ export const OrderColumns: ColumnDef<OrderDetails>[] = [
       const status = row.original.status;
       return <div>{status}</div>;
     },
-    filterFn: visibleStatusFilter, // (row, columnId, filterValue) => {
+    // set the filter function for the status column
+    filterFn: statusColumnFilter, // (row, columnId, filterValue) => {
     //   return row.original.status === filterValue ? false : true;
     // }
   },
