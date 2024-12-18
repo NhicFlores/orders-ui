@@ -57,7 +57,7 @@ export async function fetchQuote() {
 
 export async function fetchDraftOrders() {
   try {
-    //NOTE: type your sql queries
+    //IMPLEMENTATION NOTE: type your sql queries
     const data = await sql<Order_DEPRECATED>`
       SELECT * FROM orders
       WHERE orders.status = ${OrderStatus.Draft}
@@ -72,7 +72,7 @@ export async function fetchDraftOrders() {
 }
 
 export async function fetchOrderById(id: string) {
-  // NOTE IMPLEMENTATION: check the need for noStore on this function
+  // RESEARCH NOTE: check the need for noStore on this function
   try {
     const data = await sql<OrderForm>`
       SELECT 

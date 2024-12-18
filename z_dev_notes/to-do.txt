@@ -207,14 +207,14 @@ auth
 profile 
 	- since this will see minimal updates from user, we can render it statically and in the background, on sign in, 
 	check if there are updates in the db in case they use multiple devices 
-	- since it needs minimal editing and vewing, it might also be worth deprioritizing and fetching in the background to minimize 
+	- since it needs minimal editing and viewing, it might also be worth deprioritizing and fetching in the background to minimize 
 	load times and prioritize orders 
-	- large user objest with nested profile vs discrete, minimally nested objects 
+	- large user object with nested profile vs discrete, minimally nested objects 
 	- fetch profile by user id function 
 	- same for billing and shipping info 
 	- add company field to user profile 
 billing form and route 
-	- href of billng and address tab in user dropdown 
+	- href of billing and address tab in user dropdown 
 	- billing and address forms 
 	- separate billing and address tables vs nested profile objects 
 	- create sql script for creating and inserting values in table 

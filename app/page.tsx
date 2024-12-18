@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import SignInButton from "@/components/landing_page/sign-in-button";
-import { seedDatabase } from "@/seed/seed";
+// import { seedDatabase } from "@/seed/seed";
 
 //landing page
 export default async function Home() {
