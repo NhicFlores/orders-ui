@@ -45,7 +45,7 @@ export default function ShippingSection({
   }
 
   function handleCheckBoxClick() {
-    //NOTE TODO: populate shipping form with billing address
+    //TODO NOTE: populate shipping form with billing address
     const shipping = {
       street: order.billing_data.street,
       apt_num: order.billing_data.apt_num,

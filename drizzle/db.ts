@@ -6,8 +6,8 @@ import { drizzle } from "drizzle-orm/vercel-postgres";
 
 //const client = postgres(process.env.DOCKER_POSTGRES_URL as string);
 export const db = drizzle(sql, { schema, logger: true });
-// NOTE TODO: CHANGE LOGGER TO FALSE WHEN IN PRODUCTION
-// NOTE: TODO:
+// TODO NOTE: CHANGE LOGGER TO FALSE WHEN IN PRODUCTION
+// TODO NOTE: 
 // https://www.thisdot.co/blog/configure-your-project-with-drizzle-for-local-and-deployed-databases
 // import { sql } from "@vercel/postgres";
 // import postgres from "postgres";

@@ -1,3 +1,4 @@
+// deprecated 
 const { db } = require("@vercel/postgres");
 const {
   orders,
@@ -8,7 +9,7 @@ const {
 } = require("@/lib/data/placeholder-data");
 const bcrypt = require("bcrypt");
 
-//NOTE TODO: finish token script
+// unfinished token script 
 async function seedToken(client) {
   try {
     await client.sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
@@ -25,7 +26,7 @@ async function seedToken(client) {
     `;
 
     console.log(`Created "verificationTokens" table`);
-    // NOTE TODO: seed tokens function
+    // seed tokens function
     // Insert data into the "verificationTokens" table
     // const insertedTokens = await Promise.all(
     //   invoices.map(
@@ -52,7 +53,6 @@ async function seedToken(client) {
 async function seedNewOrders(client) {
   try {
     await client.sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
-    // NOTE TODO: create new_orders table
     const createTable = await client.sql`
     CREATE TABLE IF NOT EXISTS new_orders (
       id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,

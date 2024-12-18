@@ -13,7 +13,7 @@ import Link from "next/link";
 import { AccountRoutes } from "@/routes";
 import { logOut } from "@/lib/actions/auth-actions";
 //get images into public
-// NOTE TODO: remove link from dropdown trigger and replace with account button
+// TODO NOTE: remove link from dropdown trigger and replace with account button
 const ProfileButton = () => {
   async function onLogoutClick() {
     console.log("---------- LOGOUT CLICKED ------------");

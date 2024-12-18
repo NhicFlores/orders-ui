@@ -42,8 +42,8 @@ export const formatDateToLocal = (
 };
 
 export function getSchemaName() {
-  return "dev-schema"; // NOTE TODO: UNDO
-  // return "prod-orders"; // NOTE TODO: UNDO
+  return "dev-schema"; // TODO NOTE: UNDO
+  // return "prod-orders"; 
   // return process.env.NODE_ENV === "production"
   //   ? process.env.PROD_SCHEMA!
   //   : process.env.DEV_SCHEMA!;

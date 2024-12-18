@@ -50,7 +50,7 @@ interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
   data: TData[];
 }
-// NOTE TODO: calculate performance impact of client-side operations on data
+// TODO NOTE: calculate performance impact of client-side operations on data
 export function DataTable<TData, TValue>({
   columns,
   data,
@@ -68,25 +68,25 @@ export function DataTable<TData, TValue>({
     date_created: false,
     date_updated: false,
     date_shipped: false,
-    date_delivered: false, // NOTE TODO: CAN SET THIS UP DYNAMICALLY WITH USER SETTINGS
+    date_delivered: false, // TODO NOTE: CAN SET THIS UP DYNAMICALLY WITH USER SETTINGS
   });
   const [rowSelection, setRowSelection] = useState({});
   //const [globalFilter, setGlobalFilter] = useState<string>("");
   //const globalFilter = fuzzyOrderFilter;
 
-  //NOTE TODO: conditionally render filter for existing columns
-  //NOTE TODO: SORT ROWS BY STATUS AND DATE RANGE
-
+  //TODO NOTE: conditionally render filter for existing columns
+  //TODO NOTE: SORT ROWS BY STATUS AND DATE RANGE
 
   const initialVisibleStatus = Object.values(OrderStatus).map((status) => {
-    // NOTE: here we can implement user settings to determine which statuses are visible 
+    // NOTE: here we can implement user settings to determine which statuses are visible
     return {
       statusValue: status,
       isVisible: status === OrderStatus.Cancelled ? false : true,
     };
   });
-  // state variable for status visibility 
-  const [visibleStatus, setVisibleStatus] = useState<StatusDetails[]>(initialVisibleStatus);
+  // state variable for status visibility
+  const [visibleStatus, setVisibleStatus] =
+    useState<StatusDetails[]>(initialVisibleStatus);
 
   // function to toggle status visibility
   function toggleStatusVisibility(
@@ -140,7 +140,7 @@ export function DataTable<TData, TValue>({
 
       //   return itemRank.passed;
       // },
-      // NOTE TODO: experiment with removing fuzzy filter for global filter 
+      // TODO NOTE: experiment with removing fuzzy filter for global filter
       fuzzy: fuzzyOrderFilter,
       // status filter
       statusFilter: statusColumnFilter, // (row, columnId, filterValue) => {
@@ -165,7 +165,7 @@ export function DataTable<TData, TValue>({
 
   // useEffect to watch for changes in visibleStatus state to trigger filter update on status column
   useEffect(() => {
-    // pass the visibleStatus state to the status column filter function 
+    // pass the visibleStatus state to the status column filter function
     table.getColumn("status")?.setFilterValue(visibleStatus);
   }, [table, visibleStatus]);
 

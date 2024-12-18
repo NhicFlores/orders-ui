@@ -48,7 +48,7 @@ export default function OrderSummary() {
   // console.log("Order Summary Component Rendered");
   // console.log("xxxxxxxxxxxxxxxxxxxxxxxx");
 
-  //NOTE TODO SAVE DRAFT BUTTON
+  //TODO NOTE SAVE DRAFT BUTTON
   const { order, orderItem, orderItems, setOrderItems } = useProductContext();
 
   // console.log("---------- Order Summary Component ----------");
@@ -105,11 +105,12 @@ export default function OrderSummary() {
         <Link href={GlassTypeRoute.href}>
           <Button>Add Item</Button>
         </Link>
-        <form action={async () => {
-          
-          const response = await createOrderDraft(order, orderItems);
-          console.log(response);
-        }}>
+        <form
+          action={async () => {
+            const response = await createOrderDraft(order, orderItems);
+            console.log(response);
+          }}
+        >
           <Button>Save Draft</Button>
         </form>
       </div>

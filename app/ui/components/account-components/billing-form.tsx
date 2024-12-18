@@ -48,9 +48,9 @@ const BillingForm = ({
     resolver: zodResolver(BillingInfoSchema),
     defaultValues: billing_info
       ? {
-        ...billing_info,
-        apt_num: billing_info.apt_num ?? "",
-      }
+          ...billing_info,
+          apt_num: billing_info.apt_num ?? "",
+        }
       : {
           street: "",
           apt_num: "",
@@ -84,12 +84,12 @@ const BillingForm = ({
     //   : billing_info_id = await createBillingInfo(data, pathToRevalidate);
     // handlePaymentOptionChange && billing_info_id && handlePaymentOptionChange(billing_info_id as string);
 
-    //NOTE BUG: potential bug here, need to test if we can get call updateBillingInfo with id = -1
+    // BUG NOTE: potential bug here, need to test if we can get call updateBillingInfo with id = -1
     isBlankForm
       ? createBillingInfo(data, BillingRoute.href)
       : billing_info?.billing_info_id &&
         updateBillingInfo(billing_info?.billing_info_id, data);
-    //NOTE TODO: add error handling
+    //TODO NOTE: add error handling
     setIsEditEnabled(!isEditEnabled);
   }
 
@@ -170,7 +170,7 @@ const BillingForm = ({
                 )}
               />
             </div>
-            {/** NOTE TODO: add 'make primary' input  */}
+            {/** TODO NOTE: add 'make primary' input  */}
           </div>
           {/* ------------------- contact section ------------------- */}
           <div className="space-y-4">

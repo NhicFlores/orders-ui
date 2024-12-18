@@ -23,9 +23,7 @@ export enum OrderStatus {
   DELIVERED = "DELIVERED",
   /** Cancelled by user or admin. */
   Cancelled = "CANCELLED",
-} // NOTE TODO: add 'CANCELLED', 'DELIVERED' status 
-// NOTE TODO: revise statuses to be more descriptive 
-// - NEW, AWAITING CONFIRMATION, CONFIRMED, IN PRODUCTION, SHIPPED, DELIVERED 
+} 
 
 export type Order = {
   entered_by?: string;
@@ -114,7 +112,7 @@ export type Product = {
   sub_category?: string;
   price?: number;
 };
-// NOTE TODO: update types to be GlassType = Product & {shape_types: Shape[]}
+// update types to be GlassType = Product & {shape_types: Shape[]}
 export type GlassType = Product & {
   shape_types?: Shape[];
   thickness_options?: Thickness[];

@@ -6,11 +6,11 @@ import { redirect } from "next/navigation";
 import { OrderRoute } from "@/routes";
 import { Order, TestOrder } from "../definitions/order-definitions";
 
-//updating the data displayed in the orders route,
-//so we need to clear this cache and trigger a new request to the server
+// updating the data displayed in the orders route,
+// so we need to clear this cache and trigger a new request to the server
 // import revalidateData
-//NOTE TODO array of enum values
-//(Object.values(OrderStatus) as string[])
+// TODO NOTE array of enum values
+// (Object.values(OrderStatus) as string[])
 // const StatusArr = Object.values(OrderStatus).map((statusArr) => {
 //         //statusArr.
 //     });
@@ -19,13 +19,13 @@ const OrderFormSchema = z.object({
   id: z.string(),
   customer_id: z.string({
     invalid_type_error: "Please select a customer.",
-  }),//.regex(/^[0-9]+$/, { message: "Please select a customer." })
+  }), //.regex(/^[0-9]+$/, { message: "Please select a customer." })
   order_name: z.string({
     invalid_type_error: "Please enter an order name.",
   }),
   product_id: z.string({
     invalid_type_error: "Please enter a product ID.",
-  }), //NOTE TODO: how am i creating the product id - this will probably end up being a calculated value to provide readability
+  }), //TODO NOTE: how am i creating the product id - this will probably end up being a calculated value to provide readability
   // or create a UUID and provide an expandable summary/description for the order
   quantity: z.coerce
     .number()
@@ -60,7 +60,7 @@ export type OrderFormState = {
   };
   message?: string | null;
 };
-// NOTE TODO: finish new order function
+// TODO NOTE: finish new order function
 // export async function createNewOrder(order: NewOrder){
 //   const date = new Date().toISOString().split("T")[0];
 //   const { user_id, order_name, product_config, billing_info_id, shipping_info_id, status } = order;

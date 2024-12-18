@@ -42,7 +42,7 @@ export default function ProfileForm({ user_id, profile }: ProfileFormProps) {
   async function toggleEditEnabled() {
     setIsEditEnabled(!isEditEnabled);
   }
-  //NOTE TODO: onSubmit event handler
+  //TODO NOTE: onSubmit event handler
   async function handleFormSave(data: z.infer<typeof ProfileSchema>) {
     console.log("submit handler");
     // if (

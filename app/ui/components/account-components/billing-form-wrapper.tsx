@@ -14,7 +14,7 @@ interface BillingFormWrapperProps {
 const BillingFormWrapper = ({ billing_data }: BillingFormWrapperProps) => {
   const [isNewBillingInfo, setIsNewBillingInfo] = useState(false);
 
-  // NOTE TODO: pass this function to the billing form component
+  // TODO NOTE: pass this function to the billing form component
   function toggleBillingForm() {
     setIsNewBillingInfo(!isNewBillingInfo);
   }

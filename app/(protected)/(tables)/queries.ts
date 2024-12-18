@@ -313,7 +313,7 @@ export async function getOrderDetailsByStatus(
 //     `;
 
 //     const tableData = data.rows.map((row) => {
-//       //NOTE TODO: what is best practice for parsing JSON data
+//       //RESEARCH NOTE: what is best practice for parsing JSON data
 //       // const billing_addr = JSON.parse(String(row.billing_info.billing_addr));
 //       const shipping_info = JSON.parse(String(row.shipping_info));
 //       return {

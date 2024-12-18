@@ -72,7 +72,7 @@ export async function fetchDraftOrders() {
 }
 
 export async function fetchOrderById(id: string) {
-  // NOTE TODO: check the need for noStore on this function
+  // NOTE IMPLEMENTATION: check the need for noStore on this function
   try {
     const data = await sql<OrderForm>`
       SELECT 

@@ -5,13 +5,13 @@ import bcrypt from "bcrypt";
 import { getUser } from "@/lib/actions/auth-actions";
 import { LoginSchema } from "./schema/form-schema";
 
-// NOTE: HOW TO create custom error for callbacks
+// RESEARCH NOTE: create custom error for callbacks 
 // for more useful error codes for both client and server
 // class InvalidFieldsError extends CredentialsSignin {
 //     code = "empty fields"
-// }
+// } 
 
-//NOTE TODO: send success message to form
+// IMPLEMENTATION NOTE: send success message to form
 export const { auth, signIn, signOut } = NextAuth({
   ...authConfig,
   providers: [
@@ -23,7 +23,7 @@ export const { auth, signIn, signOut } = NextAuth({
         // console.log("------------- PARSED CREDENTIALS ----------------");
         console.log("AUTH.TS - NEXT AUTH - CREDENTIALS - AUTHORIZE");
         if (parsedCredentials.success) {
-          console.log("---- CREDENTIALS SUCCESS ----"); 
+          console.log("---- CREDENTIALS SUCCESS ----");
           const { email, password } = parsedCredentials.data;
           const user = await getUser(email);
           // console.log("USER:", user);

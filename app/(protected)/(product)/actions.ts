@@ -16,7 +16,7 @@ async function ValidateUser() {
   return session.user.id;
 }
 
-//NOTE TODO: implement transaction for data integrity
+//TODO NOTE: implement transaction for data integrity
 export async function createOrderDraft(
   order: Order | NewOrder,
   orderItems: OrderItem[] | NewOrderItem[]
@@ -78,7 +78,7 @@ export async function createOrder(order: NewOrder, orderItems: NewOrderItem[]) {
 
   const { order_name, billing_data, shipping_data } = order;
 
-  //NOTE TODO: add data validation for order and order items
+  //TODO NOTE: add data validation for order and order items
   const validatedFields = CreateOrder.safeParse({
     order_name: order_name,
     billing_data: billing_data,

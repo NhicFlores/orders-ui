@@ -1,3 +1,16 @@
+COMMENTS KEY WORDS: 
+NOTE: general note 
+NOTE: HOW TO ... : instructions for how to implement something 
+BUG NOTE: note for a low priority bug 
+TEST NOTE: NOTE TO SHOW SOMETHING IS just a test or that a specific use case should be tested 
+TODO NOTE: feature or UI cleanup, feature or UI implementation 
+TODO NOTE NEXT: high priority TODO 
+TODO NOTE: UNDO: temporary changes made for testing or to bypass something and should be undone or 
+excluded from commit 
+IMPLEMENTATION NOTE: topic, idea, or placement to consider for future implementations 
+RESEARCH NOTE: topic or concept to research  
+
+
 
 nextjs upcoming release 
 new api for tagging functions and specific tags 

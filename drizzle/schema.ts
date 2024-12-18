@@ -13,7 +13,7 @@ import {
   varchar,
 } from "drizzle-orm/pg-core";
 
-// NOTE TODO: optimize date types - check why drizzle is inferring { mode: string }
+// TODO NOTE: optimize date types - check why drizzle is inferring { mode: string }
 // SET TIMEZONE in db connection
 // cannot use other functions in schema declaration file
 // export const dbSchema = pgSchema(getSchemaName());
@@ -150,7 +150,7 @@ export const OrderTable = dbSchema.table(
     shipping_data: jsonb("shipping_data").notNull(),
     billing_data: jsonb("billing_data").notNull(),
     status: varchar("status", { length: 255 }).notNull(),
-    // NOTE TODO: determine if mode: string is needed
+    // TODO NOTE: determine if mode: string is needed
     date_created: timestamp("date_created", { withTimezone: true }).notNull(),
     date_updated: timestamp("date_updated", { withTimezone: true }).notNull(),
     date_submitted: timestamp("date_submitted", { withTimezone: true }),

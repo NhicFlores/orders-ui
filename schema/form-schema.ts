@@ -1,7 +1,7 @@
 import { OrderStatus } from "@/lib/data-model/schema-definitions";
 import { z } from "zod";
 
-//NOTE TODO: email validation, phone number validation - regex might work
+// TODO NOTE: email validation, phone number validation - regex might work
 export const UserSchema = z.object({
   email: z.string().email({
     message: "please enter a valid email address",

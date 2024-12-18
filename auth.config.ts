@@ -37,7 +37,7 @@ export const authConfig = {
       }
       return false; //redirect to log in page
     },
-    // NOTE TODO: signIn callback to add further conditionals on sign in
+    // IMPLEMENTATION NOTE: signIn callback to add further conditionals on sign in
     // async signIn({ user }) {
     //     const currentUser = await getUserByID(user.id as string);
 

@@ -35,7 +35,7 @@ const LoginForm = () => {
     },
   });
 
-  //NOTE TODO: pass action in onSubmit so we can use .then to receive error and success messages
+  // RESEARCH NOTE: pass action in onSubmit so we can use .then to receive error and success messages
 
   // async function onSubmit(data: z.infer<typeof LoginSchema>){
   //   setLoading(true);

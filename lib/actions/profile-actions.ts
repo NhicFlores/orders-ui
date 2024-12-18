@@ -64,7 +64,8 @@ export async function createProfile(
     };
   }
 
-  const { first_name, last_name, company, account_num, phone_num } = validatedFields.data;
+  const { first_name, last_name, company, account_num, phone_num } =
+    validatedFields.data;
 
   try {
     await sql`
@@ -77,7 +78,7 @@ export async function createProfile(
     };
   }
 }
-//NOTE TODO: if users are allowed multiple profiles, we need to update by profile_id
+// IMPLEMENTATION NOTE: if users are allowed multiple profiles, we need to update by profile_id
 export async function updateProfile(
   user_id: string,
   formFields: z.infer<typeof ProfileSchema>
@@ -94,7 +95,8 @@ export async function updateProfile(
     };
   }
 
-  const { first_name, last_name, company, account_num, phone_num } = validatedFields.data;
+  const { first_name, last_name, company, account_num, phone_num } =
+    validatedFields.data;
 
   try {
     await sql`
@@ -126,8 +128,8 @@ export async function createBillingInfo(
   pathToRevalidate: string
 ) {
   const user_id = await validateUser();
-  //NOTE TODO: for testing purposes, we should split up the validation into
-  //separate function
+  // TODO NOTE: for testing purposes, we should split up the validation into
+  // separate function 
   const validatedFields = BillingInfoSchema.safeParse(formFields);
 
   if (!validatedFields.success) {

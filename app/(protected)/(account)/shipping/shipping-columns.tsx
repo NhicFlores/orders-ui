@@ -4,7 +4,7 @@ import { UserShippingInformation } from "@/lib/data-model/schema-definitions";
 import { ColumnDef } from "@tanstack/react-table";
 import { Trash2 } from "lucide-react";
 
-//NOTE TODO: need cell formatting
+//TODO NOTE: need cell formatting
 export const ShippingColumns: ColumnDef<UserShippingInformation>[] = [
   {
     id: "expander",

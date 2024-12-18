@@ -69,7 +69,7 @@ export const OrderColumns: ColumnDef<OrderDetails>[] = [
             <DropdownMenuItem>View customer</DropdownMenuItem>
             <DropdownMenuItem>View product details</DropdownMenuItem>
             <DropdownMenuSeparator />
-            {/** NOTE HOW TO Server Actions are not limited to <form> and can be invoked from event handlers, useEffect, third-party libraries, and other form elements like <button> **/}
+            {/** RESEARCH NOTE: Server Actions are not limited to <form> and can be invoked from event handlers, useEffect, third-party libraries, and other form elements like <button> **/}
 
             <DropdownMenuItem
               onClick={() => deleteOrder(order.order_id)}
@@ -199,8 +199,8 @@ export const OrderColumns: ColumnDef<OrderDetails>[] = [
       );
     },
     cell: ({ row }) => {
-      const date = row.original.date_submitted; //NOTE TO DO: casting vs conversion
-      // NOTE TODO: format date before sending to db vs formatting on fetch
+      const date = row.original.date_submitted; // RESEARCH NOTE: casting vs conversion
+      // RESEARCH NOTE: format date before sending to db vs formatting on fetch
       const cellData = date ? formatDateToLocal(new Date(date)) : "N/A";
       return <div>{cellData}</div>;
     },
@@ -219,8 +219,8 @@ export const OrderColumns: ColumnDef<OrderDetails>[] = [
       );
     },
     cell: ({ row }) => {
-      const date = row.original.date_created; //NOTE TO DO: casting vs conversion
-      // NOTE TODO: format date before sending to db vs formatting on fetch
+      const date = row.original.date_created; // RESEARCH NOTE: casting vs conversion
+      // RESEARCH NOTE: format date before sending to db vs formatting on fetch
       const formattedDate = formatDateToLocal(new Date(date));
       return <div>{formattedDate}</div>;
     },
@@ -239,10 +239,10 @@ export const OrderColumns: ColumnDef<OrderDetails>[] = [
       );
     },
     cell: ({ row }) => {
-      const date = row.original.date_updated; //NOTE TO DO: casting vs conversion
-      // NOTE TODO: format date before sending to db vs formatting on fetch
+      const date = row.original.date_updated; // RESEARCH NOTE: casting vs conversion
+      // RESEARCH NOTE: format date before sending to db vs formatting on fetch
       const formattedDate = formatDateToLocal(new Date(date));
-      return <div>{formattedDate}</div>;
+      return <div>{formattedDate}</div>; 
     },
   },
   {

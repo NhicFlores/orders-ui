@@ -17,9 +17,9 @@
 // import { formatDateStringToLocal } from "@/lib/utils";
 // import { Order } from "@/lib/data-model/schema-definitions";
 
-// //NOTE TODO: enable shift select
-// //NOTE TODO: draft form: save button with empty fields
-// //NOTE TODO: for conditional columns: concatenate arrays
+// //TODO NOTE: enable shift select
+// //TODO NOTE: draft form: save button with empty fields
+// //TODO NOTE: for conditional columns: concatenate arrays
 // //NOTE: client columns depend on how we want them to use the app
 // //will they want to be able to put their own customer names attached to the order so they know where glass is going
 // //more than likely, they'll keep that on their own systems, so PO is the column that they'll want
@@ -36,7 +36,7 @@
 // //     total: number;
 // //     date: string;
 // // };
-// // NOTE: DEPRECATED 
+// // NOTE: DEPRECATED
 // export const DraftColumns: ColumnDef<Order>[] = [
 //   {
 //     id: "select",
@@ -112,7 +112,7 @@
 //       );
 //     },
 //   },
-//   //NOTE TODO: product id's should all be changed to product description: we'll use order_item on backend
+//   //TODO NOTE: product id's should all be changed to product description: we'll use order_item on backend
 //   // {
 //   //   accessorKey: "price",
 //   //   header: ({ column }) => {

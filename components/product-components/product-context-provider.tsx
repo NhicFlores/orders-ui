@@ -61,7 +61,7 @@ export default function ProductContextProvider({
   children: React.ReactNode;
 }) {
   const [order, setOrder] = useState<NewOrder | Order>({
-    user_id: "", // NOTE TODO: where should the user id be set - server or client side?
+    user_id: "", // RESEARCH NOTE: where should the user id be set - server or client side?
     order_name: "",
     billing_data: {
       street: "",

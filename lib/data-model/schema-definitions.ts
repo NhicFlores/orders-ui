@@ -111,7 +111,7 @@ export type InventoryGlassItem = {
   updated_by: string;
 };
 
-// NOTE TODO:
+// IMPLEMENTATION NOTE:
 // shape, stock sheets, and different processes may have different min and max values
 // for length and width so check each part of config, and offer user option based on
 // the largest min smallest max across all parts of configuration
@@ -140,7 +140,7 @@ export enum OrderStatus {
   /** Cancelled by user or admin. */
   Cancelled = "CANCELLED",
 }
-// NOTE TODO: revise statuses to be more descriptive
+// TODO NOTE: revise statuses to be more descriptive
 // - NEW, AWAITING CONFIRMATION, CONFIRMED, IN PRODUCTION, SHIPPED, DELIVERED
 
 export type Order = {

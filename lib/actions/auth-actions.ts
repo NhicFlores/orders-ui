@@ -20,11 +20,11 @@ export async function authenticate(
   //     email: formData.get('email'),
   //     password: formData.get('password'),
   // });
-  //maybe create a form validation function - instead of a schemas
-  //file or folder, make a schema validation file or folder. Here, we
-  //define the schema, immediately safe parse it, and return the extracted fields
-  //NOTE TEST: why does adding it here break and cause a type mismatch?
-  //NOTE TODO: form validation
+  // maybe create a form validation function - instead of a schemas
+  // file or folder, make a schema validation file or folder. Here, we
+  // define the schema, immediately safe parse it, and return the extracted fields
+  // NOTE RESEARCH: why does adding it here break and cause a type mismatch?
+  // TODO NOTE: form validation
   // if (!validatedFields.success) {
 
   // }
@@ -36,7 +36,7 @@ export async function authenticate(
       switch (error.type) {
         case "CredentialsSignin":
           return "Invalid Credentials"; //this is linked to what the login form is expecting in useFormStatus
-        // NOTE TODO: implement custom error for invalid fields defined in auth.ts
+        // TODO NOTE: implement custom error for invalid fields defined in auth.ts
         // case 'InvalidFieldsError':
         //     return 'Enter credentials'
         default:
@@ -46,9 +46,10 @@ export async function authenticate(
     throw error;
   }
 
-  //return { success: "user found"}; //NOTE TODO this doesn't work, it throws off the type for useFormStatus; how to change/define types expected by hooks
+  //return { success: "user found"}; //TODO NOTE this doesn't work, it throws off the type for useFormStatus; how to change/define types expected by hooks
 }
-//NOTE TODO: unused function, remove after testing
+// TODO NOTE: unused function, remove after testing 
+// DEPRECATED 
 export async function userLogin(formFields: z.infer<typeof LoginSchema>) {
   console.log("------------- IN USER LOGIN ACTION ---------------");
 
@@ -118,12 +119,12 @@ export async function registerUser(formFields: z.infer<typeof RegisterSchema>) {
     };
   }
 
-  //NOTE TODO: redirect to log in?
-  //redirect to profile form so they can finish set up?
-  //or email verification first then they can log in?
-  //maybe I can tag the account as new if the user profile is empty
-  //so on the first time they log in, it sends them to the profile section
-  //or a little tool can jump and point to the profile button
+  // TODO NOTE: redirect to log in?
+  // redirect to profile form so they can finish set up?
+  // or email verification first then they can log in?
+  // maybe I can tag the account as new if the user profile is empty
+  // so on the first time they log in, it sends them to the profile section
+  // or a little tool can jump and point to the profile button
   return { success: "User created! Check your email." };
 }
 
@@ -138,7 +139,7 @@ export async function getUser(email: string): Promise<User | undefined> {
   console.log("----");
   console.log(" ");
   try {
-    // NOTE TODO: UPDATE QUERY TO USE DRIZZLE 
+    // TODO NOTE NEXT: UPDATE QUERY TO USE DRIZZLE 
     const user = await sql<User>`
             SELECT * FROM "dev-schema".users 
             WHERE email=${email}

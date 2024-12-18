@@ -3,7 +3,7 @@ interface ContainerProps {
 }
 // reusable container for components
 // removed max-w-7xl
-// NOTE TODO: refactor or remove - currently only used for header 
+// TODO NOTE: refactor or remove - currently only used for header
 const Container: React.FC<ContainerProps> = ({ children }) => {
   return <div className="mx-auto w-full max-w-8xl">{children}</div>;
 };
