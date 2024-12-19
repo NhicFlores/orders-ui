@@ -14,7 +14,7 @@ import {
   OrderStatus,
   ShippingInfoWithoutIds,
 } from "@/lib/data-model/schema-definitions";
-import { OrderDetails } from "@/lib/data-model/data-definitions";
+import { InvoiceTableRow, OrderDetails } from "@/lib/data-model/data-definitions";
 
 export async function fetchOrders() {
   try {
@@ -267,7 +267,14 @@ export async function fetchInvoiceTableData() {
         eq(OrderInvoiceTable.order_id, OrderTable.order_id)
       );
 
-      return result;
+      const formattedResult = result.map((row) => {
+        return {
+          ...row,
+          amount: parseFloat(row.amount),
+        }
+      })
+
+      return formattedResult as InvoiceTableRow[];
   } catch (error) {
     throw new Error("Database Error: Failed to fetch invoice table data");
   }

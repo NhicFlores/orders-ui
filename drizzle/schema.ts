@@ -197,7 +197,10 @@ export const OrderInvoiceTable = dbSchema.table("order_invoices", {
   order_id: uuid("order_id")
     .notNull()
     .references(() => OrderTable.order_id, { onDelete: "cascade" }),
+    // TODO NOTE: need a property and function for deriving the invoice number 
+    // invoice_number: varchar("invoice_number", { length: 255 }).notNull(),
+    // example: "INV" + order_id + date_created 
   date_created: timestamp("date_created", { withTimezone: true }).notNull(),
   status: varchar("status", { length: 255 }).notNull(),
   amount: decimal("amount", { precision: 10, scale: 2 }).notNull(),
-});
+}); 

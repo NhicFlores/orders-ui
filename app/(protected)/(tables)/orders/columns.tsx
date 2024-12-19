@@ -1,7 +1,7 @@
 //client component containing column definitions
 "use client";
 
-import { ColumnDef, FilterFn, Row, RowExpanding } from "@tanstack/react-table";
+import { ColumnDef } from "@tanstack/react-table";
 import { ArrowUpDown, MoreHorizontal } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
@@ -15,9 +15,8 @@ import {
 } from "@/components/ui/dropdown-menu";
 import Link from "next/link";
 import { deleteOrder } from "@/lib/actions/actions";
-import { formatDateStringToLocal, formatDateToLocal } from "@/lib/utils";
-import { Order, OrderStatus } from "@/lib/data-model/schema-definitions";
-import { OrderDetails, StatusDetails } from "@/lib/data-model/data-definitions";
+import { formatDateToLocal } from "@/lib/utils";
+import { OrderDetails } from "@/lib/data-model/data-definitions";
 import { statusColumnFilter } from "@/app/ui/components/table/table-utils";
 
 //TODO: enable shift select
@@ -186,7 +185,6 @@ export const OrderColumns: ColumnDef<OrderDetails>[] = [
   },
   {
     accessorKey: "date_submitted",
-
     header: ({ column }) => {
       return (
         <Button
@@ -204,7 +202,7 @@ export const OrderColumns: ColumnDef<OrderDetails>[] = [
       const cellData = date ? formatDateToLocal(new Date(date)) : "N/A";
       return <div>{cellData}</div>;
     },
-    // TODO NOTE: define sorting function for date columns that look at status to determine sorting 
+    // TODO NOTE: define sorting function for date columns that look at status to determine sorting
   },
   {
     accessorKey: "date_created",
@@ -243,7 +241,7 @@ export const OrderColumns: ColumnDef<OrderDetails>[] = [
       const date = row.original.date_updated; // RESEARCH NOTE: casting vs conversion
       // RESEARCH NOTE: format date before sending to db vs formatting on fetch
       const formattedDate = formatDateToLocal(new Date(date));
-      return <div>{formattedDate}</div>; 
+      return <div>{formattedDate}</div>;
     },
   },
   {
