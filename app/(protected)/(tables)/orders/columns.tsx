@@ -204,6 +204,7 @@ export const OrderColumns: ColumnDef<OrderDetails>[] = [
       const cellData = date ? formatDateToLocal(new Date(date)) : "N/A";
       return <div>{cellData}</div>;
     },
+    // TODO NOTE: define sorting function for date columns that look at status to determine sorting 
   },
   {
     accessorKey: "date_created",

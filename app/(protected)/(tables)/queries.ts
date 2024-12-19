@@ -240,6 +240,39 @@ export async function getOrderDetailsByStatus(
   }
 }
 
+export async function fetchInvoiceTableData() {
+  try {
+    const result = await db
+      .select({
+        order_invoice_id: OrderInvoiceTable.order_invoice_id,
+        user_id: OrderInvoiceTable.user_id,
+        order_id: OrderInvoiceTable.order_id,
+        date_created: OrderInvoiceTable.date_created,
+        status: OrderInvoiceTable.status,
+        amount: OrderInvoiceTable.amount,
+        customer_name:
+          sql`${UserProfileTable.first_name} || ' ' || ${UserProfileTable.last_name}`.as(
+            "customer_name"
+          ),
+        order_name: OrderTable.order_name,
+        // need purchase order if available on order.billing_data object
+      })
+      .from(OrderInvoiceTable)
+      .leftJoin(
+        UserProfileTable,
+        eq(OrderInvoiceTable.user_id, UserProfileTable.user_id)
+      )
+      .leftJoin(
+        OrderTable,
+        eq(OrderInvoiceTable.order_id, OrderTable.order_id)
+      );
+
+      return result;
+  } catch (error) {
+    throw new Error("Database Error: Failed to fetch invoice table data");
+  }
+}
+
 // export async function fetchOrders() {
 //   try {
 //     const data = await sql<Order>`

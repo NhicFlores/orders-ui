@@ -44,6 +44,11 @@ export const DraftRoute = {
   href: "/drafts",
 };
 
+export const InvoiceRoute = {
+  label: "Invoices",
+  href: "/invoices",
+};
+
 // product routes
 export const NewOrderNameRoute = {
   label: "Order Name",
@@ -107,6 +112,7 @@ export const HeaderRoutes = [
   QuoteRoute,
   OrderRoute,
   DraftRoute,
+  InvoiceRoute,
 ];
 
 //dashboard nav links

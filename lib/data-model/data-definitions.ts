@@ -17,4 +17,9 @@ import {
       order_items: OrderItem[];
     };
   
+  export type InvoiceTableRow = OrderInvoice & 
+    Pick<Order, "order_name" | "billing_data"> & 
+  {
+    customer_name: string; //UserProfile.first_name + UserProfile.last_name
+  }
   

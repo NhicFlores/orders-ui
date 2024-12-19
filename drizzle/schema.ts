@@ -173,7 +173,7 @@ export const OrderTable = dbSchema.table(
   ]
 );
 
-// one-to-many with order table
+// one-to-many with order table 
 export const OrderItemTable = dbSchema.table("order_items", {
   order_item_id: serial("order_item_id").primaryKey(),
   order_id: uuid("order_id")

@@ -160,7 +160,7 @@ https://stackoverflow.com/questions/56335674/sql-query-with-join-to-get-nested-a
 data table 
 expandable row 
 	- on expand 
-		- also show the buttons from the 'more elipse': edit, copy, view customer, etc to make it easier to navigate 
+		- also show the buttons from the 'more ellipse': edit, copy, view customer, etc to make it easier to navigate 
 	- limit to 10 at a time, 
 	- default to order by recent activity, 
 	- add column for load date 
@@ -401,7 +401,7 @@ server components
 
 
 deleting items: should have a deleted folder (and table) that will hold onto stuff for like 15 days or something 
-archiving items to clean out historical data from current: ex. past customers - dont want to delete them but 
+archiving items to clean out historical data from current: ex. past customers - don't want to delete them but 
 we don't need them in working data 
 
 global definitions for paths to consolidate them and avoid spelling errors 
@@ -435,9 +435,9 @@ when save is hit, button passes user_id and updated field to sql query and updat
 should probably enable editing all fields, and save button takes all changed fields 
 
 -adding shipping addresses 
-add shipping address should be its own button, and shipping adresses are titled and selectable 
+add shipping address should be its own button, and shipping addresses are titled and selectable 
 from new order form 
 address table may be necessary but we'll try to avoid that 
 
--use tooltips to see details when hovering over table like seeing the custoomer id when 
+-use tooltips to see details when hovering over table like seeing the customer id when 
 hovering on customer name 
