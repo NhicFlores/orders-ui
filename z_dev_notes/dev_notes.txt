@@ -10,7 +10,7 @@ excluded from commit
 IMPLEMENTATION NOTE: topic, idea, or placement to consider for future implementations 
 RESEARCH NOTE: topic or concept to research  
 
-
+https://www.youtube.com/watch?v=DSJq_Md1CUg 
 
 nextjs upcoming release 
 new api for tagging functions and specific tags 

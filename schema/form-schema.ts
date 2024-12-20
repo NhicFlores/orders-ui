@@ -1,4 +1,5 @@
 import { OrderStatus } from "@/lib/data-model/schema-definitions";
+import { stat } from "fs";
 import { z } from "zod";
 
 // TODO NOTE: email validation, phone number validation - regex might work
@@ -187,3 +188,14 @@ export const OrderItemSchema = z.object({
   note: z.string(),
   quantity: z.number(),
 });
+// TODO NOTE: CREATE FORM SCHEMA FOR INVOICE, ORDER, AND CUSTOMER DETAILS PAGES 
+export const OrderInvoiceSchema = z.object({
+  invoice_number: z.string(),
+  status: z.nativeEnum(OrderStatus),
+  amount: z.number(),
+})
+
+export const OrderDetailSchema = z.object({
+  order: OrderSchema,
+
+})

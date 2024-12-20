@@ -3,7 +3,7 @@ import { z } from "zod";
 import { sql } from "@vercel/postgres";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
-import { OrderRoute } from "@/routes";
+import { OrderTableRoute } from "@/routes";
 import { Order, TestOrder } from "../definitions/order-definitions";
 
 // updating the data displayed in the orders route,
@@ -127,8 +127,8 @@ export async function createOrder(
     };
   }
 
-  revalidatePath(OrderRoute.href);
-  redirect(OrderRoute.href);
+  revalidatePath(OrderTableRoute.href);
+  redirect(OrderTableRoute.href);
 }
 
 const UpdateOrder = OrderFormSchema.omit({ id: true, date: true });
@@ -170,8 +170,8 @@ export async function updateOrder(
     };
   }
 
-  revalidatePath(OrderRoute.href);
-  redirect(OrderRoute.href);
+  revalidatePath(OrderTableRoute.href);
+  redirect(OrderTableRoute.href);
 }
 
 export async function deleteOrder(id: string) {
@@ -181,7 +181,7 @@ export async function deleteOrder(id: string) {
         DELETE FROM orders
         WHERE id = ${id}
     `;
-  revalidatePath(OrderRoute.href);
+  revalidatePath(OrderTableRoute.href);
 }
 
 // NOTE TEST FUNCTION
