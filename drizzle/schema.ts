@@ -147,9 +147,11 @@ export const OrderTable = dbSchema.table(
       .notNull()
       .references(() => UserTable.id, { onDelete: "cascade" }),
     order_name: varchar("order_name", { length: 255 }).notNull(),
+    // order_number: varchar("order_number", { length: 255 }).notNull(), 
     shipping_data: jsonb("shipping_data").notNull(),
     billing_data: jsonb("billing_data").notNull(),
     status: varchar("status", { length: 255 }).notNull(),
+    // TODO NOTE: add amount field for order total; admin wil have to manually update 
     // TODO NOTE: determine if mode: string is needed
     date_created: timestamp("date_created", { withTimezone: true }).notNull(),
     date_updated: timestamp("date_updated", { withTimezone: true }).notNull(),

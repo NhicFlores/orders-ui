@@ -190,12 +190,12 @@ export const OrderItemSchema = z.object({
 });
 // TODO NOTE: CREATE FORM SCHEMA FOR INVOICE, ORDER, AND CUSTOMER DETAILS PAGES 
 export const OrderInvoiceSchema = z.object({
-  invoice_number: z.string(),
+  invoice_number: z.string().optional(),
   status: z.nativeEnum(OrderStatus),
   amount: z.number(),
 })
 
 export const OrderDetailSchema = z.object({
   order: OrderSchema,
-
+  
 })

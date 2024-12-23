@@ -1,6 +1,8 @@
 import { OrderDetails } from "@/lib/data-model/data-definitions";
 import React from "react";
 import { fetchOrderDetailsById } from "../../(tables)/queries";
+import { Form } from "@/components/ui/form";
+import OrderForm from "./order-form";
 
 const OrderPage = async ({ params }: { params: { id: string } }) => {
   const orderDetails = await fetchOrderDetailsById(params.id);
@@ -8,15 +10,9 @@ const OrderPage = async ({ params }: { params: { id: string } }) => {
   // TODO NOTE: use shadcn Form component to display order details
   return (
     <main className="container mx-auto">
-      <section>
-        <h1>Order Details</h1>
-      </section>
-      <section className="flex space-x-2 items-baseline">
-        <label className="text-lg">{"Order Name:"}</label>
-        <div>{orderDetails.order_name}</div>
-      </section>
+      <OrderForm />
     </main>
-  );
-};
+  ); 
+}; 
 
 export default OrderPage;
