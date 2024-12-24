@@ -11,12 +11,12 @@ import {
   BillingInfoWithoutIds,
   Order,
   OrderItem,
-  OrderStatus,
   ShippingInfoWithoutIds,
 } from "@/lib/data-model/schema-definitions";
 import {
   InvoiceTableRow,
   OrderDetails,
+  OrderStatus,
 } from "@/lib/data-model/data-definitions";
 
 export async function fetchOrders() {

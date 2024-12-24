@@ -1,4 +1,5 @@
-import { OrderStatus, UserRole } from "@/lib/data-model/schema-definitions";
+import { OrderStatus } from "@/lib/data-model/data-definitions";
+import { UserRole } from "@/lib/data-model/schema-definitions";
 import { sql } from "drizzle-orm";
 import {
   boolean,
@@ -152,6 +153,8 @@ export const OrderTable = dbSchema.table(
     billing_data: jsonb("billing_data").notNull(),
     status: varchar("status", { length: 255 }).notNull(),
     // TODO NOTE: add amount field for order total; admin wil have to manually update 
+    // TODO NOTE: optional 'entered by' field for when admin enter orders for customers 
+    // IMPLEMENTATION NOTE: metadata object for storing additional order details 
     // TODO NOTE: determine if mode: string is needed
     date_created: timestamp("date_created", { withTimezone: true }).notNull(),
     date_updated: timestamp("date_updated", { withTimezone: true }).notNull(),

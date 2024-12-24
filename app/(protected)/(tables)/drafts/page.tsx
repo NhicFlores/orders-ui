@@ -2,7 +2,7 @@
 
 import { DataTable } from "../../../ui/components/data-table";
 import { getOrderDetailsByStatus } from "../queries";
-import { OrderStatus } from "@/lib/data-model/schema-definitions";
+import { OrderStatus } from "@/lib/data-model/data-definitions";
 import { OrderColumns } from "../orders/columns";
 
 export default async function Page() {

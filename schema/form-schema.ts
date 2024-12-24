@@ -1,4 +1,4 @@
-import { OrderStatus } from "@/lib/data-model/schema-definitions";
+import { OrderStatus } from "@/lib/data-model/data-definitions";
 import { stat } from "fs";
 import { z } from "zod";
 
@@ -153,22 +153,24 @@ export const RequiredDimensionsSchema = z.object({
 });
 
 export const OrderSchema = z.object({
-  id: z.string(),
+  order_id: z.string(),
   user_id: z.string(),
-  entered_by: z.string().optional(),
   order_name: z.string(),
-  billing_info_id: z.string(),
-  shipping_info: ShippingInfoSchema,
+  shipping_data: ShippingInfoSchema,
+  billing_data: BillingInfoSchema,
   status: z.nativeEnum(OrderStatus, {
     invalid_type_error: "Please select an order status.",
   }),
+  // entered_by: z.string().optional(),
   date_created: z.string(),
   date_updated: z.string(),
   date_submitted: z.string(),
+  date_shipped: z.string().optional(),
+  date_delivered: z.string().optional(),
 });
 
 export const CreateOrder = OrderSchema.omit({
-  id: true,
+  order_id: true,
   user_id: true,
   date_created: true,
   date_updated: true,
@@ -197,5 +199,5 @@ export const OrderInvoiceSchema = z.object({
 
 export const OrderDetailSchema = z.object({
   order: OrderSchema,
-  
+  order_invoice: OrderInvoiceSchema,
 })

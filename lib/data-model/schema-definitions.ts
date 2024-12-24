@@ -1,3 +1,5 @@
+import { OrderStatus } from "./data-definitions";
+
 export type User = {
   id: string;
   email: string;
@@ -122,26 +124,6 @@ interface quantityIncoming {
   supplier_id: string;
   expected_arrival_date: Date;
 }
-
-// front-end only
-export enum OrderStatus {
-  /** Saved by the user but not yet submitted. */
-  Draft = "DRAFT",
-  /** Submitted but not yet viewed by admin. */
-  Pending = "PENDING",
-  /** Submitted as a quote. */
-  Quote = "QUOTE",
-  /** Viewed by admin but not yet shipped. */
-  Processing = "PROCESSING",
-  /** Shipped but not yet received. */
-  Shipped = "SHIPPED",
-  /** Received by customer. */
-  Delivered = "DELIVERED",
-  /** Cancelled by user or admin. */
-  Cancelled = "CANCELLED",
-}
-// TODO NOTE: revise statuses to be more descriptive
-// - NEW, AWAITING CONFIRMATION, CONFIRMED, IN PRODUCTION, SHIPPED, DELIVERED
 
 export type Order = {
   order_id: string;
