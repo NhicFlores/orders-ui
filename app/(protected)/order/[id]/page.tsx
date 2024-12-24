@@ -10,7 +10,7 @@ const OrderPage = async ({ params }: { params: { id: string } }) => {
   // TODO NOTE: use shadcn Form component to display order details
   return (
     <main className="container mx-auto">
-      <OrderForm />
+      <OrderForm orderDetail={orderDetails}/>
     </main>
   ); 
 }; 

@@ -290,7 +290,7 @@ export async function fetchOrderDetailsById(
       // const reducedResult = result.reduce<OrderDetails>((acc, row) => {
 
       // }, {});
-
+      // TODO NOTE: destructure the result and process each field to strongly type the result 
       return result[0];
 
   } catch (error) {
