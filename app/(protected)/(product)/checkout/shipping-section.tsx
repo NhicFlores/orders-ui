@@ -13,11 +13,11 @@ import ShippingForm from "../../(account)/shipping/shipping-form";
 import { useProductContext } from "@/components/product-components/product-context-provider";
 import {
   ShippingInfo,
-  UserShippingInformation,
+  CustomerShippingInformation,
 } from "@/lib/data-model/schema-definitions";
 
 interface ShippingSectionProps {
-  shippingOptions: UserShippingInformation[];
+  shippingOptions: CustomerShippingInformation[];
 }
 
 export default function ShippingSection({

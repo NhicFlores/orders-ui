@@ -18,7 +18,7 @@ import {
 import {
   ShippingInfo,
   ShippingInfoWithoutIds,
-  UserShippingInformation,
+  CustomerShippingInformation,
 } from "@/lib/data-model/schema-definitions";
 import { ShippingInfoSchema } from "@/schema/form-schema";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -77,8 +77,8 @@ export default function ShippingForm({
 
   function isShippingInfoWithId(
     info: ShippingInfo | undefined
-  ): info is UserShippingInformation {
-    return (info as UserShippingInformation).shipping_info_id !== undefined;
+  ): info is CustomerShippingInformation {
+    return (info as CustomerShippingInformation).shipping_info_id !== undefined;
   }
 
   return (

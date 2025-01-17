@@ -19,33 +19,46 @@ import {
   OrderStatus,
 } from "@/lib/data-model/data-definitions";
 
+// UNUSED FUNCTION 
 export async function fetchOrders() {
   try {
-    const orders = await db
+    const result = await db
       .select({
         order_id: OrderTable.order_id,
-        user_id: OrderTable.user_id,
+        created_by: OrderTable.created_by,
+        customer_id: OrderTable.customer_id,
         order_name: OrderTable.order_name,
-        status: OrderTable.status,
+        order_number: OrderTable.order_number,
         shipping_data: OrderTable.shipping_data,
         billing_data: OrderTable.billing_data,
+        status: OrderTable.status,
+        amount: OrderTable.amount,
         date_created: OrderTable.date_created,
         date_updated: OrderTable.date_updated,
         date_submitted: OrderTable.date_submitted,
         date_shipped: OrderTable.date_shipped,
         date_delivered: OrderTable.date_delivered,
-        ordered_by_first_name: UserProfileTable.first_name,
-        ordered_by_last_name: UserProfileTable.last_name,
+        // ordered_by_first_name: UserProfileTable.first_name,
+        // ordered_by_last_name: UserProfileTable.last_name,
       })
       .from(OrderTable)
-      .innerJoin(
-        UserProfileTable,
-        eq(OrderTable.user_id, UserProfileTable.user_id)
-      );
+      // .innerJoin(
+      //   UserProfileTable,
+      //   eq(OrderTable.created_by, UserProfileTable.user_id)
+      // );
     //2024-07-09T05:00:00.000Z
     //2024-05-01T05:00:00.000Z
     // console.log(data.rows);
     // return data.rowCount && data.rowCount > 0 ? data.rows : [];
+
+    // NOTE: needs testing to ensure that the amount is parsed correctly 
+    const orders = result.map((row) => {
+      return {
+        ...row,
+        amount: parseFloat(row.amount),
+      }
+    })
+
     return orders as Order[];
   } catch (error) {
     // return [];
@@ -58,7 +71,7 @@ export async function fetchOrdersByStatus(status: OrderStatus) {
     const data = await db
       .select({
         order_id: OrderTable.order_id,
-        user_id: OrderTable.user_id,
+        created_by: OrderTable.created_by,
         order_name: OrderTable.order_name,
         status: OrderTable.status,
         shipping_data: OrderTable.shipping_data,
@@ -85,8 +98,10 @@ export async function fetchOrderTableData(): Promise<OrderDetails[]> {
     const result = await db
       .select({
         order_id: OrderTable.order_id,
-        user_id: OrderTable.user_id,
+        created_by: OrderTable.created_by,
+        customer_id: OrderTable.customer_id,
         order_name: OrderTable.order_name,
+        order_number: OrderTable.order_number,
         shipping_data: OrderTable.shipping_data,
         billing_data: OrderTable.billing_data,
         status: OrderTable.status,
@@ -106,7 +121,7 @@ export async function fetchOrderTableData(): Promise<OrderDetails[]> {
       .from(OrderTable)
       .leftJoin(
         UserProfileTable,
-        eq(OrderTable.user_id, UserProfileTable.user_id)
+        eq(OrderTable.created_by, UserProfileTable.user_id)
       )
       .leftJoin(
         OrderInvoiceTable,
@@ -120,8 +135,10 @@ export async function fetchOrderTableData(): Promise<OrderDetails[]> {
     const reducedResult = result.reduce<OrderDetails[]>((acc, row) => {
       const orderDetails = {
         order_id: row.order_id,
-        user_id: row.user_id,
+        created_by: row.created_by,
+        customer_id: row.customer_id,
         order_name: row.order_name,
+        order_number: row.order_number,
         shipping_data: row.shipping_data as ShippingInfoWithoutIds,
         billing_data: row.billing_data as BillingInfoWithoutIds,
         status: row.status as OrderStatus,
@@ -167,8 +184,10 @@ export async function getOrderDetailsByStatus(
     const result = await db
       .select({
         order_id: OrderTable.order_id,
-        user_id: OrderTable.user_id,
+        created_by: OrderTable.created_by,
+        customer_id: OrderTable.customer_id,
         order_name: OrderTable.order_name,
+        order_number: OrderTable.order_number,
         shipping_data: OrderTable.shipping_data,
         billing_data: OrderTable.billing_data,
         status: OrderTable.status,
@@ -189,7 +208,7 @@ export async function getOrderDetailsByStatus(
       .where(eq(OrderTable.status, status))
       .leftJoin(
         UserProfileTable,
-        eq(OrderTable.user_id, UserProfileTable.user_id)
+        eq(OrderTable.created_by, UserProfileTable.user_id)
       )
       .leftJoin(
         OrderInvoiceTable,
@@ -203,8 +222,10 @@ export async function getOrderDetailsByStatus(
     const reducedResult = result.reduce<OrderDetails[]>((acc, row) => {
       const orderDetails = {
         order_id: row.order_id,
-        user_id: row.user_id,
+        created_by: row.created_by,
+        customer_id: row.customer_id,
         order_name: row.order_name,
+        order_number: row.order_number,
         shipping_data: row.shipping_data as ShippingInfoWithoutIds,
         billing_data: row.billing_data as BillingInfoWithoutIds,
         status: row.status as OrderStatus,
@@ -252,7 +273,7 @@ export async function fetchOrderDetailsById(
     const result = await db
       .select({
         order_id: OrderTable.order_id, // programmatic 
-        user_id: OrderTable.user_id, // programmatic 
+        created_by: OrderTable.created_by, // programmatic 
         order_name: OrderTable.order_name, // 
         shipping_data: OrderTable.shipping_data, // modifiable conditionally 
         billing_data: OrderTable.billing_data, // modifiable conditionally 
@@ -274,7 +295,7 @@ export async function fetchOrderDetailsById(
       .where(eq(OrderTable.order_id, orderId))
       .leftJoin(
         UserProfileTable,
-        eq(OrderTable.user_id, UserProfileTable.user_id)
+        eq(OrderTable.created_by, UserProfileTable.user_id)
       )
       .leftJoin(
         OrderInvoiceTable,
@@ -303,7 +324,7 @@ export async function fetchInvoiceTableData() {
     const result = await db
       .select({
         order_invoice_id: OrderInvoiceTable.order_invoice_id,
-        user_id: OrderInvoiceTable.user_id,
+        created_by: OrderInvoiceTable.created_by,
         order_id: OrderInvoiceTable.order_id,
         date_created: OrderInvoiceTable.date_created,
         status: OrderInvoiceTable.status,
@@ -318,7 +339,7 @@ export async function fetchInvoiceTableData() {
       .from(OrderInvoiceTable)
       .leftJoin(
         UserProfileTable,
-        eq(OrderInvoiceTable.user_id, UserProfileTable.user_id)
+        eq(OrderInvoiceTable.created_by, UserProfileTable.user_id)
       )
       .leftJoin(
         OrderTable,
