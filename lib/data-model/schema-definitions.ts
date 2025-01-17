@@ -1,30 +1,48 @@
 import { OrderStatus } from "./data-definitions";
 
+export type Customer = {
+  customer_id: string;
+  name: string;
+  phone: string;
+  email: string;
+  // fields determined by admin
+  type: string; // type: individual, business, non-profit
+  account_num: string;
+  credit_status: string; //
+  credit_limit: number;
+  // fields determined by system
+  date_created: Date;
+  date_updated: Date;
+};
+// object to determine auth
 export type User = {
   id: string;
   email: string;
   password: string;
   role: UserRole;
+  is_active: boolean;
 };
 
 export enum UserRole {
   Admin = "ADMIN",
   User = "USER",
 }
-
+// user-specific data that is subject to user manipulation which is
+// why it is separate from the user object and user table
+// IMPLEMENTATION NOTE: could be tables separate, but on front-end maintain a single user object
 export type UserProfile = {
   profile_id: number;
   user_id: string;
   first_name: string;
   last_name: string;
-  company?: string;
-  account_num?: string;
   phone_num?: string;
+  // customer_id?: string;
+  // settings: {};
 };
 
-export type UserShippingInformation = {
+export type CustomerShippingInformation = {
   shipping_info_id: number;
-  user_id: string;
+  customer_id: string;
   street: string;
   apt_num?: string | null;
   city: string;
@@ -35,15 +53,15 @@ export type UserShippingInformation = {
 };
 
 export type ShippingInfoWithoutIds = Omit<
-  UserShippingInformation,
-  "shipping_info_id" | "user_id"
+  CustomerShippingInformation,
+  "shipping_info_id" | "customer_id"
 >;
 
-export type ShippingInfo = UserShippingInformation | ShippingInfoWithoutIds;
+export type ShippingInfo = CustomerShippingInformation | ShippingInfoWithoutIds;
 
-export type UserBillingInformation = {
+export type CustomerBillingInformation = {
   billing_info_id: number;
-  user_id: string;
+  customer_id: string;
   street: string;
   apt_num?: string | null;
   city: string;
@@ -61,11 +79,11 @@ export type UserBillingInformation = {
 };
 
 export type BillingInfoWithoutIds = Omit<
-  UserBillingInformation,
-  "billing_info_id" | "user_id"
+  CustomerBillingInformation,
+  "billing_info_id" | "customer_id"
 >;
 
-export type BillingInfo = UserBillingInformation | BillingInfoWithoutIds;
+export type BillingInfo = CustomerBillingInformation | BillingInfoWithoutIds;
 
 // used when generating billing info for orders
 export const payment_method_codes = [
@@ -127,11 +145,14 @@ interface quantityIncoming {
 
 export type Order = {
   order_id: string;
-  user_id: string;
+  created_by: string;
+  customer_id: string;
   order_name: string;
+  order_number: string;
   shipping_data: ShippingInfoWithoutIds;
   billing_data: BillingInfoWithoutIds;
   status: OrderStatus;
+  amount: number;
   date_created: Date;
   date_updated: Date;
   date_submitted?: Date | null;
@@ -155,9 +176,12 @@ export type NewOrderItem = Omit<OrderItem, "order_item_id" | "order_id">;
 
 export type OrderInvoice = {
   order_invoice_id: string;
-  user_id: string;
+  // user_id of the user that entered the order
+  created_by: string;
   order_id: string;
-  date_created: Date;
+  customer_id: string;
+  invoice_number: string;
   status: string;
   amount: number;
+  date_created: Date;
 };

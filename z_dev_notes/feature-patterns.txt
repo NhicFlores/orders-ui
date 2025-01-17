@@ -84,8 +84,22 @@ after making schema changes,
   - generate new migration 
   - run migration against correct database 
 
+generating data 
+  update drizzle schema 
+  update typescript definitions 
+  drop old migrations 
+  generate new migrations 
+  run new migrations 
+  update generating functions 
+  update paths in generating functions 
+  update seeding functions 
+  run seeding functions  
+  - update production schema, production seeding functions 
+
 
 forms 
+- define type in definitions 
+- update drizzle schema if necessary 
 - zod schema 
 - state variables 
 - server actions 

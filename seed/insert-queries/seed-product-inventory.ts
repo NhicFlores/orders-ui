@@ -2,8 +2,8 @@ import { sql } from "drizzle-orm";
 import { db } from "@/drizzle/db";
 import { InventoryProductTable } from "@/drizzle/schema";
 import { getSchemaName, FlipCoin } from "@/lib/utils";
-import { inventoryGlassSeed } from "../data/seed-inventory-glass";
-import { inventoryProductSeed } from "../data/seed-inventory-products";
+import { inventoryProductSeed } from "../data/inventory-products";
+import { inventoryGlassSeed } from "../data/inventory-glass";
 
 export async function seedProducts() {
   console.log("seeding products ...");

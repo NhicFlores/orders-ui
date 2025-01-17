@@ -3,11 +3,11 @@ import { db } from "@/drizzle/db";
 import { InventoryProductTable, OrderTable } from "@/drizzle/schema";
 import { GetUserEmails } from "@/lib/data/user-queries";
 import { getSchemaName } from "@/lib/utils";
-import { usersSeed } from "../data/seed-users";
-import { ordersSeed } from "../data/seed-orders";
-import { orderItemsSeed } from "../data/seed-order-items";
-import { orderInvoiceSeed } from "../data/seed-order-invoice";
-import { inventoryProductSeed } from "../data/seed-inventory-products";
+import { usersSeed } from "../data/users";
+import { inventoryProductSeed } from "../data/inventory-products";
+import { ordersSeed } from "../data/orders";
+import { orderItemsSeed } from "../data/order-items";
+import { orderInvoiceSeed } from "../data/order-invoices";
 // import { GetUserEmails, GetUserIds } from "../fetch-queries/get-users";
 
 
@@ -62,7 +62,7 @@ export async function seedOrderInfo() {
       for (const order of ordersSeed) {
         console.log("xxxxxx NEW ORDER xxxxxx");
 
-        let userID = matchUserId(order.user_id, dbUsers); // userIds[Math.floor(Math.random() * userIds.length)];
+        let userID = matchUserId(order.created_by, dbUsers); // userIds[Math.floor(Math.random() * userIds.length)];
 
         const { shipping_data, billing_data } = order;
         const shippingInfoData = {
@@ -91,21 +91,27 @@ export async function seedOrderInfo() {
         const serializedBillingInfo = JSON.stringify(billingInfoData);
         const result = await trx.execute(
           sql`INSERT INTO "${sql.raw(getSchemaName())}".orders 
-                      ("user_id",
+                      ("created_by",
+                      "customer_id",
                       "order_name",
+                      "order_number",
                       "shipping_data",
                       "billing_data",
                       status,
+                      amount,
                       "date_created",
                       "date_updated",
                       "date_submitted",
                       "date_shipped",
                       "date_delivered")
             VALUES (${userID},
+                    ${order.customer_id},
                     ${order.order_name},
+                    ${order.order_number},
                     ${serializedShippingInfo},
                     ${serializedBillingInfo},
                     ${order.status},
+                    ${order.amount},
                     ${order.date_created},
                     ${order.date_updated},
                     ${order.date_submitted ? order.date_submitted : null},
@@ -154,16 +160,20 @@ export async function seedOrderInfo() {
             invoiceCount++;
             await trx.execute(
               sql`INSERT INTO "${sql.raw(getSchemaName())}"."order_invoices"
-                            (user_id,
+                            (created_by,
                             order_id,
-                            date_created,
+                            customer_id,
+                            invoice_number,
                             status,
-                            amount)
+                            amount,
+                            date_created)
                     VALUES (${userID},
                             ${orderId},
-                            ${invoice.date_created},
+                            ${order.customer_id},
+                            ${invoice.invoice_number},
                             ${invoice.status},
-                            ${invoice.amount})`
+                            ${invoice.amount},
+                            ${invoice.date_created})`
             );
           }
         }
