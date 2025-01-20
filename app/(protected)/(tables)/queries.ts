@@ -19,7 +19,7 @@ import {
   OrderStatus,
 } from "@/lib/data-model/data-definitions";
 
-// UNUSED FUNCTION 
+// UNUSED FUNCTION
 export async function fetchOrders() {
   try {
     const result = await db
@@ -41,23 +41,23 @@ export async function fetchOrders() {
         // ordered_by_first_name: UserProfileTable.first_name,
         // ordered_by_last_name: UserProfileTable.last_name,
       })
-      .from(OrderTable)
-      // .innerJoin(
-      //   UserProfileTable,
-      //   eq(OrderTable.created_by, UserProfileTable.user_id)
-      // );
+      .from(OrderTable);
+    // .innerJoin(
+    //   UserProfileTable,
+    //   eq(OrderTable.created_by, UserProfileTable.user_id)
+    // );
     //2024-07-09T05:00:00.000Z
     //2024-05-01T05:00:00.000Z
     // console.log(data.rows);
     // return data.rowCount && data.rowCount > 0 ? data.rows : [];
 
-    // NOTE: needs testing to ensure that the amount is parsed correctly 
+    // NOTE: needs testing to ensure that the amount is parsed correctly
     const orders = result.map((row) => {
       return {
         ...row,
         amount: parseFloat(row.amount),
-      }
-    })
+      };
+    });
 
     return orders as Order[];
   } catch (error) {
@@ -264,32 +264,34 @@ export async function getOrderDetailsByStatus(
   }
 }
 
-export async function fetchOrderDetailsById(
-  orderId: string
-) {
+export async function fetchOrderDetailsById(orderId: string) {
   try {
     console.log("---- ORDER ID ----");
     console.log(orderId);
+    console.log("----");
     const result = await db
       .select({
-        order_id: OrderTable.order_id, // programmatic 
-        created_by: OrderTable.created_by, // programmatic 
-        order_name: OrderTable.order_name, // 
-        shipping_data: OrderTable.shipping_data, // modifiable conditionally 
-        billing_data: OrderTable.billing_data, // modifiable conditionally 
-        status: OrderTable.status, // programmatic 
+        order_id: OrderTable.order_id, // programmatic
+        created_by: OrderTable.created_by, // programmatic
+        customer_id: OrderTable.customer_id, // programmatic
+        order_name: OrderTable.order_name, //
+        order_number: OrderTable.order_number, // modifiable conditionally
+        shipping_data: OrderTable.shipping_data, // modifiable conditionally
+        billing_data: OrderTable.billing_data, // modifiable conditionally
+        status: OrderTable.status, // programmatic
+        amount: OrderTable.amount, // modifiable conditionally
         date_created: OrderTable.date_created, // programmatic
-        date_updated: OrderTable.date_updated, // programmatic 
-        date_submitted: OrderTable.date_submitted, // programmatic 
-        date_shipped: OrderTable.date_shipped, // modifiable conditionally 
-        date_delivered: OrderTable.date_delivered, // modifiable conditionally 
-        amount: OrderInvoiceTable.amount, // modifiable conditionally 
-        order_invoice_id: OrderInvoiceTable.order_invoice_id, 
-        ordered_by: 
+        date_updated: OrderTable.date_updated, // programmatic
+        date_submitted: OrderTable.date_submitted, // programmatic
+        date_shipped: OrderTable.date_shipped, // modifiable conditionally
+        date_delivered: OrderTable.date_delivered, // modifiable conditionally
+        order_invoice_id: OrderInvoiceTable.order_invoice_id,
+        invoice_number: OrderInvoiceTable.invoice_number,
+        ordered_by:
           sql`${UserProfileTable.first_name} || ' ' || ${UserProfileTable.last_name}`.as(
             "ordered_by"
           ),
-        order_item: OrderItemTable,
+        order_items: OrderItemTable,
       })
       .from(OrderTable)
       .where(eq(OrderTable.order_id, orderId))
@@ -305,17 +307,48 @@ export async function fetchOrderDetailsById(
         OrderItemTable,
         eq(OrderTable.order_id, OrderItemTable.order_id)
       );
-      console.log("---- fetchOrderDetailsById ----");
-      console.log(result);
-      console.log(result.length);
-      // const reducedResult = result.reduce<OrderDetails>((acc, row) => {
 
-      // }, {});
-      // TODO NOTE: destructure the result and process each field to strongly type the result 
-      return result[0];
+    console.log("---- fetchOrderDetailsById ----");
+    console.log("RESULT");
+    console.log(result);
+    console.log("RESULT LENGTH");
+    console.log(result.length);
+    // const reducedResult = result.reduce<OrderDetails>((acc, row) => {
 
+    // }, {});
+    // TODO NOTE: destructure the result and process each field to strongly type the result
+
+    console.log(" ELEMENT 0 ");
+    console.log(result[0]);
+    console.log("----");
+    console.log(" ELEMENT 1 ");
+    console.log(result[1]);
+    console.log("----");
+
+    const orderInfo = {...result[0],
+      amount: parseFloat(result[0].amount),
+      shipping_data: result[0].shipping_data as ShippingInfoWithoutIds,
+      billing_data: result[0].billing_data as BillingInfoWithoutIds,
+      order_items: [],
+    }
+
+    return orderInfo as OrderDetails;
   } catch (error) {
     throw new Error("Database Error: Failed to fetch order details");
+  }
+}
+
+export async function fetchOrderItems(orderId: string) {
+  try {
+    const result = await db
+      .select()
+      .from(OrderItemTable)
+      .where(eq(OrderItemTable.order_id, orderId)); 
+
+
+    return result as OrderItem[];
+  } catch {
+    throw new Error("Database Error: Failed to fetch order items");
   }
 }
 

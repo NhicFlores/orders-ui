@@ -154,14 +154,16 @@ export const RequiredDimensionsSchema = z.object({
 
 export const OrderSchema = z.object({
   order_id: z.string(),
-  user_id: z.string(),
+  created_by: z.string(),
+  customer_id: z.string(),
   order_name: z.string(),
+  order_number: z.string(),
   shipping_data: ShippingInfoSchema,
   billing_data: BillingInfoSchema,
   status: z.nativeEnum(OrderStatus, {
     invalid_type_error: "Please select an order status.",
   }),
-  // entered_by: z.string().optional(),
+  amount: z.number(),
   date_created: z.string(),
   date_updated: z.string(),
   date_submitted: z.string(),
@@ -171,7 +173,7 @@ export const OrderSchema = z.object({
 
 export const CreateOrder = OrderSchema.omit({
   order_id: true,
-  user_id: true,
+  created_by: true,
   date_created: true,
   date_updated: true,
   date_submitted: true,
@@ -198,6 +200,21 @@ export const OrderInvoiceSchema = z.object({
 })
 
 export const OrderDetailSchema = z.object({
-  order: OrderSchema,
-  order_invoice: OrderInvoiceSchema,
+  order_id: z.string(),
+  created_by: z.string(),
+  customer_id: z.string(),
+  order_name: z.string(),
+  order_number: z.string(),
+  shipping_data: ShippingInfoSchema,
+  billing_data: BillingInfoSchema,
+  status: z.nativeEnum(OrderStatus, {
+    invalid_type_error: "Please select an order status.",
+  }),
+  amount: z.number(),
+  date_created: z.string(),
+  date_updated: z.string(),
+  date_submitted: z.string(),
+  date_shipped: z.string().optional(),
+  date_delivered: z.string().optional(),
+  invoice_number: z.string().optional(),
 })
