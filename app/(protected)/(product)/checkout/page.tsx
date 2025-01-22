@@ -2,17 +2,19 @@ import ProductHeader from "@/components/product-components/product-header";
 import PaymentSection from "./payment-section";
 import ShippingSection from "./shipping-section";
 import {
-  getBillingInfoByUserId,
-  getShippingInfoById,
-} from "@/lib/data/user-data";
+  getBillingInfoByCustomerId,
+  getShippingInfoByCustomerId,
+} from "@/lib/data/customer-data";
 import { auth } from "@/auth";
 
 export default async function CheckoutPage() {
   const session = await auth();
-  const billingOptions = await getBillingInfoByUserId(
+  const billingOptions = await getBillingInfoByCustomerId(
     session?.user.id as string
   );
-  const shippingOptions = await getShippingInfoById(session?.user.id as string);
+  const shippingOptions = await getShippingInfoByCustomerId(
+    session?.user.id as string
+  );
   return (
     <main className="container p-4 space-y-4">
       <ProductHeader

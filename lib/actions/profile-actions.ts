@@ -64,13 +64,13 @@ export async function createProfile(
     };
   }
 
-  const { first_name, last_name, company, account_num, phone_num } =
+  const { first_name, last_name, phone_num } =
     validatedFields.data;
 
   try {
     await sql`
-            INSERT INTO user_profiles (user_id, first_name, last_name, company, account_num, phone_num)
-            VALUES (${user_id}, ${first_name}, ${last_name}, ${company}, ${account_num}, ${phone_num})
+            INSERT INTO user_profiles (user_id, first_name, last_name, phone_num)
+            VALUES (${user_id}, ${first_name}, ${last_name}, ${phone_num})
         `;
   } catch (error) {
     return {
@@ -95,13 +95,13 @@ export async function updateProfile(
     };
   }
 
-  const { first_name, last_name, company, account_num, phone_num } =
+  const { first_name, last_name, phone_num } =
     validatedFields.data;
 
   try {
     await sql`
             UPDATE user_profiles
-            SET first_name = ${first_name}, last_name = ${last_name}, company = ${company}, account_num = ${account_num}, phone_num = ${phone_num}
+            SET first_name = ${first_name}, last_name = ${last_name}, phone_num = ${phone_num}
             WHERE user_id = ${user_id}
         `;
   } catch (error) {

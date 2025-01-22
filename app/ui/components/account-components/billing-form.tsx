@@ -23,10 +23,10 @@ import {
 } from "@/lib/actions/profile-actions";
 import { BillingRoute, CheckoutRoute } from "@/routes";
 import { useProductContext } from "@/components/product-components/product-context-provider";
-import { UserBillingInformation } from "@/lib/data-model/schema-definitions";
+import { CustomerBillingInformation } from "@/lib/data-model/schema-definitions";
 
 interface BillingFormProps {
-  billing_info?: UserBillingInformation;
+  billing_info?: CustomerBillingInformation;
   isBlankForm?: boolean;
   toggleBillingForm?: () => void;
   handlePaymentOptionChange?: (billing_id: string) => void;

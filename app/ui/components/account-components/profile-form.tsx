@@ -33,8 +33,6 @@ export default function ProfileForm({ user_id, profile }: ProfileFormProps) {
     defaultValues: {
       first_name: profile && profile.first_name ? profile.first_name : "",
       last_name: profile && profile.last_name ? profile.last_name : "",
-      company: profile && profile.company ? profile.company : "",
-      account_num: profile && profile.account_num ? profile.account_num : "",
       phone_num: profile && profile.phone_num ? profile.phone_num : "",
     },
   });
@@ -128,48 +126,6 @@ export default function ProfileForm({ user_id, profile }: ProfileFormProps) {
                       />
                     </FormControl>
                     <FormDescription>Primary Phone Number</FormDescription>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-            </div>
-          </div>
-          <div className="flex space-x-8">
-            <div className="w-full">
-              <FormField
-                control={profileForm.control}
-                name="company"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Company</FormLabel>
-                    <FormControl>
-                      <Input
-                        placeholder="company"
-                        {...field}
-                        className={isEditEnabled ? "bg-white" : "bg-slate-100"}
-                        readOnly={!isEditEnabled}
-                      />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-            </div>
-            <div className="w-full">
-              <FormField
-                control={profileForm.control}
-                name="account_num"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Account Number</FormLabel>
-                    <FormControl>
-                      <Input
-                        placeholder="1234567"
-                        {...field}
-                        className={isEditEnabled ? "bg-white" : "bg-slate-100"}
-                        readOnly={!isEditEnabled}
-                      />
-                    </FormControl>
                     <FormMessage />
                   </FormItem>
                 )}

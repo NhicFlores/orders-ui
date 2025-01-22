@@ -1,9 +1,294 @@
 {
-  "id": "d5fa273d-ea49-4817-afa6-f80b972b2165",
+  "id": "a1c7b264-a60e-4a07-903f-2b39cdf16f3f",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "7",
   "dialect": "postgresql",
   "tables": {
+    "dev-schema.customer_billing_information": {
+      "name": "customer_billing_information",
+      "schema": "dev-schema",
+      "columns": {
+        "billing_info_id": {
+          "name": "billing_info_id",
+          "type": "serial",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "customer_id": {
+          "name": "customer_id",
+          "type": "uuid",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "street": {
+          "name": "street",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "apt_num": {
+          "name": "apt_num",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "city": {
+          "name": "city",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "state": {
+          "name": "state",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "zip": {
+          "name": "zip",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "payment_method": {
+          "name": "payment_method",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "purchase_order": {
+          "name": "purchase_order",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "primary_contact_name": {
+          "name": "primary_contact_name",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "primary_contact_email": {
+          "name": "primary_contact_email",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "primary_contact_phone": {
+          "name": "primary_contact_phone",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "fax_num": {
+          "name": "fax_num",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "is_primary": {
+          "name": "is_primary",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true,
+          "default": false
+        },
+        "is_active": {
+          "name": "is_active",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true,
+          "default": true
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "customer_billing_information_customer_id_customers_customer_id_fk": {
+          "name": "customer_billing_information_customer_id_customers_customer_id_fk",
+          "tableFrom": "customer_billing_information",
+          "tableTo": "customers",
+          "schemaTo": "dev-schema",
+          "columnsFrom": [
+            "customer_id"
+          ],
+          "columnsTo": [
+            "customer_id"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "dev-schema.customer_shipping_information": {
+      "name": "customer_shipping_information",
+      "schema": "dev-schema",
+      "columns": {
+        "shipping_info_id": {
+          "name": "shipping_info_id",
+          "type": "serial",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "customer_id": {
+          "name": "customer_id",
+          "type": "uuid",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "street": {
+          "name": "street",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "apt_num": {
+          "name": "apt_num",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "city": {
+          "name": "city",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "state": {
+          "name": "state",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "zip": {
+          "name": "zip",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "is_job_site": {
+          "name": "is_job_site",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true,
+          "default": false
+        },
+        "note": {
+          "name": "note",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "customer_shipping_information_customer_id_customers_customer_id_fk": {
+          "name": "customer_shipping_information_customer_id_customers_customer_id_fk",
+          "tableFrom": "customer_shipping_information",
+          "tableTo": "customers",
+          "schemaTo": "dev-schema",
+          "columnsFrom": [
+            "customer_id"
+          ],
+          "columnsTo": [
+            "customer_id"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "dev-schema.customers": {
+      "name": "customers",
+      "schema": "dev-schema",
+      "columns": {
+        "customer_id": {
+          "name": "customer_id",
+          "type": "uuid",
+          "primaryKey": true,
+          "notNull": true,
+          "default": "gen_random_uuid()"
+        },
+        "name": {
+          "name": "name",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "phone": {
+          "name": "phone",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "email": {
+          "name": "email",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "type": {
+          "name": "type",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "account_num": {
+          "name": "account_num",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "credit_status": {
+          "name": "credit_status",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "credit_limit": {
+          "name": "credit_limit",
+          "type": "numeric(10, 2)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "date_created": {
+          "name": "date_created",
+          "type": "timestamp with time zone",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "date_updated": {
+          "name": "date_updated",
+          "type": "timestamp with time zone",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {
+        "customers_name_unique": {
+          "name": "customers_name_unique",
+          "nullsNotDistinct": false,
+          "columns": [
+            "name"
+          ]
+        }
+      },
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
     "dev-schema.inventory_glass_item": {
       "name": "inventory_glass_item",
       "schema": "dev-schema",
@@ -169,8 +454,8 @@
           "notNull": true,
           "default": "gen_random_uuid()"
         },
-        "user_id": {
-          "name": "user_id",
+        "created_by": {
+          "name": "created_by",
           "type": "uuid",
           "primaryKey": false,
           "notNull": true
@@ -181,9 +466,15 @@
           "primaryKey": false,
           "notNull": true
         },
-        "date_created": {
-          "name": "date_created",
-          "type": "timestamp with time zone",
+        "customer_id": {
+          "name": "customer_id",
+          "type": "uuid",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "invoice_number": {
+          "name": "invoice_number",
+          "type": "varchar(255)",
           "primaryKey": false,
           "notNull": true
         },
@@ -198,17 +489,23 @@
           "type": "numeric(10, 2)",
           "primaryKey": false,
           "notNull": true
+        },
+        "date_created": {
+          "name": "date_created",
+          "type": "timestamp with time zone",
+          "primaryKey": false,
+          "notNull": true
         }
       },
       "indexes": {},
       "foreignKeys": {
-        "order_invoices_user_id_users_id_fk": {
-          "name": "order_invoices_user_id_users_id_fk",
+        "order_invoices_created_by_users_id_fk": {
+          "name": "order_invoices_created_by_users_id_fk",
           "tableFrom": "order_invoices",
           "tableTo": "users",
           "schemaTo": "dev-schema",
           "columnsFrom": [
-            "user_id"
+            "created_by"
           ],
           "columnsTo": [
             "id"
@@ -226,6 +523,20 @@
           ],
           "columnsTo": [
             "order_id"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        },
+        "order_invoices_customer_id_customers_customer_id_fk": {
+          "name": "order_invoices_customer_id_customers_customer_id_fk",
+          "tableFrom": "order_invoices",
+          "tableTo": "customers",
+          "schemaTo": "dev-schema",
+          "columnsFrom": [
+            "customer_id"
+          ],
+          "columnsTo": [
+            "customer_id"
           ],
           "onDelete": "cascade",
           "onUpdate": "no action"
@@ -326,14 +637,26 @@
           "notNull": true,
           "default": "gen_random_uuid()"
         },
-        "user_id": {
-          "name": "user_id",
+        "created_by": {
+          "name": "created_by",
+          "type": "uuid",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "customer_id": {
+          "name": "customer_id",
           "type": "uuid",
           "primaryKey": false,
           "notNull": true
         },
         "order_name": {
           "name": "order_name",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "order_number": {
+          "name": "order_number",
           "type": "varchar(255)",
           "primaryKey": false,
           "notNull": true
@@ -353,6 +676,12 @@
         "status": {
           "name": "status",
           "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "amount": {
+          "name": "amount",
+          "type": "numeric(10, 2)",
           "primaryKey": false,
           "notNull": true
         },
@@ -389,16 +718,30 @@
       },
       "indexes": {},
       "foreignKeys": {
-        "orders_user_id_users_id_fk": {
-          "name": "orders_user_id_users_id_fk",
+        "orders_created_by_users_id_fk": {
+          "name": "orders_created_by_users_id_fk",
           "tableFrom": "orders",
           "tableTo": "users",
           "schemaTo": "dev-schema",
           "columnsFrom": [
-            "user_id"
+            "created_by"
           ],
           "columnsTo": [
             "id"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        },
+        "orders_customer_id_customers_customer_id_fk": {
+          "name": "orders_customer_id_customers_customer_id_fk",
+          "tableFrom": "orders",
+          "tableTo": "customers",
+          "schemaTo": "dev-schema",
+          "columnsFrom": [
+            "customer_id"
+          ],
+          "columnsTo": [
+            "customer_id"
           ],
           "onDelete": "cascade",
           "onUpdate": "no action"
@@ -413,126 +756,6 @@
           "value": "\"orders\".\"status\" = 'DRAFT' OR \"orders\".\"status\" = 'PENDING' OR \"orders\".\"status\" = 'QUOTE' OR \"orders\".\"status\" = 'PROCESSING' OR \"orders\".\"status\" = 'SHIPPED' OR \"orders\".\"status\" = 'DELIVERED' OR \"orders\".\"status\" = 'CANCELLED'"
         }
       },
-      "isRLSEnabled": false
-    },
-    "dev-schema.user_billing_information": {
-      "name": "user_billing_information",
-      "schema": "dev-schema",
-      "columns": {
-        "billing_info_id": {
-          "name": "billing_info_id",
-          "type": "serial",
-          "primaryKey": true,
-          "notNull": true
-        },
-        "user_id": {
-          "name": "user_id",
-          "type": "uuid",
-          "primaryKey": false,
-          "notNull": true
-        },
-        "street": {
-          "name": "street",
-          "type": "varchar(255)",
-          "primaryKey": false,
-          "notNull": true
-        },
-        "apt_num": {
-          "name": "apt_num",
-          "type": "varchar(255)",
-          "primaryKey": false,
-          "notNull": false
-        },
-        "city": {
-          "name": "city",
-          "type": "varchar(255)",
-          "primaryKey": false,
-          "notNull": true
-        },
-        "state": {
-          "name": "state",
-          "type": "varchar(255)",
-          "primaryKey": false,
-          "notNull": true
-        },
-        "zip": {
-          "name": "zip",
-          "type": "varchar(255)",
-          "primaryKey": false,
-          "notNull": true
-        },
-        "payment_method": {
-          "name": "payment_method",
-          "type": "varchar(255)",
-          "primaryKey": false,
-          "notNull": true
-        },
-        "purchase_order": {
-          "name": "purchase_order",
-          "type": "varchar(255)",
-          "primaryKey": false,
-          "notNull": false
-        },
-        "primary_contact_name": {
-          "name": "primary_contact_name",
-          "type": "varchar(255)",
-          "primaryKey": false,
-          "notNull": false
-        },
-        "primary_contact_email": {
-          "name": "primary_contact_email",
-          "type": "varchar(255)",
-          "primaryKey": false,
-          "notNull": false
-        },
-        "primary_contact_phone": {
-          "name": "primary_contact_phone",
-          "type": "varchar(255)",
-          "primaryKey": false,
-          "notNull": false
-        },
-        "fax_num": {
-          "name": "fax_num",
-          "type": "varchar(255)",
-          "primaryKey": false,
-          "notNull": false
-        },
-        "is_primary": {
-          "name": "is_primary",
-          "type": "boolean",
-          "primaryKey": false,
-          "notNull": true,
-          "default": false
-        },
-        "is_active": {
-          "name": "is_active",
-          "type": "boolean",
-          "primaryKey": false,
-          "notNull": true,
-          "default": true
-        }
-      },
-      "indexes": {},
-      "foreignKeys": {
-        "user_billing_information_user_id_users_id_fk": {
-          "name": "user_billing_information_user_id_users_id_fk",
-          "tableFrom": "user_billing_information",
-          "tableTo": "users",
-          "schemaTo": "dev-schema",
-          "columnsFrom": [
-            "user_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
-          "onDelete": "cascade",
-          "onUpdate": "no action"
-        }
-      },
-      "compositePrimaryKeys": {},
-      "uniqueConstraints": {},
-      "policies": {},
-      "checkConstraints": {},
       "isRLSEnabled": false
     },
     "dev-schema.user_profiles": {
@@ -563,18 +786,6 @@
           "primaryKey": false,
           "notNull": true
         },
-        "company": {
-          "name": "company",
-          "type": "varchar(255)",
-          "primaryKey": false,
-          "notNull": false
-        },
-        "account_num": {
-          "name": "account_num",
-          "type": "varchar(255)",
-          "primaryKey": false,
-          "notNull": false
-        },
         "phone_num": {
           "name": "phone_num",
           "type": "varchar(255)",
@@ -587,89 +798,6 @@
         "user_profiles_user_id_users_id_fk": {
           "name": "user_profiles_user_id_users_id_fk",
           "tableFrom": "user_profiles",
-          "tableTo": "users",
-          "schemaTo": "dev-schema",
-          "columnsFrom": [
-            "user_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
-          "onDelete": "cascade",
-          "onUpdate": "no action"
-        }
-      },
-      "compositePrimaryKeys": {},
-      "uniqueConstraints": {},
-      "policies": {},
-      "checkConstraints": {},
-      "isRLSEnabled": false
-    },
-    "dev-schema.user_shipping_information": {
-      "name": "user_shipping_information",
-      "schema": "dev-schema",
-      "columns": {
-        "shipping_info_id": {
-          "name": "shipping_info_id",
-          "type": "serial",
-          "primaryKey": true,
-          "notNull": true
-        },
-        "user_id": {
-          "name": "user_id",
-          "type": "uuid",
-          "primaryKey": false,
-          "notNull": true
-        },
-        "street": {
-          "name": "street",
-          "type": "varchar(255)",
-          "primaryKey": false,
-          "notNull": true
-        },
-        "apt_num": {
-          "name": "apt_num",
-          "type": "varchar(255)",
-          "primaryKey": false,
-          "notNull": false
-        },
-        "city": {
-          "name": "city",
-          "type": "varchar(255)",
-          "primaryKey": false,
-          "notNull": true
-        },
-        "state": {
-          "name": "state",
-          "type": "varchar(255)",
-          "primaryKey": false,
-          "notNull": true
-        },
-        "zip": {
-          "name": "zip",
-          "type": "varchar(255)",
-          "primaryKey": false,
-          "notNull": true
-        },
-        "is_job_site": {
-          "name": "is_job_site",
-          "type": "boolean",
-          "primaryKey": false,
-          "notNull": true,
-          "default": false
-        },
-        "note": {
-          "name": "note",
-          "type": "varchar(255)",
-          "primaryKey": false,
-          "notNull": false
-        }
-      },
-      "indexes": {},
-      "foreignKeys": {
-        "user_shipping_information_user_id_users_id_fk": {
-          "name": "user_shipping_information_user_id_users_id_fk",
-          "tableFrom": "user_shipping_information",
           "tableTo": "users",
           "schemaTo": "dev-schema",
           "columnsFrom": [
@@ -717,6 +845,13 @@
           "primaryKey": false,
           "notNull": false,
           "default": "'USER'"
+        },
+        "is_active": {
+          "name": "is_active",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true,
+          "default": true
         }
       },
       "indexes": {},

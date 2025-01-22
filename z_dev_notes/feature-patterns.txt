@@ -68,3 +68,40 @@ Flexibility: If the logic for updating state becomes complex, having it encapsul
 
 In summary, while the underlying behavior of the state functions (useState, setState) doesn't change, organizing your state 
 update logic into dedicated functions within your context provider can significantly improve the maintainability, readability, and reusability of your code.
+
+Drizzle schema update: 
+
+when updating the drizzle schema, such as adding a column, changing a column's type, or 
+adding a whole table, that change has to be reflected in other parts of the code. 
+
+  - update corresponding definitions in schema-definitions.ts 
+  - update zod schemas 
+  - update queries and server actions 
+  - if still working with placeholder data, updated 
+    data generating functions and seeding queries 
+  
+after making schema changes, 
+  - generate new migration 
+  - run migration against correct database 
+
+generating data 
+  update drizzle schema 
+  update typescript definitions 
+  drop old migrations 
+  generate new migrations 
+  run new migrations 
+  update generating functions 
+  update paths in generating functions 
+  update seeding functions 
+  run seeding functions  
+  - update production schema, production seeding functions 
+  - update corresponding zod schema 
+
+
+forms 
+- define type in definitions 
+- update drizzle schema if necessary 
+- zod schema 
+- state variables 
+- server actions 
+- data validation 

@@ -1,7 +1,6 @@
 "use client";
 import { useProductContext } from "@/components/product-components/product-context-provider";
 import { Button } from "@/components/ui/button";
-import { Checkbox } from "@/components/ui/checkbox";
 import {
   Form,
   FormField,
@@ -17,8 +16,8 @@ import {
 } from "@/lib/actions/profile-actions";
 import {
   ShippingInfo,
-  ShippingInfoWithoutIds,
-  UserShippingInformation,
+  OrderShippingInfo,
+  CustomerShippingInformation,
 } from "@/lib/data-model/schema-definitions";
 import { ShippingInfoSchema } from "@/schema/form-schema";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -71,14 +70,14 @@ export default function ShippingForm({
     // console.log(data);
     setOrder((prevOrder) => ({
       ...prevOrder,
-      shipping_data: data as ShippingInfoWithoutIds,
+      shipping_data: data as OrderShippingInfo,
     }));
   }
 
   function isShippingInfoWithId(
     info: ShippingInfo | undefined
-  ): info is UserShippingInformation {
-    return (info as UserShippingInformation).shipping_info_id !== undefined;
+  ): info is CustomerShippingInformation {
+    return (info as CustomerShippingInformation).shipping_info_id !== undefined;
   }
 
   return (

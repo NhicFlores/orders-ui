@@ -2,7 +2,7 @@
 import { DataTable } from "@/app/ui/components/data-table";
 import { OrderColumns } from "../orders/columns";
 import { getOrderDetailsByStatus } from "../queries";
-import { OrderStatus } from "@/lib/data-model/schema-definitions";
+import { OrderStatus } from "@/lib/data-model/data-definitions";
 
 export default async function Page() {
   const data = await getOrderDetailsByStatus(OrderStatus.Quote);

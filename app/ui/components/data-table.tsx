@@ -42,7 +42,7 @@ import {
 import { fuzzyOrderFilter, statusColumnFilter } from "./table/table-utils";
 import OrderDetailTable from "@/app/(protected)/(tables)/order-detail-table";
 import { OrderDetailColumns } from "@/app/(protected)/(tables)/order-detail-columns";
-import { OrderStatus } from "@/lib/data-model/schema-definitions";
+import { OrderStatus } from "@/lib/data-model/data-definitions";
 import { useEffect, useState } from "react";
 import { StatusDetails } from "@/lib/data-model/data-definitions";
 

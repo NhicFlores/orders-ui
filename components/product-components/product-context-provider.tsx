@@ -4,8 +4,8 @@ import {
   NewOrderItem,
   Order,
   OrderItem,
-  OrderStatus,
 } from "@/lib/data-model/schema-definitions";
+import { OrderStatus } from "@/lib/data-model/data-definitions";
 import { ProductContextType } from "@/lib/definitions/product-context";
 import { createContext, useContext, useState } from "react";
 
@@ -61,7 +61,8 @@ export default function ProductContextProvider({
   children: React.ReactNode;
 }) {
   const [order, setOrder] = useState<NewOrder | Order>({
-    user_id: "", // RESEARCH NOTE: where should the user id be set - server or client side?
+    created_by: "", // RESEARCH NOTE: where should the user id be set - server or client side?
+    customer_id: "",
     order_name: "",
     billing_data: {
       street: "",

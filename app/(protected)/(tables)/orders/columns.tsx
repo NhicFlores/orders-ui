@@ -18,6 +18,7 @@ import { deleteOrder } from "@/lib/actions/actions";
 import { formatDateToLocal } from "@/lib/utils";
 import { OrderDetails } from "@/lib/data-model/data-definitions";
 import { statusColumnFilter } from "@/app/ui/components/table/table-utils";
+import { OrderDetailsRoute } from "@/routes";
 
 //TODO: enable shift select
 export const OrderColumns: ColumnDef<OrderDetails>[] = [
@@ -99,7 +100,11 @@ export const OrderColumns: ColumnDef<OrderDetails>[] = [
       );
     },
     cell: ({ row }) => {
-      return <div>{row.original.order_name}</div>;
+      return (
+        <Link href={OrderDetailsRoute(row.original.order_id).href}>
+          <div>{row.original.order_name}</div>
+        </Link>
+      );
     },
   },
   {

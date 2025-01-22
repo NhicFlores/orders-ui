@@ -8,41 +8,58 @@ import {
   UserProfileTable,
 } from "@/drizzle/schema";
 import {
-  BillingInfoWithoutIds,
+  OrderBillingInfo,
   Order,
   OrderItem,
-  OrderStatus,
-  ShippingInfoWithoutIds,
+  OrderShippingInfo,
 } from "@/lib/data-model/schema-definitions";
-import { InvoiceTableRow, OrderDetails } from "@/lib/data-model/data-definitions";
+import {
+  InvoiceTableRow,
+  OrderDetails,
+  OrderFormFields,
+  OrderStatus,
+} from "@/lib/data-model/data-definitions";
 
+// UNUSED FUNCTION
 export async function fetchOrders() {
   try {
-    const orders = await db
+    const result = await db
       .select({
         order_id: OrderTable.order_id,
-        user_id: OrderTable.user_id,
+        created_by: OrderTable.created_by,
+        customer_id: OrderTable.customer_id,
         order_name: OrderTable.order_name,
-        status: OrderTable.status,
+        order_number: OrderTable.order_number,
         shipping_data: OrderTable.shipping_data,
         billing_data: OrderTable.billing_data,
+        status: OrderTable.status,
+        amount: OrderTable.amount,
         date_created: OrderTable.date_created,
         date_updated: OrderTable.date_updated,
         date_submitted: OrderTable.date_submitted,
         date_shipped: OrderTable.date_shipped,
         date_delivered: OrderTable.date_delivered,
-        ordered_by_first_name: UserProfileTable.first_name,
-        ordered_by_last_name: UserProfileTable.last_name,
+        // ordered_by_first_name: UserProfileTable.first_name,
+        // ordered_by_last_name: UserProfileTable.last_name,
       })
-      .from(OrderTable)
-      .innerJoin(
-        UserProfileTable,
-        eq(OrderTable.user_id, UserProfileTable.user_id)
-      );
+      .from(OrderTable);
+    // .innerJoin(
+    //   UserProfileTable,
+    //   eq(OrderTable.created_by, UserProfileTable.user_id)
+    // );
     //2024-07-09T05:00:00.000Z
     //2024-05-01T05:00:00.000Z
     // console.log(data.rows);
     // return data.rowCount && data.rowCount > 0 ? data.rows : [];
+
+    // NOTE: needs testing to ensure that the amount is parsed correctly
+    const orders = result.map((row) => {
+      return {
+        ...row,
+        amount: parseFloat(row.amount),
+      };
+    });
+
     return orders as Order[];
   } catch (error) {
     // return [];
@@ -55,7 +72,7 @@ export async function fetchOrdersByStatus(status: OrderStatus) {
     const data = await db
       .select({
         order_id: OrderTable.order_id,
-        user_id: OrderTable.user_id,
+        created_by: OrderTable.created_by,
         order_name: OrderTable.order_name,
         status: OrderTable.status,
         shipping_data: OrderTable.shipping_data,
@@ -82,8 +99,10 @@ export async function fetchOrderTableData(): Promise<OrderDetails[]> {
     const result = await db
       .select({
         order_id: OrderTable.order_id,
-        user_id: OrderTable.user_id,
+        created_by: OrderTable.created_by,
+        customer_id: OrderTable.customer_id,
         order_name: OrderTable.order_name,
+        order_number: OrderTable.order_number,
         shipping_data: OrderTable.shipping_data,
         billing_data: OrderTable.billing_data,
         status: OrderTable.status,
@@ -103,7 +122,7 @@ export async function fetchOrderTableData(): Promise<OrderDetails[]> {
       .from(OrderTable)
       .leftJoin(
         UserProfileTable,
-        eq(OrderTable.user_id, UserProfileTable.user_id)
+        eq(OrderTable.created_by, UserProfileTable.user_id)
       )
       .leftJoin(
         OrderInvoiceTable,
@@ -117,10 +136,12 @@ export async function fetchOrderTableData(): Promise<OrderDetails[]> {
     const reducedResult = result.reduce<OrderDetails[]>((acc, row) => {
       const orderDetails = {
         order_id: row.order_id,
-        user_id: row.user_id,
+        created_by: row.created_by,
+        customer_id: row.customer_id,
         order_name: row.order_name,
-        shipping_data: row.shipping_data as ShippingInfoWithoutIds,
-        billing_data: row.billing_data as BillingInfoWithoutIds,
+        order_number: row.order_number,
+        shipping_data: row.shipping_data as OrderShippingInfo,
+        billing_data: row.billing_data as OrderBillingInfo,
         status: row.status as OrderStatus,
         date_created: row.date_created,
         date_updated: row.date_updated,
@@ -164,8 +185,10 @@ export async function getOrderDetailsByStatus(
     const result = await db
       .select({
         order_id: OrderTable.order_id,
-        user_id: OrderTable.user_id,
+        created_by: OrderTable.created_by,
+        customer_id: OrderTable.customer_id,
         order_name: OrderTable.order_name,
+        order_number: OrderTable.order_number,
         shipping_data: OrderTable.shipping_data,
         billing_data: OrderTable.billing_data,
         status: OrderTable.status,
@@ -186,7 +209,7 @@ export async function getOrderDetailsByStatus(
       .where(eq(OrderTable.status, status))
       .leftJoin(
         UserProfileTable,
-        eq(OrderTable.user_id, UserProfileTable.user_id)
+        eq(OrderTable.created_by, UserProfileTable.user_id)
       )
       .leftJoin(
         OrderInvoiceTable,
@@ -200,10 +223,12 @@ export async function getOrderDetailsByStatus(
     const reducedResult = result.reduce<OrderDetails[]>((acc, row) => {
       const orderDetails = {
         order_id: row.order_id,
-        user_id: row.user_id,
+        created_by: row.created_by,
+        customer_id: row.customer_id,
         order_name: row.order_name,
-        shipping_data: row.shipping_data as ShippingInfoWithoutIds,
-        billing_data: row.billing_data as BillingInfoWithoutIds,
+        order_number: row.order_number,
+        shipping_data: row.shipping_data as OrderShippingInfo,
+        billing_data: row.billing_data as OrderBillingInfo,
         status: row.status as OrderStatus,
         date_created: row.date_created,
         date_updated: row.date_updated,
@@ -240,12 +265,108 @@ export async function getOrderDetailsByStatus(
   }
 }
 
+export async function fetchOrderDetailsById(orderId: string) {
+  try {
+    console.log("---- ORDER ID ----");
+    console.log(orderId);
+    console.log("----");
+    const result = await db
+      .select({
+        order_id: OrderTable.order_id, // programmatic
+        created_by: OrderTable.created_by, // programmatic
+        customer_id: OrderTable.customer_id, // programmatic
+        order_name: OrderTable.order_name, //
+        order_number: OrderTable.order_number, // modifiable conditionally
+        shipping_data: OrderTable.shipping_data, // modifiable conditionally
+        billing_data: OrderTable.billing_data, // modifiable conditionally
+        status: OrderTable.status, // programmatic
+        amount: OrderTable.amount, // modifiable conditionally
+        date_created: OrderTable.date_created, // programmatic
+        date_updated: OrderTable.date_updated, // programmatic
+        date_submitted: OrderTable.date_submitted, // programmatic
+        date_shipped: OrderTable.date_shipped, // modifiable conditionally
+        date_delivered: OrderTable.date_delivered, // modifiable conditionally
+        order_invoice_id: OrderInvoiceTable.order_invoice_id,
+        invoice_number: OrderInvoiceTable.invoice_number,
+        ordered_by:
+          sql`${UserProfileTable.first_name} || ' ' || ${UserProfileTable.last_name}`.as(
+            "ordered_by"
+          ),
+        order_items: OrderItemTable,
+      })
+      .from(OrderTable)
+      .where(eq(OrderTable.order_id, orderId))
+      .leftJoin(
+        UserProfileTable,
+        eq(OrderTable.created_by, UserProfileTable.user_id)
+      )
+      .leftJoin(
+        OrderInvoiceTable,
+        eq(OrderTable.order_id, OrderInvoiceTable.order_id)
+      )
+      .leftJoin(
+        OrderItemTable,
+        eq(OrderTable.order_id, OrderItemTable.order_id)
+      );
+
+    console.log("---- fetchOrderDetailsById ----");
+    console.log("RESULT");
+    console.log(result);
+    console.log("RESULT LENGTH");
+    console.log(result.length);
+    // const reducedResult = result.reduce<OrderDetails>((acc, row) => {
+
+    // }, {});
+    // TODO NOTE: destructure the result and process each field to strongly type the result
+
+    console.log(" ELEMENT 0 ");
+    console.log(result[0]);
+    console.log("----");
+    console.log(" ELEMENT 1 ");
+    console.log(result[1]);
+    console.log("----");
+
+    const orderInfo = {
+      ...result[0],
+      amount: parseFloat(result[0].amount),
+      shipping_data: result[0].shipping_data as OrderShippingInfo,
+      billing_data: result[0].billing_data as OrderBillingInfo,
+      date_created: new Date(result[0].date_created),
+      date_updated: new Date(result[0].date_updated),
+      date_submitted: result[0].date_submitted
+        ? new Date(result[0].date_submitted)
+        : null,
+      date_shipped: result[0].date_shipped
+        ? new Date(result[0].date_shipped)
+        : null,
+      order_items: [],
+    };
+
+    return orderInfo as OrderFormFields;
+  } catch (error) {
+    throw new Error("Database Error: Failed to fetch order details");
+  }
+}
+
+export async function fetchOrderItems(orderId: string) {
+  try {
+    const result = await db
+      .select()
+      .from(OrderItemTable)
+      .where(eq(OrderItemTable.order_id, orderId));
+
+    return result as OrderItem[];
+  } catch {
+    throw new Error("Database Error: Failed to fetch order items");
+  }
+}
+
 export async function fetchInvoiceTableData() {
   try {
     const result = await db
       .select({
         order_invoice_id: OrderInvoiceTable.order_invoice_id,
-        user_id: OrderInvoiceTable.user_id,
+        created_by: OrderInvoiceTable.created_by,
         order_id: OrderInvoiceTable.order_id,
         date_created: OrderInvoiceTable.date_created,
         status: OrderInvoiceTable.status,
@@ -260,21 +381,21 @@ export async function fetchInvoiceTableData() {
       .from(OrderInvoiceTable)
       .leftJoin(
         UserProfileTable,
-        eq(OrderInvoiceTable.user_id, UserProfileTable.user_id)
+        eq(OrderInvoiceTable.created_by, UserProfileTable.user_id)
       )
       .leftJoin(
         OrderTable,
         eq(OrderInvoiceTable.order_id, OrderTable.order_id)
       );
 
-      const formattedResult = result.map((row) => {
-        return {
-          ...row,
-          amount: parseFloat(row.amount),
-        }
-      })
+    const formattedResult = result.map((row) => {
+      return {
+        ...row,
+        amount: parseFloat(row.amount),
+      };
+    });
 
-      return formattedResult as InvoiceTableRow[];
+    return formattedResult as InvoiceTableRow[];
   } catch (error) {
     throw new Error("Database Error: Failed to fetch invoice table data");
   }

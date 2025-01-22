@@ -10,7 +10,7 @@ excluded from commit
 IMPLEMENTATION NOTE: topic, idea, or placement to consider for future implementations 
 RESEARCH NOTE: topic or concept to research  
 
-
+https://www.youtube.com/watch?v=DSJq_Md1CUg 
 
 nextjs upcoming release 
 new api for tagging functions and specific tags 
@@ -242,6 +242,10 @@ creating a folder with parenthesis allows you to create a shared layout, without
 app -> auth -> login -->> localhost:3000/auth/login 
 app -> (auth) -> login -->> localhost:3000/login 
 _foldername: the '_' tells nextjs to omit this route 
+
+Dev builds: 
+  to generate a build to look for build errors, run 'npm run build' 
+  - if it hangs or gives an 'EPERM' error, check that you don't have a nextjs server running 
 
 Server Actions are not limited to <form> and can be invoked from event handlers, useEffect, third-party libraries, and other form elements like <button> 
 
@@ -567,6 +571,15 @@ https://vercel.com/docs/storage/vercel-postgres/using-an-orm#drizzle
   https://www.youtube.com/watch?v=G5B7gsLLGvQ&ab_channel=FullStackBook 
 
 
+schema 
+  onDelete: 
+  NO ACTION (default): Prevents deletion of a parent row if there are related rows in the child table. 
+  The DELETE operation will fail.
+  * RESTRICT: Similar to NO ACTION, prevents deletion of parent row if there are dependent rows in child table.
+  * SET DEFAULT: If a parent row is deleted, the foreign key column in child table will be set to its default value. If no default value exists, the DELETE operation fails. 
+  * SET NULL: When a parent row is deleted, the foreign key column in child table will be set to NULL (requires the column to allow NULL values). 
+  * CASCADE: Deletes all corresponding rows in the child table when parent row is deleted.These actions can be specified using the references() second argument. The type definition for these actions is:
+  export type UpdateDeleteAction = 'cascade' | 'restrict' | 'no action' | 'set null' | 'set default';
 ------------------------------------- PostgreSQL ---------------------------------------- 
 issue where my update billing info wasn't working: adding the billing_addr field to the update sql statement 
 would stop it from updating but no errors were thrown. 

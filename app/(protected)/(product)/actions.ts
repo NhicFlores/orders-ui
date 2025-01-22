@@ -1,11 +1,11 @@
 "use server";
 import { auth } from "@/auth";
+import { OrderStatus } from "@/lib/data-model/data-definitions";
 import {
   NewOrder,
   NewOrderItem,
   Order,
   OrderItem,
-  OrderStatus,
 } from "@/lib/data-model/schema-definitions";
 import { CreateOrder } from "@/schema/form-schema";
 import { sql } from "@vercel/postgres";

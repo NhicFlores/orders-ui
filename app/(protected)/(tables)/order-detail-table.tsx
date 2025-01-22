@@ -8,8 +8,8 @@ import {
 } from "@/components/ui/table";
 import {
   OrderItem,
-  UserBillingInformation,
-  UserShippingInformation,
+  CustomerBillingInformation,
+  CustomerShippingInformation,
 } from "@/lib/data-model/schema-definitions";
 
 import {
@@ -24,8 +24,8 @@ import {
 
 interface OrderDetailTableProps {
   orderItems: OrderItem[];
-  billingInfo: UserBillingInformation;
-  shippingInfo: UserShippingInformation;
+  billingInfo: CustomerBillingInformation;
+  shippingInfo: CustomerShippingInformation;
 }
 
 export default function OrderDetailTable({

@@ -1,4 +1,5 @@
-import { OrderStatus } from "@/lib/data-model/schema-definitions";
+import { OrderStatus } from "@/lib/data-model/data-definitions";
+import { stat } from "fs";
 import { z } from "zod";
 
 // TODO NOTE: email validation, phone number validation - regex might work
@@ -17,14 +18,6 @@ export const ProfileSchema = z.object({
   }),
   last_name: z.string().min(1, {
     message: "please enter your last name",
-  }),
-  company: z
-    .string({
-      invalid_type_error: "Please enter your name",
-    })
-    .optional(),
-  account_num: z.string({
-    invalid_type_error: "Please enter your account number",
   }),
   phone_num: z.string({
     invalid_type_error: "please enter a valid phone number.",
@@ -152,23 +145,27 @@ export const RequiredDimensionsSchema = z.object({
 });
 
 export const OrderSchema = z.object({
-  id: z.string(),
-  user_id: z.string(),
-  entered_by: z.string().optional(),
+  order_id: z.string(),
+  created_by: z.string(),
+  customer_id: z.string(),
   order_name: z.string(),
-  billing_info_id: z.string(),
-  shipping_info: ShippingInfoSchema,
+  order_number: z.string(),
+  shipping_data: ShippingInfoSchema,
+  billing_data: BillingInfoSchema,
   status: z.nativeEnum(OrderStatus, {
     invalid_type_error: "Please select an order status.",
   }),
-  date_created: z.string(),
-  date_updated: z.string(),
-  date_submitted: z.string(),
+  amount: z.number(),
+  date_created: z.date(),
+  date_updated: z.date(),
+  date_submitted: z.date(),
+  date_shipped: z.date().optional(),
+  date_delivered: z.date().optional(),
 });
 
 export const CreateOrder = OrderSchema.omit({
-  id: true,
-  user_id: true,
+  order_id: true,
+  created_by: true,
   date_created: true,
   date_updated: true,
   date_submitted: true,
@@ -187,3 +184,31 @@ export const OrderItemSchema = z.object({
   note: z.string(),
   quantity: z.number(),
 });
+// TODO NOTE: CREATE FORM SCHEMA FOR INVOICE, ORDER, AND CUSTOMER DETAILS PAGES 
+export const OrderInvoiceSchema = z.object({
+  invoice_number: z.string().optional(),
+  status: z.nativeEnum(OrderStatus),
+  amount: z.number(),
+})
+
+// IMPLEMENTATION NOTE: the date fields don't have to be part of the schema unless 
+// users are allowed to enter dates 
+export const OrderDetailSchema = z.object({
+  order_id: z.string(),
+  created_by: z.string(),
+  customer_id: z.string(),
+  order_name: z.string(),
+  order_number: z.string(),
+  shipping_data: ShippingInfoSchema,
+  billing_data: BillingInfoSchema,
+  status: z.nativeEnum(OrderStatus, {
+    invalid_type_error: "Please select an order status.",
+  }),
+  amount: z.number(),
+  date_created: z.date(),
+  date_updated: z.date(),
+  date_submitted: z.date(),
+  date_shipped: z.date().optional(),
+  date_delivered: z.date().optional(),
+  invoice_number: z.string().optional(),
+})
