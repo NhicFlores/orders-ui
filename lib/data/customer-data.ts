@@ -4,7 +4,7 @@
 import {
   CustomerBillingInformation,
   CustomerShippingInformation,
-} from "../data-model/schema-definitions";
+} from "../data-model/schema-types";
 import { db } from "@/drizzle/db";
 import {
   CustomerBillingInformationTable,

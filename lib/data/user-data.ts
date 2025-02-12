@@ -3,7 +3,7 @@
 import { sql } from "@vercel/postgres";
 import { unstable_noStore as noStore } from "next/cache";
 import { getSchemaName } from "../utils";
-import { User } from "../data-model/schema-definitions";
+import { User } from "../data-model/schema-types";
 import { db } from "@/drizzle/db";
 import { UserProfileTable, UserTable } from "@/drizzle/schema";
 import { eq } from "drizzle-orm";

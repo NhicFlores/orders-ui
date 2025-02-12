@@ -2,26 +2,30 @@
 import { db } from "@/drizzle/db";
 import { eq, sql } from "drizzle-orm";
 import {
+  CustomerTable,
   OrderInvoiceTable,
   OrderItemTable,
   OrderTable,
   UserProfileTable,
 } from "@/drizzle/schema";
 import {
-  OrderBillingInfo,
-  Order,
+  CustomerBillingInformation,
+  CustomerShippingInformation,
   OrderItem,
-  OrderShippingInfo,
-} from "@/lib/data-model/schema-definitions";
+} from "@/lib/data-model/schema-types";
+import { InvoiceTableRow, OrderTableRow } from "@/lib/data-model/query-types";
 import {
-  InvoiceTableRow,
-  OrderDetails,
-  OrderFormFields,
   OrderStatus,
-} from "@/lib/data-model/data-definitions";
+  isValidOrderStatus,
+  OrderStatusOptions,
+} from "@/lib/data-model/enum-types";
+import { getDefaultBillingValues } from "@/lib/data-model/default-constructors";
 
-// UNUSED FUNCTION
-export async function fetchOrders() {
+/**
+ * this function fetches data necessary to populate the Order Table
+ * @returns array of type OrderTableRow
+ */
+export async function fetchOrderTableData(): Promise<OrderTableRow[]> {
   try {
     const result = await db
       .select({
@@ -31,82 +35,12 @@ export async function fetchOrders() {
         order_name: OrderTable.order_name,
         order_number: OrderTable.order_number,
         shipping_data: OrderTable.shipping_data,
+        // NOTE: data table should only pull necessary data to view and sort orders 
+        // order page will have the rest of the data 
+        // NOTE: billing, shipping, and order items will be removed from order table 
         billing_data: OrderTable.billing_data,
         status: OrderTable.status,
-        amount: OrderTable.amount,
-        date_created: OrderTable.date_created,
-        date_updated: OrderTable.date_updated,
-        date_submitted: OrderTable.date_submitted,
-        date_shipped: OrderTable.date_shipped,
-        date_delivered: OrderTable.date_delivered,
-        // ordered_by_first_name: UserProfileTable.first_name,
-        // ordered_by_last_name: UserProfileTable.last_name,
-      })
-      .from(OrderTable);
-    // .innerJoin(
-    //   UserProfileTable,
-    //   eq(OrderTable.created_by, UserProfileTable.user_id)
-    // );
-    //2024-07-09T05:00:00.000Z
-    //2024-05-01T05:00:00.000Z
-    // console.log(data.rows);
-    // return data.rowCount && data.rowCount > 0 ? data.rows : [];
-
-    // NOTE: needs testing to ensure that the amount is parsed correctly
-    const orders = result.map((row) => {
-      return {
-        ...row,
-        amount: parseFloat(row.amount),
-      };
-    });
-
-    return orders as Order[];
-  } catch (error) {
-    // return [];
-    throw new Error("Database Error: Failed to fetch draft orders");
-  }
-}
-
-export async function fetchOrdersByStatus(status: OrderStatus) {
-  try {
-    const data = await db
-      .select({
-        order_id: OrderTable.order_id,
-        created_by: OrderTable.created_by,
-        order_name: OrderTable.order_name,
-        status: OrderTable.status,
-        shipping_data: OrderTable.shipping_data,
-        billing_data: OrderTable.billing_data,
-        date_created: OrderTable.date_created,
-        date_updated: OrderTable.date_updated,
-        date_submitted: OrderTable.date_submitted,
-      })
-      .from(OrderTable)
-      .where(eq(OrderTable.status, status));
-    //2024-07-09T05:00:00.000Z
-    //2024-05-01T05:00:00.000Z
-    // console.log(data.rows);
-    // return data.rowCount && data.rowCount > 0 ? data.rows : [];
-    return data as Order[];
-  } catch (error) {
-    // return [];
-    throw new Error("Database Error: Failed to fetch draft orders");
-  }
-}
-
-export async function fetchOrderTableData(): Promise<OrderDetails[]> {
-  try {
-    const result = await db
-      .select({
-        order_id: OrderTable.order_id,
-        created_by: OrderTable.created_by,
-        customer_id: OrderTable.customer_id,
-        order_name: OrderTable.order_name,
-        order_number: OrderTable.order_number,
-        shipping_data: OrderTable.shipping_data,
-        billing_data: OrderTable.billing_data,
-        status: OrderTable.status,
-        date_created: OrderTable.date_created,
+        date_drafted: OrderTable.date_drafted,
         date_updated: OrderTable.date_updated,
         date_submitted: OrderTable.date_submitted,
         date_shipped: OrderTable.date_shipped,
@@ -133,21 +67,23 @@ export async function fetchOrderTableData(): Promise<OrderDetails[]> {
         eq(OrderTable.order_id, OrderItemTable.order_id)
       );
 
-    const reducedResult = result.reduce<OrderDetails[]>((acc, row) => {
+    const reducedResult = result.reduce<OrderTableRow[]>((acc, row) => {
       const orderDetails = {
         order_id: row.order_id,
         created_by: row.created_by,
         customer_id: row.customer_id,
         order_name: row.order_name,
         order_number: row.order_number,
-        shipping_data: row.shipping_data as OrderShippingInfo,
-        billing_data: row.billing_data as OrderBillingInfo,
-        status: row.status as OrderStatus,
-        date_created: row.date_created,
+        shipping_data: row.shipping_data as CustomerShippingInformation,
+        billing_data: row.billing_data as CustomerBillingInformation,
+        status: isValidOrderStatus(row.status)
+          ? row.status
+          : OrderStatusOptions.Draft,
+        date_drafted: row.date_drafted,
         date_updated: row.date_updated,
-        date_submitted: row.date_submitted,
-        date_shipped: row.date_shipped,
-        date_delivered: row.date_delivered,
+        date_submitted: row.date_submitted ? row.date_submitted : null,
+        date_shipped: row.date_shipped ? row.date_shipped : null,
+        date_delivered: row.date_delivered ? row.date_delivered : null,
         amount: row.invoice_amount ? parseFloat(row.invoice_amount) : 0,
         order_invoice_id: row.order_invoice_id ? row.order_invoice_id : "",
         ordered_by: row.ordered_by as string,
@@ -177,10 +113,14 @@ export async function fetchOrderTableData(): Promise<OrderDetails[]> {
     throw new Error("Database Error: Failed to fetch draft orders");
   }
 }
-
+/**
+ * this function fetches data to populate Order Table, filtered by status
+ * @param status
+ * @returns
+ */
 export async function getOrderDetailsByStatus(
   status: OrderStatus
-): Promise<OrderDetails[]> {
+): Promise<OrderTableRow[]> {
   try {
     const result = await db
       .select({
@@ -192,7 +132,7 @@ export async function getOrderDetailsByStatus(
         shipping_data: OrderTable.shipping_data,
         billing_data: OrderTable.billing_data,
         status: OrderTable.status,
-        date_created: OrderTable.date_created,
+        date_drafted: OrderTable.date_drafted,
         date_updated: OrderTable.date_updated,
         date_submitted: OrderTable.date_submitted,
         date_shipped: OrderTable.date_shipped,
@@ -219,22 +159,25 @@ export async function getOrderDetailsByStatus(
         OrderItemTable,
         eq(OrderTable.order_id, OrderItemTable.order_id)
       );
-
-    const reducedResult = result.reduce<OrderDetails[]>((acc, row) => {
+    console.log(" ---- ");
+    console.log("--- GOT ORDER DETAILS BY STATUS ---");
+    const reducedResult = result.reduce<OrderTableRow[]>((acc, row) => {
       const orderDetails = {
         order_id: row.order_id,
         created_by: row.created_by,
         customer_id: row.customer_id,
         order_name: row.order_name,
         order_number: row.order_number,
-        shipping_data: row.shipping_data as OrderShippingInfo,
-        billing_data: row.billing_data as OrderBillingInfo,
-        status: row.status as OrderStatus,
-        date_created: row.date_created,
+        shipping_data: row.shipping_data as CustomerShippingInformation,
+        billing_data: row.billing_data as CustomerBillingInformation,
+        status: isValidOrderStatus(row.status)
+          ? row.status
+          : OrderStatusOptions.Draft,
+        date_drafted: row.date_drafted,
         date_updated: row.date_updated,
-        date_submitted: row.date_submitted,
-        date_shipped: row.date_shipped,
-        date_delivered: row.date_delivered,
+        date_submitted: row.date_submitted ? row.date_submitted : null,
+        date_shipped: row.date_shipped ? row.date_shipped : null,
+        date_delivered: row.date_delivered ? row.date_delivered : null,
         amount: row.invoice_amount ? parseFloat(row.invoice_amount) : 0,
         order_invoice_id: row.order_invoice_id ? row.order_invoice_id : "",
         ordered_by: row.ordered_by as string,
@@ -265,120 +208,40 @@ export async function getOrderDetailsByStatus(
   }
 }
 
-export async function fetchOrderDetailsById(orderId: string) {
-  try {
-    console.log("---- ORDER ID ----");
-    console.log(orderId);
-    console.log("----");
-    const result = await db
-      .select({
-        order_id: OrderTable.order_id, // programmatic
-        created_by: OrderTable.created_by, // programmatic
-        customer_id: OrderTable.customer_id, // programmatic
-        order_name: OrderTable.order_name, //
-        order_number: OrderTable.order_number, // modifiable conditionally
-        shipping_data: OrderTable.shipping_data, // modifiable conditionally
-        billing_data: OrderTable.billing_data, // modifiable conditionally
-        status: OrderTable.status, // programmatic
-        amount: OrderTable.amount, // modifiable conditionally
-        date_created: OrderTable.date_created, // programmatic
-        date_updated: OrderTable.date_updated, // programmatic
-        date_submitted: OrderTable.date_submitted, // programmatic
-        date_shipped: OrderTable.date_shipped, // modifiable conditionally
-        date_delivered: OrderTable.date_delivered, // modifiable conditionally
-        order_invoice_id: OrderInvoiceTable.order_invoice_id,
-        invoice_number: OrderInvoiceTable.invoice_number,
-        ordered_by:
-          sql`${UserProfileTable.first_name} || ' ' || ${UserProfileTable.last_name}`.as(
-            "ordered_by"
-          ),
-        order_items: OrderItemTable,
-      })
-      .from(OrderTable)
-      .where(eq(OrderTable.order_id, orderId))
-      .leftJoin(
-        UserProfileTable,
-        eq(OrderTable.created_by, UserProfileTable.user_id)
-      )
-      .leftJoin(
-        OrderInvoiceTable,
-        eq(OrderTable.order_id, OrderInvoiceTable.order_id)
-      )
-      .leftJoin(
-        OrderItemTable,
-        eq(OrderTable.order_id, OrderItemTable.order_id)
-      );
-
-    console.log("---- fetchOrderDetailsById ----");
-    console.log("RESULT");
-    console.log(result);
-    console.log("RESULT LENGTH");
-    console.log(result.length);
-    // const reducedResult = result.reduce<OrderDetails>((acc, row) => {
-
-    // }, {});
-    // TODO NOTE: destructure the result and process each field to strongly type the result
-
-    console.log(" ELEMENT 0 ");
-    console.log(result[0]);
-    console.log("----");
-    console.log(" ELEMENT 1 ");
-    console.log(result[1]);
-    console.log("----");
-
-    const orderInfo = {
-      ...result[0],
-      amount: parseFloat(result[0].amount),
-      shipping_data: result[0].shipping_data as OrderShippingInfo,
-      billing_data: result[0].billing_data as OrderBillingInfo,
-      date_created: new Date(result[0].date_created),
-      date_updated: new Date(result[0].date_updated),
-      date_submitted: result[0].date_submitted
-        ? new Date(result[0].date_submitted)
-        : null,
-      date_shipped: result[0].date_shipped
-        ? new Date(result[0].date_shipped)
-        : null,
-      order_items: [],
-    };
-
-    return orderInfo as OrderFormFields;
-  } catch (error) {
-    throw new Error("Database Error: Failed to fetch order details");
-  }
-}
-
-export async function fetchOrderItems(orderId: string) {
-  try {
-    const result = await db
-      .select()
-      .from(OrderItemTable)
-      .where(eq(OrderItemTable.order_id, orderId));
-
-    return result as OrderItem[];
-  } catch {
-    throw new Error("Database Error: Failed to fetch order items");
-  }
-}
-
-export async function fetchInvoiceTableData() {
+/**
+ * fetches data to populate the Invoice Table
+ * @returns array of type InvoiceTableRow
+ */
+export async function fetchInvoiceTableData(): Promise<InvoiceTableRow[]> {
   try {
     const result = await db
       .select({
+        // invoice table columns
         order_invoice_id: OrderInvoiceTable.order_invoice_id,
         created_by: OrderInvoiceTable.created_by,
         order_id: OrderInvoiceTable.order_id,
-        date_created: OrderInvoiceTable.date_created,
+        customer_id: OrderInvoiceTable.customer_id,
+        invoice_number: OrderInvoiceTable.invoice_number,
         status: OrderInvoiceTable.status,
         amount: OrderInvoiceTable.amount,
-        customer_name:
-          sql`${UserProfileTable.first_name} || ' ' || ${UserProfileTable.last_name}`.as(
-            "customer_name"
+        date_created: OrderInvoiceTable.date_created,
+        // customer table columns
+        customer_name: CustomerTable.name,
+        // user profile table columns
+        created_by_name:
+          sql<string>`${UserProfileTable.first_name} || ' ' || ${UserProfileTable.last_name}`.as(
+            "created_by_name"
           ),
+        // order table columns
         order_name: OrderTable.order_name,
+        billing_data: OrderTable.billing_data,
         // need purchase order if available on order.billing_data object
       })
       .from(OrderInvoiceTable)
+      .leftJoin(
+        CustomerTable,
+        eq(OrderInvoiceTable.customer_id, CustomerTable.customer_id)
+      )
       .leftJoin(
         UserProfileTable,
         eq(OrderInvoiceTable.created_by, UserProfileTable.user_id)
@@ -389,13 +252,21 @@ export async function fetchInvoiceTableData() {
       );
 
     const formattedResult = result.map((row) => {
+      // console.log(row.created_by_name)
+      // console.log(typeof row.created_by_name)
       return {
         ...row,
         amount: parseFloat(row.amount),
+        customer_name: row.customer_name ?? "NO CUSTOMER NAME",
+        created_by_name: row.created_by_name ?? "NO USER NAME",
+        order_name: row.order_name ?? "NO ORDER NAME",
+        billing_data: row.billing_data
+          ? row.billing_data
+          : getDefaultBillingValues(),
       };
     });
 
-    return formattedResult as InvoiceTableRow[];
+    return formattedResult;
   } catch (error) {
     throw new Error("Database Error: Failed to fetch invoice table data");
   }

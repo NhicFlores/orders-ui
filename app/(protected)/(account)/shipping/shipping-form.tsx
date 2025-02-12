@@ -14,11 +14,11 @@ import {
   createShippingInfo,
   updateShippingInfo,
 } from "@/lib/actions/profile-actions";
+import { getDefaultShippingValues } from "@/lib/data-model/default-constructors";
 import {
-  ShippingInfo,
-  OrderShippingInfo,
-  CustomerShippingInformation,
-} from "@/lib/data-model/schema-definitions";
+  CustomerShippingInformation
+} from "@/lib/data-model/schema-types";
+import { ShippingData, ShippingFields } from "@/lib/data-model/utility-types";
 import { ShippingInfoSchema } from "@/schema/form-schema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Pencil } from "lucide-react";
@@ -26,12 +26,14 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
+// TODO: add server action to props and use in handleFormSave
 interface ShippingFormProps {
-  shippingInfo?: ShippingInfo;
+  shippingInfo?: ShippingData;
   toggleShippingForm?: () => void;
   isBlankForm?: boolean;
 }
-
+// NOTE REFACTOR: refactor this component to take server action as a prop
+// so it can be used in order and customer pages
 export default function ShippingForm({
   shippingInfo,
   toggleShippingForm,
@@ -46,23 +48,14 @@ export default function ShippingForm({
 
   const shippingForm = useForm<z.infer<typeof ShippingInfoSchema>>({
     resolver: zodResolver(ShippingInfoSchema),
-    defaultValues: shippingInfo
-      ? shippingInfo
-      : {
-          street: "",
-          apt_num: "",
-          city: "",
-          state: "",
-          zip: "",
-          is_job_site: false,
-          note: "",
-        },
+    defaultValues: shippingInfo ? shippingInfo : getDefaultShippingValues(),
   });
 
   async function handleFormSave(data: z.infer<typeof ShippingInfoSchema>) {
+    // NOTE TODO: refactor to check on existing shipping info id instead of isBlankForm flag
     if (isBlankForm) {
       await createShippingInfo(data);
-    } else if (isShippingInfoWithId(shippingInfo)) {
+    } else if (isCustomerShippingInfo(shippingInfo)) {
       await updateShippingInfo(shippingInfo.shipping_info_id, data);
     }
     setIsEditEnabled(!isEditEnabled);
@@ -70,12 +63,12 @@ export default function ShippingForm({
     // console.log(data);
     setOrder((prevOrder) => ({
       ...prevOrder,
-      shipping_data: data as OrderShippingInfo,
+      shipping_data: data as ShippingFields,
     }));
   }
 
-  function isShippingInfoWithId(
-    info: ShippingInfo | undefined
+  function isCustomerShippingInfo(
+    info: ShippingData | undefined
   ): info is CustomerShippingInformation {
     return (info as CustomerShippingInformation).shipping_info_id !== undefined;
   }
@@ -200,6 +193,7 @@ export default function ShippingForm({
                       className={!isEditEnabled ? "bg-slate-100" : "bg-white"}
                       type="text"
                       {...field}
+                      value={field.value ?? ""}
                     />
                   </FormControl>
                   <FormMessage>

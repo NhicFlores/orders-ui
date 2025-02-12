@@ -16,12 +16,12 @@ import {
 import Link from "next/link";
 import { deleteOrder } from "@/lib/actions/actions";
 import { formatDateToLocal } from "@/lib/utils";
-import { OrderDetails } from "@/lib/data-model/data-definitions";
+import { OrderTableRow } from "@/lib/data-model/query-types";
 import { statusColumnFilter } from "@/app/ui/components/table/table-utils";
 import { OrderDetailsRoute } from "@/routes";
 
 //TODO: enable shift select
-export const OrderColumns: ColumnDef<OrderDetails>[] = [
+export const OrderColumns: ColumnDef<OrderTableRow>[] = [
   {
     id: "select",
     header: ({ table }) => (
@@ -223,7 +223,7 @@ export const OrderColumns: ColumnDef<OrderDetails>[] = [
       );
     },
     cell: ({ row }) => {
-      const date = row.original.date_created; // RESEARCH NOTE: casting vs conversion
+      const date = row.original.date_drafted; // RESEARCH NOTE: casting vs conversion
       // RESEARCH NOTE: format date before sending to db vs formatting on fetch
       const formattedDate = formatDateToLocal(new Date(date));
       return <div>{formattedDate}</div>;

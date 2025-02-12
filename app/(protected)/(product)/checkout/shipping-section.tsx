@@ -12,9 +12,9 @@ import { useState } from "react";
 import ShippingForm from "../../(account)/shipping/shipping-form";
 import { useProductContext } from "@/components/product-components/product-context-provider";
 import {
-  ShippingInfo,
-  CustomerShippingInformation,
-} from "@/lib/data-model/schema-definitions";
+  CustomerShippingInformation
+} from "@/lib/data-model/schema-types";
+import { ShippingData } from "@/lib/data-model/utility-types";
 
 interface ShippingSectionProps {
   shippingOptions: CustomerShippingInformation[];
@@ -25,8 +25,8 @@ export default function ShippingSection({
 }: ShippingSectionProps) {
   const [showShippingForm, setShowShippingForm] = useState(false);
   const [selectedShippingOption, setSelectedShippingOption] =
-    useState<ShippingInfo>();
-  const [formData, setFormData] = useState<ShippingInfo>();
+    useState<ShippingData>();
+  const [formData, setFormData] = useState<ShippingData>();
   const [isJobSite, setIsJobSite] = useState(false);
 
   const { order, setOrder } = useProductContext();

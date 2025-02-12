@@ -1,0 +1,2 @@
+ALTER TABLE "dev-schema"."customer" DROP CONSTRAINT "customer_name_unique";--> statement-breakpoint
+ALTER TABLE "dev-schema"."customer" ADD CONSTRAINT "customer_account_num_unique" UNIQUE("account_num");

@@ -24,7 +24,7 @@ export async function seedUserInfo() {
         const hashedPassword = await bcrypt.hash(user.password, 10);
 
         const result = await trx.execute(
-          sql`INSERT INTO "${sql.raw(getSchemaName())}".users 
+          sql`INSERT INTO "${sql.raw(getSchemaName())}".user 
                       (email, 
                       password, 
                       role,
@@ -44,7 +44,7 @@ export async function seedUserInfo() {
           if (seedUserId === profile.user_id) {
             console.log(`x Seeding profile ${userCount}...`);
             await trx.execute(
-              sql`INSERT INTO "${sql.raw(getSchemaName())}".user_profiles 
+              sql`INSERT INTO "${sql.raw(getSchemaName())}".user_profile 
                         ("user_id", 
                         "first_name", 
                         "last_name", 

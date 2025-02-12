@@ -42,9 +42,12 @@ import {
 import { fuzzyOrderFilter, statusColumnFilter } from "./table/table-utils";
 import OrderDetailTable from "@/app/(protected)/(tables)/order-detail-table";
 import { OrderDetailColumns } from "@/app/(protected)/(tables)/order-detail-columns";
-import { OrderStatus } from "@/lib/data-model/data-definitions";
+import {
+  OrderStatusArray,
+  OrderStatusOptions,
+} from "@/lib/data-model/enum-types";
 import { useEffect, useState } from "react";
-import { StatusDetails } from "@/lib/data-model/data-definitions";
+import { StatusDetails } from "@/lib/data-model/utility-types";
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
@@ -77,11 +80,11 @@ export function DataTable<TData, TValue>({
   //TODO NOTE: conditionally render filter for existing columns
   //TODO NOTE: SORT ROWS BY STATUS AND DATE RANGE
 
-  const initialVisibleStatus = Object.values(OrderStatus).map((status) => {
+  const initialVisibleStatus = OrderStatusArray.map((status) => {
     // NOTE: here we can implement user settings to determine which statuses are visible
     return {
       statusValue: status,
-      isVisible: status === OrderStatus.Cancelled ? false : true,
+      isVisible: status === OrderStatusOptions.Cancelled ? false : true,
     };
   });
   // state variable for status visibility

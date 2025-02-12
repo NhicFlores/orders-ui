@@ -5,7 +5,7 @@ import SignInButton from "@/components/landing_page/sign-in-button";
 //landing page
 export default async function Home() {
   // await seedDatabase();
-
+  
   return (
     <main
       className="flex h-screen flex-col items-center justify-center

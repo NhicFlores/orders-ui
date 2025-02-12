@@ -23,10 +23,11 @@ import {
 } from "@/lib/actions/profile-actions";
 import { BillingRoute, CheckoutRoute } from "@/routes";
 import { useProductContext } from "@/components/product-components/product-context-provider";
-import { CustomerBillingInformation } from "@/lib/data-model/schema-definitions";
+import { CustomerBillingInformation } from "@/lib/data-model/schema-types";
+import { BillingData } from "@/lib/data-model/utility-types";
 
 interface BillingFormProps {
-  billing_info?: CustomerBillingInformation;
+  billing_info?: BillingData;
   isBlankForm?: boolean;
   toggleBillingForm?: () => void;
   handlePaymentOptionChange?: (billing_id: string) => void;
@@ -83,14 +84,14 @@ const BillingForm = ({
     //   ? updateBillingInfo(billing_info.id!, data)
     //   : billing_info_id = await createBillingInfo(data, pathToRevalidate);
     // handlePaymentOptionChange && billing_info_id && handlePaymentOptionChange(billing_info_id as string);
-
+    console.log("SAVE BILLING INFO SERVER ACTION: NOTE IMPLEMENTED YET");
     // BUG NOTE: potential bug here, need to test if we can get call updateBillingInfo with id = -1
-    isBlankForm
-      ? createBillingInfo(data, BillingRoute.href)
-      : billing_info?.billing_info_id &&
-        updateBillingInfo(billing_info?.billing_info_id, data);
-    //TODO NOTE: add error handling
-    setIsEditEnabled(!isEditEnabled);
+    // isBlankForm
+    //   ? createBillingInfo(data, BillingRoute.href)
+    //   : billing_info?.billing_info_id! &&
+    //     updateBillingInfo(billing_info?.billing_info_id, data);
+    // //TODO NOTE: add error handling
+    // setIsEditEnabled(!isEditEnabled);
   }
 
   // const { setOrder } = useProductContext();
@@ -274,6 +275,7 @@ const BillingForm = ({
                             !isEditEnabled ? "bg-slate-100" : "bg-white"
                           }
                           {...field}
+                          value={field.value ?? ""}
                         />
                       </FormControl>
                       <FormMessage>
@@ -329,6 +331,7 @@ const BillingForm = ({
                             !isEditEnabled ? "bg-slate-100" : "bg-white"
                           }
                           {...field}
+                          value={field.value ?? ""}
                         />
                       </FormControl>
                       <FormMessage>

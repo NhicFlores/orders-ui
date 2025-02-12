@@ -1,3 +1,4 @@
+// DEPRECATED: these queries use the old data model and should be removed
 // fetch functions
 import { sql } from "@vercel/postgres";
 import {
@@ -13,7 +14,7 @@ import {
 import { OrderStatus, TestOrder } from "@/lib/definitions/order-definitions";
 import { formatCurrency } from "@/lib/utils";
 import { unstable_noStore as noStore } from "next/cache";
-import { Order } from "../data-model/schema-definitions";
+import { Order } from "../data-model/schema-types";
 
 //create fetch functions for orders where status = draft, quote
 //refactor - fetch data file for each tab to keep my fetch types separate
@@ -343,7 +344,7 @@ export async function fetchTestOrders() {
 
     console.log("type of order items: ", typeof data.rows[0].order_items);
     console.log(data.rows[0].order_items);
-
+    // NOTE: JSON PARSING
     const parsedOrders = data.rows.map((order) => {
       let order_items;
       try {

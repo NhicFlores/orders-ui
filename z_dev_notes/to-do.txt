@@ -5,6 +5,14 @@
 
 - make dimension select elements 'required' <select required/>
 
+role base access: 
+- use SSR to check for access and dynamically fetch data and components 
+- admin nav: uses hook to check user role; middleware also checks for user role  
+	- side bar 
+		- customer table  
+			- customer page with order and invoice summaries, 
+		- invoice table 
+		- product page, table that allows for editing 
 
 08-26 
 - clean up build errors : remove references to 'customer' as a type 
@@ -19,8 +27,7 @@
 
 
 NEXT 
-- shipping info table
-	- delete shipping info objects 
+
 - on checkout 
 	-x- when payment or shipping are chosen, expand the form populated with data 
 	from the chosen object 
@@ -188,6 +195,13 @@ find all places where i use nested Link/Button for navigation and use the asChil
 
 
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx DONE xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+forms: 
+	shipping form 
+	- shipping info table
+	- delete shipping info objects 
+
+tables: 
 
 auth 
 - designate roles 

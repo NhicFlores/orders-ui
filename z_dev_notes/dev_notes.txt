@@ -261,6 +261,8 @@ How are actions handled differently than an async fetch function? look at data a
 
 how is FormData something we have access to but don't explicitly pass in an action  
 
+best practices: 
+  server actions are good for updating or deleting, but slow for fetching 
 
 FORMS
 - using server actions in forms provides 'progressive enhancement'  
@@ -349,7 +351,7 @@ profile && profile.company ? profile.company : "blank"
 classes vs types for data modeling - declarative code 
 
 classes 
-imperative code describes the steps that the runtime must take to inialize an object
+imperative code describes the steps that the runtime must take to initialize an object
 declarative code describes the state of the initialized object
 
 How we instantiated const user: User = { above 
@@ -362,6 +364,21 @@ You can't really even test test a unit. It might work in a unit test without the
 It becomes impossible to even identify all of the code paths. 
 Conversely, code using immutable practices grows in complexity linearly. 
 This piece always takes this value in and sends that value out. Tested, done, and on to the next part.
+
+- 
+creating custom types: 
+optional fields vs nullable fields:
+  Optional Properties (?):
+    Use when a property is not always required and can be omitted.
+    Useful for optional data, partial updates, and default values.
+ 
+  Nullable Properties (| null):
+    Use when a property is required but can explicitly be set to null.
+    Useful for explicit nullability, state representation, and API responses.
+
+-
+custom types best practices:
+  
 
 -
 {...rest} used in props 
@@ -580,6 +597,7 @@ schema
   * SET NULL: When a parent row is deleted, the foreign key column in child table will be set to NULL (requires the column to allow NULL values). 
   * CASCADE: Deletes all corresponding rows in the child table when parent row is deleted.These actions can be specified using the references() second argument. The type definition for these actions is:
   export type UpdateDeleteAction = 'cascade' | 'restrict' | 'no action' | 'set null' | 'set default';
+
 ------------------------------------- PostgreSQL ---------------------------------------- 
 issue where my update billing info wasn't working: adding the billing_addr field to the update sql statement 
 would stop it from updating but no errors were thrown. 
@@ -591,13 +609,21 @@ commands
 SELECT nspname
 FROM pg_catalog.pg_namespace;
 
+representing money: 
+  numeric column type: 
+  server logic: 
 
 
 ------------------------------------ Data fetching ------------------------------------
-type sql queries - edefault seems to be 'query result row'
+vercel db: 
+type sql queries - default seems to be 'query result row'
 when some components like datatable, and columns definitions are expecting an 
 order, the sql query needs to be typed 
 ex. await sql<Order>`sql statement`;
+
+data fetching best practices: 
+https://nextjs.org/docs/14/app/building-your-application/data-fetching/patterns 
+https://dev.to/minhnc/data-fetching-in-nextjs-4ee6 
 
 ------------------------------------ Zod - form validation ------------------------------------
 .partial is a method that can make all properties optional 

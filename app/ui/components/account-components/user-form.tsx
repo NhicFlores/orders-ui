@@ -17,7 +17,7 @@ import { Button } from "@/components/ui/button";
 import { Pencil } from "lucide-react";
 import { useState } from "react";
 import { updateUser } from "@/lib/actions/profile-actions";
-import { User } from "@/lib/data-model/schema-definitions";
+import { User } from "@/lib/data-model/schema-types";
 
 interface UserFormProps {
   user: User;

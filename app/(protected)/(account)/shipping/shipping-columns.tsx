@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { deleteShippingInfo } from "@/lib/actions/profile-actions";
-import { CustomerShippingInformation } from "@/lib/data-model/schema-definitions";
+import { CustomerShippingInformation } from "@/lib/data-model/schema-types";
 import { ColumnDef } from "@tanstack/react-table";
 import { Trash2 } from "lucide-react";
 

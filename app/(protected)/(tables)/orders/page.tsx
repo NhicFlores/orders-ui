@@ -1,3 +1,4 @@
+"use server";
 //order history page
 // server component where we will fetch data and render table
 
@@ -6,7 +7,7 @@ import { OrderColumns } from "./columns";
 import { DataTable } from "../../../ui/components/data-table";
 //import { fetchOrders } from "@/lib/data/data";
 import { NewOrderButton } from "@/app/ui/components/new-order-button";
-import { fetchOrdersByStatus, fetchOrderTableData } from "../queries";
+import { fetchOrderTableData } from "../queries";
 
 /*async function fetchOrders(): Promise<Order[]> {
   //once api layer is made we can move this function over

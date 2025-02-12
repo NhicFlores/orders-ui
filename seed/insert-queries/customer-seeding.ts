@@ -24,7 +24,7 @@ export async function seedCustomerInfo() {
         const seedCustomerId = customer.customer_id;
 
         const result = await trx.execute(
-          sql`INSERT INTO "${sql.raw(getSchemaName())}".customers
+          sql`INSERT INTO "${sql.raw(getSchemaName())}".customer
                         (customer_id,
                         name,
                         phone,

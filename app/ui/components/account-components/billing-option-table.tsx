@@ -32,7 +32,7 @@ import {
 import BillingForm from "./billing-form";
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
-import { CustomerBillingInformation } from "@/lib/data-model/schema-definitions";
+import { CustomerBillingInformation } from "@/lib/data-model/schema-types";
 
 interface BillingOptionTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];

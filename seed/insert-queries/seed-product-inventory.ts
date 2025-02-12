@@ -13,7 +13,7 @@ export async function seedProducts() {
       for (const product of inventoryProductSeed) {
         const serializedConfigOptions = JSON.stringify(product.config_options);
         await trx.execute(
-          sql`INSERT INTO "${sql.raw(getSchemaName())}".inventory_products 
+          sql`INSERT INTO "${sql.raw(getSchemaName())}".inventory_product 
                     (type, 
                     "image_url", 
                     alt, 

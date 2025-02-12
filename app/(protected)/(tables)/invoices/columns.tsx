@@ -1,7 +1,7 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
-import { InvoiceTableRow } from "@/lib/data-model/data-definitions";
+import { InvoiceTableRow } from "@/lib/data-model/query-types";
 import { formatDateToLocal } from "@/lib/utils";
 import { ColumnDef } from "@tanstack/react-table";
 import { ArrowUpDown } from "lucide-react";
@@ -42,7 +42,7 @@ export const InvoiceColumns: ColumnDef<InvoiceTableRow>[] = [
       );
     },
     cell: ({ row }) => (
-        // TODO NOTE: create order page, invoice page, and customer page to link to 
+      // TODO NOTE: create order page, invoice page, and customer page to link to
       <Link href={`/orders/${row.original.order_invoice_id}`}>
         <div className="text-blue-500">{row.original.order_invoice_id}</div>
       </Link>

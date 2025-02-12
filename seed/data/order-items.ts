@@ -1,13044 +1,16756 @@
-import { OrderItem } from "@/lib/data-model/schema-definitions";
+import { OrderItem } from "@/lib/data-model/schema-types";
 
 export const orderItemsSeed: OrderItem[] = [
   {
-    "order_item_id": 7756,
-    "order_id": "207c5a1e-c367-4a69-9b3b-781b6a5d1f96",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
+    "order_item_id": 1180,
+    "order_id": "1d4c42ad-5b9b-4cce-a49b-4de7b1abd9c9",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
     "product_config": {
-      "glass_id": "538c9855-17a0-410d-90d2-5e5e9f43c6c8",
-      "name": "SNX-L 62/34",
-      "thickness": "1/4",
-      "shape": "Arch-Top",
-      "tint": "Clear",
-      "length": 82,
-      "width": 32
-    },
-    "quantity": 43,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 6771,
-    "order_id": "207c5a1e-c367-4a69-9b3b-781b6a5d1f96",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "060bfe65-db6f-4f54-87f7-bea2ea6a249f",
-      "name": "SNE 50/25",
-      "thickness": "1/8",
-      "shape": "Square/Rectangle",
-      "tint": "Dark Gray",
-      "length": 68,
-      "width": 42
-    },
-    "quantity": 140,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 8839,
-    "order_id": "207c5a1e-c367-4a69-9b3b-781b6a5d1f96",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
-    "product_config": {
-      "glass_id": "24c66f1f-bd90-4fc2-b3e2-7ed7cb667b00",
-      "name": "IS20 LE-T",
-      "thickness": "3/4",
-      "shape": "Octagon",
-      "tint": "Mistlite",
-      "length": 25,
-      "width": 15
-    },
-    "quantity": 83,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 8551,
-    "order_id": "207c5a1e-c367-4a69-9b3b-781b6a5d1f96",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
-    "product_config": {
-      "glass_id": "ea045be8-3c33-4a2d-9137-da2e180210eb",
-      "name": "SatinDeco",
-      "thickness": "1/2",
-      "shape": "Square/Rectangle",
-      "tint": "Frosted Green Chip",
-      "length": 49,
-      "width": 8
-    },
-    "quantity": 57,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 2707,
-    "order_id": "207c5a1e-c367-4a69-9b3b-781b6a5d1f96",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
-    "product_config": {
-      "glass_id": "91454f2a-292a-4b6c-91bc-2b126062ab5f",
-      "name": "SN 68 HT",
-      "thickness": "1/4",
-      "shape": "Right Triangle",
-      "tint": "P-516",
-      "length": 71,
-      "width": 32
-    },
-    "quantity": 24,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 1459,
-    "order_id": "207c5a1e-c367-4a69-9b3b-781b6a5d1f96",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "af9ab768-f43f-416f-8cb1-8e70979e0972",
-      "name": "Sunguard Spandrel HT",
-      "thickness": "3/8",
-      "shape": "Parallelogram",
-      "tint": "Ultra Clear",
-      "length": 89,
-      "width": 42
-    },
-    "quantity": 5,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 7643,
-    "order_id": "207c5a1e-c367-4a69-9b3b-781b6a5d1f96",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "b4ad52ba-ba2e-4db7-815c-0f0087e58ff4",
-      "name": "SN 68",
-      "thickness": "1/8",
-      "shape": "Half-Circle",
-      "tint": "Satin Etch",
-      "length": 33,
-      "width": 8
-    },
-    "quantity": 46,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 1905,
-    "order_id": "207c5a1e-c367-4a69-9b3b-781b6a5d1f96",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
-    "product_config": {
-      "glass_id": "538c9855-17a0-410d-90d2-5e5e9f43c6c8",
-      "name": "SNX-L 62/34",
-      "thickness": "3/8",
-      "shape": "Clipped Corner(s)",
-      "tint": "Frosted Green Chip",
-      "length": 41,
-      "width": 15
-    },
-    "quantity": 7,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 6283,
-    "order_id": "207c5a1e-c367-4a69-9b3b-781b6a5d1f96",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "ef4a6120-93a8-450f-a7f9-6e75f27fde60",
-      "name": "MC 27 LE-A",
-      "thickness": "3/4",
-      "shape": "Octagon",
-      "tint": "Mistlite",
-      "length": 57,
-      "width": 24
-    },
-    "quantity": 211,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 6110,
-    "order_id": "c732d56f-f264-4eb4-8440-73a070d1a757",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "060bfe65-db6f-4f54-87f7-bea2ea6a249f",
-      "name": "SNE 50/25",
-      "thickness": "3/8",
-      "shape": "Square/Rectangle",
-      "tint": "Frosted Blue Chip",
-      "length": 53,
-      "width": 5
-    },
-    "quantity": 169,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 6569,
-    "order_id": "c732d56f-f264-4eb4-8440-73a070d1a757",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
-    "product_config": {
-      "glass_id": "24c66f1f-bd90-4fc2-b3e2-7ed7cb667b00",
-      "name": "IS20 LE-T",
-      "thickness": "3/4",
-      "shape": "Clipped Corner(s)",
-      "tint": "Frosted Green Chip",
-      "length": 91,
-      "width": 48
-    },
-    "quantity": 7,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 1893,
-    "order_id": "c732d56f-f264-4eb4-8440-73a070d1a757",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "d0340245-d1b1-474d-b05b-1e330b5601d2",
+      "glass_id": "cc546439-3cef-4f13-b365-c6893c05fc82",
       "name": "SNR 35 HT",
       "thickness": "1/4",
-      "shape": "Arch",
-      "tint": "Clear",
-      "length": 21,
-      "width": 16
-    },
-    "quantity": 84,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 9735,
-    "order_id": "c732d56f-f264-4eb4-8440-73a070d1a757",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
-    "product_config": {
-      "glass_id": "060bfe65-db6f-4f54-87f7-bea2ea6a249f",
-      "name": "SNE 50/25",
-      "thickness": "3/4",
       "shape": "Half-Circle with Notch",
-      "tint": "P-516",
-      "length": 51,
-      "width": 9
-    },
-    "quantity": 173,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 9677,
-    "order_id": "c732d56f-f264-4eb4-8440-73a070d1a757",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "46247eed-86b1-4ea7-bddf-4c8a7c89565a",
-      "name": "MC 68 LE-A",
-      "thickness": "3/8",
-      "shape": "Rounded Corner(s)",
-      "tint": "Clear",
-      "length": 84,
-      "width": 3
-    },
-    "quantity": 144,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 6351,
-    "order_id": "c732d56f-f264-4eb4-8440-73a070d1a757",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "af9ab768-f43f-416f-8cb1-8e70979e0972",
-      "name": "Sunguard Spandrel HT",
-      "thickness": "3/4",
-      "shape": "Arch-Top",
-      "tint": "Clear",
-      "length": 64,
-      "width": 48
-    },
-    "quantity": 75,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 1252,
-    "order_id": "c732d56f-f264-4eb4-8440-73a070d1a757",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "91454f2a-292a-4b6c-91bc-2b126062ab5f",
-      "name": "SN 68 HT",
-      "thickness": "3/4",
-      "shape": "Octagon",
-      "tint": "Light Gray",
-      "length": 23,
-      "width": 20
-    },
-    "quantity": 4,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 1405,
-    "order_id": "c732d56f-f264-4eb4-8440-73a070d1a757",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
-    "product_config": {
-      "glass_id": "28cb3997-daf6-464f-812d-97182ee602b3",
-      "name": "NU 40 LE",
-      "thickness": "1/2",
-      "shape": "Square/Rectangle",
-      "tint": "Solex",
-      "length": 79,
-      "width": 29
-    },
-    "quantity": 191,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 6981,
-    "order_id": "c732d56f-f264-4eb4-8440-73a070d1a757",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
-    "product_config": {
-      "glass_id": "91454f2a-292a-4b6c-91bc-2b126062ab5f",
-      "name": "SN 68 HT",
-      "thickness": "3/4",
-      "shape": "Irregular/Any Other Shape",
-      "tint": "Clear",
-      "length": 58,
-      "width": 29
-    },
-    "quantity": 161,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 5565,
-    "order_id": "c17c6592-5d0e-439a-a52c-9cb8c75bf142",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "d0340245-d1b1-474d-b05b-1e330b5601d2",
-      "name": "SNR 35 HT",
-      "thickness": "3/4",
-      "shape": "Octagon",
-      "tint": "P-516",
-      "length": 48,
-      "width": 36
-    },
-    "quantity": 138,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 3161,
-    "order_id": "c17c6592-5d0e-439a-a52c-9cb8c75bf142",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "91454f2a-292a-4b6c-91bc-2b126062ab5f",
-      "name": "SN 68 HT",
-      "thickness": "3/8",
-      "shape": "Clipped Corner(s)",
-      "tint": "P-516",
-      "length": 45,
-      "width": 12
-    },
-    "quantity": 6,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 574,
-    "order_id": "c17c6592-5d0e-439a-a52c-9cb8c75bf142",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "46247eed-86b1-4ea7-bddf-4c8a7c89565a",
-      "name": "MC 68 LE-A",
-      "thickness": "3/8",
-      "shape": "Rounded Corner(s)",
-      "tint": "P-516",
-      "length": 54,
-      "width": 18
-    },
-    "quantity": 53,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 5628,
-    "order_id": "c17c6592-5d0e-439a-a52c-9cb8c75bf142",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "d0340245-d1b1-474d-b05b-1e330b5601d2",
-      "name": "SNR 35 HT",
-      "thickness": "1/4",
-      "shape": "Arch-Top",
-      "tint": "Frosted Green Chip",
-      "length": 17,
-      "width": 8
-    },
-    "quantity": 47,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 1911,
-    "order_id": "c17c6592-5d0e-439a-a52c-9cb8c75bf142",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
-    "product_config": {
-      "glass_id": "46247eed-86b1-4ea7-bddf-4c8a7c89565a",
-      "name": "MC 68 LE-A",
-      "thickness": "1/4",
-      "shape": "House",
-      "tint": "Frosted Blue Chip",
-      "length": 17,
-      "width": 5
-    },
-    "quantity": 204,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 8678,
-    "order_id": "c17c6592-5d0e-439a-a52c-9cb8c75bf142",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
-    "product_config": {
-      "glass_id": "cd774965-da25-463b-921f-441244911276",
-      "name": "AG 50 LE",
-      "thickness": "1/4",
-      "shape": "Quad Arch",
-      "tint": "Bronze",
-      "length": 82,
-      "width": 10
-    },
-    "quantity": 57,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 9861,
-    "order_id": "c17c6592-5d0e-439a-a52c-9cb8c75bf142",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "90410c20-66fd-44a0-8009-3d5b8afc631a",
-      "name": "MC 68 LE-T",
-      "thickness": "1/4",
-      "shape": "Rounded Corner(s)",
-      "tint": "Frosted Blue Chip",
-      "length": 55,
-      "width": 6
-    },
-    "quantity": 14,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 6971,
-    "order_id": "c17c6592-5d0e-439a-a52c-9cb8c75bf142",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "d0340245-d1b1-474d-b05b-1e330b5601d2",
-      "name": "SNR 35 HT",
-      "thickness": "1/8",
-      "shape": "Arch",
-      "tint": "Clear",
-      "length": 96,
-      "width": 30
-    },
-    "quantity": 9,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 5265,
-    "order_id": "2399f530-90b5-453f-bb01-2b024bd46b02",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "d0340245-d1b1-474d-b05b-1e330b5601d2",
-      "name": "SNR 35 HT",
-      "thickness": "3/8",
-      "shape": "Octagon",
-      "tint": "Frosted Green Chip",
-      "length": 46,
-      "width": 44
-    },
-    "quantity": 55,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 4371,
-    "order_id": "2399f530-90b5-453f-bb01-2b024bd46b02",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "ef4a6120-93a8-450f-a7f9-6e75f27fde60",
-      "name": "MC 27 LE-A",
-      "thickness": "3/4",
-      "shape": "Quarter Round",
-      "tint": "Ultra Clear",
-      "length": 64,
-      "width": 17
-    },
-    "quantity": 1,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 3594,
-    "order_id": "2399f530-90b5-453f-bb01-2b024bd46b02",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "538c9855-17a0-410d-90d2-5e5e9f43c6c8",
-      "name": "SNX-L 62/34",
-      "thickness": "3/8",
-      "shape": "Rounded Corner(s)",
-      "tint": "Dark Gray",
-      "length": 83,
-      "width": 14
-    },
-    "quantity": 2,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 601,
-    "order_id": "2399f530-90b5-453f-bb01-2b024bd46b02",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "b4ad52ba-ba2e-4db7-815c-0f0087e58ff4",
-      "name": "SN 68",
-      "thickness": "1/8",
-      "shape": "Clipped Corner(s)",
-      "tint": "Dark Gray",
-      "length": 40,
-      "width": 19
-    },
-    "quantity": 16,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 5089,
-    "order_id": "2399f530-90b5-453f-bb01-2b024bd46b02",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "cd774965-da25-463b-921f-441244911276",
-      "name": "AG 50 LE",
-      "thickness": "3/4",
-      "shape": "Quad Arch",
-      "tint": "Mistlite",
-      "length": 68,
-      "width": 29
-    },
-    "quantity": 123,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 9963,
-    "order_id": "2399f530-90b5-453f-bb01-2b024bd46b02",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
-    "product_config": {
-      "glass_id": "90410c20-66fd-44a0-8009-3d5b8afc631a",
-      "name": "MC 68 LE-T",
-      "thickness": "3/8",
-      "shape": "Quarter Round",
-      "tint": "Satin Etch",
-      "length": 65,
-      "width": 45
-    },
-    "quantity": 1,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 2191,
-    "order_id": "ab2536f7-0066-4e73-a6b6-d0084c821a49",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "90410c20-66fd-44a0-8009-3d5b8afc631a",
-      "name": "MC 68 LE-T",
-      "thickness": "1/8",
-      "shape": "Circle",
-      "tint": "Satin Etch",
-      "length": 28,
-      "width": 12
-    },
-    "quantity": 187,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 7770,
-    "order_id": "ab2536f7-0066-4e73-a6b6-d0084c821a49",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
-    "product_config": {
-      "glass_id": "91454f2a-292a-4b6c-91bc-2b126062ab5f",
-      "name": "SN 68 HT",
-      "thickness": "3/8",
-      "shape": "Irregular/Any Other Shape",
-      "tint": "Dark Gray",
-      "length": 50,
-      "width": 27
-    },
-    "quantity": 4,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 8072,
-    "order_id": "ab2536f7-0066-4e73-a6b6-d0084c821a49",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "ef4a6120-93a8-450f-a7f9-6e75f27fde60",
-      "name": "MC 27 LE-A",
-      "thickness": "1/8",
-      "shape": "Right Triangle",
-      "tint": "Ultra Clear",
-      "length": 76,
-      "width": 24
-    },
-    "quantity": 124,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 3477,
-    "order_id": "e2acbc42-3271-4828-b0ec-2e0754a23aa1",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
-    "product_config": {
-      "glass_id": "538c9855-17a0-410d-90d2-5e5e9f43c6c8",
-      "name": "SNX-L 62/34",
-      "thickness": "1/2",
-      "shape": "Pentagon",
-      "tint": "Bronze",
-      "length": 78,
-      "width": 8
-    },
-    "quantity": 10,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 3585,
-    "order_id": "d5d988a1-afbc-4d39-80f3-24c21456633a",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "ef4a6120-93a8-450f-a7f9-6e75f27fde60",
-      "name": "MC 27 LE-A",
-      "thickness": "1/8",
-      "shape": "Racetrack Oval",
-      "tint": "Clear",
-      "length": 61,
-      "width": 18
-    },
-    "quantity": 3,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 5451,
-    "order_id": "d5d988a1-afbc-4d39-80f3-24c21456633a",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "ef4a6120-93a8-450f-a7f9-6e75f27fde60",
-      "name": "MC 27 LE-A",
-      "thickness": "3/4",
-      "shape": "Single Slope Rectangle",
-      "tint": "Ultra Clear",
-      "length": 44,
-      "width": 5
-    },
-    "quantity": 101,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 2048,
-    "order_id": "d5d988a1-afbc-4d39-80f3-24c21456633a",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "90410c20-66fd-44a0-8009-3d5b8afc631a",
-      "name": "MC 68 LE-T",
-      "thickness": "1/4",
-      "shape": "Ellipse",
-      "tint": "Light Gray",
-      "length": 45,
-      "width": 3
-    },
-    "quantity": 88,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 2319,
-    "order_id": "58fc946e-f7ff-4a99-9d5f-c34adc667d07",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "d0340245-d1b1-474d-b05b-1e330b5601d2",
-      "name": "SNR 35 HT",
-      "thickness": "3/8",
-      "shape": "Quarter Round",
-      "tint": "Bronze",
-      "length": 94,
-      "width": 10
-    },
-    "quantity": 14,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 8709,
-    "order_id": "302a7ac4-3053-4074-886c-fb5c45d34732",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
-    "product_config": {
-      "glass_id": "90410c20-66fd-44a0-8009-3d5b8afc631a",
-      "name": "MC 68 LE-T",
-      "thickness": "1/8",
-      "shape": "Quarter Round",
-      "tint": "Satin Etch",
-      "length": 20,
-      "width": 6
-    },
-    "quantity": 44,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 3564,
-    "order_id": "302a7ac4-3053-4074-886c-fb5c45d34732",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
-    "product_config": {
-      "glass_id": "ef4a6120-93a8-450f-a7f9-6e75f27fde60",
-      "name": "MC 27 LE-A",
-      "thickness": "3/8",
-      "shape": "Racetrack Oval",
-      "tint": "Mistlite",
-      "length": 43,
-      "width": 14
-    },
-    "quantity": 5,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 4584,
-    "order_id": "302a7ac4-3053-4074-886c-fb5c45d34732",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "90410c20-66fd-44a0-8009-3d5b8afc631a",
-      "name": "MC 68 LE-T",
-      "thickness": "1/8",
-      "shape": "Half-Circle",
-      "tint": "Frosted Green Chip",
-      "length": 54,
-      "width": 19
-    },
-    "quantity": 58,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 3741,
-    "order_id": "302a7ac4-3053-4074-886c-fb5c45d34732",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "060bfe65-db6f-4f54-87f7-bea2ea6a249f",
-      "name": "SNE 50/25",
-      "thickness": "1/8",
-      "shape": "Square/Rectangle",
-      "tint": "Bronze",
-      "length": 50,
-      "width": 28
-    },
-    "quantity": 33,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 9972,
-    "order_id": "302a7ac4-3053-4074-886c-fb5c45d34732",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "da450d2a-3d5e-4646-8941-677dd51f7f8b",
-      "name": "AG 43",
-      "thickness": "1/4",
-      "shape": "Arch",
-      "tint": "Satin Etch",
-      "length": 30,
-      "width": 17
-    },
-    "quantity": 31,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 9392,
-    "order_id": "302a7ac4-3053-4074-886c-fb5c45d34732",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "cd774965-da25-463b-921f-441244911276",
-      "name": "AG 50 LE",
-      "thickness": "3/8",
-      "shape": "Single Slope Rectangle",
-      "tint": "Satin Etch",
-      "length": 89,
-      "width": 31
-    },
-    "quantity": 187,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 6195,
-    "order_id": "302a7ac4-3053-4074-886c-fb5c45d34732",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "46247eed-86b1-4ea7-bddf-4c8a7c89565a",
-      "name": "MC 68 LE-A",
-      "thickness": "1/4",
-      "shape": "House",
-      "tint": "Solex",
-      "length": 57,
-      "width": 33
-    },
-    "quantity": 54,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 8668,
-    "order_id": "e322f36b-5405-4e0b-a566-de541ab95851",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "46247eed-86b1-4ea7-bddf-4c8a7c89565a",
-      "name": "MC 68 LE-A",
-      "thickness": "1/4",
-      "shape": "Pentagon",
-      "tint": "Satin Etch",
-      "length": 59,
-      "width": 31
-    },
-    "quantity": 185,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 5479,
-    "order_id": "e322f36b-5405-4e0b-a566-de541ab95851",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "af9ab768-f43f-416f-8cb1-8e70979e0972",
-      "name": "Sunguard Spandrel HT",
-      "thickness": "3/8",
-      "shape": "Half-Circle",
-      "tint": "Midnight Gray",
-      "length": 73,
-      "width": 1
-    },
-    "quantity": 80,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 4090,
-    "order_id": "e322f36b-5405-4e0b-a566-de541ab95851",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "af9ab768-f43f-416f-8cb1-8e70979e0972",
-      "name": "Sunguard Spandrel HT",
-      "thickness": "1/8",
-      "shape": "Octagon",
-      "tint": "Ultra Clear",
-      "length": 39,
-      "width": 32
-    },
-    "quantity": 5,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 5337,
-    "order_id": "e322f36b-5405-4e0b-a566-de541ab95851",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "ef4a6120-93a8-450f-a7f9-6e75f27fde60",
-      "name": "MC 27 LE-A",
-      "thickness": "3/4",
-      "shape": "House",
-      "tint": "Ultra Clear",
-      "length": 43,
-      "width": 43
-    },
-    "quantity": 19,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 1921,
-    "order_id": "e322f36b-5405-4e0b-a566-de541ab95851",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "538c9855-17a0-410d-90d2-5e5e9f43c6c8",
-      "name": "SNX-L 62/34",
-      "thickness": "1/8",
-      "shape": "Half-Circle",
-      "tint": "Dark Gray",
-      "length": 87,
-      "width": 38
-    },
-    "quantity": 5,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 420,
-    "order_id": "e322f36b-5405-4e0b-a566-de541ab95851",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "538c9855-17a0-410d-90d2-5e5e9f43c6c8",
-      "name": "SNX-L 62/34",
-      "thickness": "1/4",
-      "shape": "Arch",
-      "tint": "Bronze",
-      "length": 38,
-      "width": 30
-    },
-    "quantity": 10,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 530,
-    "order_id": "e322f36b-5405-4e0b-a566-de541ab95851",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "cd774965-da25-463b-921f-441244911276",
-      "name": "AG 50 LE",
-      "thickness": "1/4",
-      "shape": "Arch Top & Bottom",
-      "tint": "Frosted Green Chip",
-      "length": 39,
-      "width": 6
-    },
-    "quantity": 115,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 6345,
-    "order_id": "e322f36b-5405-4e0b-a566-de541ab95851",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "ea045be8-3c33-4a2d-9137-da2e180210eb",
-      "name": "SatinDeco",
-      "thickness": "3/8",
-      "shape": "Quarter Round",
-      "tint": "Ultra Clear",
-      "length": 65,
-      "width": 46
-    },
-    "quantity": 49,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 7845,
-    "order_id": "e322f36b-5405-4e0b-a566-de541ab95851",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
-    "product_config": {
-      "glass_id": "46247eed-86b1-4ea7-bddf-4c8a7c89565a",
-      "name": "MC 68 LE-A",
-      "thickness": "1/2",
-      "shape": "Irregular/Any Other Shape",
-      "tint": "Frosted Green Chip",
-      "length": 75,
-      "width": 48
-    },
-    "quantity": 9,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 7104,
-    "order_id": "40615b26-a78e-48e0-88bd-307fd44dd73a",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
-    "product_config": {
-      "glass_id": "060bfe65-db6f-4f54-87f7-bea2ea6a249f",
-      "name": "SNE 50/25",
-      "thickness": "3/4",
-      "shape": "Quarter Round with Notch",
       "tint": "Low-E",
-      "length": 85,
-      "width": 15
-    },
-    "quantity": 151,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 9454,
-    "order_id": "40615b26-a78e-48e0-88bd-307fd44dd73a",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "cd774965-da25-463b-921f-441244911276",
-      "name": "AG 50 LE",
-      "thickness": "3/4",
-      "shape": "Quarter Round",
-      "tint": "Frosted Green Chip",
-      "length": 64,
-      "width": 16
-    },
-    "quantity": 59,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 1901,
-    "order_id": "40615b26-a78e-48e0-88bd-307fd44dd73a",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
-    "product_config": {
-      "glass_id": "d0340245-d1b1-474d-b05b-1e330b5601d2",
-      "name": "SNR 35 HT",
-      "thickness": "1/8",
-      "shape": "Ellipse",
-      "tint": "Frosted Green Chip",
-      "length": 85,
-      "width": 12
-    },
-    "quantity": 10,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 7172,
-    "order_id": "40615b26-a78e-48e0-88bd-307fd44dd73a",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
-    "product_config": {
-      "glass_id": "90410c20-66fd-44a0-8009-3d5b8afc631a",
-      "name": "MC 68 LE-T",
-      "thickness": "3/8",
-      "shape": "Trapezoid",
-      "tint": "Ultra Clear",
-      "length": 35,
-      "width": 16
-    },
-    "quantity": 10,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 2913,
-    "order_id": "40615b26-a78e-48e0-88bd-307fd44dd73a",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
-    "product_config": {
-      "glass_id": "46247eed-86b1-4ea7-bddf-4c8a7c89565a",
-      "name": "MC 68 LE-A",
-      "thickness": "3/4",
-      "shape": "Arch-Top",
-      "tint": "Satin Etch",
-      "length": 41,
+      "length": 60,
       "width": 40
     },
-    "quantity": 51,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 9506,
-    "order_id": "40615b26-a78e-48e0-88bd-307fd44dd73a",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
-    "product_config": {
-      "glass_id": "90410c20-66fd-44a0-8009-3d5b8afc631a",
-      "name": "MC 68 LE-T",
-      "thickness": "1/4",
-      "shape": "Single Slope Rectangle",
-      "tint": "Midnight Gray",
-      "length": 62,
-      "width": 26
-    },
-    "quantity": 10,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 9147,
-    "order_id": "856498b5-a16c-4575-8eec-9fde2d7e7abe",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
-    "product_config": {
-      "glass_id": "ea045be8-3c33-4a2d-9137-da2e180210eb",
-      "name": "SatinDeco",
-      "thickness": "3/8",
-      "shape": "Half-Circle with Notch",
-      "tint": "Bronze",
-      "length": 54,
-      "width": 43
-    },
-    "quantity": 128,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 232,
-    "order_id": "856498b5-a16c-4575-8eec-9fde2d7e7abe",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
-    "product_config": {
-      "glass_id": "060bfe65-db6f-4f54-87f7-bea2ea6a249f",
-      "name": "SNE 50/25",
-      "thickness": "1/4",
-      "shape": "Quarter Round with Notch",
-      "tint": "P-516",
-      "length": 53,
-      "width": 41
-    },
     "quantity": 3,
     "note": "some note"
   },
   {
-    "order_item_id": 884,
-    "order_id": "856498b5-a16c-4575-8eec-9fde2d7e7abe",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
+    "order_item_id": 4144,
+    "order_id": "1d4c42ad-5b9b-4cce-a49b-4de7b1abd9c9",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
     "product_config": {
-      "glass_id": "060bfe65-db6f-4f54-87f7-bea2ea6a249f",
-      "name": "SNE 50/25",
-      "thickness": "1/2",
-      "shape": "Half-Circle with Notch",
-      "tint": "P-516",
-      "length": 41,
-      "width": 12
-    },
-    "quantity": 1,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 2198,
-    "order_id": "a470f20b-c9d7-4d05-9d7a-be90d6d2fb7a",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "af9ab768-f43f-416f-8cb1-8e70979e0972",
-      "name": "Sunguard Spandrel HT",
-      "thickness": "1/2",
-      "shape": "Parallelogram",
-      "tint": "Ultra Clear",
-      "length": 40,
-      "width": 21
-    },
-    "quantity": 44,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 3869,
-    "order_id": "e94f25d4-c7d3-4c85-9033-dead6f026c31",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "d0340245-d1b1-474d-b05b-1e330b5601d2",
-      "name": "SNR 35 HT",
-      "thickness": "3/4",
-      "shape": "Quad Arch",
-      "tint": "Clear",
-      "length": 72,
-      "width": 24
-    },
-    "quantity": 9,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 2837,
-    "order_id": "e94f25d4-c7d3-4c85-9033-dead6f026c31",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "da450d2a-3d5e-4646-8941-677dd51f7f8b",
-      "name": "AG 43",
-      "thickness": "1/8",
-      "shape": "Octagon",
-      "tint": "P-516",
-      "length": 49,
-      "width": 30
-    },
-    "quantity": 164,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 4180,
-    "order_id": "e94f25d4-c7d3-4c85-9033-dead6f026c31",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "91454f2a-292a-4b6c-91bc-2b126062ab5f",
-      "name": "SN 68 HT",
-      "thickness": "3/4",
-      "shape": "Quarter Round",
-      "tint": "Low-E",
-      "length": 58,
-      "width": 2
-    },
-    "quantity": 3,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 5393,
-    "order_id": "e94f25d4-c7d3-4c85-9033-dead6f026c31",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "ea045be8-3c33-4a2d-9137-da2e180210eb",
-      "name": "SatinDeco",
+      "glass_id": "c5eb32fe-3209-43d3-a63c-f5d3c3555c8b",
+      "name": "IS20 LE-T",
       "thickness": "3/8",
-      "shape": "Clipped Corner(s)",
-      "tint": "Frosted Blue Chip",
-      "length": 87,
-      "width": 34
-    },
-    "quantity": 17,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 4898,
-    "order_id": "e94f25d4-c7d3-4c85-9033-dead6f026c31",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
-    "product_config": {
-      "glass_id": "cd774965-da25-463b-921f-441244911276",
-      "name": "AG 50 LE",
-      "thickness": "3/4",
-      "shape": "Quarter Round",
-      "tint": "Bronze",
-      "length": 96,
-      "width": 46
+      "shape": "Circle",
+      "tint": "Satin Etch",
+      "length": 19,
+      "width": 19
     },
     "quantity": 37,
     "note": "some note"
   },
   {
-    "order_item_id": 7548,
-    "order_id": "e94f25d4-c7d3-4c85-9033-dead6f026c31",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
+    "order_item_id": 8551,
+    "order_id": "1d4c42ad-5b9b-4cce-a49b-4de7b1abd9c9",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
     "product_config": {
-      "glass_id": "af9ab768-f43f-416f-8cb1-8e70979e0972",
-      "name": "Sunguard Spandrel HT",
-      "thickness": "1/8",
-      "shape": "Quarter Round",
-      "tint": "Clear",
-      "length": 70,
-      "width": 48
-    },
-    "quantity": 117,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 5107,
-    "order_id": "e94f25d4-c7d3-4c85-9033-dead6f026c31",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "91454f2a-292a-4b6c-91bc-2b126062ab5f",
-      "name": "SN 68 HT",
-      "thickness": "1/4",
-      "shape": "Clipped Corner(s)",
-      "tint": "Clear",
-      "length": 76,
-      "width": 24
-    },
-    "quantity": 2,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 463,
-    "order_id": "e94f25d4-c7d3-4c85-9033-dead6f026c31",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
-    "product_config": {
-      "glass_id": "28cb3997-daf6-464f-812d-97182ee602b3",
-      "name": "NU 40 LE",
-      "thickness": "1/8",
-      "shape": "Square/Rectangle",
-      "tint": "Satin Etch",
-      "length": 84,
-      "width": 38
-    },
-    "quantity": 9,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 3388,
-    "order_id": "e94f25d4-c7d3-4c85-9033-dead6f026c31",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "ef4a6120-93a8-450f-a7f9-6e75f27fde60",
-      "name": "MC 27 LE-A",
-      "thickness": "3/8",
-      "shape": "Quarter Round with Notch",
-      "tint": "Mistlite",
-      "length": 77,
-      "width": 25
-    },
-    "quantity": 6,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 6344,
-    "order_id": "6470ea3a-5447-4e5a-af70-1af76d3f1733",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "24c66f1f-bd90-4fc2-b3e2-7ed7cb667b00",
-      "name": "IS20 LE-T",
-      "thickness": "1/4",
-      "shape": "Octagon",
-      "tint": "Mistlite",
-      "length": 55,
-      "width": 22
-    },
-    "quantity": 9,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 3410,
-    "order_id": "6470ea3a-5447-4e5a-af70-1af76d3f1733",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
-    "product_config": {
-      "glass_id": "060bfe65-db6f-4f54-87f7-bea2ea6a249f",
-      "name": "SNE 50/25",
-      "thickness": "3/4",
-      "shape": "Square/Rectangle",
-      "tint": "Dark Gray",
-      "length": 62,
-      "width": 28
-    },
-    "quantity": 3,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 7668,
-    "order_id": "5579e6f7-167d-4cd2-923f-b73564a1b9f1",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
-    "product_config": {
-      "glass_id": "538c9855-17a0-410d-90d2-5e5e9f43c6c8",
-      "name": "SNX-L 62/34",
-      "thickness": "1/2",
-      "shape": "Parallelogram",
-      "tint": "Solex",
-      "length": 22,
-      "width": 17
-    },
-    "quantity": 4,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 2172,
-    "order_id": "5579e6f7-167d-4cd2-923f-b73564a1b9f1",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
-    "product_config": {
-      "glass_id": "060bfe65-db6f-4f54-87f7-bea2ea6a249f",
-      "name": "SNE 50/25",
-      "thickness": "1/2",
-      "shape": "Half-Circle with Notch",
-      "tint": "Frosted Blue Chip",
-      "length": 34,
-      "width": 25
-    },
-    "quantity": 47,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 6037,
-    "order_id": "5579e6f7-167d-4cd2-923f-b73564a1b9f1",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "060bfe65-db6f-4f54-87f7-bea2ea6a249f",
-      "name": "SNE 50/25",
-      "thickness": "3/4",
-      "shape": "Half-Circle with Notch",
-      "tint": "Dark Gray",
-      "length": 60,
-      "width": 20
-    },
-    "quantity": 1,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 4458,
-    "order_id": "5579e6f7-167d-4cd2-923f-b73564a1b9f1",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "91454f2a-292a-4b6c-91bc-2b126062ab5f",
-      "name": "SN 68 HT",
-      "thickness": "3/4",
-      "shape": "Triangle",
-      "tint": "Low-E",
-      "length": 34,
-      "width": 25
-    },
-    "quantity": 64,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 1551,
-    "order_id": "63474586-c719-487f-9677-330f7e8ecd56",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "060bfe65-db6f-4f54-87f7-bea2ea6a249f",
-      "name": "SNE 50/25",
-      "thickness": "1/2",
-      "shape": "Quarter Round with Notch",
-      "tint": "P-516",
-      "length": 44,
-      "width": 7
-    },
-    "quantity": 46,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 6743,
-    "order_id": "63474586-c719-487f-9677-330f7e8ecd56",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
-    "product_config": {
-      "glass_id": "90410c20-66fd-44a0-8009-3d5b8afc631a",
-      "name": "MC 68 LE-T",
-      "thickness": "1/2",
-      "shape": "Quarter Round with Notch",
-      "tint": "Frosted Blue Chip",
-      "length": 16,
-      "width": 5
-    },
-    "quantity": 4,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 2741,
-    "order_id": "63474586-c719-487f-9677-330f7e8ecd56",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "060bfe65-db6f-4f54-87f7-bea2ea6a249f",
-      "name": "SNE 50/25",
-      "thickness": "3/8",
-      "shape": "Quarter Round",
-      "tint": "P-516",
-      "length": 68,
-      "width": 33
-    },
-    "quantity": 167,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 2774,
-    "order_id": "63474586-c719-487f-9677-330f7e8ecd56",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "060bfe65-db6f-4f54-87f7-bea2ea6a249f",
-      "name": "SNE 50/25",
-      "thickness": "1/8",
-      "shape": "Square/Rectangle",
-      "tint": "Low-E",
-      "length": 95,
-      "width": 40
-    },
-    "quantity": 22,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 1542,
-    "order_id": "63474586-c719-487f-9677-330f7e8ecd56",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
-    "product_config": {
-      "glass_id": "d0340245-d1b1-474d-b05b-1e330b5601d2",
-      "name": "SNR 35 HT",
-      "thickness": "1/8",
-      "shape": "Arch-Top",
-      "tint": "Bronze",
-      "length": 82,
-      "width": 45
-    },
-    "quantity": 5,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 7302,
-    "order_id": "63474586-c719-487f-9677-330f7e8ecd56",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
-    "product_config": {
-      "glass_id": "ea045be8-3c33-4a2d-9137-da2e180210eb",
-      "name": "SatinDeco",
-      "thickness": "3/4",
-      "shape": "Quarter Round",
-      "tint": "Bronze",
-      "length": 39,
-      "width": 25
-    },
-    "quantity": 2,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 5928,
-    "order_id": "63474586-c719-487f-9677-330f7e8ecd56",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
-    "product_config": {
-      "glass_id": "af9ab768-f43f-416f-8cb1-8e70979e0972",
-      "name": "Sunguard Spandrel HT",
-      "thickness": "1/4",
-      "shape": "Half-Circle",
-      "tint": "Bronze",
-      "length": 53,
-      "width": 34
-    },
-    "quantity": 4,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 6756,
-    "order_id": "63474586-c719-487f-9677-330f7e8ecd56",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
-    "product_config": {
-      "glass_id": "ea045be8-3c33-4a2d-9137-da2e180210eb",
-      "name": "SatinDeco",
-      "thickness": "3/4",
-      "shape": "Quarter Round",
-      "tint": "Ultra Clear",
-      "length": 83,
-      "width": 24
-    },
-    "quantity": 8,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 6634,
-    "order_id": "194460ac-4ff9-4965-8482-7742dc468f86",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
-    "product_config": {
-      "glass_id": "538c9855-17a0-410d-90d2-5e5e9f43c6c8",
-      "name": "SNX-L 62/34",
-      "thickness": "1/8",
-      "shape": "Arch-Top",
-      "tint": "P-516",
-      "length": 91,
-      "width": 31
-    },
-    "quantity": 90,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 2792,
-    "order_id": "194460ac-4ff9-4965-8482-7742dc468f86",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
-    "product_config": {
-      "glass_id": "af9ab768-f43f-416f-8cb1-8e70979e0972",
-      "name": "Sunguard Spandrel HT",
-      "thickness": "1/4",
-      "shape": "Half-Circle with Notch",
-      "tint": "Clear",
-      "length": 49,
-      "width": 46
-    },
-    "quantity": 52,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 7277,
-    "order_id": "194460ac-4ff9-4965-8482-7742dc468f86",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
-    "product_config": {
-      "glass_id": "ea045be8-3c33-4a2d-9137-da2e180210eb",
-      "name": "SatinDeco",
-      "thickness": "3/4",
-      "shape": "Quarter Round with Notch",
-      "tint": "Frosted Green Chip",
-      "length": 54,
-      "width": 24
-    },
-    "quantity": 11,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 402,
-    "order_id": "194460ac-4ff9-4965-8482-7742dc468f86",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "46247eed-86b1-4ea7-bddf-4c8a7c89565a",
-      "name": "MC 68 LE-A",
-      "thickness": "3/4",
-      "shape": "Square/Rectangle",
-      "tint": "Frosted Blue Chip",
-      "length": 37,
-      "width": 30
-    },
-    "quantity": 144,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 4796,
-    "order_id": "43a28c05-9239-4756-a51e-d351d31aab0f",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "538c9855-17a0-410d-90d2-5e5e9f43c6c8",
-      "name": "SNX-L 62/34",
-      "thickness": "3/4",
-      "shape": "Pentagon",
-      "tint": "Frosted Green Chip",
-      "length": 74,
-      "width": 47
-    },
-    "quantity": 2,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 2914,
-    "order_id": "43a28c05-9239-4756-a51e-d351d31aab0f",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "cd774965-da25-463b-921f-441244911276",
-      "name": "AG 50 LE",
-      "thickness": "3/8",
-      "shape": "Arch Top & Bottom",
-      "tint": "Frosted Green Chip",
-      "length": 62,
-      "width": 36
-    },
-    "quantity": 30,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 9136,
-    "order_id": "43a28c05-9239-4756-a51e-d351d31aab0f",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "46247eed-86b1-4ea7-bddf-4c8a7c89565a",
-      "name": "MC 68 LE-A",
-      "thickness": "1/2",
-      "shape": "Arch-Top",
-      "tint": "Dark Gray",
-      "length": 42,
-      "width": 20
-    },
-    "quantity": 2,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 3787,
-    "order_id": "43a28c05-9239-4756-a51e-d351d31aab0f",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "cd774965-da25-463b-921f-441244911276",
-      "name": "AG 50 LE",
-      "thickness": "1/4",
-      "shape": "Trapezoid",
-      "tint": "Satin Etch",
-      "length": 45,
-      "width": 36
-    },
-    "quantity": 4,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 7060,
-    "order_id": "4dd34530-652b-4fb3-96d6-8e0c04d2cdec",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "d0340245-d1b1-474d-b05b-1e330b5601d2",
-      "name": "SNR 35 HT",
-      "thickness": "1/2",
-      "shape": "Quad Arch",
-      "tint": "Bronze",
-      "length": 85,
-      "width": 2
-    },
-    "quantity": 16,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 7339,
-    "order_id": "4dd34530-652b-4fb3-96d6-8e0c04d2cdec",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "90410c20-66fd-44a0-8009-3d5b8afc631a",
-      "name": "MC 68 LE-T",
-      "thickness": "1/4",
-      "shape": "Half-Circle",
-      "tint": "Light Gray",
-      "length": 62,
-      "width": 34
-    },
-    "quantity": 38,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 5024,
-    "order_id": "ad6c1c98-5bd6-41ec-8164-406c2cde6fce",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "24c66f1f-bd90-4fc2-b3e2-7ed7cb667b00",
-      "name": "IS20 LE-T",
-      "thickness": "3/4",
-      "shape": "Half-Circle",
-      "tint": "Ultra Clear",
-      "length": 74,
-      "width": 24
-    },
-    "quantity": 210,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 9952,
-    "order_id": "ad6c1c98-5bd6-41ec-8164-406c2cde6fce",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "cd774965-da25-463b-921f-441244911276",
-      "name": "AG 50 LE",
-      "thickness": "1/4",
-      "shape": "Clipped Corner(s)",
-      "tint": "Mistlite",
-      "length": 65,
-      "width": 5
-    },
-    "quantity": 54,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 3864,
-    "order_id": "ad6c1c98-5bd6-41ec-8164-406c2cde6fce",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "af9ab768-f43f-416f-8cb1-8e70979e0972",
-      "name": "Sunguard Spandrel HT",
-      "thickness": "3/4",
-      "shape": "Pentagon",
-      "tint": "Ultra Clear",
-      "length": 89,
-      "width": 33
-    },
-    "quantity": 6,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 6985,
-    "order_id": "ad6c1c98-5bd6-41ec-8164-406c2cde6fce",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
-    "product_config": {
-      "glass_id": "060bfe65-db6f-4f54-87f7-bea2ea6a249f",
-      "name": "SNE 50/25",
-      "thickness": "1/2",
-      "shape": "Quarter Round",
-      "tint": "Low-E",
-      "length": 90,
-      "width": 14
-    },
-    "quantity": 207,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 7802,
-    "order_id": "ad6c1c98-5bd6-41ec-8164-406c2cde6fce",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
-    "product_config": {
-      "glass_id": "da450d2a-3d5e-4646-8941-677dd51f7f8b",
+      "glass_id": "aeab03c7-9242-4c4d-a53a-ef341b9fed6f",
       "name": "AG 43",
-      "thickness": "3/8",
-      "shape": "Arch",
-      "tint": "Satin Etch",
-      "length": 42,
-      "width": 41
-    },
-    "quantity": 20,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 8157,
-    "order_id": "8fd7648c-8d76-478d-ad5d-63778cffe64c",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "d0340245-d1b1-474d-b05b-1e330b5601d2",
-      "name": "SNR 35 HT",
-      "thickness": "1/4",
+      "thickness": "3/4",
       "shape": "Arch Side",
-      "tint": "Bronze",
-      "length": 46,
-      "width": 35
-    },
-    "quantity": 1,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 7262,
-    "order_id": "32e45410-4e7b-40e2-bbce-ad08cb835a7d",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "538c9855-17a0-410d-90d2-5e5e9f43c6c8",
-      "name": "SNX-L 62/34",
-      "thickness": "1/8",
-      "shape": "Arch",
-      "tint": "Clear",
-      "length": 68,
-      "width": 30
-    },
-    "quantity": 128,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 6327,
-    "order_id": "32e45410-4e7b-40e2-bbce-ad08cb835a7d",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "cd774965-da25-463b-921f-441244911276",
-      "name": "AG 50 LE",
-      "thickness": "1/4",
-      "shape": "Arch Side",
-      "tint": "Mistlite",
-      "length": 45,
-      "width": 37
-    },
-    "quantity": 2,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 7414,
-    "order_id": "32e45410-4e7b-40e2-bbce-ad08cb835a7d",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "060bfe65-db6f-4f54-87f7-bea2ea6a249f",
-      "name": "SNE 50/25",
-      "thickness": "1/2",
-      "shape": "Square/Rectangle",
-      "tint": "Low-E",
-      "length": 77,
-      "width": 40
-    },
-    "quantity": 30,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 2816,
-    "order_id": "9e1090d4-499c-4538-ab99-79d32e508fd6",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "060bfe65-db6f-4f54-87f7-bea2ea6a249f",
-      "name": "SNE 50/25",
-      "thickness": "1/2",
-      "shape": "Quarter Round with Notch",
       "tint": "P-516",
-      "length": 56,
-      "width": 27
+      "length": 83,
+      "width": 9
     },
     "quantity": 7,
     "note": "some note"
   },
   {
-    "order_item_id": 6933,
-    "order_id": "9e1090d4-499c-4538-ab99-79d32e508fd6",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
+    "order_item_id": 9012,
+    "order_id": "1d4c42ad-5b9b-4cce-a49b-4de7b1abd9c9",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
     "product_config": {
-      "glass_id": "46247eed-86b1-4ea7-bddf-4c8a7c89565a",
-      "name": "MC 68 LE-A",
-      "thickness": "3/8",
-      "shape": "Triangle",
-      "tint": "Clear",
-      "length": 70,
-      "width": 12
+      "glass_id": "a1a67246-21b6-4ba1-9024-417369d628b0",
+      "name": "MC 68 LE-T",
+      "thickness": "3/4",
+      "shape": "Quad Arch",
+      "tint": "Frosted Green Chip",
+      "length": 38,
+      "width": 27
     },
-    "quantity": 73,
+    "quantity": 13,
     "note": "some note"
   },
   {
-    "order_item_id": 3842,
-    "order_id": "9e1090d4-499c-4538-ab99-79d32e508fd6",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
+    "order_item_id": 7052,
+    "order_id": "1d4c42ad-5b9b-4cce-a49b-4de7b1abd9c9",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
     "product_config": {
-      "glass_id": "ea045be8-3c33-4a2d-9137-da2e180210eb",
+      "glass_id": "c5eb32fe-3209-43d3-a63c-f5d3c3555c8b",
+      "name": "IS20 LE-T",
+      "thickness": "1/2",
+      "shape": "Arch",
+      "tint": "Satin Etch",
+      "length": 26,
+      "width": 18
+    },
+    "quantity": 27,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 2482,
+    "order_id": "1d4c42ad-5b9b-4cce-a49b-4de7b1abd9c9",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "ec5ffa0f-39d8-4d03-94dd-95b190a8c2f5",
+      "name": "AG 50 LE",
+      "thickness": "1/4",
+      "shape": "Square/Rectangle",
+      "tint": "Bronze",
+      "length": 25,
+      "width": 14
+    },
+    "quantity": 11,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 6960,
+    "order_id": "1d4c42ad-5b9b-4cce-a49b-4de7b1abd9c9",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "c908d94a-e129-4912-b3dd-29d7073c042d",
+      "name": "Sunguard Spandrel HT",
+      "thickness": "1/2",
+      "shape": "Circle",
+      "tint": "Midnight Gray",
+      "length": 28,
+      "width": 8
+    },
+    "quantity": 67,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 70,
+    "order_id": "1d4c42ad-5b9b-4cce-a49b-4de7b1abd9c9",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "004c4786-d558-43e7-82be-795f60182ef7",
+      "name": "SNE 50/25",
+      "thickness": "3/4",
+      "shape": "Parallelogram",
+      "tint": "Light Gray",
+      "length": 35,
+      "width": 35
+    },
+    "quantity": 37,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 6987,
+    "order_id": "1d4c42ad-5b9b-4cce-a49b-4de7b1abd9c9",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "c5eb32fe-3209-43d3-a63c-f5d3c3555c8b",
+      "name": "IS20 LE-T",
+      "thickness": "1/2",
+      "shape": "Parallelogram",
+      "tint": "Satin Etch",
+      "length": 47,
+      "width": 32
+    },
+    "quantity": 10,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 4735,
+    "order_id": "416cfb2d-9efd-4e8d-b2a6-b557d9ac44c2",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "af123281-fd38-48a1-b865-f5d1c25307f8",
+      "name": "SNX-L 62/34",
+      "thickness": "1/2",
+      "shape": "Half-Circle",
+      "tint": "Solex",
+      "length": 49,
+      "width": 31
+    },
+    "quantity": 10,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 7637,
+    "order_id": "416cfb2d-9efd-4e8d-b2a6-b557d9ac44c2",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "1da5b2a3-6a53-49de-bbce-4521ef09cd5c",
+      "name": "SatinDeco",
+      "thickness": "1/2",
+      "shape": "Clipped Corner(s)",
+      "tint": "Ultra Clear",
+      "length": 79,
+      "width": 26
+    },
+    "quantity": 29,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 274,
+    "order_id": "416cfb2d-9efd-4e8d-b2a6-b557d9ac44c2",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "a1a67246-21b6-4ba1-9024-417369d628b0",
+      "name": "MC 68 LE-T",
+      "thickness": "1/2",
+      "shape": "Quad Arch",
+      "tint": "Bronze",
+      "length": 9,
+      "width": 7
+    },
+    "quantity": 45,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 3843,
+    "order_id": "416cfb2d-9efd-4e8d-b2a6-b557d9ac44c2",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "af123281-fd38-48a1-b865-f5d1c25307f8",
+      "name": "SNX-L 62/34",
+      "thickness": "1/4",
+      "shape": "Clipped Corner(s)",
+      "tint": "Bronze",
+      "length": 65,
+      "width": 48
+    },
+    "quantity": 3,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 5290,
+    "order_id": "416cfb2d-9efd-4e8d-b2a6-b557d9ac44c2",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "1da5b2a3-6a53-49de-bbce-4521ef09cd5c",
+      "name": "SatinDeco",
+      "thickness": "1/4",
+      "shape": "Pentagon",
+      "tint": "Ultra Clear",
+      "length": 74,
+      "width": 8
+    },
+    "quantity": 6,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 8823,
+    "order_id": "416cfb2d-9efd-4e8d-b2a6-b557d9ac44c2",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "c908d94a-e129-4912-b3dd-29d7073c042d",
+      "name": "Sunguard Spandrel HT",
+      "thickness": "3/8",
+      "shape": "Circle",
+      "tint": "Bronze",
+      "length": 42,
+      "width": 14
+    },
+    "quantity": 15,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 5561,
+    "order_id": "ac2a8dfb-753e-44f9-8661-8616d1e6d10a",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "ec5ffa0f-39d8-4d03-94dd-95b190a8c2f5",
+      "name": "AG 50 LE",
+      "thickness": "1/4",
+      "shape": "Pentagon",
+      "tint": "Satin Etch",
+      "length": 17,
+      "width": 7
+    },
+    "quantity": 75,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 8090,
+    "order_id": "ac2a8dfb-753e-44f9-8661-8616d1e6d10a",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "1da5b2a3-6a53-49de-bbce-4521ef09cd5c",
+      "name": "SatinDeco",
+      "thickness": "3/8",
+      "shape": "Pentagon",
+      "tint": "Satin Etch",
+      "length": 51,
+      "width": 11
+    },
+    "quantity": 19,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 6785,
+    "order_id": "ec994a50-652d-41eb-9937-48159ecfc778",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "af123281-fd38-48a1-b865-f5d1c25307f8",
+      "name": "SNX-L 62/34",
+      "thickness": "3/4",
+      "shape": "Circle",
+      "tint": "Bronze",
+      "length": 43,
+      "width": 38
+    },
+    "quantity": 184,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 4279,
+    "order_id": "ec994a50-652d-41eb-9937-48159ecfc778",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "ec5ffa0f-39d8-4d03-94dd-95b190a8c2f5",
+      "name": "AG 50 LE",
+      "thickness": "1/2",
+      "shape": "Pentagon",
+      "tint": "Frosted Green Chip",
+      "length": 63,
+      "width": 1
+    },
+    "quantity": 8,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 7168,
+    "order_id": "ec994a50-652d-41eb-9937-48159ecfc778",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "cc546439-3cef-4f13-b365-c6893c05fc82",
+      "name": "SNR 35 HT",
+      "thickness": "3/8",
+      "shape": "Ellipse",
+      "tint": "Clear",
+      "length": 74,
+      "width": 20
+    },
+    "quantity": 8,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 9176,
+    "order_id": "ec994a50-652d-41eb-9937-48159ecfc778",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "aeab03c7-9242-4c4d-a53a-ef341b9fed6f",
+      "name": "AG 43",
+      "thickness": "3/4",
+      "shape": "Quarter Round with Notch",
+      "tint": "Frosted Blue Chip",
+      "length": 31,
+      "width": 11
+    },
+    "quantity": 26,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 6621,
+    "order_id": "ec994a50-652d-41eb-9937-48159ecfc778",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "aeab03c7-9242-4c4d-a53a-ef341b9fed6f",
+      "name": "AG 43",
+      "thickness": "1/2",
+      "shape": "Quarter Round",
+      "tint": "Solex",
+      "length": 67,
+      "width": 42
+    },
+    "quantity": 55,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 4004,
+    "order_id": "ec994a50-652d-41eb-9937-48159ecfc778",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "c908d94a-e129-4912-b3dd-29d7073c042d",
+      "name": "Sunguard Spandrel HT",
+      "thickness": "3/8",
+      "shape": "Half-Circle with Notch",
+      "tint": "Mistlite",
+      "length": 93,
+      "width": 4
+    },
+    "quantity": 6,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 6209,
+    "order_id": "ec994a50-652d-41eb-9937-48159ecfc778",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "c5eb32fe-3209-43d3-a63c-f5d3c3555c8b",
+      "name": "IS20 LE-T",
+      "thickness": "1/2",
+      "shape": "Triangle",
+      "tint": "Mistlite",
+      "length": 58,
+      "width": 44
+    },
+    "quantity": 6,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 7754,
+    "order_id": "ec994a50-652d-41eb-9937-48159ecfc778",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "1da5b2a3-6a53-49de-bbce-4521ef09cd5c",
       "name": "SatinDeco",
       "thickness": "1/8",
-      "shape": "Square/Rectangle",
+      "shape": "Rounded Corner(s)",
+      "tint": "Satin Etch",
+      "length": 53,
+      "width": 40
+    },
+    "quantity": 31,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 6707,
+    "order_id": "ec994a50-652d-41eb-9937-48159ecfc778",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "aeab03c7-9242-4c4d-a53a-ef341b9fed6f",
+      "name": "AG 43",
+      "thickness": "3/4",
+      "shape": "Clipped Corner(s)",
+      "tint": "Clear",
+      "length": 73,
+      "width": 46
+    },
+    "quantity": 57,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 3960,
+    "order_id": "a9dbe7b0-65fe-46ee-84e0-aa20c86cc72c",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "f1e58ff5-48fc-40f5-971d-10c8ad04ab6f",
+      "name": "SN 68 HT",
+      "thickness": "1/4",
+      "shape": "Rounded Corner(s)",
+      "tint": "Dark Gray",
+      "length": 93,
+      "width": 6
+    },
+    "quantity": 81,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 4152,
+    "order_id": "a9dbe7b0-65fe-46ee-84e0-aa20c86cc72c",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "af123281-fd38-48a1-b865-f5d1c25307f8",
+      "name": "SNX-L 62/34",
+      "thickness": "1/2",
+      "shape": "Single Slope Rectangle",
       "tint": "P-516",
-      "length": 39,
+      "length": 28,
+      "width": 7
+    },
+    "quantity": 38,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 8119,
+    "order_id": "a9dbe7b0-65fe-46ee-84e0-aa20c86cc72c",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "f1e58ff5-48fc-40f5-971d-10c8ad04ab6f",
+      "name": "SN 68 HT",
+      "thickness": "1/4",
+      "shape": "Parallelogram",
+      "tint": "Clear",
+      "length": 72,
+      "width": 29
+    },
+    "quantity": 4,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 822,
+    "order_id": "a9dbe7b0-65fe-46ee-84e0-aa20c86cc72c",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "c908d94a-e129-4912-b3dd-29d7073c042d",
+      "name": "Sunguard Spandrel HT",
+      "thickness": "3/4",
+      "shape": "Triangle",
+      "tint": "Mistlite",
+      "length": 44,
+      "width": 25
+    },
+    "quantity": 6,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 6199,
+    "order_id": "a9dbe7b0-65fe-46ee-84e0-aa20c86cc72c",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "d49c19b3-cf1a-4ad6-8ba4-bf127ce1de6f",
+      "name": "MC 27 LE-A",
+      "thickness": "1/8",
+      "shape": "Ellipse",
+      "tint": "Bronze",
+      "length": 52,
+      "width": 41
+    },
+    "quantity": 173,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 3221,
+    "order_id": "a9dbe7b0-65fe-46ee-84e0-aa20c86cc72c",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "af123281-fd38-48a1-b865-f5d1c25307f8",
+      "name": "SNX-L 62/34",
+      "thickness": "1/8",
+      "shape": "Half-Circle with Notch",
+      "tint": "Mistlite",
+      "length": 73,
+      "width": 47
+    },
+    "quantity": 155,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 2515,
+    "order_id": "a9dbe7b0-65fe-46ee-84e0-aa20c86cc72c",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "f1e58ff5-48fc-40f5-971d-10c8ad04ab6f",
+      "name": "SN 68 HT",
+      "thickness": "1/8",
+      "shape": "Racetrack Oval",
+      "tint": "Low-E",
+      "length": 42,
+      "width": 30
+    },
+    "quantity": 36,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 4801,
+    "order_id": "a9dbe7b0-65fe-46ee-84e0-aa20c86cc72c",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "c112847c-f8ab-4e7b-a397-6a44ef7529f7",
+      "name": "NU 40 LE",
+      "thickness": "1/4",
+      "shape": "Single Slope Rectangle",
+      "tint": "P-516",
+      "length": 93,
+      "width": 23
+    },
+    "quantity": 79,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 194,
+    "order_id": "f9afab39-cec8-4a28-8c4a-2827c3c6748b",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "c5eb32fe-3209-43d3-a63c-f5d3c3555c8b",
+      "name": "IS20 LE-T",
+      "thickness": "1/8",
+      "shape": "Half-Circle",
+      "tint": "Mistlite",
+      "length": 8,
+      "width": 7
+    },
+    "quantity": 33,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 4454,
+    "order_id": "f9afab39-cec8-4a28-8c4a-2827c3c6748b",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "c908d94a-e129-4912-b3dd-29d7073c042d",
+      "name": "Sunguard Spandrel HT",
+      "thickness": "1/4",
+      "shape": "Trapezoid",
+      "tint": "Ultra Clear",
+      "length": 54,
+      "width": 10
+    },
+    "quantity": 54,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 2064,
+    "order_id": "f9afab39-cec8-4a28-8c4a-2827c3c6748b",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "c908d94a-e129-4912-b3dd-29d7073c042d",
+      "name": "Sunguard Spandrel HT",
+      "thickness": "3/8",
+      "shape": "Pentagon",
+      "tint": "P-516",
+      "length": 68,
+      "width": 36
+    },
+    "quantity": 7,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 6967,
+    "order_id": "f9afab39-cec8-4a28-8c4a-2827c3c6748b",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "ec5ffa0f-39d8-4d03-94dd-95b190a8c2f5",
+      "name": "AG 50 LE",
+      "thickness": "1/4",
+      "shape": "Clipped Corner(s)",
+      "tint": "Ultra Clear",
+      "length": 34,
+      "width": 15
+    },
+    "quantity": 47,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 5053,
+    "order_id": "f9afab39-cec8-4a28-8c4a-2827c3c6748b",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "1da5b2a3-6a53-49de-bbce-4521ef09cd5c",
+      "name": "SatinDeco",
+      "thickness": "1/4",
+      "shape": "Right Triangle",
+      "tint": "Frosted Green Chip",
+      "length": 92,
+      "width": 19
+    },
+    "quantity": 60,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 316,
+    "order_id": "f9afab39-cec8-4a28-8c4a-2827c3c6748b",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "aeab03c7-9242-4c4d-a53a-ef341b9fed6f",
+      "name": "AG 43",
+      "thickness": "3/8",
+      "shape": "Square/Rectangle",
+      "tint": "Bronze",
+      "length": 57,
+      "width": 47
+    },
+    "quantity": 59,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 8345,
+    "order_id": "f9afab39-cec8-4a28-8c4a-2827c3c6748b",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "1da5b2a3-6a53-49de-bbce-4521ef09cd5c",
+      "name": "SatinDeco",
+      "thickness": "1/2",
+      "shape": "House",
+      "tint": "Midnight Gray",
+      "length": 40,
+      "width": 9
+    },
+    "quantity": 1,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 653,
+    "order_id": "f9afab39-cec8-4a28-8c4a-2827c3c6748b",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "1da5b2a3-6a53-49de-bbce-4521ef09cd5c",
+      "name": "SatinDeco",
+      "thickness": "1/8",
+      "shape": "Arch Side",
+      "tint": "Midnight Gray",
+      "length": 91,
+      "width": 9
+    },
+    "quantity": 37,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 1761,
+    "order_id": "533587c4-738a-4ed1-a80e-c542298cc2d9",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "c5eb32fe-3209-43d3-a63c-f5d3c3555c8b",
+      "name": "IS20 LE-T",
+      "thickness": "3/8",
+      "shape": "Parallelogram",
+      "tint": "Satin Etch",
+      "length": 87,
+      "width": 33
+    },
+    "quantity": 5,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 359,
+    "order_id": "533587c4-738a-4ed1-a80e-c542298cc2d9",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "004c4786-d558-43e7-82be-795f60182ef7",
+      "name": "SNE 50/25",
+      "thickness": "1/4",
+      "shape": "Right Triangle",
+      "tint": "Dark Gray",
+      "length": 59,
+      "width": 35
+    },
+    "quantity": 3,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 9995,
+    "order_id": "533587c4-738a-4ed1-a80e-c542298cc2d9",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "c112847c-f8ab-4e7b-a397-6a44ef7529f7",
+      "name": "NU 40 LE",
+      "thickness": "1/8",
+      "shape": "Square/Rectangle",
+      "tint": "Bronze",
+      "length": 84,
+      "width": 41
+    },
+    "quantity": 38,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 2096,
+    "order_id": "533587c4-738a-4ed1-a80e-c542298cc2d9",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "c112847c-f8ab-4e7b-a397-6a44ef7529f7",
+      "name": "NU 40 LE",
+      "thickness": "3/4",
+      "shape": "House",
+      "tint": "Low-E",
+      "length": 85,
+      "width": 33
+    },
+    "quantity": 51,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 5911,
+    "order_id": "533587c4-738a-4ed1-a80e-c542298cc2d9",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "af123281-fd38-48a1-b865-f5d1c25307f8",
+      "name": "SNX-L 62/34",
+      "thickness": "3/4",
+      "shape": "Arch Top & Bottom",
+      "tint": "Midnight Gray",
+      "length": 22,
+      "width": 16
+    },
+    "quantity": 53,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 5480,
+    "order_id": "5e1ce953-bb61-4d96-96ad-fb5f4a739ba5",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "cc546439-3cef-4f13-b365-c6893c05fc82",
+      "name": "SNR 35 HT",
+      "thickness": "1/4",
+      "shape": "Half-Circle with Notch",
+      "tint": "P-516",
+      "length": 55,
+      "width": 46
+    },
+    "quantity": 35,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 868,
+    "order_id": "5e1ce953-bb61-4d96-96ad-fb5f4a739ba5",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "c908d94a-e129-4912-b3dd-29d7073c042d",
+      "name": "Sunguard Spandrel HT",
+      "thickness": "1/4",
+      "shape": "Triangle",
+      "tint": "Ultra Clear",
+      "length": 75,
+      "width": 4
+    },
+    "quantity": 97,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 1156,
+    "order_id": "5e1ce953-bb61-4d96-96ad-fb5f4a739ba5",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "82a54c94-9681-4ebe-9cd8-81cfa03056e1",
+      "name": "SN 68",
+      "thickness": "3/8",
+      "shape": "Clipped Corner(s)",
+      "tint": "Solex",
+      "length": 58,
+      "width": 24
+    },
+    "quantity": 3,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 7018,
+    "order_id": "60a089e7-ccb2-4d76-b51f-bb2403419291",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "d1561e8c-3e9b-4e29-94d2-56bbdced64f7",
+      "name": "MC 68 LE-A",
+      "thickness": "3/4",
+      "shape": "Ellipse",
+      "tint": "Frosted Green Chip",
+      "length": 51,
+      "width": 48
+    },
+    "quantity": 9,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 8737,
+    "order_id": "60a089e7-ccb2-4d76-b51f-bb2403419291",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "ec5ffa0f-39d8-4d03-94dd-95b190a8c2f5",
+      "name": "AG 50 LE",
+      "thickness": "1/2",
+      "shape": "Arch",
+      "tint": "Clear",
+      "length": 49,
+      "width": 48
+    },
+    "quantity": 52,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 7210,
+    "order_id": "60a089e7-ccb2-4d76-b51f-bb2403419291",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "aeab03c7-9242-4c4d-a53a-ef341b9fed6f",
+      "name": "AG 43",
+      "thickness": "1/4",
+      "shape": "Half-Circle",
+      "tint": "Solex",
+      "length": 28,
+      "width": 28
+    },
+    "quantity": 47,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 8561,
+    "order_id": "60a089e7-ccb2-4d76-b51f-bb2403419291",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "1da5b2a3-6a53-49de-bbce-4521ef09cd5c",
+      "name": "SatinDeco",
+      "thickness": "3/8",
+      "shape": "Racetrack Oval",
+      "tint": "Ultra Clear",
+      "length": 17,
+      "width": 16
+    },
+    "quantity": 155,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 9489,
+    "order_id": "60a089e7-ccb2-4d76-b51f-bb2403419291",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "1da5b2a3-6a53-49de-bbce-4521ef09cd5c",
+      "name": "SatinDeco",
+      "thickness": "1/8",
+      "shape": "Pentagon",
+      "tint": "Midnight Gray",
+      "length": 55,
+      "width": 26
+    },
+    "quantity": 1,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 4330,
+    "order_id": "60a089e7-ccb2-4d76-b51f-bb2403419291",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "004c4786-d558-43e7-82be-795f60182ef7",
+      "name": "SNE 50/25",
+      "thickness": "1/8",
+      "shape": "Square/Rectangle",
+      "tint": "Frosted Green Chip",
+      "length": 35,
+      "width": 1
+    },
+    "quantity": 25,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 1420,
+    "order_id": "60a089e7-ccb2-4d76-b51f-bb2403419291",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "cc546439-3cef-4f13-b365-c6893c05fc82",
+      "name": "SNR 35 HT",
+      "thickness": "1/8",
+      "shape": "Quad Arch",
+      "tint": "Low-E",
+      "length": 53,
+      "width": 1
+    },
+    "quantity": 5,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 573,
+    "order_id": "b0c773f4-ce6d-4cd4-b532-ccc44c68701f",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "ec5ffa0f-39d8-4d03-94dd-95b190a8c2f5",
+      "name": "AG 50 LE",
+      "thickness": "3/8",
+      "shape": "Arch",
+      "tint": "Frosted Green Chip",
+      "length": 62,
+      "width": 40
+    },
+    "quantity": 7,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 8328,
+    "order_id": "b0c773f4-ce6d-4cd4-b532-ccc44c68701f",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "c5eb32fe-3209-43d3-a63c-f5d3c3555c8b",
+      "name": "IS20 LE-T",
+      "thickness": "3/8",
+      "shape": "Half-Circle with Notch",
+      "tint": "Clear",
+      "length": 23,
+      "width": 19
+    },
+    "quantity": 53,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 5898,
+    "order_id": "b0c773f4-ce6d-4cd4-b532-ccc44c68701f",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "c908d94a-e129-4912-b3dd-29d7073c042d",
+      "name": "Sunguard Spandrel HT",
+      "thickness": "1/4",
+      "shape": "House",
+      "tint": "Bronze",
+      "length": 25,
+      "width": 16
+    },
+    "quantity": 76,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 5685,
+    "order_id": "b0c773f4-ce6d-4cd4-b532-ccc44c68701f",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "f1e58ff5-48fc-40f5-971d-10c8ad04ab6f",
+      "name": "SN 68 HT",
+      "thickness": "3/4",
+      "shape": "Rounded Corner(s)",
+      "tint": "Dark Gray",
+      "length": 75,
+      "width": 6
+    },
+    "quantity": 28,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 3888,
+    "order_id": "b0c773f4-ce6d-4cd4-b532-ccc44c68701f",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "c5eb32fe-3209-43d3-a63c-f5d3c3555c8b",
+      "name": "IS20 LE-T",
+      "thickness": "1/2",
+      "shape": "Hexagon",
+      "tint": "Clear",
+      "length": 53,
+      "width": 34
+    },
+    "quantity": 10,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 8711,
+    "order_id": "b0c773f4-ce6d-4cd4-b532-ccc44c68701f",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "a1a67246-21b6-4ba1-9024-417369d628b0",
+      "name": "MC 68 LE-T",
+      "thickness": "1/8",
+      "shape": "Half-Circle",
+      "tint": "Mistlite",
+      "length": 72,
+      "width": 6
+    },
+    "quantity": 152,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 7807,
+    "order_id": "b0c773f4-ce6d-4cd4-b532-ccc44c68701f",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "004c4786-d558-43e7-82be-795f60182ef7",
+      "name": "SNE 50/25",
+      "thickness": "1/4",
+      "shape": "Right Triangle",
+      "tint": "Dark Gray",
+      "length": 67,
+      "width": 41
+    },
+    "quantity": 163,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 7308,
+    "order_id": "b0c773f4-ce6d-4cd4-b532-ccc44c68701f",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "c5eb32fe-3209-43d3-a63c-f5d3c3555c8b",
+      "name": "IS20 LE-T",
+      "thickness": "1/4",
+      "shape": "Parallelogram",
+      "tint": "Satin Etch",
+      "length": 78,
       "width": 25
     },
     "quantity": 4,
     "note": "some note"
   },
   {
-    "order_item_id": 8876,
-    "order_id": "9e1090d4-499c-4538-ab99-79d32e508fd6",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
+    "order_item_id": 3687,
+    "order_id": "b0c773f4-ce6d-4cd4-b532-ccc44c68701f",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
     "product_config": {
-      "glass_id": "28cb3997-daf6-464f-812d-97182ee602b3",
-      "name": "NU 40 LE",
-      "thickness": "1/4",
-      "shape": "Arch-Top",
-      "tint": "Ultra Clear",
-      "length": 96,
-      "width": 13
-    },
-    "quantity": 6,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 1209,
-    "order_id": "9e1090d4-499c-4538-ab99-79d32e508fd6",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "cd774965-da25-463b-921f-441244911276",
-      "name": "AG 50 LE",
-      "thickness": "1/8",
-      "shape": "Octagon",
-      "tint": "Frosted Green Chip",
-      "length": 74,
-      "width": 47
-    },
-    "quantity": 152,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 2412,
-    "order_id": "9e1090d4-499c-4538-ab99-79d32e508fd6",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "538c9855-17a0-410d-90d2-5e5e9f43c6c8",
-      "name": "SNX-L 62/34",
-      "thickness": "1/2",
-      "shape": "Half-Circle with Notch",
-      "tint": "Solex",
-      "length": 79,
-      "width": 47
-    },
-    "quantity": 6,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 2143,
-    "order_id": "d461ebb4-e7ef-43a5-8419-d2ac2da06e20",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "d0340245-d1b1-474d-b05b-1e330b5601d2",
-      "name": "SNR 35 HT",
+      "glass_id": "1da5b2a3-6a53-49de-bbce-4521ef09cd5c",
+      "name": "SatinDeco",
       "thickness": "3/8",
+      "shape": "Racetrack Oval",
+      "tint": "Frosted Blue Chip",
+      "length": 38,
+      "width": 32
+    },
+    "quantity": 112,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 4563,
+    "order_id": "24ae64f0-d9ff-419f-afd3-3cd1cdcc86ec",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "f1e58ff5-48fc-40f5-971d-10c8ad04ab6f",
+      "name": "SN 68 HT",
+      "thickness": "3/8",
+      "shape": "Quad Arch",
+      "tint": "Light Gray",
+      "length": 70,
+      "width": 48
+    },
+    "quantity": 71,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 3006,
+    "order_id": "24ae64f0-d9ff-419f-afd3-3cd1cdcc86ec",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "aeab03c7-9242-4c4d-a53a-ef341b9fed6f",
+      "name": "AG 43",
+      "thickness": "3/4",
       "shape": "Arch Side",
-      "tint": "Bronze",
-      "length": 16,
+      "tint": "Solex",
+      "length": 31,
+      "width": 12
+    },
+    "quantity": 7,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 8013,
+    "order_id": "24ae64f0-d9ff-419f-afd3-3cd1cdcc86ec",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "1da5b2a3-6a53-49de-bbce-4521ef09cd5c",
+      "name": "SatinDeco",
+      "thickness": "3/8",
+      "shape": "Rounded Corner(s)",
+      "tint": "Solex",
+      "length": 51,
+      "width": 41
+    },
+    "quantity": 4,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 3506,
+    "order_id": "24ae64f0-d9ff-419f-afd3-3cd1cdcc86ec",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "c112847c-f8ab-4e7b-a397-6a44ef7529f7",
+      "name": "NU 40 LE",
+      "thickness": "1/2",
+      "shape": "Clipped Corner(s)",
+      "tint": "Low-E",
+      "length": 11,
       "width": 6
     },
+    "quantity": 4,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 8513,
+    "order_id": "24ae64f0-d9ff-419f-afd3-3cd1cdcc86ec",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "c5eb32fe-3209-43d3-a63c-f5d3c3555c8b",
+      "name": "IS20 LE-T",
+      "thickness": "1/2",
+      "shape": "Parallelogram",
+      "tint": "Clear",
+      "length": 79,
+      "width": 12
+    },
+    "quantity": 49,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 2909,
+    "order_id": "24ae64f0-d9ff-419f-afd3-3cd1cdcc86ec",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "1da5b2a3-6a53-49de-bbce-4521ef09cd5c",
+      "name": "SatinDeco",
+      "thickness": "3/8",
+      "shape": "Arch Side",
+      "tint": "Clear",
+      "length": 20,
+      "width": 17
+    },
+    "quantity": 96,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 9791,
+    "order_id": "24ae64f0-d9ff-419f-afd3-3cd1cdcc86ec",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "d49c19b3-cf1a-4ad6-8ba4-bf127ce1de6f",
+      "name": "MC 27 LE-A",
+      "thickness": "3/8",
+      "shape": "Ellipse",
+      "tint": "Frosted Green Chip",
+      "length": 52,
+      "width": 17
+    },
+    "quantity": 23,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 703,
+    "order_id": "24ae64f0-d9ff-419f-afd3-3cd1cdcc86ec",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "c112847c-f8ab-4e7b-a397-6a44ef7529f7",
+      "name": "NU 40 LE",
+      "thickness": "1/4",
+      "shape": "Arch Side",
+      "tint": "Low-E",
+      "length": 92,
+      "width": 44
+    },
+    "quantity": 10,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 9062,
+    "order_id": "cfb25a33-e513-40b0-b701-c04469f3c772",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "82a54c94-9681-4ebe-9cd8-81cfa03056e1",
+      "name": "SN 68",
+      "thickness": "3/8",
+      "shape": "Pentagon",
+      "tint": "Bronze",
+      "length": 53,
+      "width": 4
+    },
     "quantity": 6,
     "note": "some note"
   },
   {
-    "order_item_id": 1041,
-    "order_id": "d461ebb4-e7ef-43a5-8419-d2ac2da06e20",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
+    "order_item_id": 460,
+    "order_id": "cfb25a33-e513-40b0-b701-c04469f3c772",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
     "product_config": {
-      "glass_id": "d0340245-d1b1-474d-b05b-1e330b5601d2",
-      "name": "SNR 35 HT",
-      "thickness": "1/8",
-      "shape": "Pentagon",
-      "tint": "P-516",
-      "length": 44,
-      "width": 11
+      "glass_id": "d49c19b3-cf1a-4ad6-8ba4-bf127ce1de6f",
+      "name": "MC 27 LE-A",
+      "thickness": "1/4",
+      "shape": "Arch Side",
+      "tint": "Bronze",
+      "length": 54,
+      "width": 2
     },
-    "quantity": 20,
+    "quantity": 129,
     "note": "some note"
   },
   {
-    "order_item_id": 6152,
-    "order_id": "d461ebb4-e7ef-43a5-8419-d2ac2da06e20",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
+    "order_item_id": 3724,
+    "order_id": "cfb25a33-e513-40b0-b701-c04469f3c772",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
     "product_config": {
-      "glass_id": "91454f2a-292a-4b6c-91bc-2b126062ab5f",
-      "name": "SN 68 HT",
-      "thickness": "1/4",
-      "shape": "Pentagon",
-      "tint": "Low-E",
-      "length": 65,
+      "glass_id": "c5eb32fe-3209-43d3-a63c-f5d3c3555c8b",
+      "name": "IS20 LE-T",
+      "thickness": "1/2",
+      "shape": "Half-Circle",
+      "tint": "Mistlite",
+      "length": 59,
+      "width": 26
+    },
+    "quantity": 52,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 1004,
+    "order_id": "cfb25a33-e513-40b0-b701-c04469f3c772",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "82a54c94-9681-4ebe-9cd8-81cfa03056e1",
+      "name": "SN 68",
+      "thickness": "1/8",
+      "shape": "Single Slope Rectangle",
+      "tint": "Clear",
+      "length": 77,
+      "width": 21
+    },
+    "quantity": 23,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 8606,
+    "order_id": "cfb25a33-e513-40b0-b701-c04469f3c772",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "c908d94a-e129-4912-b3dd-29d7073c042d",
+      "name": "Sunguard Spandrel HT",
+      "thickness": "1/8",
+      "shape": "Square/Rectangle",
+      "tint": "P-516",
+      "length": 69,
+      "width": 37
+    },
+    "quantity": 61,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 5233,
+    "order_id": "346e0143-97ca-4dba-9f97-b9b25f7389f4",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "a1a67246-21b6-4ba1-9024-417369d628b0",
+      "name": "MC 68 LE-T",
+      "thickness": "3/4",
+      "shape": "Half-Circle with Notch",
+      "tint": "Clear",
+      "length": 59,
+      "width": 15
+    },
+    "quantity": 15,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 3230,
+    "order_id": "346e0143-97ca-4dba-9f97-b9b25f7389f4",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "004c4786-d558-43e7-82be-795f60182ef7",
+      "name": "SNE 50/25",
+      "thickness": "1/8",
+      "shape": "Arch Top & Bottom",
+      "tint": "Midnight Gray",
+      "length": 57,
+      "width": 48
+    },
+    "quantity": 99,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 9286,
+    "order_id": "346e0143-97ca-4dba-9f97-b9b25f7389f4",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "c908d94a-e129-4912-b3dd-29d7073c042d",
+      "name": "Sunguard Spandrel HT",
+      "thickness": "3/4",
+      "shape": "Half-Circle with Notch",
+      "tint": "Bronze",
+      "length": 16,
+      "width": 14
+    },
+    "quantity": 147,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 8289,
+    "order_id": "346e0143-97ca-4dba-9f97-b9b25f7389f4",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "004c4786-d558-43e7-82be-795f60182ef7",
+      "name": "SNE 50/25",
+      "thickness": "3/4",
+      "shape": "Trapezoid",
+      "tint": "Frosted Green Chip",
+      "length": 34,
       "width": 24
+    },
+    "quantity": 31,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 4694,
+    "order_id": "346e0143-97ca-4dba-9f97-b9b25f7389f4",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "a1a67246-21b6-4ba1-9024-417369d628b0",
+      "name": "MC 68 LE-T",
+      "thickness": "3/8",
+      "shape": "Arch Side",
+      "tint": "Mistlite",
+      "length": 42,
+      "width": 35
+    },
+    "quantity": 4,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 9807,
+    "order_id": "346e0143-97ca-4dba-9f97-b9b25f7389f4",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "82a54c94-9681-4ebe-9cd8-81cfa03056e1",
+      "name": "SN 68",
+      "thickness": "3/8",
+      "shape": "Right Triangle",
+      "tint": "Ultra Clear",
+      "length": 60,
+      "width": 13
+    },
+    "quantity": 80,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 6206,
+    "order_id": "346e0143-97ca-4dba-9f97-b9b25f7389f4",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "82a54c94-9681-4ebe-9cd8-81cfa03056e1",
+      "name": "SN 68",
+      "thickness": "1/4",
+      "shape": "Ellipse",
+      "tint": "Light Gray",
+      "length": 44,
+      "width": 27
+    },
+    "quantity": 57,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 7812,
+    "order_id": "7c033232-3a9d-4420-bb3a-658189f6aff7",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "d1561e8c-3e9b-4e29-94d2-56bbdced64f7",
+      "name": "MC 68 LE-A",
+      "thickness": "1/2",
+      "shape": "Hexagon",
+      "tint": "Midnight Gray",
+      "length": 53,
+      "width": 44
     },
     "quantity": 9,
     "note": "some note"
   },
   {
-    "order_item_id": 3293,
-    "order_id": "d461ebb4-e7ef-43a5-8419-d2ac2da06e20",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
+    "order_item_id": 1389,
+    "order_id": "7c033232-3a9d-4420-bb3a-658189f6aff7",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
     "product_config": {
-      "glass_id": "538c9855-17a0-410d-90d2-5e5e9f43c6c8",
-      "name": "SNX-L 62/34",
+      "glass_id": "004c4786-d558-43e7-82be-795f60182ef7",
+      "name": "SNE 50/25",
       "thickness": "3/8",
-      "shape": "Triangle",
-      "tint": "P-516",
-      "length": 51,
-      "width": 43
+      "shape": "Arch",
+      "tint": "Midnight Gray",
+      "length": 72,
+      "width": 30
     },
-    "quantity": 29,
+    "quantity": 6,
     "note": "some note"
   },
   {
-    "order_item_id": 2272,
-    "order_id": "d461ebb4-e7ef-43a5-8419-d2ac2da06e20",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
+    "order_item_id": 8874,
+    "order_id": "7c033232-3a9d-4420-bb3a-658189f6aff7",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
     "product_config": {
-      "glass_id": "d0340245-d1b1-474d-b05b-1e330b5601d2",
+      "glass_id": "82a54c94-9681-4ebe-9cd8-81cfa03056e1",
+      "name": "SN 68",
+      "thickness": "1/2",
+      "shape": "Circle",
+      "tint": "Ultra Clear",
+      "length": 58,
+      "width": 32
+    },
+    "quantity": 128,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 1261,
+    "order_id": "7c033232-3a9d-4420-bb3a-658189f6aff7",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "cc546439-3cef-4f13-b365-c6893c05fc82",
       "name": "SNR 35 HT",
+      "thickness": "1/2",
+      "shape": "Ellipse",
+      "tint": "Low-E",
+      "length": 35,
+      "width": 3
+    },
+    "quantity": 4,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 161,
+    "order_id": "c200732a-ce7d-4f93-ba81-c15352e7fc15",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "004c4786-d558-43e7-82be-795f60182ef7",
+      "name": "SNE 50/25",
       "thickness": "1/4",
-      "shape": "Square/Rectangle",
-      "tint": "Clear",
-      "length": 30,
-      "width": 23
+      "shape": "Circle",
+      "tint": "Midnight Gray",
+      "length": 43,
+      "width": 15
     },
     "quantity": 22,
     "note": "some note"
   },
   {
-    "order_item_id": 9848,
-    "order_id": "d461ebb4-e7ef-43a5-8419-d2ac2da06e20",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
+    "order_item_id": 9874,
+    "order_id": "c200732a-ce7d-4f93-ba81-c15352e7fc15",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
     "product_config": {
-      "glass_id": "91454f2a-292a-4b6c-91bc-2b126062ab5f",
-      "name": "SN 68 HT",
+      "glass_id": "d1561e8c-3e9b-4e29-94d2-56bbdced64f7",
+      "name": "MC 68 LE-A",
       "thickness": "3/4",
-      "shape": "Irregular/Any Other Shape",
-      "tint": "Low-E",
-      "length": 31,
-      "width": 19
+      "shape": "Ellipse",
+      "tint": "P-516",
+      "length": 40,
+      "width": 15
+    },
+    "quantity": 82,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 3299,
+    "order_id": "c200732a-ce7d-4f93-ba81-c15352e7fc15",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "aeab03c7-9242-4c4d-a53a-ef341b9fed6f",
+      "name": "AG 43",
+      "thickness": "1/8",
+      "shape": "Clipped Corner(s)",
+      "tint": "Bronze",
+      "length": 46,
+      "width": 7
+    },
+    "quantity": 10,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 9301,
+    "order_id": "c200732a-ce7d-4f93-ba81-c15352e7fc15",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "ec5ffa0f-39d8-4d03-94dd-95b190a8c2f5",
+      "name": "AG 50 LE",
+      "thickness": "3/8",
+      "shape": "Half-Circle with Notch",
+      "tint": "P-516",
+      "length": 95,
+      "width": 41
+    },
+    "quantity": 1,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 2668,
+    "order_id": "c200732a-ce7d-4f93-ba81-c15352e7fc15",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "c908d94a-e129-4912-b3dd-29d7073c042d",
+      "name": "Sunguard Spandrel HT",
+      "thickness": "1/8",
+      "shape": "Quarter Round",
+      "tint": "Ultra Clear",
+      "length": 52,
+      "width": 47
+    },
+    "quantity": 50,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 3352,
+    "order_id": "c200732a-ce7d-4f93-ba81-c15352e7fc15",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "d49c19b3-cf1a-4ad6-8ba4-bf127ce1de6f",
+      "name": "MC 27 LE-A",
+      "thickness": "1/4",
+      "shape": "Arch Side",
+      "tint": "Midnight Gray",
+      "length": 85,
+      "width": 28
+    },
+    "quantity": 40,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 1078,
+    "order_id": "c200732a-ce7d-4f93-ba81-c15352e7fc15",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "ec5ffa0f-39d8-4d03-94dd-95b190a8c2f5",
+      "name": "AG 50 LE",
+      "thickness": "1/2",
+      "shape": "Half-Circle with Notch",
+      "tint": "Satin Etch",
+      "length": 58,
+      "width": 3
+    },
+    "quantity": 46,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 5011,
+    "order_id": "c200732a-ce7d-4f93-ba81-c15352e7fc15",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "004c4786-d558-43e7-82be-795f60182ef7",
+      "name": "SNE 50/25",
+      "thickness": "3/8",
+      "shape": "Clipped Corner(s)",
+      "tint": "Dark Gray",
+      "length": 73,
+      "width": 22
+    },
+    "quantity": 14,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 3160,
+    "order_id": "c200732a-ce7d-4f93-ba81-c15352e7fc15",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "82a54c94-9681-4ebe-9cd8-81cfa03056e1",
+      "name": "SN 68",
+      "thickness": "1/8",
+      "shape": "Trapezoid",
+      "tint": "Solex",
+      "length": 81,
+      "width": 47
     },
     "quantity": 3,
     "note": "some note"
   },
   {
-    "order_item_id": 1805,
-    "order_id": "d461ebb4-e7ef-43a5-8419-d2ac2da06e20",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
+    "order_item_id": 6296,
+    "order_id": "afcbde58-f6b2-460e-b923-8658e412260c",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
     "product_config": {
-      "glass_id": "ea045be8-3c33-4a2d-9137-da2e180210eb",
-      "name": "SatinDeco",
+      "glass_id": "004c4786-d558-43e7-82be-795f60182ef7",
+      "name": "SNE 50/25",
+      "thickness": "1/2",
+      "shape": "Racetrack Oval",
+      "tint": "Frosted Green Chip",
+      "length": 94,
+      "width": 45
+    },
+    "quantity": 4,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 9708,
+    "order_id": "afcbde58-f6b2-460e-b923-8658e412260c",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "aeab03c7-9242-4c4d-a53a-ef341b9fed6f",
+      "name": "AG 43",
+      "thickness": "1/4",
+      "shape": "Racetrack Oval",
+      "tint": "Frosted Blue Chip",
+      "length": 22,
+      "width": 6
+    },
+    "quantity": 1,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 656,
+    "order_id": "afcbde58-f6b2-460e-b923-8658e412260c",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "82a54c94-9681-4ebe-9cd8-81cfa03056e1",
+      "name": "SN 68",
+      "thickness": "1/2",
+      "shape": "Clipped Corner(s)",
+      "tint": "Solex",
+      "length": 31,
+      "width": 22
+    },
+    "quantity": 28,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 9789,
+    "order_id": "6b3a1160-f9ba-4446-a992-be021b572210",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "c112847c-f8ab-4e7b-a397-6a44ef7529f7",
+      "name": "NU 40 LE",
+      "thickness": "1/2",
+      "shape": "Triangle",
+      "tint": "Frosted Blue Chip",
+      "length": 58,
+      "width": 39
+    },
+    "quantity": 5,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 2510,
+    "order_id": "6b3a1160-f9ba-4446-a992-be021b572210",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "aeab03c7-9242-4c4d-a53a-ef341b9fed6f",
+      "name": "AG 43",
+      "thickness": "1/4",
+      "shape": "Parallelogram",
+      "tint": "P-516",
+      "length": 94,
+      "width": 43
+    },
+    "quantity": 1,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 1262,
+    "order_id": "6b3a1160-f9ba-4446-a992-be021b572210",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "004c4786-d558-43e7-82be-795f60182ef7",
+      "name": "SNE 50/25",
+      "thickness": "3/8",
+      "shape": "Irregular/Any Other Shape",
+      "tint": "Light Gray",
+      "length": 51,
+      "width": 48
+    },
+    "quantity": 4,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 5886,
+    "order_id": "6b3a1160-f9ba-4446-a992-be021b572210",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "82a54c94-9681-4ebe-9cd8-81cfa03056e1",
+      "name": "SN 68",
+      "thickness": "1/2",
+      "shape": "Trapezoid",
+      "tint": "Ultra Clear",
+      "length": 47,
+      "width": 21
+    },
+    "quantity": 6,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 2669,
+    "order_id": "6b3a1160-f9ba-4446-a992-be021b572210",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "c908d94a-e129-4912-b3dd-29d7073c042d",
+      "name": "Sunguard Spandrel HT",
+      "thickness": "3/8",
+      "shape": "House",
+      "tint": "Ultra Clear",
+      "length": 38,
+      "width": 18
+    },
+    "quantity": 4,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 1037,
+    "order_id": "47de4497-609d-41c0-b044-0082daf98a99",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "af123281-fd38-48a1-b865-f5d1c25307f8",
+      "name": "SNX-L 62/34",
+      "thickness": "1/4",
+      "shape": "Rounded Corner(s)",
+      "tint": "Bronze",
+      "length": 40,
+      "width": 36
+    },
+    "quantity": 8,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 2784,
+    "order_id": "47de4497-609d-41c0-b044-0082daf98a99",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "82a54c94-9681-4ebe-9cd8-81cfa03056e1",
+      "name": "SN 68",
+      "thickness": "1/2",
+      "shape": "Clipped Corner(s)",
+      "tint": "Light Gray",
+      "length": 86,
+      "width": 11
+    },
+    "quantity": 164,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 8282,
+    "order_id": "47de4497-609d-41c0-b044-0082daf98a99",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "82a54c94-9681-4ebe-9cd8-81cfa03056e1",
+      "name": "SN 68",
+      "thickness": "3/8",
+      "shape": "Single Slope Rectangle",
+      "tint": "Bronze",
+      "length": 91,
+      "width": 41
+    },
+    "quantity": 64,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 5635,
+    "order_id": "47de4497-609d-41c0-b044-0082daf98a99",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "004c4786-d558-43e7-82be-795f60182ef7",
+      "name": "SNE 50/25",
+      "thickness": "3/4",
+      "shape": "Arch Top & Bottom",
+      "tint": "Midnight Gray",
+      "length": 36,
+      "width": 15
+    },
+    "quantity": 3,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 6599,
+    "order_id": "47de4497-609d-41c0-b044-0082daf98a99",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "004c4786-d558-43e7-82be-795f60182ef7",
+      "name": "SNE 50/25",
+      "thickness": "1/2",
+      "shape": "Parallelogram",
+      "tint": "Dark Gray",
+      "length": 64,
+      "width": 41
+    },
+    "quantity": 168,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 6569,
+    "order_id": "47de4497-609d-41c0-b044-0082daf98a99",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "a1a67246-21b6-4ba1-9024-417369d628b0",
+      "name": "MC 68 LE-T",
+      "thickness": "1/8",
+      "shape": "Ellipse",
+      "tint": "Low-E",
+      "length": 59,
+      "width": 47
+    },
+    "quantity": 58,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 1408,
+    "order_id": "47de4497-609d-41c0-b044-0082daf98a99",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "d49c19b3-cf1a-4ad6-8ba4-bf127ce1de6f",
+      "name": "MC 27 LE-A",
+      "thickness": "3/8",
+      "shape": "Half-Circle with Notch",
+      "tint": "Mistlite",
+      "length": 86,
+      "width": 40
+    },
+    "quantity": 1,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 2745,
+    "order_id": "26908df9-dd19-4663-84a8-53c3978ff7d1",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "c112847c-f8ab-4e7b-a397-6a44ef7529f7",
+      "name": "NU 40 LE",
+      "thickness": "1/4",
+      "shape": "House",
+      "tint": "Frosted Blue Chip",
+      "length": 45,
+      "width": 28
+    },
+    "quantity": 8,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 9937,
+    "order_id": "26908df9-dd19-4663-84a8-53c3978ff7d1",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "af123281-fd38-48a1-b865-f5d1c25307f8",
+      "name": "SNX-L 62/34",
+      "thickness": "1/8",
+      "shape": "Single Slope Rectangle",
+      "tint": "Bronze",
+      "length": 55,
+      "width": 22
+    },
+    "quantity": 57,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 4659,
+    "order_id": "0c4d09c0-e176-4e3d-8b8c-a4984fb2e3d2",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "c112847c-f8ab-4e7b-a397-6a44ef7529f7",
+      "name": "NU 40 LE",
+      "thickness": "3/8",
+      "shape": "Triangle",
+      "tint": "Bronze",
+      "length": 59,
+      "width": 5
+    },
+    "quantity": 34,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 1335,
+    "order_id": "0c4d09c0-e176-4e3d-8b8c-a4984fb2e3d2",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "cc546439-3cef-4f13-b365-c6893c05fc82",
+      "name": "SNR 35 HT",
+      "thickness": "1/2",
+      "shape": "Racetrack Oval",
+      "tint": "Low-E",
+      "length": 49,
+      "width": 45
+    },
+    "quantity": 72,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 4626,
+    "order_id": "0c4d09c0-e176-4e3d-8b8c-a4984fb2e3d2",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "cc546439-3cef-4f13-b365-c6893c05fc82",
+      "name": "SNR 35 HT",
+      "thickness": "1/2",
+      "shape": "Arch",
+      "tint": "Low-E",
+      "length": 61,
+      "width": 31
+    },
+    "quantity": 23,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 2982,
+    "order_id": "0c4d09c0-e176-4e3d-8b8c-a4984fb2e3d2",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "004c4786-d558-43e7-82be-795f60182ef7",
+      "name": "SNE 50/25",
+      "thickness": "1/4",
+      "shape": "Circle",
+      "tint": "Frosted Green Chip",
+      "length": 89,
+      "width": 32
+    },
+    "quantity": 5,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 6203,
+    "order_id": "0c4d09c0-e176-4e3d-8b8c-a4984fb2e3d2",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "c5eb32fe-3209-43d3-a63c-f5d3c3555c8b",
+      "name": "IS20 LE-T",
+      "thickness": "3/8",
+      "shape": "Hexagon",
+      "tint": "Satin Etch",
+      "length": 45,
+      "width": 15
+    },
+    "quantity": 34,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 9226,
+    "order_id": "0c4d09c0-e176-4e3d-8b8c-a4984fb2e3d2",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "d49c19b3-cf1a-4ad6-8ba4-bf127ce1de6f",
+      "name": "MC 27 LE-A",
       "thickness": "1/2",
       "shape": "Ellipse",
+      "tint": "Bronze",
+      "length": 55,
+      "width": 21
+    },
+    "quantity": 3,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 6341,
+    "order_id": "0c4d09c0-e176-4e3d-8b8c-a4984fb2e3d2",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "c5eb32fe-3209-43d3-a63c-f5d3c3555c8b",
+      "name": "IS20 LE-T",
+      "thickness": "3/8",
+      "shape": "Circle",
+      "tint": "Mistlite",
+      "length": 46,
+      "width": 46
+    },
+    "quantity": 5,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 9670,
+    "order_id": "5873e3bb-6c67-4797-b64d-58f97cce2cb9",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "ec5ffa0f-39d8-4d03-94dd-95b190a8c2f5",
+      "name": "AG 50 LE",
+      "thickness": "3/8",
+      "shape": "Pentagon",
+      "tint": "Clear",
+      "length": 81,
+      "width": 28
+    },
+    "quantity": 25,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 6731,
+    "order_id": "5873e3bb-6c67-4797-b64d-58f97cce2cb9",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "a1a67246-21b6-4ba1-9024-417369d628b0",
+      "name": "MC 68 LE-T",
+      "thickness": "1/4",
+      "shape": "Square/Rectangle",
+      "tint": "Frosted Green Chip",
+      "length": 45,
+      "width": 11
+    },
+    "quantity": 45,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 3398,
+    "order_id": "5873e3bb-6c67-4797-b64d-58f97cce2cb9",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "ec5ffa0f-39d8-4d03-94dd-95b190a8c2f5",
+      "name": "AG 50 LE",
+      "thickness": "3/4",
+      "shape": "Clipped Corner(s)",
       "tint": "P-516",
-      "length": 35,
+      "length": 24,
       "width": 16
     },
     "quantity": 5,
     "note": "some note"
   },
   {
-    "order_item_id": 7635,
-    "order_id": "d461ebb4-e7ef-43a5-8419-d2ac2da06e20",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
+    "order_item_id": 2633,
+    "order_id": "4ec6fe97-14ca-4e11-8ce6-9943350c8d28",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
     "product_config": {
-      "glass_id": "ef4a6120-93a8-450f-a7f9-6e75f27fde60",
-      "name": "MC 27 LE-A",
+      "glass_id": "a1a67246-21b6-4ba1-9024-417369d628b0",
+      "name": "MC 68 LE-T",
+      "thickness": "3/8",
+      "shape": "Single Slope Rectangle",
+      "tint": "Low-E",
+      "length": 90,
+      "width": 7
+    },
+    "quantity": 136,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 1620,
+    "order_id": "4ec6fe97-14ca-4e11-8ce6-9943350c8d28",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "ec5ffa0f-39d8-4d03-94dd-95b190a8c2f5",
+      "name": "AG 50 LE",
+      "thickness": "1/4",
+      "shape": "Arch",
+      "tint": "Satin Etch",
+      "length": 56,
+      "width": 42
+    },
+    "quantity": 121,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 9980,
+    "order_id": "4ec6fe97-14ca-4e11-8ce6-9943350c8d28",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "004c4786-d558-43e7-82be-795f60182ef7",
+      "name": "SNE 50/25",
+      "thickness": "1/2",
+      "shape": "Irregular/Any Other Shape",
+      "tint": "Frosted Green Chip",
+      "length": 95,
+      "width": 16
+    },
+    "quantity": 205,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 9771,
+    "order_id": "4ec6fe97-14ca-4e11-8ce6-9943350c8d28",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "c908d94a-e129-4912-b3dd-29d7073c042d",
+      "name": "Sunguard Spandrel HT",
       "thickness": "3/8",
       "shape": "Quarter Round",
-      "tint": "P-516",
-      "length": 66,
-      "width": 19
+      "tint": "Bronze",
+      "length": 43,
+      "width": 40
     },
-    "quantity": 137,
+    "quantity": 39,
     "note": "some note"
   },
   {
-    "order_item_id": 5122,
-    "order_id": "c85d0f09-a1aa-4144-9d05-976ef5f1dbe9",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
+    "order_item_id": 7445,
+    "order_id": "4ec6fe97-14ca-4e11-8ce6-9943350c8d28",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
     "product_config": {
-      "glass_id": "060bfe65-db6f-4f54-87f7-bea2ea6a249f",
-      "name": "SNE 50/25",
+      "glass_id": "c112847c-f8ab-4e7b-a397-6a44ef7529f7",
+      "name": "NU 40 LE",
+      "thickness": "1/2",
+      "shape": "Circle",
+      "tint": "Mistlite",
+      "length": 43,
+      "width": 27
+    },
+    "quantity": 196,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 328,
+    "order_id": "4ec6fe97-14ca-4e11-8ce6-9943350c8d28",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "1da5b2a3-6a53-49de-bbce-4521ef09cd5c",
+      "name": "SatinDeco",
+      "thickness": "3/8",
+      "shape": "Rounded Corner(s)",
+      "tint": "Solex",
+      "length": 90,
+      "width": 35
+    },
+    "quantity": 94,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 1293,
+    "order_id": "4ec6fe97-14ca-4e11-8ce6-9943350c8d28",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "f1e58ff5-48fc-40f5-971d-10c8ad04ab6f",
+      "name": "SN 68 HT",
+      "thickness": "1/2",
+      "shape": "Rounded Corner(s)",
+      "tint": "Light Gray",
+      "length": 84,
+      "width": 22
+    },
+    "quantity": 2,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 4811,
+    "order_id": "d03640db-52d3-4bdf-9765-911ca4db9d12",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "1da5b2a3-6a53-49de-bbce-4521ef09cd5c",
+      "name": "SatinDeco",
       "thickness": "3/4",
-      "shape": "Quarter Round",
-      "tint": "Dark Gray",
-      "length": 76,
-      "width": 37
+      "shape": "Pentagon",
+      "tint": "Solex",
+      "length": 56,
+      "width": 17
     },
-    "quantity": 182,
+    "quantity": 8,
     "note": "some note"
   },
   {
-    "order_item_id": 8337,
-    "order_id": "c85d0f09-a1aa-4144-9d05-976ef5f1dbe9",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
+    "order_item_id": 308,
+    "order_id": "d03640db-52d3-4bdf-9765-911ca4db9d12",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
     "product_config": {
-      "glass_id": "46247eed-86b1-4ea7-bddf-4c8a7c89565a",
+      "glass_id": "cc546439-3cef-4f13-b365-c6893c05fc82",
+      "name": "SNR 35 HT",
+      "thickness": "3/8",
+      "shape": "Half-Circle with Notch",
+      "tint": "P-516",
+      "length": 85,
+      "width": 9
+    },
+    "quantity": 3,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 191,
+    "order_id": "d03640db-52d3-4bdf-9765-911ca4db9d12",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "c908d94a-e129-4912-b3dd-29d7073c042d",
+      "name": "Sunguard Spandrel HT",
+      "thickness": "1/4",
+      "shape": "Circle",
+      "tint": "Mistlite",
+      "length": 70,
+      "width": 45
+    },
+    "quantity": 40,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 2132,
+    "order_id": "d03640db-52d3-4bdf-9765-911ca4db9d12",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "a1a67246-21b6-4ba1-9024-417369d628b0",
+      "name": "MC 68 LE-T",
+      "thickness": "3/4",
+      "shape": "Trapezoid",
+      "tint": "Frosted Green Chip",
+      "length": 32,
+      "width": 20
+    },
+    "quantity": 178,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 6007,
+    "order_id": "d03640db-52d3-4bdf-9765-911ca4db9d12",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "f1e58ff5-48fc-40f5-971d-10c8ad04ab6f",
+      "name": "SN 68 HT",
+      "thickness": "3/4",
+      "shape": "Rounded Corner(s)",
+      "tint": "Clear",
+      "length": 42,
+      "width": 14
+    },
+    "quantity": 1,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 9298,
+    "order_id": "39bf653a-0ae0-4d70-8a7f-dedbc84311f0",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "1da5b2a3-6a53-49de-bbce-4521ef09cd5c",
+      "name": "SatinDeco",
+      "thickness": "1/4",
+      "shape": "Clipped Corner(s)",
+      "tint": "Ultra Clear",
+      "length": 45,
+      "width": 6
+    },
+    "quantity": 48,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 3810,
+    "order_id": "39bf653a-0ae0-4d70-8a7f-dedbc84311f0",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "af123281-fd38-48a1-b865-f5d1c25307f8",
+      "name": "SNX-L 62/34",
+      "thickness": "1/4",
+      "shape": "Ellipse",
+      "tint": "Solex",
+      "length": 53,
+      "width": 25
+    },
+    "quantity": 9,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 6685,
+    "order_id": "5863d20f-5711-4396-9df0-dddd0f79d12f",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "82a54c94-9681-4ebe-9cd8-81cfa03056e1",
+      "name": "SN 68",
+      "thickness": "1/2",
+      "shape": "Trapezoid",
+      "tint": "Clear",
+      "length": 48,
+      "width": 1
+    },
+    "quantity": 54,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 2455,
+    "order_id": "5863d20f-5711-4396-9df0-dddd0f79d12f",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "d1561e8c-3e9b-4e29-94d2-56bbdced64f7",
+      "name": "MC 68 LE-A",
+      "thickness": "1/2",
+      "shape": "Ellipse",
+      "tint": "Midnight Gray",
+      "length": 50,
+      "width": 14
+    },
+    "quantity": 2,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 6669,
+    "order_id": "5863d20f-5711-4396-9df0-dddd0f79d12f",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "d49c19b3-cf1a-4ad6-8ba4-bf127ce1de6f",
+      "name": "MC 27 LE-A",
+      "thickness": "3/4",
+      "shape": "Arch Top & Bottom",
+      "tint": "Midnight Gray",
+      "length": 43,
+      "width": 13
+    },
+    "quantity": 3,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 2773,
+    "order_id": "5863d20f-5711-4396-9df0-dddd0f79d12f",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "cc546439-3cef-4f13-b365-c6893c05fc82",
+      "name": "SNR 35 HT",
+      "thickness": "3/8",
+      "shape": "Arch",
+      "tint": "Clear",
+      "length": 53,
+      "width": 47
+    },
+    "quantity": 53,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 5922,
+    "order_id": "5863d20f-5711-4396-9df0-dddd0f79d12f",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "d1561e8c-3e9b-4e29-94d2-56bbdced64f7",
       "name": "MC 68 LE-A",
       "thickness": "1/4",
-      "shape": "Racetrack Oval",
+      "shape": "Ellipse",
       "tint": "Frosted Blue Chip",
-      "length": 24,
-      "width": 24
+      "length": 53,
+      "width": 28
     },
     "quantity": 185,
     "note": "some note"
   },
   {
-    "order_item_id": 3762,
-    "order_id": "c85d0f09-a1aa-4144-9d05-976ef5f1dbe9",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
+    "order_item_id": 2728,
+    "order_id": "5863d20f-5711-4396-9df0-dddd0f79d12f",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
     "product_config": {
-      "glass_id": "538c9855-17a0-410d-90d2-5e5e9f43c6c8",
-      "name": "SNX-L 62/34",
-      "thickness": "3/8",
+      "glass_id": "d1561e8c-3e9b-4e29-94d2-56bbdced64f7",
+      "name": "MC 68 LE-A",
+      "thickness": "3/4",
       "shape": "Arch-Top",
-      "tint": "Dark Gray",
-      "length": 57,
+      "tint": "Clear",
+      "length": 96,
+      "width": 8
+    },
+    "quantity": 25,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 2666,
+    "order_id": "5863d20f-5711-4396-9df0-dddd0f79d12f",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "c908d94a-e129-4912-b3dd-29d7073c042d",
+      "name": "Sunguard Spandrel HT",
+      "thickness": "3/4",
+      "shape": "Irregular/Any Other Shape",
+      "tint": "Bronze",
+      "length": 47,
+      "width": 37
+    },
+    "quantity": 18,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 776,
+    "order_id": "7985ea92-1a83-4efc-81b3-64750ed9c436",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "82a54c94-9681-4ebe-9cd8-81cfa03056e1",
+      "name": "SN 68",
+      "thickness": "1/4",
+      "shape": "Ellipse",
+      "tint": "Bronze",
+      "length": 56,
       "width": 29
     },
     "quantity": 32,
     "note": "some note"
   },
   {
-    "order_item_id": 8785,
-    "order_id": "c85d0f09-a1aa-4144-9d05-976ef5f1dbe9",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
+    "order_item_id": 287,
+    "order_id": "7985ea92-1a83-4efc-81b3-64750ed9c436",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
     "product_config": {
-      "glass_id": "cd774965-da25-463b-921f-441244911276",
-      "name": "AG 50 LE",
-      "thickness": "1/4",
-      "shape": "Single Slope Rectangle",
-      "tint": "Satin Etch",
-      "length": 64,
-      "width": 4
-    },
-    "quantity": 25,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 4353,
-    "order_id": "c85d0f09-a1aa-4144-9d05-976ef5f1dbe9",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "af9ab768-f43f-416f-8cb1-8e70979e0972",
-      "name": "Sunguard Spandrel HT",
-      "thickness": "1/4",
-      "shape": "Arch Top & Bottom",
+      "glass_id": "004c4786-d558-43e7-82be-795f60182ef7",
+      "name": "SNE 50/25",
+      "thickness": "1/8",
+      "shape": "Right Triangle",
       "tint": "Midnight Gray",
-      "length": 25,
-      "width": 21
-    },
-    "quantity": 37,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 8864,
-    "order_id": "c85d0f09-a1aa-4144-9d05-976ef5f1dbe9",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "91454f2a-292a-4b6c-91bc-2b126062ab5f",
-      "name": "SN 68 HT",
-      "thickness": "3/8",
-      "shape": "Quarter Round",
-      "tint": "Light Gray",
-      "length": 51,
-      "width": 28
-    },
-    "quantity": 186,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 1442,
-    "order_id": "c85d0f09-a1aa-4144-9d05-976ef5f1dbe9",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "d0340245-d1b1-474d-b05b-1e330b5601d2",
-      "name": "SNR 35 HT",
-      "thickness": "1/4",
-      "shape": "Quarter Round",
-      "tint": "Frosted Green Chip",
-      "length": 64,
-      "width": 9
-    },
-    "quantity": 10,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 7080,
-    "order_id": "e7b02401-ecf9-4ba5-9d92-3098d8794683",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "da450d2a-3d5e-4646-8941-677dd51f7f8b",
-      "name": "AG 43",
-      "thickness": "3/4",
-      "shape": "Quarter Round",
-      "tint": "Light Gray",
-      "length": 58,
-      "width": 37
-    },
-    "quantity": 8,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 46,
-    "order_id": "e7b02401-ecf9-4ba5-9d92-3098d8794683",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "46247eed-86b1-4ea7-bddf-4c8a7c89565a",
-      "name": "MC 68 LE-A",
-      "thickness": "3/4",
-      "shape": "Arch-Top",
-      "tint": "Clear",
-      "length": 82,
-      "width": 2
-    },
-    "quantity": 47,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 3382,
-    "order_id": "e7b02401-ecf9-4ba5-9d92-3098d8794683",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
-    "product_config": {
-      "glass_id": "91454f2a-292a-4b6c-91bc-2b126062ab5f",
-      "name": "SN 68 HT",
-      "thickness": "1/2",
-      "shape": "Clipped Corner(s)",
-      "tint": "Light Gray",
-      "length": 86,
-      "width": 31
-    },
-    "quantity": 35,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 3517,
-    "order_id": "e7b02401-ecf9-4ba5-9d92-3098d8794683",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "91454f2a-292a-4b6c-91bc-2b126062ab5f",
-      "name": "SN 68 HT",
-      "thickness": "3/4",
-      "shape": "Right Triangle",
-      "tint": "Dark Gray",
-      "length": 54,
-      "width": 27
-    },
-    "quantity": 177,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 3093,
-    "order_id": "e7b02401-ecf9-4ba5-9d92-3098d8794683",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "da450d2a-3d5e-4646-8941-677dd51f7f8b",
-      "name": "AG 43",
-      "thickness": "3/8",
-      "shape": "Arch",
-      "tint": "Satin Etch",
-      "length": 57,
-      "width": 3
-    },
-    "quantity": 13,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 7056,
-    "order_id": "e7b02401-ecf9-4ba5-9d92-3098d8794683",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "da450d2a-3d5e-4646-8941-677dd51f7f8b",
-      "name": "AG 43",
-      "thickness": "3/4",
-      "shape": "Right Triangle",
-      "tint": "Satin Etch",
-      "length": 96,
-      "width": 38
-    },
-    "quantity": 7,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 1529,
-    "order_id": "e7b02401-ecf9-4ba5-9d92-3098d8794683",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
-    "product_config": {
-      "glass_id": "28cb3997-daf6-464f-812d-97182ee602b3",
-      "name": "NU 40 LE",
-      "thickness": "3/8",
-      "shape": "Arch Side",
-      "tint": "Satin Etch",
-      "length": 48,
-      "width": 32
+      "length": 40,
+      "width": 6
     },
     "quantity": 28,
     "note": "some note"
   },
   {
-    "order_item_id": 2247,
-    "order_id": "677d0ce4-3e73-4c5a-af57-15fa174ea45f",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
+    "order_item_id": 9681,
+    "order_id": "7985ea92-1a83-4efc-81b3-64750ed9c436",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
     "product_config": {
-      "glass_id": "cd774965-da25-463b-921f-441244911276",
-      "name": "AG 50 LE",
-      "thickness": "1/2",
-      "shape": "Quad Arch",
-      "tint": "Satin Etch",
-      "length": 86,
-      "width": 34
-    },
-    "quantity": 7,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 7934,
-    "order_id": "0ac560ec-4250-4f83-8cb3-e45a66589870",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "28cb3997-daf6-464f-812d-97182ee602b3",
-      "name": "NU 40 LE",
-      "thickness": "1/4",
-      "shape": "Arch Side",
-      "tint": "Light Gray",
-      "length": 95,
-      "width": 21
-    },
-    "quantity": 41,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 5456,
-    "order_id": "0ac560ec-4250-4f83-8cb3-e45a66589870",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "da450d2a-3d5e-4646-8941-677dd51f7f8b",
-      "name": "AG 43",
-      "thickness": "1/8",
-      "shape": "Arch Side",
-      "tint": "P-516",
-      "length": 82,
-      "width": 8
-    },
-    "quantity": 59,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 3281,
-    "order_id": "0ac560ec-4250-4f83-8cb3-e45a66589870",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
-    "product_config": {
-      "glass_id": "da450d2a-3d5e-4646-8941-677dd51f7f8b",
-      "name": "AG 43",
-      "thickness": "3/8",
-      "shape": "Octagon",
-      "tint": "P-516",
-      "length": 56,
-      "width": 29
-    },
-    "quantity": 9,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 2523,
-    "order_id": "0ac560ec-4250-4f83-8cb3-e45a66589870",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "28cb3997-daf6-464f-812d-97182ee602b3",
-      "name": "NU 40 LE",
-      "thickness": "1/4",
-      "shape": "Half-Circle with Notch",
-      "tint": "Ultra Clear",
-      "length": 90,
-      "width": 3
-    },
-    "quantity": 57,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 1889,
-    "order_id": "0ac560ec-4250-4f83-8cb3-e45a66589870",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
-    "product_config": {
-      "glass_id": "da450d2a-3d5e-4646-8941-677dd51f7f8b",
-      "name": "AG 43",
-      "thickness": "3/8",
-      "shape": "Arch",
-      "tint": "Mistlite",
-      "length": 88,
-      "width": 29
-    },
-    "quantity": 2,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 1938,
-    "order_id": "0ac560ec-4250-4f83-8cb3-e45a66589870",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "b4ad52ba-ba2e-4db7-815c-0f0087e58ff4",
-      "name": "SN 68",
-      "thickness": "3/8",
+      "glass_id": "c5eb32fe-3209-43d3-a63c-f5d3c3555c8b",
+      "name": "IS20 LE-T",
+      "thickness": "3/4",
       "shape": "Parallelogram",
-      "tint": "Dark Gray",
-      "length": 32,
-      "width": 16
-    },
-    "quantity": 2,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 984,
-    "order_id": "b56bc0c6-b1b7-4933-b143-ef788e2b5b33",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "24c66f1f-bd90-4fc2-b3e2-7ed7cb667b00",
-      "name": "IS20 LE-T",
-      "thickness": "1/8",
-      "shape": "Trapezoid",
-      "tint": "P-516",
-      "length": 30,
-      "width": 26
-    },
-    "quantity": 10,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 2983,
-    "order_id": "b56bc0c6-b1b7-4933-b143-ef788e2b5b33",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "24c66f1f-bd90-4fc2-b3e2-7ed7cb667b00",
-      "name": "IS20 LE-T",
-      "thickness": "3/8",
-      "shape": "Trapezoid",
-      "tint": "Frosted Green Chip",
-      "length": 64,
-      "width": 30
-    },
-    "quantity": 34,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 5795,
-    "order_id": "b56bc0c6-b1b7-4933-b143-ef788e2b5b33",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "cd774965-da25-463b-921f-441244911276",
-      "name": "AG 50 LE",
-      "thickness": "1/8",
-      "shape": "Trapezoid",
       "tint": "Satin Etch",
-      "length": 82,
-      "width": 9
-    },
-    "quantity": 50,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 480,
-    "order_id": "b56bc0c6-b1b7-4933-b143-ef788e2b5b33",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "46247eed-86b1-4ea7-bddf-4c8a7c89565a",
-      "name": "MC 68 LE-A",
-      "thickness": "1/2",
-      "shape": "Pentagon",
-      "tint": "Dark Gray",
-      "length": 55,
-      "width": 29
-    },
-    "quantity": 9,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 4176,
-    "order_id": "b56bc0c6-b1b7-4933-b143-ef788e2b5b33",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
-    "product_config": {
-      "glass_id": "24c66f1f-bd90-4fc2-b3e2-7ed7cb667b00",
-      "name": "IS20 LE-T",
-      "thickness": "1/2",
-      "shape": "Octagon",
-      "tint": "Frosted Green Chip",
-      "length": 33,
-      "width": 19
-    },
-    "quantity": 45,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 3403,
-    "order_id": "b56bc0c6-b1b7-4933-b143-ef788e2b5b33",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
-    "product_config": {
-      "glass_id": "cd774965-da25-463b-921f-441244911276",
-      "name": "AG 50 LE",
-      "thickness": "3/8",
-      "shape": "Clipped Corner(s)",
-      "tint": "Frosted Green Chip",
-      "length": 44,
+      "length": 75,
       "width": 41
     },
-    "quantity": 58,
+    "quantity": 176,
     "note": "some note"
   },
   {
-    "order_item_id": 25,
-    "order_id": "b56bc0c6-b1b7-4933-b143-ef788e2b5b33",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
+    "order_item_id": 9204,
+    "order_id": "af737a0e-d964-4f21-a599-0f19c22f6b10",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
     "product_config": {
-      "glass_id": "d0340245-d1b1-474d-b05b-1e330b5601d2",
-      "name": "SNR 35 HT",
-      "thickness": "1/2",
-      "shape": "Ellipse",
-      "tint": "Clear",
-      "length": 48,
-      "width": 38
-    },
-    "quantity": 128,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 7746,
-    "order_id": "b56bc0c6-b1b7-4933-b143-ef788e2b5b33",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "060bfe65-db6f-4f54-87f7-bea2ea6a249f",
-      "name": "SNE 50/25",
+      "glass_id": "d1561e8c-3e9b-4e29-94d2-56bbdced64f7",
+      "name": "MC 68 LE-A",
       "thickness": "1/4",
-      "shape": "Quarter Round",
-      "tint": "Dark Gray",
-      "length": 38,
-      "width": 33
+      "shape": "Right Triangle",
+      "tint": "Midnight Gray",
+      "length": 29,
+      "width": 23
     },
-    "quantity": 25,
+    "quantity": 3,
     "note": "some note"
   },
   {
-    "order_item_id": 7875,
-    "order_id": "b56bc0c6-b1b7-4933-b143-ef788e2b5b33",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
+    "order_item_id": 3991,
+    "order_id": "af737a0e-d964-4f21-a599-0f19c22f6b10",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
     "product_config": {
-      "glass_id": "538c9855-17a0-410d-90d2-5e5e9f43c6c8",
-      "name": "SNX-L 62/34",
-      "thickness": "3/8",
+      "glass_id": "004c4786-d558-43e7-82be-795f60182ef7",
+      "name": "SNE 50/25",
+      "thickness": "3/4",
+      "shape": "Parallelogram",
+      "tint": "Dark Gray",
+      "length": 30,
+      "width": 17
+    },
+    "quantity": 208,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 1327,
+    "order_id": "af737a0e-d964-4f21-a599-0f19c22f6b10",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "d1561e8c-3e9b-4e29-94d2-56bbdced64f7",
+      "name": "MC 68 LE-A",
+      "thickness": "3/4",
       "shape": "Arch",
       "tint": "P-516",
-      "length": 44,
-      "width": 31
-    },
-    "quantity": 34,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 4485,
-    "order_id": "b1988a1a-fbf2-479d-bca4-cb1b76e646e0",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "b4ad52ba-ba2e-4db7-815c-0f0087e58ff4",
-      "name": "SN 68",
-      "thickness": "3/4",
-      "shape": "Half-Circle",
-      "tint": "Mistlite",
-      "length": 84,
-      "width": 12
-    },
-    "quantity": 205,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 5818,
-    "order_id": "b1988a1a-fbf2-479d-bca4-cb1b76e646e0",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
-    "product_config": {
-      "glass_id": "ef4a6120-93a8-450f-a7f9-6e75f27fde60",
-      "name": "MC 27 LE-A",
-      "thickness": "1/4",
-      "shape": "Racetrack Oval",
-      "tint": "Clear",
-      "length": 96,
-      "width": 15
-    },
-    "quantity": 10,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 4579,
-    "order_id": "b1988a1a-fbf2-479d-bca4-cb1b76e646e0",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "060bfe65-db6f-4f54-87f7-bea2ea6a249f",
-      "name": "SNE 50/25",
-      "thickness": "1/8",
-      "shape": "Square/Rectangle",
-      "tint": "P-516",
-      "length": 78,
-      "width": 16
-    },
-    "quantity": 15,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 1446,
-    "order_id": "b1988a1a-fbf2-479d-bca4-cb1b76e646e0",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
-    "product_config": {
-      "glass_id": "af9ab768-f43f-416f-8cb1-8e70979e0972",
-      "name": "Sunguard Spandrel HT",
-      "thickness": "3/8",
-      "shape": "Octagon",
-      "tint": "Ultra Clear",
-      "length": 5,
-      "width": 3
-    },
-    "quantity": 6,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 5255,
-    "order_id": "b1988a1a-fbf2-479d-bca4-cb1b76e646e0",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
-    "product_config": {
-      "glass_id": "af9ab768-f43f-416f-8cb1-8e70979e0972",
-      "name": "Sunguard Spandrel HT",
-      "thickness": "1/8",
-      "shape": "Arch-Top",
-      "tint": "Ultra Clear",
       "length": 45,
-      "width": 15
+      "width": 11
+    },
+    "quantity": 35,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 3936,
+    "order_id": "af737a0e-d964-4f21-a599-0f19c22f6b10",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "ec5ffa0f-39d8-4d03-94dd-95b190a8c2f5",
+      "name": "AG 50 LE",
+      "thickness": "3/8",
+      "shape": "Pentagon",
+      "tint": "Satin Etch",
+      "length": 42,
+      "width": 16
     },
     "quantity": 51,
     "note": "some note"
   },
   {
-    "order_item_id": 906,
-    "order_id": "b1988a1a-fbf2-479d-bca4-cb1b76e646e0",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
+    "order_item_id": 1406,
+    "order_id": "af737a0e-d964-4f21-a599-0f19c22f6b10",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
     "product_config": {
-      "glass_id": "24c66f1f-bd90-4fc2-b3e2-7ed7cb667b00",
-      "name": "IS20 LE-T",
+      "glass_id": "a1a67246-21b6-4ba1-9024-417369d628b0",
+      "name": "MC 68 LE-T",
+      "thickness": "3/8",
+      "shape": "Half-Circle with Notch",
+      "tint": "Frosted Green Chip",
+      "length": 59,
+      "width": 18
+    },
+    "quantity": 17,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 1280,
+    "order_id": "af737a0e-d964-4f21-a599-0f19c22f6b10",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "a1a67246-21b6-4ba1-9024-417369d628b0",
+      "name": "MC 68 LE-T",
       "thickness": "3/4",
-      "shape": "Half-Circle",
+      "shape": "Pentagon",
+      "tint": "Mistlite",
+      "length": 79,
+      "width": 39
+    },
+    "quantity": 6,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 6340,
+    "order_id": "4a0de03f-2546-4385-ace8-5c7b1edf4280",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "004c4786-d558-43e7-82be-795f60182ef7",
+      "name": "SNE 50/25",
+      "thickness": "3/8",
+      "shape": "Irregular/Any Other Shape",
+      "tint": "Light Gray",
+      "length": 47,
+      "width": 44
+    },
+    "quantity": 36,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 6413,
+    "order_id": "4a0de03f-2546-4385-ace8-5c7b1edf4280",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "ec5ffa0f-39d8-4d03-94dd-95b190a8c2f5",
+      "name": "AG 50 LE",
+      "thickness": "3/4",
+      "shape": "Pentagon",
+      "tint": "P-516",
+      "length": 95,
+      "width": 43
+    },
+    "quantity": 48,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 2328,
+    "order_id": "4a0de03f-2546-4385-ace8-5c7b1edf4280",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "f1e58ff5-48fc-40f5-971d-10c8ad04ab6f",
+      "name": "SN 68 HT",
+      "thickness": "1/2",
+      "shape": "Quad Arch",
+      "tint": "Low-E",
+      "length": 53,
+      "width": 8
+    },
+    "quantity": 9,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 5676,
+    "order_id": "4a0de03f-2546-4385-ace8-5c7b1edf4280",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "aeab03c7-9242-4c4d-a53a-ef341b9fed6f",
+      "name": "AG 43",
+      "thickness": "1/4",
+      "shape": "Triangle",
       "tint": "Solex",
-      "length": 76,
+      "length": 96,
+      "width": 27
+    },
+    "quantity": 9,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 9639,
+    "order_id": "4a0de03f-2546-4385-ace8-5c7b1edf4280",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "af123281-fd38-48a1-b865-f5d1c25307f8",
+      "name": "SNX-L 62/34",
+      "thickness": "1/8",
+      "shape": "Irregular/Any Other Shape",
+      "tint": "Mistlite",
+      "length": 87,
+      "width": 30
+    },
+    "quantity": 10,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 8057,
+    "order_id": "4a0de03f-2546-4385-ace8-5c7b1edf4280",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "ec5ffa0f-39d8-4d03-94dd-95b190a8c2f5",
+      "name": "AG 50 LE",
+      "thickness": "1/4",
+      "shape": "Pentagon",
+      "tint": "Frosted Green Chip",
+      "length": 78,
+      "width": 34
+    },
+    "quantity": 183,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 3749,
+    "order_id": "4a0de03f-2546-4385-ace8-5c7b1edf4280",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "f1e58ff5-48fc-40f5-971d-10c8ad04ab6f",
+      "name": "SN 68 HT",
+      "thickness": "1/2",
+      "shape": "Quad Arch",
+      "tint": "Light Gray",
+      "length": 39,
+      "width": 17
+    },
+    "quantity": 2,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 5565,
+    "order_id": "4a0de03f-2546-4385-ace8-5c7b1edf4280",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "af123281-fd38-48a1-b865-f5d1c25307f8",
+      "name": "SNX-L 62/34",
+      "thickness": "1/4",
+      "shape": "Parallelogram",
+      "tint": "Solex",
+      "length": 80,
+      "width": 35
+    },
+    "quantity": 97,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 4375,
+    "order_id": "c8534465-1553-40c8-a5d1-834577075913",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "aeab03c7-9242-4c4d-a53a-ef341b9fed6f",
+      "name": "AG 43",
+      "thickness": "3/8",
+      "shape": "Square/Rectangle",
+      "tint": "P-516",
+      "length": 45,
+      "width": 26
+    },
+    "quantity": 167,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 7615,
+    "order_id": "c8534465-1553-40c8-a5d1-834577075913",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "c112847c-f8ab-4e7b-a397-6a44ef7529f7",
+      "name": "NU 40 LE",
+      "thickness": "3/4",
+      "shape": "Arch",
+      "tint": "P-516",
+      "length": 57,
+      "width": 40
+    },
+    "quantity": 50,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 7974,
+    "order_id": "c8534465-1553-40c8-a5d1-834577075913",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "af123281-fd38-48a1-b865-f5d1c25307f8",
+      "name": "SNX-L 62/34",
+      "thickness": "3/4",
+      "shape": "Pentagon",
+      "tint": "Midnight Gray",
+      "length": 59,
+      "width": 31
+    },
+    "quantity": 38,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 2371,
+    "order_id": "c8534465-1553-40c8-a5d1-834577075913",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "1da5b2a3-6a53-49de-bbce-4521ef09cd5c",
+      "name": "SatinDeco",
+      "thickness": "3/8",
+      "shape": "Racetrack Oval",
+      "tint": "P-516",
+      "length": 59,
+      "width": 2
+    },
+    "quantity": 10,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 9613,
+    "order_id": "8b7aecad-c74d-4841-9904-388b3b5e16c4",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "82a54c94-9681-4ebe-9cd8-81cfa03056e1",
+      "name": "SN 68",
+      "thickness": "3/8",
+      "shape": "Single Slope Rectangle",
+      "tint": "Solex",
+      "length": 77,
+      "width": 28
+    },
+    "quantity": 11,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 3680,
+    "order_id": "8b7aecad-c74d-4841-9904-388b3b5e16c4",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "004c4786-d558-43e7-82be-795f60182ef7",
+      "name": "SNE 50/25",
+      "thickness": "1/8",
+      "shape": "Parallelogram",
+      "tint": "Frosted Green Chip",
+      "length": 96,
+      "width": 40
+    },
+    "quantity": 8,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 9992,
+    "order_id": "8b7aecad-c74d-4841-9904-388b3b5e16c4",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "004c4786-d558-43e7-82be-795f60182ef7",
+      "name": "SNE 50/25",
+      "thickness": "1/4",
+      "shape": "Arch",
+      "tint": "Frosted Green Chip",
+      "length": 65,
+      "width": 34
+    },
+    "quantity": 165,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 755,
+    "order_id": "8b7aecad-c74d-4841-9904-388b3b5e16c4",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "d49c19b3-cf1a-4ad6-8ba4-bf127ce1de6f",
+      "name": "MC 27 LE-A",
+      "thickness": "3/8",
+      "shape": "Quad Arch",
+      "tint": "Dark Gray",
+      "length": 62,
+      "width": 5
+    },
+    "quantity": 171,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 851,
+    "order_id": "8b7aecad-c74d-4841-9904-388b3b5e16c4",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "004c4786-d558-43e7-82be-795f60182ef7",
+      "name": "SNE 50/25",
+      "thickness": "1/2",
+      "shape": "Trapezoid",
+      "tint": "Frosted Green Chip",
+      "length": 80,
+      "width": 26
+    },
+    "quantity": 3,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 9001,
+    "order_id": "850d216d-6004-4705-b22d-6c889dbf4866",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "cc546439-3cef-4f13-b365-c6893c05fc82",
+      "name": "SNR 35 HT",
+      "thickness": "1/4",
+      "shape": "Rounded Corner(s)",
+      "tint": "Low-E",
+      "length": 38,
+      "width": 35
+    },
+    "quantity": 60,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 13,
+    "order_id": "927e201f-0abf-482a-a6b1-28109816a516",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "1da5b2a3-6a53-49de-bbce-4521ef09cd5c",
+      "name": "SatinDeco",
+      "thickness": "1/2",
+      "shape": "Clipped Corner(s)",
+      "tint": "Solex",
+      "length": 69,
+      "width": 38
+    },
+    "quantity": 102,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 255,
+    "order_id": "927e201f-0abf-482a-a6b1-28109816a516",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "1da5b2a3-6a53-49de-bbce-4521ef09cd5c",
+      "name": "SatinDeco",
+      "thickness": "1/4",
+      "shape": "Clipped Corner(s)",
+      "tint": "Solex",
+      "length": 61,
+      "width": 23
+    },
+    "quantity": 6,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 3897,
+    "order_id": "927e201f-0abf-482a-a6b1-28109816a516",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "aeab03c7-9242-4c4d-a53a-ef341b9fed6f",
+      "name": "AG 43",
+      "thickness": "3/8",
+      "shape": "Hexagon",
+      "tint": "Solex",
+      "length": 53,
+      "width": 33
+    },
+    "quantity": 8,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 6057,
+    "order_id": "927e201f-0abf-482a-a6b1-28109816a516",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "c112847c-f8ab-4e7b-a397-6a44ef7529f7",
+      "name": "NU 40 LE",
+      "thickness": "1/2",
+      "shape": "Clipped Corner(s)",
+      "tint": "Frosted Blue Chip",
+      "length": 72,
+      "width": 33
+    },
+    "quantity": 33,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 4682,
+    "order_id": "927e201f-0abf-482a-a6b1-28109816a516",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "c908d94a-e129-4912-b3dd-29d7073c042d",
+      "name": "Sunguard Spandrel HT",
+      "thickness": "3/4",
+      "shape": "Irregular/Any Other Shape",
+      "tint": "Midnight Gray",
+      "length": 13,
+      "width": 2
+    },
+    "quantity": 144,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 4153,
+    "order_id": "927e201f-0abf-482a-a6b1-28109816a516",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "a1a67246-21b6-4ba1-9024-417369d628b0",
+      "name": "MC 68 LE-T",
+      "thickness": "1/8",
+      "shape": "Quarter Round",
+      "tint": "Solex",
+      "length": 85,
+      "width": 47
+    },
+    "quantity": 31,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 9897,
+    "order_id": "927e201f-0abf-482a-a6b1-28109816a516",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "f1e58ff5-48fc-40f5-971d-10c8ad04ab6f",
+      "name": "SN 68 HT",
+      "thickness": "3/8",
+      "shape": "Circle",
+      "tint": "Light Gray",
+      "length": 61,
+      "width": 8
+    },
+    "quantity": 9,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 244,
+    "order_id": "927e201f-0abf-482a-a6b1-28109816a516",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "004c4786-d558-43e7-82be-795f60182ef7",
+      "name": "SNE 50/25",
+      "thickness": "1/8",
+      "shape": "Trapezoid",
+      "tint": "Dark Gray",
+      "length": 43,
+      "width": 35
+    },
+    "quantity": 5,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 2762,
+    "order_id": "8161d19f-b133-4cbf-a99f-1c65569b211c",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "cc546439-3cef-4f13-b365-c6893c05fc82",
+      "name": "SNR 35 HT",
+      "thickness": "3/8",
+      "shape": "Rounded Corner(s)",
+      "tint": "Clear",
+      "length": 77,
+      "width": 5
+    },
+    "quantity": 36,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 5439,
+    "order_id": "8161d19f-b133-4cbf-a99f-1c65569b211c",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "82a54c94-9681-4ebe-9cd8-81cfa03056e1",
+      "name": "SN 68",
+      "thickness": "3/4",
+      "shape": "Irregular/Any Other Shape",
+      "tint": "Satin Etch",
+      "length": 57,
+      "width": 42
+    },
+    "quantity": 3,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 2386,
+    "order_id": "8161d19f-b133-4cbf-a99f-1c65569b211c",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "c112847c-f8ab-4e7b-a397-6a44ef7529f7",
+      "name": "NU 40 LE",
+      "thickness": "1/4",
+      "shape": "Trapezoid",
+      "tint": "Mistlite",
+      "length": 61,
+      "width": 40
+    },
+    "quantity": 1,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 6909,
+    "order_id": "8161d19f-b133-4cbf-a99f-1c65569b211c",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "ec5ffa0f-39d8-4d03-94dd-95b190a8c2f5",
+      "name": "AG 50 LE",
+      "thickness": "1/4",
+      "shape": "Clipped Corner(s)",
+      "tint": "P-516",
+      "length": 80,
+      "width": 21
+    },
+    "quantity": 25,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 6543,
+    "order_id": "8a0c2e66-096c-4fbb-a414-12462afac7cc",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "a1a67246-21b6-4ba1-9024-417369d628b0",
+      "name": "MC 68 LE-T",
+      "thickness": "1/4",
+      "shape": "Trapezoid",
+      "tint": "Solex",
+      "length": 56,
+      "width": 1
+    },
+    "quantity": 8,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 7462,
+    "order_id": "8a0c2e66-096c-4fbb-a414-12462afac7cc",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "d1561e8c-3e9b-4e29-94d2-56bbdced64f7",
+      "name": "MC 68 LE-A",
+      "thickness": "1/4",
+      "shape": "Ellipse",
+      "tint": "P-516",
+      "length": 77,
+      "width": 47
+    },
+    "quantity": 2,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 9277,
+    "order_id": "2b156563-a385-4d87-9b04-f9ee093f52f3",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "cc546439-3cef-4f13-b365-c6893c05fc82",
+      "name": "SNR 35 HT",
+      "thickness": "1/8",
+      "shape": "Quad Arch",
+      "tint": "Low-E",
+      "length": 39,
+      "width": 3
+    },
+    "quantity": 166,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 6131,
+    "order_id": "2b156563-a385-4d87-9b04-f9ee093f52f3",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "ec5ffa0f-39d8-4d03-94dd-95b190a8c2f5",
+      "name": "AG 50 LE",
+      "thickness": "1/8",
+      "shape": "Rounded Corner(s)",
+      "tint": "Bronze",
+      "length": 86,
+      "width": 26
+    },
+    "quantity": 4,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 5052,
+    "order_id": "2b156563-a385-4d87-9b04-f9ee093f52f3",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "82a54c94-9681-4ebe-9cd8-81cfa03056e1",
+      "name": "SN 68",
+      "thickness": "1/8",
+      "shape": "Right Triangle",
+      "tint": "Bronze",
+      "length": 58,
+      "width": 22
+    },
+    "quantity": 1,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 710,
+    "order_id": "445b55c2-e6fd-469e-b4cb-bbd47fee1cb6",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "cc546439-3cef-4f13-b365-c6893c05fc82",
+      "name": "SNR 35 HT",
+      "thickness": "3/4",
+      "shape": "Racetrack Oval",
+      "tint": "Clear",
+      "length": 77,
+      "width": 42
+    },
+    "quantity": 195,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 3984,
+    "order_id": "6a06ae6a-c9d9-409f-b251-ace44e164797",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "c908d94a-e129-4912-b3dd-29d7073c042d",
+      "name": "Sunguard Spandrel HT",
+      "thickness": "3/8",
+      "shape": "Trapezoid",
+      "tint": "Mistlite",
+      "length": 7,
+      "width": 2
+    },
+    "quantity": 22,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 9839,
+    "order_id": "0f8418b4-350a-44c5-bfe8-12b6c9fcd1a8",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "d1561e8c-3e9b-4e29-94d2-56bbdced64f7",
+      "name": "MC 68 LE-A",
+      "thickness": "1/4",
+      "shape": "Right Triangle",
+      "tint": "P-516",
+      "length": 48,
+      "width": 6
+    },
+    "quantity": 99,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 1715,
+    "order_id": "0f8418b4-350a-44c5-bfe8-12b6c9fcd1a8",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "82a54c94-9681-4ebe-9cd8-81cfa03056e1",
+      "name": "SN 68",
+      "thickness": "3/8",
+      "shape": "Circle",
+      "tint": "Clear",
+      "length": 68,
+      "width": 41
+    },
+    "quantity": 127,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 1832,
+    "order_id": "0f8418b4-350a-44c5-bfe8-12b6c9fcd1a8",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "c112847c-f8ab-4e7b-a397-6a44ef7529f7",
+      "name": "NU 40 LE",
+      "thickness": "1/4",
+      "shape": "Triangle",
+      "tint": "Bronze",
+      "length": 62,
+      "width": 7
+    },
+    "quantity": 37,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 64,
+    "order_id": "0f8418b4-350a-44c5-bfe8-12b6c9fcd1a8",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "1da5b2a3-6a53-49de-bbce-4521ef09cd5c",
+      "name": "SatinDeco",
+      "thickness": "1/2",
+      "shape": "Square/Rectangle",
+      "tint": "Solex",
+      "length": 65,
+      "width": 14
+    },
+    "quantity": 6,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 8462,
+    "order_id": "0f8418b4-350a-44c5-bfe8-12b6c9fcd1a8",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "d49c19b3-cf1a-4ad6-8ba4-bf127ce1de6f",
+      "name": "MC 27 LE-A",
+      "thickness": "1/2",
+      "shape": "Clipped Corner(s)",
+      "tint": "Midnight Gray",
+      "length": 67,
+      "width": 43
+    },
+    "quantity": 27,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 1051,
+    "order_id": "bb085181-9d67-4829-bb1e-55a6dc6a5104",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "004c4786-d558-43e7-82be-795f60182ef7",
+      "name": "SNE 50/25",
+      "thickness": "1/2",
+      "shape": "Rounded Corner(s)",
+      "tint": "Dark Gray",
+      "length": 63,
+      "width": 16
+    },
+    "quantity": 156,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 6464,
+    "order_id": "bb085181-9d67-4829-bb1e-55a6dc6a5104",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "1da5b2a3-6a53-49de-bbce-4521ef09cd5c",
+      "name": "SatinDeco",
+      "thickness": "1/2",
+      "shape": "Square/Rectangle",
+      "tint": "Ultra Clear",
+      "length": 36,
       "width": 8
     },
     "quantity": 5,
     "note": "some note"
   },
   {
-    "order_item_id": 1083,
-    "order_id": "b1988a1a-fbf2-479d-bca4-cb1b76e646e0",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
+    "order_item_id": 1206,
+    "order_id": "bb085181-9d67-4829-bb1e-55a6dc6a5104",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
     "product_config": {
-      "glass_id": "ea045be8-3c33-4a2d-9137-da2e180210eb",
+      "glass_id": "d1561e8c-3e9b-4e29-94d2-56bbdced64f7",
+      "name": "MC 68 LE-A",
+      "thickness": "3/4",
+      "shape": "Arch Top & Bottom",
+      "tint": "Clear",
+      "length": 79,
+      "width": 21
+    },
+    "quantity": 104,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 4860,
+    "order_id": "543c9782-c92e-4724-96f5-0fe7d19bc4ba",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "1da5b2a3-6a53-49de-bbce-4521ef09cd5c",
       "name": "SatinDeco",
-      "thickness": "1/4",
-      "shape": "Trapezoid",
-      "tint": "Dark Gray",
-      "length": 33,
-      "width": 33
+      "thickness": "3/4",
+      "shape": "Rounded Corner(s)",
+      "tint": "Solex",
+      "length": 71,
+      "width": 10
     },
-    "quantity": 136,
+    "quantity": 4,
     "note": "some note"
   },
   {
-    "order_item_id": 7981,
-    "order_id": "b1988a1a-fbf2-479d-bca4-cb1b76e646e0",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
+    "order_item_id": 5894,
+    "order_id": "543c9782-c92e-4724-96f5-0fe7d19bc4ba",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
     "product_config": {
-      "glass_id": "d0340245-d1b1-474d-b05b-1e330b5601d2",
-      "name": "SNR 35 HT",
-      "thickness": "1/2",
-      "shape": "Square/Rectangle",
-      "tint": "P-516",
-      "length": 96,
-      "width": 2
-    },
-    "quantity": 35,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 6061,
-    "order_id": "af70f244-802e-4c6a-9e57-6b00dbd6b5a2",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "cd774965-da25-463b-921f-441244911276",
-      "name": "AG 50 LE",
+      "glass_id": "82a54c94-9681-4ebe-9cd8-81cfa03056e1",
+      "name": "SN 68",
       "thickness": "3/8",
-      "shape": "Arch",
-      "tint": "Frosted Green Chip",
-      "length": 57,
-      "width": 27
+      "shape": "Single Slope Rectangle",
+      "tint": "Bronze",
+      "length": 47,
+      "width": 44
     },
-    "quantity": 97,
+    "quantity": 165,
     "note": "some note"
   },
   {
-    "order_item_id": 5374,
-    "order_id": "af70f244-802e-4c6a-9e57-6b00dbd6b5a2",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
+    "order_item_id": 179,
+    "order_id": "543c9782-c92e-4724-96f5-0fe7d19bc4ba",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
     "product_config": {
-      "glass_id": "28cb3997-daf6-464f-812d-97182ee602b3",
-      "name": "NU 40 LE",
-      "thickness": "3/8",
-      "shape": "Square/Rectangle",
-      "tint": "Light Gray",
-      "length": 88,
-      "width": 38
-    },
-    "quantity": 58,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 3622,
-    "order_id": "af70f244-802e-4c6a-9e57-6b00dbd6b5a2",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "060bfe65-db6f-4f54-87f7-bea2ea6a249f",
+      "glass_id": "004c4786-d558-43e7-82be-795f60182ef7",
       "name": "SNE 50/25",
-      "thickness": "1/8",
-      "shape": "Half-Circle with Notch",
-      "tint": "Frosted Blue Chip",
-      "length": 81,
+      "thickness": "1/4",
+      "shape": "Rounded Corner(s)",
+      "tint": "Frosted Green Chip",
+      "length": 14,
+      "width": 10
+    },
+    "quantity": 8,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 9485,
+    "order_id": "543c9782-c92e-4724-96f5-0fe7d19bc4ba",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "82a54c94-9681-4ebe-9cd8-81cfa03056e1",
+      "name": "SN 68",
+      "thickness": "3/8",
+      "shape": "Trapezoid",
+      "tint": "Light Gray",
+      "length": 80,
       "width": 29
     },
-    "quantity": 192,
+    "quantity": 7,
     "note": "some note"
   },
   {
-    "order_item_id": 7176,
-    "order_id": "af70f244-802e-4c6a-9e57-6b00dbd6b5a2",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
+    "order_item_id": 5050,
+    "order_id": "543c9782-c92e-4724-96f5-0fe7d19bc4ba",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
     "product_config": {
-      "glass_id": "538c9855-17a0-410d-90d2-5e5e9f43c6c8",
-      "name": "SNX-L 62/34",
+      "glass_id": "c112847c-f8ab-4e7b-a397-6a44ef7529f7",
+      "name": "NU 40 LE",
       "thickness": "1/4",
-      "shape": "Arch-Top",
-      "tint": "Frosted Green Chip",
-      "length": 25,
-      "width": 10
+      "shape": "Clipped Corner(s)",
+      "tint": "Solex",
+      "length": 65,
+      "width": 47
+    },
+    "quantity": 52,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 637,
+    "order_id": "ea6cf228-ee82-49e7-bb8f-9dbc8a57dadd",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "ec5ffa0f-39d8-4d03-94dd-95b190a8c2f5",
+      "name": "AG 50 LE",
+      "thickness": "3/8",
+      "shape": "Pentagon",
+      "tint": "Ultra Clear",
+      "length": 70,
+      "width": 38
     },
     "quantity": 34,
     "note": "some note"
   },
   {
-    "order_item_id": 9228,
-    "order_id": "48cf9834-c997-4f70-b76b-890678d8a8a0",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
+    "order_item_id": 1630,
+    "order_id": "ea6cf228-ee82-49e7-bb8f-9dbc8a57dadd",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
     "product_config": {
-      "glass_id": "b4ad52ba-ba2e-4db7-815c-0f0087e58ff4",
-      "name": "SN 68",
-      "thickness": "3/8",
-      "shape": "Parallelogram",
-      "tint": "Satin Etch",
-      "length": 69,
-      "width": 45
-    },
-    "quantity": 42,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 5233,
-    "order_id": "acd83a78-a384-486a-acb4-ab623c3981fc",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "538c9855-17a0-410d-90d2-5e5e9f43c6c8",
-      "name": "SNX-L 62/34",
-      "thickness": "1/2",
-      "shape": "Arch",
-      "tint": "Dark Gray",
-      "length": 64,
-      "width": 41
-    },
-    "quantity": 19,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 8821,
-    "order_id": "acd83a78-a384-486a-acb4-ab623c3981fc",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
-    "product_config": {
-      "glass_id": "d0340245-d1b1-474d-b05b-1e330b5601d2",
-      "name": "SNR 35 HT",
-      "thickness": "3/8",
-      "shape": "Quarter Round",
-      "tint": "Bronze",
-      "length": 58,
-      "width": 5
-    },
-    "quantity": 17,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 1580,
-    "order_id": "acd83a78-a384-486a-acb4-ab623c3981fc",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
-    "product_config": {
-      "glass_id": "ef4a6120-93a8-450f-a7f9-6e75f27fde60",
-      "name": "MC 27 LE-A",
-      "thickness": "3/4",
-      "shape": "Racetrack Oval",
-      "tint": "P-516",
-      "length": 30,
-      "width": 19
-    },
-    "quantity": 6,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 2610,
-    "order_id": "acd83a78-a384-486a-acb4-ab623c3981fc",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "d0340245-d1b1-474d-b05b-1e330b5601d2",
-      "name": "SNR 35 HT",
-      "thickness": "3/4",
-      "shape": "Octagon",
-      "tint": "Frosted Green Chip",
-      "length": 56,
-      "width": 30
-    },
-    "quantity": 8,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 917,
-    "order_id": "acd83a78-a384-486a-acb4-ab623c3981fc",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "24c66f1f-bd90-4fc2-b3e2-7ed7cb667b00",
+      "glass_id": "c5eb32fe-3209-43d3-a63c-f5d3c3555c8b",
       "name": "IS20 LE-T",
       "thickness": "1/2",
-      "shape": "Trapezoid",
-      "tint": "Solex",
-      "length": 54,
+      "shape": "Circle",
+      "tint": "Mistlite",
+      "length": 61,
       "width": 22
-    },
-    "quantity": 2,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 582,
-    "order_id": "acd83a78-a384-486a-acb4-ab623c3981fc",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "d0340245-d1b1-474d-b05b-1e330b5601d2",
-      "name": "SNR 35 HT",
-      "thickness": "3/8",
-      "shape": "Quad Arch",
-      "tint": "Clear",
-      "length": 95,
-      "width": 43
-    },
-    "quantity": 185,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 5833,
-    "order_id": "b30716d6-e242-4dc2-9f57-240ad3c762a8",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
-    "product_config": {
-      "glass_id": "da450d2a-3d5e-4646-8941-677dd51f7f8b",
-      "name": "AG 43",
-      "thickness": "3/4",
-      "shape": "Quarter Round",
-      "tint": "Light Gray",
-      "length": 38,
-      "width": 6
-    },
-    "quantity": 2,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 3296,
-    "order_id": "b30716d6-e242-4dc2-9f57-240ad3c762a8",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
-    "product_config": {
-      "glass_id": "af9ab768-f43f-416f-8cb1-8e70979e0972",
-      "name": "Sunguard Spandrel HT",
-      "thickness": "3/8",
-      "shape": "Triangle",
-      "tint": "Ultra Clear",
-      "length": 77,
-      "width": 38
-    },
-    "quantity": 162,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 4568,
-    "order_id": "b30716d6-e242-4dc2-9f57-240ad3c762a8",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "538c9855-17a0-410d-90d2-5e5e9f43c6c8",
-      "name": "SNX-L 62/34",
-      "thickness": "3/8",
-      "shape": "Trapezoid",
-      "tint": "P-516",
-      "length": 77,
-      "width": 22
-    },
-    "quantity": 28,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 9554,
-    "order_id": "b30716d6-e242-4dc2-9f57-240ad3c762a8",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "28cb3997-daf6-464f-812d-97182ee602b3",
-      "name": "NU 40 LE",
-      "thickness": "3/4",
-      "shape": "Arch-Top",
-      "tint": "Solex",
-      "length": 72,
-      "width": 47
-    },
-    "quantity": 48,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 1557,
-    "order_id": "b30716d6-e242-4dc2-9f57-240ad3c762a8",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
-    "product_config": {
-      "glass_id": "af9ab768-f43f-416f-8cb1-8e70979e0972",
-      "name": "Sunguard Spandrel HT",
-      "thickness": "1/2",
-      "shape": "Parallelogram",
-      "tint": "Bronze",
-      "length": 69,
-      "width": 29
-    },
-    "quantity": 7,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 3999,
-    "order_id": "991f46d0-4bc5-4e3f-aea2-8f4efa9f6861",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "d0340245-d1b1-474d-b05b-1e330b5601d2",
-      "name": "SNR 35 HT",
-      "thickness": "1/2",
-      "shape": "Pentagon",
-      "tint": "Bronze",
-      "length": 29,
-      "width": 6
     },
     "quantity": 3,
     "note": "some note"
   },
   {
-    "order_item_id": 4689,
-    "order_id": "991f46d0-4bc5-4e3f-aea2-8f4efa9f6861",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
+    "order_item_id": 8133,
+    "order_id": "ea6cf228-ee82-49e7-bb8f-9dbc8a57dadd",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
     "product_config": {
-      "glass_id": "ef4a6120-93a8-450f-a7f9-6e75f27fde60",
+      "glass_id": "d49c19b3-cf1a-4ad6-8ba4-bf127ce1de6f",
       "name": "MC 27 LE-A",
-      "thickness": "1/8",
-      "shape": "Clipped Corner(s)",
-      "tint": "Ultra Clear",
-      "length": 73,
-      "width": 46
-    },
-    "quantity": 26,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 6081,
-    "order_id": "4c1194b6-7f87-4101-8717-8bc02cf84bf4",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "24c66f1f-bd90-4fc2-b3e2-7ed7cb667b00",
-      "name": "IS20 LE-T",
       "thickness": "3/4",
       "shape": "Clipped Corner(s)",
-      "tint": "Frosted Green Chip",
-      "length": 40,
-      "width": 31
-    },
-    "quantity": 59,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 3674,
-    "order_id": "4c1194b6-7f87-4101-8717-8bc02cf84bf4",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
-    "product_config": {
-      "glass_id": "ea045be8-3c33-4a2d-9137-da2e180210eb",
-      "name": "SatinDeco",
-      "thickness": "1/4",
-      "shape": "Ellipse",
-      "tint": "Satin Etch",
-      "length": 47,
-      "width": 39
-    },
-    "quantity": 4,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 6395,
-    "order_id": "4c1194b6-7f87-4101-8717-8bc02cf84bf4",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "060bfe65-db6f-4f54-87f7-bea2ea6a249f",
-      "name": "SNE 50/25",
-      "thickness": "1/8",
-      "shape": "Half-Circle with Notch",
-      "tint": "Bronze",
-      "length": 12,
-      "width": 3
+      "tint": "Midnight Gray",
+      "length": 32,
+      "width": 14
     },
     "quantity": 1,
     "note": "some note"
   },
   {
-    "order_item_id": 8944,
-    "order_id": "4c1194b6-7f87-4101-8717-8bc02cf84bf4",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
+    "order_item_id": 2800,
+    "order_id": "18ebad06-d4bd-4ad2-b630-2fdca2dc6c55",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
     "product_config": {
-      "glass_id": "46247eed-86b1-4ea7-bddf-4c8a7c89565a",
-      "name": "MC 68 LE-A",
+      "glass_id": "c112847c-f8ab-4e7b-a397-6a44ef7529f7",
+      "name": "NU 40 LE",
       "thickness": "3/4",
-      "shape": "Pentagon",
-      "tint": "Satin Etch",
-      "length": 75,
-      "width": 31
-    },
-    "quantity": 21,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 6989,
-    "order_id": "4c1194b6-7f87-4101-8717-8bc02cf84bf4",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "538c9855-17a0-410d-90d2-5e5e9f43c6c8",
-      "name": "SNX-L 62/34",
-      "thickness": "1/2",
-      "shape": "Clipped Corner(s)",
-      "tint": "Solex",
-      "length": 32,
-      "width": 29
-    },
-    "quantity": 26,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 9439,
-    "order_id": "4c1194b6-7f87-4101-8717-8bc02cf84bf4",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "ea045be8-3c33-4a2d-9137-da2e180210eb",
-      "name": "SatinDeco",
-      "thickness": "1/2",
-      "shape": "Clipped Corner(s)",
+      "shape": "Arch",
       "tint": "P-516",
-      "length": 70,
-      "width": 36
+      "length": 39,
+      "width": 26
     },
-    "quantity": 144,
+    "quantity": 52,
     "note": "some note"
   },
   {
-    "order_item_id": 143,
-    "order_id": "4c1194b6-7f87-4101-8717-8bc02cf84bf4",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
+    "order_item_id": 2664,
+    "order_id": "18ebad06-d4bd-4ad2-b630-2fdca2dc6c55",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
     "product_config": {
-      "glass_id": "b4ad52ba-ba2e-4db7-815c-0f0087e58ff4",
-      "name": "SN 68",
-      "thickness": "1/4",
-      "shape": "Parallelogram",
-      "tint": "Frosted Green Chip",
-      "length": 52,
-      "width": 35
-    },
-    "quantity": 83,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 1536,
-    "order_id": "4c1194b6-7f87-4101-8717-8bc02cf84bf4",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
-    "product_config": {
-      "glass_id": "24c66f1f-bd90-4fc2-b3e2-7ed7cb667b00",
-      "name": "IS20 LE-T",
+      "glass_id": "c908d94a-e129-4912-b3dd-29d7073c042d",
+      "name": "Sunguard Spandrel HT",
       "thickness": "1/2",
-      "shape": "Pentagon",
-      "tint": "Mistlite",
-      "length": 81,
+      "shape": "Trapezoid",
+      "tint": "Bronze",
+      "length": 79,
       "width": 48
     },
-    "quantity": 5,
+    "quantity": 14,
     "note": "some note"
   },
   {
-    "order_item_id": 6367,
-    "order_id": "66c71cde-1e87-4f7a-92c6-ed7bb6a563f9",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
+    "order_item_id": 419,
+    "order_id": "18ebad06-d4bd-4ad2-b630-2fdca2dc6c55",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
     "product_config": {
-      "glass_id": "ea045be8-3c33-4a2d-9137-da2e180210eb",
-      "name": "SatinDeco",
+      "glass_id": "f1e58ff5-48fc-40f5-971d-10c8ad04ab6f",
+      "name": "SN 68 HT",
       "thickness": "1/2",
-      "shape": "Quarter Round with Notch",
-      "tint": "P-516",
-      "length": 25,
-      "width": 14
+      "shape": "Parallelogram",
+      "tint": "Light Gray",
+      "length": 20,
+      "width": 10
     },
-    "quantity": 162,
+    "quantity": 151,
     "note": "some note"
   },
   {
-    "order_item_id": 5002,
-    "order_id": "66c71cde-1e87-4f7a-92c6-ed7bb6a563f9",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
+    "order_item_id": 3310,
+    "order_id": "18ebad06-d4bd-4ad2-b630-2fdca2dc6c55",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
     "product_config": {
-      "glass_id": "af9ab768-f43f-416f-8cb1-8e70979e0972",
+      "glass_id": "c908d94a-e129-4912-b3dd-29d7073c042d",
       "name": "Sunguard Spandrel HT",
       "thickness": "1/8",
-      "shape": "Quarter Round",
+      "shape": "Single Slope Rectangle",
       "tint": "Ultra Clear",
-      "length": 77,
-      "width": 7
+      "length": 62,
+      "width": 30
     },
-    "quantity": 11,
+    "quantity": 2,
     "note": "some note"
   },
   {
-    "order_item_id": 9257,
-    "order_id": "66c71cde-1e87-4f7a-92c6-ed7bb6a563f9",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
+    "order_item_id": 4870,
+    "order_id": "18ebad06-d4bd-4ad2-b630-2fdca2dc6c55",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
     "product_config": {
-      "glass_id": "ef4a6120-93a8-450f-a7f9-6e75f27fde60",
+      "glass_id": "d49c19b3-cf1a-4ad6-8ba4-bf127ce1de6f",
       "name": "MC 27 LE-A",
       "thickness": "1/2",
-      "shape": "Right Triangle",
-      "tint": "Clear",
-      "length": 80,
-      "width": 2
+      "shape": "Clipped Corner(s)",
+      "tint": "Mistlite",
+      "length": 76,
+      "width": 10
     },
-    "quantity": 11,
+    "quantity": 140,
     "note": "some note"
   },
   {
-    "order_item_id": 8823,
-    "order_id": "66c71cde-1e87-4f7a-92c6-ed7bb6a563f9",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
+    "order_item_id": 8049,
+    "order_id": "ff8cc23f-1984-49cb-b2a7-be7e12846d94",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
     "product_config": {
-      "glass_id": "ea045be8-3c33-4a2d-9137-da2e180210eb",
-      "name": "SatinDeco",
-      "thickness": "3/4",
-      "shape": "Right Triangle",
-      "tint": "Satin Etch",
-      "length": 77,
-      "width": 44
-    },
-    "quantity": 185,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 8361,
-    "order_id": "66c71cde-1e87-4f7a-92c6-ed7bb6a563f9",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "24c66f1f-bd90-4fc2-b3e2-7ed7cb667b00",
+      "glass_id": "c5eb32fe-3209-43d3-a63c-f5d3c3555c8b",
       "name": "IS20 LE-T",
       "thickness": "1/4",
-      "shape": "Half-Circle",
-      "tint": "Frosted Green Chip",
-      "length": 65,
-      "width": 17
-    },
-    "quantity": 7,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 2382,
-    "order_id": "66c71cde-1e87-4f7a-92c6-ed7bb6a563f9",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
-    "product_config": {
-      "glass_id": "ef4a6120-93a8-450f-a7f9-6e75f27fde60",
-      "name": "MC 27 LE-A",
-      "thickness": "1/8",
-      "shape": "Irregular/Any Other Shape",
-      "tint": "P-516",
-      "length": 52,
-      "width": 16
-    },
-    "quantity": 12,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 1681,
-    "order_id": "66c71cde-1e87-4f7a-92c6-ed7bb6a563f9",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
-    "product_config": {
-      "glass_id": "d0340245-d1b1-474d-b05b-1e330b5601d2",
-      "name": "SNR 35 HT",
-      "thickness": "1/2",
       "shape": "Triangle",
-      "tint": "P-516",
-      "length": 70,
+      "tint": "Clear",
+      "length": 88,
+      "width": 25
+    },
+    "quantity": 6,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 9707,
+    "order_id": "ff8cc23f-1984-49cb-b2a7-be7e12846d94",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "82a54c94-9681-4ebe-9cd8-81cfa03056e1",
+      "name": "SN 68",
+      "thickness": "3/8",
+      "shape": "Ellipse",
+      "tint": "Bronze",
+      "length": 54,
+      "width": 15
+    },
+    "quantity": 201,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 1543,
+    "order_id": "ff8cc23f-1984-49cb-b2a7-be7e12846d94",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "ec5ffa0f-39d8-4d03-94dd-95b190a8c2f5",
+      "name": "AG 50 LE",
+      "thickness": "3/4",
+      "shape": "Pentagon",
+      "tint": "Ultra Clear",
+      "length": 43,
       "width": 42
     },
-    "quantity": 107,
+    "quantity": 61,
     "note": "some note"
   },
   {
-    "order_item_id": 1042,
-    "order_id": "0cdc401a-0669-4a9f-a14d-d747e153a3fc",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
+    "order_item_id": 5200,
+    "order_id": "ff8cc23f-1984-49cb-b2a7-be7e12846d94",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
     "product_config": {
-      "glass_id": "90410c20-66fd-44a0-8009-3d5b8afc631a",
-      "name": "MC 68 LE-T",
+      "glass_id": "c908d94a-e129-4912-b3dd-29d7073c042d",
+      "name": "Sunguard Spandrel HT",
       "thickness": "1/2",
-      "shape": "Hexagon",
-      "tint": "Light Gray",
-      "length": 34,
-      "width": 21
+      "shape": "Irregular/Any Other Shape",
+      "tint": "Midnight Gray",
+      "length": 81,
+      "width": 2
     },
     "quantity": 54,
     "note": "some note"
   },
   {
-    "order_item_id": 7224,
-    "order_id": "0cdc401a-0669-4a9f-a14d-d747e153a3fc",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
+    "order_item_id": 5297,
+    "order_id": "ff8cc23f-1984-49cb-b2a7-be7e12846d94",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
     "product_config": {
-      "glass_id": "24c66f1f-bd90-4fc2-b3e2-7ed7cb667b00",
-      "name": "IS20 LE-T",
-      "thickness": "3/8",
-      "shape": "Half-Circle",
-      "tint": "Ultra Clear",
-      "length": 54,
-      "width": 40
-    },
-    "quantity": 4,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 4368,
-    "order_id": "3463f8f2-6783-46e9-8e8e-6ff2789ffb0c",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "28cb3997-daf6-464f-812d-97182ee602b3",
-      "name": "NU 40 LE",
-      "thickness": "3/8",
-      "shape": "Half-Circle",
-      "tint": "Ultra Clear",
-      "length": 52,
-      "width": 41
-    },
-    "quantity": 45,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 3797,
-    "order_id": "3463f8f2-6783-46e9-8e8e-6ff2789ffb0c",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
-    "product_config": {
-      "glass_id": "ef4a6120-93a8-450f-a7f9-6e75f27fde60",
+      "glass_id": "d49c19b3-cf1a-4ad6-8ba4-bf127ce1de6f",
       "name": "MC 27 LE-A",
-      "thickness": "3/8",
-      "shape": "Quarter Round",
-      "tint": "Light Gray",
-      "length": 94,
-      "width": 17
+      "thickness": "1/8",
+      "shape": "Arch Top & Bottom",
+      "tint": "Mistlite",
+      "length": 52,
+      "width": 38
     },
-    "quantity": 4,
+    "quantity": 149,
     "note": "some note"
   },
   {
-    "order_item_id": 5544,
-    "order_id": "3463f8f2-6783-46e9-8e8e-6ff2789ffb0c",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
+    "order_item_id": 2825,
+    "order_id": "a088d191-faf4-4220-a822-5b8fa0e7ea63",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
     "product_config": {
-      "glass_id": "b4ad52ba-ba2e-4db7-815c-0f0087e58ff4",
-      "name": "SN 68",
-      "thickness": "3/8",
-      "shape": "Racetrack Oval",
-      "tint": "Dark Gray",
-      "length": 55,
-      "width": 40
-    },
-    "quantity": 37,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 3755,
-    "order_id": "3463f8f2-6783-46e9-8e8e-6ff2789ffb0c",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "91454f2a-292a-4b6c-91bc-2b126062ab5f",
-      "name": "SN 68 HT",
-      "thickness": "3/4",
-      "shape": "Single Slope Rectangle",
-      "tint": "Midnight Gray",
-      "length": 24,
-      "width": 16
-    },
-    "quantity": 196,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 1806,
-    "order_id": "3463f8f2-6783-46e9-8e8e-6ff2789ffb0c",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "ea045be8-3c33-4a2d-9137-da2e180210eb",
-      "name": "SatinDeco",
-      "thickness": "3/8",
-      "shape": "Quarter Round",
-      "tint": "Ultra Clear",
-      "length": 74,
-      "width": 30
-    },
-    "quantity": 33,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 1585,
-    "order_id": "3463f8f2-6783-46e9-8e8e-6ff2789ffb0c",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "538c9855-17a0-410d-90d2-5e5e9f43c6c8",
-      "name": "SNX-L 62/34",
-      "thickness": "1/4",
-      "shape": "Parallelogram",
-      "tint": "Frosted Green Chip",
-      "length": 73,
-      "width": 44
-    },
-    "quantity": 106,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 2186,
-    "order_id": "3463f8f2-6783-46e9-8e8e-6ff2789ffb0c",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "24c66f1f-bd90-4fc2-b3e2-7ed7cb667b00",
+      "glass_id": "c5eb32fe-3209-43d3-a63c-f5d3c3555c8b",
       "name": "IS20 LE-T",
-      "thickness": "3/4",
-      "shape": "Pentagon",
-      "tint": "Dark Gray",
-      "length": 73,
+      "thickness": "1/4",
+      "shape": "Half-Circle with Notch",
+      "tint": "Clear",
+      "length": 82,
+      "width": 47
+    },
+    "quantity": 16,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 9423,
+    "order_id": "a088d191-faf4-4220-a822-5b8fa0e7ea63",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "aeab03c7-9242-4c4d-a53a-ef341b9fed6f",
+      "name": "AG 43",
+      "thickness": "3/8",
+      "shape": "Square/Rectangle",
+      "tint": "Solex",
+      "length": 60,
+      "width": 12
+    },
+    "quantity": 81,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 7848,
+    "order_id": "a088d191-faf4-4220-a822-5b8fa0e7ea63",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "a1a67246-21b6-4ba1-9024-417369d628b0",
+      "name": "MC 68 LE-T",
+      "thickness": "1/2",
+      "shape": "Quarter Round",
+      "tint": "Solex",
+      "length": 95,
+      "width": 29
+    },
+    "quantity": 5,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 4750,
+    "order_id": "a088d191-faf4-4220-a822-5b8fa0e7ea63",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "d1561e8c-3e9b-4e29-94d2-56bbdced64f7",
+      "name": "MC 68 LE-A",
+      "thickness": "1/2",
+      "shape": "Quarter Round with Notch",
+      "tint": "P-516",
+      "length": 45,
       "width": 13
+    },
+    "quantity": 20,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 8378,
+    "order_id": "a088d191-faf4-4220-a822-5b8fa0e7ea63",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "1da5b2a3-6a53-49de-bbce-4521ef09cd5c",
+      "name": "SatinDeco",
+      "thickness": "3/4",
+      "shape": "Arch Side",
+      "tint": "Frosted Green Chip",
+      "length": 27,
+      "width": 3
     },
     "quantity": 73,
     "note": "some note"
   },
   {
-    "order_item_id": 3515,
-    "order_id": "3463f8f2-6783-46e9-8e8e-6ff2789ffb0c",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
+    "order_item_id": 7408,
+    "order_id": "1efbc722-cec2-4225-a05b-a29faab25c10",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
     "product_config": {
-      "glass_id": "ef4a6120-93a8-450f-a7f9-6e75f27fde60",
-      "name": "MC 27 LE-A",
-      "thickness": "1/2",
-      "shape": "Right Triangle",
-      "tint": "Ultra Clear",
-      "length": 60,
-      "width": 15
+      "glass_id": "1da5b2a3-6a53-49de-bbce-4521ef09cd5c",
+      "name": "SatinDeco",
+      "thickness": "3/4",
+      "shape": "Single Slope Rectangle",
+      "tint": "Satin Etch",
+      "length": 7,
+      "width": 4
     },
-    "quantity": 4,
+    "quantity": 86,
     "note": "some note"
   },
   {
-    "order_item_id": 5865,
-    "order_id": "3463f8f2-6783-46e9-8e8e-6ff2789ffb0c",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
+    "order_item_id": 7605,
+    "order_id": "1efbc722-cec2-4225-a05b-a29faab25c10",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
     "product_config": {
-      "glass_id": "538c9855-17a0-410d-90d2-5e5e9f43c6c8",
-      "name": "SNX-L 62/34",
-      "thickness": "1/2",
-      "shape": "Arch",
+      "glass_id": "cc546439-3cef-4f13-b365-c6893c05fc82",
+      "name": "SNR 35 HT",
+      "thickness": "1/4",
+      "shape": "Quad Arch",
+      "tint": "Low-E",
+      "length": 88,
+      "width": 18
+    },
+    "quantity": 11,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 4040,
+    "order_id": "1efbc722-cec2-4225-a05b-a29faab25c10",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "d1561e8c-3e9b-4e29-94d2-56bbdced64f7",
+      "name": "MC 68 LE-A",
+      "thickness": "1/8",
+      "shape": "Hexagon",
       "tint": "Frosted Green Chip",
-      "length": 80,
+      "length": 49,
+      "width": 34
+    },
+    "quantity": 26,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 2067,
+    "order_id": "1efbc722-cec2-4225-a05b-a29faab25c10",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "ec5ffa0f-39d8-4d03-94dd-95b190a8c2f5",
+      "name": "AG 50 LE",
+      "thickness": "1/2",
+      "shape": "Half-Circle with Notch",
+      "tint": "Bronze",
+      "length": 92,
       "width": 21
     },
-    "quantity": 59,
+    "quantity": 5,
     "note": "some note"
   },
   {
-    "order_item_id": 3887,
-    "order_id": "9764d8c8-eda1-4646-acb3-12e73b6be607",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
+    "order_item_id": 5488,
+    "order_id": "1efbc722-cec2-4225-a05b-a29faab25c10",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
     "product_config": {
-      "glass_id": "46247eed-86b1-4ea7-bddf-4c8a7c89565a",
-      "name": "MC 68 LE-A",
-      "thickness": "3/8",
-      "shape": "Rounded Corner(s)",
-      "tint": "P-516",
-      "length": 13,
-      "width": 9
-    },
-    "quantity": 3,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 8212,
-    "order_id": "9764d8c8-eda1-4646-acb3-12e73b6be607",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "538c9855-17a0-410d-90d2-5e5e9f43c6c8",
-      "name": "SNX-L 62/34",
+      "glass_id": "f1e58ff5-48fc-40f5-971d-10c8ad04ab6f",
+      "name": "SN 68 HT",
       "thickness": "1/2",
-      "shape": "Parallelogram",
-      "tint": "P-516",
-      "length": 70,
-      "width": 3
-    },
-    "quantity": 3,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 2446,
-    "order_id": "9764d8c8-eda1-4646-acb3-12e73b6be607",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
-    "product_config": {
-      "glass_id": "da450d2a-3d5e-4646-8941-677dd51f7f8b",
-      "name": "AG 43",
-      "thickness": "3/4",
-      "shape": "Arch Side",
-      "tint": "P-516",
-      "length": 93,
-      "width": 48
-    },
-    "quantity": 1,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 2419,
-    "order_id": "9764d8c8-eda1-4646-acb3-12e73b6be607",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "90410c20-66fd-44a0-8009-3d5b8afc631a",
-      "name": "MC 68 LE-T",
-      "thickness": "1/4",
-      "shape": "Triangle",
-      "tint": "Low-E",
-      "length": 53,
-      "width": 48
-    },
-    "quantity": 6,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 177,
-    "order_id": "d320a831-12df-4959-9481-a14b45093ee8",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "da450d2a-3d5e-4646-8941-677dd51f7f8b",
-      "name": "AG 43",
-      "thickness": "3/4",
-      "shape": "Octagon",
-      "tint": "Satin Etch",
-      "length": 49,
-      "width": 26
+      "shape": "Quad Arch",
+      "tint": "Light Gray",
+      "length": 82,
+      "width": 38
     },
     "quantity": 9,
     "note": "some note"
   },
   {
-    "order_item_id": 8803,
-    "order_id": "138adf68-73c5-470e-90e2-aefdfc1d2991",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
+    "order_item_id": 754,
+    "order_id": "5cfd5bd9-e7a2-4744-87c4-7afa6d33e48f",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
     "product_config": {
-      "glass_id": "28cb3997-daf6-464f-812d-97182ee602b3",
-      "name": "NU 40 LE",
-      "thickness": "1/2",
-      "shape": "Arch Side",
-      "tint": "Satin Etch",
-      "length": 84,
-      "width": 7
-    },
-    "quantity": 43,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 9726,
-    "order_id": "138adf68-73c5-470e-90e2-aefdfc1d2991",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
-    "product_config": {
-      "glass_id": "46247eed-86b1-4ea7-bddf-4c8a7c89565a",
-      "name": "MC 68 LE-A",
-      "thickness": "1/4",
-      "shape": "Rounded Corner(s)",
-      "tint": "Satin Etch",
-      "length": 55,
-      "width": 22
-    },
-    "quantity": 3,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 6294,
-    "order_id": "d0977789-58d1-4eaf-b18c-c67ad9377be3",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
-    "product_config": {
-      "glass_id": "ea045be8-3c33-4a2d-9137-da2e180210eb",
-      "name": "SatinDeco",
-      "thickness": "3/8",
-      "shape": "Trapezoid",
-      "tint": "Bronze",
-      "length": 90,
-      "width": 34
-    },
-    "quantity": 38,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 6904,
-    "order_id": "d0977789-58d1-4eaf-b18c-c67ad9377be3",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "da450d2a-3d5e-4646-8941-677dd51f7f8b",
-      "name": "AG 43",
-      "thickness": "3/8",
-      "shape": "Quarter Round",
-      "tint": "P-516",
-      "length": 96,
-      "width": 38
-    },
-    "quantity": 42,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 4581,
-    "order_id": "d0977789-58d1-4eaf-b18c-c67ad9377be3",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "af9ab768-f43f-416f-8cb1-8e70979e0972",
-      "name": "Sunguard Spandrel HT",
-      "thickness": "1/8",
-      "shape": "Arch-Top",
-      "tint": "Ultra Clear",
-      "length": 68,
-      "width": 33
-    },
-    "quantity": 95,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 5491,
-    "order_id": "d0977789-58d1-4eaf-b18c-c67ad9377be3",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "d0340245-d1b1-474d-b05b-1e330b5601d2",
+      "glass_id": "cc546439-3cef-4f13-b365-c6893c05fc82",
       "name": "SNR 35 HT",
       "thickness": "1/4",
-      "shape": "Pentagon",
-      "tint": "Clear",
-      "length": 84,
-      "width": 44
-    },
-    "quantity": 53,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 3295,
-    "order_id": "d0977789-58d1-4eaf-b18c-c67ad9377be3",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "28cb3997-daf6-464f-812d-97182ee602b3",
-      "name": "NU 40 LE",
-      "thickness": "1/4",
-      "shape": "Arch",
-      "tint": "Satin Etch",
-      "length": 63,
-      "width": 44
+      "shape": "Rounded Corner(s)",
+      "tint": "P-516",
+      "length": 95,
+      "width": 31
     },
     "quantity": 1,
     "note": "some note"
   },
   {
-    "order_item_id": 125,
-    "order_id": "e3c3fe3d-f94b-4a40-847a-d3733448c0a9",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
+    "order_item_id": 3923,
+    "order_id": "5cfd5bd9-e7a2-4744-87c4-7afa6d33e48f",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
     "product_config": {
-      "glass_id": "90410c20-66fd-44a0-8009-3d5b8afc631a",
-      "name": "MC 68 LE-T",
-      "thickness": "1/2",
-      "shape": "Quarter Round",
-      "tint": "Midnight Gray",
-      "length": 49,
-      "width": 12
+      "glass_id": "c908d94a-e129-4912-b3dd-29d7073c042d",
+      "name": "Sunguard Spandrel HT",
+      "thickness": "1/4",
+      "shape": "Quarter Round with Notch",
+      "tint": "P-516",
+      "length": 78,
+      "width": 18
     },
-    "quantity": 4,
+    "quantity": 36,
     "note": "some note"
   },
   {
-    "order_item_id": 5955,
-    "order_id": "e3c3fe3d-f94b-4a40-847a-d3733448c0a9",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
+    "order_item_id": 5106,
+    "order_id": "5cfd5bd9-e7a2-4744-87c4-7afa6d33e48f",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
     "product_config": {
-      "glass_id": "24c66f1f-bd90-4fc2-b3e2-7ed7cb667b00",
-      "name": "IS20 LE-T",
-      "thickness": "1/2",
-      "shape": "Octagon",
-      "tint": "Frosted Blue Chip",
-      "length": 80,
-      "width": 48
-    },
-    "quantity": 8,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 2049,
-    "order_id": "e3c3fe3d-f94b-4a40-847a-d3733448c0a9",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "ea045be8-3c33-4a2d-9137-da2e180210eb",
+      "glass_id": "1da5b2a3-6a53-49de-bbce-4521ef09cd5c",
       "name": "SatinDeco",
+      "thickness": "3/4",
+      "shape": "Racetrack Oval",
+      "tint": "Clear",
+      "length": 50,
+      "width": 7
+    },
+    "quantity": 1,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 8670,
+    "order_id": "5cfd5bd9-e7a2-4744-87c4-7afa6d33e48f",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "82a54c94-9681-4ebe-9cd8-81cfa03056e1",
+      "name": "SN 68",
       "thickness": "1/8",
-      "shape": "Arch Top & Bottom",
-      "tint": "Frosted Green Chip",
-      "length": 15,
-      "width": 3
+      "shape": "Right Triangle",
+      "tint": "Clear",
+      "length": 63,
+      "width": 9
+    },
+    "quantity": 14,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 8294,
+    "order_id": "5cfd5bd9-e7a2-4744-87c4-7afa6d33e48f",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "004c4786-d558-43e7-82be-795f60182ef7",
+      "name": "SNE 50/25",
+      "thickness": "1/4",
+      "shape": "House",
+      "tint": "Light Gray",
+      "length": 46,
+      "width": 13
+    },
+    "quantity": 155,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 1625,
+    "order_id": "5cfd5bd9-e7a2-4744-87c4-7afa6d33e48f",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "c5eb32fe-3209-43d3-a63c-f5d3c3555c8b",
+      "name": "IS20 LE-T",
+      "thickness": "3/4",
+      "shape": "Parallelogram",
+      "tint": "Mistlite",
+      "length": 77,
+      "width": 33
     },
     "quantity": 7,
     "note": "some note"
   },
   {
-    "order_item_id": 4610,
-    "order_id": "e3c3fe3d-f94b-4a40-847a-d3733448c0a9",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
+    "order_item_id": 449,
+    "order_id": "12486d18-1060-4e02-9caa-e1d3f9436419",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
     "product_config": {
-      "glass_id": "91454f2a-292a-4b6c-91bc-2b126062ab5f",
-      "name": "SN 68 HT",
-      "thickness": "3/8",
-      "shape": "Right Triangle",
-      "tint": "Low-E",
-      "length": 64,
+      "glass_id": "c5eb32fe-3209-43d3-a63c-f5d3c3555c8b",
+      "name": "IS20 LE-T",
+      "thickness": "1/8",
+      "shape": "Arch",
+      "tint": "Mistlite",
+      "length": 16,
       "width": 11
     },
-    "quantity": 29,
+    "quantity": 199,
     "note": "some note"
   },
   {
-    "order_item_id": 8564,
-    "order_id": "e3c3fe3d-f94b-4a40-847a-d3733448c0a9",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
+    "order_item_id": 360,
+    "order_id": "12486d18-1060-4e02-9caa-e1d3f9436419",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
     "product_config": {
-      "glass_id": "cd774965-da25-463b-921f-441244911276",
-      "name": "AG 50 LE",
-      "thickness": "1/8",
-      "shape": "Clipped Corner(s)",
+      "glass_id": "c112847c-f8ab-4e7b-a397-6a44ef7529f7",
+      "name": "NU 40 LE",
+      "thickness": "1/4",
+      "shape": "Parallelogram",
       "tint": "Mistlite",
-      "length": 59,
-      "width": 41
+      "length": 65,
+      "width": 46
     },
-    "quantity": 10,
+    "quantity": 61,
     "note": "some note"
   },
   {
-    "order_item_id": 3341,
-    "order_id": "e3c3fe3d-f94b-4a40-847a-d3733448c0a9",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
+    "order_item_id": 5899,
+    "order_id": "12486d18-1060-4e02-9caa-e1d3f9436419",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
     "product_config": {
-      "glass_id": "060bfe65-db6f-4f54-87f7-bea2ea6a249f",
-      "name": "SNE 50/25",
-      "thickness": "3/8",
-      "shape": "Quarter Round",
-      "tint": "P-516",
-      "length": 84,
-      "width": 20
+      "glass_id": "cc546439-3cef-4f13-b365-c6893c05fc82",
+      "name": "SNR 35 HT",
+      "thickness": "3/4",
+      "shape": "Octagon",
+      "tint": "Clear",
+      "length": 47,
+      "width": 17
     },
-    "quantity": 49,
+    "quantity": 30,
     "note": "some note"
   },
   {
-    "order_item_id": 2726,
-    "order_id": "75043bd2-3538-4354-95a6-dad08c333201",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
+    "order_item_id": 5903,
+    "order_id": "12486d18-1060-4e02-9caa-e1d3f9436419",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
     "product_config": {
-      "glass_id": "ef4a6120-93a8-450f-a7f9-6e75f27fde60",
-      "name": "MC 27 LE-A",
-      "thickness": "1/2",
-      "shape": "Racetrack Oval",
-      "tint": "Mistlite",
-      "length": 72,
-      "width": 30
-    },
-    "quantity": 66,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 2395,
-    "order_id": "75043bd2-3538-4354-95a6-dad08c333201",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "538c9855-17a0-410d-90d2-5e5e9f43c6c8",
+      "glass_id": "af123281-fd38-48a1-b865-f5d1c25307f8",
       "name": "SNX-L 62/34",
       "thickness": "1/4",
-      "shape": "Arch",
-      "tint": "Clear",
-      "length": 83,
-      "width": 7
+      "shape": "Circle",
+      "tint": "P-516",
+      "length": 22,
+      "width": 2
     },
-    "quantity": 55,
+    "quantity": 69,
     "note": "some note"
   },
   {
-    "order_item_id": 9031,
-    "order_id": "75043bd2-3538-4354-95a6-dad08c333201",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
+    "order_item_id": 4030,
+    "order_id": "12486d18-1060-4e02-9caa-e1d3f9436419",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
     "product_config": {
-      "glass_id": "ea045be8-3c33-4a2d-9137-da2e180210eb",
-      "name": "SatinDeco",
+      "glass_id": "d1561e8c-3e9b-4e29-94d2-56bbdced64f7",
+      "name": "MC 68 LE-A",
+      "thickness": "1/8",
+      "shape": "Ellipse",
+      "tint": "Clear",
+      "length": 59,
+      "width": 24
+    },
+    "quantity": 4,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 4441,
+    "order_id": "12486d18-1060-4e02-9caa-e1d3f9436419",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "82a54c94-9681-4ebe-9cd8-81cfa03056e1",
+      "name": "SN 68",
       "thickness": "3/8",
       "shape": "Right Triangle",
-      "tint": "P-516",
-      "length": 63,
-      "width": 44
+      "tint": "Ultra Clear",
+      "length": 56,
+      "width": 41
     },
     "quantity": 8,
     "note": "some note"
   },
   {
-    "order_item_id": 8578,
-    "order_id": "75043bd2-3538-4354-95a6-dad08c333201",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
+    "order_item_id": 345,
+    "order_id": "12486d18-1060-4e02-9caa-e1d3f9436419",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
     "product_config": {
-      "glass_id": "538c9855-17a0-410d-90d2-5e5e9f43c6c8",
+      "glass_id": "af123281-fd38-48a1-b865-f5d1c25307f8",
       "name": "SNX-L 62/34",
       "thickness": "3/8",
-      "shape": "Arch Top & Bottom",
-      "tint": "Frosted Green Chip",
-      "length": 56,
-      "width": 30
+      "shape": "Ellipse",
+      "tint": "P-516",
+      "length": 26,
+      "width": 19
     },
-    "quantity": 31,
+    "quantity": 7,
     "note": "some note"
   },
   {
-    "order_item_id": 2661,
-    "order_id": "75043bd2-3538-4354-95a6-dad08c333201",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
+    "order_item_id": 3462,
+    "order_id": "934ebd0d-9424-47c9-b8ae-19fc9fb04fe1",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
     "product_config": {
-      "glass_id": "91454f2a-292a-4b6c-91bc-2b126062ab5f",
-      "name": "SN 68 HT",
-      "thickness": "1/4",
-      "shape": "Pentagon",
-      "tint": "P-516",
+      "glass_id": "aeab03c7-9242-4c4d-a53a-ef341b9fed6f",
+      "name": "AG 43",
+      "thickness": "3/4",
+      "shape": "Clipped Corner(s)",
+      "tint": "Ultra Clear",
+      "length": 59,
+      "width": 23
+    },
+    "quantity": 22,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 7309,
+    "order_id": "934ebd0d-9424-47c9-b8ae-19fc9fb04fe1",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "1da5b2a3-6a53-49de-bbce-4521ef09cd5c",
+      "name": "SatinDeco",
+      "thickness": "1/2",
+      "shape": "Square/Rectangle",
+      "tint": "Frosted Green Chip",
+      "length": 53,
+      "width": 23
+    },
+    "quantity": 9,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 5709,
+    "order_id": "934ebd0d-9424-47c9-b8ae-19fc9fb04fe1",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "ec5ffa0f-39d8-4d03-94dd-95b190a8c2f5",
+      "name": "AG 50 LE",
+      "thickness": "3/8",
+      "shape": "Half-Circle with Notch",
+      "tint": "Bronze",
       "length": 51,
-      "width": 43
+      "width": 39
     },
     "quantity": 6,
     "note": "some note"
   },
   {
-    "order_item_id": 8428,
-    "order_id": "75043bd2-3538-4354-95a6-dad08c333201",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
+    "order_item_id": 9847,
+    "order_id": "934ebd0d-9424-47c9-b8ae-19fc9fb04fe1",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
     "product_config": {
-      "glass_id": "060bfe65-db6f-4f54-87f7-bea2ea6a249f",
-      "name": "SNE 50/25",
+      "glass_id": "f1e58ff5-48fc-40f5-971d-10c8ad04ab6f",
+      "name": "SN 68 HT",
       "thickness": "1/8",
-      "shape": "Quarter Round with Notch",
-      "tint": "Frosted Blue Chip",
-      "length": 46,
-      "width": 20
-    },
-    "quantity": 4,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 3508,
-    "order_id": "75043bd2-3538-4354-95a6-dad08c333201",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "b4ad52ba-ba2e-4db7-815c-0f0087e58ff4",
-      "name": "SN 68",
-      "thickness": "1/2",
       "shape": "Racetrack Oval",
-      "tint": "Frosted Green Chip",
-      "length": 37,
-      "width": 33
+      "tint": "Ultra Clear",
+      "length": 51,
+      "width": 21
     },
-    "quantity": 103,
+    "quantity": 180,
     "note": "some note"
   },
   {
-    "order_item_id": 5615,
-    "order_id": "c9cfd248-64f9-44d5-b527-5c8b02366b9b",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
+    "order_item_id": 646,
+    "order_id": "934ebd0d-9424-47c9-b8ae-19fc9fb04fe1",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
     "product_config": {
-      "glass_id": "24c66f1f-bd90-4fc2-b3e2-7ed7cb667b00",
-      "name": "IS20 LE-T",
-      "thickness": "1/2",
-      "shape": "Trapezoid",
+      "glass_id": "c908d94a-e129-4912-b3dd-29d7073c042d",
+      "name": "Sunguard Spandrel HT",
+      "thickness": "1/8",
+      "shape": "Pentagon",
+      "tint": "Bronze",
+      "length": 34,
+      "width": 16
+    },
+    "quantity": 168,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 7473,
+    "order_id": "934ebd0d-9424-47c9-b8ae-19fc9fb04fe1",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "d49c19b3-cf1a-4ad6-8ba4-bf127ce1de6f",
+      "name": "MC 27 LE-A",
+      "thickness": "3/8",
+      "shape": "Racetrack Oval",
       "tint": "Mistlite",
-      "length": 85,
-      "width": 37
+      "length": 18,
+      "width": 9
     },
-    "quantity": 198,
+    "quantity": 30,
     "note": "some note"
   },
   {
-    "order_item_id": 7293,
-    "order_id": "c9cfd248-64f9-44d5-b527-5c8b02366b9b",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
+    "order_item_id": 7610,
+    "order_id": "934ebd0d-9424-47c9-b8ae-19fc9fb04fe1",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
     "product_config": {
-      "glass_id": "538c9855-17a0-410d-90d2-5e5e9f43c6c8",
+      "glass_id": "af123281-fd38-48a1-b865-f5d1c25307f8",
       "name": "SNX-L 62/34",
-      "thickness": "1/2",
+      "thickness": "1/8",
+      "shape": "Arch Top & Bottom",
+      "tint": "Bronze",
+      "length": 50,
+      "width": 7
+    },
+    "quantity": 61,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 4537,
+    "order_id": "934ebd0d-9424-47c9-b8ae-19fc9fb04fe1",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "d49c19b3-cf1a-4ad6-8ba4-bf127ce1de6f",
+      "name": "MC 27 LE-A",
+      "thickness": "1/4",
+      "shape": "Ellipse",
+      "tint": "Midnight Gray",
+      "length": 89,
+      "width": 44
+    },
+    "quantity": 38,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 5785,
+    "order_id": "934ebd0d-9424-47c9-b8ae-19fc9fb04fe1",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "af123281-fd38-48a1-b865-f5d1c25307f8",
+      "name": "SNX-L 62/34",
+      "thickness": "1/4",
+      "shape": "Right Triangle",
+      "tint": "Solex",
+      "length": 25,
+      "width": 10
+    },
+    "quantity": 6,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 9538,
+    "order_id": "742a167f-c102-4132-a2aa-06b3fb180ab0",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "c5eb32fe-3209-43d3-a63c-f5d3c3555c8b",
+      "name": "IS20 LE-T",
+      "thickness": "3/4",
       "shape": "Parallelogram",
-      "tint": "Frosted Green Chip",
-      "length": 54,
-      "width": 37
+      "tint": "Satin Etch",
+      "length": 87,
+      "width": 14
     },
     "quantity": 7,
     "note": "some note"
   },
   {
-    "order_item_id": 290,
-    "order_id": "c9cfd248-64f9-44d5-b527-5c8b02366b9b",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
+    "order_item_id": 5241,
+    "order_id": "742a167f-c102-4132-a2aa-06b3fb180ab0",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
     "product_config": {
-      "glass_id": "46247eed-86b1-4ea7-bddf-4c8a7c89565a",
+      "glass_id": "c5eb32fe-3209-43d3-a63c-f5d3c3555c8b",
+      "name": "IS20 LE-T",
+      "thickness": "3/4",
+      "shape": "Circle",
+      "tint": "Satin Etch",
+      "length": 62,
+      "width": 5
+    },
+    "quantity": 5,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 4786,
+    "order_id": "742a167f-c102-4132-a2aa-06b3fb180ab0",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "d1561e8c-3e9b-4e29-94d2-56bbdced64f7",
       "name": "MC 68 LE-A",
+      "thickness": "3/8",
+      "shape": "Right Triangle",
+      "tint": "Frosted Blue Chip",
+      "length": 88,
+      "width": 13
+    },
+    "quantity": 8,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 4616,
+    "order_id": "742a167f-c102-4132-a2aa-06b3fb180ab0",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "c908d94a-e129-4912-b3dd-29d7073c042d",
+      "name": "Sunguard Spandrel HT",
+      "thickness": "1/4",
+      "shape": "Irregular/Any Other Shape",
+      "tint": "Bronze",
+      "length": 42,
+      "width": 38
+    },
+    "quantity": 10,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 8534,
+    "order_id": "742a167f-c102-4132-a2aa-06b3fb180ab0",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "aeab03c7-9242-4c4d-a53a-ef341b9fed6f",
+      "name": "AG 43",
+      "thickness": "3/8",
+      "shape": "Square/Rectangle",
+      "tint": "Frosted Blue Chip",
+      "length": 46,
+      "width": 36
+    },
+    "quantity": 7,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 93,
+    "order_id": "e0218e2b-4580-4f3a-9bc9-26e6df752c46",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "a1a67246-21b6-4ba1-9024-417369d628b0",
+      "name": "MC 68 LE-T",
+      "thickness": "3/8",
+      "shape": "Pentagon",
+      "tint": "Solex",
+      "length": 82,
+      "width": 18
+    },
+    "quantity": 108,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 6721,
+    "order_id": "e0218e2b-4580-4f3a-9bc9-26e6df752c46",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "aeab03c7-9242-4c4d-a53a-ef341b9fed6f",
+      "name": "AG 43",
+      "thickness": "3/8",
+      "shape": "Triangle",
+      "tint": "Bronze",
+      "length": 82,
+      "width": 7
+    },
+    "quantity": 86,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 3528,
+    "order_id": "e0218e2b-4580-4f3a-9bc9-26e6df752c46",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "c112847c-f8ab-4e7b-a397-6a44ef7529f7",
+      "name": "NU 40 LE",
+      "thickness": "1/8",
+      "shape": "Square/Rectangle",
+      "tint": "Mistlite",
+      "length": 63,
+      "width": 15
+    },
+    "quantity": 165,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 3533,
+    "order_id": "e0218e2b-4580-4f3a-9bc9-26e6df752c46",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "af123281-fd38-48a1-b865-f5d1c25307f8",
+      "name": "SNX-L 62/34",
       "thickness": "1/8",
       "shape": "Single Slope Rectangle",
+      "tint": "P-516",
+      "length": 34,
+      "width": 4
+    },
+    "quantity": 157,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 1787,
+    "order_id": "e0218e2b-4580-4f3a-9bc9-26e6df752c46",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "f1e58ff5-48fc-40f5-971d-10c8ad04ab6f",
+      "name": "SN 68 HT",
+      "thickness": "1/8",
+      "shape": "Rounded Corner(s)",
+      "tint": "Dark Gray",
+      "length": 64,
+      "width": 30
+    },
+    "quantity": 178,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 2033,
+    "order_id": "e0218e2b-4580-4f3a-9bc9-26e6df752c46",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "d49c19b3-cf1a-4ad6-8ba4-bf127ce1de6f",
+      "name": "MC 27 LE-A",
+      "thickness": "1/8",
+      "shape": "House",
+      "tint": "Dark Gray",
+      "length": 70,
+      "width": 23
+    },
+    "quantity": 6,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 5981,
+    "order_id": "e0218e2b-4580-4f3a-9bc9-26e6df752c46",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "a1a67246-21b6-4ba1-9024-417369d628b0",
+      "name": "MC 68 LE-T",
+      "thickness": "3/4",
+      "shape": "Half-Circle with Notch",
+      "tint": "Clear",
+      "length": 55,
+      "width": 39
+    },
+    "quantity": 5,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 4573,
+    "order_id": "e0218e2b-4580-4f3a-9bc9-26e6df752c46",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "a1a67246-21b6-4ba1-9024-417369d628b0",
+      "name": "MC 68 LE-T",
+      "thickness": "3/8",
+      "shape": "Octagon",
+      "tint": "Low-E",
+      "length": 92,
+      "width": 9
+    },
+    "quantity": 4,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 9577,
+    "order_id": "e0218e2b-4580-4f3a-9bc9-26e6df752c46",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "d1561e8c-3e9b-4e29-94d2-56bbdced64f7",
+      "name": "MC 68 LE-A",
+      "thickness": "3/8",
+      "shape": "Ellipse",
+      "tint": "P-516",
+      "length": 31,
+      "width": 23
+    },
+    "quantity": 30,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 5918,
+    "order_id": "c3391cad-e9d5-4fc9-8e1a-af44dc78cd64",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "004c4786-d558-43e7-82be-795f60182ef7",
+      "name": "SNE 50/25",
+      "thickness": "3/4",
+      "shape": "Circle",
+      "tint": "Frosted Green Chip",
+      "length": 84,
+      "width": 43
+    },
+    "quantity": 41,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 5465,
+    "order_id": "c3391cad-e9d5-4fc9-8e1a-af44dc78cd64",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "cc546439-3cef-4f13-b365-c6893c05fc82",
+      "name": "SNR 35 HT",
+      "thickness": "1/4",
+      "shape": "Racetrack Oval",
+      "tint": "Clear",
+      "length": 46,
+      "width": 38
+    },
+    "quantity": 5,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 6312,
+    "order_id": "c3391cad-e9d5-4fc9-8e1a-af44dc78cd64",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "cc546439-3cef-4f13-b365-c6893c05fc82",
+      "name": "SNR 35 HT",
+      "thickness": "1/8",
+      "shape": "Trapezoid",
+      "tint": "Low-E",
+      "length": 93,
+      "width": 14
+    },
+    "quantity": 48,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 1950,
+    "order_id": "c3391cad-e9d5-4fc9-8e1a-af44dc78cd64",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "d49c19b3-cf1a-4ad6-8ba4-bf127ce1de6f",
+      "name": "MC 27 LE-A",
+      "thickness": "1/2",
+      "shape": "Arch Side",
+      "tint": "Midnight Gray",
+      "length": 66,
+      "width": 47
+    },
+    "quantity": 7,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 8169,
+    "order_id": "c3391cad-e9d5-4fc9-8e1a-af44dc78cd64",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "d49c19b3-cf1a-4ad6-8ba4-bf127ce1de6f",
+      "name": "MC 27 LE-A",
+      "thickness": "1/8",
+      "shape": "Octagon",
+      "tint": "Frosted Green Chip",
+      "length": 79,
+      "width": 8
+    },
+    "quantity": 43,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 4881,
+    "order_id": "b79e2b3c-f9b9-4c2c-8959-797dbff98956",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "a1a67246-21b6-4ba1-9024-417369d628b0",
+      "name": "MC 68 LE-T",
+      "thickness": "1/4",
+      "shape": "Pentagon",
+      "tint": "Bronze",
+      "length": 56,
+      "width": 41
+    },
+    "quantity": 189,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 1734,
+    "order_id": "b79e2b3c-f9b9-4c2c-8959-797dbff98956",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "ec5ffa0f-39d8-4d03-94dd-95b190a8c2f5",
+      "name": "AG 50 LE",
+      "thickness": "1/8",
+      "shape": "Square/Rectangle",
+      "tint": "Ultra Clear",
+      "length": 36,
+      "width": 13
+    },
+    "quantity": 3,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 9061,
+    "order_id": "b79e2b3c-f9b9-4c2c-8959-797dbff98956",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "1da5b2a3-6a53-49de-bbce-4521ef09cd5c",
+      "name": "SatinDeco",
+      "thickness": "1/4",
+      "shape": "Ellipse",
+      "tint": "Solex",
+      "length": 37,
+      "width": 18
+    },
+    "quantity": 52,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 6362,
+    "order_id": "51e2cbed-cb9b-4bfc-9fab-18048dc54d6e",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "a1a67246-21b6-4ba1-9024-417369d628b0",
+      "name": "MC 68 LE-T",
+      "thickness": "1/8",
+      "shape": "Quarter Round",
+      "tint": "Solex",
+      "length": 89,
+      "width": 42
+    },
+    "quantity": 31,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 9949,
+    "order_id": "51e2cbed-cb9b-4bfc-9fab-18048dc54d6e",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "c5eb32fe-3209-43d3-a63c-f5d3c3555c8b",
+      "name": "IS20 LE-T",
+      "thickness": "1/8",
+      "shape": "Parallelogram",
       "tint": "Satin Etch",
-      "length": 87,
+      "length": 70,
+      "width": 32
+    },
+    "quantity": 10,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 8992,
+    "order_id": "91f446c8-0ec9-4f7a-8f0a-acb5c62cd7fc",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "ec5ffa0f-39d8-4d03-94dd-95b190a8c2f5",
+      "name": "AG 50 LE",
+      "thickness": "1/2",
+      "shape": "Half-Circle with Notch",
+      "tint": "Satin Etch",
+      "length": 64,
+      "width": 16
+    },
+    "quantity": 54,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 8924,
+    "order_id": "91f446c8-0ec9-4f7a-8f0a-acb5c62cd7fc",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "af123281-fd38-48a1-b865-f5d1c25307f8",
+      "name": "SNX-L 62/34",
+      "thickness": "1/8",
+      "shape": "Rounded Corner(s)",
+      "tint": "Bronze",
+      "length": 57,
+      "width": 30
+    },
+    "quantity": 54,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 374,
+    "order_id": "91f446c8-0ec9-4f7a-8f0a-acb5c62cd7fc",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "c5eb32fe-3209-43d3-a63c-f5d3c3555c8b",
+      "name": "IS20 LE-T",
+      "thickness": "1/4",
+      "shape": "Half-Circle",
+      "tint": "Satin Etch",
+      "length": 67,
+      "width": 32
+    },
+    "quantity": 4,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 9919,
+    "order_id": "c1457f43-57f0-4a6a-8956-1b6aa6c17f58",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "1da5b2a3-6a53-49de-bbce-4521ef09cd5c",
+      "name": "SatinDeco",
+      "thickness": "3/8",
+      "shape": "Arch-Top",
+      "tint": "Solex",
+      "length": 95,
+      "width": 2
+    },
+    "quantity": 134,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 9920,
+    "order_id": "c1457f43-57f0-4a6a-8956-1b6aa6c17f58",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "1da5b2a3-6a53-49de-bbce-4521ef09cd5c",
+      "name": "SatinDeco",
+      "thickness": "3/4",
+      "shape": "Ellipse",
+      "tint": "Solex",
+      "length": 57,
+      "width": 47
+    },
+    "quantity": 28,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 8082,
+    "order_id": "c1457f43-57f0-4a6a-8956-1b6aa6c17f58",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "a1a67246-21b6-4ba1-9024-417369d628b0",
+      "name": "MC 68 LE-T",
+      "thickness": "1/8",
+      "shape": "Quad Arch",
+      "tint": "Frosted Green Chip",
+      "length": 45,
+      "width": 24
+    },
+    "quantity": 197,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 6541,
+    "order_id": "c1457f43-57f0-4a6a-8956-1b6aa6c17f58",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "c112847c-f8ab-4e7b-a397-6a44ef7529f7",
+      "name": "NU 40 LE",
+      "thickness": "1/2",
+      "shape": "Arch-Top",
+      "tint": "P-516",
+      "length": 72,
+      "width": 21
+    },
+    "quantity": 6,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 2957,
+    "order_id": "c1457f43-57f0-4a6a-8956-1b6aa6c17f58",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "004c4786-d558-43e7-82be-795f60182ef7",
+      "name": "SNE 50/25",
+      "thickness": "1/4",
+      "shape": "Parallelogram",
+      "tint": "Dark Gray",
+      "length": 38,
+      "width": 19
+    },
+    "quantity": 7,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 5426,
+    "order_id": "c1457f43-57f0-4a6a-8956-1b6aa6c17f58",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "c5eb32fe-3209-43d3-a63c-f5d3c3555c8b",
+      "name": "IS20 LE-T",
+      "thickness": "3/4",
+      "shape": "Circle",
+      "tint": "Satin Etch",
+      "length": 15,
+      "width": 13
+    },
+    "quantity": 7,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 8697,
+    "order_id": "381edf54-b41f-4b21-83da-f73ed4bf2501",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "d49c19b3-cf1a-4ad6-8ba4-bf127ce1de6f",
+      "name": "MC 27 LE-A",
+      "thickness": "1/4",
+      "shape": "Ellipse",
+      "tint": "Bronze",
+      "length": 9,
+      "width": 4
+    },
+    "quantity": 118,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 5137,
+    "order_id": "1c013bc3-af84-43b1-bcc2-51ccfbb61d53",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "004c4786-d558-43e7-82be-795f60182ef7",
+      "name": "SNE 50/25",
+      "thickness": "1/4",
+      "shape": "Rounded Corner(s)",
+      "tint": "Midnight Gray",
+      "length": 55,
+      "width": 31
+    },
+    "quantity": 111,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 4029,
+    "order_id": "1c013bc3-af84-43b1-bcc2-51ccfbb61d53",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "af123281-fd38-48a1-b865-f5d1c25307f8",
+      "name": "SNX-L 62/34",
+      "thickness": "1/4",
+      "shape": "Circle",
+      "tint": "Ultra Clear",
+      "length": 65,
+      "width": 16
+    },
+    "quantity": 23,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 9566,
+    "order_id": "1c013bc3-af84-43b1-bcc2-51ccfbb61d53",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "d49c19b3-cf1a-4ad6-8ba4-bf127ce1de6f",
+      "name": "MC 27 LE-A",
+      "thickness": "3/8",
+      "shape": "Arch Side",
+      "tint": "Frosted Green Chip",
+      "length": 43,
       "width": 23
     },
     "quantity": 1,
     "note": "some note"
   },
   {
-    "order_item_id": 3461,
-    "order_id": "b9cfca93-a4c2-4e6f-a570-766e15f2bf64",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
+    "order_item_id": 9703,
+    "order_id": "1c013bc3-af84-43b1-bcc2-51ccfbb61d53",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
     "product_config": {
-      "glass_id": "24c66f1f-bd90-4fc2-b3e2-7ed7cb667b00",
+      "glass_id": "c5eb32fe-3209-43d3-a63c-f5d3c3555c8b",
       "name": "IS20 LE-T",
-      "thickness": "3/8",
-      "shape": "Pentagon",
-      "tint": "Frosted Blue Chip",
-      "length": 8,
-      "width": 3
+      "thickness": "1/8",
+      "shape": "Circle",
+      "tint": "Satin Etch",
+      "length": 85,
+      "width": 46
     },
-    "quantity": 165,
+    "quantity": 108,
     "note": "some note"
   },
   {
-    "order_item_id": 5087,
-    "order_id": "b9cfca93-a4c2-4e6f-a570-766e15f2bf64",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
+    "order_item_id": 4516,
+    "order_id": "1c013bc3-af84-43b1-bcc2-51ccfbb61d53",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
     "product_config": {
-      "glass_id": "24c66f1f-bd90-4fc2-b3e2-7ed7cb667b00",
-      "name": "IS20 LE-T",
-      "thickness": "1/2",
-      "shape": "Square/Rectangle",
-      "tint": "Dark Gray",
-      "length": 81,
-      "width": 20
+      "glass_id": "d49c19b3-cf1a-4ad6-8ba4-bf127ce1de6f",
+      "name": "MC 27 LE-A",
+      "thickness": "1/4",
+      "shape": "Clipped Corner(s)",
+      "tint": "Mistlite",
+      "length": 48,
+      "width": 12
     },
-    "quantity": 38,
+    "quantity": 8,
     "note": "some note"
   },
   {
-    "order_item_id": 148,
-    "order_id": "b9cfca93-a4c2-4e6f-a570-766e15f2bf64",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
+    "order_item_id": 1175,
+    "order_id": "1c013bc3-af84-43b1-bcc2-51ccfbb61d53",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
     "product_config": {
-      "glass_id": "538c9855-17a0-410d-90d2-5e5e9f43c6c8",
-      "name": "SNX-L 62/34",
-      "thickness": "1/2",
-      "shape": "Arch Top & Bottom",
-      "tint": "Solex",
-      "length": 61,
-      "width": 34
-    },
-    "quantity": 53,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 2907,
-    "order_id": "837a703c-5f17-4b4c-9d1c-fe594aaa93dc",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "060bfe65-db6f-4f54-87f7-bea2ea6a249f",
+      "glass_id": "004c4786-d558-43e7-82be-795f60182ef7",
       "name": "SNE 50/25",
       "thickness": "3/4",
-      "shape": "Quarter Round with Notch",
-      "tint": "Bronze",
-      "length": 64,
-      "width": 38
+      "shape": "Arch",
+      "tint": "Midnight Gray",
+      "length": 80,
+      "width": 41
     },
-    "quantity": 173,
+    "quantity": 50,
     "note": "some note"
   },
   {
-    "order_item_id": 8871,
-    "order_id": "837a703c-5f17-4b4c-9d1c-fe594aaa93dc",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
+    "order_item_id": 9137,
+    "order_id": "1c013bc3-af84-43b1-bcc2-51ccfbb61d53",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
     "product_config": {
-      "glass_id": "90410c20-66fd-44a0-8009-3d5b8afc631a",
-      "name": "MC 68 LE-T",
-      "thickness": "3/4",
-      "shape": "Hexagon",
-      "tint": "Frosted Green Chip",
-      "length": 77,
-      "width": 1
+      "glass_id": "c5eb32fe-3209-43d3-a63c-f5d3c3555c8b",
+      "name": "IS20 LE-T",
+      "thickness": "1/2",
+      "shape": "Half-Circle with Notch",
+      "tint": "Clear",
+      "length": 56,
+      "width": 23
     },
     "quantity": 9,
     "note": "some note"
   },
   {
-    "order_item_id": 6155,
-    "order_id": "837a703c-5f17-4b4c-9d1c-fe594aaa93dc",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
+    "order_item_id": 1344,
+    "order_id": "5e80b96d-ffab-4a29-a8fd-317138ec5b1a",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
     "product_config": {
-      "glass_id": "060bfe65-db6f-4f54-87f7-bea2ea6a249f",
-      "name": "SNE 50/25",
-      "thickness": "3/4",
-      "shape": "Square/Rectangle",
-      "tint": "P-516",
-      "length": 67,
-      "width": 26
+      "glass_id": "d49c19b3-cf1a-4ad6-8ba4-bf127ce1de6f",
+      "name": "MC 27 LE-A",
+      "thickness": "1/8",
+      "shape": "House",
+      "tint": "Frosted Green Chip",
+      "length": 42,
+      "width": 31
     },
-    "quantity": 7,
+    "quantity": 204,
     "note": "some note"
   },
   {
-    "order_item_id": 3911,
-    "order_id": "837a703c-5f17-4b4c-9d1c-fe594aaa93dc",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
+    "order_item_id": 3177,
+    "order_id": "5e80b96d-ffab-4a29-a8fd-317138ec5b1a",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
     "product_config": {
-      "glass_id": "b4ad52ba-ba2e-4db7-815c-0f0087e58ff4",
+      "glass_id": "cc546439-3cef-4f13-b365-c6893c05fc82",
+      "name": "SNR 35 HT",
+      "thickness": "1/2",
+      "shape": "Arch",
+      "tint": "Clear",
+      "length": 59,
+      "width": 47
+    },
+    "quantity": 2,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 8944,
+    "order_id": "5e80b96d-ffab-4a29-a8fd-317138ec5b1a",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "f1e58ff5-48fc-40f5-971d-10c8ad04ab6f",
+      "name": "SN 68 HT",
+      "thickness": "3/4",
+      "shape": "Quad Arch",
+      "tint": "Ultra Clear",
+      "length": 59,
+      "width": 9
+    },
+    "quantity": 30,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 981,
+    "order_id": "5e80b96d-ffab-4a29-a8fd-317138ec5b1a",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "d49c19b3-cf1a-4ad6-8ba4-bf127ce1de6f",
+      "name": "MC 27 LE-A",
+      "thickness": "1/2",
+      "shape": "Arch Side",
+      "tint": "Frosted Green Chip",
+      "length": 56,
+      "width": 24
+    },
+    "quantity": 5,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 9775,
+    "order_id": "9ae3ab98-0540-4c8c-8d6c-c3d782f9cbc8",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "ec5ffa0f-39d8-4d03-94dd-95b190a8c2f5",
+      "name": "AG 50 LE",
+      "thickness": "1/2",
+      "shape": "Arch",
+      "tint": "P-516",
+      "length": 62,
+      "width": 27
+    },
+    "quantity": 139,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 2881,
+    "order_id": "9ae3ab98-0540-4c8c-8d6c-c3d782f9cbc8",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "a1a67246-21b6-4ba1-9024-417369d628b0",
+      "name": "MC 68 LE-T",
+      "thickness": "1/2",
+      "shape": "Half-Circle",
+      "tint": "Mistlite",
+      "length": 39,
+      "width": 2
+    },
+    "quantity": 6,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 4095,
+    "order_id": "9ae3ab98-0540-4c8c-8d6c-c3d782f9cbc8",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "c908d94a-e129-4912-b3dd-29d7073c042d",
+      "name": "Sunguard Spandrel HT",
+      "thickness": "3/8",
+      "shape": "Trapezoid",
+      "tint": "Bronze",
+      "length": 41,
+      "width": 29
+    },
+    "quantity": 21,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 8917,
+    "order_id": "9ae3ab98-0540-4c8c-8d6c-c3d782f9cbc8",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "cc546439-3cef-4f13-b365-c6893c05fc82",
+      "name": "SNR 35 HT",
+      "thickness": "1/2",
+      "shape": "Racetrack Oval",
+      "tint": "Clear",
+      "length": 38,
+      "width": 24
+    },
+    "quantity": 35,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 6151,
+    "order_id": "9ae3ab98-0540-4c8c-8d6c-c3d782f9cbc8",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "a1a67246-21b6-4ba1-9024-417369d628b0",
+      "name": "MC 68 LE-T",
+      "thickness": "1/2",
+      "shape": "Pentagon",
+      "tint": "Mistlite",
+      "length": 44,
+      "width": 40
+    },
+    "quantity": 20,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 8955,
+    "order_id": "9ae3ab98-0540-4c8c-8d6c-c3d782f9cbc8",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "c908d94a-e129-4912-b3dd-29d7073c042d",
+      "name": "Sunguard Spandrel HT",
+      "thickness": "1/8",
+      "shape": "Quarter Round",
+      "tint": "Ultra Clear",
+      "length": 30,
+      "width": 22
+    },
+    "quantity": 58,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 1956,
+    "order_id": "9ae3ab98-0540-4c8c-8d6c-c3d782f9cbc8",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "004c4786-d558-43e7-82be-795f60182ef7",
+      "name": "SNE 50/25",
+      "thickness": "3/4",
+      "shape": "Trapezoid",
+      "tint": "Frosted Green Chip",
+      "length": 59,
+      "width": 40
+    },
+    "quantity": 117,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 5883,
+    "order_id": "88814b2a-002f-414a-bf28-75ed90da17ff",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "82a54c94-9681-4ebe-9cd8-81cfa03056e1",
       "name": "SN 68",
       "thickness": "1/2",
-      "shape": "Single Slope Rectangle",
+      "shape": "Racetrack Oval",
+      "tint": "Clear",
+      "length": 70,
+      "width": 17
+    },
+    "quantity": 25,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 6329,
+    "order_id": "88814b2a-002f-414a-bf28-75ed90da17ff",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "004c4786-d558-43e7-82be-795f60182ef7",
+      "name": "SNE 50/25",
+      "thickness": "1/4",
+      "shape": "Arch Top & Bottom",
+      "tint": "Midnight Gray",
+      "length": 74,
+      "width": 22
+    },
+    "quantity": 32,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 814,
+    "order_id": "c89d7159-fcae-458f-b133-cbc1db9ef569",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "c908d94a-e129-4912-b3dd-29d7073c042d",
+      "name": "Sunguard Spandrel HT",
+      "thickness": "1/4",
+      "shape": "Racetrack Oval",
+      "tint": "Ultra Clear",
+      "length": 35,
+      "width": 9
+    },
+    "quantity": 85,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 9282,
+    "order_id": "c89d7159-fcae-458f-b133-cbc1db9ef569",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "004c4786-d558-43e7-82be-795f60182ef7",
+      "name": "SNE 50/25",
+      "thickness": "1/8",
+      "shape": "Parallelogram",
+      "tint": "Dark Gray",
+      "length": 37,
+      "width": 37
+    },
+    "quantity": 6,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 8857,
+    "order_id": "c89d7159-fcae-458f-b133-cbc1db9ef569",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "aeab03c7-9242-4c4d-a53a-ef341b9fed6f",
+      "name": "AG 43",
+      "thickness": "1/4",
+      "shape": "Triangle",
+      "tint": "P-516",
+      "length": 62,
+      "width": 1
+    },
+    "quantity": 4,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 7674,
+    "order_id": "c89d7159-fcae-458f-b133-cbc1db9ef569",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "aeab03c7-9242-4c4d-a53a-ef341b9fed6f",
+      "name": "AG 43",
+      "thickness": "1/4",
+      "shape": "Parallelogram",
+      "tint": "Ultra Clear",
+      "length": 51,
+      "width": 30
+    },
+    "quantity": 47,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 5183,
+    "order_id": "c89d7159-fcae-458f-b133-cbc1db9ef569",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "ec5ffa0f-39d8-4d03-94dd-95b190a8c2f5",
+      "name": "AG 50 LE",
+      "thickness": "1/2",
+      "shape": "Half-Circle with Notch",
+      "tint": "P-516",
+      "length": 82,
+      "width": 17
+    },
+    "quantity": 4,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 6335,
+    "order_id": "c89d7159-fcae-458f-b133-cbc1db9ef569",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "d1561e8c-3e9b-4e29-94d2-56bbdced64f7",
+      "name": "MC 68 LE-A",
+      "thickness": "1/8",
+      "shape": "Ellipse",
       "tint": "Frosted Green Chip",
-      "length": 69,
+      "length": 48,
+      "width": 18
+    },
+    "quantity": 10,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 8247,
+    "order_id": "d7c5e844-c876-42f8-95df-aecf295aabba",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "aeab03c7-9242-4c4d-a53a-ef341b9fed6f",
+      "name": "AG 43",
+      "thickness": "3/8",
+      "shape": "Clipped Corner(s)",
+      "tint": "Bronze",
+      "length": 52,
       "width": 35
     },
     "quantity": 7,
     "note": "some note"
   },
   {
-    "order_item_id": 1148,
-    "order_id": "837a703c-5f17-4b4c-9d1c-fe594aaa93dc",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
+    "order_item_id": 117,
+    "order_id": "d7c5e844-c876-42f8-95df-aecf295aabba",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
     "product_config": {
-      "glass_id": "91454f2a-292a-4b6c-91bc-2b126062ab5f",
+      "glass_id": "f1e58ff5-48fc-40f5-971d-10c8ad04ab6f",
       "name": "SN 68 HT",
-      "thickness": "1/4",
-      "shape": "Single Slope Rectangle",
+      "thickness": "1/2",
+      "shape": "Quad Arch",
+      "tint": "Ultra Clear",
+      "length": 14,
+      "width": 13
+    },
+    "quantity": 29,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 1318,
+    "order_id": "d7c5e844-c876-42f8-95df-aecf295aabba",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "af123281-fd38-48a1-b865-f5d1c25307f8",
+      "name": "SNX-L 62/34",
+      "thickness": "1/2",
+      "shape": "Circle",
+      "tint": "Solex",
+      "length": 39,
+      "width": 19
+    },
+    "quantity": 159,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 6557,
+    "order_id": "d7c5e844-c876-42f8-95df-aecf295aabba",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "004c4786-d558-43e7-82be-795f60182ef7",
+      "name": "SNE 50/25",
+      "thickness": "3/4",
+      "shape": "Rounded Corner(s)",
+      "tint": "Frosted Green Chip",
+      "length": 51,
+      "width": 23
+    },
+    "quantity": 8,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 1874,
+    "order_id": "d7c5e844-c876-42f8-95df-aecf295aabba",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "cc546439-3cef-4f13-b365-c6893c05fc82",
+      "name": "SNR 35 HT",
+      "thickness": "3/8",
+      "shape": "Quad Arch",
       "tint": "P-516",
-      "length": 75,
-      "width": 14
+      "length": 18,
+      "width": 7
+    },
+    "quantity": 2,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 2001,
+    "order_id": "b370aaee-8f4d-4538-ae61-10ae71e6a876",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "82a54c94-9681-4ebe-9cd8-81cfa03056e1",
+      "name": "SN 68",
+      "thickness": "1/8",
+      "shape": "Single Slope Rectangle",
+      "tint": "Solex",
+      "length": 86,
+      "width": 27
+    },
+    "quantity": 94,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 5904,
+    "order_id": "b370aaee-8f4d-4538-ae61-10ae71e6a876",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "82a54c94-9681-4ebe-9cd8-81cfa03056e1",
+      "name": "SN 68",
+      "thickness": "1/4",
+      "shape": "Trapezoid",
+      "tint": "Solex",
+      "length": 88,
+      "width": 6
+    },
+    "quantity": 20,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 432,
+    "order_id": "b370aaee-8f4d-4538-ae61-10ae71e6a876",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "af123281-fd38-48a1-b865-f5d1c25307f8",
+      "name": "SNX-L 62/34",
+      "thickness": "1/2",
+      "shape": "Pentagon",
+      "tint": "Bronze",
+      "length": 36,
+      "width": 12
     },
     "quantity": 1,
     "note": "some note"
   },
   {
-    "order_item_id": 2046,
-    "order_id": "582f8f1b-eafc-407a-b851-a625c500dd8a",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
+    "order_item_id": 7744,
+    "order_id": "b370aaee-8f4d-4538-ae61-10ae71e6a876",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
     "product_config": {
-      "glass_id": "da450d2a-3d5e-4646-8941-677dd51f7f8b",
-      "name": "AG 43",
-      "thickness": "1/4",
-      "shape": "Arch",
-      "tint": "P-516",
-      "length": 78,
-      "width": 43
+      "glass_id": "d49c19b3-cf1a-4ad6-8ba4-bf127ce1de6f",
+      "name": "MC 27 LE-A",
+      "thickness": "1/8",
+      "shape": "Ellipse",
+      "tint": "Midnight Gray",
+      "length": 25,
+      "width": 11
+    },
+    "quantity": 106,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 7024,
+    "order_id": "b370aaee-8f4d-4538-ae61-10ae71e6a876",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "1da5b2a3-6a53-49de-bbce-4521ef09cd5c",
+      "name": "SatinDeco",
+      "thickness": "3/4",
+      "shape": "House",
+      "tint": "Frosted Blue Chip",
+      "length": 34,
+      "width": 13
     },
     "quantity": 3,
     "note": "some note"
   },
   {
-    "order_item_id": 5003,
-    "order_id": "747b96b2-06ae-453f-a3f3-b84afcc5dd58",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
+    "order_item_id": 6394,
+    "order_id": "b370aaee-8f4d-4538-ae61-10ae71e6a876",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
     "product_config": {
-      "glass_id": "da450d2a-3d5e-4646-8941-677dd51f7f8b",
-      "name": "AG 43",
-      "thickness": "1/2",
-      "shape": "Irregular/Any Other Shape",
-      "tint": "Ultra Clear",
-      "length": 52,
-      "width": 39
+      "glass_id": "a1a67246-21b6-4ba1-9024-417369d628b0",
+      "name": "MC 68 LE-T",
+      "thickness": "1/8",
+      "shape": "Ellipse",
+      "tint": "Frosted Green Chip",
+      "length": 83,
+      "width": 24
     },
-    "quantity": 13,
+    "quantity": 80,
     "note": "some note"
   },
   {
-    "order_item_id": 1752,
-    "order_id": "747b96b2-06ae-453f-a3f3-b84afcc5dd58",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
+    "order_item_id": 8645,
+    "order_id": "efe92974-edec-40af-8a71-d9c9cbda9f79",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
     "product_config": {
-      "glass_id": "ea045be8-3c33-4a2d-9137-da2e180210eb",
-      "name": "SatinDeco",
-      "thickness": "3/4",
-      "shape": "Quarter Round",
-      "tint": "Midnight Gray",
-      "length": 11,
+      "glass_id": "82a54c94-9681-4ebe-9cd8-81cfa03056e1",
+      "name": "SN 68",
+      "thickness": "1/4",
+      "shape": "Quad Arch",
+      "tint": "Light Gray",
+      "length": 66,
       "width": 2
     },
-    "quantity": 35,
+    "quantity": 58,
     "note": "some note"
   },
   {
-    "order_item_id": 6842,
-    "order_id": "747b96b2-06ae-453f-a3f3-b84afcc5dd58",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
+    "order_item_id": 6042,
+    "order_id": "efe92974-edec-40af-8a71-d9c9cbda9f79",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
     "product_config": {
-      "glass_id": "538c9855-17a0-410d-90d2-5e5e9f43c6c8",
-      "name": "SNX-L 62/34",
+      "glass_id": "cc546439-3cef-4f13-b365-c6893c05fc82",
+      "name": "SNR 35 HT",
       "thickness": "1/2",
-      "shape": "Triangle",
+      "shape": "Arch",
       "tint": "P-516",
-      "length": 61,
-      "width": 1
+      "length": 45,
+      "width": 18
     },
-    "quantity": 6,
+    "quantity": 39,
     "note": "some note"
   },
   {
-    "order_item_id": 8314,
-    "order_id": "03e06f79-c366-403f-ba63-ef01baa0c447",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
+    "order_item_id": 5138,
+    "order_id": "efe92974-edec-40af-8a71-d9c9cbda9f79",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
     "product_config": {
-      "glass_id": "cd774965-da25-463b-921f-441244911276",
+      "glass_id": "cc546439-3cef-4f13-b365-c6893c05fc82",
+      "name": "SNR 35 HT",
+      "thickness": "1/4",
+      "shape": "Quad Arch",
+      "tint": "Clear",
+      "length": 67,
+      "width": 22
+    },
+    "quantity": 95,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 6995,
+    "order_id": "efe92974-edec-40af-8a71-d9c9cbda9f79",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "f1e58ff5-48fc-40f5-971d-10c8ad04ab6f",
+      "name": "SN 68 HT",
+      "thickness": "3/4",
+      "shape": "Rounded Corner(s)",
+      "tint": "Light Gray",
+      "length": 64,
+      "width": 28
+    },
+    "quantity": 160,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 6889,
+    "order_id": "efe92974-edec-40af-8a71-d9c9cbda9f79",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "cc546439-3cef-4f13-b365-c6893c05fc82",
+      "name": "SNR 35 HT",
+      "thickness": "1/2",
+      "shape": "Rounded Corner(s)",
+      "tint": "Low-E",
+      "length": 40,
+      "width": 16
+    },
+    "quantity": 94,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 6210,
+    "order_id": "6ed81f7b-46ec-4152-a8a5-95abeea7d0c1",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "f1e58ff5-48fc-40f5-971d-10c8ad04ab6f",
+      "name": "SN 68 HT",
+      "thickness": "1/4",
+      "shape": "Racetrack Oval",
+      "tint": "Light Gray",
+      "length": 79,
+      "width": 22
+    },
+    "quantity": 162,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 5271,
+    "order_id": "6ed81f7b-46ec-4152-a8a5-95abeea7d0c1",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "af123281-fd38-48a1-b865-f5d1c25307f8",
+      "name": "SNX-L 62/34",
+      "thickness": "3/8",
+      "shape": "Right Triangle",
+      "tint": "Mistlite",
+      "length": 19,
+      "width": 11
+    },
+    "quantity": 2,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 8352,
+    "order_id": "6ed81f7b-46ec-4152-a8a5-95abeea7d0c1",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "ec5ffa0f-39d8-4d03-94dd-95b190a8c2f5",
+      "name": "AG 50 LE",
+      "thickness": "3/4",
+      "shape": "Square/Rectangle",
+      "tint": "Bronze",
+      "length": 75,
+      "width": 24
+    },
+    "quantity": 147,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 7920,
+    "order_id": "6ed81f7b-46ec-4152-a8a5-95abeea7d0c1",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "d49c19b3-cf1a-4ad6-8ba4-bf127ce1de6f",
+      "name": "MC 27 LE-A",
+      "thickness": "3/4",
+      "shape": "Racetrack Oval",
+      "tint": "Bronze",
+      "length": 66,
+      "width": 41
+    },
+    "quantity": 9,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 5680,
+    "order_id": "6ed81f7b-46ec-4152-a8a5-95abeea7d0c1",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "c908d94a-e129-4912-b3dd-29d7073c042d",
+      "name": "Sunguard Spandrel HT",
+      "thickness": "1/4",
+      "shape": "Half-Circle with Notch",
+      "tint": "Ultra Clear",
+      "length": 86,
+      "width": 42
+    },
+    "quantity": 49,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 4021,
+    "order_id": "e4766383-2e47-4a2a-b213-3f3ce808447d",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "ec5ffa0f-39d8-4d03-94dd-95b190a8c2f5",
+      "name": "AG 50 LE",
+      "thickness": "1/4",
+      "shape": "Pentagon",
+      "tint": "Satin Etch",
+      "length": 78,
+      "width": 12
+    },
+    "quantity": 76,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 5018,
+    "order_id": "e4766383-2e47-4a2a-b213-3f3ce808447d",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "004c4786-d558-43e7-82be-795f60182ef7",
+      "name": "SNE 50/25",
+      "thickness": "1/2",
+      "shape": "Circle",
+      "tint": "Midnight Gray",
+      "length": 38,
+      "width": 30
+    },
+    "quantity": 1,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 8828,
+    "order_id": "e4766383-2e47-4a2a-b213-3f3ce808447d",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "c5eb32fe-3209-43d3-a63c-f5d3c3555c8b",
+      "name": "IS20 LE-T",
+      "thickness": "1/8",
+      "shape": "Arch",
+      "tint": "Satin Etch",
+      "length": 77,
+      "width": 17
+    },
+    "quantity": 4,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 8579,
+    "order_id": "e4766383-2e47-4a2a-b213-3f3ce808447d",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "c5eb32fe-3209-43d3-a63c-f5d3c3555c8b",
+      "name": "IS20 LE-T",
+      "thickness": "3/4",
+      "shape": "Racetrack Oval",
+      "tint": "Satin Etch",
+      "length": 68,
+      "width": 5
+    },
+    "quantity": 120,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 8409,
+    "order_id": "e4766383-2e47-4a2a-b213-3f3ce808447d",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "82a54c94-9681-4ebe-9cd8-81cfa03056e1",
+      "name": "SN 68",
+      "thickness": "1/4",
+      "shape": "Trapezoid",
+      "tint": "Ultra Clear",
+      "length": 63,
+      "width": 44
+    },
+    "quantity": 60,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 5191,
+    "order_id": "e4766383-2e47-4a2a-b213-3f3ce808447d",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "ec5ffa0f-39d8-4d03-94dd-95b190a8c2f5",
       "name": "AG 50 LE",
       "thickness": "1/8",
-      "shape": "Clipped Corner(s)",
+      "shape": "Pentagon",
       "tint": "Bronze",
-      "length": 50,
-      "width": 39
+      "length": 54,
+      "width": 46
+    },
+    "quantity": 1,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 861,
+    "order_id": "e4766383-2e47-4a2a-b213-3f3ce808447d",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "d1561e8c-3e9b-4e29-94d2-56bbdced64f7",
+      "name": "MC 68 LE-A",
+      "thickness": "1/2",
+      "shape": "Arch Top & Bottom",
+      "tint": "P-516",
+      "length": 36,
+      "width": 27
+    },
+    "quantity": 21,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 2414,
+    "order_id": "f5ac2496-5367-4d19-92c8-6e78da7bc903",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "f1e58ff5-48fc-40f5-971d-10c8ad04ab6f",
+      "name": "SN 68 HT",
+      "thickness": "3/4",
+      "shape": "Parallelogram",
+      "tint": "Clear",
+      "length": 47,
+      "width": 15
+    },
+    "quantity": 110,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 5764,
+    "order_id": "f5ac2496-5367-4d19-92c8-6e78da7bc903",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "d1561e8c-3e9b-4e29-94d2-56bbdced64f7",
+      "name": "MC 68 LE-A",
+      "thickness": "1/2",
+      "shape": "Irregular/Any Other Shape",
+      "tint": "Midnight Gray",
+      "length": 63,
+      "width": 14
+    },
+    "quantity": 208,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 6402,
+    "order_id": "f5ac2496-5367-4d19-92c8-6e78da7bc903",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "004c4786-d558-43e7-82be-795f60182ef7",
+      "name": "SNE 50/25",
+      "thickness": "3/4",
+      "shape": "Hexagon",
+      "tint": "Dark Gray",
+      "length": 88,
+      "width": 24
+    },
+    "quantity": 42,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 8264,
+    "order_id": "bd919950-bc24-4e1c-918a-ed39edc88bae",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "ec5ffa0f-39d8-4d03-94dd-95b190a8c2f5",
+      "name": "AG 50 LE",
+      "thickness": "3/4",
+      "shape": "Pentagon",
+      "tint": "Bronze",
+      "length": 65,
+      "width": 23
+    },
+    "quantity": 114,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 5266,
+    "order_id": "bd919950-bc24-4e1c-918a-ed39edc88bae",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "82a54c94-9681-4ebe-9cd8-81cfa03056e1",
+      "name": "SN 68",
+      "thickness": "1/2",
+      "shape": "Ellipse",
+      "tint": "Clear",
+      "length": 84,
+      "width": 12
+    },
+    "quantity": 3,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 6701,
+    "order_id": "bd919950-bc24-4e1c-918a-ed39edc88bae",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "d49c19b3-cf1a-4ad6-8ba4-bf127ce1de6f",
+      "name": "MC 27 LE-A",
+      "thickness": "1/8",
+      "shape": "Square/Rectangle",
+      "tint": "Bronze",
+      "length": 63,
+      "width": 35
+    },
+    "quantity": 114,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 5732,
+    "order_id": "bd919950-bc24-4e1c-918a-ed39edc88bae",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "aeab03c7-9242-4c4d-a53a-ef341b9fed6f",
+      "name": "AG 43",
+      "thickness": "3/4",
+      "shape": "Clipped Corner(s)",
+      "tint": "Solex",
+      "length": 44,
+      "width": 2
     },
     "quantity": 7,
     "note": "some note"
   },
   {
-    "order_item_id": 9981,
-    "order_id": "03e06f79-c366-403f-ba63-ef01baa0c447",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
+    "order_item_id": 5631,
+    "order_id": "bd919950-bc24-4e1c-918a-ed39edc88bae",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
     "product_config": {
-      "glass_id": "d0340245-d1b1-474d-b05b-1e330b5601d2",
+      "glass_id": "004c4786-d558-43e7-82be-795f60182ef7",
+      "name": "SNE 50/25",
+      "thickness": "1/4",
+      "shape": "Right Triangle",
+      "tint": "Frosted Green Chip",
+      "length": 65,
+      "width": 46
+    },
+    "quantity": 108,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 3269,
+    "order_id": "bd919950-bc24-4e1c-918a-ed39edc88bae",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "af123281-fd38-48a1-b865-f5d1c25307f8",
+      "name": "SNX-L 62/34",
+      "thickness": "3/8",
+      "shape": "Quarter Round with Notch",
+      "tint": "Midnight Gray",
+      "length": 16,
+      "width": 5
+    },
+    "quantity": 60,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 8519,
+    "order_id": "631bdb1b-1433-45e7-a164-da903e179302",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "cc546439-3cef-4f13-b365-c6893c05fc82",
+      "name": "SNR 35 HT",
+      "thickness": "1/4",
+      "shape": "Half-Circle with Notch",
+      "tint": "Low-E",
+      "length": 83,
+      "width": 19
+    },
+    "quantity": 179,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 4636,
+    "order_id": "631bdb1b-1433-45e7-a164-da903e179302",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "004c4786-d558-43e7-82be-795f60182ef7",
+      "name": "SNE 50/25",
+      "thickness": "3/8",
+      "shape": "Irregular/Any Other Shape",
+      "tint": "Midnight Gray",
+      "length": 75,
+      "width": 27
+    },
+    "quantity": 53,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 384,
+    "order_id": "631bdb1b-1433-45e7-a164-da903e179302",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "f1e58ff5-48fc-40f5-971d-10c8ad04ab6f",
+      "name": "SN 68 HT",
+      "thickness": "3/8",
+      "shape": "Quad Arch",
+      "tint": "Low-E",
+      "length": 89,
+      "width": 46
+    },
+    "quantity": 130,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 2093,
+    "order_id": "631bdb1b-1433-45e7-a164-da903e179302",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "c5eb32fe-3209-43d3-a63c-f5d3c3555c8b",
+      "name": "IS20 LE-T",
+      "thickness": "3/8",
+      "shape": "Half-Circle",
+      "tint": "Satin Etch",
+      "length": 80,
+      "width": 6
+    },
+    "quantity": 39,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 1306,
+    "order_id": "631bdb1b-1433-45e7-a164-da903e179302",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "d49c19b3-cf1a-4ad6-8ba4-bf127ce1de6f",
+      "name": "MC 27 LE-A",
+      "thickness": "1/8",
+      "shape": "Square/Rectangle",
+      "tint": "Frosted Green Chip",
+      "length": 78,
+      "width": 28
+    },
+    "quantity": 210,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 3153,
+    "order_id": "f4a91bb6-87f0-4247-91ae-acc6d399c8a0",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "cc546439-3cef-4f13-b365-c6893c05fc82",
+      "name": "SNR 35 HT",
+      "thickness": "1/8",
+      "shape": "Quad Arch",
+      "tint": "Low-E",
+      "length": 32,
+      "width": 20
+    },
+    "quantity": 4,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 8629,
+    "order_id": "f4a91bb6-87f0-4247-91ae-acc6d399c8a0",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "d1561e8c-3e9b-4e29-94d2-56bbdced64f7",
+      "name": "MC 68 LE-A",
+      "thickness": "1/8",
+      "shape": "Ellipse",
+      "tint": "Frosted Green Chip",
+      "length": 92,
+      "width": 30
+    },
+    "quantity": 198,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 5360,
+    "order_id": "f4a91bb6-87f0-4247-91ae-acc6d399c8a0",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "d1561e8c-3e9b-4e29-94d2-56bbdced64f7",
+      "name": "MC 68 LE-A",
+      "thickness": "3/8",
+      "shape": "Arch-Top",
+      "tint": "Clear",
+      "length": 96,
+      "width": 25
+    },
+    "quantity": 191,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 844,
+    "order_id": "f4a91bb6-87f0-4247-91ae-acc6d399c8a0",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "ec5ffa0f-39d8-4d03-94dd-95b190a8c2f5",
+      "name": "AG 50 LE",
+      "thickness": "3/8",
+      "shape": "Pentagon",
+      "tint": "Clear",
+      "length": 61,
+      "width": 36
+    },
+    "quantity": 184,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 2637,
+    "order_id": "f4a91bb6-87f0-4247-91ae-acc6d399c8a0",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "d49c19b3-cf1a-4ad6-8ba4-bf127ce1de6f",
+      "name": "MC 27 LE-A",
+      "thickness": "1/2",
+      "shape": "Arch Top & Bottom",
+      "tint": "Bronze",
+      "length": 87,
+      "width": 27
+    },
+    "quantity": 21,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 1736,
+    "order_id": "f4a91bb6-87f0-4247-91ae-acc6d399c8a0",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "004c4786-d558-43e7-82be-795f60182ef7",
+      "name": "SNE 50/25",
+      "thickness": "1/8",
+      "shape": "Circle",
+      "tint": "Dark Gray",
+      "length": 63,
+      "width": 26
+    },
+    "quantity": 10,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 9171,
+    "order_id": "cd9eff5c-6a1a-45f7-8f86-50a5cdef2279",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "cc546439-3cef-4f13-b365-c6893c05fc82",
       "name": "SNR 35 HT",
       "thickness": "3/4",
+      "shape": "Rounded Corner(s)",
+      "tint": "Clear",
+      "length": 46,
+      "width": 28
+    },
+    "quantity": 3,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 4510,
+    "order_id": "cd9eff5c-6a1a-45f7-8f86-50a5cdef2279",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "cc546439-3cef-4f13-b365-c6893c05fc82",
+      "name": "SNR 35 HT",
+      "thickness": "1/8",
+      "shape": "Quad Arch",
+      "tint": "Low-E",
+      "length": 84,
+      "width": 14
+    },
+    "quantity": 10,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 5688,
+    "order_id": "cd9eff5c-6a1a-45f7-8f86-50a5cdef2279",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "82a54c94-9681-4ebe-9cd8-81cfa03056e1",
+      "name": "SN 68",
+      "thickness": "1/8",
+      "shape": "Ellipse",
+      "tint": "Clear",
+      "length": 78,
+      "width": 26
+    },
+    "quantity": 4,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 4239,
+    "order_id": "cd9eff5c-6a1a-45f7-8f86-50a5cdef2279",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "af123281-fd38-48a1-b865-f5d1c25307f8",
+      "name": "SNX-L 62/34",
+      "thickness": "1/2",
+      "shape": "Single Slope Rectangle",
+      "tint": "Bronze",
+      "length": 69,
+      "width": 33
+    },
+    "quantity": 10,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 2517,
+    "order_id": "cd9eff5c-6a1a-45f7-8f86-50a5cdef2279",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "af123281-fd38-48a1-b865-f5d1c25307f8",
+      "name": "SNX-L 62/34",
+      "thickness": "1/2",
+      "shape": "Parallelogram",
+      "tint": "P-516",
+      "length": 64,
+      "width": 15
+    },
+    "quantity": 62,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 892,
+    "order_id": "cd9eff5c-6a1a-45f7-8f86-50a5cdef2279",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "c112847c-f8ab-4e7b-a397-6a44ef7529f7",
+      "name": "NU 40 LE",
+      "thickness": "1/8",
+      "shape": "Quad Arch",
+      "tint": "Solex",
+      "length": 87,
+      "width": 26
+    },
+    "quantity": 57,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 8573,
+    "order_id": "cd9eff5c-6a1a-45f7-8f86-50a5cdef2279",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "a1a67246-21b6-4ba1-9024-417369d628b0",
+      "name": "MC 68 LE-T",
+      "thickness": "1/4",
       "shape": "Octagon",
+      "tint": "Low-E",
+      "length": 56,
+      "width": 33
+    },
+    "quantity": 36,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 4560,
+    "order_id": "cd9eff5c-6a1a-45f7-8f86-50a5cdef2279",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "af123281-fd38-48a1-b865-f5d1c25307f8",
+      "name": "SNX-L 62/34",
+      "thickness": "1/4",
+      "shape": "Arch Top & Bottom",
+      "tint": "P-516",
+      "length": 56,
+      "width": 47
+    },
+    "quantity": 182,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 7106,
+    "order_id": "cd9eff5c-6a1a-45f7-8f86-50a5cdef2279",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "d49c19b3-cf1a-4ad6-8ba4-bf127ce1de6f",
+      "name": "MC 27 LE-A",
+      "thickness": "1/8",
+      "shape": "Racetrack Oval",
+      "tint": "Frosted Green Chip",
+      "length": 68,
+      "width": 46
+    },
+    "quantity": 7,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 5851,
+    "order_id": "45bc9184-6e20-4116-8317-bf9a58d1407b",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "d49c19b3-cf1a-4ad6-8ba4-bf127ce1de6f",
+      "name": "MC 27 LE-A",
+      "thickness": "1/4",
+      "shape": "House",
+      "tint": "Midnight Gray",
+      "length": 82,
+      "width": 10
+    },
+    "quantity": 1,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 752,
+    "order_id": "45bc9184-6e20-4116-8317-bf9a58d1407b",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "c908d94a-e129-4912-b3dd-29d7073c042d",
+      "name": "Sunguard Spandrel HT",
+      "thickness": "1/4",
+      "shape": "Square/Rectangle",
+      "tint": "P-516",
+      "length": 90,
+      "width": 28
+    },
+    "quantity": 40,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 4610,
+    "order_id": "f44d22f1-8d23-4b0d-99ef-a7c83c42177d",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "1da5b2a3-6a53-49de-bbce-4521ef09cd5c",
+      "name": "SatinDeco",
+      "thickness": "3/8",
+      "shape": "Arch-Top",
+      "tint": "Frosted Green Chip",
+      "length": 45,
+      "width": 31
+    },
+    "quantity": 1,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 7053,
+    "order_id": "f44d22f1-8d23-4b0d-99ef-a7c83c42177d",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "c5eb32fe-3209-43d3-a63c-f5d3c3555c8b",
+      "name": "IS20 LE-T",
+      "thickness": "3/8",
+      "shape": "Hexagon",
+      "tint": "Satin Etch",
+      "length": 61,
+      "width": 9
+    },
+    "quantity": 3,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 1495,
+    "order_id": "f44d22f1-8d23-4b0d-99ef-a7c83c42177d",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "af123281-fd38-48a1-b865-f5d1c25307f8",
+      "name": "SNX-L 62/34",
+      "thickness": "1/4",
+      "shape": "Single Slope Rectangle",
+      "tint": "Mistlite",
+      "length": 60,
+      "width": 24
+    },
+    "quantity": 59,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 7579,
+    "order_id": "f44d22f1-8d23-4b0d-99ef-a7c83c42177d",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "004c4786-d558-43e7-82be-795f60182ef7",
+      "name": "SNE 50/25",
+      "thickness": "1/8",
+      "shape": "Rounded Corner(s)",
+      "tint": "Frosted Green Chip",
+      "length": 65,
+      "width": 17
+    },
+    "quantity": 2,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 4631,
+    "order_id": "f44d22f1-8d23-4b0d-99ef-a7c83c42177d",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "f1e58ff5-48fc-40f5-971d-10c8ad04ab6f",
+      "name": "SN 68 HT",
+      "thickness": "3/8",
+      "shape": "Racetrack Oval",
+      "tint": "Dark Gray",
+      "length": 45,
+      "width": 2
+    },
+    "quantity": 18,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 8582,
+    "order_id": "f44d22f1-8d23-4b0d-99ef-a7c83c42177d",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "ec5ffa0f-39d8-4d03-94dd-95b190a8c2f5",
+      "name": "AG 50 LE",
+      "thickness": "3/4",
+      "shape": "Half-Circle with Notch",
+      "tint": "P-516",
+      "length": 90,
+      "width": 38
+    },
+    "quantity": 8,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 2177,
+    "order_id": "f44d22f1-8d23-4b0d-99ef-a7c83c42177d",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "f1e58ff5-48fc-40f5-971d-10c8ad04ab6f",
+      "name": "SN 68 HT",
+      "thickness": "3/4",
+      "shape": "Parallelogram",
+      "tint": "Clear",
+      "length": 89,
+      "width": 33
+    },
+    "quantity": 181,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 3005,
+    "order_id": "f44d22f1-8d23-4b0d-99ef-a7c83c42177d",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "1da5b2a3-6a53-49de-bbce-4521ef09cd5c",
+      "name": "SatinDeco",
+      "thickness": "1/8",
+      "shape": "Rounded Corner(s)",
+      "tint": "Frosted Green Chip",
+      "length": 94,
+      "width": 40
+    },
+    "quantity": 5,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 1273,
+    "order_id": "f44d22f1-8d23-4b0d-99ef-a7c83c42177d",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "cc546439-3cef-4f13-b365-c6893c05fc82",
+      "name": "SNR 35 HT",
+      "thickness": "3/8",
+      "shape": "Arch",
+      "tint": "Low-E",
+      "length": 67,
+      "width": 16
+    },
+    "quantity": 3,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 7433,
+    "order_id": "21a6a153-5423-4425-9802-d563f885917e",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "d1561e8c-3e9b-4e29-94d2-56bbdced64f7",
+      "name": "MC 68 LE-A",
+      "thickness": "1/8",
+      "shape": "Ellipse",
+      "tint": "P-516",
+      "length": 32,
+      "width": 17
+    },
+    "quantity": 5,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 5001,
+    "order_id": "21a6a153-5423-4425-9802-d563f885917e",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "ec5ffa0f-39d8-4d03-94dd-95b190a8c2f5",
+      "name": "AG 50 LE",
+      "thickness": "1/8",
+      "shape": "Square/Rectangle",
+      "tint": "Ultra Clear",
+      "length": 27,
+      "width": 23
+    },
+    "quantity": 31,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 7201,
+    "order_id": "21a6a153-5423-4425-9802-d563f885917e",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "d49c19b3-cf1a-4ad6-8ba4-bf127ce1de6f",
+      "name": "MC 27 LE-A",
+      "thickness": "1/8",
+      "shape": "Octagon",
+      "tint": "Frosted Green Chip",
+      "length": 70,
+      "width": 48
+    },
+    "quantity": 25,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 3578,
+    "order_id": "d4c071e1-f889-4716-9197-bce6c61b20b1",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "f1e58ff5-48fc-40f5-971d-10c8ad04ab6f",
+      "name": "SN 68 HT",
+      "thickness": "3/4",
+      "shape": "Rounded Corner(s)",
+      "tint": "Light Gray",
+      "length": 58,
+      "width": 26
+    },
+    "quantity": 190,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 1195,
+    "order_id": "d4c071e1-f889-4716-9197-bce6c61b20b1",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "f1e58ff5-48fc-40f5-971d-10c8ad04ab6f",
+      "name": "SN 68 HT",
+      "thickness": "1/8",
+      "shape": "Quad Arch",
+      "tint": "Light Gray",
+      "length": 38,
+      "width": 1
+    },
+    "quantity": 158,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 673,
+    "order_id": "d4c071e1-f889-4716-9197-bce6c61b20b1",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "d1561e8c-3e9b-4e29-94d2-56bbdced64f7",
+      "name": "MC 68 LE-A",
+      "thickness": "1/4",
+      "shape": "Ellipse",
+      "tint": "Clear",
+      "length": 31,
+      "width": 6
+    },
+    "quantity": 22,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 1106,
+    "order_id": "d4c071e1-f889-4716-9197-bce6c61b20b1",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "aeab03c7-9242-4c4d-a53a-ef341b9fed6f",
+      "name": "AG 43",
+      "thickness": "1/2",
+      "shape": "Quarter Round",
+      "tint": "Frosted Blue Chip",
+      "length": 50,
+      "width": 28
+    },
+    "quantity": 4,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 2544,
+    "order_id": "d4c071e1-f889-4716-9197-bce6c61b20b1",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "cc546439-3cef-4f13-b365-c6893c05fc82",
+      "name": "SNR 35 HT",
+      "thickness": "1/8",
+      "shape": "Trapezoid",
+      "tint": "Clear",
+      "length": 87,
+      "width": 28
+    },
+    "quantity": 65,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 5095,
+    "order_id": "d4c071e1-f889-4716-9197-bce6c61b20b1",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "c908d94a-e129-4912-b3dd-29d7073c042d",
+      "name": "Sunguard Spandrel HT",
+      "thickness": "1/8",
+      "shape": "Triangle",
+      "tint": "Bronze",
+      "length": 80,
+      "width": 22
+    },
+    "quantity": 7,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 6260,
+    "order_id": "12699dd7-eff8-4a32-80fc-d01ebc352263",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "82a54c94-9681-4ebe-9cd8-81cfa03056e1",
+      "name": "SN 68",
+      "thickness": "1/8",
+      "shape": "Trapezoid",
+      "tint": "Satin Etch",
+      "length": 66,
+      "width": 2
+    },
+    "quantity": 13,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 7588,
+    "order_id": "12699dd7-eff8-4a32-80fc-d01ebc352263",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "d1561e8c-3e9b-4e29-94d2-56bbdced64f7",
+      "name": "MC 68 LE-A",
+      "thickness": "1/8",
+      "shape": "Ellipse",
+      "tint": "Frosted Green Chip",
+      "length": 59,
+      "width": 30
+    },
+    "quantity": 70,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 6798,
+    "order_id": "12699dd7-eff8-4a32-80fc-d01ebc352263",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "c908d94a-e129-4912-b3dd-29d7073c042d",
+      "name": "Sunguard Spandrel HT",
+      "thickness": "3/4",
+      "shape": "Octagon",
+      "tint": "Mistlite",
+      "length": 34,
+      "width": 19
+    },
+    "quantity": 53,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 6893,
+    "order_id": "12699dd7-eff8-4a32-80fc-d01ebc352263",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "d1561e8c-3e9b-4e29-94d2-56bbdced64f7",
+      "name": "MC 68 LE-A",
+      "thickness": "1/2",
+      "shape": "Ellipse",
+      "tint": "P-516",
+      "length": 34,
+      "width": 18
+    },
+    "quantity": 6,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 1143,
+    "order_id": "12699dd7-eff8-4a32-80fc-d01ebc352263",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "d49c19b3-cf1a-4ad6-8ba4-bf127ce1de6f",
+      "name": "MC 27 LE-A",
+      "thickness": "3/4",
+      "shape": "Clipped Corner(s)",
+      "tint": "Bronze",
+      "length": 58,
+      "width": 26
+    },
+    "quantity": 8,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 6128,
+    "order_id": "12699dd7-eff8-4a32-80fc-d01ebc352263",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "c908d94a-e129-4912-b3dd-29d7073c042d",
+      "name": "Sunguard Spandrel HT",
+      "thickness": "3/8",
+      "shape": "Trapezoid",
+      "tint": "P-516",
+      "length": 60,
+      "width": 34
+    },
+    "quantity": 7,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 5214,
+    "order_id": "12699dd7-eff8-4a32-80fc-d01ebc352263",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "c112847c-f8ab-4e7b-a397-6a44ef7529f7",
+      "name": "NU 40 LE",
+      "thickness": "1/2",
+      "shape": "Trapezoid",
+      "tint": "Mistlite",
+      "length": 59,
+      "width": 38
+    },
+    "quantity": 8,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 2660,
+    "order_id": "12699dd7-eff8-4a32-80fc-d01ebc352263",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "82a54c94-9681-4ebe-9cd8-81cfa03056e1",
+      "name": "SN 68",
+      "thickness": "3/8",
+      "shape": "Racetrack Oval",
+      "tint": "Bronze",
+      "length": 70,
+      "width": 10
+    },
+    "quantity": 94,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 6222,
+    "order_id": "12699dd7-eff8-4a32-80fc-d01ebc352263",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "f1e58ff5-48fc-40f5-971d-10c8ad04ab6f",
+      "name": "SN 68 HT",
+      "thickness": "1/8",
+      "shape": "Quad Arch",
+      "tint": "Dark Gray",
+      "length": 35,
+      "width": 16
+    },
+    "quantity": 158,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 4847,
+    "order_id": "f3f2e9fb-f165-4a29-b1b1-6245c5110674",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "d1561e8c-3e9b-4e29-94d2-56bbdced64f7",
+      "name": "MC 68 LE-A",
+      "thickness": "1/4",
+      "shape": "Arch",
+      "tint": "Frosted Blue Chip",
+      "length": 45,
+      "width": 37
+    },
+    "quantity": 31,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 829,
+    "order_id": "f3f2e9fb-f165-4a29-b1b1-6245c5110674",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "af123281-fd38-48a1-b865-f5d1c25307f8",
+      "name": "SNX-L 62/34",
+      "thickness": "1/2",
+      "shape": "Rounded Corner(s)",
+      "tint": "Mistlite",
+      "length": 22,
+      "width": 15
+    },
+    "quantity": 9,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 1186,
+    "order_id": "f3f2e9fb-f165-4a29-b1b1-6245c5110674",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "cc546439-3cef-4f13-b365-c6893c05fc82",
+      "name": "SNR 35 HT",
+      "thickness": "1/2",
+      "shape": "Rounded Corner(s)",
+      "tint": "Low-E",
+      "length": 41,
+      "width": 33
+    },
+    "quantity": 6,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 3674,
+    "order_id": "f3f2e9fb-f165-4a29-b1b1-6245c5110674",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "af123281-fd38-48a1-b865-f5d1c25307f8",
+      "name": "SNX-L 62/34",
+      "thickness": "3/8",
+      "shape": "Octagon",
+      "tint": "Midnight Gray",
+      "length": 57,
+      "width": 11
+    },
+    "quantity": 2,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 1587,
+    "order_id": "f3f2e9fb-f165-4a29-b1b1-6245c5110674",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "1da5b2a3-6a53-49de-bbce-4521ef09cd5c",
+      "name": "SatinDeco",
+      "thickness": "3/8",
+      "shape": "Clipped Corner(s)",
+      "tint": "Frosted Green Chip",
+      "length": 34,
+      "width": 33
+    },
+    "quantity": 9,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 8410,
+    "order_id": "f3f2e9fb-f165-4a29-b1b1-6245c5110674",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "c5eb32fe-3209-43d3-a63c-f5d3c3555c8b",
+      "name": "IS20 LE-T",
+      "thickness": "1/8",
+      "shape": "Half-Circle with Notch",
+      "tint": "Clear",
+      "length": 91,
+      "width": 22
+    },
+    "quantity": 199,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 6602,
+    "order_id": "f3f2e9fb-f165-4a29-b1b1-6245c5110674",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "004c4786-d558-43e7-82be-795f60182ef7",
+      "name": "SNE 50/25",
+      "thickness": "1/2",
+      "shape": "Hexagon",
+      "tint": "Midnight Gray",
+      "length": 75,
+      "width": 15
+    },
+    "quantity": 203,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 3064,
+    "order_id": "f3f2e9fb-f165-4a29-b1b1-6245c5110674",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "f1e58ff5-48fc-40f5-971d-10c8ad04ab6f",
+      "name": "SN 68 HT",
+      "thickness": "1/8",
+      "shape": "Quad Arch",
+      "tint": "Ultra Clear",
+      "length": 26,
+      "width": 17
+    },
+    "quantity": 26,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 687,
+    "order_id": "f3f2e9fb-f165-4a29-b1b1-6245c5110674",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "c5eb32fe-3209-43d3-a63c-f5d3c3555c8b",
+      "name": "IS20 LE-T",
+      "thickness": "1/8",
+      "shape": "Parallelogram",
+      "tint": "Mistlite",
+      "length": 71,
+      "width": 43
+    },
+    "quantity": 1,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 608,
+    "order_id": "46a3abf2-e586-4173-837e-fd2acd928734",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "aeab03c7-9242-4c4d-a53a-ef341b9fed6f",
+      "name": "AG 43",
+      "thickness": "1/4",
+      "shape": "Square/Rectangle",
+      "tint": "P-516",
+      "length": 72,
+      "width": 38
+    },
+    "quantity": 39,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 1093,
+    "order_id": "46a3abf2-e586-4173-837e-fd2acd928734",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "f1e58ff5-48fc-40f5-971d-10c8ad04ab6f",
+      "name": "SN 68 HT",
+      "thickness": "1/2",
+      "shape": "Racetrack Oval",
+      "tint": "Dark Gray",
+      "length": 81,
+      "width": 28
+    },
+    "quantity": 142,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 5034,
+    "order_id": "46a3abf2-e586-4173-837e-fd2acd928734",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "aeab03c7-9242-4c4d-a53a-ef341b9fed6f",
+      "name": "AG 43",
+      "thickness": "1/2",
+      "shape": "Triangle",
+      "tint": "Solex",
+      "length": 21,
+      "width": 3
+    },
+    "quantity": 57,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 4038,
+    "order_id": "46a3abf2-e586-4173-837e-fd2acd928734",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "ec5ffa0f-39d8-4d03-94dd-95b190a8c2f5",
+      "name": "AG 50 LE",
+      "thickness": "1/4",
+      "shape": "Quarter Round",
+      "tint": "Satin Etch",
+      "length": 19,
+      "width": 15
+    },
+    "quantity": 42,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 3945,
+    "order_id": "46a3abf2-e586-4173-837e-fd2acd928734",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "d49c19b3-cf1a-4ad6-8ba4-bf127ce1de6f",
+      "name": "MC 27 LE-A",
+      "thickness": "1/4",
+      "shape": "Half-Circle with Notch",
+      "tint": "Midnight Gray",
+      "length": 24,
+      "width": 17
+    },
+    "quantity": 33,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 9997,
+    "order_id": "46a3abf2-e586-4173-837e-fd2acd928734",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "82a54c94-9681-4ebe-9cd8-81cfa03056e1",
+      "name": "SN 68",
+      "thickness": "3/4",
+      "shape": "Racetrack Oval",
+      "tint": "Ultra Clear",
+      "length": 78,
+      "width": 37
+    },
+    "quantity": 1,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 9687,
+    "order_id": "46a3abf2-e586-4173-837e-fd2acd928734",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "c5eb32fe-3209-43d3-a63c-f5d3c3555c8b",
+      "name": "IS20 LE-T",
+      "thickness": "3/4",
+      "shape": "Arch",
+      "tint": "Clear",
+      "length": 96,
+      "width": 38
+    },
+    "quantity": 124,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 5396,
+    "order_id": "46a3abf2-e586-4173-837e-fd2acd928734",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "a1a67246-21b6-4ba1-9024-417369d628b0",
+      "name": "MC 68 LE-T",
+      "thickness": "1/2",
+      "shape": "Octagon",
+      "tint": "Low-E",
+      "length": 65,
+      "width": 32
+    },
+    "quantity": 56,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 461,
+    "order_id": "46a3abf2-e586-4173-837e-fd2acd928734",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "d1561e8c-3e9b-4e29-94d2-56bbdced64f7",
+      "name": "MC 68 LE-A",
+      "thickness": "1/8",
+      "shape": "Arch-Top",
       "tint": "Clear",
       "length": 57,
+      "width": 42
+    },
+    "quantity": 52,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 6506,
+    "order_id": "247bf1d0-1b6a-4155-bdde-a99144ec239c",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "ec5ffa0f-39d8-4d03-94dd-95b190a8c2f5",
+      "name": "AG 50 LE",
+      "thickness": "3/4",
+      "shape": "Pentagon",
+      "tint": "Bronze",
+      "length": 90,
+      "width": 46
+    },
+    "quantity": 2,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 6201,
+    "order_id": "247bf1d0-1b6a-4155-bdde-a99144ec239c",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "f1e58ff5-48fc-40f5-971d-10c8ad04ab6f",
+      "name": "SN 68 HT",
+      "thickness": "1/2",
+      "shape": "Circle",
+      "tint": "Dark Gray",
+      "length": 34,
+      "width": 22
+    },
+    "quantity": 10,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 2170,
+    "order_id": "247bf1d0-1b6a-4155-bdde-a99144ec239c",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "d49c19b3-cf1a-4ad6-8ba4-bf127ce1de6f",
+      "name": "MC 27 LE-A",
+      "thickness": "3/4",
+      "shape": "Clipped Corner(s)",
+      "tint": "Mistlite",
+      "length": 68,
+      "width": 43
+    },
+    "quantity": 50,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 8622,
+    "order_id": "247bf1d0-1b6a-4155-bdde-a99144ec239c",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "1da5b2a3-6a53-49de-bbce-4521ef09cd5c",
+      "name": "SatinDeco",
+      "thickness": "1/2",
+      "shape": "Square/Rectangle",
+      "tint": "Satin Etch",
+      "length": 38,
+      "width": 32
+    },
+    "quantity": 17,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 7089,
+    "order_id": "247bf1d0-1b6a-4155-bdde-a99144ec239c",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "d1561e8c-3e9b-4e29-94d2-56bbdced64f7",
+      "name": "MC 68 LE-A",
+      "thickness": "1/4",
+      "shape": "Arch-Top",
+      "tint": "Frosted Blue Chip",
+      "length": 69,
+      "width": 20
+    },
+    "quantity": 1,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 8025,
+    "order_id": "247bf1d0-1b6a-4155-bdde-a99144ec239c",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "004c4786-d558-43e7-82be-795f60182ef7",
+      "name": "SNE 50/25",
+      "thickness": "1/8",
+      "shape": "House",
+      "tint": "Dark Gray",
+      "length": 61,
+      "width": 1
+    },
+    "quantity": 8,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 900,
+    "order_id": "247bf1d0-1b6a-4155-bdde-a99144ec239c",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "f1e58ff5-48fc-40f5-971d-10c8ad04ab6f",
+      "name": "SN 68 HT",
+      "thickness": "3/4",
+      "shape": "Rounded Corner(s)",
+      "tint": "Clear",
+      "length": 63,
+      "width": 31
+    },
+    "quantity": 1,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 4504,
+    "order_id": "247bf1d0-1b6a-4155-bdde-a99144ec239c",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "c5eb32fe-3209-43d3-a63c-f5d3c3555c8b",
+      "name": "IS20 LE-T",
+      "thickness": "1/4",
+      "shape": "Parallelogram",
+      "tint": "Satin Etch",
+      "length": 74,
+      "width": 20
+    },
+    "quantity": 124,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 9887,
+    "order_id": "bc632de3-5139-4dd9-bc2b-227538cf7574",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "c908d94a-e129-4912-b3dd-29d7073c042d",
+      "name": "Sunguard Spandrel HT",
+      "thickness": "3/4",
+      "shape": "Trapezoid",
+      "tint": "Bronze",
+      "length": 59,
+      "width": 17
+    },
+    "quantity": 5,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 4702,
+    "order_id": "bc632de3-5139-4dd9-bc2b-227538cf7574",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "c908d94a-e129-4912-b3dd-29d7073c042d",
+      "name": "Sunguard Spandrel HT",
+      "thickness": "1/2",
+      "shape": "Quarter Round",
+      "tint": "Ultra Clear",
+      "length": 25,
+      "width": 10
+    },
+    "quantity": 124,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 7737,
+    "order_id": "bc632de3-5139-4dd9-bc2b-227538cf7574",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "cc546439-3cef-4f13-b365-c6893c05fc82",
+      "name": "SNR 35 HT",
+      "thickness": "3/4",
+      "shape": "Rounded Corner(s)",
+      "tint": "Clear",
+      "length": 91,
       "width": 16
+    },
+    "quantity": 36,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 5427,
+    "order_id": "bc632de3-5139-4dd9-bc2b-227538cf7574",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "a1a67246-21b6-4ba1-9024-417369d628b0",
+      "name": "MC 68 LE-T",
+      "thickness": "3/8",
+      "shape": "Hexagon",
+      "tint": "Mistlite",
+      "length": 78,
+      "width": 13
+    },
+    "quantity": 9,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 6725,
+    "order_id": "bc632de3-5139-4dd9-bc2b-227538cf7574",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "c112847c-f8ab-4e7b-a397-6a44ef7529f7",
+      "name": "NU 40 LE",
+      "thickness": "1/4",
+      "shape": "Octagon",
+      "tint": "P-516",
+      "length": 33,
+      "width": 9
+    },
+    "quantity": 9,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 7608,
+    "order_id": "19cf7bc8-e92e-4dbe-8ca6-81729a77302d",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "d1561e8c-3e9b-4e29-94d2-56bbdced64f7",
+      "name": "MC 68 LE-A",
+      "thickness": "3/8",
+      "shape": "Irregular/Any Other Shape",
+      "tint": "Midnight Gray",
+      "length": 19,
+      "width": 18
+    },
+    "quantity": 5,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 9095,
+    "order_id": "19cf7bc8-e92e-4dbe-8ca6-81729a77302d",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "c5eb32fe-3209-43d3-a63c-f5d3c3555c8b",
+      "name": "IS20 LE-T",
+      "thickness": "1/2",
+      "shape": "Half-Circle",
+      "tint": "Satin Etch",
+      "length": 81,
+      "width": 10
+    },
+    "quantity": 5,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 7088,
+    "order_id": "19cf7bc8-e92e-4dbe-8ca6-81729a77302d",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "82a54c94-9681-4ebe-9cd8-81cfa03056e1",
+      "name": "SN 68",
+      "thickness": "1/4",
+      "shape": "Trapezoid",
+      "tint": "Bronze",
+      "length": 92,
+      "width": 16
+    },
+    "quantity": 10,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 1046,
+    "order_id": "19cf7bc8-e92e-4dbe-8ca6-81729a77302d",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "a1a67246-21b6-4ba1-9024-417369d628b0",
+      "name": "MC 68 LE-T",
+      "thickness": "3/4",
+      "shape": "Single Slope Rectangle",
+      "tint": "Bronze",
+      "length": 42,
+      "width": 6
+    },
+    "quantity": 7,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 5885,
+    "order_id": "19cf7bc8-e92e-4dbe-8ca6-81729a77302d",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "cc546439-3cef-4f13-b365-c6893c05fc82",
+      "name": "SNR 35 HT",
+      "thickness": "1/4",
+      "shape": "Half-Circle with Notch",
+      "tint": "P-516",
+      "length": 61,
+      "width": 20
+    },
+    "quantity": 41,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 9240,
+    "order_id": "19cf7bc8-e92e-4dbe-8ca6-81729a77302d",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "ec5ffa0f-39d8-4d03-94dd-95b190a8c2f5",
+      "name": "AG 50 LE",
+      "thickness": "3/8",
+      "shape": "Pentagon",
+      "tint": "P-516",
+      "length": 46,
+      "width": 44
+    },
+    "quantity": 11,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 5413,
+    "order_id": "19cf7bc8-e92e-4dbe-8ca6-81729a77302d",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "a1a67246-21b6-4ba1-9024-417369d628b0",
+      "name": "MC 68 LE-T",
+      "thickness": "1/8",
+      "shape": "Half-Circle",
+      "tint": "Clear",
+      "length": 32,
+      "width": 25
+    },
+    "quantity": 4,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 6957,
+    "order_id": "19cf7bc8-e92e-4dbe-8ca6-81729a77302d",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "c112847c-f8ab-4e7b-a397-6a44ef7529f7",
+      "name": "NU 40 LE",
+      "thickness": "3/8",
+      "shape": "Octagon",
+      "tint": "Bronze",
+      "length": 79,
+      "width": 44
+    },
+    "quantity": 189,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 5580,
+    "order_id": "49ce9abc-6770-4ae3-a915-d17e44eda468",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "ec5ffa0f-39d8-4d03-94dd-95b190a8c2f5",
+      "name": "AG 50 LE",
+      "thickness": "1/4",
+      "shape": "Half-Circle with Notch",
+      "tint": "Frosted Green Chip",
+      "length": 64,
+      "width": 44
+    },
+    "quantity": 1,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 1013,
+    "order_id": "49ce9abc-6770-4ae3-a915-d17e44eda468",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "c112847c-f8ab-4e7b-a397-6a44ef7529f7",
+      "name": "NU 40 LE",
+      "thickness": "3/4",
+      "shape": "Quarter Round with Notch",
+      "tint": "Bronze",
+      "length": 48,
+      "width": 21
+    },
+    "quantity": 10,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 4905,
+    "order_id": "49ce9abc-6770-4ae3-a915-d17e44eda468",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "c112847c-f8ab-4e7b-a397-6a44ef7529f7",
+      "name": "NU 40 LE",
+      "thickness": "1/2",
+      "shape": "Square/Rectangle",
+      "tint": "Mistlite",
+      "length": 60,
+      "width": 7
+    },
+    "quantity": 8,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 7387,
+    "order_id": "49ce9abc-6770-4ae3-a915-d17e44eda468",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "c112847c-f8ab-4e7b-a397-6a44ef7529f7",
+      "name": "NU 40 LE",
+      "thickness": "3/4",
+      "shape": "Parallelogram",
+      "tint": "Frosted Blue Chip",
+      "length": 25,
+      "width": 13
+    },
+    "quantity": 91,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 9458,
+    "order_id": "49ce9abc-6770-4ae3-a915-d17e44eda468",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "af123281-fd38-48a1-b865-f5d1c25307f8",
+      "name": "SNX-L 62/34",
+      "thickness": "1/4",
+      "shape": "Single Slope Rectangle",
+      "tint": "Bronze",
+      "length": 80,
+      "width": 36
+    },
+    "quantity": 7,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 9865,
+    "order_id": "49ce9abc-6770-4ae3-a915-d17e44eda468",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "82a54c94-9681-4ebe-9cd8-81cfa03056e1",
+      "name": "SN 68",
+      "thickness": "3/8",
+      "shape": "Clipped Corner(s)",
+      "tint": "Light Gray",
+      "length": 27,
+      "width": 22
+    },
+    "quantity": 23,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 3824,
+    "order_id": "de17d0bf-7422-484a-8ed8-add4e7b3b4f1",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "ec5ffa0f-39d8-4d03-94dd-95b190a8c2f5",
+      "name": "AG 50 LE",
+      "thickness": "3/8",
+      "shape": "Pentagon",
+      "tint": "Satin Etch",
+      "length": 36,
+      "width": 18
+    },
+    "quantity": 182,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 9499,
+    "order_id": "de17d0bf-7422-484a-8ed8-add4e7b3b4f1",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "82a54c94-9681-4ebe-9cd8-81cfa03056e1",
+      "name": "SN 68",
+      "thickness": "1/8",
+      "shape": "Circle",
+      "tint": "Ultra Clear",
+      "length": 93,
+      "width": 27
+    },
+    "quantity": 45,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 444,
+    "order_id": "de17d0bf-7422-484a-8ed8-add4e7b3b4f1",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "d1561e8c-3e9b-4e29-94d2-56bbdced64f7",
+      "name": "MC 68 LE-A",
+      "thickness": "1/4",
+      "shape": "Arch Top & Bottom",
+      "tint": "Frosted Green Chip",
+      "length": 52,
+      "width": 4
+    },
+    "quantity": 31,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 2924,
+    "order_id": "de17d0bf-7422-484a-8ed8-add4e7b3b4f1",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "aeab03c7-9242-4c4d-a53a-ef341b9fed6f",
+      "name": "AG 43",
+      "thickness": "3/8",
+      "shape": "Pentagon",
+      "tint": "Frosted Blue Chip",
+      "length": 34,
+      "width": 19
+    },
+    "quantity": 71,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 799,
+    "order_id": "de17d0bf-7422-484a-8ed8-add4e7b3b4f1",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "d49c19b3-cf1a-4ad6-8ba4-bf127ce1de6f",
+      "name": "MC 27 LE-A",
+      "thickness": "1/8",
+      "shape": "Racetrack Oval",
+      "tint": "Midnight Gray",
+      "length": 63,
+      "width": 15
+    },
+    "quantity": 45,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 7914,
+    "order_id": "de17d0bf-7422-484a-8ed8-add4e7b3b4f1",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "004c4786-d558-43e7-82be-795f60182ef7",
+      "name": "SNE 50/25",
+      "thickness": "1/2",
+      "shape": "Arch",
+      "tint": "Dark Gray",
+      "length": 24,
+      "width": 19
+    },
+    "quantity": 1,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 6065,
+    "order_id": "de17d0bf-7422-484a-8ed8-add4e7b3b4f1",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "c112847c-f8ab-4e7b-a397-6a44ef7529f7",
+      "name": "NU 40 LE",
+      "thickness": "3/4",
+      "shape": "House",
+      "tint": "Frosted Blue Chip",
+      "length": 46,
+      "width": 24
+    },
+    "quantity": 12,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 3555,
+    "order_id": "de17d0bf-7422-484a-8ed8-add4e7b3b4f1",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "004c4786-d558-43e7-82be-795f60182ef7",
+      "name": "SNE 50/25",
+      "thickness": "3/4",
+      "shape": "Trapezoid",
+      "tint": "Midnight Gray",
+      "length": 85,
+      "width": 13
+    },
+    "quantity": 5,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 6000,
+    "order_id": "fb7fbfca-5565-4ccf-b1a9-92dca5d47f30",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "ec5ffa0f-39d8-4d03-94dd-95b190a8c2f5",
+      "name": "AG 50 LE",
+      "thickness": "1/4",
+      "shape": "Clipped Corner(s)",
+      "tint": "Frosted Green Chip",
+      "length": 24,
+      "width": 15
+    },
+    "quantity": 59,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 99,
+    "order_id": "fb7fbfca-5565-4ccf-b1a9-92dca5d47f30",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "a1a67246-21b6-4ba1-9024-417369d628b0",
+      "name": "MC 68 LE-T",
+      "thickness": "1/4",
+      "shape": "Hexagon",
+      "tint": "Low-E",
+      "length": 16,
+      "width": 1
+    },
+    "quantity": 1,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 5529,
+    "order_id": "fb7fbfca-5565-4ccf-b1a9-92dca5d47f30",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "004c4786-d558-43e7-82be-795f60182ef7",
+      "name": "SNE 50/25",
+      "thickness": "3/8",
+      "shape": "Arch Top & Bottom",
+      "tint": "Dark Gray",
+      "length": 83,
+      "width": 47
+    },
+    "quantity": 20,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 307,
+    "order_id": "fb7fbfca-5565-4ccf-b1a9-92dca5d47f30",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "004c4786-d558-43e7-82be-795f60182ef7",
+      "name": "SNE 50/25",
+      "thickness": "1/4",
+      "shape": "Circle",
+      "tint": "Midnight Gray",
+      "length": 69,
+      "width": 3
+    },
+    "quantity": 8,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 9352,
+    "order_id": "a068ecb0-ad33-438b-b015-5edf8ef95aac",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "004c4786-d558-43e7-82be-795f60182ef7",
+      "name": "SNE 50/25",
+      "thickness": "1/2",
+      "shape": "Trapezoid",
+      "tint": "Dark Gray",
+      "length": 43,
+      "width": 14
+    },
+    "quantity": 7,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 5140,
+    "order_id": "75946294-ad43-42e1-bf79-0aef1ff07345",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "cc546439-3cef-4f13-b365-c6893c05fc82",
+      "name": "SNR 35 HT",
+      "thickness": "1/8",
+      "shape": "Racetrack Oval",
+      "tint": "Clear",
+      "length": 74,
+      "width": 45
+    },
+    "quantity": 2,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 6559,
+    "order_id": "911fa347-c835-4c95-bff6-416248b56fe1",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "cc546439-3cef-4f13-b365-c6893c05fc82",
+      "name": "SNR 35 HT",
+      "thickness": "1/4",
+      "shape": "Trapezoid",
+      "tint": "Low-E",
+      "length": 86,
+      "width": 33
+    },
+    "quantity": 3,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 7228,
+    "order_id": "911fa347-c835-4c95-bff6-416248b56fe1",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "d49c19b3-cf1a-4ad6-8ba4-bf127ce1de6f",
+      "name": "MC 27 LE-A",
+      "thickness": "3/4",
+      "shape": "Square/Rectangle",
+      "tint": "Mistlite",
+      "length": 51,
+      "width": 12
+    },
+    "quantity": 1,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 9364,
+    "order_id": "911fa347-c835-4c95-bff6-416248b56fe1",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "c5eb32fe-3209-43d3-a63c-f5d3c3555c8b",
+      "name": "IS20 LE-T",
+      "thickness": "1/8",
+      "shape": "Arch",
+      "tint": "Mistlite",
+      "length": 80,
+      "width": 41
+    },
+    "quantity": 4,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 793,
+    "order_id": "911fa347-c835-4c95-bff6-416248b56fe1",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "c112847c-f8ab-4e7b-a397-6a44ef7529f7",
+      "name": "NU 40 LE",
+      "thickness": "3/4",
+      "shape": "Circle",
+      "tint": "Low-E",
+      "length": 47,
+      "width": 10
+    },
+    "quantity": 152,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 7270,
+    "order_id": "911fa347-c835-4c95-bff6-416248b56fe1",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "ec5ffa0f-39d8-4d03-94dd-95b190a8c2f5",
+      "name": "AG 50 LE",
+      "thickness": "1/2",
+      "shape": "Square/Rectangle",
+      "tint": "Frosted Green Chip",
+      "length": 66,
+      "width": 41
+    },
+    "quantity": 10,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 4656,
+    "order_id": "911fa347-c835-4c95-bff6-416248b56fe1",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "c908d94a-e129-4912-b3dd-29d7073c042d",
+      "name": "Sunguard Spandrel HT",
+      "thickness": "3/4",
+      "shape": "House",
+      "tint": "Ultra Clear",
+      "length": 85,
+      "width": 32
+    },
+    "quantity": 168,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 5965,
+    "order_id": "911fa347-c835-4c95-bff6-416248b56fe1",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "ec5ffa0f-39d8-4d03-94dd-95b190a8c2f5",
+      "name": "AG 50 LE",
+      "thickness": "1/8",
+      "shape": "Rounded Corner(s)",
+      "tint": "Ultra Clear",
+      "length": 76,
+      "width": 16
+    },
+    "quantity": 19,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 9802,
+    "order_id": "911fa347-c835-4c95-bff6-416248b56fe1",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "c5eb32fe-3209-43d3-a63c-f5d3c3555c8b",
+      "name": "IS20 LE-T",
+      "thickness": "3/8",
+      "shape": "Half-Circle",
+      "tint": "Satin Etch",
+      "length": 70,
+      "width": 22
+    },
+    "quantity": 3,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 698,
+    "order_id": "6b8feac8-53d7-4f6e-89aa-d07b4915f7a0",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "af123281-fd38-48a1-b865-f5d1c25307f8",
+      "name": "SNX-L 62/34",
+      "thickness": "1/8",
+      "shape": "Parallelogram",
+      "tint": "Mistlite",
+      "length": 77,
+      "width": 41
+    },
+    "quantity": 15,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 9521,
+    "order_id": "6b8feac8-53d7-4f6e-89aa-d07b4915f7a0",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "aeab03c7-9242-4c4d-a53a-ef341b9fed6f",
+      "name": "AG 43",
+      "thickness": "1/2",
+      "shape": "Triangle",
+      "tint": "Solex",
+      "length": 47,
+      "width": 24
+    },
+    "quantity": 5,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 6075,
+    "order_id": "6b8feac8-53d7-4f6e-89aa-d07b4915f7a0",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "1da5b2a3-6a53-49de-bbce-4521ef09cd5c",
+      "name": "SatinDeco",
+      "thickness": "1/4",
+      "shape": "Pentagon",
+      "tint": "Frosted Green Chip",
+      "length": 51,
+      "width": 42
+    },
+    "quantity": 31,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 2214,
+    "order_id": "52dd1fcc-f492-4b80-9820-9a857f55d959",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "aeab03c7-9242-4c4d-a53a-ef341b9fed6f",
+      "name": "AG 43",
+      "thickness": "1/8",
+      "shape": "Triangle",
+      "tint": "Solex",
+      "length": 49,
+      "width": 40
+    },
+    "quantity": 59,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 3507,
+    "order_id": "52dd1fcc-f492-4b80-9820-9a857f55d959",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "004c4786-d558-43e7-82be-795f60182ef7",
+      "name": "SNE 50/25",
+      "thickness": "1/2",
+      "shape": "Hexagon",
+      "tint": "Midnight Gray",
+      "length": 55,
+      "width": 10
+    },
+    "quantity": 111,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 2683,
+    "order_id": "52dd1fcc-f492-4b80-9820-9a857f55d959",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "004c4786-d558-43e7-82be-795f60182ef7",
+      "name": "SNE 50/25",
+      "thickness": "3/8",
+      "shape": "Racetrack Oval",
+      "tint": "Midnight Gray",
+      "length": 81,
+      "width": 26
+    },
+    "quantity": 8,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 12,
+    "order_id": "52dd1fcc-f492-4b80-9820-9a857f55d959",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "c908d94a-e129-4912-b3dd-29d7073c042d",
+      "name": "Sunguard Spandrel HT",
+      "thickness": "1/8",
+      "shape": "Circle",
+      "tint": "Midnight Gray",
+      "length": 31,
+      "width": 11
+    },
+    "quantity": 94,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 3243,
+    "order_id": "52dd1fcc-f492-4b80-9820-9a857f55d959",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "1da5b2a3-6a53-49de-bbce-4521ef09cd5c",
+      "name": "SatinDeco",
+      "thickness": "1/8",
+      "shape": "Clipped Corner(s)",
+      "tint": "Solex",
+      "length": 4,
+      "width": 4
+    },
+    "quantity": 9,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 1513,
+    "order_id": "52dd1fcc-f492-4b80-9820-9a857f55d959",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "ec5ffa0f-39d8-4d03-94dd-95b190a8c2f5",
+      "name": "AG 50 LE",
+      "thickness": "1/4",
+      "shape": "Clipped Corner(s)",
+      "tint": "P-516",
+      "length": 36,
+      "width": 36
+    },
+    "quantity": 206,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 3141,
+    "order_id": "10c63388-56fe-45a7-aba8-e6a5ed5eed42",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "ec5ffa0f-39d8-4d03-94dd-95b190a8c2f5",
+      "name": "AG 50 LE",
+      "thickness": "3/8",
+      "shape": "Half-Circle with Notch",
+      "tint": "Frosted Green Chip",
+      "length": 92,
+      "width": 9
+    },
+    "quantity": 8,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 9598,
+    "order_id": "10c63388-56fe-45a7-aba8-e6a5ed5eed42",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "004c4786-d558-43e7-82be-795f60182ef7",
+      "name": "SNE 50/25",
+      "thickness": "1/8",
+      "shape": "Racetrack Oval",
+      "tint": "Midnight Gray",
+      "length": 51,
+      "width": 14
+    },
+    "quantity": 191,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 8304,
+    "order_id": "10c63388-56fe-45a7-aba8-e6a5ed5eed42",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "af123281-fd38-48a1-b865-f5d1c25307f8",
+      "name": "SNX-L 62/34",
+      "thickness": "1/4",
+      "shape": "Irregular/Any Other Shape",
+      "tint": "P-516",
+      "length": 47,
+      "width": 43
+    },
+    "quantity": 42,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 6849,
+    "order_id": "10c63388-56fe-45a7-aba8-e6a5ed5eed42",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "d49c19b3-cf1a-4ad6-8ba4-bf127ce1de6f",
+      "name": "MC 27 LE-A",
+      "thickness": "3/4",
+      "shape": "Arch Side",
+      "tint": "Dark Gray",
+      "length": 72,
+      "width": 23
+    },
+    "quantity": 25,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 2545,
+    "order_id": "10c63388-56fe-45a7-aba8-e6a5ed5eed42",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "c112847c-f8ab-4e7b-a397-6a44ef7529f7",
+      "name": "NU 40 LE",
+      "thickness": "3/8",
+      "shape": "Circle",
+      "tint": "Mistlite",
+      "length": 68,
+      "width": 32
+    },
+    "quantity": 4,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 1164,
+    "order_id": "10c63388-56fe-45a7-aba8-e6a5ed5eed42",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "c112847c-f8ab-4e7b-a397-6a44ef7529f7",
+      "name": "NU 40 LE",
+      "thickness": "1/2",
+      "shape": "House",
+      "tint": "Mistlite",
+      "length": 30,
+      "width": 18
+    },
+    "quantity": 147,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 9758,
+    "order_id": "bc0b6448-df0e-4b40-a989-55c018f9ea0a",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "c5eb32fe-3209-43d3-a63c-f5d3c3555c8b",
+      "name": "IS20 LE-T",
+      "thickness": "3/8",
+      "shape": "Parallelogram",
+      "tint": "Clear",
+      "length": 85,
+      "width": 35
+    },
+    "quantity": 52,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 5693,
+    "order_id": "bcd9d5f6-914e-416d-882a-58683bce3bcf",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "f1e58ff5-48fc-40f5-971d-10c8ad04ab6f",
+      "name": "SN 68 HT",
+      "thickness": "3/4",
+      "shape": "Rounded Corner(s)",
+      "tint": "Light Gray",
+      "length": 77,
+      "width": 41
+    },
+    "quantity": 207,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 3446,
+    "order_id": "bcd9d5f6-914e-416d-882a-58683bce3bcf",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "d49c19b3-cf1a-4ad6-8ba4-bf127ce1de6f",
+      "name": "MC 27 LE-A",
+      "thickness": "3/4",
+      "shape": "Square/Rectangle",
+      "tint": "Midnight Gray",
+      "length": 87,
+      "width": 31
+    },
+    "quantity": 149,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 4688,
+    "order_id": "bcd9d5f6-914e-416d-882a-58683bce3bcf",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "d49c19b3-cf1a-4ad6-8ba4-bf127ce1de6f",
+      "name": "MC 27 LE-A",
+      "thickness": "1/2",
+      "shape": "Square/Rectangle",
+      "tint": "Bronze",
+      "length": 33,
+      "width": 18
+    },
+    "quantity": 57,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 1919,
+    "order_id": "bcd9d5f6-914e-416d-882a-58683bce3bcf",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "ec5ffa0f-39d8-4d03-94dd-95b190a8c2f5",
+      "name": "AG 50 LE",
+      "thickness": "3/4",
+      "shape": "Half-Circle with Notch",
+      "tint": "Ultra Clear",
+      "length": 50,
+      "width": 45
+    },
+    "quantity": 53,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 5598,
+    "order_id": "8cffccdb-90be-437d-8345-6bd981453e27",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "1da5b2a3-6a53-49de-bbce-4521ef09cd5c",
+      "name": "SatinDeco",
+      "thickness": "1/8",
+      "shape": "Pentagon",
+      "tint": "Frosted Green Chip",
+      "length": 63,
+      "width": 24
+    },
+    "quantity": 172,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 8689,
+    "order_id": "8cffccdb-90be-437d-8345-6bd981453e27",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "f1e58ff5-48fc-40f5-971d-10c8ad04ab6f",
+      "name": "SN 68 HT",
+      "thickness": "1/8",
+      "shape": "Quad Arch",
+      "tint": "Ultra Clear",
+      "length": 70,
+      "width": 38
+    },
+    "quantity": 5,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 1085,
+    "order_id": "8cffccdb-90be-437d-8345-6bd981453e27",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "c112847c-f8ab-4e7b-a397-6a44ef7529f7",
+      "name": "NU 40 LE",
+      "thickness": "3/8",
+      "shape": "House",
+      "tint": "Bronze",
+      "length": 46,
+      "width": 29
+    },
+    "quantity": 5,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 4915,
+    "order_id": "8cffccdb-90be-437d-8345-6bd981453e27",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "82a54c94-9681-4ebe-9cd8-81cfa03056e1",
+      "name": "SN 68",
+      "thickness": "3/8",
+      "shape": "Irregular/Any Other Shape",
+      "tint": "Satin Etch",
+      "length": 96,
+      "width": 22
+    },
+    "quantity": 68,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 3594,
+    "order_id": "8cffccdb-90be-437d-8345-6bd981453e27",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "cc546439-3cef-4f13-b365-c6893c05fc82",
+      "name": "SNR 35 HT",
+      "thickness": "3/4",
+      "shape": "Half-Circle with Notch",
+      "tint": "P-516",
+      "length": 91,
+      "width": 13
+    },
+    "quantity": 157,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 8043,
+    "order_id": "8cffccdb-90be-437d-8345-6bd981453e27",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "aeab03c7-9242-4c4d-a53a-ef341b9fed6f",
+      "name": "AG 43",
+      "thickness": "3/4",
+      "shape": "Hexagon",
+      "tint": "Solex",
+      "length": 74,
+      "width": 10
+    },
+    "quantity": 11,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 8237,
+    "order_id": "b619f40b-48b0-423a-a3d6-ad09c90a2557",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "82a54c94-9681-4ebe-9cd8-81cfa03056e1",
+      "name": "SN 68",
+      "thickness": "3/4",
+      "shape": "Single Slope Rectangle",
+      "tint": "Light Gray",
+      "length": 47,
+      "width": 29
+    },
+    "quantity": 52,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 7542,
+    "order_id": "2990badc-41a4-4671-85fa-0e5cfd37124b",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "cc546439-3cef-4f13-b365-c6893c05fc82",
+      "name": "SNR 35 HT",
+      "thickness": "1/4",
+      "shape": "Trapezoid",
+      "tint": "Clear",
+      "length": 36,
+      "width": 34
+    },
+    "quantity": 4,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 6835,
+    "order_id": "2990badc-41a4-4671-85fa-0e5cfd37124b",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "c112847c-f8ab-4e7b-a397-6a44ef7529f7",
+      "name": "NU 40 LE",
+      "thickness": "3/8",
+      "shape": "Octagon",
+      "tint": "Mistlite",
+      "length": 55,
+      "width": 4
+    },
+    "quantity": 8,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 9879,
+    "order_id": "2990badc-41a4-4671-85fa-0e5cfd37124b",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "aeab03c7-9242-4c4d-a53a-ef341b9fed6f",
+      "name": "AG 43",
+      "thickness": "1/4",
+      "shape": "Triangle",
+      "tint": "Solex",
+      "length": 95,
+      "width": 14
+    },
+    "quantity": 48,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 7499,
+    "order_id": "2990badc-41a4-4671-85fa-0e5cfd37124b",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "82a54c94-9681-4ebe-9cd8-81cfa03056e1",
+      "name": "SN 68",
+      "thickness": "1/4",
+      "shape": "Single Slope Rectangle",
+      "tint": "Light Gray",
+      "length": 70,
+      "width": 8
+    },
+    "quantity": 2,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 9805,
+    "order_id": "8084fa64-976d-4584-9200-0f9e51322931",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "c112847c-f8ab-4e7b-a397-6a44ef7529f7",
+      "name": "NU 40 LE",
+      "thickness": "1/8",
+      "shape": "Triangle",
+      "tint": "Frosted Blue Chip",
+      "length": 88,
+      "width": 37
+    },
+    "quantity": 51,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 3044,
+    "order_id": "8084fa64-976d-4584-9200-0f9e51322931",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "cc546439-3cef-4f13-b365-c6893c05fc82",
+      "name": "SNR 35 HT",
+      "thickness": "3/4",
+      "shape": "Half-Circle with Notch",
+      "tint": "Clear",
+      "length": 80,
+      "width": 29
+    },
+    "quantity": 95,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 3905,
+    "order_id": "8084fa64-976d-4584-9200-0f9e51322931",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "004c4786-d558-43e7-82be-795f60182ef7",
+      "name": "SNE 50/25",
+      "thickness": "1/8",
+      "shape": "Rounded Corner(s)",
+      "tint": "Dark Gray",
+      "length": 84,
+      "width": 18
+    },
+    "quantity": 58,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 819,
+    "order_id": "8084fa64-976d-4584-9200-0f9e51322931",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "d49c19b3-cf1a-4ad6-8ba4-bf127ce1de6f",
+      "name": "MC 27 LE-A",
+      "thickness": "3/8",
+      "shape": "Square/Rectangle",
+      "tint": "Dark Gray",
+      "length": 47,
+      "width": 45
+    },
+    "quantity": 7,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 8827,
+    "order_id": "8084fa64-976d-4584-9200-0f9e51322931",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "1da5b2a3-6a53-49de-bbce-4521ef09cd5c",
+      "name": "SatinDeco",
+      "thickness": "3/4",
+      "shape": "Right Triangle",
+      "tint": "P-516",
+      "length": 65,
+      "width": 27
+    },
+    "quantity": 56,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 6264,
+    "order_id": "8084fa64-976d-4584-9200-0f9e51322931",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "c5eb32fe-3209-43d3-a63c-f5d3c3555c8b",
+      "name": "IS20 LE-T",
+      "thickness": "1/4",
+      "shape": "Parallelogram",
+      "tint": "Satin Etch",
+      "length": 13,
+      "width": 9
+    },
+    "quantity": 113,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 2850,
+    "order_id": "8084fa64-976d-4584-9200-0f9e51322931",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "cc546439-3cef-4f13-b365-c6893c05fc82",
+      "name": "SNR 35 HT",
+      "thickness": "1/8",
+      "shape": "Right Triangle",
+      "tint": "Low-E",
+      "length": 22,
+      "width": 2
+    },
+    "quantity": 14,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 2740,
+    "order_id": "8084fa64-976d-4584-9200-0f9e51322931",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "ec5ffa0f-39d8-4d03-94dd-95b190a8c2f5",
+      "name": "AG 50 LE",
+      "thickness": "3/4",
+      "shape": "Arch",
+      "tint": "Bronze",
+      "length": 67,
+      "width": 46
+    },
+    "quantity": 10,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 7851,
+    "order_id": "eae17eab-6da4-4a16-bd49-c08298e05a7a",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "c5eb32fe-3209-43d3-a63c-f5d3c3555c8b",
+      "name": "IS20 LE-T",
+      "thickness": "1/2",
+      "shape": "Arch",
+      "tint": "Mistlite",
+      "length": 41,
+      "width": 23
+    },
+    "quantity": 177,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 6713,
+    "order_id": "eae17eab-6da4-4a16-bd49-c08298e05a7a",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "1da5b2a3-6a53-49de-bbce-4521ef09cd5c",
+      "name": "SatinDeco",
+      "thickness": "3/8",
+      "shape": "Racetrack Oval",
+      "tint": "Solex",
+      "length": 54,
+      "width": 42
+    },
+    "quantity": 9,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 2686,
+    "order_id": "15eaa44f-e720-4846-8779-62bbbc8f3a11",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "a1a67246-21b6-4ba1-9024-417369d628b0",
+      "name": "MC 68 LE-T",
+      "thickness": "1/4",
+      "shape": "Racetrack Oval",
+      "tint": "Frosted Green Chip",
+      "length": 70,
+      "width": 14
+    },
+    "quantity": 9,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 635,
+    "order_id": "15eaa44f-e720-4846-8779-62bbbc8f3a11",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "c5eb32fe-3209-43d3-a63c-f5d3c3555c8b",
+      "name": "IS20 LE-T",
+      "thickness": "1/4",
+      "shape": "Parallelogram",
+      "tint": "Satin Etch",
+      "length": 78,
+      "width": 11
+    },
+    "quantity": 57,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 6895,
+    "order_id": "15eaa44f-e720-4846-8779-62bbbc8f3a11",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "f1e58ff5-48fc-40f5-971d-10c8ad04ab6f",
+      "name": "SN 68 HT",
+      "thickness": "3/4",
+      "shape": "Racetrack Oval",
+      "tint": "Dark Gray",
+      "length": 40,
+      "width": 1
+    },
+    "quantity": 153,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 4895,
+    "order_id": "15eaa44f-e720-4846-8779-62bbbc8f3a11",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "c112847c-f8ab-4e7b-a397-6a44ef7529f7",
+      "name": "NU 40 LE",
+      "thickness": "1/4",
+      "shape": "Circle",
+      "tint": "Frosted Blue Chip",
+      "length": 53,
+      "width": 4
+    },
+    "quantity": 141,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 8243,
+    "order_id": "15eaa44f-e720-4846-8779-62bbbc8f3a11",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "1da5b2a3-6a53-49de-bbce-4521ef09cd5c",
+      "name": "SatinDeco",
+      "thickness": "1/8",
+      "shape": "Pentagon",
+      "tint": "Frosted Green Chip",
+      "length": 65,
+      "width": 39
+    },
+    "quantity": 56,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 6358,
+    "order_id": "15eaa44f-e720-4846-8779-62bbbc8f3a11",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "1da5b2a3-6a53-49de-bbce-4521ef09cd5c",
+      "name": "SatinDeco",
+      "thickness": "1/8",
+      "shape": "Square/Rectangle",
+      "tint": "P-516",
+      "length": 67,
+      "width": 35
+    },
+    "quantity": 2,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 3491,
+    "order_id": "9eee5f51-17a1-4e9d-93ca-7850fcd12ea9",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "1da5b2a3-6a53-49de-bbce-4521ef09cd5c",
+      "name": "SatinDeco",
+      "thickness": "3/4",
+      "shape": "Arch-Top",
+      "tint": "Solex",
+      "length": 95,
+      "width": 24
+    },
+    "quantity": 6,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 4738,
+    "order_id": "9eee5f51-17a1-4e9d-93ca-7850fcd12ea9",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "004c4786-d558-43e7-82be-795f60182ef7",
+      "name": "SNE 50/25",
+      "thickness": "3/4",
+      "shape": "Trapezoid",
+      "tint": "Frosted Green Chip",
+      "length": 58,
+      "width": 2
+    },
+    "quantity": 66,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 4472,
+    "order_id": "9eee5f51-17a1-4e9d-93ca-7850fcd12ea9",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "004c4786-d558-43e7-82be-795f60182ef7",
+      "name": "SNE 50/25",
+      "thickness": "1/4",
+      "shape": "Trapezoid",
+      "tint": "Frosted Green Chip",
+      "length": 78,
+      "width": 7
+    },
+    "quantity": 2,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 212,
+    "order_id": "9eee5f51-17a1-4e9d-93ca-7850fcd12ea9",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "aeab03c7-9242-4c4d-a53a-ef341b9fed6f",
+      "name": "AG 43",
+      "thickness": "1/4",
+      "shape": "Arch Side",
+      "tint": "Solex",
+      "length": 63,
+      "width": 43
+    },
+    "quantity": 56,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 3931,
+    "order_id": "9eee5f51-17a1-4e9d-93ca-7850fcd12ea9",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "ec5ffa0f-39d8-4d03-94dd-95b190a8c2f5",
+      "name": "AG 50 LE",
+      "thickness": "3/4",
+      "shape": "Pentagon",
+      "tint": "Satin Etch",
+      "length": 55,
+      "width": 12
+    },
+    "quantity": 37,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 712,
+    "order_id": "70ec010e-2f85-4fbc-892a-19d416f922ea",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "82a54c94-9681-4ebe-9cd8-81cfa03056e1",
+      "name": "SN 68",
+      "thickness": "3/4",
+      "shape": "Clipped Corner(s)",
+      "tint": "Solex",
+      "length": 39,
+      "width": 21
+    },
+    "quantity": 10,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 1364,
+    "order_id": "70ec010e-2f85-4fbc-892a-19d416f922ea",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "a1a67246-21b6-4ba1-9024-417369d628b0",
+      "name": "MC 68 LE-T",
+      "thickness": "1/4",
+      "shape": "Square/Rectangle",
+      "tint": "Frosted Green Chip",
+      "length": 94,
+      "width": 44
+    },
+    "quantity": 8,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 1490,
+    "order_id": "70ec010e-2f85-4fbc-892a-19d416f922ea",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "cc546439-3cef-4f13-b365-c6893c05fc82",
+      "name": "SNR 35 HT",
+      "thickness": "1/8",
+      "shape": "Rounded Corner(s)",
+      "tint": "Clear",
+      "length": 43,
+      "width": 35
+    },
+    "quantity": 2,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 9329,
+    "order_id": "70ec010e-2f85-4fbc-892a-19d416f922ea",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "d1561e8c-3e9b-4e29-94d2-56bbdced64f7",
+      "name": "MC 68 LE-A",
+      "thickness": "1/4",
+      "shape": "Arch",
+      "tint": "Midnight Gray",
+      "length": 85,
+      "width": 33
+    },
+    "quantity": 75,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 9015,
+    "order_id": "70ec010e-2f85-4fbc-892a-19d416f922ea",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "c112847c-f8ab-4e7b-a397-6a44ef7529f7",
+      "name": "NU 40 LE",
+      "thickness": "1/2",
+      "shape": "Octagon",
+      "tint": "Mistlite",
+      "length": 59,
+      "width": 19
+    },
+    "quantity": 32,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 1654,
+    "order_id": "37a07d89-5f1b-4c84-ac79-291f0983f644",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "cc546439-3cef-4f13-b365-c6893c05fc82",
+      "name": "SNR 35 HT",
+      "thickness": "1/8",
+      "shape": "Arch",
+      "tint": "Low-E",
+      "length": 50,
+      "width": 27
+    },
+    "quantity": 9,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 5160,
+    "order_id": "37a07d89-5f1b-4c84-ac79-291f0983f644",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "ec5ffa0f-39d8-4d03-94dd-95b190a8c2f5",
+      "name": "AG 50 LE",
+      "thickness": "1/8",
+      "shape": "Pentagon",
+      "tint": "Frosted Green Chip",
+      "length": 53,
+      "width": 44
+    },
+    "quantity": 37,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 1651,
+    "order_id": "37a07d89-5f1b-4c84-ac79-291f0983f644",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "ec5ffa0f-39d8-4d03-94dd-95b190a8c2f5",
+      "name": "AG 50 LE",
+      "thickness": "3/8",
+      "shape": "Square/Rectangle",
+      "tint": "Satin Etch",
+      "length": 1,
+      "width": 1
+    },
+    "quantity": 20,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 3864,
+    "order_id": "37a07d89-5f1b-4c84-ac79-291f0983f644",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "1da5b2a3-6a53-49de-bbce-4521ef09cd5c",
+      "name": "SatinDeco",
+      "thickness": "3/4",
+      "shape": "Ellipse",
+      "tint": "Frosted Green Chip",
+      "length": 77,
+      "width": 4
+    },
+    "quantity": 122,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 4293,
+    "order_id": "37a07d89-5f1b-4c84-ac79-291f0983f644",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "ec5ffa0f-39d8-4d03-94dd-95b190a8c2f5",
+      "name": "AG 50 LE",
+      "thickness": "3/4",
+      "shape": "Square/Rectangle",
+      "tint": "Clear",
+      "length": 85,
+      "width": 21
+    },
+    "quantity": 7,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 3708,
+    "order_id": "37a07d89-5f1b-4c84-ac79-291f0983f644",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "82a54c94-9681-4ebe-9cd8-81cfa03056e1",
+      "name": "SN 68",
+      "thickness": "1/4",
+      "shape": "Circle",
+      "tint": "Solex",
+      "length": 87,
+      "width": 35
+    },
+    "quantity": 5,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 4317,
+    "order_id": "37a07d89-5f1b-4c84-ac79-291f0983f644",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "d1561e8c-3e9b-4e29-94d2-56bbdced64f7",
+      "name": "MC 68 LE-A",
+      "thickness": "1/4",
+      "shape": "Irregular/Any Other Shape",
+      "tint": "Clear",
+      "length": 88,
+      "width": 12
+    },
+    "quantity": 26,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 5504,
+    "order_id": "6fb8e9cc-ecad-4f26-b6f4-8e14da1bfac6",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "ec5ffa0f-39d8-4d03-94dd-95b190a8c2f5",
+      "name": "AG 50 LE",
+      "thickness": "1/2",
+      "shape": "Quarter Round",
+      "tint": "Clear",
+      "length": 60,
+      "width": 27
+    },
+    "quantity": 10,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 8054,
+    "order_id": "6fb8e9cc-ecad-4f26-b6f4-8e14da1bfac6",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "d1561e8c-3e9b-4e29-94d2-56bbdced64f7",
+      "name": "MC 68 LE-A",
+      "thickness": "1/8",
+      "shape": "Arch-Top",
+      "tint": "Frosted Green Chip",
+      "length": 92,
+      "width": 44
+    },
+    "quantity": 138,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 7407,
+    "order_id": "6fb8e9cc-ecad-4f26-b6f4-8e14da1bfac6",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "004c4786-d558-43e7-82be-795f60182ef7",
+      "name": "SNE 50/25",
+      "thickness": "1/4",
+      "shape": "Parallelogram",
+      "tint": "Midnight Gray",
+      "length": 55,
+      "width": 13
+    },
+    "quantity": 7,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 1903,
+    "order_id": "6fb8e9cc-ecad-4f26-b6f4-8e14da1bfac6",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "004c4786-d558-43e7-82be-795f60182ef7",
+      "name": "SNE 50/25",
+      "thickness": "3/4",
+      "shape": "Arch Top & Bottom",
+      "tint": "Frosted Green Chip",
+      "length": 47,
+      "width": 22
+    },
+    "quantity": 13,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 216,
+    "order_id": "6fb8e9cc-ecad-4f26-b6f4-8e14da1bfac6",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "1da5b2a3-6a53-49de-bbce-4521ef09cd5c",
+      "name": "SatinDeco",
+      "thickness": "3/8",
+      "shape": "Arch Side",
+      "tint": "Clear",
+      "length": 41,
+      "width": 35
+    },
+    "quantity": 13,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 2798,
+    "order_id": "6fb8e9cc-ecad-4f26-b6f4-8e14da1bfac6",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "f1e58ff5-48fc-40f5-971d-10c8ad04ab6f",
+      "name": "SN 68 HT",
+      "thickness": "3/4",
+      "shape": "Circle",
+      "tint": "Clear",
+      "length": 44,
+      "width": 32
+    },
+    "quantity": 4,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 8405,
+    "order_id": "ec3d9343-9475-4e10-85f6-413e67107bb0",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "1da5b2a3-6a53-49de-bbce-4521ef09cd5c",
+      "name": "SatinDeco",
+      "thickness": "3/8",
+      "shape": "Arch Side",
+      "tint": "P-516",
+      "length": 32,
+      "width": 13
+    },
+    "quantity": 44,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 1838,
+    "order_id": "ec3d9343-9475-4e10-85f6-413e67107bb0",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "af123281-fd38-48a1-b865-f5d1c25307f8",
+      "name": "SNX-L 62/34",
+      "thickness": "1/4",
+      "shape": "Parallelogram",
+      "tint": "Mistlite",
+      "length": 44,
+      "width": 12
+    },
+    "quantity": 10,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 1572,
+    "order_id": "ec3d9343-9475-4e10-85f6-413e67107bb0",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "c112847c-f8ab-4e7b-a397-6a44ef7529f7",
+      "name": "NU 40 LE",
+      "thickness": "3/8",
+      "shape": "Octagon",
+      "tint": "Mistlite",
+      "length": 62,
+      "width": 5
+    },
+    "quantity": 74,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 5228,
+    "order_id": "ec3d9343-9475-4e10-85f6-413e67107bb0",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "d49c19b3-cf1a-4ad6-8ba4-bf127ce1de6f",
+      "name": "MC 27 LE-A",
+      "thickness": "1/2",
+      "shape": "Square/Rectangle",
+      "tint": "Midnight Gray",
+      "length": 44,
+      "width": 14
+    },
+    "quantity": 11,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 6106,
+    "order_id": "ec3d9343-9475-4e10-85f6-413e67107bb0",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "1da5b2a3-6a53-49de-bbce-4521ef09cd5c",
+      "name": "SatinDeco",
+      "thickness": "1/8",
+      "shape": "Ellipse",
+      "tint": "Frosted Blue Chip",
+      "length": 59,
+      "width": 46
+    },
+    "quantity": 164,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 2040,
+    "order_id": "ec3d9343-9475-4e10-85f6-413e67107bb0",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "a1a67246-21b6-4ba1-9024-417369d628b0",
+      "name": "MC 68 LE-T",
+      "thickness": "1/2",
+      "shape": "Hexagon",
+      "tint": "Bronze",
+      "length": 60,
+      "width": 24
+    },
+    "quantity": 21,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 2671,
+    "order_id": "ec3d9343-9475-4e10-85f6-413e67107bb0",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "aeab03c7-9242-4c4d-a53a-ef341b9fed6f",
+      "name": "AG 43",
+      "thickness": "1/8",
+      "shape": "Pentagon",
+      "tint": "Bronze",
+      "length": 82,
+      "width": 47
+    },
+    "quantity": 56,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 7496,
+    "order_id": "a2521a13-6564-422a-a752-4069a89b1f58",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "f1e58ff5-48fc-40f5-971d-10c8ad04ab6f",
+      "name": "SN 68 HT",
+      "thickness": "1/4",
+      "shape": "Parallelogram",
+      "tint": "Light Gray",
+      "length": 96,
+      "width": 35
+    },
+    "quantity": 35,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 2742,
+    "order_id": "a2521a13-6564-422a-a752-4069a89b1f58",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "c5eb32fe-3209-43d3-a63c-f5d3c3555c8b",
+      "name": "IS20 LE-T",
+      "thickness": "1/4",
+      "shape": "Half-Circle",
+      "tint": "Satin Etch",
+      "length": 77,
+      "width": 40
+    },
+    "quantity": 194,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 2244,
+    "order_id": "a2521a13-6564-422a-a752-4069a89b1f58",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "d49c19b3-cf1a-4ad6-8ba4-bf127ce1de6f",
+      "name": "MC 27 LE-A",
+      "thickness": "1/2",
+      "shape": "Ellipse",
+      "tint": "Dark Gray",
+      "length": 40,
+      "width": 7
+    },
+    "quantity": 181,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 2246,
+    "order_id": "a2521a13-6564-422a-a752-4069a89b1f58",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "a1a67246-21b6-4ba1-9024-417369d628b0",
+      "name": "MC 68 LE-T",
+      "thickness": "1/4",
+      "shape": "Quarter Round",
+      "tint": "Solex",
+      "length": 58,
+      "width": 22
+    },
+    "quantity": 17,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 5131,
+    "order_id": "a2521a13-6564-422a-a752-4069a89b1f58",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "004c4786-d558-43e7-82be-795f60182ef7",
+      "name": "SNE 50/25",
+      "thickness": "3/4",
+      "shape": "Parallelogram",
+      "tint": "Midnight Gray",
+      "length": 20,
+      "width": 8
+    },
+    "quantity": 9,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 7646,
+    "order_id": "a2521a13-6564-422a-a752-4069a89b1f58",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "d1561e8c-3e9b-4e29-94d2-56bbdced64f7",
+      "name": "MC 68 LE-A",
+      "thickness": "1/2",
+      "shape": "Quarter Round with Notch",
+      "tint": "P-516",
+      "length": 48,
+      "width": 37
+    },
+    "quantity": 52,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 4429,
+    "order_id": "a2521a13-6564-422a-a752-4069a89b1f58",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "d1561e8c-3e9b-4e29-94d2-56bbdced64f7",
+      "name": "MC 68 LE-A",
+      "thickness": "1/4",
+      "shape": "Right Triangle",
+      "tint": "Frosted Blue Chip",
+      "length": 48,
+      "width": 48
+    },
+    "quantity": 39,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 4947,
+    "order_id": "a2521a13-6564-422a-a752-4069a89b1f58",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "d1561e8c-3e9b-4e29-94d2-56bbdced64f7",
+      "name": "MC 68 LE-A",
+      "thickness": "1/8",
+      "shape": "Irregular/Any Other Shape",
+      "tint": "Clear",
+      "length": 81,
+      "width": 44
+    },
+    "quantity": 126,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 870,
+    "order_id": "a2521a13-6564-422a-a752-4069a89b1f58",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "c908d94a-e129-4912-b3dd-29d7073c042d",
+      "name": "Sunguard Spandrel HT",
+      "thickness": "1/2",
+      "shape": "Triangle",
+      "tint": "P-516",
+      "length": 75,
+      "width": 20
+    },
+    "quantity": 154,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 2018,
+    "order_id": "f82487e8-aa65-4993-a409-1c2555ec93e8",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "c112847c-f8ab-4e7b-a397-6a44ef7529f7",
+      "name": "NU 40 LE",
+      "thickness": "1/8",
+      "shape": "Arch-Top",
+      "tint": "Frosted Blue Chip",
+      "length": 11,
+      "width": 3
+    },
+    "quantity": 8,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 3563,
+    "order_id": "f82487e8-aa65-4993-a409-1c2555ec93e8",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "aeab03c7-9242-4c4d-a53a-ef341b9fed6f",
+      "name": "AG 43",
+      "thickness": "3/4",
+      "shape": "Square/Rectangle",
+      "tint": "Clear",
+      "length": 46,
+      "width": 4
+    },
+    "quantity": 1,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 5453,
+    "order_id": "f82487e8-aa65-4993-a409-1c2555ec93e8",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "c908d94a-e129-4912-b3dd-29d7073c042d",
+      "name": "Sunguard Spandrel HT",
+      "thickness": "1/4",
+      "shape": "Irregular/Any Other Shape",
+      "tint": "Ultra Clear",
+      "length": 96,
+      "width": 33
+    },
+    "quantity": 49,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 622,
+    "order_id": "4b69888e-15b4-4a35-b072-bb703e398772",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "c5eb32fe-3209-43d3-a63c-f5d3c3555c8b",
+      "name": "IS20 LE-T",
+      "thickness": "1/8",
+      "shape": "Parallelogram",
+      "tint": "Satin Etch",
+      "length": 89,
+      "width": 25
+    },
+    "quantity": 9,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 8839,
+    "order_id": "4b69888e-15b4-4a35-b072-bb703e398772",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "82a54c94-9681-4ebe-9cd8-81cfa03056e1",
+      "name": "SN 68",
+      "thickness": "1/8",
+      "shape": "Arch-Top",
+      "tint": "Clear",
+      "length": 83,
+      "width": 19
+    },
+    "quantity": 197,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 4332,
+    "order_id": "4b69888e-15b4-4a35-b072-bb703e398772",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "d49c19b3-cf1a-4ad6-8ba4-bf127ce1de6f",
+      "name": "MC 27 LE-A",
+      "thickness": "1/4",
+      "shape": "House",
+      "tint": "Dark Gray",
+      "length": 30,
+      "width": 13
+    },
+    "quantity": 10,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 1137,
+    "order_id": "4b69888e-15b4-4a35-b072-bb703e398772",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "c908d94a-e129-4912-b3dd-29d7073c042d",
+      "name": "Sunguard Spandrel HT",
+      "thickness": "1/8",
+      "shape": "Half-Circle with Notch",
+      "tint": "Ultra Clear",
+      "length": 84,
+      "width": 30
+    },
+    "quantity": 17,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 9353,
+    "order_id": "4b69888e-15b4-4a35-b072-bb703e398772",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "d49c19b3-cf1a-4ad6-8ba4-bf127ce1de6f",
+      "name": "MC 27 LE-A",
+      "thickness": "3/8",
+      "shape": "Arch Side",
+      "tint": "Mistlite",
+      "length": 60,
+      "width": 41
+    },
+    "quantity": 42,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 6417,
+    "order_id": "4b69888e-15b4-4a35-b072-bb703e398772",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "c112847c-f8ab-4e7b-a397-6a44ef7529f7",
+      "name": "NU 40 LE",
+      "thickness": "3/4",
+      "shape": "Single Slope Rectangle",
+      "tint": "Solex",
+      "length": 83,
+      "width": 48
+    },
+    "quantity": 24,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 7620,
+    "order_id": "a37d71b5-b49b-49dc-9052-44c7b22fbfdd",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "cc546439-3cef-4f13-b365-c6893c05fc82",
+      "name": "SNR 35 HT",
+      "thickness": "1/8",
+      "shape": "Half-Circle with Notch",
+      "tint": "Low-E",
+      "length": 49,
+      "width": 41
+    },
+    "quantity": 13,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 452,
+    "order_id": "a37d71b5-b49b-49dc-9052-44c7b22fbfdd",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "004c4786-d558-43e7-82be-795f60182ef7",
+      "name": "SNE 50/25",
+      "thickness": "1/2",
+      "shape": "House",
+      "tint": "Frosted Green Chip",
+      "length": 82,
+      "width": 16
+    },
+    "quantity": 4,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 2511,
+    "order_id": "a37d71b5-b49b-49dc-9052-44c7b22fbfdd",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "d1561e8c-3e9b-4e29-94d2-56bbdced64f7",
+      "name": "MC 68 LE-A",
+      "thickness": "3/4",
+      "shape": "Arch-Top",
+      "tint": "Clear",
+      "length": 83,
+      "width": 46
+    },
+    "quantity": 9,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 4194,
+    "order_id": "a37d71b5-b49b-49dc-9052-44c7b22fbfdd",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "ec5ffa0f-39d8-4d03-94dd-95b190a8c2f5",
+      "name": "AG 50 LE",
+      "thickness": "1/8",
+      "shape": "Half-Circle with Notch",
+      "tint": "Frosted Green Chip",
+      "length": 28,
+      "width": 20
+    },
+    "quantity": 82,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 4428,
+    "order_id": "a37d71b5-b49b-49dc-9052-44c7b22fbfdd",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "f1e58ff5-48fc-40f5-971d-10c8ad04ab6f",
+      "name": "SN 68 HT",
+      "thickness": "3/8",
+      "shape": "Quad Arch",
+      "tint": "Dark Gray",
+      "length": 58,
+      "width": 41
+    },
+    "quantity": 18,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 8632,
+    "order_id": "a37d71b5-b49b-49dc-9052-44c7b22fbfdd",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "1da5b2a3-6a53-49de-bbce-4521ef09cd5c",
+      "name": "SatinDeco",
+      "thickness": "1/4",
+      "shape": "Square/Rectangle",
+      "tint": "Frosted Green Chip",
+      "length": 82,
+      "width": 37
+    },
+    "quantity": 10,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 2296,
+    "order_id": "a37d71b5-b49b-49dc-9052-44c7b22fbfdd",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "d1561e8c-3e9b-4e29-94d2-56bbdced64f7",
+      "name": "MC 68 LE-A",
+      "thickness": "1/4",
+      "shape": "Right Triangle",
+      "tint": "P-516",
+      "length": 86,
+      "width": 36
+    },
+    "quantity": 135,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 2902,
+    "order_id": "0a61eadf-640c-4473-90be-5e284c270a94",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "f1e58ff5-48fc-40f5-971d-10c8ad04ab6f",
+      "name": "SN 68 HT",
+      "thickness": "1/8",
+      "shape": "Racetrack Oval",
+      "tint": "Dark Gray",
+      "length": 25,
+      "width": 21
+    },
+    "quantity": 61,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 2256,
+    "order_id": "0a61eadf-640c-4473-90be-5e284c270a94",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "d1561e8c-3e9b-4e29-94d2-56bbdced64f7",
+      "name": "MC 68 LE-A",
+      "thickness": "1/4",
+      "shape": "Ellipse",
+      "tint": "Midnight Gray",
+      "length": 31,
+      "width": 27
+    },
+    "quantity": 21,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 3712,
+    "order_id": "0a61eadf-640c-4473-90be-5e284c270a94",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "004c4786-d558-43e7-82be-795f60182ef7",
+      "name": "SNE 50/25",
+      "thickness": "3/8",
+      "shape": "Square/Rectangle",
+      "tint": "Frosted Green Chip",
+      "length": 50,
+      "width": 9
+    },
+    "quantity": 49,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 2433,
+    "order_id": "0a61eadf-640c-4473-90be-5e284c270a94",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "c112847c-f8ab-4e7b-a397-6a44ef7529f7",
+      "name": "NU 40 LE",
+      "thickness": "3/4",
+      "shape": "Quarter Round with Notch",
+      "tint": "P-516",
+      "length": 20,
+      "width": 19
+    },
+    "quantity": 121,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 2655,
+    "order_id": "0a61eadf-640c-4473-90be-5e284c270a94",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "c908d94a-e129-4912-b3dd-29d7073c042d",
+      "name": "Sunguard Spandrel HT",
+      "thickness": "1/8",
+      "shape": "Single Slope Rectangle",
+      "tint": "Bronze",
+      "length": 82,
+      "width": 36
+    },
+    "quantity": 11,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 2400,
+    "order_id": "52b86715-0922-42cc-b592-580b4b22e45b",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "f1e58ff5-48fc-40f5-971d-10c8ad04ab6f",
+      "name": "SN 68 HT",
+      "thickness": "1/2",
+      "shape": "Racetrack Oval",
+      "tint": "Ultra Clear",
+      "length": 78,
+      "width": 17
+    },
+    "quantity": 4,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 9678,
+    "order_id": "52b86715-0922-42cc-b592-580b4b22e45b",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "c908d94a-e129-4912-b3dd-29d7073c042d",
+      "name": "Sunguard Spandrel HT",
+      "thickness": "1/4",
+      "shape": "Irregular/Any Other Shape",
+      "tint": "Ultra Clear",
+      "length": 64,
+      "width": 46
+    },
+    "quantity": 67,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 3755,
+    "order_id": "52b86715-0922-42cc-b592-580b4b22e45b",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "c5eb32fe-3209-43d3-a63c-f5d3c3555c8b",
+      "name": "IS20 LE-T",
+      "thickness": "3/8",
+      "shape": "Circle",
+      "tint": "Satin Etch",
+      "length": 96,
+      "width": 27
+    },
+    "quantity": 62,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 9383,
+    "order_id": "52b86715-0922-42cc-b592-580b4b22e45b",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "004c4786-d558-43e7-82be-795f60182ef7",
+      "name": "SNE 50/25",
+      "thickness": "3/4",
+      "shape": "Arch",
+      "tint": "Light Gray",
+      "length": 82,
+      "width": 8
+    },
+    "quantity": 1,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 1089,
+    "order_id": "52b86715-0922-42cc-b592-580b4b22e45b",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "ec5ffa0f-39d8-4d03-94dd-95b190a8c2f5",
+      "name": "AG 50 LE",
+      "thickness": "3/8",
+      "shape": "Rounded Corner(s)",
+      "tint": "Frosted Green Chip",
+      "length": 93,
+      "width": 48
+    },
+    "quantity": 204,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 6501,
+    "order_id": "407935da-e887-462c-949d-899e61cb3cf9",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "c112847c-f8ab-4e7b-a397-6a44ef7529f7",
+      "name": "NU 40 LE",
+      "thickness": "1/8",
+      "shape": "Quarter Round with Notch",
+      "tint": "Frosted Blue Chip",
+      "length": 49,
+      "width": 38
+    },
+    "quantity": 162,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 1675,
+    "order_id": "407935da-e887-462c-949d-899e61cb3cf9",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "cc546439-3cef-4f13-b365-c6893c05fc82",
+      "name": "SNR 35 HT",
+      "thickness": "3/8",
+      "shape": "Half-Circle with Notch",
+      "tint": "Clear",
+      "length": 80,
+      "width": 13
+    },
+    "quantity": 10,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 7503,
+    "order_id": "407935da-e887-462c-949d-899e61cb3cf9",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "c908d94a-e129-4912-b3dd-29d7073c042d",
+      "name": "Sunguard Spandrel HT",
+      "thickness": "3/8",
+      "shape": "Trapezoid",
+      "tint": "Midnight Gray",
+      "length": 48,
+      "width": 42
+    },
+    "quantity": 4,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 1623,
+    "order_id": "407935da-e887-462c-949d-899e61cb3cf9",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "c908d94a-e129-4912-b3dd-29d7073c042d",
+      "name": "Sunguard Spandrel HT",
+      "thickness": "3/4",
+      "shape": "Trapezoid",
+      "tint": "Bronze",
+      "length": 45,
+      "width": 29
+    },
+    "quantity": 7,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 3832,
+    "order_id": "407935da-e887-462c-949d-899e61cb3cf9",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "f1e58ff5-48fc-40f5-971d-10c8ad04ab6f",
+      "name": "SN 68 HT",
+      "thickness": "3/4",
+      "shape": "Quad Arch",
+      "tint": "Ultra Clear",
+      "length": 47,
+      "width": 4
+    },
+    "quantity": 9,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 2278,
+    "order_id": "407935da-e887-462c-949d-899e61cb3cf9",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "a1a67246-21b6-4ba1-9024-417369d628b0",
+      "name": "MC 68 LE-T",
+      "thickness": "1/8",
+      "shape": "Racetrack Oval",
+      "tint": "Bronze",
+      "length": 62,
+      "width": 45
+    },
+    "quantity": 1,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 6492,
+    "order_id": "dd122fca-e401-4ea3-a0ed-eb9845dbce66",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "a1a67246-21b6-4ba1-9024-417369d628b0",
+      "name": "MC 68 LE-T",
+      "thickness": "1/2",
+      "shape": "Square/Rectangle",
+      "tint": "Low-E",
+      "length": 42,
+      "width": 37
+    },
+    "quantity": 8,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 803,
+    "order_id": "dd122fca-e401-4ea3-a0ed-eb9845dbce66",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "f1e58ff5-48fc-40f5-971d-10c8ad04ab6f",
+      "name": "SN 68 HT",
+      "thickness": "3/4",
+      "shape": "Parallelogram",
+      "tint": "Light Gray",
+      "length": 89,
+      "width": 46
+    },
+    "quantity": 4,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 9154,
+    "order_id": "dd122fca-e401-4ea3-a0ed-eb9845dbce66",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "f1e58ff5-48fc-40f5-971d-10c8ad04ab6f",
+      "name": "SN 68 HT",
+      "thickness": "1/2",
+      "shape": "Quad Arch",
+      "tint": "Dark Gray",
+      "length": 42,
+      "width": 34
+    },
+    "quantity": 6,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 1352,
+    "order_id": "dd122fca-e401-4ea3-a0ed-eb9845dbce66",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "f1e58ff5-48fc-40f5-971d-10c8ad04ab6f",
+      "name": "SN 68 HT",
+      "thickness": "1/4",
+      "shape": "Parallelogram",
+      "tint": "Ultra Clear",
+      "length": 41,
+      "width": 23
+    },
+    "quantity": 31,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 8100,
+    "order_id": "dd122fca-e401-4ea3-a0ed-eb9845dbce66",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "d49c19b3-cf1a-4ad6-8ba4-bf127ce1de6f",
+      "name": "MC 27 LE-A",
+      "thickness": "3/4",
+      "shape": "Square/Rectangle",
+      "tint": "Midnight Gray",
+      "length": 59,
+      "width": 14
+    },
+    "quantity": 83,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 9567,
+    "order_id": "dd122fca-e401-4ea3-a0ed-eb9845dbce66",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "ec5ffa0f-39d8-4d03-94dd-95b190a8c2f5",
+      "name": "AG 50 LE",
+      "thickness": "3/8",
+      "shape": "Clipped Corner(s)",
+      "tint": "Ultra Clear",
+      "length": 62,
+      "width": 27
+    },
+    "quantity": 6,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 215,
+    "order_id": "88532995-eac9-4367-92d6-9c8ca43f3fc4",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "d1561e8c-3e9b-4e29-94d2-56bbdced64f7",
+      "name": "MC 68 LE-A",
+      "thickness": "3/4",
+      "shape": "Ellipse",
+      "tint": "P-516",
+      "length": 50,
+      "width": 42
+    },
+    "quantity": 6,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 3943,
+    "order_id": "88532995-eac9-4367-92d6-9c8ca43f3fc4",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "c112847c-f8ab-4e7b-a397-6a44ef7529f7",
+      "name": "NU 40 LE",
+      "thickness": "3/4",
+      "shape": "Square/Rectangle",
+      "tint": "Mistlite",
+      "length": 86,
+      "width": 13
+    },
+    "quantity": 27,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 1624,
+    "order_id": "88532995-eac9-4367-92d6-9c8ca43f3fc4",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "c112847c-f8ab-4e7b-a397-6a44ef7529f7",
+      "name": "NU 40 LE",
+      "thickness": "3/4",
+      "shape": "Arch Side",
+      "tint": "P-516",
+      "length": 54,
+      "width": 44
+    },
+    "quantity": 99,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 7494,
+    "order_id": "d353814d-1798-4d9f-bbf0-81d4b2200242",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "af123281-fd38-48a1-b865-f5d1c25307f8",
+      "name": "SNX-L 62/34",
+      "thickness": "3/8",
+      "shape": "Pentagon",
+      "tint": "Bronze",
+      "length": 84,
+      "width": 26
+    },
+    "quantity": 130,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 6290,
+    "order_id": "d353814d-1798-4d9f-bbf0-81d4b2200242",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "cc546439-3cef-4f13-b365-c6893c05fc82",
+      "name": "SNR 35 HT",
+      "thickness": "1/8",
+      "shape": "Right Triangle",
+      "tint": "Clear",
+      "length": 52,
+      "width": 48
+    },
+    "quantity": 57,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 6273,
+    "order_id": "d353814d-1798-4d9f-bbf0-81d4b2200242",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "af123281-fd38-48a1-b865-f5d1c25307f8",
+      "name": "SNX-L 62/34",
+      "thickness": "1/2",
+      "shape": "Ellipse",
+      "tint": "Ultra Clear",
+      "length": 43,
+      "width": 43
+    },
+    "quantity": 43,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 8630,
+    "order_id": "d353814d-1798-4d9f-bbf0-81d4b2200242",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "1da5b2a3-6a53-49de-bbce-4521ef09cd5c",
+      "name": "SatinDeco",
+      "thickness": "3/4",
+      "shape": "Clipped Corner(s)",
+      "tint": "Frosted Blue Chip",
+      "length": 58,
+      "width": 24
+    },
+    "quantity": 7,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 3790,
+    "order_id": "d353814d-1798-4d9f-bbf0-81d4b2200242",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "004c4786-d558-43e7-82be-795f60182ef7",
+      "name": "SNE 50/25",
+      "thickness": "3/8",
+      "shape": "Parallelogram",
+      "tint": "Midnight Gray",
+      "length": 80,
+      "width": 2
+    },
+    "quantity": 7,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 4883,
+    "order_id": "d353814d-1798-4d9f-bbf0-81d4b2200242",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "d49c19b3-cf1a-4ad6-8ba4-bf127ce1de6f",
+      "name": "MC 27 LE-A",
+      "thickness": "1/4",
+      "shape": "Octagon",
+      "tint": "Frosted Green Chip",
+      "length": 54,
+      "width": 9
+    },
+    "quantity": 7,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 2185,
+    "order_id": "d353814d-1798-4d9f-bbf0-81d4b2200242",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "cc546439-3cef-4f13-b365-c6893c05fc82",
+      "name": "SNR 35 HT",
+      "thickness": "1/4",
+      "shape": "Arch",
+      "tint": "Clear",
+      "length": 53,
+      "width": 33
+    },
+    "quantity": 126,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 2848,
+    "order_id": "d353814d-1798-4d9f-bbf0-81d4b2200242",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "004c4786-d558-43e7-82be-795f60182ef7",
+      "name": "SNE 50/25",
+      "thickness": "3/8",
+      "shape": "House",
+      "tint": "Frosted Green Chip",
+      "length": 96,
+      "width": 22
+    },
+    "quantity": 193,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 9097,
+    "order_id": "d353814d-1798-4d9f-bbf0-81d4b2200242",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "82a54c94-9681-4ebe-9cd8-81cfa03056e1",
+      "name": "SN 68",
+      "thickness": "3/4",
+      "shape": "Quad Arch",
+      "tint": "Ultra Clear",
+      "length": 47,
+      "width": 34
+    },
+    "quantity": 6,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 369,
+    "order_id": "9aa16d64-3dfd-4935-a0ed-310ede0439ba",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "d1561e8c-3e9b-4e29-94d2-56bbdced64f7",
+      "name": "MC 68 LE-A",
+      "thickness": "1/2",
+      "shape": "Ellipse",
+      "tint": "Clear",
+      "length": 76,
+      "width": 37
+    },
+    "quantity": 6,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 2118,
+    "order_id": "9aa16d64-3dfd-4935-a0ed-310ede0439ba",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "af123281-fd38-48a1-b865-f5d1c25307f8",
+      "name": "SNX-L 62/34",
+      "thickness": "1/4",
+      "shape": "Half-Circle",
+      "tint": "Ultra Clear",
+      "length": 11,
+      "width": 7
+    },
+    "quantity": 174,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 6024,
+    "order_id": "9aa16d64-3dfd-4935-a0ed-310ede0439ba",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "aeab03c7-9242-4c4d-a53a-ef341b9fed6f",
+      "name": "AG 43",
+      "thickness": "3/8",
+      "shape": "Square/Rectangle",
+      "tint": "P-516",
+      "length": 79,
+      "width": 14
+    },
+    "quantity": 137,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 7164,
+    "order_id": "db3d7754-17cd-4964-98f2-1a0e18644d02",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "82a54c94-9681-4ebe-9cd8-81cfa03056e1",
+      "name": "SN 68",
+      "thickness": "1/4",
+      "shape": "Racetrack Oval",
+      "tint": "Clear",
+      "length": 94,
+      "width": 31
+    },
+    "quantity": 179,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 495,
+    "order_id": "db3d7754-17cd-4964-98f2-1a0e18644d02",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "d49c19b3-cf1a-4ad6-8ba4-bf127ce1de6f",
+      "name": "MC 27 LE-A",
+      "thickness": "1/8",
+      "shape": "House",
+      "tint": "Midnight Gray",
+      "length": 73,
+      "width": 47
+    },
+    "quantity": 3,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 1044,
+    "order_id": "db3d7754-17cd-4964-98f2-1a0e18644d02",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "ec5ffa0f-39d8-4d03-94dd-95b190a8c2f5",
+      "name": "AG 50 LE",
+      "thickness": "3/8",
+      "shape": "Pentagon",
+      "tint": "Ultra Clear",
+      "length": 85,
+      "width": 13
+    },
+    "quantity": 41,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 7575,
+    "order_id": "db3d7754-17cd-4964-98f2-1a0e18644d02",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "d49c19b3-cf1a-4ad6-8ba4-bf127ce1de6f",
+      "name": "MC 27 LE-A",
+      "thickness": "3/8",
+      "shape": "Octagon",
+      "tint": "Mistlite",
+      "length": 54,
+      "width": 2
+    },
+    "quantity": 93,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 6123,
+    "order_id": "db3d7754-17cd-4964-98f2-1a0e18644d02",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "1da5b2a3-6a53-49de-bbce-4521ef09cd5c",
+      "name": "SatinDeco",
+      "thickness": "1/2",
+      "shape": "Clipped Corner(s)",
+      "tint": "P-516",
+      "length": 79,
+      "width": 42
+    },
+    "quantity": 48,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 3772,
+    "order_id": "db3d7754-17cd-4964-98f2-1a0e18644d02",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "ec5ffa0f-39d8-4d03-94dd-95b190a8c2f5",
+      "name": "AG 50 LE",
+      "thickness": "3/8",
+      "shape": "Pentagon",
+      "tint": "Bronze",
+      "length": 57,
+      "width": 35
+    },
+    "quantity": 40,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 4053,
+    "order_id": "db3d7754-17cd-4964-98f2-1a0e18644d02",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "c112847c-f8ab-4e7b-a397-6a44ef7529f7",
+      "name": "NU 40 LE",
+      "thickness": "3/4",
+      "shape": "Triangle",
+      "tint": "Low-E",
+      "length": 15,
+      "width": 12
+    },
+    "quantity": 77,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 834,
+    "order_id": "db3d7754-17cd-4964-98f2-1a0e18644d02",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "aeab03c7-9242-4c4d-a53a-ef341b9fed6f",
+      "name": "AG 43",
+      "thickness": "3/4",
+      "shape": "Arch Top & Bottom",
+      "tint": "Solex",
+      "length": 71,
+      "width": 44
+    },
+    "quantity": 1,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 7994,
+    "order_id": "7ddb1c24-3a45-45a8-82b2-d74caeda04de",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "cc546439-3cef-4f13-b365-c6893c05fc82",
+      "name": "SNR 35 HT",
+      "thickness": "3/8",
+      "shape": "Right Triangle",
+      "tint": "Clear",
+      "length": 39,
+      "width": 30
+    },
+    "quantity": 4,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 9688,
+    "order_id": "7ddb1c24-3a45-45a8-82b2-d74caeda04de",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "c5eb32fe-3209-43d3-a63c-f5d3c3555c8b",
+      "name": "IS20 LE-T",
+      "thickness": "1/4",
+      "shape": "Half-Circle",
+      "tint": "Satin Etch",
+      "length": 93,
+      "width": 48
+    },
+    "quantity": 50,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 4266,
+    "order_id": "ccbfbca1-f678-462f-b1b1-227cb71b7a59",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "af123281-fd38-48a1-b865-f5d1c25307f8",
+      "name": "SNX-L 62/34",
+      "thickness": "1/8",
+      "shape": "Half-Circle",
+      "tint": "Midnight Gray",
+      "length": 66,
+      "width": 44
+    },
+    "quantity": 12,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 3253,
+    "order_id": "ccbfbca1-f678-462f-b1b1-227cb71b7a59",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "f1e58ff5-48fc-40f5-971d-10c8ad04ab6f",
+      "name": "SN 68 HT",
+      "thickness": "1/4",
+      "shape": "Racetrack Oval",
+      "tint": "Light Gray",
+      "length": 75,
+      "width": 31
+    },
+    "quantity": 23,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 7191,
+    "order_id": "ccbfbca1-f678-462f-b1b1-227cb71b7a59",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "c908d94a-e129-4912-b3dd-29d7073c042d",
+      "name": "Sunguard Spandrel HT",
+      "thickness": "1/4",
+      "shape": "Racetrack Oval",
+      "tint": "Bronze",
+      "length": 33,
+      "width": 27
+    },
+    "quantity": 90,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 694,
+    "order_id": "ccbfbca1-f678-462f-b1b1-227cb71b7a59",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "c5eb32fe-3209-43d3-a63c-f5d3c3555c8b",
+      "name": "IS20 LE-T",
+      "thickness": "3/8",
+      "shape": "Arch",
+      "tint": "Satin Etch",
+      "length": 62,
+      "width": 33
+    },
+    "quantity": 134,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 3797,
+    "order_id": "ccbfbca1-f678-462f-b1b1-227cb71b7a59",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "d49c19b3-cf1a-4ad6-8ba4-bf127ce1de6f",
+      "name": "MC 27 LE-A",
+      "thickness": "3/4",
+      "shape": "Octagon",
+      "tint": "Midnight Gray",
+      "length": 95,
+      "width": 20
+    },
+    "quantity": 1,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 7724,
+    "order_id": "ccbfbca1-f678-462f-b1b1-227cb71b7a59",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "f1e58ff5-48fc-40f5-971d-10c8ad04ab6f",
+      "name": "SN 68 HT",
+      "thickness": "1/4",
+      "shape": "Circle",
+      "tint": "Ultra Clear",
+      "length": 86,
+      "width": 47
+    },
+    "quantity": 126,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 2863,
+    "order_id": "ccbfbca1-f678-462f-b1b1-227cb71b7a59",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "cc546439-3cef-4f13-b365-c6893c05fc82",
+      "name": "SNR 35 HT",
+      "thickness": "3/8",
+      "shape": "Octagon",
+      "tint": "Clear",
+      "length": 88,
+      "width": 22
+    },
+    "quantity": 5,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 6118,
+    "order_id": "ccbfbca1-f678-462f-b1b1-227cb71b7a59",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "82a54c94-9681-4ebe-9cd8-81cfa03056e1",
+      "name": "SN 68",
+      "thickness": "3/8",
+      "shape": "Trapezoid",
+      "tint": "Ultra Clear",
+      "length": 95,
+      "width": 33
+    },
+    "quantity": 143,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 6306,
+    "order_id": "4b34749f-d8ee-4c2d-ab2d-05502fe6d9bc",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "cc546439-3cef-4f13-b365-c6893c05fc82",
+      "name": "SNR 35 HT",
+      "thickness": "1/4",
+      "shape": "Ellipse",
+      "tint": "Low-E",
+      "length": 75,
+      "width": 10
+    },
+    "quantity": 176,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 2360,
+    "order_id": "4b34749f-d8ee-4c2d-ab2d-05502fe6d9bc",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "c112847c-f8ab-4e7b-a397-6a44ef7529f7",
+      "name": "NU 40 LE",
+      "thickness": "3/8",
+      "shape": "Clipped Corner(s)",
+      "tint": "P-516",
+      "length": 95,
+      "width": 24
+    },
+    "quantity": 14,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 7427,
+    "order_id": "4b34749f-d8ee-4c2d-ab2d-05502fe6d9bc",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "cc546439-3cef-4f13-b365-c6893c05fc82",
+      "name": "SNR 35 HT",
+      "thickness": "1/2",
+      "shape": "Quad Arch",
+      "tint": "Clear",
+      "length": 43,
+      "width": 39
+    },
+    "quantity": 2,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 4492,
+    "order_id": "4b34749f-d8ee-4c2d-ab2d-05502fe6d9bc",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "c908d94a-e129-4912-b3dd-29d7073c042d",
+      "name": "Sunguard Spandrel HT",
+      "thickness": "1/2",
+      "shape": "Irregular/Any Other Shape",
+      "tint": "Ultra Clear",
+      "length": 42,
+      "width": 1
+    },
+    "quantity": 3,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 1334,
+    "order_id": "4b34749f-d8ee-4c2d-ab2d-05502fe6d9bc",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "f1e58ff5-48fc-40f5-971d-10c8ad04ab6f",
+      "name": "SN 68 HT",
+      "thickness": "1/4",
+      "shape": "Rounded Corner(s)",
+      "tint": "Ultra Clear",
+      "length": 63,
+      "width": 1
+    },
+    "quantity": 100,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 1594,
+    "order_id": "4b34749f-d8ee-4c2d-ab2d-05502fe6d9bc",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "c112847c-f8ab-4e7b-a397-6a44ef7529f7",
+      "name": "NU 40 LE",
+      "thickness": "3/4",
+      "shape": "Parallelogram",
+      "tint": "Bronze",
+      "length": 26,
+      "width": 23
+    },
+    "quantity": 166,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 9410,
+    "order_id": "4b34749f-d8ee-4c2d-ab2d-05502fe6d9bc",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "c908d94a-e129-4912-b3dd-29d7073c042d",
+      "name": "Sunguard Spandrel HT",
+      "thickness": "3/4",
+      "shape": "House",
+      "tint": "Midnight Gray",
+      "length": 18,
+      "width": 2
+    },
+    "quantity": 43,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 2369,
+    "order_id": "4b34749f-d8ee-4c2d-ab2d-05502fe6d9bc",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "d1561e8c-3e9b-4e29-94d2-56bbdced64f7",
+      "name": "MC 68 LE-A",
+      "thickness": "1/2",
+      "shape": "Ellipse",
+      "tint": "P-516",
+      "length": 30,
+      "width": 15
+    },
+    "quantity": 37,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 7552,
+    "order_id": "4b34749f-d8ee-4c2d-ab2d-05502fe6d9bc",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "1da5b2a3-6a53-49de-bbce-4521ef09cd5c",
+      "name": "SatinDeco",
+      "thickness": "1/2",
+      "shape": "Clipped Corner(s)",
+      "tint": "Midnight Gray",
+      "length": 68,
+      "width": 48
+    },
+    "quantity": 181,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 1101,
+    "order_id": "759d6ba1-8ad5-4e03-bf19-16fcc6b9cfad",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "d49c19b3-cf1a-4ad6-8ba4-bf127ce1de6f",
+      "name": "MC 27 LE-A",
+      "thickness": "3/8",
+      "shape": "Square/Rectangle",
+      "tint": "Mistlite",
+      "length": 68,
+      "width": 30
+    },
+    "quantity": 165,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 3346,
+    "order_id": "759d6ba1-8ad5-4e03-bf19-16fcc6b9cfad",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "aeab03c7-9242-4c4d-a53a-ef341b9fed6f",
+      "name": "AG 43",
+      "thickness": "1/2",
+      "shape": "Half-Circle",
+      "tint": "Low-E",
+      "length": 22,
+      "width": 4
+    },
+    "quantity": 196,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 8193,
+    "order_id": "759d6ba1-8ad5-4e03-bf19-16fcc6b9cfad",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "aeab03c7-9242-4c4d-a53a-ef341b9fed6f",
+      "name": "AG 43",
+      "thickness": "1/2",
+      "shape": "Parallelogram",
+      "tint": "Low-E",
+      "length": 42,
+      "width": 23
+    },
+    "quantity": 50,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 2476,
+    "order_id": "837c8a6b-affa-439e-9755-bb7e70beb5f8",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "a1a67246-21b6-4ba1-9024-417369d628b0",
+      "name": "MC 68 LE-T",
+      "thickness": "3/8",
+      "shape": "Arch Side",
+      "tint": "Low-E",
+      "length": 82,
+      "width": 48
+    },
+    "quantity": 36,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 8988,
+    "order_id": "837c8a6b-affa-439e-9755-bb7e70beb5f8",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "cc546439-3cef-4f13-b365-c6893c05fc82",
+      "name": "SNR 35 HT",
+      "thickness": "1/8",
+      "shape": "Racetrack Oval",
+      "tint": "Clear",
+      "length": 50,
+      "width": 13
+    },
+    "quantity": 57,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 9963,
+    "order_id": "837c8a6b-affa-439e-9755-bb7e70beb5f8",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "af123281-fd38-48a1-b865-f5d1c25307f8",
+      "name": "SNX-L 62/34",
+      "thickness": "3/8",
+      "shape": "Pentagon",
+      "tint": "Ultra Clear",
+      "length": 80,
+      "width": 31
+    },
+    "quantity": 7,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 9360,
+    "order_id": "837c8a6b-affa-439e-9755-bb7e70beb5f8",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "004c4786-d558-43e7-82be-795f60182ef7",
+      "name": "SNE 50/25",
+      "thickness": "1/4",
+      "shape": "Rounded Corner(s)",
+      "tint": "Frosted Green Chip",
+      "length": 88,
+      "width": 48
+    },
+    "quantity": 1,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 9569,
+    "order_id": "837c8a6b-affa-439e-9755-bb7e70beb5f8",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "a1a67246-21b6-4ba1-9024-417369d628b0",
+      "name": "MC 68 LE-T",
+      "thickness": "1/8",
+      "shape": "Half-Circle",
+      "tint": "Mistlite",
+      "length": 73,
+      "width": 42
+    },
+    "quantity": 5,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 9446,
+    "order_id": "837c8a6b-affa-439e-9755-bb7e70beb5f8",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "82a54c94-9681-4ebe-9cd8-81cfa03056e1",
+      "name": "SN 68",
+      "thickness": "3/8",
+      "shape": "Hexagon",
+      "tint": "Light Gray",
+      "length": 93,
+      "width": 33
+    },
+    "quantity": 5,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 6876,
+    "order_id": "837c8a6b-affa-439e-9755-bb7e70beb5f8",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "82a54c94-9681-4ebe-9cd8-81cfa03056e1",
+      "name": "SN 68",
+      "thickness": "1/8",
+      "shape": "Single Slope Rectangle",
+      "tint": "Bronze",
+      "length": 39,
+      "width": 19
+    },
+    "quantity": 9,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 5415,
+    "order_id": "837c8a6b-affa-439e-9755-bb7e70beb5f8",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "82a54c94-9681-4ebe-9cd8-81cfa03056e1",
+      "name": "SN 68",
+      "thickness": "3/8",
+      "shape": "Clipped Corner(s)",
+      "tint": "Bronze",
+      "length": 37,
+      "width": 29
+    },
+    "quantity": 106,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 494,
+    "order_id": "7dc5d9fa-4ac2-4bd9-86e7-115fc3f84021",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "d49c19b3-cf1a-4ad6-8ba4-bf127ce1de6f",
+      "name": "MC 27 LE-A",
+      "thickness": "3/8",
+      "shape": "Racetrack Oval",
+      "tint": "Bronze",
+      "length": 46,
+      "width": 46
+    },
+    "quantity": 10,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 5220,
+    "order_id": "7dc5d9fa-4ac2-4bd9-86e7-115fc3f84021",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "c5eb32fe-3209-43d3-a63c-f5d3c3555c8b",
+      "name": "IS20 LE-T",
+      "thickness": "3/8",
+      "shape": "Half-Circle",
+      "tint": "Mistlite",
+      "length": 63,
+      "width": 21
+    },
+    "quantity": 50,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 8918,
+    "order_id": "7dc5d9fa-4ac2-4bd9-86e7-115fc3f84021",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "a1a67246-21b6-4ba1-9024-417369d628b0",
+      "name": "MC 68 LE-T",
+      "thickness": "1/4",
+      "shape": "Quarter Round",
+      "tint": "Frosted Green Chip",
+      "length": 29,
+      "width": 5
+    },
+    "quantity": 9,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 3802,
+    "order_id": "7dc5d9fa-4ac2-4bd9-86e7-115fc3f84021",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "d1561e8c-3e9b-4e29-94d2-56bbdced64f7",
+      "name": "MC 68 LE-A",
+      "thickness": "3/4",
+      "shape": "Quarter Round with Notch",
+      "tint": "Clear",
+      "length": 55,
+      "width": 23
+    },
+    "quantity": 1,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 2449,
+    "order_id": "7dc5d9fa-4ac2-4bd9-86e7-115fc3f84021",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "82a54c94-9681-4ebe-9cd8-81cfa03056e1",
+      "name": "SN 68",
+      "thickness": "3/8",
+      "shape": "Right Triangle",
+      "tint": "Clear",
+      "length": 35,
+      "width": 29
+    },
+    "quantity": 4,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 3978,
+    "order_id": "0f7d6720-920b-42ed-a7ad-c77505d6b0e9",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "c908d94a-e129-4912-b3dd-29d7073c042d",
+      "name": "Sunguard Spandrel HT",
+      "thickness": "1/4",
+      "shape": "Pentagon",
+      "tint": "Ultra Clear",
+      "length": 83,
+      "width": 15
+    },
+    "quantity": 1,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 2323,
+    "order_id": "0f7d6720-920b-42ed-a7ad-c77505d6b0e9",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "c908d94a-e129-4912-b3dd-29d7073c042d",
+      "name": "Sunguard Spandrel HT",
+      "thickness": "3/8",
+      "shape": "Trapezoid",
+      "tint": "P-516",
+      "length": 90,
+      "width": 7
+    },
+    "quantity": 1,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 5654,
+    "order_id": "0f7d6720-920b-42ed-a7ad-c77505d6b0e9",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "c908d94a-e129-4912-b3dd-29d7073c042d",
+      "name": "Sunguard Spandrel HT",
+      "thickness": "1/8",
+      "shape": "Circle",
+      "tint": "Ultra Clear",
+      "length": 17,
+      "width": 13
+    },
+    "quantity": 7,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 3464,
+    "order_id": "0f7d6720-920b-42ed-a7ad-c77505d6b0e9",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "cc546439-3cef-4f13-b365-c6893c05fc82",
+      "name": "SNR 35 HT",
+      "thickness": "1/2",
+      "shape": "Octagon",
+      "tint": "Low-E",
+      "length": 56,
+      "width": 38
+    },
+    "quantity": 2,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 2509,
+    "order_id": "d259f545-5b11-4758-a1cf-83ad42713734",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "1da5b2a3-6a53-49de-bbce-4521ef09cd5c",
+      "name": "SatinDeco",
+      "thickness": "3/4",
+      "shape": "Pentagon",
+      "tint": "Ultra Clear",
+      "length": 40,
+      "width": 14
+    },
+    "quantity": 109,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 1872,
+    "order_id": "d259f545-5b11-4758-a1cf-83ad42713734",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "c908d94a-e129-4912-b3dd-29d7073c042d",
+      "name": "Sunguard Spandrel HT",
+      "thickness": "1/8",
+      "shape": "Circle",
+      "tint": "Mistlite",
+      "length": 37,
+      "width": 32
+    },
+    "quantity": 121,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 5037,
+    "order_id": "f2648e5d-9e62-47b3-845e-2084ff5718e8",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "ec5ffa0f-39d8-4d03-94dd-95b190a8c2f5",
+      "name": "AG 50 LE",
+      "thickness": "1/4",
+      "shape": "Half-Circle with Notch",
+      "tint": "P-516",
+      "length": 42,
+      "width": 26
+    },
+    "quantity": 60,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 4919,
+    "order_id": "f2648e5d-9e62-47b3-845e-2084ff5718e8",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "a1a67246-21b6-4ba1-9024-417369d628b0",
+      "name": "MC 68 LE-T",
+      "thickness": "3/8",
+      "shape": "Hexagon",
+      "tint": "Clear",
+      "length": 82,
+      "width": 41
+    },
+    "quantity": 82,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 6317,
+    "order_id": "f2648e5d-9e62-47b3-845e-2084ff5718e8",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "c112847c-f8ab-4e7b-a397-6a44ef7529f7",
+      "name": "NU 40 LE",
+      "thickness": "3/4",
+      "shape": "Triangle",
+      "tint": "Mistlite",
+      "length": 94,
+      "width": 22
+    },
+    "quantity": 201,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 991,
+    "order_id": "f2648e5d-9e62-47b3-845e-2084ff5718e8",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "82a54c94-9681-4ebe-9cd8-81cfa03056e1",
+      "name": "SN 68",
+      "thickness": "1/8",
+      "shape": "Clipped Corner(s)",
+      "tint": "Satin Etch",
+      "length": 89,
+      "width": 27
+    },
+    "quantity": 201,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 4837,
+    "order_id": "f2648e5d-9e62-47b3-845e-2084ff5718e8",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "f1e58ff5-48fc-40f5-971d-10c8ad04ab6f",
+      "name": "SN 68 HT",
+      "thickness": "3/8",
+      "shape": "Circle",
+      "tint": "Dark Gray",
+      "length": 57,
+      "width": 32
+    },
+    "quantity": 107,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 2518,
+    "order_id": "f2648e5d-9e62-47b3-845e-2084ff5718e8",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "c5eb32fe-3209-43d3-a63c-f5d3c3555c8b",
+      "name": "IS20 LE-T",
+      "thickness": "3/4",
+      "shape": "Hexagon",
+      "tint": "Mistlite",
+      "length": 52,
+      "width": 37
+    },
+    "quantity": 25,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 4215,
+    "order_id": "f2648e5d-9e62-47b3-845e-2084ff5718e8",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "004c4786-d558-43e7-82be-795f60182ef7",
+      "name": "SNE 50/25",
+      "thickness": "1/2",
+      "shape": "Right Triangle",
+      "tint": "Frosted Green Chip",
+      "length": 88,
+      "width": 23
+    },
+    "quantity": 11,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 2316,
+    "order_id": "896010d2-2476-40a0-b491-704d799b81ee",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "d1561e8c-3e9b-4e29-94d2-56bbdced64f7",
+      "name": "MC 68 LE-A",
+      "thickness": "1/4",
+      "shape": "Irregular/Any Other Shape",
+      "tint": "P-516",
+      "length": 77,
+      "width": 18
+    },
+    "quantity": 59,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 9358,
+    "order_id": "896010d2-2476-40a0-b491-704d799b81ee",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "d1561e8c-3e9b-4e29-94d2-56bbdced64f7",
+      "name": "MC 68 LE-A",
+      "thickness": "3/4",
+      "shape": "Quarter Round with Notch",
+      "tint": "Frosted Blue Chip",
+      "length": 54,
+      "width": 20
+    },
+    "quantity": 24,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 6439,
+    "order_id": "896010d2-2476-40a0-b491-704d799b81ee",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "aeab03c7-9242-4c4d-a53a-ef341b9fed6f",
+      "name": "AG 43",
+      "thickness": "1/8",
+      "shape": "Pentagon",
+      "tint": "Solex",
+      "length": 72,
+      "width": 16
+    },
+    "quantity": 9,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 9413,
+    "order_id": "896010d2-2476-40a0-b491-704d799b81ee",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "af123281-fd38-48a1-b865-f5d1c25307f8",
+      "name": "SNX-L 62/34",
+      "thickness": "3/4",
+      "shape": "Circle",
+      "tint": "Mistlite",
+      "length": 81,
+      "width": 43
+    },
+    "quantity": 208,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 119,
+    "order_id": "a1d1dc02-60ae-46c8-85e2-fe3df94fb52c",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "af123281-fd38-48a1-b865-f5d1c25307f8",
+      "name": "SNX-L 62/34",
+      "thickness": "3/8",
+      "shape": "Irregular/Any Other Shape",
+      "tint": "Bronze",
+      "length": 91,
+      "width": 42
+    },
+    "quantity": 152,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 6484,
+    "order_id": "a1d1dc02-60ae-46c8-85e2-fe3df94fb52c",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "82a54c94-9681-4ebe-9cd8-81cfa03056e1",
+      "name": "SN 68",
+      "thickness": "3/4",
+      "shape": "Trapezoid",
+      "tint": "Satin Etch",
+      "length": 65,
+      "width": 1
+    },
+    "quantity": 9,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 1960,
+    "order_id": "a1d1dc02-60ae-46c8-85e2-fe3df94fb52c",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "c5eb32fe-3209-43d3-a63c-f5d3c3555c8b",
+      "name": "IS20 LE-T",
+      "thickness": "3/4",
+      "shape": "Circle",
+      "tint": "Satin Etch",
+      "length": 12,
+      "width": 8
+    },
+    "quantity": 8,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 8157,
+    "order_id": "a1d1dc02-60ae-46c8-85e2-fe3df94fb52c",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "1da5b2a3-6a53-49de-bbce-4521ef09cd5c",
+      "name": "SatinDeco",
+      "thickness": "3/8",
+      "shape": "Arch Side",
+      "tint": "Solex",
+      "length": 76,
+      "width": 20
+    },
+    "quantity": 7,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 7058,
+    "order_id": "18012538-fa48-495f-abac-e8351634823c",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "aeab03c7-9242-4c4d-a53a-ef341b9fed6f",
+      "name": "AG 43",
+      "thickness": "1/2",
+      "shape": "Half-Circle",
+      "tint": "Clear",
+      "length": 74,
+      "width": 35
+    },
+    "quantity": 1,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 5032,
+    "order_id": "18012538-fa48-495f-abac-e8351634823c",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "a1a67246-21b6-4ba1-9024-417369d628b0",
+      "name": "MC 68 LE-T",
+      "thickness": "3/4",
+      "shape": "Pentagon",
+      "tint": "Clear",
+      "length": 30,
+      "width": 12
+    },
+    "quantity": 55,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 3756,
+    "order_id": "42c41c12-43ff-4613-82b3-7af465d1a01c",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "a1a67246-21b6-4ba1-9024-417369d628b0",
+      "name": "MC 68 LE-T",
+      "thickness": "3/4",
+      "shape": "Half-Circle",
+      "tint": "Mistlite",
+      "length": 21,
+      "width": 20
+    },
+    "quantity": 10,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 3589,
+    "order_id": "42c41c12-43ff-4613-82b3-7af465d1a01c",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "cc546439-3cef-4f13-b365-c6893c05fc82",
+      "name": "SNR 35 HT",
+      "thickness": "3/8",
+      "shape": "Arch",
+      "tint": "Low-E",
+      "length": 31,
+      "width": 9
+    },
+    "quantity": 36,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 2705,
+    "order_id": "26fec465-a823-40c6-9be1-e73737d6fb75",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "a1a67246-21b6-4ba1-9024-417369d628b0",
+      "name": "MC 68 LE-T",
+      "thickness": "3/8",
+      "shape": "Hexagon",
+      "tint": "Solex",
+      "length": 74,
+      "width": 47
+    },
+    "quantity": 3,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 3184,
+    "order_id": "26fec465-a823-40c6-9be1-e73737d6fb75",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "c112847c-f8ab-4e7b-a397-6a44ef7529f7",
+      "name": "NU 40 LE",
+      "thickness": "1/2",
+      "shape": "Clipped Corner(s)",
+      "tint": "Mistlite",
+      "length": 34,
+      "width": 16
+    },
+    "quantity": 34,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 1230,
+    "order_id": "26fec465-a823-40c6-9be1-e73737d6fb75",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "ec5ffa0f-39d8-4d03-94dd-95b190a8c2f5",
+      "name": "AG 50 LE",
+      "thickness": "1/4",
+      "shape": "Clipped Corner(s)",
+      "tint": "Frosted Green Chip",
+      "length": 58,
+      "width": 24
+    },
+    "quantity": 50,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 8041,
+    "order_id": "26fec465-a823-40c6-9be1-e73737d6fb75",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "a1a67246-21b6-4ba1-9024-417369d628b0",
+      "name": "MC 68 LE-T",
+      "thickness": "3/8",
+      "shape": "Arch-Top",
+      "tint": "Clear",
+      "length": 81,
+      "width": 40
+    },
+    "quantity": 56,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 188,
+    "order_id": "08f4340f-151e-4944-be02-a481dfec33d4",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "d49c19b3-cf1a-4ad6-8ba4-bf127ce1de6f",
+      "name": "MC 27 LE-A",
+      "thickness": "1/4",
+      "shape": "Octagon",
+      "tint": "Midnight Gray",
+      "length": 88,
+      "width": 28
+    },
+    "quantity": 5,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 6886,
+    "order_id": "08f4340f-151e-4944-be02-a481dfec33d4",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "ec5ffa0f-39d8-4d03-94dd-95b190a8c2f5",
+      "name": "AG 50 LE",
+      "thickness": "3/4",
+      "shape": "Pentagon",
+      "tint": "Satin Etch",
+      "length": 52,
+      "width": 18
+    },
+    "quantity": 28,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 3284,
+    "order_id": "08f4340f-151e-4944-be02-a481dfec33d4",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "1da5b2a3-6a53-49de-bbce-4521ef09cd5c",
+      "name": "SatinDeco",
+      "thickness": "1/4",
+      "shape": "Arch Side",
+      "tint": "P-516",
+      "length": 63,
+      "width": 24
+    },
+    "quantity": 4,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 6560,
+    "order_id": "08f4340f-151e-4944-be02-a481dfec33d4",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "aeab03c7-9242-4c4d-a53a-ef341b9fed6f",
+      "name": "AG 43",
+      "thickness": "1/4",
+      "shape": "Quarter Round",
+      "tint": "P-516",
+      "length": 36,
+      "width": 15
+    },
+    "quantity": 42,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 6622,
+    "order_id": "08f4340f-151e-4944-be02-a481dfec33d4",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "82a54c94-9681-4ebe-9cd8-81cfa03056e1",
+      "name": "SN 68",
+      "thickness": "1/4",
+      "shape": "Circle",
+      "tint": "Bronze",
+      "length": 60,
+      "width": 5
+    },
+    "quantity": 106,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 4486,
+    "order_id": "08f4340f-151e-4944-be02-a481dfec33d4",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "aeab03c7-9242-4c4d-a53a-ef341b9fed6f",
+      "name": "AG 43",
+      "thickness": "3/8",
+      "shape": "Single Slope Rectangle",
+      "tint": "Clear",
+      "length": 51,
+      "width": 33
+    },
+    "quantity": 19,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 4167,
+    "order_id": "08f4340f-151e-4944-be02-a481dfec33d4",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "c112847c-f8ab-4e7b-a397-6a44ef7529f7",
+      "name": "NU 40 LE",
+      "thickness": "1/4",
+      "shape": "Octagon",
+      "tint": "Low-E",
+      "length": 31,
+      "width": 17
+    },
+    "quantity": 46,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 2166,
+    "order_id": "08f4340f-151e-4944-be02-a481dfec33d4",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "cc546439-3cef-4f13-b365-c6893c05fc82",
+      "name": "SNR 35 HT",
+      "thickness": "1/2",
+      "shape": "Trapezoid",
+      "tint": "P-516",
+      "length": 40,
+      "width": 14
+    },
+    "quantity": 8,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 1706,
+    "order_id": "7c546e71-81d8-4688-bf87-adf0128ee4f8",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "c908d94a-e129-4912-b3dd-29d7073c042d",
+      "name": "Sunguard Spandrel HT",
+      "thickness": "1/8",
+      "shape": "Irregular/Any Other Shape",
+      "tint": "Frosted Blue Chip",
+      "length": 82,
+      "width": 8
+    },
+    "quantity": 133,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 1433,
+    "order_id": "7c546e71-81d8-4688-bf87-adf0128ee4f8",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "c112847c-f8ab-4e7b-a397-6a44ef7529f7",
+      "name": "NU 40 LE",
+      "thickness": "3/4",
+      "shape": "Parallelogram",
+      "tint": "Low-E",
+      "length": 58,
+      "width": 40
+    },
+    "quantity": 6,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 5755,
+    "order_id": "7c546e71-81d8-4688-bf87-adf0128ee4f8",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "f1e58ff5-48fc-40f5-971d-10c8ad04ab6f",
+      "name": "SN 68 HT",
+      "thickness": "1/4",
+      "shape": "Quad Arch",
+      "tint": "Ultra Clear",
+      "length": 20,
+      "width": 7
+    },
+    "quantity": 36,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 5670,
+    "order_id": "7c546e71-81d8-4688-bf87-adf0128ee4f8",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "af123281-fd38-48a1-b865-f5d1c25307f8",
+      "name": "SNX-L 62/34",
+      "thickness": "3/4",
+      "shape": "Right Triangle",
+      "tint": "Mistlite",
+      "length": 79,
+      "width": 25
+    },
+    "quantity": 54,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 1441,
+    "order_id": "7c546e71-81d8-4688-bf87-adf0128ee4f8",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "f1e58ff5-48fc-40f5-971d-10c8ad04ab6f",
+      "name": "SN 68 HT",
+      "thickness": "1/8",
+      "shape": "Rounded Corner(s)",
+      "tint": "Ultra Clear",
+      "length": 82,
+      "width": 44
+    },
+    "quantity": 32,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 575,
+    "order_id": "3c3e9a9c-674e-40f8-ac86-5a7d491eb954",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "82a54c94-9681-4ebe-9cd8-81cfa03056e1",
+      "name": "SN 68",
+      "thickness": "1/4",
+      "shape": "Ellipse",
+      "tint": "Bronze",
+      "length": 87,
+      "width": 12
+    },
+    "quantity": 54,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 677,
+    "order_id": "d82c1a29-3f36-403c-ade3-b55fd286193c",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "cc546439-3cef-4f13-b365-c6893c05fc82",
+      "name": "SNR 35 HT",
+      "thickness": "1/2",
+      "shape": "Quad Arch",
+      "tint": "Low-E",
+      "length": 72,
+      "width": 44
+    },
+    "quantity": 3,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 9983,
+    "order_id": "d82c1a29-3f36-403c-ade3-b55fd286193c",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "c112847c-f8ab-4e7b-a397-6a44ef7529f7",
+      "name": "NU 40 LE",
+      "thickness": "1/2",
+      "shape": "Clipped Corner(s)",
+      "tint": "Mistlite",
+      "length": 70,
+      "width": 37
+    },
+    "quantity": 3,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 993,
+    "order_id": "d82c1a29-3f36-403c-ade3-b55fd286193c",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "a1a67246-21b6-4ba1-9024-417369d628b0",
+      "name": "MC 68 LE-T",
+      "thickness": "3/8",
+      "shape": "Quarter Round",
+      "tint": "Solex",
+      "length": 92,
+      "width": 45
+    },
+    "quantity": 10,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 3766,
+    "order_id": "d82c1a29-3f36-403c-ade3-b55fd286193c",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "f1e58ff5-48fc-40f5-971d-10c8ad04ab6f",
+      "name": "SN 68 HT",
+      "thickness": "1/8",
+      "shape": "Racetrack Oval",
+      "tint": "Clear",
+      "length": 75,
+      "width": 46
+    },
+    "quantity": 15,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 9619,
+    "order_id": "d82c1a29-3f36-403c-ade3-b55fd286193c",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "004c4786-d558-43e7-82be-795f60182ef7",
+      "name": "SNE 50/25",
+      "thickness": "3/8",
+      "shape": "Arch",
+      "tint": "Light Gray",
+      "length": 81,
+      "width": 13
     },
     "quantity": 8,
     "note": "some note"
   },
   {
     "order_item_id": 7989,
-    "order_id": "03e06f79-c366-403f-ba63-ef01baa0c447",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
+    "order_id": "d82c1a29-3f36-403c-ade3-b55fd286193c",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
     "product_config": {
-      "glass_id": "ea045be8-3c33-4a2d-9137-da2e180210eb",
-      "name": "SatinDeco",
-      "thickness": "3/4",
-      "shape": "Clipped Corner(s)",
+      "glass_id": "d49c19b3-cf1a-4ad6-8ba4-bf127ce1de6f",
+      "name": "MC 27 LE-A",
+      "thickness": "1/4",
+      "shape": "Octagon",
       "tint": "Midnight Gray",
-      "length": 95,
-      "width": 20
+      "length": 58,
+      "width": 17
     },
-    "quantity": 3,
+    "quantity": 30,
     "note": "some note"
   },
   {
-    "order_item_id": 5474,
-    "order_id": "03e06f79-c366-403f-ba63-ef01baa0c447",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
+    "order_item_id": 4236,
+    "order_id": "d82c1a29-3f36-403c-ade3-b55fd286193c",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
     "product_config": {
-      "glass_id": "d0340245-d1b1-474d-b05b-1e330b5601d2",
-      "name": "SNR 35 HT",
-      "thickness": "1/2",
-      "shape": "Quarter Round",
-      "tint": "Clear",
-      "length": 74,
-      "width": 25
+      "glass_id": "c908d94a-e129-4912-b3dd-29d7073c042d",
+      "name": "Sunguard Spandrel HT",
+      "thickness": "3/8",
+      "shape": "Trapezoid",
+      "tint": "Ultra Clear",
+      "length": 82,
+      "width": 19
     },
-    "quantity": 8,
+    "quantity": 157,
     "note": "some note"
   },
   {
-    "order_item_id": 9880,
-    "order_id": "03e06f79-c366-403f-ba63-ef01baa0c447",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
+    "order_item_id": 9843,
+    "order_id": "05c86404-4ede-4a9d-bae1-1c9682f4a79a",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
     "product_config": {
-      "glass_id": "28cb3997-daf6-464f-812d-97182ee602b3",
-      "name": "NU 40 LE",
+      "glass_id": "aeab03c7-9242-4c4d-a53a-ef341b9fed6f",
+      "name": "AG 43",
       "thickness": "1/2",
-      "shape": "Arch-Top",
+      "shape": "Parallelogram",
       "tint": "Solex",
-      "length": 28,
-      "width": 9
+      "length": 50,
+      "width": 29
+    },
+    "quantity": 2,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 1459,
+    "order_id": "05c86404-4ede-4a9d-bae1-1c9682f4a79a",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "c908d94a-e129-4912-b3dd-29d7073c042d",
+      "name": "Sunguard Spandrel HT",
+      "thickness": "1/2",
+      "shape": "Trapezoid",
+      "tint": "Frosted Blue Chip",
+      "length": 70,
+      "width": 29
+    },
+    "quantity": 34,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 1350,
+    "order_id": "e0d21e7d-fedb-48e2-aabc-f3397258f525",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "cc546439-3cef-4f13-b365-c6893c05fc82",
+      "name": "SNR 35 HT",
+      "thickness": "3/8",
+      "shape": "Octagon",
+      "tint": "Low-E",
+      "length": 64,
+      "width": 41
+    },
+    "quantity": 58,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 3788,
+    "order_id": "e0d21e7d-fedb-48e2-aabc-f3397258f525",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "af123281-fd38-48a1-b865-f5d1c25307f8",
+      "name": "SNX-L 62/34",
+      "thickness": "3/4",
+      "shape": "Pentagon",
+      "tint": "Mistlite",
+      "length": 71,
+      "width": 44
+    },
+    "quantity": 152,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 5974,
+    "order_id": "35b131cd-1959-4e9b-b35d-928032980585",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "af123281-fd38-48a1-b865-f5d1c25307f8",
+      "name": "SNX-L 62/34",
+      "thickness": "1/8",
+      "shape": "Clipped Corner(s)",
+      "tint": "P-516",
+      "length": 71,
+      "width": 44
     },
     "quantity": 5,
     "note": "some note"
   },
   {
-    "order_item_id": 2292,
-    "order_id": "03e06f79-c366-403f-ba63-ef01baa0c447",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
+    "order_item_id": 9166,
+    "order_id": "35b131cd-1959-4e9b-b35d-928032980585",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
     "product_config": {
-      "glass_id": "538c9855-17a0-410d-90d2-5e5e9f43c6c8",
-      "name": "SNX-L 62/34",
-      "thickness": "3/4",
+      "glass_id": "c5eb32fe-3209-43d3-a63c-f5d3c3555c8b",
+      "name": "IS20 LE-T",
+      "thickness": "1/2",
       "shape": "Arch",
-      "tint": "P-516",
-      "length": 92,
+      "tint": "Mistlite",
+      "length": 37,
+      "width": 33
+    },
+    "quantity": 3,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 185,
+    "order_id": "35b131cd-1959-4e9b-b35d-928032980585",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "a1a67246-21b6-4ba1-9024-417369d628b0",
+      "name": "MC 68 LE-T",
+      "thickness": "1/4",
+      "shape": "Arch Side",
+      "tint": "Bronze",
+      "length": 91,
+      "width": 34
+    },
+    "quantity": 3,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 4543,
+    "order_id": "35b131cd-1959-4e9b-b35d-928032980585",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "1da5b2a3-6a53-49de-bbce-4521ef09cd5c",
+      "name": "SatinDeco",
+      "thickness": "1/2",
+      "shape": "Right Triangle",
+      "tint": "Satin Etch",
+      "length": 40,
+      "width": 28
+    },
+    "quantity": 133,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 2158,
+    "order_id": "35b131cd-1959-4e9b-b35d-928032980585",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "ec5ffa0f-39d8-4d03-94dd-95b190a8c2f5",
+      "name": "AG 50 LE",
+      "thickness": "1/8",
+      "shape": "Square/Rectangle",
+      "tint": "Bronze",
+      "length": 51,
       "width": 38
     },
-    "quantity": 129,
+    "quantity": 10,
     "note": "some note"
   },
   {
-    "order_item_id": 2252,
-    "order_id": "03e06f79-c366-403f-ba63-ef01baa0c447",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
+    "order_item_id": 4110,
+    "order_id": "a2859d2a-fe7a-48c7-b011-834facbe6eca",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
     "product_config": {
-      "glass_id": "da450d2a-3d5e-4646-8941-677dd51f7f8b",
-      "name": "AG 43",
+      "glass_id": "af123281-fd38-48a1-b865-f5d1c25307f8",
+      "name": "SNX-L 62/34",
       "thickness": "3/4",
-      "shape": "Octagon",
-      "tint": "Frosted Green Chip",
-      "length": 56,
+      "shape": "Single Slope Rectangle",
+      "tint": "Ultra Clear",
+      "length": 45,
       "width": 39
     },
-    "quantity": 135,
+    "quantity": 21,
     "note": "some note"
   },
   {
-    "order_item_id": 7786,
-    "order_id": "03e06f79-c366-403f-ba63-ef01baa0c447",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
+    "order_item_id": 6175,
+    "order_id": "a2859d2a-fe7a-48c7-b011-834facbe6eca",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
     "product_config": {
-      "glass_id": "90410c20-66fd-44a0-8009-3d5b8afc631a",
-      "name": "MC 68 LE-T",
-      "thickness": "3/8",
-      "shape": "Hexagon",
-      "tint": "Frosted Blue Chip",
-      "length": 88,
-      "width": 46
+      "glass_id": "004c4786-d558-43e7-82be-795f60182ef7",
+      "name": "SNE 50/25",
+      "thickness": "1/2",
+      "shape": "Parallelogram",
+      "tint": "Midnight Gray",
+      "length": 73,
+      "width": 43
     },
-    "quantity": 59,
+    "quantity": 1,
     "note": "some note"
   },
   {
-    "order_item_id": 4421,
-    "order_id": "cac90565-9b0d-4659-83d0-f6d8149c75d7",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
+    "order_item_id": 4145,
+    "order_id": "a2859d2a-fe7a-48c7-b011-834facbe6eca",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
     "product_config": {
-      "glass_id": "d0340245-d1b1-474d-b05b-1e330b5601d2",
+      "glass_id": "ec5ffa0f-39d8-4d03-94dd-95b190a8c2f5",
+      "name": "AG 50 LE",
+      "thickness": "1/8",
+      "shape": "Square/Rectangle",
+      "tint": "Satin Etch",
+      "length": 12,
+      "width": 9
+    },
+    "quantity": 23,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 9945,
+    "order_id": "a2859d2a-fe7a-48c7-b011-834facbe6eca",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "d1561e8c-3e9b-4e29-94d2-56bbdced64f7",
+      "name": "MC 68 LE-A",
+      "thickness": "1/4",
+      "shape": "Right Triangle",
+      "tint": "Clear",
+      "length": 44,
+      "width": 36
+    },
+    "quantity": 3,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 2760,
+    "order_id": "a2859d2a-fe7a-48c7-b011-834facbe6eca",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "c908d94a-e129-4912-b3dd-29d7073c042d",
+      "name": "Sunguard Spandrel HT",
+      "thickness": "3/4",
+      "shape": "Rounded Corner(s)",
+      "tint": "Ultra Clear",
+      "length": 32,
+      "width": 18
+    },
+    "quantity": 105,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 2693,
+    "order_id": "a2859d2a-fe7a-48c7-b011-834facbe6eca",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "d49c19b3-cf1a-4ad6-8ba4-bf127ce1de6f",
+      "name": "MC 27 LE-A",
+      "thickness": "1/2",
+      "shape": "Square/Rectangle",
+      "tint": "Bronze",
+      "length": 87,
+      "width": 38
+    },
+    "quantity": 54,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 4300,
+    "order_id": "a2859d2a-fe7a-48c7-b011-834facbe6eca",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "c908d94a-e129-4912-b3dd-29d7073c042d",
+      "name": "Sunguard Spandrel HT",
+      "thickness": "1/4",
+      "shape": "Square/Rectangle",
+      "tint": "Bronze",
+      "length": 63,
+      "width": 40
+    },
+    "quantity": 121,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 6453,
+    "order_id": "a2859d2a-fe7a-48c7-b011-834facbe6eca",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "cc546439-3cef-4f13-b365-c6893c05fc82",
       "name": "SNR 35 HT",
+      "thickness": "1/2",
+      "shape": "Rounded Corner(s)",
+      "tint": "Clear",
+      "length": 35,
+      "width": 5
+    },
+    "quantity": 16,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 7038,
+    "order_id": "f3b7e5a3-31e2-4220-a697-eb140e05e31e",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "82a54c94-9681-4ebe-9cd8-81cfa03056e1",
+      "name": "SN 68",
       "thickness": "3/4",
       "shape": "Ellipse",
+      "tint": "Ultra Clear",
+      "length": 66,
+      "width": 23
+    },
+    "quantity": 30,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 221,
+    "order_id": "f3b7e5a3-31e2-4220-a697-eb140e05e31e",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "c112847c-f8ab-4e7b-a397-6a44ef7529f7",
+      "name": "NU 40 LE",
+      "thickness": "1/2",
+      "shape": "Trapezoid",
+      "tint": "Bronze",
+      "length": 43,
+      "width": 23
+    },
+    "quantity": 72,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 2238,
+    "order_id": "f3b7e5a3-31e2-4220-a697-eb140e05e31e",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "cc546439-3cef-4f13-b365-c6893c05fc82",
+      "name": "SNR 35 HT",
+      "thickness": "3/4",
+      "shape": "Half-Circle with Notch",
       "tint": "Clear",
-      "length": 94,
-      "width": 44
+      "length": 55,
+      "width": 21
     },
     "quantity": 4,
     "note": "some note"
   },
   {
-    "order_item_id": 5424,
-    "order_id": "f8572d13-3329-4f5f-842c-e2ba1af4134f",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
+    "order_item_id": 7981,
+    "order_id": "f3b7e5a3-31e2-4220-a697-eb140e05e31e",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
     "product_config": {
-      "glass_id": "cd774965-da25-463b-921f-441244911276",
-      "name": "AG 50 LE",
+      "glass_id": "c5eb32fe-3209-43d3-a63c-f5d3c3555c8b",
+      "name": "IS20 LE-T",
+      "thickness": "1/4",
+      "shape": "Half-Circle",
+      "tint": "Clear",
+      "length": 41,
+      "width": 22
+    },
+    "quantity": 29,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 6969,
+    "order_id": "cd341b94-d88d-4942-96d7-deb78c78655a",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "c5eb32fe-3209-43d3-a63c-f5d3c3555c8b",
+      "name": "IS20 LE-T",
+      "thickness": "1/2",
+      "shape": "Octagon",
+      "tint": "Mistlite",
+      "length": 93,
+      "width": 2
+    },
+    "quantity": 1,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 8392,
+    "order_id": "cd341b94-d88d-4942-96d7-deb78c78655a",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "a1a67246-21b6-4ba1-9024-417369d628b0",
+      "name": "MC 68 LE-T",
+      "thickness": "3/8",
+      "shape": "Pentagon",
+      "tint": "Solex",
+      "length": 71,
+      "width": 11
+    },
+    "quantity": 29,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 4869,
+    "order_id": "28dbf3f6-cb08-4b95-87ce-ff918e2ddc43",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "a1a67246-21b6-4ba1-9024-417369d628b0",
+      "name": "MC 68 LE-T",
       "thickness": "1/8",
-      "shape": "Trapezoid",
-      "tint": "Light Gray",
-      "length": 76,
+      "shape": "Quad Arch",
+      "tint": "Bronze",
+      "length": 44,
+      "width": 9
+    },
+    "quantity": 54,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 3056,
+    "order_id": "28dbf3f6-cb08-4b95-87ce-ff918e2ddc43",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "c5eb32fe-3209-43d3-a63c-f5d3c3555c8b",
+      "name": "IS20 LE-T",
+      "thickness": "1/2",
+      "shape": "Octagon",
+      "tint": "Mistlite",
+      "length": 85,
+      "width": 40
+    },
+    "quantity": 131,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 5956,
+    "order_id": "8b9aa703-cb3e-4ada-baf7-9bd9116632d9",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "cc546439-3cef-4f13-b365-c6893c05fc82",
+      "name": "SNR 35 HT",
+      "thickness": "3/4",
+      "shape": "Right Triangle",
+      "tint": "Low-E",
+      "length": 32,
+      "width": 27
+    },
+    "quantity": 2,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 8053,
+    "order_id": "8b9aa703-cb3e-4ada-baf7-9bd9116632d9",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "aeab03c7-9242-4c4d-a53a-ef341b9fed6f",
+      "name": "AG 43",
+      "thickness": "3/8",
+      "shape": "Quarter Round with Notch",
+      "tint": "Mistlite",
+      "length": 24,
+      "width": 9
+    },
+    "quantity": 20,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 3144,
+    "order_id": "8b9aa703-cb3e-4ada-baf7-9bd9116632d9",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "f1e58ff5-48fc-40f5-971d-10c8ad04ab6f",
+      "name": "SN 68 HT",
+      "thickness": "1/8",
+      "shape": "Quad Arch",
+      "tint": "Low-E",
+      "length": 38,
+      "width": 37
+    },
+    "quantity": 28,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 7988,
+    "order_id": "8b9aa703-cb3e-4ada-baf7-9bd9116632d9",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "004c4786-d558-43e7-82be-795f60182ef7",
+      "name": "SNE 50/25",
+      "thickness": "1/2",
+      "shape": "Arch Top & Bottom",
+      "tint": "Midnight Gray",
+      "length": 61,
+      "width": 2
+    },
+    "quantity": 69,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 528,
+    "order_id": "8b9aa703-cb3e-4ada-baf7-9bd9116632d9",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "ec5ffa0f-39d8-4d03-94dd-95b190a8c2f5",
+      "name": "AG 50 LE",
+      "thickness": "1/4",
+      "shape": "Quarter Round",
+      "tint": "P-516",
+      "length": 36,
       "width": 34
     },
     "quantity": 49,
     "note": "some note"
   },
   {
-    "order_item_id": 6739,
-    "order_id": "f8572d13-3329-4f5f-842c-e2ba1af4134f",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
+    "order_item_id": 1913,
+    "order_id": "8b9aa703-cb3e-4ada-baf7-9bd9116632d9",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
     "product_config": {
-      "glass_id": "cd774965-da25-463b-921f-441244911276",
-      "name": "AG 50 LE",
-      "thickness": "1/2",
-      "shape": "Octagon",
-      "tint": "Bronze",
-      "length": 28,
-      "width": 14
-    },
-    "quantity": 49,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 710,
-    "order_id": "b7a00bb2-a569-491f-ad92-511c08d82812",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "ef4a6120-93a8-450f-a7f9-6e75f27fde60",
-      "name": "MC 27 LE-A",
-      "thickness": "3/4",
-      "shape": "Clipped Corner(s)",
-      "tint": "P-516",
-      "length": 45,
-      "width": 8
-    },
-    "quantity": 2,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 1591,
-    "order_id": "b7a00bb2-a569-491f-ad92-511c08d82812",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "538c9855-17a0-410d-90d2-5e5e9f43c6c8",
-      "name": "SNX-L 62/34",
-      "thickness": "3/4",
-      "shape": "Arch-Top",
-      "tint": "P-516",
-      "length": 8,
-      "width": 4
-    },
-    "quantity": 8,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 469,
-    "order_id": "b7a00bb2-a569-491f-ad92-511c08d82812",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
-    "product_config": {
-      "glass_id": "ea045be8-3c33-4a2d-9137-da2e180210eb",
-      "name": "SatinDeco",
+      "glass_id": "aeab03c7-9242-4c4d-a53a-ef341b9fed6f",
+      "name": "AG 43",
       "thickness": "3/8",
-      "shape": "Quarter Round",
-      "tint": "Frosted Blue Chip",
-      "length": 20,
-      "width": 14
-    },
-    "quantity": 183,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 2768,
-    "order_id": "b7a00bb2-a569-491f-ad92-511c08d82812",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "24c66f1f-bd90-4fc2-b3e2-7ed7cb667b00",
-      "name": "IS20 LE-T",
-      "thickness": "3/4",
-      "shape": "Half-Circle",
-      "tint": "Frosted Green Chip",
-      "length": 45,
-      "width": 17
+      "shape": "Triangle",
+      "tint": "Solex",
+      "length": 30,
+      "width": 29
     },
     "quantity": 24,
     "note": "some note"
   },
   {
-    "order_item_id": 2636,
-    "order_id": "b7a00bb2-a569-491f-ad92-511c08d82812",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
+    "order_item_id": 2317,
+    "order_id": "8b9aa703-cb3e-4ada-baf7-9bd9116632d9",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
     "product_config": {
-      "glass_id": "cd774965-da25-463b-921f-441244911276",
-      "name": "AG 50 LE",
+      "glass_id": "d49c19b3-cf1a-4ad6-8ba4-bf127ce1de6f",
+      "name": "MC 27 LE-A",
       "thickness": "3/4",
-      "shape": "Clipped Corner(s)",
+      "shape": "Half-Circle with Notch",
+      "tint": "Midnight Gray",
+      "length": 90,
+      "width": 9
+    },
+    "quantity": 2,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 2069,
+    "order_id": "8b9aa703-cb3e-4ada-baf7-9bd9116632d9",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "1da5b2a3-6a53-49de-bbce-4521ef09cd5c",
+      "name": "SatinDeco",
+      "thickness": "3/8",
+      "shape": "Racetrack Oval",
+      "tint": "Solex",
+      "length": 56,
+      "width": 12
+    },
+    "quantity": 1,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 4354,
+    "order_id": "8b9aa703-cb3e-4ada-baf7-9bd9116632d9",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "d1561e8c-3e9b-4e29-94d2-56bbdced64f7",
+      "name": "MC 68 LE-A",
+      "thickness": "3/8",
+      "shape": "Ellipse",
+      "tint": "Frosted Green Chip",
+      "length": 46,
+      "width": 13
+    },
+    "quantity": 2,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 4995,
+    "order_id": "2bdafe71-a993-4614-b330-7779f4e0dc1f",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "c112847c-f8ab-4e7b-a397-6a44ef7529f7",
+      "name": "NU 40 LE",
+      "thickness": "3/8",
+      "shape": "Arch",
+      "tint": "Bronze",
+      "length": 37,
+      "width": 19
+    },
+    "quantity": 33,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 3789,
+    "order_id": "2bdafe71-a993-4614-b330-7779f4e0dc1f",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "d49c19b3-cf1a-4ad6-8ba4-bf127ce1de6f",
+      "name": "MC 27 LE-A",
+      "thickness": "3/8",
+      "shape": "Racetrack Oval",
+      "tint": "Mistlite",
+      "length": 24,
+      "width": 13
+    },
+    "quantity": 19,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 1569,
+    "order_id": "2bdafe71-a993-4614-b330-7779f4e0dc1f",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "aeab03c7-9242-4c4d-a53a-ef341b9fed6f",
+      "name": "AG 43",
+      "thickness": "1/4",
+      "shape": "Arch Top & Bottom",
+      "tint": "Solex",
+      "length": 87,
+      "width": 27
+    },
+    "quantity": 183,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 2595,
+    "order_id": "2bdafe71-a993-4614-b330-7779f4e0dc1f",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "004c4786-d558-43e7-82be-795f60182ef7",
+      "name": "SNE 50/25",
+      "thickness": "1/4",
+      "shape": "Circle",
+      "tint": "Frosted Green Chip",
+      "length": 52,
+      "width": 26
+    },
+    "quantity": 109,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 6672,
+    "order_id": "2bdafe71-a993-4614-b330-7779f4e0dc1f",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "d1561e8c-3e9b-4e29-94d2-56bbdced64f7",
+      "name": "MC 68 LE-A",
+      "thickness": "1/8",
+      "shape": "Quarter Round with Notch",
+      "tint": "Midnight Gray",
+      "length": 69,
+      "width": 30
+    },
+    "quantity": 4,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 1337,
+    "order_id": "2bdafe71-a993-4614-b330-7779f4e0dc1f",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "c5eb32fe-3209-43d3-a63c-f5d3c3555c8b",
+      "name": "IS20 LE-T",
+      "thickness": "1/4",
+      "shape": "Arch",
+      "tint": "Clear",
+      "length": 77,
+      "width": 21
+    },
+    "quantity": 2,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 8713,
+    "order_id": "2bdafe71-a993-4614-b330-7779f4e0dc1f",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "d1561e8c-3e9b-4e29-94d2-56bbdced64f7",
+      "name": "MC 68 LE-A",
+      "thickness": "3/8",
+      "shape": "Quarter Round with Notch",
+      "tint": "Midnight Gray",
+      "length": 96,
+      "width": 38
+    },
+    "quantity": 27,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 4017,
+    "order_id": "e985dad3-02df-4f8a-9256-4bfca8830ce9",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "1da5b2a3-6a53-49de-bbce-4521ef09cd5c",
+      "name": "SatinDeco",
+      "thickness": "3/8",
+      "shape": "Pentagon",
+      "tint": "Solex",
+      "length": 47,
+      "width": 16
+    },
+    "quantity": 30,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 2791,
+    "order_id": "e985dad3-02df-4f8a-9256-4bfca8830ce9",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "c908d94a-e129-4912-b3dd-29d7073c042d",
+      "name": "Sunguard Spandrel HT",
+      "thickness": "3/8",
+      "shape": "Triangle",
+      "tint": "Midnight Gray",
+      "length": 71,
+      "width": 48
+    },
+    "quantity": 141,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 6612,
+    "order_id": "e985dad3-02df-4f8a-9256-4bfca8830ce9",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "c908d94a-e129-4912-b3dd-29d7073c042d",
+      "name": "Sunguard Spandrel HT",
+      "thickness": "3/4",
+      "shape": "Rounded Corner(s)",
+      "tint": "Ultra Clear",
+      "length": 55,
+      "width": 47
+    },
+    "quantity": 157,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 9611,
+    "order_id": "e985dad3-02df-4f8a-9256-4bfca8830ce9",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "d1561e8c-3e9b-4e29-94d2-56bbdced64f7",
+      "name": "MC 68 LE-A",
+      "thickness": "1/8",
+      "shape": "Ellipse",
+      "tint": "Midnight Gray",
+      "length": 71,
+      "width": 14
+    },
+    "quantity": 203,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 2144,
+    "order_id": "e985dad3-02df-4f8a-9256-4bfca8830ce9",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "c112847c-f8ab-4e7b-a397-6a44ef7529f7",
+      "name": "NU 40 LE",
+      "thickness": "1/8",
+      "shape": "House",
+      "tint": "Mistlite",
+      "length": 54,
+      "width": 40
+    },
+    "quantity": 12,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 6884,
+    "order_id": "e985dad3-02df-4f8a-9256-4bfca8830ce9",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "c5eb32fe-3209-43d3-a63c-f5d3c3555c8b",
+      "name": "IS20 LE-T",
+      "thickness": "3/8",
+      "shape": "Parallelogram",
       "tint": "Satin Etch",
-      "length": 75,
+      "length": 30,
+      "width": 8
+    },
+    "quantity": 21,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 817,
+    "order_id": "e985dad3-02df-4f8a-9256-4bfca8830ce9",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "d1561e8c-3e9b-4e29-94d2-56bbdced64f7",
+      "name": "MC 68 LE-A",
+      "thickness": "1/2",
+      "shape": "Arch",
+      "tint": "Clear",
+      "length": 36,
+      "width": 6
+    },
+    "quantity": 137,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 8187,
+    "order_id": "e985dad3-02df-4f8a-9256-4bfca8830ce9",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "1da5b2a3-6a53-49de-bbce-4521ef09cd5c",
+      "name": "SatinDeco",
+      "thickness": "1/2",
+      "shape": "Arch-Top",
+      "tint": "Satin Etch",
+      "length": 63,
+      "width": 6
+    },
+    "quantity": 179,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 9107,
+    "order_id": "56facd0e-0b55-40cf-b818-7624933560f4",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "c5eb32fe-3209-43d3-a63c-f5d3c3555c8b",
+      "name": "IS20 LE-T",
+      "thickness": "1/2",
+      "shape": "Parallelogram",
+      "tint": "Satin Etch",
+      "length": 93,
+      "width": 10
+    },
+    "quantity": 6,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 9120,
+    "order_id": "56facd0e-0b55-40cf-b818-7624933560f4",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "aeab03c7-9242-4c4d-a53a-ef341b9fed6f",
+      "name": "AG 43",
+      "thickness": "1/4",
+      "shape": "Arch Side",
+      "tint": "Ultra Clear",
+      "length": 27,
+      "width": 7
+    },
+    "quantity": 5,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 6238,
+    "order_id": "56facd0e-0b55-40cf-b818-7624933560f4",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "a1a67246-21b6-4ba1-9024-417369d628b0",
+      "name": "MC 68 LE-T",
+      "thickness": "1/8",
+      "shape": "Hexagon",
+      "tint": "Frosted Green Chip",
+      "length": 49,
+      "width": 2
+    },
+    "quantity": 21,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 7337,
+    "order_id": "56facd0e-0b55-40cf-b818-7624933560f4",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "a1a67246-21b6-4ba1-9024-417369d628b0",
+      "name": "MC 68 LE-T",
+      "thickness": "3/8",
+      "shape": "Half-Circle",
+      "tint": "Solex",
+      "length": 96,
+      "width": 40
+    },
+    "quantity": 6,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 2487,
+    "order_id": "56facd0e-0b55-40cf-b818-7624933560f4",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "1da5b2a3-6a53-49de-bbce-4521ef09cd5c",
+      "name": "SatinDeco",
+      "thickness": "1/4",
+      "shape": "Racetrack Oval",
+      "tint": "Clear",
+      "length": 38,
+      "width": 17
+    },
+    "quantity": 2,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 3014,
+    "order_id": "22a7a773-73fc-44c3-af2b-15f3960db705",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "82a54c94-9681-4ebe-9cd8-81cfa03056e1",
+      "name": "SN 68",
+      "thickness": "1/4",
+      "shape": "Single Slope Rectangle",
+      "tint": "Ultra Clear",
+      "length": 37,
+      "width": 24
+    },
+    "quantity": 56,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 9042,
+    "order_id": "22a7a773-73fc-44c3-af2b-15f3960db705",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "c908d94a-e129-4912-b3dd-29d7073c042d",
+      "name": "Sunguard Spandrel HT",
+      "thickness": "3/8",
+      "shape": "Octagon",
+      "tint": "Midnight Gray",
+      "length": 71,
+      "width": 24
+    },
+    "quantity": 5,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 7849,
+    "order_id": "22a7a773-73fc-44c3-af2b-15f3960db705",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "ec5ffa0f-39d8-4d03-94dd-95b190a8c2f5",
+      "name": "AG 50 LE",
+      "thickness": "3/8",
+      "shape": "Square/Rectangle",
+      "tint": "Bronze",
+      "length": 87,
+      "width": 40
+    },
+    "quantity": 64,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 4715,
+    "order_id": "22a7a773-73fc-44c3-af2b-15f3960db705",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "af123281-fd38-48a1-b865-f5d1c25307f8",
+      "name": "SNX-L 62/34",
+      "thickness": "3/8",
+      "shape": "Half-Circle with Notch",
+      "tint": "Bronze",
+      "length": 32,
+      "width": 13
+    },
+    "quantity": 166,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 7080,
+    "order_id": "22a7a773-73fc-44c3-af2b-15f3960db705",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "c5eb32fe-3209-43d3-a63c-f5d3c3555c8b",
+      "name": "IS20 LE-T",
+      "thickness": "3/4",
+      "shape": "Triangle",
+      "tint": "Satin Etch",
+      "length": 56,
+      "width": 37
+    },
+    "quantity": 170,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 4106,
+    "order_id": "2413f5ac-5f15-48d7-b0ec-c47442e665d2",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "cc546439-3cef-4f13-b365-c6893c05fc82",
+      "name": "SNR 35 HT",
+      "thickness": "1/8",
+      "shape": "Arch",
+      "tint": "Clear",
+      "length": 57,
       "width": 41
     },
     "quantity": 3,
     "note": "some note"
   },
   {
-    "order_item_id": 3681,
-    "order_id": "b7a00bb2-a569-491f-ad92-511c08d82812",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
+    "order_item_id": 8081,
+    "order_id": "2413f5ac-5f15-48d7-b0ec-c47442e665d2",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
     "product_config": {
-      "glass_id": "af9ab768-f43f-416f-8cb1-8e70979e0972",
-      "name": "Sunguard Spandrel HT",
-      "thickness": "1/2",
-      "shape": "Quarter Round",
-      "tint": "Midnight Gray",
-      "length": 65,
-      "width": 35
+      "glass_id": "ec5ffa0f-39d8-4d03-94dd-95b190a8c2f5",
+      "name": "AG 50 LE",
+      "thickness": "1/4",
+      "shape": "Pentagon",
+      "tint": "Clear",
+      "length": 93,
+      "width": 4
     },
-    "quantity": 135,
+    "quantity": 5,
     "note": "some note"
   },
   {
-    "order_item_id": 8744,
-    "order_id": "b7a00bb2-a569-491f-ad92-511c08d82812",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
+    "order_item_id": 5742,
+    "order_id": "2413f5ac-5f15-48d7-b0ec-c47442e665d2",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
     "product_config": {
-      "glass_id": "538c9855-17a0-410d-90d2-5e5e9f43c6c8",
+      "glass_id": "ec5ffa0f-39d8-4d03-94dd-95b190a8c2f5",
+      "name": "AG 50 LE",
+      "thickness": "3/4",
+      "shape": "Square/Rectangle",
+      "tint": "Bronze",
+      "length": 89,
+      "width": 44
+    },
+    "quantity": 41,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 3414,
+    "order_id": "2413f5ac-5f15-48d7-b0ec-c47442e665d2",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "af123281-fd38-48a1-b865-f5d1c25307f8",
       "name": "SNX-L 62/34",
       "thickness": "1/8",
       "shape": "Half-Circle",
-      "tint": "Solex",
-      "length": 46,
-      "width": 27
-    },
-    "quantity": 47,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 7969,
-    "order_id": "11259875-ff25-46b1-b0f8-9f446ab4b2da",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
-    "product_config": {
-      "glass_id": "cd774965-da25-463b-921f-441244911276",
-      "name": "AG 50 LE",
-      "thickness": "3/4",
-      "shape": "Clipped Corner(s)",
-      "tint": "Light Gray",
-      "length": 49,
-      "width": 28
-    },
-    "quantity": 59,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 8330,
-    "order_id": "11259875-ff25-46b1-b0f8-9f446ab4b2da",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "da450d2a-3d5e-4646-8941-677dd51f7f8b",
-      "name": "AG 43",
-      "thickness": "1/2",
-      "shape": "Quarter Round",
-      "tint": "P-516",
-      "length": 55,
-      "width": 38
-    },
-    "quantity": 209,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 5282,
-    "order_id": "11259875-ff25-46b1-b0f8-9f446ab4b2da",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
-    "product_config": {
-      "glass_id": "ef4a6120-93a8-450f-a7f9-6e75f27fde60",
-      "name": "MC 27 LE-A",
-      "thickness": "1/2",
-      "shape": "Quarter Round",
-      "tint": "P-516",
-      "length": 72,
-      "width": 39
-    },
-    "quantity": 54,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 9371,
-    "order_id": "11259875-ff25-46b1-b0f8-9f446ab4b2da",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
-    "product_config": {
-      "glass_id": "ef4a6120-93a8-450f-a7f9-6e75f27fde60",
-      "name": "MC 27 LE-A",
-      "thickness": "1/4",
-      "shape": "Right Triangle",
       "tint": "Mistlite",
-      "length": 73,
-      "width": 47
+      "length": 65,
+      "width": 29
     },
-    "quantity": 56,
+    "quantity": 178,
     "note": "some note"
   },
   {
-    "order_item_id": 269,
-    "order_id": "11259875-ff25-46b1-b0f8-9f446ab4b2da",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
+    "order_item_id": 2597,
+    "order_id": "2413f5ac-5f15-48d7-b0ec-c47442e665d2",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
     "product_config": {
-      "glass_id": "d0340245-d1b1-474d-b05b-1e330b5601d2",
-      "name": "SNR 35 HT",
-      "thickness": "3/4",
-      "shape": "Racetrack Oval",
-      "tint": "Clear",
-      "length": 96,
-      "width": 26
-    },
-    "quantity": 2,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 1332,
-    "order_id": "b4e7be6c-723e-4cc8-878c-ec812c83d692",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "538c9855-17a0-410d-90d2-5e5e9f43c6c8",
-      "name": "SNX-L 62/34",
-      "thickness": "3/4",
-      "shape": "Parallelogram",
-      "tint": "Bronze",
-      "length": 42,
-      "width": 24
-    },
-    "quantity": 8,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 4447,
-    "order_id": "b4e7be6c-723e-4cc8-878c-ec812c83d692",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
-    "product_config": {
-      "glass_id": "060bfe65-db6f-4f54-87f7-bea2ea6a249f",
-      "name": "SNE 50/25",
+      "glass_id": "a1a67246-21b6-4ba1-9024-417369d628b0",
+      "name": "MC 68 LE-T",
       "thickness": "1/8",
-      "shape": "Half-Circle with Notch",
+      "shape": "Trapezoid",
       "tint": "Low-E",
-      "length": 34,
-      "width": 20
+      "length": 52,
+      "width": 15
     },
-    "quantity": 51,
+    "quantity": 44,
     "note": "some note"
   },
   {
-    "order_item_id": 6183,
-    "order_id": "b4e7be6c-723e-4cc8-878c-ec812c83d692",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
+    "order_item_id": 5983,
+    "order_id": "2413f5ac-5f15-48d7-b0ec-c47442e665d2",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
     "product_config": {
-      "glass_id": "060bfe65-db6f-4f54-87f7-bea2ea6a249f",
-      "name": "SNE 50/25",
+      "glass_id": "d49c19b3-cf1a-4ad6-8ba4-bf127ce1de6f",
+      "name": "MC 27 LE-A",
       "thickness": "3/4",
       "shape": "Half-Circle with Notch",
-      "tint": "Dark Gray",
-      "length": 93,
+      "tint": "Bronze",
+      "length": 18,
       "width": 11
     },
     "quantity": 122,
     "note": "some note"
   },
   {
-    "order_item_id": 5851,
-    "order_id": "b4e7be6c-723e-4cc8-878c-ec812c83d692",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
+    "order_item_id": 574,
+    "order_id": "2413f5ac-5f15-48d7-b0ec-c47442e665d2",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
     "product_config": {
-      "glass_id": "28cb3997-daf6-464f-812d-97182ee602b3",
-      "name": "NU 40 LE",
+      "glass_id": "cc546439-3cef-4f13-b365-c6893c05fc82",
+      "name": "SNR 35 HT",
       "thickness": "3/8",
-      "shape": "Irregular/Any Other Shape",
-      "tint": "Solex",
-      "length": 96,
+      "shape": "Arch",
+      "tint": "Low-E",
+      "length": 29,
       "width": 14
     },
-    "quantity": 50,
+    "quantity": 10,
     "note": "some note"
   },
   {
-    "order_item_id": 82,
-    "order_id": "b4e7be6c-723e-4cc8-878c-ec812c83d692",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
+    "order_item_id": 6476,
+    "order_id": "ce36b65a-ae26-4f0e-85f1-f49a153c8e03",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
     "product_config": {
-      "glass_id": "28cb3997-daf6-464f-812d-97182ee602b3",
-      "name": "NU 40 LE",
-      "thickness": "1/8",
-      "shape": "Half-Circle",
-      "tint": "Light Gray",
-      "length": 62,
-      "width": 45
-    },
-    "quantity": 50,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 5365,
-    "order_id": "b4e7be6c-723e-4cc8-878c-ec812c83d692",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "90410c20-66fd-44a0-8009-3d5b8afc631a",
-      "name": "MC 68 LE-T",
-      "thickness": "1/2",
-      "shape": "Octagon",
-      "tint": "Frosted Blue Chip",
-      "length": 66,
-      "width": 20
-    },
-    "quantity": 107,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 8684,
-    "order_id": "b4e7be6c-723e-4cc8-878c-ec812c83d692",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "b4ad52ba-ba2e-4db7-815c-0f0087e58ff4",
-      "name": "SN 68",
-      "thickness": "1/4",
-      "shape": "Clipped Corner(s)",
-      "tint": "Satin Etch",
-      "length": 38,
-      "width": 6
-    },
-    "quantity": 6,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 350,
-    "order_id": "b4e7be6c-723e-4cc8-878c-ec812c83d692",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
-    "product_config": {
-      "glass_id": "da450d2a-3d5e-4646-8941-677dd51f7f8b",
-      "name": "AG 43",
-      "thickness": "1/2",
-      "shape": "Octagon",
-      "tint": "Satin Etch",
-      "length": 91,
-      "width": 13
-    },
-    "quantity": 129,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 4304,
-    "order_id": "98386f2b-bc83-4159-861a-59916a41f874",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
-    "product_config": {
-      "glass_id": "da450d2a-3d5e-4646-8941-677dd51f7f8b",
-      "name": "AG 43",
-      "thickness": "3/4",
-      "shape": "Irregular/Any Other Shape",
-      "tint": "Light Gray",
-      "length": 42,
-      "width": 21
-    },
-    "quantity": 210,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 6198,
-    "order_id": "98386f2b-bc83-4159-861a-59916a41f874",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "da450d2a-3d5e-4646-8941-677dd51f7f8b",
-      "name": "AG 43",
-      "thickness": "1/2",
-      "shape": "Octagon",
-      "tint": "Satin Etch",
-      "length": 93,
-      "width": 4
-    },
-    "quantity": 6,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 3808,
-    "order_id": "98386f2b-bc83-4159-861a-59916a41f874",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "060bfe65-db6f-4f54-87f7-bea2ea6a249f",
+      "glass_id": "004c4786-d558-43e7-82be-795f60182ef7",
       "name": "SNE 50/25",
-      "thickness": "3/4",
-      "shape": "Half-Circle with Notch",
-      "tint": "Low-E",
-      "length": 39,
-      "width": 4
-    },
-    "quantity": 27,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 693,
-    "order_id": "98386f2b-bc83-4159-861a-59916a41f874",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "24c66f1f-bd90-4fc2-b3e2-7ed7cb667b00",
-      "name": "IS20 LE-T",
-      "thickness": "1/8",
-      "shape": "Octagon",
-      "tint": "Frosted Blue Chip",
-      "length": 93,
-      "width": 18
-    },
-    "quantity": 42,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 5176,
-    "order_id": "98386f2b-bc83-4159-861a-59916a41f874",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "cd774965-da25-463b-921f-441244911276",
-      "name": "AG 50 LE",
-      "thickness": "1/4",
+      "thickness": "3/8",
       "shape": "Rounded Corner(s)",
-      "tint": "Satin Etch",
-      "length": 44,
-      "width": 39
-    },
-    "quantity": 3,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 907,
-    "order_id": "39a638b5-6ea4-4e1c-875c-492e89a9a2de",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "ea045be8-3c33-4a2d-9137-da2e180210eb",
-      "name": "SatinDeco",
-      "thickness": "1/2",
-      "shape": "Trapezoid",
-      "tint": "Bronze",
-      "length": 53,
-      "width": 33
-    },
-    "quantity": 7,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 40,
-    "order_id": "39a638b5-6ea4-4e1c-875c-492e89a9a2de",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
-    "product_config": {
-      "glass_id": "cd774965-da25-463b-921f-441244911276",
-      "name": "AG 50 LE",
-      "thickness": "3/8",
-      "shape": "Trapezoid",
-      "tint": "Frosted Green Chip",
-      "length": 67,
-      "width": 46
-    },
-    "quantity": 14,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 9919,
-    "order_id": "39a638b5-6ea4-4e1c-875c-492e89a9a2de",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
-    "product_config": {
-      "glass_id": "90410c20-66fd-44a0-8009-3d5b8afc631a",
-      "name": "MC 68 LE-T",
-      "thickness": "3/8",
-      "shape": "Ellipse",
-      "tint": "Frosted Green Chip",
-      "length": 56,
-      "width": 11
-    },
-    "quantity": 131,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 9787,
-    "order_id": "6ead5db8-a4fe-44d9-81ee-ce1a3c699510",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "ef4a6120-93a8-450f-a7f9-6e75f27fde60",
-      "name": "MC 27 LE-A",
-      "thickness": "1/4",
-      "shape": "Quarter Round with Notch",
-      "tint": "Light Gray",
-      "length": 87,
-      "width": 47
-    },
-    "quantity": 19,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 2542,
-    "order_id": "6ead5db8-a4fe-44d9-81ee-ce1a3c699510",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "da450d2a-3d5e-4646-8941-677dd51f7f8b",
-      "name": "AG 43",
-      "thickness": "1/4",
-      "shape": "Octagon",
-      "tint": "P-516",
-      "length": 14,
-      "width": 11
-    },
-    "quantity": 59,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 5253,
-    "order_id": "6ead5db8-a4fe-44d9-81ee-ce1a3c699510",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "538c9855-17a0-410d-90d2-5e5e9f43c6c8",
-      "name": "SNX-L 62/34",
-      "thickness": "1/4",
-      "shape": "Arch-Top",
-      "tint": "P-516",
-      "length": 66,
-      "width": 38
-    },
-    "quantity": 107,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 5324,
-    "order_id": "6ead5db8-a4fe-44d9-81ee-ce1a3c699510",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
-    "product_config": {
-      "glass_id": "90410c20-66fd-44a0-8009-3d5b8afc631a",
-      "name": "MC 68 LE-T",
-      "thickness": "1/8",
-      "shape": "Circle",
-      "tint": "Frosted Blue Chip",
+      "tint": "Dark Gray",
       "length": 28,
-      "width": 15
-    },
-    "quantity": 98,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 3784,
-    "order_id": "6ead5db8-a4fe-44d9-81ee-ce1a3c699510",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
-    "product_config": {
-      "glass_id": "91454f2a-292a-4b6c-91bc-2b126062ab5f",
-      "name": "SN 68 HT",
-      "thickness": "3/4",
-      "shape": "Single Slope Rectangle",
-      "tint": "Dark Gray",
-      "length": 87,
-      "width": 9
-    },
-    "quantity": 2,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 2911,
-    "order_id": "6ead5db8-a4fe-44d9-81ee-ce1a3c699510",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
-    "product_config": {
-      "glass_id": "ea045be8-3c33-4a2d-9137-da2e180210eb",
-      "name": "SatinDeco",
-      "thickness": "3/4",
-      "shape": "Quad Arch",
-      "tint": "Midnight Gray",
-      "length": 54,
-      "width": 28
-    },
-    "quantity": 10,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 2845,
-    "order_id": "6ead5db8-a4fe-44d9-81ee-ce1a3c699510",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "d0340245-d1b1-474d-b05b-1e330b5601d2",
-      "name": "SNR 35 HT",
-      "thickness": "3/4",
-      "shape": "Quarter Round",
-      "tint": "Clear",
-      "length": 43,
-      "width": 12
-    },
-    "quantity": 2,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 4209,
-    "order_id": "6ead5db8-a4fe-44d9-81ee-ce1a3c699510",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "538c9855-17a0-410d-90d2-5e5e9f43c6c8",
-      "name": "SNX-L 62/34",
-      "thickness": "1/8",
-      "shape": "Clipped Corner(s)",
-      "tint": "Solex",
-      "length": 56,
-      "width": 39
-    },
-    "quantity": 40,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 2091,
-    "order_id": "6ead5db8-a4fe-44d9-81ee-ce1a3c699510",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
-    "product_config": {
-      "glass_id": "ef4a6120-93a8-450f-a7f9-6e75f27fde60",
-      "name": "MC 27 LE-A",
-      "thickness": "1/4",
-      "shape": "Trapezoid",
-      "tint": "Mistlite",
-      "length": 66,
-      "width": 38
-    },
-    "quantity": 29,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 9881,
-    "order_id": "4c5dbf11-bbbf-4e9e-a1d1-c01ae323babe",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "cd774965-da25-463b-921f-441244911276",
-      "name": "AG 50 LE",
-      "thickness": "3/8",
-      "shape": "Trapezoid",
-      "tint": "Light Gray",
-      "length": 78,
-      "width": 34
-    },
-    "quantity": 24,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 4834,
-    "order_id": "4c5dbf11-bbbf-4e9e-a1d1-c01ae323babe",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "b4ad52ba-ba2e-4db7-815c-0f0087e58ff4",
-      "name": "SN 68",
-      "thickness": "1/4",
-      "shape": "Half-Circle",
-      "tint": "Frosted Green Chip",
-      "length": 30,
-      "width": 22
-    },
-    "quantity": 96,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 1359,
-    "order_id": "4c5dbf11-bbbf-4e9e-a1d1-c01ae323babe",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
-    "product_config": {
-      "glass_id": "af9ab768-f43f-416f-8cb1-8e70979e0972",
-      "name": "Sunguard Spandrel HT",
-      "thickness": "3/8",
-      "shape": "Arch Top & Bottom",
-      "tint": "Ultra Clear",
-      "length": 89,
-      "width": 24
-    },
-    "quantity": 172,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 9006,
-    "order_id": "4c5dbf11-bbbf-4e9e-a1d1-c01ae323babe",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "ea045be8-3c33-4a2d-9137-da2e180210eb",
-      "name": "SatinDeco",
-      "thickness": "1/2",
-      "shape": "Racetrack Oval",
-      "tint": "Light Gray",
-      "length": 75,
-      "width": 33
-    },
-    "quantity": 63,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 2036,
-    "order_id": "4c5dbf11-bbbf-4e9e-a1d1-c01ae323babe",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "90410c20-66fd-44a0-8009-3d5b8afc631a",
-      "name": "MC 68 LE-T",
-      "thickness": "1/2",
-      "shape": "Arch Side",
-      "tint": "Frosted Blue Chip",
-      "length": 69,
-      "width": 16
-    },
-    "quantity": 130,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 3846,
-    "order_id": "4c5dbf11-bbbf-4e9e-a1d1-c01ae323babe",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
-    "product_config": {
-      "glass_id": "ea045be8-3c33-4a2d-9137-da2e180210eb",
-      "name": "SatinDeco",
-      "thickness": "3/4",
-      "shape": "Square/Rectangle",
-      "tint": "Bronze",
-      "length": 93,
-      "width": 22
-    },
-    "quantity": 51,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 9114,
-    "order_id": "4c5dbf11-bbbf-4e9e-a1d1-c01ae323babe",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "ef4a6120-93a8-450f-a7f9-6e75f27fde60",
-      "name": "MC 27 LE-A",
-      "thickness": "1/8",
-      "shape": "Racetrack Oval",
-      "tint": "Mistlite",
-      "length": 74,
-      "width": 42
-    },
-    "quantity": 136,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 1799,
-    "order_id": "14bb4d04-ca61-43d4-bed5-d3eab9bf618a",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "cd774965-da25-463b-921f-441244911276",
-      "name": "AG 50 LE",
-      "thickness": "3/4",
-      "shape": "Octagon",
-      "tint": "Mistlite",
-      "length": 91,
-      "width": 4
-    },
-    "quantity": 59,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 281,
-    "order_id": "14bb4d04-ca61-43d4-bed5-d3eab9bf618a",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
-    "product_config": {
-      "glass_id": "46247eed-86b1-4ea7-bddf-4c8a7c89565a",
-      "name": "MC 68 LE-A",
-      "thickness": "3/8",
-      "shape": "Irregular/Any Other Shape",
-      "tint": "Frosted Blue Chip",
-      "length": 32,
-      "width": 6
-    },
-    "quantity": 55,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 3955,
-    "order_id": "14bb4d04-ca61-43d4-bed5-d3eab9bf618a",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
-    "product_config": {
-      "glass_id": "b4ad52ba-ba2e-4db7-815c-0f0087e58ff4",
-      "name": "SN 68",
-      "thickness": "1/4",
-      "shape": "Racetrack Oval",
-      "tint": "Satin Etch",
-      "length": 70,
-      "width": 8
-    },
-    "quantity": 188,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 4168,
-    "order_id": "14bb4d04-ca61-43d4-bed5-d3eab9bf618a",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "90410c20-66fd-44a0-8009-3d5b8afc631a",
-      "name": "MC 68 LE-T",
-      "thickness": "1/4",
-      "shape": "Quarter Round",
-      "tint": "Frosted Blue Chip",
-      "length": 39,
-      "width": 38
-    },
-    "quantity": 9,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 4078,
-    "order_id": "14bb4d04-ca61-43d4-bed5-d3eab9bf618a",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "af9ab768-f43f-416f-8cb1-8e70979e0972",
-      "name": "Sunguard Spandrel HT",
-      "thickness": "1/8",
-      "shape": "Arch-Top",
-      "tint": "Midnight Gray",
-      "length": 70,
-      "width": 26
-    },
-    "quantity": 40,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 7841,
-    "order_id": "14bb4d04-ca61-43d4-bed5-d3eab9bf618a",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
-    "product_config": {
-      "glass_id": "538c9855-17a0-410d-90d2-5e5e9f43c6c8",
-      "name": "SNX-L 62/34",
-      "thickness": "1/2",
-      "shape": "Triangle",
-      "tint": "Solex",
-      "length": 37,
-      "width": 7
-    },
-    "quantity": 38,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 9155,
-    "order_id": "14bb4d04-ca61-43d4-bed5-d3eab9bf618a",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "24c66f1f-bd90-4fc2-b3e2-7ed7cb667b00",
-      "name": "IS20 LE-T",
-      "thickness": "1/2",
-      "shape": "Square/Rectangle",
-      "tint": "Mistlite",
-      "length": 84,
-      "width": 10
-    },
-    "quantity": 136,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 4174,
-    "order_id": "14bb4d04-ca61-43d4-bed5-d3eab9bf618a",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "538c9855-17a0-410d-90d2-5e5e9f43c6c8",
-      "name": "SNX-L 62/34",
-      "thickness": "3/8",
-      "shape": "Pentagon",
-      "tint": "Bronze",
-      "length": 61,
-      "width": 48
-    },
-    "quantity": 2,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 5465,
-    "order_id": "e2b44462-d509-49c8-b90f-930ad5cdd87a",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "b4ad52ba-ba2e-4db7-815c-0f0087e58ff4",
-      "name": "SN 68",
-      "thickness": "1/4",
-      "shape": "Clipped Corner(s)",
-      "tint": "Mistlite",
-      "length": 86,
-      "width": 11
-    },
-    "quantity": 10,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 8043,
-    "order_id": "e2b44462-d509-49c8-b90f-930ad5cdd87a",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "91454f2a-292a-4b6c-91bc-2b126062ab5f",
-      "name": "SN 68 HT",
-      "thickness": "1/4",
-      "shape": "Triangle",
-      "tint": "Dark Gray",
-      "length": 84,
-      "width": 46
-    },
-    "quantity": 109,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 9268,
-    "order_id": "e2b44462-d509-49c8-b90f-930ad5cdd87a",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "538c9855-17a0-410d-90d2-5e5e9f43c6c8",
-      "name": "SNX-L 62/34",
-      "thickness": "1/4",
-      "shape": "Pentagon",
-      "tint": "P-516",
-      "length": 91,
-      "width": 17
-    },
-    "quantity": 183,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 6994,
-    "order_id": "e2b44462-d509-49c8-b90f-930ad5cdd87a",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "ef4a6120-93a8-450f-a7f9-6e75f27fde60",
-      "name": "MC 27 LE-A",
-      "thickness": "3/4",
-      "shape": "Clipped Corner(s)",
-      "tint": "Ultra Clear",
-      "length": 81,
-      "width": 38
-    },
-    "quantity": 101,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 5111,
-    "order_id": "e2b44462-d509-49c8-b90f-930ad5cdd87a",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
-    "product_config": {
-      "glass_id": "af9ab768-f43f-416f-8cb1-8e70979e0972",
-      "name": "Sunguard Spandrel HT",
-      "thickness": "1/2",
-      "shape": "Parallelogram",
-      "tint": "Ultra Clear",
-      "length": 88,
-      "width": 13
-    },
-    "quantity": 10,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 3745,
-    "order_id": "e2b44462-d509-49c8-b90f-930ad5cdd87a",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "24c66f1f-bd90-4fc2-b3e2-7ed7cb667b00",
-      "name": "IS20 LE-T",
-      "thickness": "1/2",
-      "shape": "Octagon",
-      "tint": "Mistlite",
-      "length": 57,
-      "width": 12
-    },
-    "quantity": 6,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 7016,
-    "order_id": "e2b44462-d509-49c8-b90f-930ad5cdd87a",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "b4ad52ba-ba2e-4db7-815c-0f0087e58ff4",
-      "name": "SN 68",
-      "thickness": "1/4",
-      "shape": "Single Slope Rectangle",
-      "tint": "Satin Etch",
-      "length": 88,
-      "width": 48
-    },
-    "quantity": 8,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 7505,
-    "order_id": "4d687a87-f583-4ff5-a426-e099b0d4a9f3",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
-    "product_config": {
-      "glass_id": "46247eed-86b1-4ea7-bddf-4c8a7c89565a",
-      "name": "MC 68 LE-A",
-      "thickness": "1/2",
-      "shape": "Triangle",
-      "tint": "Satin Etch",
-      "length": 79,
-      "width": 20
-    },
-    "quantity": 4,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 3068,
-    "order_id": "4d687a87-f583-4ff5-a426-e099b0d4a9f3",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "d0340245-d1b1-474d-b05b-1e330b5601d2",
-      "name": "SNR 35 HT",
-      "thickness": "3/8",
-      "shape": "Racetrack Oval",
-      "tint": "P-516",
-      "length": 52,
-      "width": 7
-    },
-    "quantity": 160,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 8105,
-    "order_id": "ed859693-c1c7-429a-b5eb-6352852319fe",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "ef4a6120-93a8-450f-a7f9-6e75f27fde60",
-      "name": "MC 27 LE-A",
-      "thickness": "1/2",
-      "shape": "Right Triangle",
-      "tint": "P-516",
-      "length": 56,
-      "width": 5
-    },
-    "quantity": 45,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 482,
-    "order_id": "971a7d50-977e-46eb-b28e-18dde6f06fd8",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "90410c20-66fd-44a0-8009-3d5b8afc631a",
-      "name": "MC 68 LE-T",
-      "thickness": "1/8",
-      "shape": "Octagon",
-      "tint": "Frosted Blue Chip",
-      "length": 30,
-      "width": 6
-    },
-    "quantity": 3,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 5778,
-    "order_id": "971a7d50-977e-46eb-b28e-18dde6f06fd8",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "d0340245-d1b1-474d-b05b-1e330b5601d2",
-      "name": "SNR 35 HT",
-      "thickness": "1/2",
-      "shape": "Racetrack Oval",
-      "tint": "Clear",
-      "length": 57,
       "width": 27
     },
-    "quantity": 74,
+    "quantity": 132,
     "note": "some note"
   },
   {
-    "order_item_id": 7120,
-    "order_id": "971a7d50-977e-46eb-b28e-18dde6f06fd8",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
+    "order_item_id": 3236,
+    "order_id": "ce36b65a-ae26-4f0e-85f1-f49a153c8e03",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
     "product_config": {
-      "glass_id": "91454f2a-292a-4b6c-91bc-2b126062ab5f",
-      "name": "SN 68 HT",
-      "thickness": "3/4",
-      "shape": "Quarter Round",
-      "tint": "Low-E",
-      "length": 87,
-      "width": 48
-    },
-    "quantity": 47,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 3519,
-    "order_id": "2d4c3859-f211-49e0-928e-967b47476c27",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
-    "product_config": {
-      "glass_id": "24c66f1f-bd90-4fc2-b3e2-7ed7cb667b00",
-      "name": "IS20 LE-T",
-      "thickness": "1/4",
-      "shape": "Trapezoid",
-      "tint": "Solex",
-      "length": 73,
-      "width": 48
-    },
-    "quantity": 83,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 1085,
-    "order_id": "20fb15b8-ab09-4495-9af7-ca33d957b895",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "24c66f1f-bd90-4fc2-b3e2-7ed7cb667b00",
-      "name": "IS20 LE-T",
-      "thickness": "1/2",
-      "shape": "Octagon",
-      "tint": "Dark Gray",
-      "length": 53,
-      "width": 32
-    },
-    "quantity": 10,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 5012,
-    "order_id": "20fb15b8-ab09-4495-9af7-ca33d957b895",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "060bfe65-db6f-4f54-87f7-bea2ea6a249f",
-      "name": "SNE 50/25",
-      "thickness": "1/4",
-      "shape": "Quarter Round",
-      "tint": "Dark Gray",
-      "length": 59,
-      "width": 5
-    },
-    "quantity": 2,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 3188,
-    "order_id": "20fb15b8-ab09-4495-9af7-ca33d957b895",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
-    "product_config": {
-      "glass_id": "cd774965-da25-463b-921f-441244911276",
-      "name": "AG 50 LE",
-      "thickness": "3/8",
-      "shape": "Quad Arch",
-      "tint": "Satin Etch",
-      "length": 76,
-      "width": 4
-    },
-    "quantity": 60,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 4092,
-    "order_id": "20fb15b8-ab09-4495-9af7-ca33d957b895",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
-    "product_config": {
-      "glass_id": "46247eed-86b1-4ea7-bddf-4c8a7c89565a",
-      "name": "MC 68 LE-A",
-      "thickness": "1/8",
-      "shape": "Pentagon",
-      "tint": "Frosted Green Chip",
-      "length": 25,
-      "width": 12
-    },
-    "quantity": 16,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 3680,
-    "order_id": "20fb15b8-ab09-4495-9af7-ca33d957b895",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
-    "product_config": {
-      "glass_id": "28cb3997-daf6-464f-812d-97182ee602b3",
-      "name": "NU 40 LE",
-      "thickness": "1/8",
-      "shape": "Arch Side",
-      "tint": "Solex",
-      "length": 74,
-      "width": 11
-    },
-    "quantity": 11,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 8087,
-    "order_id": "20fb15b8-ab09-4495-9af7-ca33d957b895",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "b4ad52ba-ba2e-4db7-815c-0f0087e58ff4",
-      "name": "SN 68",
-      "thickness": "1/8",
-      "shape": "Arch Top & Bottom",
-      "tint": "Frosted Green Chip",
-      "length": 50,
-      "width": 36
-    },
-    "quantity": 9,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 6184,
-    "order_id": "20fb15b8-ab09-4495-9af7-ca33d957b895",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "90410c20-66fd-44a0-8009-3d5b8afc631a",
-      "name": "MC 68 LE-T",
-      "thickness": "3/8",
-      "shape": "Octagon",
-      "tint": "Frosted Blue Chip",
-      "length": 43,
-      "width": 8
-    },
-    "quantity": 11,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 6089,
-    "order_id": "35dc2680-5573-456d-ab94-fd8d112384bf",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "ef4a6120-93a8-450f-a7f9-6e75f27fde60",
-      "name": "MC 27 LE-A",
-      "thickness": "1/2",
-      "shape": "Quarter Round with Notch",
-      "tint": "Mistlite",
-      "length": 91,
-      "width": 47
-    },
-    "quantity": 5,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 5868,
-    "order_id": "35dc2680-5573-456d-ab94-fd8d112384bf",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
-    "product_config": {
-      "glass_id": "d0340245-d1b1-474d-b05b-1e330b5601d2",
-      "name": "SNR 35 HT",
-      "thickness": "1/4",
-      "shape": "Octagon",
-      "tint": "P-516",
-      "length": 14,
-      "width": 13
-    },
-    "quantity": 32,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 5022,
-    "order_id": "35dc2680-5573-456d-ab94-fd8d112384bf",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "91454f2a-292a-4b6c-91bc-2b126062ab5f",
-      "name": "SN 68 HT",
-      "thickness": "1/8",
-      "shape": "Triangle",
-      "tint": "P-516",
-      "length": 60,
-      "width": 2
-    },
-    "quantity": 13,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 5222,
-    "order_id": "35dc2680-5573-456d-ab94-fd8d112384bf",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "060bfe65-db6f-4f54-87f7-bea2ea6a249f",
-      "name": "SNE 50/25",
-      "thickness": "1/2",
-      "shape": "Quarter Round with Notch",
-      "tint": "Dark Gray",
-      "length": 93,
-      "width": 43
-    },
-    "quantity": 146,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 5960,
-    "order_id": "35dc2680-5573-456d-ab94-fd8d112384bf",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "b4ad52ba-ba2e-4db7-815c-0f0087e58ff4",
-      "name": "SN 68",
-      "thickness": "3/4",
-      "shape": "Parallelogram",
-      "tint": "Dark Gray",
-      "length": 59,
-      "width": 15
-    },
-    "quantity": 10,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 1992,
-    "order_id": "35dc2680-5573-456d-ab94-fd8d112384bf",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "b4ad52ba-ba2e-4db7-815c-0f0087e58ff4",
-      "name": "SN 68",
-      "thickness": "1/4",
-      "shape": "Clipped Corner(s)",
-      "tint": "Frosted Green Chip",
-      "length": 58,
-      "width": 34
-    },
-    "quantity": 19,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 2608,
-    "order_id": "35dc2680-5573-456d-ab94-fd8d112384bf",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
-    "product_config": {
-      "glass_id": "24c66f1f-bd90-4fc2-b3e2-7ed7cb667b00",
-      "name": "IS20 LE-T",
-      "thickness": "3/4",
-      "shape": "Square/Rectangle",
-      "tint": "Ultra Clear",
-      "length": 43,
-      "width": 14
-    },
-    "quantity": 8,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 4008,
-    "order_id": "35dc2680-5573-456d-ab94-fd8d112384bf",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "24c66f1f-bd90-4fc2-b3e2-7ed7cb667b00",
-      "name": "IS20 LE-T",
-      "thickness": "3/4",
-      "shape": "Trapezoid",
-      "tint": "P-516",
-      "length": 12,
-      "width": 1
-    },
-    "quantity": 5,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 2278,
-    "order_id": "35dc2680-5573-456d-ab94-fd8d112384bf",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "af9ab768-f43f-416f-8cb1-8e70979e0972",
-      "name": "Sunguard Spandrel HT",
-      "thickness": "1/4",
-      "shape": "Pentagon",
-      "tint": "Bronze",
-      "length": 92,
-      "width": 44
-    },
-    "quantity": 24,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 7004,
-    "order_id": "fd6ec134-8282-4954-8b46-d0f29dccc449",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "538c9855-17a0-410d-90d2-5e5e9f43c6c8",
+      "glass_id": "af123281-fd38-48a1-b865-f5d1c25307f8",
       "name": "SNX-L 62/34",
-      "thickness": "1/4",
-      "shape": "Clipped Corner(s)",
-      "tint": "Solex",
-      "length": 84,
-      "width": 12
-    },
-    "quantity": 199,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 2883,
-    "order_id": "fd6ec134-8282-4954-8b46-d0f29dccc449",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
-    "product_config": {
-      "glass_id": "b4ad52ba-ba2e-4db7-815c-0f0087e58ff4",
-      "name": "SN 68",
-      "thickness": "1/2",
-      "shape": "Single Slope Rectangle",
-      "tint": "Mistlite",
-      "length": 50,
-      "width": 14
-    },
-    "quantity": 70,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 2405,
-    "order_id": "fd6ec134-8282-4954-8b46-d0f29dccc449",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
-    "product_config": {
-      "glass_id": "ea045be8-3c33-4a2d-9137-da2e180210eb",
-      "name": "SatinDeco",
       "thickness": "1/8",
-      "shape": "Right Triangle",
-      "tint": "Dark Gray",
-      "length": 92,
-      "width": 12
-    },
-    "quantity": 1,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 8558,
-    "order_id": "fd6ec134-8282-4954-8b46-d0f29dccc449",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "d0340245-d1b1-474d-b05b-1e330b5601d2",
-      "name": "SNR 35 HT",
-      "thickness": "3/8",
-      "shape": "Quarter Round",
-      "tint": "Bronze",
-      "length": 67,
-      "width": 15
-    },
-    "quantity": 157,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 267,
-    "order_id": "fd6ec134-8282-4954-8b46-d0f29dccc449",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
-    "product_config": {
-      "glass_id": "46247eed-86b1-4ea7-bddf-4c8a7c89565a",
-      "name": "MC 68 LE-A",
-      "thickness": "3/8",
-      "shape": "Arch-Top",
-      "tint": "Frosted Blue Chip",
-      "length": 62,
-      "width": 36
-    },
-    "quantity": 5,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 7233,
-    "order_id": "fd6ec134-8282-4954-8b46-d0f29dccc449",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
-    "product_config": {
-      "glass_id": "cd774965-da25-463b-921f-441244911276",
-      "name": "AG 50 LE",
-      "thickness": "3/8",
-      "shape": "Clipped Corner(s)",
-      "tint": "Mistlite",
-      "length": 75,
-      "width": 48
-    },
-    "quantity": 39,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 9097,
-    "order_id": "fd6ec134-8282-4954-8b46-d0f29dccc449",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "060bfe65-db6f-4f54-87f7-bea2ea6a249f",
-      "name": "SNE 50/25",
-      "thickness": "3/8",
-      "shape": "Quarter Round",
-      "tint": "Bronze",
-      "length": 92,
-      "width": 19
-    },
-    "quantity": 10,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 9397,
-    "order_id": "fd6ec134-8282-4954-8b46-d0f29dccc449",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "538c9855-17a0-410d-90d2-5e5e9f43c6c8",
-      "name": "SNX-L 62/34",
-      "thickness": "3/4",
       "shape": "Pentagon",
-      "tint": "Solex",
-      "length": 75,
-      "width": 48
-    },
-    "quantity": 8,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 8875,
-    "order_id": "fd6ec134-8282-4954-8b46-d0f29dccc449",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
-    "product_config": {
-      "glass_id": "91454f2a-292a-4b6c-91bc-2b126062ab5f",
-      "name": "SN 68 HT",
-      "thickness": "1/4",
-      "shape": "Irregular/Any Other Shape",
-      "tint": "Dark Gray",
-      "length": 59,
-      "width": 24
-    },
-    "quantity": 58,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 9541,
-    "order_id": "0ed3ab75-82cd-4805-a583-a018aa35be82",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
-    "product_config": {
-      "glass_id": "cd774965-da25-463b-921f-441244911276",
-      "name": "AG 50 LE",
-      "thickness": "1/8",
-      "shape": "Quad Arch",
-      "tint": "Light Gray",
-      "length": 78,
-      "width": 44
-    },
-    "quantity": 14,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 3633,
-    "order_id": "0ed3ab75-82cd-4805-a583-a018aa35be82",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "24c66f1f-bd90-4fc2-b3e2-7ed7cb667b00",
-      "name": "IS20 LE-T",
-      "thickness": "1/2",
-      "shape": "Half-Circle",
-      "tint": "Frosted Blue Chip",
-      "length": 67,
-      "width": 42
-    },
-    "quantity": 14,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 2323,
-    "order_id": "0ed3ab75-82cd-4805-a583-a018aa35be82",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "060bfe65-db6f-4f54-87f7-bea2ea6a249f",
-      "name": "SNE 50/25",
-      "thickness": "1/2",
-      "shape": "Quarter Round with Notch",
-      "tint": "Low-E",
-      "length": 44,
-      "width": 36
-    },
-    "quantity": 70,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 6499,
-    "order_id": "0ed3ab75-82cd-4805-a583-a018aa35be82",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "cd774965-da25-463b-921f-441244911276",
-      "name": "AG 50 LE",
-      "thickness": "1/4",
-      "shape": "Octagon",
-      "tint": "Bronze",
-      "length": 43,
-      "width": 21
-    },
-    "quantity": 8,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 6052,
-    "order_id": "0ed3ab75-82cd-4805-a583-a018aa35be82",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "90410c20-66fd-44a0-8009-3d5b8afc631a",
-      "name": "MC 68 LE-T",
-      "thickness": "1/8",
-      "shape": "Racetrack Oval",
-      "tint": "Frosted Green Chip",
-      "length": 63,
-      "width": 37
-    },
-    "quantity": 172,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 4701,
-    "order_id": "0ed3ab75-82cd-4805-a583-a018aa35be82",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
-    "product_config": {
-      "glass_id": "91454f2a-292a-4b6c-91bc-2b126062ab5f",
-      "name": "SN 68 HT",
-      "thickness": "3/8",
-      "shape": "Octagon",
-      "tint": "P-516",
-      "length": 28,
-      "width": 24
-    },
-    "quantity": 5,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 4680,
-    "order_id": "0ed3ab75-82cd-4805-a583-a018aa35be82",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
-    "product_config": {
-      "glass_id": "af9ab768-f43f-416f-8cb1-8e70979e0972",
-      "name": "Sunguard Spandrel HT",
-      "thickness": "3/8",
-      "shape": "Arch Top & Bottom",
-      "tint": "Midnight Gray",
-      "length": 77,
-      "width": 13
-    },
-    "quantity": 78,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 6875,
-    "order_id": "27970a59-26da-4d82-a503-5e431ff09d6b",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "d0340245-d1b1-474d-b05b-1e330b5601d2",
-      "name": "SNR 35 HT",
-      "thickness": "1/4",
-      "shape": "Ellipse",
-      "tint": "P-516",
-      "length": 85,
-      "width": 5
-    },
-    "quantity": 8,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 4985,
-    "order_id": "27970a59-26da-4d82-a503-5e431ff09d6b",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "90410c20-66fd-44a0-8009-3d5b8afc631a",
-      "name": "MC 68 LE-T",
-      "thickness": "3/8",
-      "shape": "Half-Circle",
-      "tint": "Frosted Green Chip",
-      "length": 31,
-      "width": 23
-    },
-    "quantity": 5,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 6445,
-    "order_id": "27970a59-26da-4d82-a503-5e431ff09d6b",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "af9ab768-f43f-416f-8cb1-8e70979e0972",
-      "name": "Sunguard Spandrel HT",
-      "thickness": "3/4",
-      "shape": "Arch-Top",
-      "tint": "Dark Gray",
-      "length": 60,
-      "width": 41
-    },
-    "quantity": 23,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 892,
-    "order_id": "27970a59-26da-4d82-a503-5e431ff09d6b",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
-    "product_config": {
-      "glass_id": "ea045be8-3c33-4a2d-9137-da2e180210eb",
-      "name": "SatinDeco",
-      "thickness": "3/8",
-      "shape": "Quarter Round",
-      "tint": "Frosted Blue Chip",
-      "length": 53,
-      "width": 8
-    },
-    "quantity": 2,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 4910,
-    "order_id": "27970a59-26da-4d82-a503-5e431ff09d6b",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "b4ad52ba-ba2e-4db7-815c-0f0087e58ff4",
-      "name": "SN 68",
-      "thickness": "3/8",
-      "shape": "Arch Top & Bottom",
-      "tint": "Frosted Green Chip",
-      "length": 30,
-      "width": 17
-    },
-    "quantity": 17,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 137,
-    "order_id": "0e4de2f6-6b6e-42fb-bf49-189c7fd1015e",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "b4ad52ba-ba2e-4db7-815c-0f0087e58ff4",
-      "name": "SN 68",
-      "thickness": "1/8",
-      "shape": "Parallelogram",
-      "tint": "Satin Etch",
-      "length": 90,
-      "width": 16
-    },
-    "quantity": 60,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 3532,
-    "order_id": "0e4de2f6-6b6e-42fb-bf49-189c7fd1015e",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "24c66f1f-bd90-4fc2-b3e2-7ed7cb667b00",
-      "name": "IS20 LE-T",
-      "thickness": "1/2",
-      "shape": "Trapezoid",
-      "tint": "Frosted Blue Chip",
-      "length": 31,
-      "width": 29
-    },
-    "quantity": 47,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 193,
-    "order_id": "0e4de2f6-6b6e-42fb-bf49-189c7fd1015e",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
-    "product_config": {
-      "glass_id": "da450d2a-3d5e-4646-8941-677dd51f7f8b",
-      "name": "AG 43",
-      "thickness": "1/4",
-      "shape": "Right Triangle",
-      "tint": "Satin Etch",
-      "length": 43,
-      "width": 28
-    },
-    "quantity": 6,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 9944,
-    "order_id": "0e4de2f6-6b6e-42fb-bf49-189c7fd1015e",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "cd774965-da25-463b-921f-441244911276",
-      "name": "AG 50 LE",
-      "thickness": "1/4",
-      "shape": "Quad Arch",
-      "tint": "Light Gray",
-      "length": 67,
-      "width": 43
-    },
-    "quantity": 3,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 4076,
-    "order_id": "0e4de2f6-6b6e-42fb-bf49-189c7fd1015e",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "af9ab768-f43f-416f-8cb1-8e70979e0972",
-      "name": "Sunguard Spandrel HT",
-      "thickness": "1/2",
-      "shape": "Parallelogram",
-      "tint": "Midnight Gray",
-      "length": 25,
-      "width": 23
-    },
-    "quantity": 19,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 6744,
-    "order_id": "0e4de2f6-6b6e-42fb-bf49-189c7fd1015e",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "90410c20-66fd-44a0-8009-3d5b8afc631a",
-      "name": "MC 68 LE-T",
-      "thickness": "1/4",
-      "shape": "Quarter Round",
-      "tint": "Frosted Green Chip",
-      "length": 55,
-      "width": 48
-    },
-    "quantity": 9,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 4999,
-    "order_id": "0e4de2f6-6b6e-42fb-bf49-189c7fd1015e",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "91454f2a-292a-4b6c-91bc-2b126062ab5f",
-      "name": "SN 68 HT",
-      "thickness": "1/8",
-      "shape": "Triangle",
-      "tint": "Low-E",
-      "length": 60,
-      "width": 47
-    },
-    "quantity": 10,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 9595,
-    "order_id": "0e4de2f6-6b6e-42fb-bf49-189c7fd1015e",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "af9ab768-f43f-416f-8cb1-8e70979e0972",
-      "name": "Sunguard Spandrel HT",
-      "thickness": "1/8",
-      "shape": "Triangle",
-      "tint": "Ultra Clear",
+      "tint": "Mistlite",
       "length": 65,
-      "width": 10
-    },
-    "quantity": 1,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 9544,
-    "order_id": "0e4de2f6-6b6e-42fb-bf49-189c7fd1015e",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
-    "product_config": {
-      "glass_id": "46247eed-86b1-4ea7-bddf-4c8a7c89565a",
-      "name": "MC 68 LE-A",
-      "thickness": "3/4",
-      "shape": "House",
-      "tint": "Solex",
-      "length": 95,
-      "width": 21
-    },
-    "quantity": 56,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 2731,
-    "order_id": "8e8158cd-d2c1-4a2d-a049-bbb92aefa108",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "ea045be8-3c33-4a2d-9137-da2e180210eb",
-      "name": "SatinDeco",
-      "thickness": "1/4",
-      "shape": "Racetrack Oval",
-      "tint": "Frosted Blue Chip",
-      "length": 14,
-      "width": 9
-    },
-    "quantity": 41,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 924,
-    "order_id": "8e8158cd-d2c1-4a2d-a049-bbb92aefa108",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
-    "product_config": {
-      "glass_id": "af9ab768-f43f-416f-8cb1-8e70979e0972",
-      "name": "Sunguard Spandrel HT",
-      "thickness": "3/8",
-      "shape": "Quarter Round",
-      "tint": "Clear",
-      "length": 95,
-      "width": 48
-    },
-    "quantity": 1,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 7578,
-    "order_id": "8e8158cd-d2c1-4a2d-a049-bbb92aefa108",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "da450d2a-3d5e-4646-8941-677dd51f7f8b",
-      "name": "AG 43",
-      "thickness": "1/4",
-      "shape": "Octagon",
-      "tint": "Ultra Clear",
-      "length": 85,
-      "width": 5
-    },
-    "quantity": 6,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 9126,
-    "order_id": "8e8158cd-d2c1-4a2d-a049-bbb92aefa108",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "ea045be8-3c33-4a2d-9137-da2e180210eb",
-      "name": "SatinDeco",
-      "thickness": "1/4",
-      "shape": "Racetrack Oval",
-      "tint": "Light Gray",
-      "length": 70,
-      "width": 5
-    },
-    "quantity": 31,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 1019,
-    "order_id": "8e8158cd-d2c1-4a2d-a049-bbb92aefa108",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "ef4a6120-93a8-450f-a7f9-6e75f27fde60",
-      "name": "MC 27 LE-A",
-      "thickness": "3/8",
-      "shape": "Triangle",
-      "tint": "P-516",
-      "length": 41,
-      "width": 13
-    },
-    "quantity": 60,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 5272,
-    "order_id": "8e8158cd-d2c1-4a2d-a049-bbb92aefa108",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "d0340245-d1b1-474d-b05b-1e330b5601d2",
-      "name": "SNR 35 HT",
-      "thickness": "3/4",
-      "shape": "Ellipse",
-      "tint": "Frosted Green Chip",
-      "length": 89,
-      "width": 46
-    },
-    "quantity": 22,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 743,
-    "order_id": "8e8158cd-d2c1-4a2d-a049-bbb92aefa108",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "af9ab768-f43f-416f-8cb1-8e70979e0972",
-      "name": "Sunguard Spandrel HT",
-      "thickness": "1/8",
-      "shape": "Octagon",
-      "tint": "Midnight Gray",
-      "length": 95,
-      "width": 41
-    },
-    "quantity": 6,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 9278,
-    "order_id": "8e8158cd-d2c1-4a2d-a049-bbb92aefa108",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
-    "product_config": {
-      "glass_id": "d0340245-d1b1-474d-b05b-1e330b5601d2",
-      "name": "SNR 35 HT",
-      "thickness": "3/8",
-      "shape": "Quad Arch",
-      "tint": "Bronze",
-      "length": 71,
-      "width": 30
-    },
-    "quantity": 39,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 1018,
-    "order_id": "8e8158cd-d2c1-4a2d-a049-bbb92aefa108",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "538c9855-17a0-410d-90d2-5e5e9f43c6c8",
-      "name": "SNX-L 62/34",
-      "thickness": "3/8",
-      "shape": "Half-Circle",
-      "tint": "Ultra Clear",
-      "length": 78,
-      "width": 37
-    },
-    "quantity": 2,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 3744,
-    "order_id": "3beb630c-ded2-4f0e-a8fb-1e08919c5558",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "46247eed-86b1-4ea7-bddf-4c8a7c89565a",
-      "name": "MC 68 LE-A",
-      "thickness": "3/8",
-      "shape": "Triangle",
-      "tint": "Dark Gray",
-      "length": 95,
-      "width": 18
-    },
-    "quantity": 7,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 4418,
-    "order_id": "3beb630c-ded2-4f0e-a8fb-1e08919c5558",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "af9ab768-f43f-416f-8cb1-8e70979e0972",
-      "name": "Sunguard Spandrel HT",
-      "thickness": "3/8",
-      "shape": "Quarter Round",
-      "tint": "Ultra Clear",
-      "length": 43,
-      "width": 26
-    },
-    "quantity": 29,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 8246,
-    "order_id": "3beb630c-ded2-4f0e-a8fb-1e08919c5558",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
-    "product_config": {
-      "glass_id": "cd774965-da25-463b-921f-441244911276",
-      "name": "AG 50 LE",
-      "thickness": "3/8",
-      "shape": "Arch",
-      "tint": "Bronze",
-      "length": 93,
-      "width": 48
-    },
-    "quantity": 7,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 7188,
-    "order_id": "3beb630c-ded2-4f0e-a8fb-1e08919c5558",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "90410c20-66fd-44a0-8009-3d5b8afc631a",
-      "name": "MC 68 LE-T",
-      "thickness": "1/2",
-      "shape": "Half-Circle",
-      "tint": "Satin Etch",
-      "length": 31,
-      "width": 25
-    },
-    "quantity": 55,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 4495,
-    "order_id": "3beb630c-ded2-4f0e-a8fb-1e08919c5558",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
-    "product_config": {
-      "glass_id": "ea045be8-3c33-4a2d-9137-da2e180210eb",
-      "name": "SatinDeco",
-      "thickness": "1/8",
-      "shape": "Square/Rectangle",
-      "tint": "Bronze",
-      "length": 13,
-      "width": 11
-    },
-    "quantity": 23,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 4212,
-    "order_id": "3beb630c-ded2-4f0e-a8fb-1e08919c5558",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
-    "product_config": {
-      "glass_id": "ef4a6120-93a8-450f-a7f9-6e75f27fde60",
-      "name": "MC 27 LE-A",
-      "thickness": "1/8",
-      "shape": "Racetrack Oval",
-      "tint": "P-516",
-      "length": 28,
-      "width": 19
-    },
-    "quantity": 2,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 6671,
-    "order_id": "3beb630c-ded2-4f0e-a8fb-1e08919c5558",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "538c9855-17a0-410d-90d2-5e5e9f43c6c8",
-      "name": "SNX-L 62/34",
-      "thickness": "3/4",
-      "shape": "Parallelogram",
-      "tint": "Bronze",
-      "length": 90,
-      "width": 44
-    },
-    "quantity": 65,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 9872,
-    "order_id": "0963c2f9-7706-4012-a14a-c17f097acf64",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "90410c20-66fd-44a0-8009-3d5b8afc631a",
-      "name": "MC 68 LE-T",
-      "thickness": "1/8",
-      "shape": "Irregular/Any Other Shape",
-      "tint": "Frosted Blue Chip",
-      "length": 44,
-      "width": 32
-    },
-    "quantity": 46,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 4597,
-    "order_id": "e2e473b5-e475-4a75-9ae1-0321bed851bb",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "af9ab768-f43f-416f-8cb1-8e70979e0972",
-      "name": "Sunguard Spandrel HT",
-      "thickness": "1/4",
-      "shape": "Arch-Top",
-      "tint": "Solex",
-      "length": 60,
-      "width": 11
-    },
-    "quantity": 42,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 4611,
-    "order_id": "e2e473b5-e475-4a75-9ae1-0321bed851bb",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
-    "product_config": {
-      "glass_id": "d0340245-d1b1-474d-b05b-1e330b5601d2",
-      "name": "SNR 35 HT",
-      "thickness": "1/2",
-      "shape": "Square/Rectangle",
-      "tint": "Frosted Green Chip",
-      "length": 92,
-      "width": 37
-    },
-    "quantity": 6,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 8889,
-    "order_id": "5828185d-32e5-4c0f-9674-ccc86de40d62",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "da450d2a-3d5e-4646-8941-677dd51f7f8b",
-      "name": "AG 43",
-      "thickness": "3/8",
-      "shape": "Arch",
-      "tint": "Satin Etch",
-      "length": 91,
-      "width": 3
-    },
-    "quantity": 114,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 5364,
-    "order_id": "5828185d-32e5-4c0f-9674-ccc86de40d62",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "538c9855-17a0-410d-90d2-5e5e9f43c6c8",
-      "name": "SNX-L 62/34",
-      "thickness": "1/2",
-      "shape": "Parallelogram",
-      "tint": "Light Gray",
-      "length": 74,
-      "width": 38
-    },
-    "quantity": 42,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 8945,
-    "order_id": "d54b0f71-1e61-478c-97da-16658d71be13",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
-    "product_config": {
-      "glass_id": "24c66f1f-bd90-4fc2-b3e2-7ed7cb667b00",
-      "name": "IS20 LE-T",
-      "thickness": "1/4",
-      "shape": "Trapezoid",
-      "tint": "Frosted Green Chip",
-      "length": 16,
-      "width": 2
-    },
-    "quantity": 65,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 7178,
-    "order_id": "d54b0f71-1e61-478c-97da-16658d71be13",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "538c9855-17a0-410d-90d2-5e5e9f43c6c8",
-      "name": "SNX-L 62/34",
-      "thickness": "1/4",
-      "shape": "Trapezoid",
-      "tint": "P-516",
-      "length": 48,
       "width": 28
     },
-    "quantity": 5,
+    "quantity": 8,
     "note": "some note"
   },
   {
-    "order_item_id": 3627,
-    "order_id": "d54b0f71-1e61-478c-97da-16658d71be13",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
+    "order_item_id": 5622,
+    "order_id": "ce36b65a-ae26-4f0e-85f1-f49a153c8e03",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
     "product_config": {
-      "glass_id": "24c66f1f-bd90-4fc2-b3e2-7ed7cb667b00",
-      "name": "IS20 LE-T",
-      "thickness": "1/2",
-      "shape": "Pentagon",
-      "tint": "P-516",
-      "length": 51,
-      "width": 5
-    },
-    "quantity": 130,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 3624,
-    "order_id": "d54b0f71-1e61-478c-97da-16658d71be13",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "060bfe65-db6f-4f54-87f7-bea2ea6a249f",
-      "name": "SNE 50/25",
-      "thickness": "1/4",
-      "shape": "Square/Rectangle",
-      "tint": "Low-E",
-      "length": 90,
-      "width": 48
-    },
-    "quantity": 56,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 4781,
-    "order_id": "d54b0f71-1e61-478c-97da-16658d71be13",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "90410c20-66fd-44a0-8009-3d5b8afc631a",
-      "name": "MC 68 LE-T",
+      "glass_id": "d1561e8c-3e9b-4e29-94d2-56bbdced64f7",
+      "name": "MC 68 LE-A",
       "thickness": "3/4",
-      "shape": "Hexagon",
-      "tint": "Frosted Blue Chip",
-      "length": 88,
-      "width": 30
-    },
-    "quantity": 193,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 9932,
-    "order_id": "d54b0f71-1e61-478c-97da-16658d71be13",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
-    "product_config": {
-      "glass_id": "91454f2a-292a-4b6c-91bc-2b126062ab5f",
-      "name": "SN 68 HT",
-      "thickness": "1/2",
-      "shape": "Irregular/Any Other Shape",
-      "tint": "Dark Gray",
-      "length": 51,
-      "width": 20
-    },
-    "quantity": 5,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 1834,
-    "order_id": "3593e393-149a-41d8-9b30-ac3a9fb4bca7",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "538c9855-17a0-410d-90d2-5e5e9f43c6c8",
-      "name": "SNX-L 62/34",
-      "thickness": "3/4",
-      "shape": "Arch",
-      "tint": "Clear",
-      "length": 89,
-      "width": 6
-    },
-    "quantity": 152,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 2458,
-    "order_id": "3593e393-149a-41d8-9b30-ac3a9fb4bca7",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "28cb3997-daf6-464f-812d-97182ee602b3",
-      "name": "NU 40 LE",
-      "thickness": "1/2",
-      "shape": "Clipped Corner(s)",
-      "tint": "Dark Gray",
-      "length": 18,
-      "width": 16
-    },
-    "quantity": 139,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 8605,
-    "order_id": "3593e393-149a-41d8-9b30-ac3a9fb4bca7",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "ea045be8-3c33-4a2d-9137-da2e180210eb",
-      "name": "SatinDeco",
-      "thickness": "1/8",
-      "shape": "Quarter Round with Notch",
-      "tint": "Midnight Gray",
-      "length": 34,
-      "width": 32
-    },
-    "quantity": 33,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 1395,
-    "order_id": "a231fb1f-4339-4c00-ba85-c52c400e53a5",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "af9ab768-f43f-416f-8cb1-8e70979e0972",
-      "name": "Sunguard Spandrel HT",
-      "thickness": "3/8",
-      "shape": "Arch Top & Bottom",
-      "tint": "Clear",
-      "length": 29,
-      "width": 21
-    },
-    "quantity": 14,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 9760,
-    "order_id": "a231fb1f-4339-4c00-ba85-c52c400e53a5",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "91454f2a-292a-4b6c-91bc-2b126062ab5f",
-      "name": "SN 68 HT",
-      "thickness": "1/4",
-      "shape": "Octagon",
+      "shape": "Ellipse",
       "tint": "P-516",
-      "length": 39,
-      "width": 2
-    },
-    "quantity": 56,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 8357,
-    "order_id": "a231fb1f-4339-4c00-ba85-c52c400e53a5",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "060bfe65-db6f-4f54-87f7-bea2ea6a249f",
-      "name": "SNE 50/25",
-      "thickness": "1/8",
-      "shape": "Half-Circle with Notch",
-      "tint": "Low-E",
       "length": 72,
-      "width": 30
-    },
-    "quantity": 35,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 8763,
-    "order_id": "a231fb1f-4339-4c00-ba85-c52c400e53a5",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "90410c20-66fd-44a0-8009-3d5b8afc631a",
-      "name": "MC 68 LE-T",
-      "thickness": "1/4",
-      "shape": "Trapezoid",
-      "tint": "Frosted Blue Chip",
-      "length": 92,
-      "width": 28
-    },
-    "quantity": 15,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 5527,
-    "order_id": "a231fb1f-4339-4c00-ba85-c52c400e53a5",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "28cb3997-daf6-464f-812d-97182ee602b3",
-      "name": "NU 40 LE",
-      "thickness": "1/2",
-      "shape": "Arch Side",
-      "tint": "Light Gray",
-      "length": 67,
-      "width": 1
-    },
-    "quantity": 80,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 105,
-    "order_id": "180527fd-80cf-4707-ab3e-46f2b0f12c9b",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "af9ab768-f43f-416f-8cb1-8e70979e0972",
-      "name": "Sunguard Spandrel HT",
-      "thickness": "3/4",
-      "shape": "Half-Circle with Notch",
-      "tint": "Solex",
-      "length": 28,
-      "width": 17
-    },
-    "quantity": 5,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 8692,
-    "order_id": "180527fd-80cf-4707-ab3e-46f2b0f12c9b",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "538c9855-17a0-410d-90d2-5e5e9f43c6c8",
-      "name": "SNX-L 62/34",
-      "thickness": "3/4",
-      "shape": "Arch",
-      "tint": "P-516",
-      "length": 91,
-      "width": 42
-    },
-    "quantity": 36,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 5461,
-    "order_id": "180527fd-80cf-4707-ab3e-46f2b0f12c9b",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "ea045be8-3c33-4a2d-9137-da2e180210eb",
-      "name": "SatinDeco",
-      "thickness": "1/2",
-      "shape": "Square/Rectangle",
-      "tint": "Satin Etch",
-      "length": 68,
-      "width": 40
-    },
-    "quantity": 148,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 716,
-    "order_id": "180527fd-80cf-4707-ab3e-46f2b0f12c9b",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
-    "product_config": {
-      "glass_id": "af9ab768-f43f-416f-8cb1-8e70979e0972",
-      "name": "Sunguard Spandrel HT",
-      "thickness": "1/8",
-      "shape": "Triangle",
-      "tint": "Midnight Gray",
-      "length": 50,
-      "width": 38
-    },
-    "quantity": 9,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 7895,
-    "order_id": "180527fd-80cf-4707-ab3e-46f2b0f12c9b",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "d0340245-d1b1-474d-b05b-1e330b5601d2",
-      "name": "SNR 35 HT",
-      "thickness": "1/8",
-      "shape": "Arch-Top",
-      "tint": "Frosted Green Chip",
-      "length": 93,
-      "width": 35
-    },
-    "quantity": 36,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 7065,
-    "order_id": "180527fd-80cf-4707-ab3e-46f2b0f12c9b",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "ea045be8-3c33-4a2d-9137-da2e180210eb",
-      "name": "SatinDeco",
-      "thickness": "1/8",
-      "shape": "Ellipse",
-      "tint": "Bronze",
-      "length": 82,
-      "width": 6
-    },
-    "quantity": 92,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 4937,
-    "order_id": "180527fd-80cf-4707-ab3e-46f2b0f12c9b",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
-    "product_config": {
-      "glass_id": "da450d2a-3d5e-4646-8941-677dd51f7f8b",
-      "name": "AG 43",
-      "thickness": "1/4",
-      "shape": "Arch Side",
-      "tint": "Frosted Green Chip",
-      "length": 80,
-      "width": 39
-    },
-    "quantity": 137,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 8218,
-    "order_id": "180527fd-80cf-4707-ab3e-46f2b0f12c9b",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "28cb3997-daf6-464f-812d-97182ee602b3",
-      "name": "NU 40 LE",
-      "thickness": "1/2",
-      "shape": "Irregular/Any Other Shape",
-      "tint": "Satin Etch",
-      "length": 56,
-      "width": 12
-    },
-    "quantity": 7,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 2017,
-    "order_id": "180527fd-80cf-4707-ab3e-46f2b0f12c9b",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "24c66f1f-bd90-4fc2-b3e2-7ed7cb667b00",
-      "name": "IS20 LE-T",
-      "thickness": "1/8",
-      "shape": "Pentagon",
-      "tint": "Frosted Green Chip",
-      "length": 47,
-      "width": 23
-    },
-    "quantity": 28,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 1151,
-    "order_id": "3b3bf3f8-647a-4700-a044-18ba23d8604d",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
-    "product_config": {
-      "glass_id": "d0340245-d1b1-474d-b05b-1e330b5601d2",
-      "name": "SNR 35 HT",
-      "thickness": "1/8",
-      "shape": "Quarter Round",
-      "tint": "Clear",
-      "length": 45,
-      "width": 1
-    },
-    "quantity": 47,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 9225,
-    "order_id": "3b3bf3f8-647a-4700-a044-18ba23d8604d",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "28cb3997-daf6-464f-812d-97182ee602b3",
-      "name": "NU 40 LE",
-      "thickness": "3/4",
-      "shape": "Arch-Top",
-      "tint": "Solex",
-      "length": 52,
-      "width": 44
-    },
-    "quantity": 6,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 942,
-    "order_id": "3b3bf3f8-647a-4700-a044-18ba23d8604d",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "24c66f1f-bd90-4fc2-b3e2-7ed7cb667b00",
-      "name": "IS20 LE-T",
-      "thickness": "1/2",
-      "shape": "Pentagon",
-      "tint": "Frosted Blue Chip",
-      "length": 25,
-      "width": 7
-    },
-    "quantity": 46,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 7893,
-    "order_id": "3b3bf3f8-647a-4700-a044-18ba23d8604d",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "24c66f1f-bd90-4fc2-b3e2-7ed7cb667b00",
-      "name": "IS20 LE-T",
-      "thickness": "1/2",
-      "shape": "Clipped Corner(s)",
-      "tint": "Frosted Green Chip",
-      "length": 31,
-      "width": 17
-    },
-    "quantity": 95,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 9917,
-    "order_id": "3b3bf3f8-647a-4700-a044-18ba23d8604d",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "b4ad52ba-ba2e-4db7-815c-0f0087e58ff4",
-      "name": "SN 68",
-      "thickness": "1/8",
-      "shape": "Clipped Corner(s)",
-      "tint": "Frosted Green Chip",
-      "length": 85,
-      "width": 33
-    },
-    "quantity": 7,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 8885,
-    "order_id": "3b3bf3f8-647a-4700-a044-18ba23d8604d",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "d0340245-d1b1-474d-b05b-1e330b5601d2",
-      "name": "SNR 35 HT",
-      "thickness": "3/4",
-      "shape": "Ellipse",
-      "tint": "P-516",
-      "length": 62,
-      "width": 31
-    },
-    "quantity": 5,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 7728,
-    "order_id": "3b3bf3f8-647a-4700-a044-18ba23d8604d",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "d0340245-d1b1-474d-b05b-1e330b5601d2",
-      "name": "SNR 35 HT",
-      "thickness": "1/8",
-      "shape": "Arch Side",
-      "tint": "Frosted Green Chip",
-      "length": 84,
-      "width": 28
-    },
-    "quantity": 49,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 8028,
-    "order_id": "3b3bf3f8-647a-4700-a044-18ba23d8604d",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
-    "product_config": {
-      "glass_id": "060bfe65-db6f-4f54-87f7-bea2ea6a249f",
-      "name": "SNE 50/25",
-      "thickness": "3/4",
-      "shape": "Half-Circle with Notch",
-      "tint": "Frosted Blue Chip",
-      "length": 91,
-      "width": 32
-    },
-    "quantity": 35,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 5807,
-    "order_id": "3b3bf3f8-647a-4700-a044-18ba23d8604d",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
-    "product_config": {
-      "glass_id": "ea045be8-3c33-4a2d-9137-da2e180210eb",
-      "name": "SatinDeco",
-      "thickness": "1/4",
-      "shape": "Quarter Round",
-      "tint": "Midnight Gray",
-      "length": 40,
-      "width": 23
-    },
-    "quantity": 50,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 199,
-    "order_id": "d9173ad6-37b9-4524-8862-5e1074355e11",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
-    "product_config": {
-      "glass_id": "da450d2a-3d5e-4646-8941-677dd51f7f8b",
-      "name": "AG 43",
-      "thickness": "1/4",
-      "shape": "Trapezoid",
-      "tint": "Frosted Green Chip",
-      "length": 84,
-      "width": 30
-    },
-    "quantity": 8,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 8400,
-    "order_id": "d9173ad6-37b9-4524-8862-5e1074355e11",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "91454f2a-292a-4b6c-91bc-2b126062ab5f",
-      "name": "SN 68 HT",
-      "thickness": "1/8",
-      "shape": "Right Triangle",
-      "tint": "P-516",
-      "length": 3,
-      "width": 1
-    },
-    "quantity": 57,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 4269,
-    "order_id": "d9173ad6-37b9-4524-8862-5e1074355e11",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "46247eed-86b1-4ea7-bddf-4c8a7c89565a",
-      "name": "MC 68 LE-A",
-      "thickness": "3/4",
-      "shape": "Pentagon",
-      "tint": "Frosted Blue Chip",
-      "length": 33,
-      "width": 21
-    },
-    "quantity": 6,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 7018,
-    "order_id": "d9173ad6-37b9-4524-8862-5e1074355e11",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "24c66f1f-bd90-4fc2-b3e2-7ed7cb667b00",
-      "name": "IS20 LE-T",
-      "thickness": "1/4",
-      "shape": "Half-Circle",
-      "tint": "Mistlite",
-      "length": 8,
-      "width": 8
-    },
-    "quantity": 26,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 5498,
-    "order_id": "d9173ad6-37b9-4524-8862-5e1074355e11",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "060bfe65-db6f-4f54-87f7-bea2ea6a249f",
-      "name": "SNE 50/25",
-      "thickness": "3/4",
-      "shape": "Square/Rectangle",
-      "tint": "Dark Gray",
-      "length": 74,
-      "width": 24
-    },
-    "quantity": 169,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 8899,
-    "order_id": "d9173ad6-37b9-4524-8862-5e1074355e11",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
-    "product_config": {
-      "glass_id": "91454f2a-292a-4b6c-91bc-2b126062ab5f",
-      "name": "SN 68 HT",
-      "thickness": "1/2",
-      "shape": "Triangle",
-      "tint": "Light Gray",
-      "length": 75,
-      "width": 41
-    },
-    "quantity": 32,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 554,
-    "order_id": "d9173ad6-37b9-4524-8862-5e1074355e11",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "ea045be8-3c33-4a2d-9137-da2e180210eb",
-      "name": "SatinDeco",
-      "thickness": "3/4",
-      "shape": "Racetrack Oval",
-      "tint": "P-516",
-      "length": 47,
-      "width": 4
-    },
-    "quantity": 73,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 8445,
-    "order_id": "d9173ad6-37b9-4524-8862-5e1074355e11",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "060bfe65-db6f-4f54-87f7-bea2ea6a249f",
-      "name": "SNE 50/25",
-      "thickness": "3/4",
-      "shape": "Half-Circle with Notch",
-      "tint": "Bronze",
-      "length": 58,
-      "width": 5
-    },
-    "quantity": 8,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 5318,
-    "order_id": "860954c0-7f3d-4c16-a29d-dec015865387",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
-    "product_config": {
-      "glass_id": "24c66f1f-bd90-4fc2-b3e2-7ed7cb667b00",
-      "name": "IS20 LE-T",
-      "thickness": "1/4",
-      "shape": "Half-Circle",
-      "tint": "P-516",
-      "length": 82,
-      "width": 8
-    },
-    "quantity": 104,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 705,
-    "order_id": "860954c0-7f3d-4c16-a29d-dec015865387",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "538c9855-17a0-410d-90d2-5e5e9f43c6c8",
-      "name": "SNX-L 62/34",
-      "thickness": "1/8",
-      "shape": "Clipped Corner(s)",
-      "tint": "Ultra Clear",
-      "length": 35,
-      "width": 16
-    },
-    "quantity": 198,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 6221,
-    "order_id": "860954c0-7f3d-4c16-a29d-dec015865387",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
-    "product_config": {
-      "glass_id": "90410c20-66fd-44a0-8009-3d5b8afc631a",
-      "name": "MC 68 LE-T",
-      "thickness": "1/2",
-      "shape": "Arch Side",
-      "tint": "Satin Etch",
-      "length": 59,
-      "width": 48
-    },
-    "quantity": 2,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 6220,
-    "order_id": "daf5682d-ce8f-4603-aa0a-52e60b676470",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
-    "product_config": {
-      "glass_id": "46247eed-86b1-4ea7-bddf-4c8a7c89565a",
-      "name": "MC 68 LE-A",
-      "thickness": "1/8",
-      "shape": "Quarter Round with Notch",
-      "tint": "Satin Etch",
-      "length": 88,
-      "width": 31
-    },
-    "quantity": 6,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 2992,
-    "order_id": "daf5682d-ce8f-4603-aa0a-52e60b676470",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
-    "product_config": {
-      "glass_id": "28cb3997-daf6-464f-812d-97182ee602b3",
-      "name": "NU 40 LE",
-      "thickness": "3/4",
-      "shape": "Right Triangle",
-      "tint": "Ultra Clear",
-      "length": 63,
-      "width": 18
-    },
-    "quantity": 16,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 1927,
-    "order_id": "daf5682d-ce8f-4603-aa0a-52e60b676470",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "91454f2a-292a-4b6c-91bc-2b126062ab5f",
-      "name": "SN 68 HT",
-      "thickness": "3/4",
-      "shape": "Irregular/Any Other Shape",
-      "tint": "Light Gray",
-      "length": 49,
-      "width": 37
-    },
-    "quantity": 109,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 4433,
-    "order_id": "daf5682d-ce8f-4603-aa0a-52e60b676470",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "af9ab768-f43f-416f-8cb1-8e70979e0972",
-      "name": "Sunguard Spandrel HT",
-      "thickness": "3/8",
-      "shape": "Arch-Top",
-      "tint": "Ultra Clear",
-      "length": 55,
-      "width": 24
-    },
-    "quantity": 4,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 9362,
-    "order_id": "daf5682d-ce8f-4603-aa0a-52e60b676470",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
-    "product_config": {
-      "glass_id": "46247eed-86b1-4ea7-bddf-4c8a7c89565a",
-      "name": "MC 68 LE-A",
-      "thickness": "3/4",
-      "shape": "Right Triangle",
-      "tint": "Satin Etch",
-      "length": 96,
-      "width": 16
-    },
-    "quantity": 12,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 5534,
-    "order_id": "daf5682d-ce8f-4603-aa0a-52e60b676470",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "af9ab768-f43f-416f-8cb1-8e70979e0972",
-      "name": "Sunguard Spandrel HT",
-      "thickness": "3/8",
-      "shape": "Irregular/Any Other Shape",
-      "tint": "Solex",
-      "length": 53,
-      "width": 22
-    },
-    "quantity": 18,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 8776,
-    "order_id": "daf5682d-ce8f-4603-aa0a-52e60b676470",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "ea045be8-3c33-4a2d-9137-da2e180210eb",
-      "name": "SatinDeco",
-      "thickness": "3/4",
-      "shape": "Quarter Round with Notch",
-      "tint": "Light Gray",
-      "length": 50,
-      "width": 35
-    },
-    "quantity": 15,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 4255,
-    "order_id": "daf5682d-ce8f-4603-aa0a-52e60b676470",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
-    "product_config": {
-      "glass_id": "af9ab768-f43f-416f-8cb1-8e70979e0972",
-      "name": "Sunguard Spandrel HT",
-      "thickness": "1/4",
-      "shape": "Octagon",
-      "tint": "Ultra Clear",
-      "length": 36,
-      "width": 33
-    },
-    "quantity": 34,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 8102,
-    "order_id": "9c3372de-e5f8-4a6c-8064-cfffb9300613",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "90410c20-66fd-44a0-8009-3d5b8afc631a",
-      "name": "MC 68 LE-T",
-      "thickness": "1/2",
-      "shape": "Ellipse",
-      "tint": "Satin Etch",
-      "length": 61,
-      "width": 35
-    },
-    "quantity": 9,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 2596,
-    "order_id": "9c3372de-e5f8-4a6c-8064-cfffb9300613",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "90410c20-66fd-44a0-8009-3d5b8afc631a",
-      "name": "MC 68 LE-T",
-      "thickness": "1/2",
-      "shape": "Arch Side",
-      "tint": "Frosted Blue Chip",
-      "length": 52,
-      "width": 13
-    },
-    "quantity": 45,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 2403,
-    "order_id": "9c3372de-e5f8-4a6c-8064-cfffb9300613",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "90410c20-66fd-44a0-8009-3d5b8afc631a",
-      "name": "MC 68 LE-T",
-      "thickness": "1/8",
-      "shape": "Quarter Round with Notch",
-      "tint": "Frosted Blue Chip",
-      "length": 28,
-      "width": 25
-    },
-    "quantity": 13,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 5541,
-    "order_id": "9c3372de-e5f8-4a6c-8064-cfffb9300613",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
-    "product_config": {
-      "glass_id": "ea045be8-3c33-4a2d-9137-da2e180210eb",
-      "name": "SatinDeco",
-      "thickness": "1/4",
-      "shape": "Quarter Round with Notch",
-      "tint": "P-516",
-      "length": 30,
-      "width": 17
-    },
-    "quantity": 6,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 1713,
-    "order_id": "9c3372de-e5f8-4a6c-8064-cfffb9300613",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "b4ad52ba-ba2e-4db7-815c-0f0087e58ff4",
-      "name": "SN 68",
-      "thickness": "3/8",
-      "shape": "Half-Circle",
-      "tint": "Mistlite",
-      "length": 29,
-      "width": 16
-    },
-    "quantity": 52,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 1247,
-    "order_id": "9c3372de-e5f8-4a6c-8064-cfffb9300613",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
-    "product_config": {
-      "glass_id": "d0340245-d1b1-474d-b05b-1e330b5601d2",
-      "name": "SNR 35 HT",
-      "thickness": "1/2",
-      "shape": "Ellipse",
-      "tint": "Bronze",
-      "length": 85,
-      "width": 46
-    },
-    "quantity": 12,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 8793,
-    "order_id": "9c3372de-e5f8-4a6c-8064-cfffb9300613",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "da450d2a-3d5e-4646-8941-677dd51f7f8b",
-      "name": "AG 43",
-      "thickness": "3/8",
-      "shape": "Arch",
-      "tint": "Light Gray",
-      "length": 88,
-      "width": 7
-    },
-    "quantity": 11,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 9936,
-    "order_id": "9c3372de-e5f8-4a6c-8064-cfffb9300613",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
-    "product_config": {
-      "glass_id": "46247eed-86b1-4ea7-bddf-4c8a7c89565a",
-      "name": "MC 68 LE-A",
-      "thickness": "1/4",
-      "shape": "Triangle",
-      "tint": "Satin Etch",
-      "length": 26,
-      "width": 16
-    },
-    "quantity": 53,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 6609,
-    "order_id": "9c3372de-e5f8-4a6c-8064-cfffb9300613",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "af9ab768-f43f-416f-8cb1-8e70979e0972",
-      "name": "Sunguard Spandrel HT",
-      "thickness": "1/4",
-      "shape": "Quarter Round",
-      "tint": "Solex",
-      "length": 39,
-      "width": 18
-    },
-    "quantity": 9,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 3193,
-    "order_id": "3cec0305-9917-40c2-8aff-af00f48ba873",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "060bfe65-db6f-4f54-87f7-bea2ea6a249f",
-      "name": "SNE 50/25",
-      "thickness": "1/4",
-      "shape": "Quarter Round with Notch",
-      "tint": "Frosted Blue Chip",
-      "length": 70,
-      "width": 31
-    },
-    "quantity": 130,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 5267,
-    "order_id": "3cec0305-9917-40c2-8aff-af00f48ba873",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
-    "product_config": {
-      "glass_id": "28cb3997-daf6-464f-812d-97182ee602b3",
-      "name": "NU 40 LE",
-      "thickness": "3/4",
-      "shape": "Quarter Round",
-      "tint": "Ultra Clear",
-      "length": 83,
-      "width": 38
-    },
-    "quantity": 4,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 4523,
-    "order_id": "3cec0305-9917-40c2-8aff-af00f48ba873",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "da450d2a-3d5e-4646-8941-677dd51f7f8b",
-      "name": "AG 43",
-      "thickness": "3/4",
-      "shape": "Arch Side",
-      "tint": "P-516",
-      "length": 56,
-      "width": 5
-    },
-    "quantity": 20,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 2355,
-    "order_id": "3cec0305-9917-40c2-8aff-af00f48ba873",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "91454f2a-292a-4b6c-91bc-2b126062ab5f",
-      "name": "SN 68 HT",
-      "thickness": "1/8",
-      "shape": "Clipped Corner(s)",
-      "tint": "Low-E",
-      "length": 62,
-      "width": 26
-    },
-    "quantity": 191,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 486,
-    "order_id": "3cec0305-9917-40c2-8aff-af00f48ba873",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "ef4a6120-93a8-450f-a7f9-6e75f27fde60",
-      "name": "MC 27 LE-A",
-      "thickness": "3/8",
-      "shape": "Single Slope Rectangle",
-      "tint": "Mistlite",
-      "length": 71,
-      "width": 16
-    },
-    "quantity": 145,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 6717,
-    "order_id": "e27c372a-6ec1-4046-a1ea-ae2532d2a17a",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
-    "product_config": {
-      "glass_id": "b4ad52ba-ba2e-4db7-815c-0f0087e58ff4",
-      "name": "SN 68",
-      "thickness": "1/4",
-      "shape": "Arch Top & Bottom",
-      "tint": "Satin Etch",
-      "length": 46,
-      "width": 34
-    },
-    "quantity": 28,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 8459,
-    "order_id": "e27c372a-6ec1-4046-a1ea-ae2532d2a17a",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
-    "product_config": {
-      "glass_id": "d0340245-d1b1-474d-b05b-1e330b5601d2",
-      "name": "SNR 35 HT",
-      "thickness": "1/8",
-      "shape": "Quarter Round",
-      "tint": "Clear",
-      "length": 46,
-      "width": 32
-    },
-    "quantity": 10,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 3796,
-    "order_id": "e27c372a-6ec1-4046-a1ea-ae2532d2a17a",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
-    "product_config": {
-      "glass_id": "ef4a6120-93a8-450f-a7f9-6e75f27fde60",
-      "name": "MC 27 LE-A",
-      "thickness": "3/4",
-      "shape": "Octagon",
-      "tint": "Clear",
-      "length": 85,
-      "width": 18
-    },
-    "quantity": 120,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 7615,
-    "order_id": "e27c372a-6ec1-4046-a1ea-ae2532d2a17a",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "cd774965-da25-463b-921f-441244911276",
-      "name": "AG 50 LE",
-      "thickness": "1/2",
-      "shape": "Quarter Round",
-      "tint": "Mistlite",
-      "length": 29,
-      "width": 10
-    },
-    "quantity": 26,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 7052,
-    "order_id": "e27c372a-6ec1-4046-a1ea-ae2532d2a17a",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "28cb3997-daf6-464f-812d-97182ee602b3",
-      "name": "NU 40 LE",
-      "thickness": "1/4",
-      "shape": "Half-Circle with Notch",
-      "tint": "Satin Etch",
-      "length": 48,
-      "width": 38
-    },
-    "quantity": 1,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 1141,
-    "order_id": "e27c372a-6ec1-4046-a1ea-ae2532d2a17a",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
-    "product_config": {
-      "glass_id": "d0340245-d1b1-474d-b05b-1e330b5601d2",
-      "name": "SNR 35 HT",
-      "thickness": "3/8",
-      "shape": "Arch",
-      "tint": "Bronze",
-      "length": 60,
-      "width": 11
-    },
-    "quantity": 7,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 80,
-    "order_id": "e27c372a-6ec1-4046-a1ea-ae2532d2a17a",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "cd774965-da25-463b-921f-441244911276",
-      "name": "AG 50 LE",
-      "thickness": "1/2",
-      "shape": "Single Slope Rectangle",
-      "tint": "Frosted Green Chip",
-      "length": 86,
-      "width": 35
-    },
-    "quantity": 2,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 8842,
-    "order_id": "fffafb1e-c602-47cb-aa9e-eb2b794c48be",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "af9ab768-f43f-416f-8cb1-8e70979e0972",
-      "name": "Sunguard Spandrel HT",
-      "thickness": "3/8",
-      "shape": "Irregular/Any Other Shape",
-      "tint": "Midnight Gray",
-      "length": 34,
-      "width": 20
-    },
-    "quantity": 10,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 546,
-    "order_id": "fffafb1e-c602-47cb-aa9e-eb2b794c48be",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "d0340245-d1b1-474d-b05b-1e330b5601d2",
-      "name": "SNR 35 HT",
-      "thickness": "1/2",
-      "shape": "Octagon",
-      "tint": "Clear",
-      "length": 60,
-      "width": 47
-    },
-    "quantity": 13,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 5812,
-    "order_id": "fffafb1e-c602-47cb-aa9e-eb2b794c48be",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "060bfe65-db6f-4f54-87f7-bea2ea6a249f",
-      "name": "SNE 50/25",
-      "thickness": "1/8",
-      "shape": "Quarter Round with Notch",
-      "tint": "Low-E",
-      "length": 24,
-      "width": 10
-    },
-    "quantity": 108,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 5276,
-    "order_id": "fffafb1e-c602-47cb-aa9e-eb2b794c48be",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "af9ab768-f43f-416f-8cb1-8e70979e0972",
-      "name": "Sunguard Spandrel HT",
-      "thickness": "1/8",
-      "shape": "Pentagon",
-      "tint": "Midnight Gray",
-      "length": 60,
-      "width": 15
-    },
-    "quantity": 14,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 7955,
-    "order_id": "fffafb1e-c602-47cb-aa9e-eb2b794c48be",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
-    "product_config": {
-      "glass_id": "060bfe65-db6f-4f54-87f7-bea2ea6a249f",
-      "name": "SNE 50/25",
-      "thickness": "1/2",
-      "shape": "Quarter Round with Notch",
-      "tint": "Low-E",
-      "length": 60,
-      "width": 32
-    },
-    "quantity": 46,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 5684,
-    "order_id": "0ab00efe-bf0d-4338-b202-14c4a65f4107",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "28cb3997-daf6-464f-812d-97182ee602b3",
-      "name": "NU 40 LE",
-      "thickness": "1/8",
-      "shape": "Quarter Round",
-      "tint": "Ultra Clear",
-      "length": 33,
-      "width": 5
-    },
-    "quantity": 190,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 7539,
-    "order_id": "0ab00efe-bf0d-4338-b202-14c4a65f4107",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "ef4a6120-93a8-450f-a7f9-6e75f27fde60",
-      "name": "MC 27 LE-A",
-      "thickness": "1/4",
-      "shape": "Quarter Round with Notch",
-      "tint": "Ultra Clear",
-      "length": 60,
-      "width": 36
-    },
-    "quantity": 15,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 2823,
-    "order_id": "0ab00efe-bf0d-4338-b202-14c4a65f4107",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
-    "product_config": {
-      "glass_id": "28cb3997-daf6-464f-812d-97182ee602b3",
-      "name": "NU 40 LE",
-      "thickness": "3/8",
-      "shape": "Irregular/Any Other Shape",
-      "tint": "Satin Etch",
-      "length": 84,
-      "width": 11
-    },
-    "quantity": 38,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 5700,
-    "order_id": "0ab00efe-bf0d-4338-b202-14c4a65f4107",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "538c9855-17a0-410d-90d2-5e5e9f43c6c8",
-      "name": "SNX-L 62/34",
-      "thickness": "1/4",
-      "shape": "Arch",
-      "tint": "Clear",
-      "length": 88,
-      "width": 47
-    },
-    "quantity": 5,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 8383,
-    "order_id": "0ab00efe-bf0d-4338-b202-14c4a65f4107",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
-    "product_config": {
-      "glass_id": "24c66f1f-bd90-4fc2-b3e2-7ed7cb667b00",
-      "name": "IS20 LE-T",
-      "thickness": "3/8",
-      "shape": "Trapezoid",
-      "tint": "Mistlite",
-      "length": 67,
-      "width": 1
-    },
-    "quantity": 5,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 5418,
-    "order_id": "0ab00efe-bf0d-4338-b202-14c4a65f4107",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
-    "product_config": {
-      "glass_id": "ea045be8-3c33-4a2d-9137-da2e180210eb",
-      "name": "SatinDeco",
-      "thickness": "1/8",
-      "shape": "Quarter Round",
-      "tint": "Frosted Blue Chip",
-      "length": 52,
       "width": 45
-    },
-    "quantity": 9,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 8513,
-    "order_id": "0ab00efe-bf0d-4338-b202-14c4a65f4107",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "ea045be8-3c33-4a2d-9137-da2e180210eb",
-      "name": "SatinDeco",
-      "thickness": "1/4",
-      "shape": "Clipped Corner(s)",
-      "tint": "P-516",
-      "length": 76,
-      "width": 47
-    },
-    "quantity": 184,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 5464,
-    "order_id": "0ab00efe-bf0d-4338-b202-14c4a65f4107",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "28cb3997-daf6-464f-812d-97182ee602b3",
-      "name": "NU 40 LE",
-      "thickness": "3/8",
-      "shape": "Half-Circle",
-      "tint": "Ultra Clear",
-      "length": 94,
-      "width": 34
-    },
-    "quantity": 60,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 6362,
-    "order_id": "2668ee61-71f2-43f8-ac4d-cb8d9d4edc0d",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "28cb3997-daf6-464f-812d-97182ee602b3",
-      "name": "NU 40 LE",
-      "thickness": "1/2",
-      "shape": "Right Triangle",
-      "tint": "Satin Etch",
-      "length": 54,
-      "width": 30
-    },
-    "quantity": 8,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 9852,
-    "order_id": "2668ee61-71f2-43f8-ac4d-cb8d9d4edc0d",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
-    "product_config": {
-      "glass_id": "af9ab768-f43f-416f-8cb1-8e70979e0972",
-      "name": "Sunguard Spandrel HT",
-      "thickness": "3/4",
-      "shape": "Irregular/Any Other Shape",
-      "tint": "Midnight Gray",
-      "length": 66,
-      "width": 34
-    },
-    "quantity": 30,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 6027,
-    "order_id": "2f45d379-8b75-4afc-b7f1-7df4fe4ecc68",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "90410c20-66fd-44a0-8009-3d5b8afc631a",
-      "name": "MC 68 LE-T",
-      "thickness": "1/8",
-      "shape": "Quarter Round",
-      "tint": "Frosted Green Chip",
-      "length": 68,
-      "width": 37
-    },
-    "quantity": 5,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 4011,
-    "order_id": "2f45d379-8b75-4afc-b7f1-7df4fe4ecc68",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "46247eed-86b1-4ea7-bddf-4c8a7c89565a",
-      "name": "MC 68 LE-A",
-      "thickness": "1/8",
-      "shape": "Pentagon",
-      "tint": "Satin Etch",
-      "length": 61,
-      "width": 43
-    },
-    "quantity": 8,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 1464,
-    "order_id": "2f45d379-8b75-4afc-b7f1-7df4fe4ecc68",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "b4ad52ba-ba2e-4db7-815c-0f0087e58ff4",
-      "name": "SN 68",
-      "thickness": "3/4",
-      "shape": "Arch Top & Bottom",
-      "tint": "Satin Etch",
-      "length": 73,
-      "width": 11
-    },
-    "quantity": 8,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 9840,
-    "order_id": "2f45d379-8b75-4afc-b7f1-7df4fe4ecc68",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "060bfe65-db6f-4f54-87f7-bea2ea6a249f",
-      "name": "SNE 50/25",
-      "thickness": "1/4",
-      "shape": "Quarter Round with Notch",
-      "tint": "Frosted Blue Chip",
-      "length": 49,
-      "width": 2
-    },
-    "quantity": 10,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 1563,
-    "order_id": "2f45d379-8b75-4afc-b7f1-7df4fe4ecc68",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "af9ab768-f43f-416f-8cb1-8e70979e0972",
-      "name": "Sunguard Spandrel HT",
-      "thickness": "3/8",
-      "shape": "Half-Circle",
-      "tint": "Solex",
-      "length": 82,
-      "width": 36
-    },
-    "quantity": 4,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 6931,
-    "order_id": "2f45d379-8b75-4afc-b7f1-7df4fe4ecc68",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "060bfe65-db6f-4f54-87f7-bea2ea6a249f",
-      "name": "SNE 50/25",
-      "thickness": "3/4",
-      "shape": "Half-Circle with Notch",
-      "tint": "Frosted Blue Chip",
-      "length": 71,
-      "width": 36
-    },
-    "quantity": 4,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 901,
-    "order_id": "a1a08167-7936-462c-a066-dca72fc81795",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "af9ab768-f43f-416f-8cb1-8e70979e0972",
-      "name": "Sunguard Spandrel HT",
-      "thickness": "1/4",
-      "shape": "Arch-Top",
-      "tint": "Ultra Clear",
-      "length": 91,
-      "width": 6
-    },
-    "quantity": 189,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 7609,
-    "order_id": "d5e4078d-4b50-478f-995b-0659b66c5a29",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "d0340245-d1b1-474d-b05b-1e330b5601d2",
-      "name": "SNR 35 HT",
-      "thickness": "3/8",
-      "shape": "Arch",
-      "tint": "P-516",
-      "length": 12,
-      "width": 7
-    },
-    "quantity": 4,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 1669,
-    "order_id": "d5e4078d-4b50-478f-995b-0659b66c5a29",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "ea045be8-3c33-4a2d-9137-da2e180210eb",
-      "name": "SatinDeco",
-      "thickness": "3/8",
-      "shape": "Trapezoid",
-      "tint": "Dark Gray",
-      "length": 40,
-      "width": 20
-    },
-    "quantity": 58,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 1804,
-    "order_id": "d5e4078d-4b50-478f-995b-0659b66c5a29",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "46247eed-86b1-4ea7-bddf-4c8a7c89565a",
-      "name": "MC 68 LE-A",
-      "thickness": "3/4",
-      "shape": "Arch-Top",
-      "tint": "Frosted Blue Chip",
-      "length": 61,
-      "width": 28
-    },
-    "quantity": 2,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 5481,
-    "order_id": "d5e4078d-4b50-478f-995b-0659b66c5a29",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "af9ab768-f43f-416f-8cb1-8e70979e0972",
-      "name": "Sunguard Spandrel HT",
-      "thickness": "1/4",
-      "shape": "Arch-Top",
-      "tint": "Dark Gray",
-      "length": 54,
-      "width": 22
-    },
-    "quantity": 156,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 9271,
-    "order_id": "d5e4078d-4b50-478f-995b-0659b66c5a29",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "46247eed-86b1-4ea7-bddf-4c8a7c89565a",
-      "name": "MC 68 LE-A",
-      "thickness": "3/8",
-      "shape": "Racetrack Oval",
-      "tint": "Solex",
-      "length": 69,
-      "width": 42
-    },
-    "quantity": 3,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 160,
-    "order_id": "d5e4078d-4b50-478f-995b-0659b66c5a29",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "af9ab768-f43f-416f-8cb1-8e70979e0972",
-      "name": "Sunguard Spandrel HT",
-      "thickness": "3/4",
-      "shape": "Irregular/Any Other Shape",
-      "tint": "Light Gray",
-      "length": 92,
-      "width": 29
-    },
-    "quantity": 5,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 9732,
-    "order_id": "d5e4078d-4b50-478f-995b-0659b66c5a29",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
-    "product_config": {
-      "glass_id": "af9ab768-f43f-416f-8cb1-8e70979e0972",
-      "name": "Sunguard Spandrel HT",
-      "thickness": "1/2",
-      "shape": "Arch Top & Bottom",
-      "tint": "Solex",
-      "length": 38,
-      "width": 32
-    },
-    "quantity": 59,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 571,
-    "order_id": "d5e4078d-4b50-478f-995b-0659b66c5a29",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "cd774965-da25-463b-921f-441244911276",
-      "name": "AG 50 LE",
-      "thickness": "1/8",
-      "shape": "Arch Top & Bottom",
-      "tint": "Bronze",
-      "length": 56,
-      "width": 41
-    },
-    "quantity": 21,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 1731,
-    "order_id": "d5e4078d-4b50-478f-995b-0659b66c5a29",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
-    "product_config": {
-      "glass_id": "b4ad52ba-ba2e-4db7-815c-0f0087e58ff4",
-      "name": "SN 68",
-      "thickness": "3/8",
-      "shape": "Arch Top & Bottom",
-      "tint": "Clear",
-      "length": 60,
-      "width": 40
-    },
-    "quantity": 173,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 7183,
-    "order_id": "333a9094-c0ba-4d0f-aa87-abec1a939a94",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
-    "product_config": {
-      "glass_id": "ef4a6120-93a8-450f-a7f9-6e75f27fde60",
-      "name": "MC 27 LE-A",
-      "thickness": "1/2",
-      "shape": "Clipped Corner(s)",
-      "tint": "Clear",
-      "length": 11,
-      "width": 6
-    },
-    "quantity": 7,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 204,
-    "order_id": "333a9094-c0ba-4d0f-aa87-abec1a939a94",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
-    "product_config": {
-      "glass_id": "af9ab768-f43f-416f-8cb1-8e70979e0972",
-      "name": "Sunguard Spandrel HT",
-      "thickness": "3/8",
-      "shape": "Octagon",
-      "tint": "Solex",
-      "length": 74,
-      "width": 48
-    },
-    "quantity": 57,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 3178,
-    "order_id": "333a9094-c0ba-4d0f-aa87-abec1a939a94",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
-    "product_config": {
-      "glass_id": "90410c20-66fd-44a0-8009-3d5b8afc631a",
-      "name": "MC 68 LE-T",
-      "thickness": "1/2",
-      "shape": "Quarter Round with Notch",
-      "tint": "Frosted Blue Chip",
-      "length": 34,
-      "width": 12
-    },
-    "quantity": 53,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 4555,
-    "order_id": "333a9094-c0ba-4d0f-aa87-abec1a939a94",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
-    "product_config": {
-      "glass_id": "ef4a6120-93a8-450f-a7f9-6e75f27fde60",
-      "name": "MC 27 LE-A",
-      "thickness": "3/8",
-      "shape": "Quarter Round",
-      "tint": "Clear",
-      "length": 49,
-      "width": 12
-    },
-    "quantity": 189,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 5454,
-    "order_id": "333a9094-c0ba-4d0f-aa87-abec1a939a94",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "91454f2a-292a-4b6c-91bc-2b126062ab5f",
-      "name": "SN 68 HT",
-      "thickness": "3/4",
-      "shape": "Quarter Round",
-      "tint": "Low-E",
-      "length": 59,
-      "width": 4
-    },
-    "quantity": 4,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 5872,
-    "order_id": "3717a7ed-7278-4da8-a447-1a6c6bfba824",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
-    "product_config": {
-      "glass_id": "24c66f1f-bd90-4fc2-b3e2-7ed7cb667b00",
-      "name": "IS20 LE-T",
-      "thickness": "1/4",
-      "shape": "Octagon",
-      "tint": "Solex",
-      "length": 32,
-      "width": 8
-    },
-    "quantity": 35,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 6452,
-    "order_id": "6b5268af-c2c5-4027-bd32-0595964fe9b4",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "91454f2a-292a-4b6c-91bc-2b126062ab5f",
-      "name": "SN 68 HT",
-      "thickness": "1/8",
-      "shape": "Right Triangle",
-      "tint": "P-516",
-      "length": 61,
-      "width": 25
-    },
-    "quantity": 5,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 4635,
-    "order_id": "6b5268af-c2c5-4027-bd32-0595964fe9b4",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
-    "product_config": {
-      "glass_id": "28cb3997-daf6-464f-812d-97182ee602b3",
-      "name": "NU 40 LE",
-      "thickness": "1/2",
-      "shape": "Irregular/Any Other Shape",
-      "tint": "Satin Etch",
-      "length": 61,
-      "width": 41
-    },
-    "quantity": 34,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 5037,
-    "order_id": "6b5268af-c2c5-4027-bd32-0595964fe9b4",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "28cb3997-daf6-464f-812d-97182ee602b3",
-      "name": "NU 40 LE",
-      "thickness": "3/4",
-      "shape": "Quarter Round",
-      "tint": "Light Gray",
-      "length": 31,
-      "width": 2
-    },
-    "quantity": 9,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 8886,
-    "order_id": "6b5268af-c2c5-4027-bd32-0595964fe9b4",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "90410c20-66fd-44a0-8009-3d5b8afc631a",
-      "name": "MC 68 LE-T",
-      "thickness": "1/8",
-      "shape": "Ellipse",
-      "tint": "Frosted Blue Chip",
-      "length": 51,
-      "width": 35
-    },
-    "quantity": 8,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 531,
-    "order_id": "ef455dcf-4480-4ee6-85f7-71bd73368504",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "ea045be8-3c33-4a2d-9137-da2e180210eb",
-      "name": "SatinDeco",
-      "thickness": "1/4",
-      "shape": "Arch Top & Bottom",
-      "tint": "Frosted Green Chip",
-      "length": 27,
-      "width": 9
-    },
-    "quantity": 24,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 1186,
-    "order_id": "575d0a4f-0e42-47fe-871d-0b2a4c479f75",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
-    "product_config": {
-      "glass_id": "d0340245-d1b1-474d-b05b-1e330b5601d2",
-      "name": "SNR 35 HT",
-      "thickness": "1/8",
-      "shape": "Quad Arch",
-      "tint": "Bronze",
-      "length": 77,
-      "width": 26
-    },
-    "quantity": 59,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 8304,
-    "order_id": "575d0a4f-0e42-47fe-871d-0b2a4c479f75",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
-    "product_config": {
-      "glass_id": "46247eed-86b1-4ea7-bddf-4c8a7c89565a",
-      "name": "MC 68 LE-A",
-      "thickness": "3/8",
-      "shape": "Pentagon",
-      "tint": "Frosted Blue Chip",
-      "length": 85,
-      "width": 45
-    },
-    "quantity": 159,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 2571,
-    "order_id": "575d0a4f-0e42-47fe-871d-0b2a4c479f75",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
-    "product_config": {
-      "glass_id": "060bfe65-db6f-4f54-87f7-bea2ea6a249f",
-      "name": "SNE 50/25",
-      "thickness": "1/8",
-      "shape": "Quarter Round with Notch",
-      "tint": "Frosted Blue Chip",
-      "length": 48,
-      "width": 44
-    },
-    "quantity": 40,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 3421,
-    "order_id": "575d0a4f-0e42-47fe-871d-0b2a4c479f75",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "28cb3997-daf6-464f-812d-97182ee602b3",
-      "name": "NU 40 LE",
-      "thickness": "1/2",
-      "shape": "Right Triangle",
-      "tint": "Dark Gray",
-      "length": 82,
-      "width": 32
-    },
-    "quantity": 192,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 2083,
-    "order_id": "575d0a4f-0e42-47fe-871d-0b2a4c479f75",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "ef4a6120-93a8-450f-a7f9-6e75f27fde60",
-      "name": "MC 27 LE-A",
-      "thickness": "3/8",
-      "shape": "Clipped Corner(s)",
-      "tint": "Mistlite",
-      "length": 75,
-      "width": 4
-    },
-    "quantity": 1,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 9853,
-    "order_id": "575d0a4f-0e42-47fe-871d-0b2a4c479f75",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "90410c20-66fd-44a0-8009-3d5b8afc631a",
-      "name": "MC 68 LE-T",
-      "thickness": "1/2",
-      "shape": "Ellipse",
-      "tint": "Frosted Blue Chip",
-      "length": 63,
-      "width": 47
-    },
-    "quantity": 147,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 8504,
-    "order_id": "575d0a4f-0e42-47fe-871d-0b2a4c479f75",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
-    "product_config": {
-      "glass_id": "90410c20-66fd-44a0-8009-3d5b8afc631a",
-      "name": "MC 68 LE-T",
-      "thickness": "3/8",
-      "shape": "Trapezoid",
-      "tint": "Frosted Blue Chip",
-      "length": 91,
-      "width": 17
-    },
-    "quantity": 6,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 6577,
-    "order_id": "d49a0a86-c002-43bf-9788-613010dd2407",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "ef4a6120-93a8-450f-a7f9-6e75f27fde60",
-      "name": "MC 27 LE-A",
-      "thickness": "1/2",
-      "shape": "Right Triangle",
-      "tint": "P-516",
-      "length": 39,
-      "width": 2
-    },
-    "quantity": 58,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 3435,
-    "order_id": "d49a0a86-c002-43bf-9788-613010dd2407",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "d0340245-d1b1-474d-b05b-1e330b5601d2",
-      "name": "SNR 35 HT",
-      "thickness": "3/8",
-      "shape": "Racetrack Oval",
-      "tint": "P-516",
-      "length": 66,
-      "width": 43
-    },
-    "quantity": 113,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 3690,
-    "order_id": "d49a0a86-c002-43bf-9788-613010dd2407",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "af9ab768-f43f-416f-8cb1-8e70979e0972",
-      "name": "Sunguard Spandrel HT",
-      "thickness": "3/4",
-      "shape": "Parallelogram",
-      "tint": "Ultra Clear",
-      "length": 80,
-      "width": 47
-    },
-    "quantity": 10,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 4324,
-    "order_id": "d49a0a86-c002-43bf-9788-613010dd2407",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
-    "product_config": {
-      "glass_id": "af9ab768-f43f-416f-8cb1-8e70979e0972",
-      "name": "Sunguard Spandrel HT",
-      "thickness": "1/8",
-      "shape": "Triangle",
-      "tint": "Midnight Gray",
-      "length": 45,
-      "width": 44
-    },
-    "quantity": 6,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 4675,
-    "order_id": "d49a0a86-c002-43bf-9788-613010dd2407",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "060bfe65-db6f-4f54-87f7-bea2ea6a249f",
-      "name": "SNE 50/25",
-      "thickness": "3/8",
-      "shape": "Half-Circle with Notch",
-      "tint": "P-516",
-      "length": 40,
-      "width": 6
-    },
-    "quantity": 18,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 6626,
-    "order_id": "d49a0a86-c002-43bf-9788-613010dd2407",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "46247eed-86b1-4ea7-bddf-4c8a7c89565a",
-      "name": "MC 68 LE-A",
-      "thickness": "3/8",
-      "shape": "Arch-Top",
-      "tint": "Frosted Green Chip",
-      "length": 83,
-      "width": 8
-    },
-    "quantity": 31,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 2617,
-    "order_id": "d49a0a86-c002-43bf-9788-613010dd2407",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
-    "product_config": {
-      "glass_id": "af9ab768-f43f-416f-8cb1-8e70979e0972",
-      "name": "Sunguard Spandrel HT",
-      "thickness": "3/4",
-      "shape": "Octagon",
-      "tint": "Solex",
-      "length": 33,
-      "width": 31
-    },
-    "quantity": 12,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 1505,
-    "order_id": "d49a0a86-c002-43bf-9788-613010dd2407",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "060bfe65-db6f-4f54-87f7-bea2ea6a249f",
-      "name": "SNE 50/25",
-      "thickness": "3/4",
-      "shape": "Square/Rectangle",
-      "tint": "Bronze",
-      "length": 70,
-      "width": 23
-    },
-    "quantity": 6,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 5650,
-    "order_id": "d49a0a86-c002-43bf-9788-613010dd2407",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "ea045be8-3c33-4a2d-9137-da2e180210eb",
-      "name": "SatinDeco",
-      "thickness": "3/8",
-      "shape": "Arch Top & Bottom",
-      "tint": "Light Gray",
-      "length": 41,
-      "width": 15
-    },
-    "quantity": 47,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 926,
-    "order_id": "ebfa9571-03ad-4ede-ad22-6e1fabd16a85",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "46247eed-86b1-4ea7-bddf-4c8a7c89565a",
-      "name": "MC 68 LE-A",
-      "thickness": "1/8",
-      "shape": "Rounded Corner(s)",
-      "tint": "P-516",
-      "length": 78,
-      "width": 1
-    },
-    "quantity": 30,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 5146,
-    "order_id": "ebfa9571-03ad-4ede-ad22-6e1fabd16a85",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "538c9855-17a0-410d-90d2-5e5e9f43c6c8",
-      "name": "SNX-L 62/34",
-      "thickness": "1/8",
-      "shape": "Arch",
-      "tint": "Solex",
-      "length": 86,
-      "width": 39
-    },
-    "quantity": 22,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 3901,
-    "order_id": "ebfa9571-03ad-4ede-ad22-6e1fabd16a85",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "060bfe65-db6f-4f54-87f7-bea2ea6a249f",
-      "name": "SNE 50/25",
-      "thickness": "3/8",
-      "shape": "Square/Rectangle",
-      "tint": "Low-E",
-      "length": 49,
-      "width": 46
-    },
-    "quantity": 39,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 9584,
-    "order_id": "ebfa9571-03ad-4ede-ad22-6e1fabd16a85",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "da450d2a-3d5e-4646-8941-677dd51f7f8b",
-      "name": "AG 43",
-      "thickness": "1/8",
-      "shape": "Irregular/Any Other Shape",
-      "tint": "P-516",
-      "length": 73,
-      "width": 46
-    },
-    "quantity": 4,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 1237,
-    "order_id": "ebfa9571-03ad-4ede-ad22-6e1fabd16a85",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "cd774965-da25-463b-921f-441244911276",
-      "name": "AG 50 LE",
-      "thickness": "1/2",
-      "shape": "Clipped Corner(s)",
-      "tint": "Light Gray",
-      "length": 89,
-      "width": 9
-    },
-    "quantity": 107,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 3063,
-    "order_id": "65987bcb-2add-4f19-b8c2-34dc61c818a2",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
-    "product_config": {
-      "glass_id": "90410c20-66fd-44a0-8009-3d5b8afc631a",
-      "name": "MC 68 LE-T",
-      "thickness": "1/2",
-      "shape": "Trapezoid",
-      "tint": "Light Gray",
-      "length": 54,
-      "width": 40
-    },
-    "quantity": 4,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 8399,
-    "order_id": "65987bcb-2add-4f19-b8c2-34dc61c818a2",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "060bfe65-db6f-4f54-87f7-bea2ea6a249f",
-      "name": "SNE 50/25",
-      "thickness": "1/4",
-      "shape": "Half-Circle with Notch",
-      "tint": "Dark Gray",
-      "length": 45,
-      "width": 43
-    },
-    "quantity": 3,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 701,
-    "order_id": "65987bcb-2add-4f19-b8c2-34dc61c818a2",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
-    "product_config": {
-      "glass_id": "060bfe65-db6f-4f54-87f7-bea2ea6a249f",
-      "name": "SNE 50/25",
-      "thickness": "1/4",
-      "shape": "Quarter Round with Notch",
-      "tint": "Frosted Blue Chip",
-      "length": 79,
-      "width": 26
-    },
-    "quantity": 37,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 7723,
-    "order_id": "65987bcb-2add-4f19-b8c2-34dc61c818a2",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "91454f2a-292a-4b6c-91bc-2b126062ab5f",
-      "name": "SN 68 HT",
-      "thickness": "3/8",
-      "shape": "Triangle",
-      "tint": "Light Gray",
-      "length": 65,
-      "width": 11
-    },
-    "quantity": 2,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 9916,
-    "order_id": "a6f52d76-59e5-4121-8dcf-f581c4497ce5",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
-    "product_config": {
-      "glass_id": "90410c20-66fd-44a0-8009-3d5b8afc631a",
-      "name": "MC 68 LE-T",
-      "thickness": "3/4",
-      "shape": "Quarter Round",
-      "tint": "Frosted Blue Chip",
-      "length": 88,
-      "width": 7
-    },
-    "quantity": 7,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 7531,
-    "order_id": "a6f52d76-59e5-4121-8dcf-f581c4497ce5",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "91454f2a-292a-4b6c-91bc-2b126062ab5f",
-      "name": "SN 68 HT",
-      "thickness": "1/4",
-      "shape": "Right Triangle",
-      "tint": "Low-E",
-      "length": 55,
-      "width": 9
-    },
-    "quantity": 6,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 1451,
-    "order_id": "858bd973-64bf-455b-bab6-3959b3f236c4",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "28cb3997-daf6-464f-812d-97182ee602b3",
-      "name": "NU 40 LE",
-      "thickness": "1/8",
-      "shape": "Parallelogram",
-      "tint": "Light Gray",
-      "length": 45,
-      "width": 42
-    },
-    "quantity": 18,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 1745,
-    "order_id": "858bd973-64bf-455b-bab6-3959b3f236c4",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "af9ab768-f43f-416f-8cb1-8e70979e0972",
-      "name": "Sunguard Spandrel HT",
-      "thickness": "1/8",
-      "shape": "Octagon",
-      "tint": "Ultra Clear",
-      "length": 45,
-      "width": 10
-    },
-    "quantity": 187,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 9103,
-    "order_id": "b63ca6d4-6080-4c73-af65-7e19b56ccd01",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "060bfe65-db6f-4f54-87f7-bea2ea6a249f",
-      "name": "SNE 50/25",
-      "thickness": "3/8",
-      "shape": "Square/Rectangle",
-      "tint": "P-516",
-      "length": 79,
-      "width": 39
-    },
-    "quantity": 4,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 7790,
-    "order_id": "b63ca6d4-6080-4c73-af65-7e19b56ccd01",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "24c66f1f-bd90-4fc2-b3e2-7ed7cb667b00",
-      "name": "IS20 LE-T",
-      "thickness": "1/8",
-      "shape": "Trapezoid",
-      "tint": "P-516",
-      "length": 73,
-      "width": 20
-    },
-    "quantity": 6,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 7859,
-    "order_id": "57279347-d7a7-4c75-9414-450fb23eadff",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
-    "product_config": {
-      "glass_id": "90410c20-66fd-44a0-8009-3d5b8afc631a",
-      "name": "MC 68 LE-T",
-      "thickness": "1/4",
-      "shape": "Arch Side",
-      "tint": "Frosted Blue Chip",
-      "length": 46,
-      "width": 25
-    },
-    "quantity": 31,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 4083,
-    "order_id": "57279347-d7a7-4c75-9414-450fb23eadff",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "538c9855-17a0-410d-90d2-5e5e9f43c6c8",
-      "name": "SNX-L 62/34",
-      "thickness": "1/2",
-      "shape": "Trapezoid",
-      "tint": "Solex",
-      "length": 87,
-      "width": 37
-    },
-    "quantity": 1,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 9461,
-    "order_id": "57279347-d7a7-4c75-9414-450fb23eadff",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "af9ab768-f43f-416f-8cb1-8e70979e0972",
-      "name": "Sunguard Spandrel HT",
-      "thickness": "3/8",
-      "shape": "Arch-Top",
-      "tint": "Solex",
-      "length": 63,
-      "width": 8
-    },
-    "quantity": 38,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 7219,
-    "order_id": "57279347-d7a7-4c75-9414-450fb23eadff",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "ef4a6120-93a8-450f-a7f9-6e75f27fde60",
-      "name": "MC 27 LE-A",
-      "thickness": "1/2",
-      "shape": "Octagon",
-      "tint": "Light Gray",
-      "length": 79,
-      "width": 9
-    },
-    "quantity": 22,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 6505,
-    "order_id": "57279347-d7a7-4c75-9414-450fb23eadff",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "90410c20-66fd-44a0-8009-3d5b8afc631a",
-      "name": "MC 68 LE-T",
-      "thickness": "3/8",
-      "shape": "Hexagon",
-      "tint": "Light Gray",
-      "length": 90,
-      "width": 15
-    },
-    "quantity": 50,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 5963,
-    "order_id": "57279347-d7a7-4c75-9414-450fb23eadff",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "91454f2a-292a-4b6c-91bc-2b126062ab5f",
-      "name": "SN 68 HT",
-      "thickness": "3/4",
-      "shape": "Octagon",
-      "tint": "P-516",
-      "length": 19,
-      "width": 16
-    },
-    "quantity": 32,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 3165,
-    "order_id": "57279347-d7a7-4c75-9414-450fb23eadff",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "538c9855-17a0-410d-90d2-5e5e9f43c6c8",
-      "name": "SNX-L 62/34",
-      "thickness": "3/4",
-      "shape": "Triangle",
-      "tint": "P-516",
-      "length": 22,
-      "width": 17
-    },
-    "quantity": 109,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 7526,
-    "order_id": "57279347-d7a7-4c75-9414-450fb23eadff",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "46247eed-86b1-4ea7-bddf-4c8a7c89565a",
-      "name": "MC 68 LE-A",
-      "thickness": "3/8",
-      "shape": "Right Triangle",
-      "tint": "Clear",
-      "length": 56,
-      "width": 34
-    },
-    "quantity": 2,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 7291,
-    "order_id": "57279347-d7a7-4c75-9414-450fb23eadff",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "cd774965-da25-463b-921f-441244911276",
-      "name": "AG 50 LE",
-      "thickness": "3/4",
-      "shape": "Single Slope Rectangle",
-      "tint": "Light Gray",
-      "length": 76,
-      "width": 47
-    },
-    "quantity": 3,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 8461,
-    "order_id": "0e687619-2217-46b5-a163-f0a3a204773b",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
-    "product_config": {
-      "glass_id": "28cb3997-daf6-464f-812d-97182ee602b3",
-      "name": "NU 40 LE",
-      "thickness": "3/8",
-      "shape": "Right Triangle",
-      "tint": "Satin Etch",
-      "length": 64,
-      "width": 7
-    },
-    "quantity": 4,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 8196,
-    "order_id": "0e687619-2217-46b5-a163-f0a3a204773b",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
-    "product_config": {
-      "glass_id": "ef4a6120-93a8-450f-a7f9-6e75f27fde60",
-      "name": "MC 27 LE-A",
-      "thickness": "1/8",
-      "shape": "House",
-      "tint": "P-516",
-      "length": 80,
-      "width": 6
-    },
-    "quantity": 5,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 918,
-    "order_id": "0e687619-2217-46b5-a163-f0a3a204773b",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "ef4a6120-93a8-450f-a7f9-6e75f27fde60",
-      "name": "MC 27 LE-A",
-      "thickness": "1/8",
-      "shape": "Irregular/Any Other Shape",
-      "tint": "Clear",
-      "length": 50,
-      "width": 48
-    },
-    "quantity": 9,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 230,
-    "order_id": "0e687619-2217-46b5-a163-f0a3a204773b",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
-    "product_config": {
-      "glass_id": "b4ad52ba-ba2e-4db7-815c-0f0087e58ff4",
-      "name": "SN 68",
-      "thickness": "1/2",
-      "shape": "Half-Circle",
-      "tint": "Mistlite",
-      "length": 82,
-      "width": 30
-    },
-    "quantity": 7,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 2787,
-    "order_id": "0e687619-2217-46b5-a163-f0a3a204773b",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "90410c20-66fd-44a0-8009-3d5b8afc631a",
-      "name": "MC 68 LE-T",
-      "thickness": "1/2",
-      "shape": "Rounded Corner(s)",
-      "tint": "Frosted Green Chip",
-      "length": 92,
-      "width": 33
-    },
-    "quantity": 57,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 7244,
-    "order_id": "0e687619-2217-46b5-a163-f0a3a204773b",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "91454f2a-292a-4b6c-91bc-2b126062ab5f",
-      "name": "SN 68 HT",
-      "thickness": "3/8",
-      "shape": "Quarter Round",
-      "tint": "Low-E",
-      "length": 32,
-      "width": 9
-    },
-    "quantity": 17,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 3615,
-    "order_id": "0e687619-2217-46b5-a163-f0a3a204773b",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
-    "product_config": {
-      "glass_id": "b4ad52ba-ba2e-4db7-815c-0f0087e58ff4",
-      "name": "SN 68",
-      "thickness": "3/8",
-      "shape": "Parallelogram",
-      "tint": "Clear",
-      "length": 50,
-      "width": 10
-    },
-    "quantity": 54,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 7350,
-    "order_id": "29b8950b-8e5e-41fe-895a-1a1cc51ecc93",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "538c9855-17a0-410d-90d2-5e5e9f43c6c8",
-      "name": "SNX-L 62/34",
-      "thickness": "3/8",
-      "shape": "Trapezoid",
-      "tint": "P-516",
-      "length": 50,
-      "width": 9
-    },
-    "quantity": 4,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 4852,
-    "order_id": "29b8950b-8e5e-41fe-895a-1a1cc51ecc93",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "ea045be8-3c33-4a2d-9137-da2e180210eb",
-      "name": "SatinDeco",
-      "thickness": "1/4",
-      "shape": "Clipped Corner(s)",
-      "tint": "P-516",
-      "length": 53,
-      "width": 35
-    },
-    "quantity": 2,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 3198,
-    "order_id": "29b8950b-8e5e-41fe-895a-1a1cc51ecc93",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "ef4a6120-93a8-450f-a7f9-6e75f27fde60",
-      "name": "MC 27 LE-A",
-      "thickness": "3/8",
-      "shape": "Irregular/Any Other Shape",
-      "tint": "Clear",
-      "length": 29,
-      "width": 10
-    },
-    "quantity": 6,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 3606,
-    "order_id": "29b8950b-8e5e-41fe-895a-1a1cc51ecc93",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "cd774965-da25-463b-921f-441244911276",
-      "name": "AG 50 LE",
-      "thickness": "1/2",
-      "shape": "Quarter Round",
-      "tint": "Frosted Green Chip",
-      "length": 83,
-      "width": 33
-    },
-    "quantity": 3,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 1705,
-    "order_id": "29b8950b-8e5e-41fe-895a-1a1cc51ecc93",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "538c9855-17a0-410d-90d2-5e5e9f43c6c8",
-      "name": "SNX-L 62/34",
-      "thickness": "1/8",
-      "shape": "Octagon",
-      "tint": "Light Gray",
-      "length": 84,
-      "width": 16
-    },
-    "quantity": 24,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 2557,
-    "order_id": "29b8950b-8e5e-41fe-895a-1a1cc51ecc93",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
-    "product_config": {
-      "glass_id": "ef4a6120-93a8-450f-a7f9-6e75f27fde60",
-      "name": "MC 27 LE-A",
-      "thickness": "3/4",
-      "shape": "Racetrack Oval",
-      "tint": "Light Gray",
-      "length": 46,
-      "width": 8
-    },
-    "quantity": 28,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 2799,
-    "order_id": "29b8950b-8e5e-41fe-895a-1a1cc51ecc93",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
-    "product_config": {
-      "glass_id": "ea045be8-3c33-4a2d-9137-da2e180210eb",
-      "name": "SatinDeco",
-      "thickness": "3/8",
-      "shape": "Clipped Corner(s)",
-      "tint": "P-516",
-      "length": 32,
-      "width": 7
-    },
-    "quantity": 54,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 8153,
-    "order_id": "29b8950b-8e5e-41fe-895a-1a1cc51ecc93",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "28cb3997-daf6-464f-812d-97182ee602b3",
-      "name": "NU 40 LE",
-      "thickness": "1/4",
-      "shape": "Square/Rectangle",
-      "tint": "Dark Gray",
-      "length": 52,
-      "width": 20
-    },
-    "quantity": 71,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 6225,
-    "order_id": "29b8950b-8e5e-41fe-895a-1a1cc51ecc93",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "ef4a6120-93a8-450f-a7f9-6e75f27fde60",
-      "name": "MC 27 LE-A",
-      "thickness": "1/8",
-      "shape": "Ellipse",
-      "tint": "Mistlite",
-      "length": 27,
-      "width": 8
-    },
-    "quantity": 9,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 636,
-    "order_id": "c6b72fbd-a844-4700-b8c7-131b5dfdbe36",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "ea045be8-3c33-4a2d-9137-da2e180210eb",
-      "name": "SatinDeco",
-      "thickness": "1/4",
-      "shape": "Square/Rectangle",
-      "tint": "Dark Gray",
-      "length": 95,
-      "width": 46
-    },
-    "quantity": 17,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 97,
-    "order_id": "c6b72fbd-a844-4700-b8c7-131b5dfdbe36",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "28cb3997-daf6-464f-812d-97182ee602b3",
-      "name": "NU 40 LE",
-      "thickness": "3/4",
-      "shape": "Arch Side",
-      "tint": "Light Gray",
-      "length": 86,
-      "width": 36
-    },
-    "quantity": 18,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 2431,
-    "order_id": "c6b72fbd-a844-4700-b8c7-131b5dfdbe36",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "24c66f1f-bd90-4fc2-b3e2-7ed7cb667b00",
-      "name": "IS20 LE-T",
-      "thickness": "1/4",
-      "shape": "Trapezoid",
-      "tint": "Frosted Blue Chip",
-      "length": 54,
-      "width": 41
-    },
-    "quantity": 100,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 8963,
-    "order_id": "c6b72fbd-a844-4700-b8c7-131b5dfdbe36",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "538c9855-17a0-410d-90d2-5e5e9f43c6c8",
-      "name": "SNX-L 62/34",
-      "thickness": "3/8",
-      "shape": "Parallelogram",
-      "tint": "Bronze",
-      "length": 62,
-      "width": 14
-    },
-    "quantity": 46,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 7400,
-    "order_id": "c6b72fbd-a844-4700-b8c7-131b5dfdbe36",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "ef4a6120-93a8-450f-a7f9-6e75f27fde60",
-      "name": "MC 27 LE-A",
-      "thickness": "1/2",
-      "shape": "Quarter Round with Notch",
-      "tint": "Light Gray",
-      "length": 54,
-      "width": 1
-    },
-    "quantity": 150,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 2849,
-    "order_id": "28e6b1f0-04fa-4d1a-8914-5f210b0e279a",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "d0340245-d1b1-474d-b05b-1e330b5601d2",
-      "name": "SNR 35 HT",
-      "thickness": "1/4",
-      "shape": "Arch-Top",
-      "tint": "Clear",
-      "length": 54,
-      "width": 43
-    },
-    "quantity": 35,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 3090,
-    "order_id": "28e6b1f0-04fa-4d1a-8914-5f210b0e279a",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "91454f2a-292a-4b6c-91bc-2b126062ab5f",
-      "name": "SN 68 HT",
-      "thickness": "1/2",
-      "shape": "Triangle",
-      "tint": "P-516",
-      "length": 46,
-      "width": 34
-    },
-    "quantity": 107,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 8071,
-    "order_id": "38a3990a-4863-4bd7-9825-043ff0368e2e",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "91454f2a-292a-4b6c-91bc-2b126062ab5f",
-      "name": "SN 68 HT",
-      "thickness": "1/4",
-      "shape": "Single Slope Rectangle",
-      "tint": "Midnight Gray",
-      "length": 48,
-      "width": 48
-    },
-    "quantity": 155,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 4549,
-    "order_id": "38a3990a-4863-4bd7-9825-043ff0368e2e",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "90410c20-66fd-44a0-8009-3d5b8afc631a",
-      "name": "MC 68 LE-T",
-      "thickness": "3/4",
-      "shape": "Quarter Round",
-      "tint": "Frosted Blue Chip",
-      "length": 53,
-      "width": 32
-    },
-    "quantity": 29,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 1069,
-    "order_id": "38a3990a-4863-4bd7-9825-043ff0368e2e",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "28cb3997-daf6-464f-812d-97182ee602b3",
-      "name": "NU 40 LE",
-      "thickness": "1/4",
-      "shape": "Quarter Round",
-      "tint": "Ultra Clear",
-      "length": 72,
-      "width": 10
-    },
-    "quantity": 3,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 4206,
-    "order_id": "38a3990a-4863-4bd7-9825-043ff0368e2e",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
-    "product_config": {
-      "glass_id": "060bfe65-db6f-4f54-87f7-bea2ea6a249f",
-      "name": "SNE 50/25",
-      "thickness": "1/2",
-      "shape": "Quarter Round with Notch",
-      "tint": "Frosted Blue Chip",
-      "length": 84,
-      "width": 27
-    },
-    "quantity": 5,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 7352,
-    "order_id": "38a3990a-4863-4bd7-9825-043ff0368e2e",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "d0340245-d1b1-474d-b05b-1e330b5601d2",
-      "name": "SNR 35 HT",
-      "thickness": "1/2",
-      "shape": "Octagon",
-      "tint": "Clear",
-      "length": 35,
-      "width": 33
-    },
-    "quantity": 29,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 5493,
-    "order_id": "38a3990a-4863-4bd7-9825-043ff0368e2e",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "24c66f1f-bd90-4fc2-b3e2-7ed7cb667b00",
-      "name": "IS20 LE-T",
-      "thickness": "1/2",
-      "shape": "Octagon",
-      "tint": "Frosted Blue Chip",
-      "length": 84,
-      "width": 35
-    },
-    "quantity": 8,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 7564,
-    "order_id": "38a3990a-4863-4bd7-9825-043ff0368e2e",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
-    "product_config": {
-      "glass_id": "ea045be8-3c33-4a2d-9137-da2e180210eb",
-      "name": "SatinDeco",
-      "thickness": "3/4",
-      "shape": "Ellipse",
-      "tint": "Bronze",
-      "length": 20,
-      "width": 18
-    },
-    "quantity": 11,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 2317,
-    "order_id": "38a3990a-4863-4bd7-9825-043ff0368e2e",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "90410c20-66fd-44a0-8009-3d5b8afc631a",
-      "name": "MC 68 LE-T",
-      "thickness": "1/2",
-      "shape": "Triangle",
-      "tint": "Low-E",
-      "length": 93,
-      "width": 19
-    },
-    "quantity": 9,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 966,
-    "order_id": "38a3990a-4863-4bd7-9825-043ff0368e2e",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "91454f2a-292a-4b6c-91bc-2b126062ab5f",
-      "name": "SN 68 HT",
-      "thickness": "3/8",
-      "shape": "Clipped Corner(s)",
-      "tint": "Dark Gray",
-      "length": 60,
-      "width": 30
-    },
-    "quantity": 39,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 4057,
-    "order_id": "cfab1896-c9e9-461d-9764-7d07f6239475",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "90410c20-66fd-44a0-8009-3d5b8afc631a",
-      "name": "MC 68 LE-T",
-      "thickness": "3/4",
-      "shape": "Trapezoid",
-      "tint": "Low-E",
-      "length": 51,
-      "width": 12
-    },
-    "quantity": 15,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 4225,
-    "order_id": "18b87fbc-1e4e-40e7-a6e2-3cfa81b4d1a5",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "d0340245-d1b1-474d-b05b-1e330b5601d2",
-      "name": "SNR 35 HT",
-      "thickness": "1/8",
-      "shape": "Arch-Top",
-      "tint": "P-516",
-      "length": 75,
-      "width": 38
-    },
-    "quantity": 149,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 6548,
-    "order_id": "a2ce4e40-066e-4e19-9c6e-bb9f4b38d8c8",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "24c66f1f-bd90-4fc2-b3e2-7ed7cb667b00",
-      "name": "IS20 LE-T",
-      "thickness": "1/2",
-      "shape": "Pentagon",
-      "tint": "P-516",
-      "length": 73,
-      "width": 30
-    },
-    "quantity": 8,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 8160,
-    "order_id": "a2ce4e40-066e-4e19-9c6e-bb9f4b38d8c8",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "91454f2a-292a-4b6c-91bc-2b126062ab5f",
-      "name": "SN 68 HT",
-      "thickness": "1/4",
-      "shape": "Irregular/Any Other Shape",
-      "tint": "Clear",
-      "length": 63,
-      "width": 33
-    },
-    "quantity": 4,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 8422,
-    "order_id": "a2ce4e40-066e-4e19-9c6e-bb9f4b38d8c8",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
-    "product_config": {
-      "glass_id": "24c66f1f-bd90-4fc2-b3e2-7ed7cb667b00",
-      "name": "IS20 LE-T",
-      "thickness": "3/8",
-      "shape": "Octagon",
-      "tint": "Frosted Green Chip",
-      "length": 70,
-      "width": 44
-    },
-    "quantity": 3,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 2129,
-    "order_id": "e2125ff9-b830-4154-8133-f734469d570c",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "538c9855-17a0-410d-90d2-5e5e9f43c6c8",
-      "name": "SNX-L 62/34",
-      "thickness": "1/8",
-      "shape": "Trapezoid",
-      "tint": "Frosted Green Chip",
-      "length": 55,
-      "width": 48
-    },
-    "quantity": 16,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 4107,
-    "order_id": "e2125ff9-b830-4154-8133-f734469d570c",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "538c9855-17a0-410d-90d2-5e5e9f43c6c8",
-      "name": "SNX-L 62/34",
-      "thickness": "1/2",
-      "shape": "Half-Circle",
-      "tint": "Solex",
-      "length": 72,
-      "width": 7
-    },
-    "quantity": 16,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 3540,
-    "order_id": "86e5e351-5052-45f4-bf90-95ddbdb77770",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "af9ab768-f43f-416f-8cb1-8e70979e0972",
-      "name": "Sunguard Spandrel HT",
-      "thickness": "3/4",
-      "shape": "Parallelogram",
-      "tint": "Ultra Clear",
-      "length": 40,
-      "width": 21
-    },
-    "quantity": 181,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 492,
-    "order_id": "86e5e351-5052-45f4-bf90-95ddbdb77770",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "cd774965-da25-463b-921f-441244911276",
-      "name": "AG 50 LE",
-      "thickness": "1/2",
-      "shape": "Octagon",
-      "tint": "Frosted Green Chip",
-      "length": 58,
-      "width": 42
-    },
-    "quantity": 59,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 2513,
-    "order_id": "86e5e351-5052-45f4-bf90-95ddbdb77770",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "46247eed-86b1-4ea7-bddf-4c8a7c89565a",
-      "name": "MC 68 LE-A",
-      "thickness": "3/4",
-      "shape": "Single Slope Rectangle",
-      "tint": "Frosted Blue Chip",
-      "length": 49,
-      "width": 4
-    },
-    "quantity": 22,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 5558,
-    "order_id": "86e5e351-5052-45f4-bf90-95ddbdb77770",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "46247eed-86b1-4ea7-bddf-4c8a7c89565a",
-      "name": "MC 68 LE-A",
-      "thickness": "1/4",
-      "shape": "Quarter Round with Notch",
-      "tint": "Solex",
-      "length": 44,
-      "width": 41
-    },
-    "quantity": 84,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 5357,
-    "order_id": "86e5e351-5052-45f4-bf90-95ddbdb77770",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "d0340245-d1b1-474d-b05b-1e330b5601d2",
-      "name": "SNR 35 HT",
-      "thickness": "1/4",
-      "shape": "Quarter Round",
-      "tint": "Clear",
-      "length": 53,
-      "width": 14
-    },
-    "quantity": 10,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 4062,
-    "order_id": "778af26f-1051-452a-a91e-4329a95c1c40",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
-    "product_config": {
-      "glass_id": "91454f2a-292a-4b6c-91bc-2b126062ab5f",
-      "name": "SN 68 HT",
-      "thickness": "3/4",
-      "shape": "Right Triangle",
-      "tint": "Clear",
-      "length": 65,
-      "width": 42
-    },
-    "quantity": 4,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 331,
-    "order_id": "778af26f-1051-452a-a91e-4329a95c1c40",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
-    "product_config": {
-      "glass_id": "b4ad52ba-ba2e-4db7-815c-0f0087e58ff4",
-      "name": "SN 68",
-      "thickness": "1/4",
-      "shape": "Clipped Corner(s)",
-      "tint": "Frosted Green Chip",
-      "length": 49,
-      "width": 17
-    },
-    "quantity": 38,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 2886,
-    "order_id": "778af26f-1051-452a-a91e-4329a95c1c40",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "da450d2a-3d5e-4646-8941-677dd51f7f8b",
-      "name": "AG 43",
-      "thickness": "3/8",
-      "shape": "Arch Side",
-      "tint": "Satin Etch",
-      "length": 85,
-      "width": 29
-    },
-    "quantity": 10,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 9357,
-    "order_id": "778af26f-1051-452a-a91e-4329a95c1c40",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "28cb3997-daf6-464f-812d-97182ee602b3",
-      "name": "NU 40 LE",
-      "thickness": "3/4",
-      "shape": "Arch Side",
-      "tint": "Dark Gray",
-      "length": 57,
-      "width": 27
-    },
-    "quantity": 9,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 5925,
-    "order_id": "778af26f-1051-452a-a91e-4329a95c1c40",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "28cb3997-daf6-464f-812d-97182ee602b3",
-      "name": "NU 40 LE",
-      "thickness": "3/4",
-      "shape": "Half-Circle with Notch",
-      "tint": "Light Gray",
-      "length": 47,
-      "width": 24
-    },
-    "quantity": 10,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 7180,
-    "order_id": "778af26f-1051-452a-a91e-4329a95c1c40",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "af9ab768-f43f-416f-8cb1-8e70979e0972",
-      "name": "Sunguard Spandrel HT",
-      "thickness": "1/8",
-      "shape": "Half-Circle",
-      "tint": "Ultra Clear",
-      "length": 62,
-      "width": 41
-    },
-    "quantity": 186,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 4607,
-    "order_id": "778af26f-1051-452a-a91e-4329a95c1c40",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "af9ab768-f43f-416f-8cb1-8e70979e0972",
-      "name": "Sunguard Spandrel HT",
-      "thickness": "1/8",
-      "shape": "Irregular/Any Other Shape",
-      "tint": "Light Gray",
-      "length": 82,
-      "width": 35
-    },
-    "quantity": 1,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 2689,
-    "order_id": "778af26f-1051-452a-a91e-4329a95c1c40",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "d0340245-d1b1-474d-b05b-1e330b5601d2",
-      "name": "SNR 35 HT",
-      "thickness": "1/8",
-      "shape": "Ellipse",
-      "tint": "Clear",
-      "length": 69,
-      "width": 10
-    },
-    "quantity": 85,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 2127,
-    "order_id": "ae6b6f18-b1ac-480f-9600-17ba520f09bf",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "46247eed-86b1-4ea7-bddf-4c8a7c89565a",
-      "name": "MC 68 LE-A",
-      "thickness": "3/4",
-      "shape": "Racetrack Oval",
-      "tint": "Solex",
-      "length": 55,
-      "width": 38
-    },
-    "quantity": 28,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 8398,
-    "order_id": "ae6b6f18-b1ac-480f-9600-17ba520f09bf",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
-    "product_config": {
-      "glass_id": "90410c20-66fd-44a0-8009-3d5b8afc631a",
-      "name": "MC 68 LE-T",
-      "thickness": "1/8",
-      "shape": "Quarter Round with Notch",
-      "tint": "Light Gray",
-      "length": 77,
-      "width": 9
-    },
-    "quantity": 135,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 5274,
-    "order_id": "ae6b6f18-b1ac-480f-9600-17ba520f09bf",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "b4ad52ba-ba2e-4db7-815c-0f0087e58ff4",
-      "name": "SN 68",
-      "thickness": "3/8",
-      "shape": "Parallelogram",
-      "tint": "Satin Etch",
-      "length": 83,
-      "width": 26
-    },
-    "quantity": 5,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 4981,
-    "order_id": "ae6b6f18-b1ac-480f-9600-17ba520f09bf",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "90410c20-66fd-44a0-8009-3d5b8afc631a",
-      "name": "MC 68 LE-T",
-      "thickness": "3/4",
-      "shape": "Circle",
-      "tint": "Low-E",
-      "length": 54,
-      "width": 47
-    },
-    "quantity": 116,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 1376,
-    "order_id": "314973ed-274f-43a1-94b7-e7bd4ae51307",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
-    "product_config": {
-      "glass_id": "ea045be8-3c33-4a2d-9137-da2e180210eb",
-      "name": "SatinDeco",
-      "thickness": "1/4",
-      "shape": "Arch Top & Bottom",
-      "tint": "Satin Etch",
-      "length": 33,
-      "width": 18
-    },
-    "quantity": 3,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 5135,
-    "order_id": "314973ed-274f-43a1-94b7-e7bd4ae51307",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
-    "product_config": {
-      "glass_id": "91454f2a-292a-4b6c-91bc-2b126062ab5f",
-      "name": "SN 68 HT",
-      "thickness": "3/8",
-      "shape": "Triangle",
-      "tint": "Dark Gray",
-      "length": 72,
-      "width": 24
-    },
-    "quantity": 16,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 2540,
-    "order_id": "314973ed-274f-43a1-94b7-e7bd4ae51307",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "28cb3997-daf6-464f-812d-97182ee602b3",
-      "name": "NU 40 LE",
-      "thickness": "3/8",
-      "shape": "Right Triangle",
-      "tint": "Ultra Clear",
-      "length": 87,
-      "width": 15
-    },
-    "quantity": 42,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 5835,
-    "order_id": "314973ed-274f-43a1-94b7-e7bd4ae51307",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "060bfe65-db6f-4f54-87f7-bea2ea6a249f",
-      "name": "SNE 50/25",
-      "thickness": "1/2",
-      "shape": "Square/Rectangle",
-      "tint": "Dark Gray",
-      "length": 73,
-      "width": 47
-    },
-    "quantity": 6,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 6468,
-    "order_id": "314973ed-274f-43a1-94b7-e7bd4ae51307",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
-    "product_config": {
-      "glass_id": "91454f2a-292a-4b6c-91bc-2b126062ab5f",
-      "name": "SN 68 HT",
-      "thickness": "1/2",
-      "shape": "Clipped Corner(s)",
-      "tint": "P-516",
-      "length": 47,
-      "width": 41
-    },
-    "quantity": 1,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 8653,
-    "order_id": "38cd5238-d20f-48f5-8cea-7bceb242469b",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "91454f2a-292a-4b6c-91bc-2b126062ab5f",
-      "name": "SN 68 HT",
-      "thickness": "1/4",
-      "shape": "Right Triangle",
-      "tint": "P-516",
-      "length": 94,
-      "width": 39
-    },
-    "quantity": 119,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 5347,
-    "order_id": "38cd5238-d20f-48f5-8cea-7bceb242469b",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "ea045be8-3c33-4a2d-9137-da2e180210eb",
-      "name": "SatinDeco",
-      "thickness": "1/4",
-      "shape": "Clipped Corner(s)",
-      "tint": "Ultra Clear",
-      "length": 50,
-      "width": 11
-    },
-    "quantity": 18,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 3961,
-    "order_id": "38cd5238-d20f-48f5-8cea-7bceb242469b",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "ea045be8-3c33-4a2d-9137-da2e180210eb",
-      "name": "SatinDeco",
-      "thickness": "1/4",
-      "shape": "Half-Circle with Notch",
-      "tint": "Frosted Blue Chip",
-      "length": 73,
-      "width": 18
-    },
-    "quantity": 3,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 1129,
-    "order_id": "38cd5238-d20f-48f5-8cea-7bceb242469b",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "28cb3997-daf6-464f-812d-97182ee602b3",
-      "name": "NU 40 LE",
-      "thickness": "3/8",
-      "shape": "Irregular/Any Other Shape",
-      "tint": "Dark Gray",
-      "length": 79,
-      "width": 22
-    },
-    "quantity": 5,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 2850,
-    "order_id": "38cd5238-d20f-48f5-8cea-7bceb242469b",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "46247eed-86b1-4ea7-bddf-4c8a7c89565a",
-      "name": "MC 68 LE-A",
-      "thickness": "3/4",
-      "shape": "Arch-Top",
-      "tint": "P-516",
-      "length": 35,
-      "width": 32
-    },
-    "quantity": 6,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 253,
-    "order_id": "fd6bb290-5903-40db-90a4-73a704041c0f",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "46247eed-86b1-4ea7-bddf-4c8a7c89565a",
-      "name": "MC 68 LE-A",
-      "thickness": "1/8",
-      "shape": "Racetrack Oval",
-      "tint": "Satin Etch",
-      "length": 32,
-      "width": 25
-    },
-    "quantity": 107,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 8908,
-    "order_id": "fd6bb290-5903-40db-90a4-73a704041c0f",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "af9ab768-f43f-416f-8cb1-8e70979e0972",
-      "name": "Sunguard Spandrel HT",
-      "thickness": "1/4",
-      "shape": "Octagon",
-      "tint": "Ultra Clear",
-      "length": 76,
-      "width": 41
-    },
-    "quantity": 29,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 3638,
-    "order_id": "fd6bb290-5903-40db-90a4-73a704041c0f",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "90410c20-66fd-44a0-8009-3d5b8afc631a",
-      "name": "MC 68 LE-T",
-      "thickness": "1/8",
-      "shape": "Ellipse",
-      "tint": "Low-E",
-      "length": 28,
-      "width": 1
-    },
-    "quantity": 56,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 628,
-    "order_id": "fd6bb290-5903-40db-90a4-73a704041c0f",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "538c9855-17a0-410d-90d2-5e5e9f43c6c8",
-      "name": "SNX-L 62/34",
-      "thickness": "1/4",
-      "shape": "Parallelogram",
-      "tint": "Solex",
-      "length": 68,
-      "width": 28
-    },
-    "quantity": 28,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 6441,
-    "order_id": "fd6bb290-5903-40db-90a4-73a704041c0f",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "da450d2a-3d5e-4646-8941-677dd51f7f8b",
-      "name": "AG 43",
-      "thickness": "1/8",
-      "shape": "Quarter Round",
-      "tint": "Light Gray",
-      "length": 48,
-      "width": 20
-    },
-    "quantity": 199,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 1754,
-    "order_id": "fd6bb290-5903-40db-90a4-73a704041c0f",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "060bfe65-db6f-4f54-87f7-bea2ea6a249f",
-      "name": "SNE 50/25",
-      "thickness": "3/4",
-      "shape": "Quarter Round with Notch",
-      "tint": "Low-E",
-      "length": 58,
-      "width": 5
-    },
-    "quantity": 6,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 4229,
-    "order_id": "fd6bb290-5903-40db-90a4-73a704041c0f",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "b4ad52ba-ba2e-4db7-815c-0f0087e58ff4",
-      "name": "SN 68",
-      "thickness": "3/4",
-      "shape": "Arch Top & Bottom",
-      "tint": "Satin Etch",
-      "length": 51,
-      "width": 20
-    },
-    "quantity": 2,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 3442,
-    "order_id": "fd6bb290-5903-40db-90a4-73a704041c0f",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "91454f2a-292a-4b6c-91bc-2b126062ab5f",
-      "name": "SN 68 HT",
-      "thickness": "1/4",
-      "shape": "Triangle",
-      "tint": "P-516",
-      "length": 66,
-      "width": 22
-    },
-    "quantity": 148,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 3307,
-    "order_id": "7ada1b1b-8b9a-4285-8bd9-4140fdf46ea0",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
-    "product_config": {
-      "glass_id": "90410c20-66fd-44a0-8009-3d5b8afc631a",
-      "name": "MC 68 LE-T",
-      "thickness": "3/8",
-      "shape": "Rounded Corner(s)",
-      "tint": "Satin Etch",
-      "length": 85,
-      "width": 3
-    },
-    "quantity": 23,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 9111,
-    "order_id": "7ada1b1b-8b9a-4285-8bd9-4140fdf46ea0",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "90410c20-66fd-44a0-8009-3d5b8afc631a",
-      "name": "MC 68 LE-T",
-      "thickness": "3/4",
-      "shape": "Circle",
-      "tint": "Frosted Blue Chip",
-      "length": 77,
-      "width": 2
-    },
-    "quantity": 55,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 497,
-    "order_id": "7ada1b1b-8b9a-4285-8bd9-4140fdf46ea0",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "46247eed-86b1-4ea7-bddf-4c8a7c89565a",
-      "name": "MC 68 LE-A",
-      "thickness": "1/8",
-      "shape": "Rounded Corner(s)",
-      "tint": "P-516",
-      "length": 76,
-      "width": 8
-    },
-    "quantity": 81,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 1238,
-    "order_id": "7ada1b1b-8b9a-4285-8bd9-4140fdf46ea0",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "af9ab768-f43f-416f-8cb1-8e70979e0972",
-      "name": "Sunguard Spandrel HT",
-      "thickness": "3/4",
-      "shape": "Octagon",
-      "tint": "Ultra Clear",
-      "length": 80,
-      "width": 30
-    },
-    "quantity": 9,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 1796,
-    "order_id": "7ada1b1b-8b9a-4285-8bd9-4140fdf46ea0",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "cd774965-da25-463b-921f-441244911276",
-      "name": "AG 50 LE",
-      "thickness": "3/8",
-      "shape": "Clipped Corner(s)",
-      "tint": "Mistlite",
-      "length": 49,
-      "width": 46
-    },
-    "quantity": 40,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 644,
-    "order_id": "7ada1b1b-8b9a-4285-8bd9-4140fdf46ea0",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "af9ab768-f43f-416f-8cb1-8e70979e0972",
-      "name": "Sunguard Spandrel HT",
-      "thickness": "3/8",
-      "shape": "Arch Top & Bottom",
-      "tint": "Clear",
-      "length": 70,
-      "width": 7
-    },
-    "quantity": 103,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 7679,
-    "order_id": "7ada1b1b-8b9a-4285-8bd9-4140fdf46ea0",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "cd774965-da25-463b-921f-441244911276",
-      "name": "AG 50 LE",
-      "thickness": "1/2",
-      "shape": "Octagon",
-      "tint": "Satin Etch",
-      "length": 34,
-      "width": 24
-    },
-    "quantity": 81,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 8352,
-    "order_id": "7ada1b1b-8b9a-4285-8bd9-4140fdf46ea0",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
-    "product_config": {
-      "glass_id": "90410c20-66fd-44a0-8009-3d5b8afc631a",
-      "name": "MC 68 LE-T",
-      "thickness": "1/2",
-      "shape": "Arch Side",
-      "tint": "Frosted Green Chip",
-      "length": 43,
-      "width": 4
-    },
-    "quantity": 2,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 7933,
-    "order_id": "7ada1b1b-8b9a-4285-8bd9-4140fdf46ea0",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
-    "product_config": {
-      "glass_id": "24c66f1f-bd90-4fc2-b3e2-7ed7cb667b00",
-      "name": "IS20 LE-T",
-      "thickness": "3/4",
-      "shape": "Octagon",
-      "tint": "Frosted Blue Chip",
-      "length": 27,
-      "width": 23
-    },
-    "quantity": 55,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 5911,
-    "order_id": "6a3cc106-8270-4dde-81e4-8cd8c903cb2b",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "af9ab768-f43f-416f-8cb1-8e70979e0972",
-      "name": "Sunguard Spandrel HT",
-      "thickness": "1/8",
-      "shape": "Half-Circle",
-      "tint": "Midnight Gray",
-      "length": 79,
-      "width": 22
-    },
-    "quantity": 28,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 6699,
-    "order_id": "6a3cc106-8270-4dde-81e4-8cd8c903cb2b",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "d0340245-d1b1-474d-b05b-1e330b5601d2",
-      "name": "SNR 35 HT",
-      "thickness": "1/8",
-      "shape": "Square/Rectangle",
-      "tint": "Bronze",
-      "length": 79,
-      "width": 24
-    },
-    "quantity": 64,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 9217,
-    "order_id": "6a3cc106-8270-4dde-81e4-8cd8c903cb2b",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "da450d2a-3d5e-4646-8941-677dd51f7f8b",
-      "name": "AG 43",
-      "thickness": "3/8",
-      "shape": "Octagon",
-      "tint": "Satin Etch",
-      "length": 89,
-      "width": 12
-    },
-    "quantity": 149,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 9364,
-    "order_id": "6a3cc106-8270-4dde-81e4-8cd8c903cb2b",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "af9ab768-f43f-416f-8cb1-8e70979e0972",
-      "name": "Sunguard Spandrel HT",
-      "thickness": "3/4",
-      "shape": "Half-Circle",
-      "tint": "Midnight Gray",
-      "length": 36,
-      "width": 1
-    },
-    "quantity": 4,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 77,
-    "order_id": "6a3cc106-8270-4dde-81e4-8cd8c903cb2b",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "af9ab768-f43f-416f-8cb1-8e70979e0972",
-      "name": "Sunguard Spandrel HT",
-      "thickness": "1/2",
-      "shape": "Arch-Top",
-      "tint": "Midnight Gray",
-      "length": 95,
-      "width": 29
-    },
-    "quantity": 37,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 4348,
-    "order_id": "6a3cc106-8270-4dde-81e4-8cd8c903cb2b",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "91454f2a-292a-4b6c-91bc-2b126062ab5f",
-      "name": "SN 68 HT",
-      "thickness": "3/8",
-      "shape": "Clipped Corner(s)",
-      "tint": "Midnight Gray",
-      "length": 39,
-      "width": 23
-    },
-    "quantity": 113,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 6055,
-    "order_id": "55a17ef7-d486-4358-90e2-6bc54b3ffcc6",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
-    "product_config": {
-      "glass_id": "28cb3997-daf6-464f-812d-97182ee602b3",
-      "name": "NU 40 LE",
-      "thickness": "1/2",
-      "shape": "Right Triangle",
-      "tint": "Solex",
-      "length": 57,
-      "width": 43
-    },
-    "quantity": 9,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 351,
-    "order_id": "a09f63a6-4015-4314-b3e4-9a3fcf233630",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "cd774965-da25-463b-921f-441244911276",
-      "name": "AG 50 LE",
-      "thickness": "3/8",
-      "shape": "Arch Top & Bottom",
-      "tint": "Mistlite",
-      "length": 92,
-      "width": 45
-    },
-    "quantity": 22,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 8786,
-    "order_id": "a09f63a6-4015-4314-b3e4-9a3fcf233630",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "cd774965-da25-463b-921f-441244911276",
-      "name": "AG 50 LE",
-      "thickness": "3/4",
-      "shape": "Quad Arch",
-      "tint": "Bronze",
-      "length": 60,
-      "width": 44
-    },
-    "quantity": 9,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 4337,
-    "order_id": "a09f63a6-4015-4314-b3e4-9a3fcf233630",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
-    "product_config": {
-      "glass_id": "060bfe65-db6f-4f54-87f7-bea2ea6a249f",
-      "name": "SNE 50/25",
-      "thickness": "1/2",
-      "shape": "Square/Rectangle",
-      "tint": "Dark Gray",
-      "length": 68,
-      "width": 7
-    },
-    "quantity": 50,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 6328,
-    "order_id": "a09f63a6-4015-4314-b3e4-9a3fcf233630",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
-    "product_config": {
-      "glass_id": "46247eed-86b1-4ea7-bddf-4c8a7c89565a",
-      "name": "MC 68 LE-A",
-      "thickness": "1/4",
-      "shape": "Arch-Top",
-      "tint": "Satin Etch",
-      "length": 26,
-      "width": 23
-    },
-    "quantity": 1,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 3238,
-    "order_id": "4fda8b87-132a-4c57-912d-e19329e43d1d",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "28cb3997-daf6-464f-812d-97182ee602b3",
-      "name": "NU 40 LE",
-      "thickness": "3/4",
-      "shape": "Arch-Top",
-      "tint": "Solex",
-      "length": 83,
-      "width": 39
-    },
-    "quantity": 67,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 2222,
-    "order_id": "4fda8b87-132a-4c57-912d-e19329e43d1d",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "cd774965-da25-463b-921f-441244911276",
-      "name": "AG 50 LE",
-      "thickness": "3/8",
-      "shape": "Quad Arch",
-      "tint": "Mistlite",
-      "length": 63,
-      "width": 40
-    },
-    "quantity": 167,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 9929,
-    "order_id": "4fda8b87-132a-4c57-912d-e19329e43d1d",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "da450d2a-3d5e-4646-8941-677dd51f7f8b",
-      "name": "AG 43",
-      "thickness": "3/8",
-      "shape": "Quarter Round",
-      "tint": "P-516",
-      "length": 89,
-      "width": 18
-    },
-    "quantity": 138,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 8556,
-    "order_id": "4fda8b87-132a-4c57-912d-e19329e43d1d",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "d0340245-d1b1-474d-b05b-1e330b5601d2",
-      "name": "SNR 35 HT",
-      "thickness": "1/8",
-      "shape": "Quarter Round",
-      "tint": "Bronze",
-      "length": 42,
-      "width": 40
-    },
-    "quantity": 49,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 1319,
-    "order_id": "4fda8b87-132a-4c57-912d-e19329e43d1d",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "ea045be8-3c33-4a2d-9137-da2e180210eb",
-      "name": "SatinDeco",
-      "thickness": "1/4",
-      "shape": "Clipped Corner(s)",
-      "tint": "Ultra Clear",
-      "length": 52,
-      "width": 23
-    },
-    "quantity": 17,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 5581,
-    "order_id": "c2d95c72-1226-4b83-828a-a225dbb31ddf",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
-    "product_config": {
-      "glass_id": "ea045be8-3c33-4a2d-9137-da2e180210eb",
-      "name": "SatinDeco",
-      "thickness": "3/4",
-      "shape": "Half-Circle with Notch",
-      "tint": "Light Gray",
-      "length": 82,
-      "width": 41
-    },
-    "quantity": 46,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 4795,
-    "order_id": "c2d95c72-1226-4b83-828a-a225dbb31ddf",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "90410c20-66fd-44a0-8009-3d5b8afc631a",
-      "name": "MC 68 LE-T",
-      "thickness": "3/4",
-      "shape": "Half-Circle",
-      "tint": "Frosted Blue Chip",
-      "length": 21,
-      "width": 3
-    },
-    "quantity": 2,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 2271,
-    "order_id": "307ca1f5-e0ae-4bbf-9ba9-347d9c0b0504",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
-    "product_config": {
-      "glass_id": "060bfe65-db6f-4f54-87f7-bea2ea6a249f",
-      "name": "SNE 50/25",
-      "thickness": "3/8",
-      "shape": "Quarter Round with Notch",
-      "tint": "Dark Gray",
-      "length": 39,
-      "width": 15
-    },
-    "quantity": 25,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 1010,
-    "order_id": "307ca1f5-e0ae-4bbf-9ba9-347d9c0b0504",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "ef4a6120-93a8-450f-a7f9-6e75f27fde60",
-      "name": "MC 27 LE-A",
-      "thickness": "1/4",
-      "shape": "House",
-      "tint": "Ultra Clear",
-      "length": 81,
-      "width": 35
-    },
-    "quantity": 50,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 5616,
-    "order_id": "307ca1f5-e0ae-4bbf-9ba9-347d9c0b0504",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "91454f2a-292a-4b6c-91bc-2b126062ab5f",
-      "name": "SN 68 HT",
-      "thickness": "3/4",
-      "shape": "Octagon",
-      "tint": "Midnight Gray",
-      "length": 35,
-      "width": 10
-    },
-    "quantity": 9,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 5841,
-    "order_id": "307ca1f5-e0ae-4bbf-9ba9-347d9c0b0504",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "24c66f1f-bd90-4fc2-b3e2-7ed7cb667b00",
-      "name": "IS20 LE-T",
-      "thickness": "3/8",
-      "shape": "Square/Rectangle",
-      "tint": "Frosted Green Chip",
-      "length": 68,
-      "width": 34
-    },
-    "quantity": 3,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 4949,
-    "order_id": "307ca1f5-e0ae-4bbf-9ba9-347d9c0b0504",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "538c9855-17a0-410d-90d2-5e5e9f43c6c8",
-      "name": "SNX-L 62/34",
-      "thickness": "1/4",
-      "shape": "Half-Circle",
-      "tint": "Bronze",
-      "length": 94,
-      "width": 9
-    },
-    "quantity": 35,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 2902,
-    "order_id": "307ca1f5-e0ae-4bbf-9ba9-347d9c0b0504",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "90410c20-66fd-44a0-8009-3d5b8afc631a",
-      "name": "MC 68 LE-T",
-      "thickness": "3/4",
-      "shape": "Triangle",
-      "tint": "Frosted Green Chip",
-      "length": 77,
-      "width": 11
-    },
-    "quantity": 5,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 3286,
-    "order_id": "b9e88ca0-0a3b-4ae5-807a-f3c6b39f58a2",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "ea045be8-3c33-4a2d-9137-da2e180210eb",
-      "name": "SatinDeco",
-      "thickness": "1/2",
-      "shape": "Right Triangle",
-      "tint": "P-516",
-      "length": 85,
-      "width": 29
-    },
-    "quantity": 13,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 3355,
-    "order_id": "b9e88ca0-0a3b-4ae5-807a-f3c6b39f58a2",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "b4ad52ba-ba2e-4db7-815c-0f0087e58ff4",
-      "name": "SN 68",
-      "thickness": "1/8",
-      "shape": "Racetrack Oval",
-      "tint": "Satin Etch",
-      "length": 52,
-      "width": 36
-    },
-    "quantity": 8,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 1954,
-    "order_id": "b9e88ca0-0a3b-4ae5-807a-f3c6b39f58a2",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "24c66f1f-bd90-4fc2-b3e2-7ed7cb667b00",
-      "name": "IS20 LE-T",
-      "thickness": "3/8",
-      "shape": "Half-Circle",
-      "tint": "Mistlite",
-      "length": 90,
-      "width": 14
-    },
-    "quantity": 25,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 741,
-    "order_id": "b9e88ca0-0a3b-4ae5-807a-f3c6b39f58a2",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
-    "product_config": {
-      "glass_id": "b4ad52ba-ba2e-4db7-815c-0f0087e58ff4",
-      "name": "SN 68",
-      "thickness": "3/8",
-      "shape": "Single Slope Rectangle",
-      "tint": "Clear",
-      "length": 43,
-      "width": 5
-    },
-    "quantity": 59,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 1160,
-    "order_id": "b9e88ca0-0a3b-4ae5-807a-f3c6b39f58a2",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
-    "product_config": {
-      "glass_id": "060bfe65-db6f-4f54-87f7-bea2ea6a249f",
-      "name": "SNE 50/25",
-      "thickness": "1/8",
-      "shape": "Quarter Round",
-      "tint": "Low-E",
-      "length": 76,
-      "width": 22
-    },
-    "quantity": 5,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 8135,
-    "order_id": "b9e88ca0-0a3b-4ae5-807a-f3c6b39f58a2",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
-    "product_config": {
-      "glass_id": "af9ab768-f43f-416f-8cb1-8e70979e0972",
-      "name": "Sunguard Spandrel HT",
-      "thickness": "1/2",
-      "shape": "Half-Circle with Notch",
-      "tint": "Solex",
-      "length": 87,
-      "width": 28
-    },
-    "quantity": 3,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 7833,
-    "order_id": "b9e88ca0-0a3b-4ae5-807a-f3c6b39f58a2",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "ea045be8-3c33-4a2d-9137-da2e180210eb",
-      "name": "SatinDeco",
-      "thickness": "1/4",
-      "shape": "Ellipse",
-      "tint": "Satin Etch",
-      "length": 52,
-      "width": 34
-    },
-    "quantity": 53,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 7608,
-    "order_id": "a3800685-d54f-4bf2-adef-4a80fd2565a6",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "da450d2a-3d5e-4646-8941-677dd51f7f8b",
-      "name": "AG 43",
-      "thickness": "1/4",
-      "shape": "Octagon",
-      "tint": "Satin Etch",
-      "length": 22,
-      "width": 22
-    },
-    "quantity": 165,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 5971,
-    "order_id": "f9f2fd2a-91e1-49bb-9c09-d022bf01b272",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "90410c20-66fd-44a0-8009-3d5b8afc631a",
-      "name": "MC 68 LE-T",
-      "thickness": "3/4",
-      "shape": "Arch Side",
-      "tint": "Frosted Blue Chip",
-      "length": 60,
-      "width": 7
-    },
-    "quantity": 1,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 7313,
-    "order_id": "f9f2fd2a-91e1-49bb-9c09-d022bf01b272",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "24c66f1f-bd90-4fc2-b3e2-7ed7cb667b00",
-      "name": "IS20 LE-T",
-      "thickness": "1/8",
-      "shape": "Octagon",
-      "tint": "Mistlite",
-      "length": 44,
-      "width": 16
-    },
-    "quantity": 9,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 8690,
-    "order_id": "f9f2fd2a-91e1-49bb-9c09-d022bf01b272",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "46247eed-86b1-4ea7-bddf-4c8a7c89565a",
-      "name": "MC 68 LE-A",
-      "thickness": "3/8",
-      "shape": "Rounded Corner(s)",
-      "tint": "Solex",
-      "length": 64,
-      "width": 22
-    },
-    "quantity": 5,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 9945,
-    "order_id": "f9f2fd2a-91e1-49bb-9c09-d022bf01b272",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
-    "product_config": {
-      "glass_id": "da450d2a-3d5e-4646-8941-677dd51f7f8b",
-      "name": "AG 43",
-      "thickness": "3/8",
-      "shape": "Trapezoid",
-      "tint": "Frosted Green Chip",
-      "length": 70,
-      "width": 39
-    },
-    "quantity": 4,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 7994,
-    "order_id": "f9f2fd2a-91e1-49bb-9c09-d022bf01b272",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "46247eed-86b1-4ea7-bddf-4c8a7c89565a",
-      "name": "MC 68 LE-A",
-      "thickness": "1/2",
-      "shape": "Right Triangle",
-      "tint": "P-516",
-      "length": 15,
-      "width": 5
-    },
-    "quantity": 25,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 4416,
-    "order_id": "f9f2fd2a-91e1-49bb-9c09-d022bf01b272",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "24c66f1f-bd90-4fc2-b3e2-7ed7cb667b00",
-      "name": "IS20 LE-T",
-      "thickness": "1/4",
-      "shape": "Arch-Top",
-      "tint": "P-516",
-      "length": 64,
-      "width": 15
-    },
-    "quantity": 45,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 4366,
-    "order_id": "f9f2fd2a-91e1-49bb-9c09-d022bf01b272",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "538c9855-17a0-410d-90d2-5e5e9f43c6c8",
-      "name": "SNX-L 62/34",
-      "thickness": "3/4",
-      "shape": "Pentagon",
-      "tint": "Frosted Green Chip",
-      "length": 54,
-      "width": 17
-    },
-    "quantity": 3,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 9661,
-    "order_id": "f9f2fd2a-91e1-49bb-9c09-d022bf01b272",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
-    "product_config": {
-      "glass_id": "46247eed-86b1-4ea7-bddf-4c8a7c89565a",
-      "name": "MC 68 LE-A",
-      "thickness": "1/2",
-      "shape": "Pentagon",
-      "tint": "Frosted Blue Chip",
-      "length": 23,
-      "width": 10
-    },
-    "quantity": 4,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 4742,
-    "order_id": "f9f2fd2a-91e1-49bb-9c09-d022bf01b272",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
-    "product_config": {
-      "glass_id": "28cb3997-daf6-464f-812d-97182ee602b3",
-      "name": "NU 40 LE",
-      "thickness": "1/4",
-      "shape": "Square/Rectangle",
-      "tint": "Solex",
-      "length": 93,
-      "width": 10
-    },
-    "quantity": 38,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 979,
-    "order_id": "c815c78a-b593-4e91-ab20-44b8b07bb942",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
-    "product_config": {
-      "glass_id": "538c9855-17a0-410d-90d2-5e5e9f43c6c8",
-      "name": "SNX-L 62/34",
-      "thickness": "1/4",
-      "shape": "Arch",
-      "tint": "Clear",
-      "length": 75,
-      "width": 21
     },
     "quantity": 134,
     "note": "some note"
   },
   {
-    "order_item_id": 5913,
-    "order_id": "c815c78a-b593-4e91-ab20-44b8b07bb942",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
+    "order_item_id": 3806,
+    "order_id": "ce36b65a-ae26-4f0e-85f1-f49a153c8e03",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
     "product_config": {
-      "glass_id": "91454f2a-292a-4b6c-91bc-2b126062ab5f",
-      "name": "SN 68 HT",
-      "thickness": "3/8",
+      "glass_id": "d1561e8c-3e9b-4e29-94d2-56bbdced64f7",
+      "name": "MC 68 LE-A",
+      "thickness": "1/4",
       "shape": "Right Triangle",
-      "tint": "Low-E",
-      "length": 79,
-      "width": 33
+      "tint": "P-516",
+      "length": 83,
+      "width": 6
     },
-    "quantity": 4,
+    "quantity": 7,
     "note": "some note"
   },
   {
-    "order_item_id": 944,
-    "order_id": "c815c78a-b593-4e91-ab20-44b8b07bb942",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
+    "order_item_id": 5994,
+    "order_id": "ce36b65a-ae26-4f0e-85f1-f49a153c8e03",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
     "product_config": {
-      "glass_id": "28cb3997-daf6-464f-812d-97182ee602b3",
-      "name": "NU 40 LE",
-      "thickness": "1/2",
-      "shape": "Irregular/Any Other Shape",
-      "tint": "Dark Gray",
-      "length": 28,
-      "width": 10
+      "glass_id": "a1a67246-21b6-4ba1-9024-417369d628b0",
+      "name": "MC 68 LE-T",
+      "thickness": "1/4",
+      "shape": "Half-Circle with Notch",
+      "tint": "Low-E",
+      "length": 20,
+      "width": 16
+    },
+    "quantity": 12,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 1011,
+    "order_id": "ab8433ea-f392-498b-a41e-ea1b3583a579",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "af123281-fd38-48a1-b865-f5d1c25307f8",
+      "name": "SNX-L 62/34",
+      "thickness": "1/4",
+      "shape": "Clipped Corner(s)",
+      "tint": "Mistlite",
+      "length": 89,
+      "width": 17
     },
     "quantity": 6,
     "note": "some note"
   },
   {
-    "order_item_id": 8985,
-    "order_id": "c815c78a-b593-4e91-ab20-44b8b07bb942",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
+    "order_item_id": 7553,
+    "order_id": "ab8433ea-f392-498b-a41e-ea1b3583a579",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
     "product_config": {
-      "glass_id": "cd774965-da25-463b-921f-441244911276",
-      "name": "AG 50 LE",
-      "thickness": "3/8",
-      "shape": "Quarter Round",
-      "tint": "Mistlite",
-      "length": 79,
-      "width": 35
-    },
-    "quantity": 48,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 2407,
-    "order_id": "b47eb8cc-1cfd-4676-8dbd-490767534933",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "538c9855-17a0-410d-90d2-5e5e9f43c6c8",
-      "name": "SNX-L 62/34",
-      "thickness": "1/2",
-      "shape": "Clipped Corner(s)",
-      "tint": "Clear",
-      "length": 91,
-      "width": 12
-    },
-    "quantity": 138,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 5910,
-    "order_id": "b47eb8cc-1cfd-4676-8dbd-490767534933",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "d0340245-d1b1-474d-b05b-1e330b5601d2",
-      "name": "SNR 35 HT",
-      "thickness": "1/2",
-      "shape": "Quarter Round",
-      "tint": "Bronze",
-      "length": 65,
-      "width": 36
-    },
-    "quantity": 25,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 5148,
-    "order_id": "b47eb8cc-1cfd-4676-8dbd-490767534933",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "91454f2a-292a-4b6c-91bc-2b126062ab5f",
-      "name": "SN 68 HT",
-      "thickness": "1/8",
-      "shape": "Right Triangle",
-      "tint": "Clear",
-      "length": 32,
-      "width": 27
-    },
-    "quantity": 108,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 4707,
-    "order_id": "b47eb8cc-1cfd-4676-8dbd-490767534933",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "af9ab768-f43f-416f-8cb1-8e70979e0972",
-      "name": "Sunguard Spandrel HT",
-      "thickness": "1/2",
-      "shape": "Quarter Round",
-      "tint": "Ultra Clear",
-      "length": 86,
-      "width": 42
-    },
-    "quantity": 106,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 2369,
-    "order_id": "a60a3a7d-247d-4b3b-88ed-a4766463cf2b",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "90410c20-66fd-44a0-8009-3d5b8afc631a",
-      "name": "MC 68 LE-T",
-      "thickness": "3/4",
-      "shape": "Irregular/Any Other Shape",
-      "tint": "Light Gray",
-      "length": 59,
-      "width": 47
-    },
-    "quantity": 170,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 514,
-    "order_id": "a60a3a7d-247d-4b3b-88ed-a4766463cf2b",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "b4ad52ba-ba2e-4db7-815c-0f0087e58ff4",
+      "glass_id": "82a54c94-9681-4ebe-9cd8-81cfa03056e1",
       "name": "SN 68",
-      "thickness": "1/4",
-      "shape": "Parallelogram",
-      "tint": "Mistlite",
-      "length": 86,
-      "width": 46
-    },
-    "quantity": 178,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 8325,
-    "order_id": "a60a3a7d-247d-4b3b-88ed-a4766463cf2b",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "d0340245-d1b1-474d-b05b-1e330b5601d2",
-      "name": "SNR 35 HT",
-      "thickness": "1/4",
-      "shape": "Arch",
-      "tint": "Frosted Green Chip",
-      "length": 78,
-      "width": 7
-    },
-    "quantity": 60,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 9632,
-    "order_id": "cd82b570-6bb7-4925-b036-78434094d7df",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "ea045be8-3c33-4a2d-9137-da2e180210eb",
-      "name": "SatinDeco",
-      "thickness": "1/8",
-      "shape": "Rounded Corner(s)",
-      "tint": "Midnight Gray",
-      "length": 80,
-      "width": 3
-    },
-    "quantity": 41,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 844,
-    "order_id": "cd82b570-6bb7-4925-b036-78434094d7df",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "cd774965-da25-463b-921f-441244911276",
-      "name": "AG 50 LE",
-      "thickness": "1/4",
-      "shape": "Arch",
-      "tint": "Satin Etch",
-      "length": 32,
-      "width": 19
-    },
-    "quantity": 89,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 8933,
-    "order_id": "cd82b570-6bb7-4925-b036-78434094d7df",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "46247eed-86b1-4ea7-bddf-4c8a7c89565a",
-      "name": "MC 68 LE-A",
-      "thickness": "1/8",
+      "thickness": "3/4",
       "shape": "Single Slope Rectangle",
-      "tint": "Clear",
-      "length": 18,
-      "width": 4
-    },
-    "quantity": 10,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 4606,
-    "order_id": "cd82b570-6bb7-4925-b036-78434094d7df",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "24c66f1f-bd90-4fc2-b3e2-7ed7cb667b00",
-      "name": "IS20 LE-T",
-      "thickness": "3/8",
-      "shape": "Trapezoid",
-      "tint": "P-516",
-      "length": 50,
-      "width": 32
-    },
-    "quantity": 47,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 7488,
-    "order_id": "cd82b570-6bb7-4925-b036-78434094d7df",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "060bfe65-db6f-4f54-87f7-bea2ea6a249f",
-      "name": "SNE 50/25",
-      "thickness": "1/8",
-      "shape": "Half-Circle with Notch",
-      "tint": "Frosted Blue Chip",
-      "length": 58,
-      "width": 40
-    },
-    "quantity": 38,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 4002,
-    "order_id": "cd82b570-6bb7-4925-b036-78434094d7df",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "90410c20-66fd-44a0-8009-3d5b8afc631a",
-      "name": "MC 68 LE-T",
-      "thickness": "1/2",
-      "shape": "Irregular/Any Other Shape",
-      "tint": "Ultra Clear",
-      "length": 58,
-      "width": 22
-    },
-    "quantity": 11,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 4281,
-    "order_id": "cd82b570-6bb7-4925-b036-78434094d7df",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "24c66f1f-bd90-4fc2-b3e2-7ed7cb667b00",
-      "name": "IS20 LE-T",
-      "thickness": "1/4",
-      "shape": "Half-Circle",
-      "tint": "Mistlite",
-      "length": 44,
-      "width": 41
-    },
-    "quantity": 10,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 9375,
-    "order_id": "cd82b570-6bb7-4925-b036-78434094d7df",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "060bfe65-db6f-4f54-87f7-bea2ea6a249f",
-      "name": "SNE 50/25",
-      "thickness": "1/4",
-      "shape": "Quarter Round with Notch",
-      "tint": "Low-E",
-      "length": 71,
-      "width": 16
-    },
-    "quantity": 40,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 6021,
-    "order_id": "2b85b6b5-a7fd-4abf-b909-2e858bcf3b26",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "91454f2a-292a-4b6c-91bc-2b126062ab5f",
-      "name": "SN 68 HT",
-      "thickness": "1/8",
-      "shape": "Clipped Corner(s)",
-      "tint": "Dark Gray",
-      "length": 39,
-      "width": 36
-    },
-    "quantity": 1,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 9689,
-    "order_id": "71b8a280-cc56-4343-89aa-7bc91e15b956",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "538c9855-17a0-410d-90d2-5e5e9f43c6c8",
-      "name": "SNX-L 62/34",
-      "thickness": "3/8",
-      "shape": "Parallelogram",
-      "tint": "Bronze",
-      "length": 68,
-      "width": 34
-    },
-    "quantity": 175,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 3977,
-    "order_id": "71b8a280-cc56-4343-89aa-7bc91e15b956",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
-    "product_config": {
-      "glass_id": "cd774965-da25-463b-921f-441244911276",
-      "name": "AG 50 LE",
-      "thickness": "3/4",
-      "shape": "Arch Side",
-      "tint": "Light Gray",
-      "length": 52,
-      "width": 41
-    },
-    "quantity": 60,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 8227,
-    "order_id": "71b8a280-cc56-4343-89aa-7bc91e15b956",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "060bfe65-db6f-4f54-87f7-bea2ea6a249f",
-      "name": "SNE 50/25",
-      "thickness": "1/2",
-      "shape": "Quarter Round with Notch",
-      "tint": "P-516",
-      "length": 93,
-      "width": 37
-    },
-    "quantity": 69,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 69,
-    "order_id": "71b8a280-cc56-4343-89aa-7bc91e15b956",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
-    "product_config": {
-      "glass_id": "28cb3997-daf6-464f-812d-97182ee602b3",
-      "name": "NU 40 LE",
-      "thickness": "1/2",
-      "shape": "Parallelogram",
       "tint": "Solex",
-      "length": 59,
-      "width": 45
+      "length": 79,
+      "width": 21
     },
-    "quantity": 178,
+    "quantity": 81,
     "note": "some note"
   },
   {
-    "order_item_id": 870,
-    "order_id": "388bc2e3-5721-48c2-b616-2daa9a213df1",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
+    "order_item_id": 5240,
+    "order_id": "ab8433ea-f392-498b-a41e-ea1b3583a579",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
     "product_config": {
-      "glass_id": "da450d2a-3d5e-4646-8941-677dd51f7f8b",
-      "name": "AG 43",
-      "thickness": "1/2",
-      "shape": "Right Triangle",
-      "tint": "Satin Etch",
-      "length": 47,
-      "width": 47
-    },
-    "quantity": 75,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 813,
-    "order_id": "388bc2e3-5721-48c2-b616-2daa9a213df1",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "ea045be8-3c33-4a2d-9137-da2e180210eb",
-      "name": "SatinDeco",
-      "thickness": "1/8",
-      "shape": "Square/Rectangle",
-      "tint": "Bronze",
-      "length": 75,
-      "width": 42
-    },
-    "quantity": 100,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 6252,
-    "order_id": "388bc2e3-5721-48c2-b616-2daa9a213df1",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "b4ad52ba-ba2e-4db7-815c-0f0087e58ff4",
-      "name": "SN 68",
-      "thickness": "1/8",
-      "shape": "Parallelogram",
-      "tint": "Satin Etch",
-      "length": 84,
-      "width": 5
-    },
-    "quantity": 2,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 3868,
-    "order_id": "388bc2e3-5721-48c2-b616-2daa9a213df1",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "d0340245-d1b1-474d-b05b-1e330b5601d2",
-      "name": "SNR 35 HT",
-      "thickness": "1/2",
-      "shape": "Ellipse",
-      "tint": "P-516",
-      "length": 43,
-      "width": 12
+      "glass_id": "d1561e8c-3e9b-4e29-94d2-56bbdced64f7",
+      "name": "MC 68 LE-A",
+      "thickness": "1/4",
+      "shape": "Quarter Round with Notch",
+      "tint": "Frosted Blue Chip",
+      "length": 50,
+      "width": 18
     },
     "quantity": 4,
     "note": "some note"
   },
   {
-    "order_item_id": 8472,
-    "order_id": "388bc2e3-5721-48c2-b616-2daa9a213df1",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
+    "order_item_id": 5428,
+    "order_id": "ab8433ea-f392-498b-a41e-ea1b3583a579",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
     "product_config": {
-      "glass_id": "46247eed-86b1-4ea7-bddf-4c8a7c89565a",
+      "glass_id": "82a54c94-9681-4ebe-9cd8-81cfa03056e1",
+      "name": "SN 68",
+      "thickness": "1/4",
+      "shape": "Irregular/Any Other Shape",
+      "tint": "Bronze",
+      "length": 89,
+      "width": 11
+    },
+    "quantity": 54,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 3727,
+    "order_id": "ab8433ea-f392-498b-a41e-ea1b3583a579",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "d1561e8c-3e9b-4e29-94d2-56bbdced64f7",
+      "name": "MC 68 LE-A",
+      "thickness": "1/2",
+      "shape": "Ellipse",
+      "tint": "Frosted Blue Chip",
+      "length": 73,
+      "width": 42
+    },
+    "quantity": 6,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 3179,
+    "order_id": "ab8433ea-f392-498b-a41e-ea1b3583a579",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "a1a67246-21b6-4ba1-9024-417369d628b0",
+      "name": "MC 68 LE-T",
+      "thickness": "3/8",
+      "shape": "Half-Circle",
+      "tint": "Solex",
+      "length": 95,
+      "width": 6
+    },
+    "quantity": 29,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 1627,
+    "order_id": "2bc47204-c58b-4379-b6c5-45622d177049",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "f1e58ff5-48fc-40f5-971d-10c8ad04ab6f",
+      "name": "SN 68 HT",
+      "thickness": "3/4",
+      "shape": "Racetrack Oval",
+      "tint": "Dark Gray",
+      "length": 57,
+      "width": 4
+    },
+    "quantity": 9,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 5869,
+    "order_id": "2bc47204-c58b-4379-b6c5-45622d177049",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "af123281-fd38-48a1-b865-f5d1c25307f8",
+      "name": "SNX-L 62/34",
+      "thickness": "3/4",
+      "shape": "Single Slope Rectangle",
+      "tint": "Bronze",
+      "length": 94,
+      "width": 22
+    },
+    "quantity": 187,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 9067,
+    "order_id": "2bc47204-c58b-4379-b6c5-45622d177049",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "82a54c94-9681-4ebe-9cd8-81cfa03056e1",
+      "name": "SN 68",
+      "thickness": "3/8",
+      "shape": "Trapezoid",
+      "tint": "Satin Etch",
+      "length": 52,
+      "width": 44
+    },
+    "quantity": 9,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 2490,
+    "order_id": "2bc47204-c58b-4379-b6c5-45622d177049",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "d49c19b3-cf1a-4ad6-8ba4-bf127ce1de6f",
+      "name": "MC 27 LE-A",
+      "thickness": "3/8",
+      "shape": "Octagon",
+      "tint": "Bronze",
+      "length": 93,
+      "width": 29
+    },
+    "quantity": 129,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 6493,
+    "order_id": "2bc47204-c58b-4379-b6c5-45622d177049",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "aeab03c7-9242-4c4d-a53a-ef341b9fed6f",
+      "name": "AG 43",
+      "thickness": "3/8",
+      "shape": "Triangle",
+      "tint": "Clear",
+      "length": 95,
+      "width": 3
+    },
+    "quantity": 21,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 798,
+    "order_id": "2bc47204-c58b-4379-b6c5-45622d177049",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "c112847c-f8ab-4e7b-a397-6a44ef7529f7",
+      "name": "NU 40 LE",
+      "thickness": "3/4",
+      "shape": "Quarter Round with Notch",
+      "tint": "Mistlite",
+      "length": 52,
+      "width": 13
+    },
+    "quantity": 5,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 5040,
+    "order_id": "2bc47204-c58b-4379-b6c5-45622d177049",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "d49c19b3-cf1a-4ad6-8ba4-bf127ce1de6f",
+      "name": "MC 27 LE-A",
+      "thickness": "1/2",
+      "shape": "Clipped Corner(s)",
+      "tint": "Mistlite",
+      "length": 21,
+      "width": 6
+    },
+    "quantity": 3,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 726,
+    "order_id": "2bc47204-c58b-4379-b6c5-45622d177049",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "1da5b2a3-6a53-49de-bbce-4521ef09cd5c",
+      "name": "SatinDeco",
+      "thickness": "1/8",
+      "shape": "Pentagon",
+      "tint": "Clear",
+      "length": 53,
+      "width": 44
+    },
+    "quantity": 23,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 7980,
+    "order_id": "38f42c4c-cc38-4789-b747-37eca4ee41cf",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "c112847c-f8ab-4e7b-a397-6a44ef7529f7",
+      "name": "NU 40 LE",
+      "thickness": "3/8",
+      "shape": "Trapezoid",
+      "tint": "Low-E",
+      "length": 87,
+      "width": 23
+    },
+    "quantity": 47,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 6167,
+    "order_id": "38f42c4c-cc38-4789-b747-37eca4ee41cf",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "004c4786-d558-43e7-82be-795f60182ef7",
+      "name": "SNE 50/25",
+      "thickness": "1/2",
+      "shape": "Rounded Corner(s)",
+      "tint": "Midnight Gray",
+      "length": 94,
+      "width": 48
+    },
+    "quantity": 3,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 1487,
+    "order_id": "38f42c4c-cc38-4789-b747-37eca4ee41cf",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "cc546439-3cef-4f13-b365-c6893c05fc82",
+      "name": "SNR 35 HT",
+      "thickness": "3/8",
+      "shape": "Quad Arch",
+      "tint": "P-516",
+      "length": 53,
+      "width": 32
+    },
+    "quantity": 13,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 3530,
+    "order_id": "38f42c4c-cc38-4789-b747-37eca4ee41cf",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "d1561e8c-3e9b-4e29-94d2-56bbdced64f7",
+      "name": "MC 68 LE-A",
+      "thickness": "3/4",
+      "shape": "Hexagon",
+      "tint": "Clear",
+      "length": 74,
+      "width": 18
+    },
+    "quantity": 4,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 8203,
+    "order_id": "38f42c4c-cc38-4789-b747-37eca4ee41cf",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "ec5ffa0f-39d8-4d03-94dd-95b190a8c2f5",
+      "name": "AG 50 LE",
+      "thickness": "1/8",
+      "shape": "Rounded Corner(s)",
+      "tint": "Satin Etch",
+      "length": 93,
+      "width": 45
+    },
+    "quantity": 9,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 4287,
+    "order_id": "38f42c4c-cc38-4789-b747-37eca4ee41cf",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "f1e58ff5-48fc-40f5-971d-10c8ad04ab6f",
+      "name": "SN 68 HT",
+      "thickness": "1/2",
+      "shape": "Quad Arch",
+      "tint": "Ultra Clear",
+      "length": 9,
+      "width": 5
+    },
+    "quantity": 54,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 9922,
+    "order_id": "38f42c4c-cc38-4789-b747-37eca4ee41cf",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "c112847c-f8ab-4e7b-a397-6a44ef7529f7",
+      "name": "NU 40 LE",
+      "thickness": "1/4",
+      "shape": "Circle",
+      "tint": "Solex",
+      "length": 73,
+      "width": 34
+    },
+    "quantity": 159,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 9448,
+    "order_id": "38f42c4c-cc38-4789-b747-37eca4ee41cf",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "ec5ffa0f-39d8-4d03-94dd-95b190a8c2f5",
+      "name": "AG 50 LE",
+      "thickness": "1/2",
+      "shape": "Pentagon",
+      "tint": "Clear",
+      "length": 83,
+      "width": 16
+    },
+    "quantity": 168,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 7043,
+    "order_id": "fab3e641-15ec-4d48-b050-6b9117bc2fa3",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "ec5ffa0f-39d8-4d03-94dd-95b190a8c2f5",
+      "name": "AG 50 LE",
+      "thickness": "3/4",
+      "shape": "Half-Circle with Notch",
+      "tint": "Frosted Green Chip",
+      "length": 73,
+      "width": 30
+    },
+    "quantity": 156,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 1454,
+    "order_id": "fab3e641-15ec-4d48-b050-6b9117bc2fa3",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "af123281-fd38-48a1-b865-f5d1c25307f8",
+      "name": "SNX-L 62/34",
+      "thickness": "3/8",
+      "shape": "Half-Circle with Notch",
+      "tint": "Ultra Clear",
+      "length": 96,
+      "width": 43
+    },
+    "quantity": 188,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 4216,
+    "order_id": "fab3e641-15ec-4d48-b050-6b9117bc2fa3",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "aeab03c7-9242-4c4d-a53a-ef341b9fed6f",
+      "name": "AG 43",
+      "thickness": "1/4",
+      "shape": "Quarter Round with Notch",
+      "tint": "Ultra Clear",
+      "length": 94,
+      "width": 45
+    },
+    "quantity": 4,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 6846,
+    "order_id": "fab3e641-15ec-4d48-b050-6b9117bc2fa3",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "004c4786-d558-43e7-82be-795f60182ef7",
+      "name": "SNE 50/25",
+      "thickness": "1/8",
+      "shape": "Rounded Corner(s)",
+      "tint": "Midnight Gray",
+      "length": 96,
+      "width": 9
+    },
+    "quantity": 1,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 2241,
+    "order_id": "fab3e641-15ec-4d48-b050-6b9117bc2fa3",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "aeab03c7-9242-4c4d-a53a-ef341b9fed6f",
+      "name": "AG 43",
+      "thickness": "1/4",
+      "shape": "Triangle",
+      "tint": "Solex",
+      "length": 16,
+      "width": 7
+    },
+    "quantity": 53,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 1992,
+    "order_id": "fab3e641-15ec-4d48-b050-6b9117bc2fa3",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "1da5b2a3-6a53-49de-bbce-4521ef09cd5c",
+      "name": "SatinDeco",
+      "thickness": "1/2",
+      "shape": "Arch Side",
+      "tint": "Solex",
+      "length": 91,
+      "width": 16
+    },
+    "quantity": 7,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 9984,
+    "order_id": "fab3e641-15ec-4d48-b050-6b9117bc2fa3",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "a1a67246-21b6-4ba1-9024-417369d628b0",
+      "name": "MC 68 LE-T",
+      "thickness": "1/8",
+      "shape": "Quad Arch",
+      "tint": "Bronze",
+      "length": 74,
+      "width": 44
+    },
+    "quantity": 129,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 6130,
+    "order_id": "fab3e641-15ec-4d48-b050-6b9117bc2fa3",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "82a54c94-9681-4ebe-9cd8-81cfa03056e1",
+      "name": "SN 68",
+      "thickness": "1/8",
+      "shape": "Circle",
+      "tint": "Bronze",
+      "length": 30,
+      "width": 29
+    },
+    "quantity": 166,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 1115,
+    "order_id": "fab3e641-15ec-4d48-b050-6b9117bc2fa3",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "82a54c94-9681-4ebe-9cd8-81cfa03056e1",
+      "name": "SN 68",
+      "thickness": "1/2",
+      "shape": "Right Triangle",
+      "tint": "Bronze",
+      "length": 83,
+      "width": 29
+    },
+    "quantity": 56,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 2614,
+    "order_id": "0ee2295e-9fe0-4527-bea1-3b5e98989118",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "cc546439-3cef-4f13-b365-c6893c05fc82",
+      "name": "SNR 35 HT",
+      "thickness": "1/2",
+      "shape": "Quad Arch",
+      "tint": "P-516",
+      "length": 86,
+      "width": 13
+    },
+    "quantity": 19,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 1916,
+    "order_id": "60eae5d3-3f69-4886-885f-6263484e7ff6",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "d49c19b3-cf1a-4ad6-8ba4-bf127ce1de6f",
+      "name": "MC 27 LE-A",
+      "thickness": "3/4",
+      "shape": "Square/Rectangle",
+      "tint": "Frosted Green Chip",
+      "length": 79,
+      "width": 5
+    },
+    "quantity": 30,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 2417,
+    "order_id": "60eae5d3-3f69-4886-885f-6263484e7ff6",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "ec5ffa0f-39d8-4d03-94dd-95b190a8c2f5",
+      "name": "AG 50 LE",
+      "thickness": "1/8",
+      "shape": "Pentagon",
+      "tint": "P-516",
+      "length": 55,
+      "width": 32
+    },
+    "quantity": 87,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 4611,
+    "order_id": "60eae5d3-3f69-4886-885f-6263484e7ff6",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "ec5ffa0f-39d8-4d03-94dd-95b190a8c2f5",
+      "name": "AG 50 LE",
+      "thickness": "1/4",
+      "shape": "Rounded Corner(s)",
+      "tint": "Frosted Green Chip",
+      "length": 55,
+      "width": 41
+    },
+    "quantity": 39,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 9954,
+    "order_id": "60eae5d3-3f69-4886-885f-6263484e7ff6",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "1da5b2a3-6a53-49de-bbce-4521ef09cd5c",
+      "name": "SatinDeco",
+      "thickness": "1/8",
+      "shape": "Square/Rectangle",
+      "tint": "Frosted Blue Chip",
+      "length": 53,
+      "width": 44
+    },
+    "quantity": 110,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 6699,
+    "order_id": "60eae5d3-3f69-4886-885f-6263484e7ff6",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "d49c19b3-cf1a-4ad6-8ba4-bf127ce1de6f",
+      "name": "MC 27 LE-A",
+      "thickness": "3/4",
+      "shape": "Square/Rectangle",
+      "tint": "Midnight Gray",
+      "length": 18,
+      "width": 1
+    },
+    "quantity": 3,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 3245,
+    "order_id": "60eae5d3-3f69-4886-885f-6263484e7ff6",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "f1e58ff5-48fc-40f5-971d-10c8ad04ab6f",
+      "name": "SN 68 HT",
+      "thickness": "3/4",
+      "shape": "Rounded Corner(s)",
+      "tint": "Dark Gray",
+      "length": 83,
+      "width": 29
+    },
+    "quantity": 38,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 433,
+    "order_id": "60eae5d3-3f69-4886-885f-6263484e7ff6",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "c5eb32fe-3209-43d3-a63c-f5d3c3555c8b",
+      "name": "IS20 LE-T",
+      "thickness": "1/4",
+      "shape": "Arch",
+      "tint": "Mistlite",
+      "length": 92,
+      "width": 43
+    },
+    "quantity": 7,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 9350,
+    "order_id": "60eae5d3-3f69-4886-885f-6263484e7ff6",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "a1a67246-21b6-4ba1-9024-417369d628b0",
+      "name": "MC 68 LE-T",
+      "thickness": "1/4",
+      "shape": "Quad Arch",
+      "tint": "Clear",
+      "length": 61,
+      "width": 29
+    },
+    "quantity": 170,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 9952,
+    "order_id": "60eae5d3-3f69-4886-885f-6263484e7ff6",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "004c4786-d558-43e7-82be-795f60182ef7",
+      "name": "SNE 50/25",
+      "thickness": "3/8",
+      "shape": "Clipped Corner(s)",
+      "tint": "Frosted Green Chip",
+      "length": 82,
+      "width": 8
+    },
+    "quantity": 48,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 4888,
+    "order_id": "a066110b-5bab-40ee-94b9-60ea77c52e51",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "aeab03c7-9242-4c4d-a53a-ef341b9fed6f",
+      "name": "AG 43",
+      "thickness": "1/4",
+      "shape": "Half-Circle",
+      "tint": "Bronze",
+      "length": 68,
+      "width": 7
+    },
+    "quantity": 2,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 2643,
+    "order_id": "a066110b-5bab-40ee-94b9-60ea77c52e51",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "1da5b2a3-6a53-49de-bbce-4521ef09cd5c",
+      "name": "SatinDeco",
+      "thickness": "1/4",
+      "shape": "Single Slope Rectangle",
+      "tint": "Ultra Clear",
+      "length": 52,
+      "width": 39
+    },
+    "quantity": 199,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 6521,
+    "order_id": "a066110b-5bab-40ee-94b9-60ea77c52e51",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "c5eb32fe-3209-43d3-a63c-f5d3c3555c8b",
+      "name": "IS20 LE-T",
+      "thickness": "1/2",
+      "shape": "Arch",
+      "tint": "Mistlite",
+      "length": 57,
+      "width": 1
+    },
+    "quantity": 120,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 3290,
+    "order_id": "a066110b-5bab-40ee-94b9-60ea77c52e51",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "004c4786-d558-43e7-82be-795f60182ef7",
+      "name": "SNE 50/25",
+      "thickness": "3/4",
+      "shape": "Arch Top & Bottom",
+      "tint": "Dark Gray",
+      "length": 62,
+      "width": 7
+    },
+    "quantity": 57,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 7940,
+    "order_id": "a066110b-5bab-40ee-94b9-60ea77c52e51",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "d1561e8c-3e9b-4e29-94d2-56bbdced64f7",
+      "name": "MC 68 LE-A",
+      "thickness": "3/8",
+      "shape": "Ellipse",
+      "tint": "Clear",
+      "length": 88,
+      "width": 28
+    },
+    "quantity": 31,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 78,
+    "order_id": "953b7a92-cda3-40ba-8497-72583086b58d",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "a1a67246-21b6-4ba1-9024-417369d628b0",
+      "name": "MC 68 LE-T",
+      "thickness": "1/2",
+      "shape": "Half-Circle with Notch",
+      "tint": "Solex",
+      "length": 40,
+      "width": 1
+    },
+    "quantity": 155,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 3686,
+    "order_id": "953b7a92-cda3-40ba-8497-72583086b58d",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "c5eb32fe-3209-43d3-a63c-f5d3c3555c8b",
+      "name": "IS20 LE-T",
+      "thickness": "1/4",
+      "shape": "Hexagon",
+      "tint": "Mistlite",
+      "length": 65,
+      "width": 32
+    },
+    "quantity": 57,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 3744,
+    "order_id": "953b7a92-cda3-40ba-8497-72583086b58d",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "af123281-fd38-48a1-b865-f5d1c25307f8",
+      "name": "SNX-L 62/34",
+      "thickness": "1/2",
+      "shape": "Pentagon",
+      "tint": "Bronze",
+      "length": 67,
+      "width": 5
+    },
+    "quantity": 50,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 9119,
+    "order_id": "953b7a92-cda3-40ba-8497-72583086b58d",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "ec5ffa0f-39d8-4d03-94dd-95b190a8c2f5",
+      "name": "AG 50 LE",
+      "thickness": "1/2",
+      "shape": "Pentagon",
+      "tint": "P-516",
+      "length": 49,
+      "width": 30
+    },
+    "quantity": 69,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 852,
+    "order_id": "953b7a92-cda3-40ba-8497-72583086b58d",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "a1a67246-21b6-4ba1-9024-417369d628b0",
+      "name": "MC 68 LE-T",
+      "thickness": "1/2",
+      "shape": "Square/Rectangle",
+      "tint": "Low-E",
+      "length": 66,
+      "width": 19
+    },
+    "quantity": 190,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 3703,
+    "order_id": "953b7a92-cda3-40ba-8497-72583086b58d",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "1da5b2a3-6a53-49de-bbce-4521ef09cd5c",
+      "name": "SatinDeco",
+      "thickness": "3/8",
+      "shape": "Clipped Corner(s)",
+      "tint": "P-516",
+      "length": 15,
+      "width": 15
+    },
+    "quantity": 10,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 7723,
+    "order_id": "953b7a92-cda3-40ba-8497-72583086b58d",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "82a54c94-9681-4ebe-9cd8-81cfa03056e1",
+      "name": "SN 68",
+      "thickness": "3/4",
+      "shape": "Irregular/Any Other Shape",
+      "tint": "Light Gray",
+      "length": 18,
+      "width": 11
+    },
+    "quantity": 191,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 8864,
+    "order_id": "ecfc58a0-ec04-4a71-b044-ec02438fa6b5",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "1da5b2a3-6a53-49de-bbce-4521ef09cd5c",
+      "name": "SatinDeco",
+      "thickness": "3/8",
+      "shape": "Right Triangle",
+      "tint": "Solex",
+      "length": 10,
+      "width": 1
+    },
+    "quantity": 119,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 1384,
+    "order_id": "ecfc58a0-ec04-4a71-b044-ec02438fa6b5",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "c112847c-f8ab-4e7b-a397-6a44ef7529f7",
+      "name": "NU 40 LE",
+      "thickness": "3/8",
+      "shape": "Arch Side",
+      "tint": "P-516",
+      "length": 66,
+      "width": 40
+    },
+    "quantity": 197,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 919,
+    "order_id": "ecfc58a0-ec04-4a71-b044-ec02438fa6b5",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "1da5b2a3-6a53-49de-bbce-4521ef09cd5c",
+      "name": "SatinDeco",
+      "thickness": "3/8",
+      "shape": "Single Slope Rectangle",
+      "tint": "P-516",
+      "length": 30,
+      "width": 25
+    },
+    "quantity": 3,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 7573,
+    "order_id": "ecfc58a0-ec04-4a71-b044-ec02438fa6b5",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "c908d94a-e129-4912-b3dd-29d7073c042d",
+      "name": "Sunguard Spandrel HT",
+      "thickness": "1/8",
+      "shape": "Trapezoid",
+      "tint": "Ultra Clear",
+      "length": 41,
+      "width": 41
+    },
+    "quantity": 5,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 827,
+    "order_id": "ecfc58a0-ec04-4a71-b044-ec02438fa6b5",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "1da5b2a3-6a53-49de-bbce-4521ef09cd5c",
+      "name": "SatinDeco",
+      "thickness": "1/8",
+      "shape": "Square/Rectangle",
+      "tint": "Solex",
+      "length": 56,
+      "width": 19
+    },
+    "quantity": 8,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 6711,
+    "order_id": "ecfc58a0-ec04-4a71-b044-ec02438fa6b5",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "c112847c-f8ab-4e7b-a397-6a44ef7529f7",
+      "name": "NU 40 LE",
+      "thickness": "1/8",
+      "shape": "Trapezoid",
+      "tint": "Bronze",
+      "length": 49,
+      "width": 48
+    },
+    "quantity": 28,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 4928,
+    "order_id": "3ae2001b-0e76-41f8-89e8-e9d35e28d829",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "d1561e8c-3e9b-4e29-94d2-56bbdced64f7",
+      "name": "MC 68 LE-A",
+      "thickness": "1/4",
+      "shape": "Right Triangle",
+      "tint": "Clear",
+      "length": 96,
+      "width": 29
+    },
+    "quantity": 178,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 149,
+    "order_id": "3ae2001b-0e76-41f8-89e8-e9d35e28d829",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "d1561e8c-3e9b-4e29-94d2-56bbdced64f7",
+      "name": "MC 68 LE-A",
+      "thickness": "3/4",
+      "shape": "Hexagon",
+      "tint": "Midnight Gray",
+      "length": 68,
+      "width": 39
+    },
+    "quantity": 91,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 6868,
+    "order_id": "3ae2001b-0e76-41f8-89e8-e9d35e28d829",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "d49c19b3-cf1a-4ad6-8ba4-bf127ce1de6f",
+      "name": "MC 27 LE-A",
+      "thickness": "3/8",
+      "shape": "Arch Side",
+      "tint": "Bronze",
+      "length": 41,
+      "width": 21
+    },
+    "quantity": 3,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 3877,
+    "order_id": "3ae2001b-0e76-41f8-89e8-e9d35e28d829",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "d1561e8c-3e9b-4e29-94d2-56bbdced64f7",
       "name": "MC 68 LE-A",
       "thickness": "1/4",
       "shape": "Irregular/Any Other Shape",
-      "tint": "Solex",
-      "length": 48,
-      "width": 6
+      "tint": "Frosted Blue Chip",
+      "length": 49,
+      "width": 48
+    },
+    "quantity": 105,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 5910,
+    "order_id": "3ae2001b-0e76-41f8-89e8-e9d35e28d829",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "d49c19b3-cf1a-4ad6-8ba4-bf127ce1de6f",
+      "name": "MC 27 LE-A",
+      "thickness": "1/8",
+      "shape": "Octagon",
+      "tint": "Midnight Gray",
+      "length": 14,
+      "width": 14
+    },
+    "quantity": 76,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 4685,
+    "order_id": "3ae2001b-0e76-41f8-89e8-e9d35e28d829",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "ec5ffa0f-39d8-4d03-94dd-95b190a8c2f5",
+      "name": "AG 50 LE",
+      "thickness": "3/8",
+      "shape": "Pentagon",
+      "tint": "Ultra Clear",
+      "length": 35,
+      "width": 31
+    },
+    "quantity": 204,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 3685,
+    "order_id": "3ae2001b-0e76-41f8-89e8-e9d35e28d829",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "c908d94a-e129-4912-b3dd-29d7073c042d",
+      "name": "Sunguard Spandrel HT",
+      "thickness": "1/2",
+      "shape": "Rounded Corner(s)",
+      "tint": "Mistlite",
+      "length": 50,
+      "width": 15
+    },
+    "quantity": 11,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 3281,
+    "order_id": "3ae2001b-0e76-41f8-89e8-e9d35e28d829",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "c5eb32fe-3209-43d3-a63c-f5d3c3555c8b",
+      "name": "IS20 LE-T",
+      "thickness": "1/4",
+      "shape": "Arch",
+      "tint": "Mistlite",
+      "length": 24,
+      "width": 22
+    },
+    "quantity": 202,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 5660,
+    "order_id": "ff47a293-2e93-4bd1-8ea2-790af7bfeeba",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "f1e58ff5-48fc-40f5-971d-10c8ad04ab6f",
+      "name": "SN 68 HT",
+      "thickness": "1/2",
+      "shape": "Racetrack Oval",
+      "tint": "Light Gray",
+      "length": 82,
+      "width": 11
+    },
+    "quantity": 41,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 353,
+    "order_id": "ff47a293-2e93-4bd1-8ea2-790af7bfeeba",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "f1e58ff5-48fc-40f5-971d-10c8ad04ab6f",
+      "name": "SN 68 HT",
+      "thickness": "1/2",
+      "shape": "Quad Arch",
+      "tint": "Low-E",
+      "length": 71,
+      "width": 21
+    },
+    "quantity": 21,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 1387,
+    "order_id": "ff47a293-2e93-4bd1-8ea2-790af7bfeeba",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "c908d94a-e129-4912-b3dd-29d7073c042d",
+      "name": "Sunguard Spandrel HT",
+      "thickness": "3/8",
+      "shape": "Rounded Corner(s)",
+      "tint": "Frosted Blue Chip",
+      "length": 73,
+      "width": 48
+    },
+    "quantity": 56,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 1255,
+    "order_id": "ff47a293-2e93-4bd1-8ea2-790af7bfeeba",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "c5eb32fe-3209-43d3-a63c-f5d3c3555c8b",
+      "name": "IS20 LE-T",
+      "thickness": "3/4",
+      "shape": "Parallelogram",
+      "tint": "Satin Etch",
+      "length": 47,
+      "width": 13
+    },
+    "quantity": 100,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 6403,
+    "order_id": "ff47a293-2e93-4bd1-8ea2-790af7bfeeba",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "d49c19b3-cf1a-4ad6-8ba4-bf127ce1de6f",
+      "name": "MC 27 LE-A",
+      "thickness": "3/8",
+      "shape": "Square/Rectangle",
+      "tint": "Bronze",
+      "length": 51,
+      "width": 5
+    },
+    "quantity": 3,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 2453,
+    "order_id": "ff47a293-2e93-4bd1-8ea2-790af7bfeeba",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "aeab03c7-9242-4c4d-a53a-ef341b9fed6f",
+      "name": "AG 43",
+      "thickness": "1/2",
+      "shape": "Square/Rectangle",
+      "tint": "P-516",
+      "length": 74,
+      "width": 30
+    },
+    "quantity": 55,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 6806,
+    "order_id": "ff47a293-2e93-4bd1-8ea2-790af7bfeeba",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "c908d94a-e129-4912-b3dd-29d7073c042d",
+      "name": "Sunguard Spandrel HT",
+      "thickness": "1/2",
+      "shape": "Trapezoid",
+      "tint": "Bronze",
+      "length": 61,
+      "width": 19
+    },
+    "quantity": 42,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 8612,
+    "order_id": "ff47a293-2e93-4bd1-8ea2-790af7bfeeba",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "004c4786-d558-43e7-82be-795f60182ef7",
+      "name": "SNE 50/25",
+      "thickness": "1/8",
+      "shape": "Arch",
+      "tint": "Midnight Gray",
+      "length": 87,
+      "width": 48
+    },
+    "quantity": 182,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 9928,
+    "order_id": "601e8548-7d00-473a-9716-8a08240c0735",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "82a54c94-9681-4ebe-9cd8-81cfa03056e1",
+      "name": "SN 68",
+      "thickness": "1/2",
+      "shape": "Trapezoid",
+      "tint": "Satin Etch",
+      "length": 49,
+      "width": 31
+    },
+    "quantity": 204,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 2725,
+    "order_id": "601e8548-7d00-473a-9716-8a08240c0735",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "f1e58ff5-48fc-40f5-971d-10c8ad04ab6f",
+      "name": "SN 68 HT",
+      "thickness": "1/8",
+      "shape": "Quad Arch",
+      "tint": "Ultra Clear",
+      "length": 54,
+      "width": 37
+    },
+    "quantity": 156,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 662,
+    "order_id": "601e8548-7d00-473a-9716-8a08240c0735",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "82a54c94-9681-4ebe-9cd8-81cfa03056e1",
+      "name": "SN 68",
+      "thickness": "1/8",
+      "shape": "Pentagon",
+      "tint": "Light Gray",
+      "length": 52,
+      "width": 25
+    },
+    "quantity": 8,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 6536,
+    "order_id": "fd8204fa-d2cf-467d-be09-7f8902319b07",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "d49c19b3-cf1a-4ad6-8ba4-bf127ce1de6f",
+      "name": "MC 27 LE-A",
+      "thickness": "3/4",
+      "shape": "Arch Side",
+      "tint": "Frosted Green Chip",
+      "length": 50,
+      "width": 20
+    },
+    "quantity": 19,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 5804,
+    "order_id": "fd8204fa-d2cf-467d-be09-7f8902319b07",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "004c4786-d558-43e7-82be-795f60182ef7",
+      "name": "SNE 50/25",
+      "thickness": "3/8",
+      "shape": "Racetrack Oval",
+      "tint": "Midnight Gray",
+      "length": 81,
+      "width": 45
+    },
+    "quantity": 46,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 5153,
+    "order_id": "fd8204fa-d2cf-467d-be09-7f8902319b07",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "a1a67246-21b6-4ba1-9024-417369d628b0",
+      "name": "MC 68 LE-T",
+      "thickness": "1/2",
+      "shape": "Trapezoid",
+      "tint": "Frosted Green Chip",
+      "length": 44,
+      "width": 25
+    },
+    "quantity": 176,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 2277,
+    "order_id": "fd8204fa-d2cf-467d-be09-7f8902319b07",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "d1561e8c-3e9b-4e29-94d2-56bbdced64f7",
+      "name": "MC 68 LE-A",
+      "thickness": "3/8",
+      "shape": "Arch-Top",
+      "tint": "P-516",
+      "length": 83,
+      "width": 20
     },
     "quantity": 66,
     "note": "some note"
   },
   {
-    "order_item_id": 2690,
-    "order_id": "388bc2e3-5721-48c2-b616-2daa9a213df1",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
+    "order_item_id": 2036,
+    "order_id": "fd8204fa-d2cf-467d-be09-7f8902319b07",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
     "product_config": {
-      "glass_id": "91454f2a-292a-4b6c-91bc-2b126062ab5f",
-      "name": "SN 68 HT",
+      "glass_id": "d1561e8c-3e9b-4e29-94d2-56bbdced64f7",
+      "name": "MC 68 LE-A",
+      "thickness": "3/4",
+      "shape": "Arch Top & Bottom",
+      "tint": "P-516",
+      "length": 64,
+      "width": 15
+    },
+    "quantity": 4,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 4113,
+    "order_id": "5886af18-6c34-4ea7-90e1-3c32a688ad68",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "af123281-fd38-48a1-b865-f5d1c25307f8",
+      "name": "SNX-L 62/34",
       "thickness": "1/2",
+      "shape": "Parallelogram",
+      "tint": "Mistlite",
+      "length": 32,
+      "width": 31
+    },
+    "quantity": 2,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 6549,
+    "order_id": "5886af18-6c34-4ea7-90e1-3c32a688ad68",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "004c4786-d558-43e7-82be-795f60182ef7",
+      "name": "SNE 50/25",
+      "thickness": "1/8",
+      "shape": "Trapezoid",
+      "tint": "Dark Gray",
+      "length": 34,
+      "width": 34
+    },
+    "quantity": 9,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 1845,
+    "order_id": "5886af18-6c34-4ea7-90e1-3c32a688ad68",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "cc546439-3cef-4f13-b365-c6893c05fc82",
+      "name": "SNR 35 HT",
+      "thickness": "1/2",
+      "shape": "Trapezoid",
+      "tint": "Clear",
+      "length": 73,
+      "width": 41
+    },
+    "quantity": 2,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 1980,
+    "order_id": "5886af18-6c34-4ea7-90e1-3c32a688ad68",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "d49c19b3-cf1a-4ad6-8ba4-bf127ce1de6f",
+      "name": "MC 27 LE-A",
+      "thickness": "3/4",
+      "shape": "Racetrack Oval",
+      "tint": "Dark Gray",
+      "length": 44,
+      "width": 26
+    },
+    "quantity": 3,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 5787,
+    "order_id": "5886af18-6c34-4ea7-90e1-3c32a688ad68",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "d49c19b3-cf1a-4ad6-8ba4-bf127ce1de6f",
+      "name": "MC 27 LE-A",
+      "thickness": "1/8",
+      "shape": "House",
+      "tint": "Frosted Green Chip",
+      "length": 17,
+      "width": 17
+    },
+    "quantity": 186,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 944,
+    "order_id": "5886af18-6c34-4ea7-90e1-3c32a688ad68",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "82a54c94-9681-4ebe-9cd8-81cfa03056e1",
+      "name": "SN 68",
+      "thickness": "3/8",
+      "shape": "Hexagon",
+      "tint": "Bronze",
+      "length": 54,
+      "width": 43
+    },
+    "quantity": 2,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 9600,
+    "order_id": "5886af18-6c34-4ea7-90e1-3c32a688ad68",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "f1e58ff5-48fc-40f5-971d-10c8ad04ab6f",
+      "name": "SN 68 HT",
+      "thickness": "3/8",
+      "shape": "Parallelogram",
+      "tint": "Ultra Clear",
+      "length": 60,
+      "width": 31
+    },
+    "quantity": 177,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 3400,
+    "order_id": "5886af18-6c34-4ea7-90e1-3c32a688ad68",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "c112847c-f8ab-4e7b-a397-6a44ef7529f7",
+      "name": "NU 40 LE",
+      "thickness": "3/8",
+      "shape": "Clipped Corner(s)",
+      "tint": "Low-E",
+      "length": 45,
+      "width": 42
+    },
+    "quantity": 25,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 5946,
+    "order_id": "5886af18-6c34-4ea7-90e1-3c32a688ad68",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "c908d94a-e129-4912-b3dd-29d7073c042d",
+      "name": "Sunguard Spandrel HT",
+      "thickness": "3/4",
       "shape": "Octagon",
       "tint": "P-516",
+      "length": 35,
+      "width": 18
+    },
+    "quantity": 50,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 1704,
+    "order_id": "8090528a-3a6c-4734-b8ab-706ec741dd30",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "004c4786-d558-43e7-82be-795f60182ef7",
+      "name": "SNE 50/25",
+      "thickness": "3/4",
+      "shape": "Arch Top & Bottom",
+      "tint": "Midnight Gray",
+      "length": 24,
+      "width": 20
+    },
+    "quantity": 10,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 9430,
+    "order_id": "572ae6a0-bd52-4303-8a16-99c98595f4f2",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "a1a67246-21b6-4ba1-9024-417369d628b0",
+      "name": "MC 68 LE-T",
+      "thickness": "3/8",
+      "shape": "Square/Rectangle",
+      "tint": "Frosted Green Chip",
+      "length": 62,
+      "width": 19
+    },
+    "quantity": 28,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 2606,
+    "order_id": "572ae6a0-bd52-4303-8a16-99c98595f4f2",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "ec5ffa0f-39d8-4d03-94dd-95b190a8c2f5",
+      "name": "AG 50 LE",
+      "thickness": "3/8",
+      "shape": "Clipped Corner(s)",
+      "tint": "Satin Etch",
+      "length": 45,
+      "width": 34
+    },
+    "quantity": 10,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 5900,
+    "order_id": "572ae6a0-bd52-4303-8a16-99c98595f4f2",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "cc546439-3cef-4f13-b365-c6893c05fc82",
+      "name": "SNR 35 HT",
+      "thickness": "1/4",
+      "shape": "Half-Circle with Notch",
+      "tint": "Clear",
+      "length": 91,
+      "width": 27
+    },
+    "quantity": 131,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 7562,
+    "order_id": "572ae6a0-bd52-4303-8a16-99c98595f4f2",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "af123281-fd38-48a1-b865-f5d1c25307f8",
+      "name": "SNX-L 62/34",
+      "thickness": "1/8",
+      "shape": "Right Triangle",
+      "tint": "Solex",
+      "length": 59,
+      "width": 14
+    },
+    "quantity": 10,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 3618,
+    "order_id": "572ae6a0-bd52-4303-8a16-99c98595f4f2",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "ec5ffa0f-39d8-4d03-94dd-95b190a8c2f5",
+      "name": "AG 50 LE",
+      "thickness": "3/8",
+      "shape": "Pentagon",
+      "tint": "Frosted Green Chip",
+      "length": 41,
+      "width": 34
+    },
+    "quantity": 39,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 6272,
+    "order_id": "572ae6a0-bd52-4303-8a16-99c98595f4f2",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "c112847c-f8ab-4e7b-a397-6a44ef7529f7",
+      "name": "NU 40 LE",
+      "thickness": "1/4",
+      "shape": "Single Slope Rectangle",
+      "tint": "Mistlite",
+      "length": 67,
+      "width": 44
+    },
+    "quantity": 10,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 5801,
+    "order_id": "572ae6a0-bd52-4303-8a16-99c98595f4f2",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "1da5b2a3-6a53-49de-bbce-4521ef09cd5c",
+      "name": "SatinDeco",
+      "thickness": "1/4",
+      "shape": "Clipped Corner(s)",
+      "tint": "Frosted Green Chip",
+      "length": 11,
+      "width": 7
+    },
+    "quantity": 10,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 9156,
+    "order_id": "572ae6a0-bd52-4303-8a16-99c98595f4f2",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "aeab03c7-9242-4c4d-a53a-ef341b9fed6f",
+      "name": "AG 43",
+      "thickness": "3/4",
+      "shape": "Half-Circle",
+      "tint": "Low-E",
+      "length": 79,
+      "width": 29
+    },
+    "quantity": 4,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 9363,
+    "order_id": "572ae6a0-bd52-4303-8a16-99c98595f4f2",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "cc546439-3cef-4f13-b365-c6893c05fc82",
+      "name": "SNR 35 HT",
+      "thickness": "3/8",
+      "shape": "Ellipse",
+      "tint": "P-516",
+      "length": 37,
+      "width": 26
+    },
+    "quantity": 8,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 302,
+    "order_id": "2bdea4ae-98b6-4ae4-bc79-64c4f08b1be5",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "f1e58ff5-48fc-40f5-971d-10c8ad04ab6f",
+      "name": "SN 68 HT",
+      "thickness": "1/4",
+      "shape": "Parallelogram",
+      "tint": "Low-E",
+      "length": 68,
+      "width": 21
+    },
+    "quantity": 104,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 9514,
+    "order_id": "2bdea4ae-98b6-4ae4-bc79-64c4f08b1be5",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "cc546439-3cef-4f13-b365-c6893c05fc82",
+      "name": "SNR 35 HT",
+      "thickness": "3/4",
+      "shape": "Racetrack Oval",
+      "tint": "P-516",
+      "length": 59,
+      "width": 2
+    },
+    "quantity": 122,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 8423,
+    "order_id": "2bdea4ae-98b6-4ae4-bc79-64c4f08b1be5",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "aeab03c7-9242-4c4d-a53a-ef341b9fed6f",
+      "name": "AG 43",
+      "thickness": "1/4",
+      "shape": "Single Slope Rectangle",
+      "tint": "P-516",
+      "length": 59,
+      "width": 48
+    },
+    "quantity": 53,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 1196,
+    "order_id": "2bdea4ae-98b6-4ae4-bc79-64c4f08b1be5",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "1da5b2a3-6a53-49de-bbce-4521ef09cd5c",
+      "name": "SatinDeco",
+      "thickness": "3/8",
+      "shape": "Clipped Corner(s)",
+      "tint": "Clear",
+      "length": 59,
+      "width": 41
+    },
+    "quantity": 178,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 9831,
+    "order_id": "2bdea4ae-98b6-4ae4-bc79-64c4f08b1be5",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "c5eb32fe-3209-43d3-a63c-f5d3c3555c8b",
+      "name": "IS20 LE-T",
+      "thickness": "3/4",
+      "shape": "Parallelogram",
+      "tint": "Satin Etch",
+      "length": 68,
+      "width": 2
+    },
+    "quantity": 197,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 7418,
+    "order_id": "2bdea4ae-98b6-4ae4-bc79-64c4f08b1be5",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "f1e58ff5-48fc-40f5-971d-10c8ad04ab6f",
+      "name": "SN 68 HT",
+      "thickness": "3/8",
+      "shape": "Rounded Corner(s)",
+      "tint": "Ultra Clear",
+      "length": 45,
+      "width": 45
+    },
+    "quantity": 26,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 6789,
+    "order_id": "b2501c8f-2a81-40ea-a229-ef3e8fcf7878",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "004c4786-d558-43e7-82be-795f60182ef7",
+      "name": "SNE 50/25",
+      "thickness": "1/2",
+      "shape": "House",
+      "tint": "Frosted Green Chip",
+      "length": 93,
+      "width": 16
+    },
+    "quantity": 187,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 6551,
+    "order_id": "b2501c8f-2a81-40ea-a229-ef3e8fcf7878",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "004c4786-d558-43e7-82be-795f60182ef7",
+      "name": "SNE 50/25",
+      "thickness": "3/4",
+      "shape": "Hexagon",
+      "tint": "Midnight Gray",
+      "length": 93,
+      "width": 6
+    },
+    "quantity": 182,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 5149,
+    "order_id": "b2501c8f-2a81-40ea-a229-ef3e8fcf7878",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "a1a67246-21b6-4ba1-9024-417369d628b0",
+      "name": "MC 68 LE-T",
+      "thickness": "1/8",
+      "shape": "Pentagon",
+      "tint": "Low-E",
+      "length": 9,
+      "width": 7
+    },
+    "quantity": 192,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 5638,
+    "order_id": "b2501c8f-2a81-40ea-a229-ef3e8fcf7878",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "004c4786-d558-43e7-82be-795f60182ef7",
+      "name": "SNE 50/25",
+      "thickness": "3/4",
+      "shape": "Irregular/Any Other Shape",
+      "tint": "Light Gray",
+      "length": 89,
+      "width": 28
+    },
+    "quantity": 196,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 8343,
+    "order_id": "b2501c8f-2a81-40ea-a229-ef3e8fcf7878",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "c908d94a-e129-4912-b3dd-29d7073c042d",
+      "name": "Sunguard Spandrel HT",
+      "thickness": "3/4",
+      "shape": "Single Slope Rectangle",
+      "tint": "Mistlite",
+      "length": 52,
+      "width": 38
+    },
+    "quantity": 18,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 5690,
+    "order_id": "b2501c8f-2a81-40ea-a229-ef3e8fcf7878",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "f1e58ff5-48fc-40f5-971d-10c8ad04ab6f",
+      "name": "SN 68 HT",
+      "thickness": "3/4",
+      "shape": "Parallelogram",
+      "tint": "Light Gray",
+      "length": 55,
+      "width": 46
+    },
+    "quantity": 21,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 9158,
+    "order_id": "a2c3bde1-1c2d-4cb8-9c8e-1a9fa86d802a",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "af123281-fd38-48a1-b865-f5d1c25307f8",
+      "name": "SNX-L 62/34",
+      "thickness": "1/8",
+      "shape": "Right Triangle",
+      "tint": "Bronze",
+      "length": 62,
+      "width": 48
+    },
+    "quantity": 1,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 4790,
+    "order_id": "a2c3bde1-1c2d-4cb8-9c8e-1a9fa86d802a",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "c908d94a-e129-4912-b3dd-29d7073c042d",
+      "name": "Sunguard Spandrel HT",
+      "thickness": "3/4",
+      "shape": "Trapezoid",
+      "tint": "Bronze",
+      "length": 28,
+      "width": 27
+    },
+    "quantity": 135,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 6391,
+    "order_id": "253a7226-76e9-469a-a90a-832ad946e5ad",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "cc546439-3cef-4f13-b365-c6893c05fc82",
+      "name": "SNR 35 HT",
+      "thickness": "1/2",
+      "shape": "Racetrack Oval",
+      "tint": "Low-E",
+      "length": 68,
+      "width": 10
+    },
+    "quantity": 9,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 6378,
+    "order_id": "253a7226-76e9-469a-a90a-832ad946e5ad",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "ec5ffa0f-39d8-4d03-94dd-95b190a8c2f5",
+      "name": "AG 50 LE",
+      "thickness": "1/2",
+      "shape": "Pentagon",
+      "tint": "Ultra Clear",
+      "length": 83,
+      "width": 26
+    },
+    "quantity": 9,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 2060,
+    "order_id": "253a7226-76e9-469a-a90a-832ad946e5ad",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "1da5b2a3-6a53-49de-bbce-4521ef09cd5c",
+      "name": "SatinDeco",
+      "thickness": "1/8",
+      "shape": "Ellipse",
+      "tint": "Solex",
+      "length": 66,
+      "width": 34
+    },
+    "quantity": 10,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 7969,
+    "order_id": "253a7226-76e9-469a-a90a-832ad946e5ad",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "d1561e8c-3e9b-4e29-94d2-56bbdced64f7",
+      "name": "MC 68 LE-A",
+      "thickness": "1/8",
+      "shape": "Hexagon",
+      "tint": "Frosted Green Chip",
+      "length": 41,
+      "width": 13
+    },
+    "quantity": 2,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 3394,
+    "order_id": "253a7226-76e9-469a-a90a-832ad946e5ad",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "c5eb32fe-3209-43d3-a63c-f5d3c3555c8b",
+      "name": "IS20 LE-T",
+      "thickness": "3/8",
+      "shape": "Triangle",
+      "tint": "Satin Etch",
+      "length": 52,
+      "width": 40
+    },
+    "quantity": 11,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 8050,
+    "order_id": "253a7226-76e9-469a-a90a-832ad946e5ad",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "ec5ffa0f-39d8-4d03-94dd-95b190a8c2f5",
+      "name": "AG 50 LE",
+      "thickness": "1/4",
+      "shape": "Half-Circle with Notch",
+      "tint": "Bronze",
+      "length": 90,
+      "width": 38
+    },
+    "quantity": 105,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 231,
+    "order_id": "253a7226-76e9-469a-a90a-832ad946e5ad",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "cc546439-3cef-4f13-b365-c6893c05fc82",
+      "name": "SNR 35 HT",
+      "thickness": "1/2",
+      "shape": "Trapezoid",
+      "tint": "Clear",
+      "length": 56,
+      "width": 40
+    },
+    "quantity": 51,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 9072,
+    "order_id": "085f72ec-076e-4f20-a53e-ef3d16e67ffd",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "82a54c94-9681-4ebe-9cd8-81cfa03056e1",
+      "name": "SN 68",
+      "thickness": "1/4",
+      "shape": "Irregular/Any Other Shape",
+      "tint": "Satin Etch",
+      "length": 46,
+      "width": 23
+    },
+    "quantity": 9,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 3282,
+    "order_id": "c4111476-ca94-4edf-851a-f97255ec014e",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "004c4786-d558-43e7-82be-795f60182ef7",
+      "name": "SNE 50/25",
+      "thickness": "3/4",
+      "shape": "Clipped Corner(s)",
+      "tint": "Light Gray",
+      "length": 71,
+      "width": 40
+    },
+    "quantity": 43,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 2092,
+    "order_id": "c4111476-ca94-4edf-851a-f97255ec014e",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "c112847c-f8ab-4e7b-a397-6a44ef7529f7",
+      "name": "NU 40 LE",
+      "thickness": "1/2",
+      "shape": "Arch Top & Bottom",
+      "tint": "Frosted Blue Chip",
+      "length": 40,
+      "width": 26
+    },
+    "quantity": 35,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 3206,
+    "order_id": "c4111476-ca94-4edf-851a-f97255ec014e",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "004c4786-d558-43e7-82be-795f60182ef7",
+      "name": "SNE 50/25",
+      "thickness": "1/2",
+      "shape": "Clipped Corner(s)",
+      "tint": "Dark Gray",
       "length": 33,
+      "width": 5
+    },
+    "quantity": 14,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 2755,
+    "order_id": "c4111476-ca94-4edf-851a-f97255ec014e",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "a1a67246-21b6-4ba1-9024-417369d628b0",
+      "name": "MC 68 LE-T",
+      "thickness": "3/8",
+      "shape": "Hexagon",
+      "tint": "Solex",
+      "length": 89,
+      "width": 37
+    },
+    "quantity": 204,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 7982,
+    "order_id": "c4111476-ca94-4edf-851a-f97255ec014e",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "cc546439-3cef-4f13-b365-c6893c05fc82",
+      "name": "SNR 35 HT",
+      "thickness": "1/4",
+      "shape": "Arch",
+      "tint": "Low-E",
+      "length": 82,
+      "width": 47
+    },
+    "quantity": 43,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 3447,
+    "order_id": "c4111476-ca94-4edf-851a-f97255ec014e",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "a1a67246-21b6-4ba1-9024-417369d628b0",
+      "name": "MC 68 LE-T",
+      "thickness": "1/8",
+      "shape": "Pentagon",
+      "tint": "Clear",
+      "length": 83,
+      "width": 31
+    },
+    "quantity": 34,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 7034,
+    "order_id": "c4111476-ca94-4edf-851a-f97255ec014e",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "aeab03c7-9242-4c4d-a53a-ef341b9fed6f",
+      "name": "AG 43",
+      "thickness": "1/2",
+      "shape": "Arch Side",
+      "tint": "Ultra Clear",
+      "length": 62,
+      "width": 2
+    },
+    "quantity": 52,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 7428,
+    "order_id": "bdeb3699-6a53-4f24-90cd-1bf710b16147",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "82a54c94-9681-4ebe-9cd8-81cfa03056e1",
+      "name": "SN 68",
+      "thickness": "3/8",
+      "shape": "Clipped Corner(s)",
+      "tint": "Light Gray",
+      "length": 69,
+      "width": 39
+    },
+    "quantity": 21,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 7227,
+    "order_id": "5226eab0-ca4f-4c22-a7a3-1579c34054f3",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "ec5ffa0f-39d8-4d03-94dd-95b190a8c2f5",
+      "name": "AG 50 LE",
+      "thickness": "3/4",
+      "shape": "Half-Circle with Notch",
+      "tint": "Bronze",
+      "length": 76,
+      "width": 24
+    },
+    "quantity": 44,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 5209,
+    "order_id": "5226eab0-ca4f-4c22-a7a3-1579c34054f3",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "aeab03c7-9242-4c4d-a53a-ef341b9fed6f",
+      "name": "AG 43",
+      "thickness": "3/4",
+      "shape": "Square/Rectangle",
+      "tint": "Ultra Clear",
+      "length": 78,
+      "width": 32
+    },
+    "quantity": 9,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 7491,
+    "order_id": "5226eab0-ca4f-4c22-a7a3-1579c34054f3",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "f1e58ff5-48fc-40f5-971d-10c8ad04ab6f",
+      "name": "SN 68 HT",
+      "thickness": "1/4",
+      "shape": "Quad Arch",
+      "tint": "Ultra Clear",
+      "length": 51,
+      "width": 33
+    },
+    "quantity": 14,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 8940,
+    "order_id": "fb45b2c9-0cc0-4b7f-a14f-3fa8fc1a9cde",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "ec5ffa0f-39d8-4d03-94dd-95b190a8c2f5",
+      "name": "AG 50 LE",
+      "thickness": "3/4",
+      "shape": "Quarter Round",
+      "tint": "P-516",
+      "length": 87,
+      "width": 40
+    },
+    "quantity": 77,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 7612,
+    "order_id": "fb45b2c9-0cc0-4b7f-a14f-3fa8fc1a9cde",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "82a54c94-9681-4ebe-9cd8-81cfa03056e1",
+      "name": "SN 68",
+      "thickness": "3/8",
+      "shape": "Trapezoid",
+      "tint": "Bronze",
+      "length": 68,
+      "width": 3
+    },
+    "quantity": 4,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 8686,
+    "order_id": "fb45b2c9-0cc0-4b7f-a14f-3fa8fc1a9cde",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "c112847c-f8ab-4e7b-a397-6a44ef7529f7",
+      "name": "NU 40 LE",
+      "thickness": "3/8",
+      "shape": "Quarter Round with Notch",
+      "tint": "Frosted Blue Chip",
+      "length": 27,
+      "width": 17
+    },
+    "quantity": 20,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 2216,
+    "order_id": "1762f997-b25f-4da7-b8ab-c5a05969be54",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "f1e58ff5-48fc-40f5-971d-10c8ad04ab6f",
+      "name": "SN 68 HT",
+      "thickness": "1/2",
+      "shape": "Racetrack Oval",
+      "tint": "Light Gray",
+      "length": 72,
+      "width": 44
+    },
+    "quantity": 49,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 5276,
+    "order_id": "1762f997-b25f-4da7-b8ab-c5a05969be54",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "f1e58ff5-48fc-40f5-971d-10c8ad04ab6f",
+      "name": "SN 68 HT",
+      "thickness": "1/4",
+      "shape": "Quad Arch",
+      "tint": "Light Gray",
+      "length": 83,
+      "width": 11
+    },
+    "quantity": 192,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 6592,
+    "order_id": "1762f997-b25f-4da7-b8ab-c5a05969be54",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "004c4786-d558-43e7-82be-795f60182ef7",
+      "name": "SNE 50/25",
+      "thickness": "1/8",
+      "shape": "Rounded Corner(s)",
+      "tint": "Dark Gray",
+      "length": 87,
+      "width": 48
+    },
+    "quantity": 74,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 7070,
+    "order_id": "1762f997-b25f-4da7-b8ab-c5a05969be54",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "004c4786-d558-43e7-82be-795f60182ef7",
+      "name": "SNE 50/25",
+      "thickness": "1/8",
+      "shape": "Rounded Corner(s)",
+      "tint": "Midnight Gray",
+      "length": 54,
+      "width": 35
+    },
+    "quantity": 24,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 8802,
+    "order_id": "1762f997-b25f-4da7-b8ab-c5a05969be54",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "f1e58ff5-48fc-40f5-971d-10c8ad04ab6f",
+      "name": "SN 68 HT",
+      "thickness": "1/8",
+      "shape": "Quad Arch",
+      "tint": "Dark Gray",
+      "length": 45,
+      "width": 25
+    },
+    "quantity": 52,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 6933,
+    "order_id": "1762f997-b25f-4da7-b8ab-c5a05969be54",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "004c4786-d558-43e7-82be-795f60182ef7",
+      "name": "SNE 50/25",
+      "thickness": "3/8",
+      "shape": "Rounded Corner(s)",
+      "tint": "Frosted Green Chip",
+      "length": 55,
+      "width": 38
+    },
+    "quantity": 29,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 1171,
+    "order_id": "1762f997-b25f-4da7-b8ab-c5a05969be54",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "a1a67246-21b6-4ba1-9024-417369d628b0",
+      "name": "MC 68 LE-T",
+      "thickness": "1/8",
+      "shape": "Ellipse",
+      "tint": "Clear",
+      "length": 52,
+      "width": 11
+    },
+    "quantity": 23,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 5301,
+    "order_id": "1762f997-b25f-4da7-b8ab-c5a05969be54",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "c908d94a-e129-4912-b3dd-29d7073c042d",
+      "name": "Sunguard Spandrel HT",
+      "thickness": "1/4",
+      "shape": "Racetrack Oval",
+      "tint": "Midnight Gray",
+      "length": 73,
+      "width": 25
+    },
+    "quantity": 10,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 8537,
+    "order_id": "1762f997-b25f-4da7-b8ab-c5a05969be54",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "af123281-fd38-48a1-b865-f5d1c25307f8",
+      "name": "SNX-L 62/34",
+      "thickness": "3/8",
+      "shape": "Clipped Corner(s)",
+      "tint": "Mistlite",
+      "length": 91,
+      "width": 44
+    },
+    "quantity": 59,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 9048,
+    "order_id": "f4505020-db3e-4ab1-b3d2-b51a693278b6",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "a1a67246-21b6-4ba1-9024-417369d628b0",
+      "name": "MC 68 LE-T",
+      "thickness": "1/2",
+      "shape": "Hexagon",
+      "tint": "Mistlite",
+      "length": 70,
+      "width": 16
+    },
+    "quantity": 10,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 7953,
+    "order_id": "f4505020-db3e-4ab1-b3d2-b51a693278b6",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "c908d94a-e129-4912-b3dd-29d7073c042d",
+      "name": "Sunguard Spandrel HT",
+      "thickness": "1/2",
+      "shape": "Trapezoid",
+      "tint": "Bronze",
+      "length": 72,
+      "width": 13
+    },
+    "quantity": 9,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 1551,
+    "order_id": "f4505020-db3e-4ab1-b3d2-b51a693278b6",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "82a54c94-9681-4ebe-9cd8-81cfa03056e1",
+      "name": "SN 68",
+      "thickness": "1/4",
+      "shape": "Hexagon",
+      "tint": "Light Gray",
+      "length": 48,
+      "width": 31
+    },
+    "quantity": 41,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 413,
+    "order_id": "f4505020-db3e-4ab1-b3d2-b51a693278b6",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "aeab03c7-9242-4c4d-a53a-ef341b9fed6f",
+      "name": "AG 43",
+      "thickness": "1/4",
+      "shape": "Pentagon",
+      "tint": "Mistlite",
+      "length": 59,
+      "width": 43
+    },
+    "quantity": 7,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 2952,
+    "order_id": "f4505020-db3e-4ab1-b3d2-b51a693278b6",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "d1561e8c-3e9b-4e29-94d2-56bbdced64f7",
+      "name": "MC 68 LE-A",
+      "thickness": "1/4",
+      "shape": "Arch Top & Bottom",
+      "tint": "Frosted Green Chip",
+      "length": 49,
+      "width": 41
+    },
+    "quantity": 18,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 8254,
+    "order_id": "475a8a2a-3a25-4a69-963c-24c514cb20a3",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "aeab03c7-9242-4c4d-a53a-ef341b9fed6f",
+      "name": "AG 43",
+      "thickness": "3/4",
+      "shape": "Arch Side",
+      "tint": "Solex",
+      "length": 68,
+      "width": 42
+    },
+    "quantity": 9,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 7822,
+    "order_id": "475a8a2a-3a25-4a69-963c-24c514cb20a3",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "c5eb32fe-3209-43d3-a63c-f5d3c3555c8b",
+      "name": "IS20 LE-T",
+      "thickness": "3/4",
+      "shape": "Parallelogram",
+      "tint": "Mistlite",
+      "length": 92,
+      "width": 9
+    },
+    "quantity": 8,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 8214,
+    "order_id": "475a8a2a-3a25-4a69-963c-24c514cb20a3",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "d49c19b3-cf1a-4ad6-8ba4-bf127ce1de6f",
+      "name": "MC 27 LE-A",
+      "thickness": "1/8",
+      "shape": "Clipped Corner(s)",
+      "tint": "Bronze",
+      "length": 81,
+      "width": 31
+    },
+    "quantity": 135,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 1969,
+    "order_id": "475a8a2a-3a25-4a69-963c-24c514cb20a3",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "d49c19b3-cf1a-4ad6-8ba4-bf127ce1de6f",
+      "name": "MC 27 LE-A",
+      "thickness": "1/4",
+      "shape": "House",
+      "tint": "Mistlite",
+      "length": 69,
+      "width": 13
+    },
+    "quantity": 8,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 5931,
+    "order_id": "475a8a2a-3a25-4a69-963c-24c514cb20a3",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "004c4786-d558-43e7-82be-795f60182ef7",
+      "name": "SNE 50/25",
+      "thickness": "3/8",
+      "shape": "Clipped Corner(s)",
+      "tint": "Midnight Gray",
+      "length": 93,
+      "width": 9
+    },
+    "quantity": 112,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 8755,
+    "order_id": "475a8a2a-3a25-4a69-963c-24c514cb20a3",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "d49c19b3-cf1a-4ad6-8ba4-bf127ce1de6f",
+      "name": "MC 27 LE-A",
+      "thickness": "1/8",
+      "shape": "Racetrack Oval",
+      "tint": "Midnight Gray",
+      "length": 76,
+      "width": 18
+    },
+    "quantity": 19,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 3610,
+    "order_id": "475a8a2a-3a25-4a69-963c-24c514cb20a3",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "d1561e8c-3e9b-4e29-94d2-56bbdced64f7",
+      "name": "MC 68 LE-A",
+      "thickness": "1/2",
+      "shape": "Arch Top & Bottom",
+      "tint": "Clear",
+      "length": 64,
+      "width": 18
+    },
+    "quantity": 9,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 1200,
+    "order_id": "475a8a2a-3a25-4a69-963c-24c514cb20a3",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "f1e58ff5-48fc-40f5-971d-10c8ad04ab6f",
+      "name": "SN 68 HT",
+      "thickness": "1/2",
+      "shape": "Circle",
+      "tint": "Clear",
+      "length": 86,
+      "width": 38
+    },
+    "quantity": 2,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 1772,
+    "order_id": "9ff1ef8d-ff9a-4263-8cf3-e9d2adc1a8d0",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "d1561e8c-3e9b-4e29-94d2-56bbdced64f7",
+      "name": "MC 68 LE-A",
+      "thickness": "1/8",
+      "shape": "Irregular/Any Other Shape",
+      "tint": "Frosted Blue Chip",
+      "length": 72,
+      "width": 23
+    },
+    "quantity": 46,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 9539,
+    "order_id": "9ff1ef8d-ff9a-4263-8cf3-e9d2adc1a8d0",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "a1a67246-21b6-4ba1-9024-417369d628b0",
+      "name": "MC 68 LE-T",
+      "thickness": "1/4",
+      "shape": "Hexagon",
+      "tint": "Low-E",
+      "length": 46,
+      "width": 2
+    },
+    "quantity": 37,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 5180,
+    "order_id": "9ff1ef8d-ff9a-4263-8cf3-e9d2adc1a8d0",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "aeab03c7-9242-4c4d-a53a-ef341b9fed6f",
+      "name": "AG 43",
+      "thickness": "1/4",
+      "shape": "Parallelogram",
+      "tint": "P-516",
+      "length": 51,
+      "width": 34
+    },
+    "quantity": 137,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 8666,
+    "order_id": "9ff1ef8d-ff9a-4263-8cf3-e9d2adc1a8d0",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "1da5b2a3-6a53-49de-bbce-4521ef09cd5c",
+      "name": "SatinDeco",
+      "thickness": "1/8",
+      "shape": "Racetrack Oval",
+      "tint": "Solex",
+      "length": 48,
+      "width": 4
+    },
+    "quantity": 62,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 7339,
+    "order_id": "63a6443e-c0d4-479e-93e4-181f56728629",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "c5eb32fe-3209-43d3-a63c-f5d3c3555c8b",
+      "name": "IS20 LE-T",
+      "thickness": "3/4",
+      "shape": "Half-Circle",
+      "tint": "Satin Etch",
+      "length": 23,
+      "width": 14
+    },
+    "quantity": 6,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 2709,
+    "order_id": "63a6443e-c0d4-479e-93e4-181f56728629",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "ec5ffa0f-39d8-4d03-94dd-95b190a8c2f5",
+      "name": "AG 50 LE",
+      "thickness": "1/8",
+      "shape": "Pentagon",
+      "tint": "Bronze",
+      "length": 19,
+      "width": 3
+    },
+    "quantity": 43,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 9873,
+    "order_id": "63a6443e-c0d4-479e-93e4-181f56728629",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "d1561e8c-3e9b-4e29-94d2-56bbdced64f7",
+      "name": "MC 68 LE-A",
+      "thickness": "1/4",
+      "shape": "Arch Top & Bottom",
+      "tint": "Frosted Green Chip",
+      "length": 71,
+      "width": 47
+    },
+    "quantity": 48,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 1721,
+    "order_id": "63a6443e-c0d4-479e-93e4-181f56728629",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "d49c19b3-cf1a-4ad6-8ba4-bf127ce1de6f",
+      "name": "MC 27 LE-A",
+      "thickness": "1/4",
+      "shape": "Octagon",
+      "tint": "Frosted Green Chip",
+      "length": 57,
+      "width": 45
+    },
+    "quantity": 42,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 7753,
+    "order_id": "63a6443e-c0d4-479e-93e4-181f56728629",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "c112847c-f8ab-4e7b-a397-6a44ef7529f7",
+      "name": "NU 40 LE",
+      "thickness": "3/8",
+      "shape": "Arch-Top",
+      "tint": "Mistlite",
+      "length": 88,
+      "width": 46
+    },
+    "quantity": 10,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 995,
+    "order_id": "63a6443e-c0d4-479e-93e4-181f56728629",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "c5eb32fe-3209-43d3-a63c-f5d3c3555c8b",
+      "name": "IS20 LE-T",
+      "thickness": "1/8",
+      "shape": "Hexagon",
+      "tint": "Clear",
+      "length": 79,
+      "width": 14
+    },
+    "quantity": 8,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 6936,
+    "order_id": "63a6443e-c0d4-479e-93e4-181f56728629",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "cc546439-3cef-4f13-b365-c6893c05fc82",
+      "name": "SNR 35 HT",
+      "thickness": "3/8",
+      "shape": "Quad Arch",
+      "tint": "Low-E",
+      "length": 61,
+      "width": 25
+    },
+    "quantity": 28,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 4687,
+    "order_id": "63a6443e-c0d4-479e-93e4-181f56728629",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "a1a67246-21b6-4ba1-9024-417369d628b0",
+      "name": "MC 68 LE-T",
+      "thickness": "1/8",
+      "shape": "Pentagon",
+      "tint": "Mistlite",
+      "length": 39,
+      "width": 3
+    },
+    "quantity": 93,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 4446,
+    "order_id": "63a6443e-c0d4-479e-93e4-181f56728629",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "cc546439-3cef-4f13-b365-c6893c05fc82",
+      "name": "SNR 35 HT",
+      "thickness": "1/2",
+      "shape": "Trapezoid",
+      "tint": "Clear",
+      "length": 60,
+      "width": 8
+    },
+    "quantity": 130,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 9090,
+    "order_id": "3d652bcc-376b-49bb-8211-5116b172e2fb",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "82a54c94-9681-4ebe-9cd8-81cfa03056e1",
+      "name": "SN 68",
+      "thickness": "3/4",
+      "shape": "Clipped Corner(s)",
+      "tint": "Ultra Clear",
+      "length": 47,
+      "width": 47
+    },
+    "quantity": 48,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 6155,
+    "order_id": "3d652bcc-376b-49bb-8211-5116b172e2fb",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "c112847c-f8ab-4e7b-a397-6a44ef7529f7",
+      "name": "NU 40 LE",
+      "thickness": "3/8",
+      "shape": "Arch Side",
+      "tint": "Low-E",
+      "length": 44,
+      "width": 40
+    },
+    "quantity": 20,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 7008,
+    "order_id": "3d652bcc-376b-49bb-8211-5116b172e2fb",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "aeab03c7-9242-4c4d-a53a-ef341b9fed6f",
+      "name": "AG 43",
+      "thickness": "1/4",
+      "shape": "Square/Rectangle",
+      "tint": "Bronze",
+      "length": 92,
+      "width": 47
+    },
+    "quantity": 5,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 2376,
+    "order_id": "3d652bcc-376b-49bb-8211-5116b172e2fb",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "004c4786-d558-43e7-82be-795f60182ef7",
+      "name": "SNE 50/25",
+      "thickness": "1/2",
+      "shape": "Hexagon",
+      "tint": "Frosted Green Chip",
+      "length": 55,
+      "width": 16
+    },
+    "quantity": 170,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 8319,
+    "order_id": "3d652bcc-376b-49bb-8211-5116b172e2fb",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "c908d94a-e129-4912-b3dd-29d7073c042d",
+      "name": "Sunguard Spandrel HT",
+      "thickness": "3/8",
+      "shape": "Quarter Round",
+      "tint": "Ultra Clear",
+      "length": 61,
+      "width": 45
+    },
+    "quantity": 5,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 7546,
+    "order_id": "3d652bcc-376b-49bb-8211-5116b172e2fb",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "82a54c94-9681-4ebe-9cd8-81cfa03056e1",
+      "name": "SN 68",
+      "thickness": "1/8",
+      "shape": "Clipped Corner(s)",
+      "tint": "Clear",
+      "length": 51,
+      "width": 34
+    },
+    "quantity": 7,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 7133,
+    "order_id": "3d652bcc-376b-49bb-8211-5116b172e2fb",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "cc546439-3cef-4f13-b365-c6893c05fc82",
+      "name": "SNR 35 HT",
+      "thickness": "1/2",
+      "shape": "Rounded Corner(s)",
+      "tint": "Low-E",
+      "length": 92,
+      "width": 41
+    },
+    "quantity": 20,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 533,
+    "order_id": "3d652bcc-376b-49bb-8211-5116b172e2fb",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "c112847c-f8ab-4e7b-a397-6a44ef7529f7",
+      "name": "NU 40 LE",
+      "thickness": "3/8",
+      "shape": "Clipped Corner(s)",
+      "tint": "P-516",
+      "length": 53,
+      "width": 41
+    },
+    "quantity": 54,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 9972,
+    "order_id": "e0f56a0c-5a14-4a50-9fb7-78542ecbb6d6",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "82a54c94-9681-4ebe-9cd8-81cfa03056e1",
+      "name": "SN 68",
+      "thickness": "1/4",
+      "shape": "Circle",
+      "tint": "Clear",
+      "length": 87,
+      "width": 20
+    },
+    "quantity": 25,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 8860,
+    "order_id": "e0f56a0c-5a14-4a50-9fb7-78542ecbb6d6",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "a1a67246-21b6-4ba1-9024-417369d628b0",
+      "name": "MC 68 LE-T",
+      "thickness": "3/8",
+      "shape": "Quarter Round",
+      "tint": "Mistlite",
+      "length": 76,
+      "width": 38
+    },
+    "quantity": 43,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 9409,
+    "order_id": "106d4bb4-5b20-43e4-84fb-a1c24c9fb2ae",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "d1561e8c-3e9b-4e29-94d2-56bbdced64f7",
+      "name": "MC 68 LE-A",
+      "thickness": "3/4",
+      "shape": "Ellipse",
+      "tint": "Midnight Gray",
+      "length": 37,
+      "width": 13
+    },
+    "quantity": 123,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 5202,
+    "order_id": "106d4bb4-5b20-43e4-84fb-a1c24c9fb2ae",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "ec5ffa0f-39d8-4d03-94dd-95b190a8c2f5",
+      "name": "AG 50 LE",
+      "thickness": "1/4",
+      "shape": "Pentagon",
+      "tint": "Satin Etch",
+      "length": 81,
+      "width": 22
+    },
+    "quantity": 47,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 6963,
+    "order_id": "106d4bb4-5b20-43e4-84fb-a1c24c9fb2ae",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "c112847c-f8ab-4e7b-a397-6a44ef7529f7",
+      "name": "NU 40 LE",
+      "thickness": "1/8",
+      "shape": "Arch Top & Bottom",
+      "tint": "P-516",
+      "length": 72,
+      "width": 18
+    },
+    "quantity": 55,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 8879,
+    "order_id": "106d4bb4-5b20-43e4-84fb-a1c24c9fb2ae",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "c112847c-f8ab-4e7b-a397-6a44ef7529f7",
+      "name": "NU 40 LE",
+      "thickness": "3/8",
+      "shape": "Quarter Round",
+      "tint": "P-516",
+      "length": 58,
+      "width": 43
+    },
+    "quantity": 2,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 7802,
+    "order_id": "106d4bb4-5b20-43e4-84fb-a1c24c9fb2ae",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "82a54c94-9681-4ebe-9cd8-81cfa03056e1",
+      "name": "SN 68",
+      "thickness": "3/4",
+      "shape": "Clipped Corner(s)",
+      "tint": "Light Gray",
+      "length": 54,
+      "width": 4
+    },
+    "quantity": 24,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 5803,
+    "order_id": "106d4bb4-5b20-43e4-84fb-a1c24c9fb2ae",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "1da5b2a3-6a53-49de-bbce-4521ef09cd5c",
+      "name": "SatinDeco",
+      "thickness": "3/4",
+      "shape": "Racetrack Oval",
+      "tint": "Solex",
+      "length": 83,
+      "width": 31
+    },
+    "quantity": 50,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 8397,
+    "order_id": "106d4bb4-5b20-43e4-84fb-a1c24c9fb2ae",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "f1e58ff5-48fc-40f5-971d-10c8ad04ab6f",
+      "name": "SN 68 HT",
+      "thickness": "3/8",
+      "shape": "Quad Arch",
+      "tint": "Light Gray",
+      "length": 64,
+      "width": 42
+    },
+    "quantity": 7,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 1251,
+    "order_id": "106d4bb4-5b20-43e4-84fb-a1c24c9fb2ae",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "f1e58ff5-48fc-40f5-971d-10c8ad04ab6f",
+      "name": "SN 68 HT",
+      "thickness": "3/8",
+      "shape": "Racetrack Oval",
+      "tint": "Light Gray",
+      "length": 77,
+      "width": 14
+    },
+    "quantity": 165,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 1522,
+    "order_id": "53db6076-65bf-4a22-bf8e-89b6926fac90",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "1da5b2a3-6a53-49de-bbce-4521ef09cd5c",
+      "name": "SatinDeco",
+      "thickness": "3/4",
+      "shape": "Racetrack Oval",
+      "tint": "Midnight Gray",
+      "length": 78,
+      "width": 3
+    },
+    "quantity": 11,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 4823,
+    "order_id": "53db6076-65bf-4a22-bf8e-89b6926fac90",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "82a54c94-9681-4ebe-9cd8-81cfa03056e1",
+      "name": "SN 68",
+      "thickness": "1/4",
+      "shape": "Pentagon",
+      "tint": "Bronze",
+      "length": 62,
+      "width": 48
+    },
+    "quantity": 131,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 8672,
+    "order_id": "53db6076-65bf-4a22-bf8e-89b6926fac90",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "c112847c-f8ab-4e7b-a397-6a44ef7529f7",
+      "name": "NU 40 LE",
+      "thickness": "3/4",
+      "shape": "Quad Arch",
+      "tint": "Low-E",
+      "length": 80,
+      "width": 39
+    },
+    "quantity": 21,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 1690,
+    "order_id": "a314c8c6-75da-4392-818c-dfbca3dcbd83",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "d49c19b3-cf1a-4ad6-8ba4-bf127ce1de6f",
+      "name": "MC 27 LE-A",
+      "thickness": "3/4",
+      "shape": "Square/Rectangle",
+      "tint": "Dark Gray",
+      "length": 64,
+      "width": 32
+    },
+    "quantity": 7,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 950,
+    "order_id": "a314c8c6-75da-4392-818c-dfbca3dcbd83",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "ec5ffa0f-39d8-4d03-94dd-95b190a8c2f5",
+      "name": "AG 50 LE",
+      "thickness": "1/4",
+      "shape": "Arch",
+      "tint": "P-516",
+      "length": 93,
+      "width": 39
+    },
+    "quantity": 24,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 8086,
+    "order_id": "a314c8c6-75da-4392-818c-dfbca3dcbd83",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "c112847c-f8ab-4e7b-a397-6a44ef7529f7",
+      "name": "NU 40 LE",
+      "thickness": "1/4",
+      "shape": "Arch",
+      "tint": "P-516",
+      "length": 17,
+      "width": 5
+    },
+    "quantity": 50,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 980,
+    "order_id": "a314c8c6-75da-4392-818c-dfbca3dcbd83",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "82a54c94-9681-4ebe-9cd8-81cfa03056e1",
+      "name": "SN 68",
+      "thickness": "1/4",
+      "shape": "Quad Arch",
+      "tint": "Bronze",
+      "length": 69,
+      "width": 20
+    },
+    "quantity": 1,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 8851,
+    "order_id": "a314c8c6-75da-4392-818c-dfbca3dcbd83",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "d49c19b3-cf1a-4ad6-8ba4-bf127ce1de6f",
+      "name": "MC 27 LE-A",
+      "thickness": "1/2",
+      "shape": "Half-Circle with Notch",
+      "tint": "Midnight Gray",
+      "length": 85,
+      "width": 6
+    },
+    "quantity": 3,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 7485,
+    "order_id": "a314c8c6-75da-4392-818c-dfbca3dcbd83",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "004c4786-d558-43e7-82be-795f60182ef7",
+      "name": "SNE 50/25",
+      "thickness": "1/2",
+      "shape": "Rounded Corner(s)",
+      "tint": "Dark Gray",
+      "length": 71,
+      "width": 25
+    },
+    "quantity": 185,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 4449,
+    "order_id": "a314c8c6-75da-4392-818c-dfbca3dcbd83",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "a1a67246-21b6-4ba1-9024-417369d628b0",
+      "name": "MC 68 LE-T",
+      "thickness": "1/4",
+      "shape": "Pentagon",
+      "tint": "Frosted Green Chip",
+      "length": 91,
+      "width": 47
+    },
+    "quantity": 44,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 7128,
+    "order_id": "498612ae-cd93-427b-a241-070407362ee1",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "ec5ffa0f-39d8-4d03-94dd-95b190a8c2f5",
+      "name": "AG 50 LE",
+      "thickness": "3/4",
+      "shape": "Pentagon",
+      "tint": "P-516",
+      "length": 90,
+      "width": 30
+    },
+    "quantity": 2,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 6388,
+    "order_id": "498612ae-cd93-427b-a241-070407362ee1",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "ec5ffa0f-39d8-4d03-94dd-95b190a8c2f5",
+      "name": "AG 50 LE",
+      "thickness": "1/8",
+      "shape": "Square/Rectangle",
+      "tint": "Bronze",
+      "length": 23,
+      "width": 23
+    },
+    "quantity": 26,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 4737,
+    "order_id": "2171f22d-6023-4177-b379-2345fc8767ac",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "d49c19b3-cf1a-4ad6-8ba4-bf127ce1de6f",
+      "name": "MC 27 LE-A",
+      "thickness": "1/2",
+      "shape": "Racetrack Oval",
+      "tint": "Frosted Green Chip",
+      "length": 75,
+      "width": 42
+    },
+    "quantity": 2,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 7585,
+    "order_id": "2171f22d-6023-4177-b379-2345fc8767ac",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "d1561e8c-3e9b-4e29-94d2-56bbdced64f7",
+      "name": "MC 68 LE-A",
+      "thickness": "3/4",
+      "shape": "Ellipse",
+      "tint": "Frosted Green Chip",
+      "length": 40,
+      "width": 2
+    },
+    "quantity": 14,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 7519,
+    "order_id": "2171f22d-6023-4177-b379-2345fc8767ac",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "f1e58ff5-48fc-40f5-971d-10c8ad04ab6f",
+      "name": "SN 68 HT",
+      "thickness": "1/2",
+      "shape": "Quad Arch",
+      "tint": "Ultra Clear",
+      "length": 94,
+      "width": 16
+    },
+    "quantity": 4,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 9754,
+    "order_id": "2171f22d-6023-4177-b379-2345fc8767ac",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "ec5ffa0f-39d8-4d03-94dd-95b190a8c2f5",
+      "name": "AG 50 LE",
+      "thickness": "3/8",
+      "shape": "Clipped Corner(s)",
+      "tint": "Bronze",
+      "length": 46,
+      "width": 37
+    },
+    "quantity": 5,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 16,
+    "order_id": "2171f22d-6023-4177-b379-2345fc8767ac",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "cc546439-3cef-4f13-b365-c6893c05fc82",
+      "name": "SNR 35 HT",
+      "thickness": "3/8",
+      "shape": "Octagon",
+      "tint": "P-516",
+      "length": 10,
+      "width": 2
+    },
+    "quantity": 21,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 845,
+    "order_id": "2171f22d-6023-4177-b379-2345fc8767ac",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "1da5b2a3-6a53-49de-bbce-4521ef09cd5c",
+      "name": "SatinDeco",
+      "thickness": "3/4",
+      "shape": "House",
+      "tint": "Frosted Blue Chip",
+      "length": 81,
+      "width": 21
+    },
+    "quantity": 28,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 8640,
+    "order_id": "2171f22d-6023-4177-b379-2345fc8767ac",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "a1a67246-21b6-4ba1-9024-417369d628b0",
+      "name": "MC 68 LE-T",
+      "thickness": "1/2",
+      "shape": "Quad Arch",
+      "tint": "Mistlite",
+      "length": 26,
+      "width": 16
+    },
+    "quantity": 189,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 6224,
+    "order_id": "5e04efd0-be8e-4809-bbca-518b135e6ce2",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "f1e58ff5-48fc-40f5-971d-10c8ad04ab6f",
+      "name": "SN 68 HT",
+      "thickness": "1/8",
+      "shape": "Rounded Corner(s)",
+      "tint": "Clear",
+      "length": 50,
+      "width": 23
+    },
+    "quantity": 6,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 3046,
+    "order_id": "44cf8364-70ca-49a9-ae60-10811f94b0f8",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "c908d94a-e129-4912-b3dd-29d7073c042d",
+      "name": "Sunguard Spandrel HT",
+      "thickness": "1/8",
+      "shape": "Octagon",
+      "tint": "Midnight Gray",
+      "length": 48,
+      "width": 37
+    },
+    "quantity": 191,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 3892,
+    "order_id": "44cf8364-70ca-49a9-ae60-10811f94b0f8",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "f1e58ff5-48fc-40f5-971d-10c8ad04ab6f",
+      "name": "SN 68 HT",
+      "thickness": "3/4",
+      "shape": "Circle",
+      "tint": "Light Gray",
+      "length": 55,
+      "width": 47
+    },
+    "quantity": 88,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 5062,
+    "order_id": "44cf8364-70ca-49a9-ae60-10811f94b0f8",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "c908d94a-e129-4912-b3dd-29d7073c042d",
+      "name": "Sunguard Spandrel HT",
+      "thickness": "1/4",
+      "shape": "Racetrack Oval",
+      "tint": "Frosted Blue Chip",
+      "length": 37,
+      "width": 1
+    },
+    "quantity": 2,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 292,
+    "order_id": "44cf8364-70ca-49a9-ae60-10811f94b0f8",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "82a54c94-9681-4ebe-9cd8-81cfa03056e1",
+      "name": "SN 68",
+      "thickness": "3/8",
+      "shape": "Trapezoid",
+      "tint": "Bronze",
+      "length": 75,
+      "width": 10
+    },
+    "quantity": 58,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 7293,
+    "order_id": "44cf8364-70ca-49a9-ae60-10811f94b0f8",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "a1a67246-21b6-4ba1-9024-417369d628b0",
+      "name": "MC 68 LE-T",
+      "thickness": "3/4",
+      "shape": "Hexagon",
+      "tint": "Mistlite",
+      "length": 95,
+      "width": 8
+    },
+    "quantity": 6,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 8163,
+    "order_id": "2cae78de-062a-46c0-8aba-0bc5b5ace7ca",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "c908d94a-e129-4912-b3dd-29d7073c042d",
+      "name": "Sunguard Spandrel HT",
+      "thickness": "1/8",
+      "shape": "House",
+      "tint": "Mistlite",
+      "length": 46,
+      "width": 5
+    },
+    "quantity": 125,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 2291,
+    "order_id": "2cae78de-062a-46c0-8aba-0bc5b5ace7ca",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "ec5ffa0f-39d8-4d03-94dd-95b190a8c2f5",
+      "name": "AG 50 LE",
+      "thickness": "3/8",
+      "shape": "Half-Circle with Notch",
+      "tint": "Frosted Green Chip",
+      "length": 74,
+      "width": 20
+    },
+    "quantity": 1,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 9640,
+    "order_id": "2cae78de-062a-46c0-8aba-0bc5b5ace7ca",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "a1a67246-21b6-4ba1-9024-417369d628b0",
+      "name": "MC 68 LE-T",
+      "thickness": "1/8",
+      "shape": "Quarter Round",
+      "tint": "Bronze",
+      "length": 42,
+      "width": 36
+    },
+    "quantity": 118,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 1713,
+    "order_id": "2cae78de-062a-46c0-8aba-0bc5b5ace7ca",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "f1e58ff5-48fc-40f5-971d-10c8ad04ab6f",
+      "name": "SN 68 HT",
+      "thickness": "3/4",
+      "shape": "Quad Arch",
+      "tint": "Dark Gray",
+      "length": 70,
+      "width": 22
+    },
+    "quantity": 2,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 5505,
+    "order_id": "2cae78de-062a-46c0-8aba-0bc5b5ace7ca",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "aeab03c7-9242-4c4d-a53a-ef341b9fed6f",
+      "name": "AG 43",
+      "thickness": "1/2",
+      "shape": "Triangle",
+      "tint": "Bronze",
+      "length": 50,
+      "width": 38
+    },
+    "quantity": 6,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 1785,
+    "order_id": "2cae78de-062a-46c0-8aba-0bc5b5ace7ca",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "d1561e8c-3e9b-4e29-94d2-56bbdced64f7",
+      "name": "MC 68 LE-A",
+      "thickness": "1/2",
+      "shape": "Ellipse",
+      "tint": "P-516",
+      "length": 69,
+      "width": 37
+    },
+    "quantity": 61,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 1234,
+    "order_id": "2cae78de-062a-46c0-8aba-0bc5b5ace7ca",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "ec5ffa0f-39d8-4d03-94dd-95b190a8c2f5",
+      "name": "AG 50 LE",
+      "thickness": "1/4",
+      "shape": "Clipped Corner(s)",
+      "tint": "Bronze",
+      "length": 82,
+      "width": 14
+    },
+    "quantity": 29,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 2305,
+    "order_id": "2cae78de-062a-46c0-8aba-0bc5b5ace7ca",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "aeab03c7-9242-4c4d-a53a-ef341b9fed6f",
+      "name": "AG 43",
+      "thickness": "3/8",
+      "shape": "Half-Circle",
+      "tint": "Bronze",
+      "length": 75,
+      "width": 47
+    },
+    "quantity": 126,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 3147,
+    "order_id": "2cae78de-062a-46c0-8aba-0bc5b5ace7ca",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "c908d94a-e129-4912-b3dd-29d7073c042d",
+      "name": "Sunguard Spandrel HT",
+      "thickness": "3/4",
+      "shape": "House",
+      "tint": "Mistlite",
+      "length": 59,
+      "width": 33
+    },
+    "quantity": 39,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 4641,
+    "order_id": "8fa7a23e-fa3d-4617-83cc-15e2ed4c09ef",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "1da5b2a3-6a53-49de-bbce-4521ef09cd5c",
+      "name": "SatinDeco",
+      "thickness": "3/8",
+      "shape": "Rounded Corner(s)",
+      "tint": "Clear",
+      "length": 67,
+      "width": 35
+    },
+    "quantity": 45,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 2591,
+    "order_id": "8fa7a23e-fa3d-4617-83cc-15e2ed4c09ef",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "a1a67246-21b6-4ba1-9024-417369d628b0",
+      "name": "MC 68 LE-T",
+      "thickness": "3/8",
+      "shape": "Arch-Top",
+      "tint": "Low-E",
+      "length": 86,
+      "width": 2
+    },
+    "quantity": 7,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 5698,
+    "order_id": "8fa7a23e-fa3d-4617-83cc-15e2ed4c09ef",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "f1e58ff5-48fc-40f5-971d-10c8ad04ab6f",
+      "name": "SN 68 HT",
+      "thickness": "3/8",
+      "shape": "Rounded Corner(s)",
+      "tint": "Low-E",
+      "length": 55,
+      "width": 45
+    },
+    "quantity": 8,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 3381,
+    "order_id": "8fa7a23e-fa3d-4617-83cc-15e2ed4c09ef",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "f1e58ff5-48fc-40f5-971d-10c8ad04ab6f",
+      "name": "SN 68 HT",
+      "thickness": "1/2",
+      "shape": "Racetrack Oval",
+      "tint": "Light Gray",
+      "length": 75,
       "width": 14
     },
     "quantity": 44,
     "note": "some note"
   },
   {
-    "order_item_id": 419,
-    "order_id": "e74c1917-0c69-469d-a053-045405942a8e",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
+    "order_item_id": 4256,
+    "order_id": "8fa7a23e-fa3d-4617-83cc-15e2ed4c09ef",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
     "product_config": {
-      "glass_id": "91454f2a-292a-4b6c-91bc-2b126062ab5f",
+      "glass_id": "f1e58ff5-48fc-40f5-971d-10c8ad04ab6f",
       "name": "SN 68 HT",
-      "thickness": "1/4",
-      "shape": "Quarter Round",
-      "tint": "Dark Gray",
-      "length": 55,
-      "width": 13
+      "thickness": "3/8",
+      "shape": "Circle",
+      "tint": "Clear",
+      "length": 51,
+      "width": 32
     },
-    "quantity": 11,
+    "quantity": 2,
     "note": "some note"
   },
   {
-    "order_item_id": 7303,
-    "order_id": "e74c1917-0c69-469d-a053-045405942a8e",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
+    "order_item_id": 81,
+    "order_id": "4118c23a-2370-45b7-8589-6e98a8d734a3",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
     "product_config": {
-      "glass_id": "da450d2a-3d5e-4646-8941-677dd51f7f8b",
-      "name": "AG 43",
+      "glass_id": "ec5ffa0f-39d8-4d03-94dd-95b190a8c2f5",
+      "name": "AG 50 LE",
       "thickness": "3/4",
-      "shape": "Right Triangle",
-      "tint": "P-516",
-      "length": 96,
+      "shape": "Pentagon",
+      "tint": "Satin Etch",
+      "length": 94,
       "width": 26
+    },
+    "quantity": 1,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 3866,
+    "order_id": "4118c23a-2370-45b7-8589-6e98a8d734a3",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "a1a67246-21b6-4ba1-9024-417369d628b0",
+      "name": "MC 68 LE-T",
+      "thickness": "3/8",
+      "shape": "Single Slope Rectangle",
+      "tint": "Solex",
+      "length": 73,
+      "width": 45
+    },
+    "quantity": 29,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 3114,
+    "order_id": "4118c23a-2370-45b7-8589-6e98a8d734a3",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "82a54c94-9681-4ebe-9cd8-81cfa03056e1",
+      "name": "SN 68",
+      "thickness": "3/8",
+      "shape": "Ellipse",
+      "tint": "Bronze",
+      "length": 42,
+      "width": 11
+    },
+    "quantity": 74,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 1049,
+    "order_id": "4118c23a-2370-45b7-8589-6e98a8d734a3",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "c908d94a-e129-4912-b3dd-29d7073c042d",
+      "name": "Sunguard Spandrel HT",
+      "thickness": "3/8",
+      "shape": "Trapezoid",
+      "tint": "Frosted Blue Chip",
+      "length": 48,
+      "width": 46
+    },
+    "quantity": 33,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 8780,
+    "order_id": "4118c23a-2370-45b7-8589-6e98a8d734a3",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "af123281-fd38-48a1-b865-f5d1c25307f8",
+      "name": "SNX-L 62/34",
+      "thickness": "3/4",
+      "shape": "Rounded Corner(s)",
+      "tint": "Bronze",
+      "length": 59,
+      "width": 24
+    },
+    "quantity": 30,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 1465,
+    "order_id": "4118c23a-2370-45b7-8589-6e98a8d734a3",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "af123281-fd38-48a1-b865-f5d1c25307f8",
+      "name": "SNX-L 62/34",
+      "thickness": "3/8",
+      "shape": "Irregular/Any Other Shape",
+      "tint": "Ultra Clear",
+      "length": 68,
+      "width": 38
+    },
+    "quantity": 164,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 3283,
+    "order_id": "4118c23a-2370-45b7-8589-6e98a8d734a3",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "d49c19b3-cf1a-4ad6-8ba4-bf127ce1de6f",
+      "name": "MC 27 LE-A",
+      "thickness": "1/8",
+      "shape": "Arch Side",
+      "tint": "Dark Gray",
+      "length": 23,
+      "width": 10
+    },
+    "quantity": 38,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 4916,
+    "order_id": "87382a9d-6233-4cef-a370-e4567ce60c9b",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "af123281-fd38-48a1-b865-f5d1c25307f8",
+      "name": "SNX-L 62/34",
+      "thickness": "3/4",
+      "shape": "Clipped Corner(s)",
+      "tint": "Solex",
+      "length": 33,
+      "width": 30
+    },
+    "quantity": 10,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 9404,
+    "order_id": "87382a9d-6233-4cef-a370-e4567ce60c9b",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "c5eb32fe-3209-43d3-a63c-f5d3c3555c8b",
+      "name": "IS20 LE-T",
+      "thickness": "1/4",
+      "shape": "Parallelogram",
+      "tint": "Satin Etch",
+      "length": 59,
+      "width": 44
+    },
+    "quantity": 4,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 4819,
+    "order_id": "87382a9d-6233-4cef-a370-e4567ce60c9b",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "ec5ffa0f-39d8-4d03-94dd-95b190a8c2f5",
+      "name": "AG 50 LE",
+      "thickness": "3/8",
+      "shape": "Square/Rectangle",
+      "tint": "Clear",
+      "length": 81,
+      "width": 26
+    },
+    "quantity": 2,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 3608,
+    "order_id": "87382a9d-6233-4cef-a370-e4567ce60c9b",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "c5eb32fe-3209-43d3-a63c-f5d3c3555c8b",
+      "name": "IS20 LE-T",
+      "thickness": "3/4",
+      "shape": "Parallelogram",
+      "tint": "Mistlite",
+      "length": 52,
+      "width": 30
+    },
+    "quantity": 8,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 7895,
+    "order_id": "87382a9d-6233-4cef-a370-e4567ce60c9b",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "82a54c94-9681-4ebe-9cd8-81cfa03056e1",
+      "name": "SN 68",
+      "thickness": "1/2",
+      "shape": "Pentagon",
+      "tint": "Light Gray",
+      "length": 72,
+      "width": 42
     },
     "quantity": 60,
     "note": "some note"
   },
   {
-    "order_item_id": 2471,
-    "order_id": "e74c1917-0c69-469d-a053-045405942a8e",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
+    "order_item_id": 3137,
+    "order_id": "87382a9d-6233-4cef-a370-e4567ce60c9b",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
     "product_config": {
-      "glass_id": "90410c20-66fd-44a0-8009-3d5b8afc631a",
-      "name": "MC 68 LE-T",
-      "thickness": "1/4",
-      "shape": "Trapezoid",
-      "tint": "Satin Etch",
-      "length": 61,
-      "width": 11
-    },
-    "quantity": 2,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 302,
-    "order_id": "e74c1917-0c69-469d-a053-045405942a8e",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
-    "product_config": {
-      "glass_id": "af9ab768-f43f-416f-8cb1-8e70979e0972",
-      "name": "Sunguard Spandrel HT",
-      "thickness": "3/4",
-      "shape": "Irregular/Any Other Shape",
-      "tint": "Ultra Clear",
-      "length": 67,
-      "width": 45
-    },
-    "quantity": 38,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 3628,
-    "order_id": "e74c1917-0c69-469d-a053-045405942a8e",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "24c66f1f-bd90-4fc2-b3e2-7ed7cb667b00",
-      "name": "IS20 LE-T",
-      "thickness": "3/4",
-      "shape": "Pentagon",
-      "tint": "P-516",
-      "length": 35,
-      "width": 27
-    },
-    "quantity": 157,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 7783,
-    "order_id": "e74c1917-0c69-469d-a053-045405942a8e",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "b4ad52ba-ba2e-4db7-815c-0f0087e58ff4",
-      "name": "SN 68",
-      "thickness": "1/4",
-      "shape": "Single Slope Rectangle",
-      "tint": "Dark Gray",
-      "length": 82,
-      "width": 40
-    },
-    "quantity": 2,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 8258,
-    "order_id": "e74c1917-0c69-469d-a053-045405942a8e",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "060bfe65-db6f-4f54-87f7-bea2ea6a249f",
-      "name": "SNE 50/25",
-      "thickness": "1/4",
-      "shape": "Quarter Round",
-      "tint": "Bronze",
-      "length": 25,
-      "width": 25
-    },
-    "quantity": 207,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 4841,
-    "order_id": "514c9311-10e6-4dbf-a0d4-a857d6975e09",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
-    "product_config": {
-      "glass_id": "90410c20-66fd-44a0-8009-3d5b8afc631a",
-      "name": "MC 68 LE-T",
-      "thickness": "3/4",
-      "shape": "Quarter Round",
-      "tint": "Frosted Blue Chip",
-      "length": 60,
-      "width": 31
-    },
-    "quantity": 4,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 7377,
-    "order_id": "514c9311-10e6-4dbf-a0d4-a857d6975e09",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "91454f2a-292a-4b6c-91bc-2b126062ab5f",
-      "name": "SN 68 HT",
-      "thickness": "1/8",
-      "shape": "Octagon",
-      "tint": "Dark Gray",
-      "length": 64,
-      "width": 28
-    },
-    "quantity": 24,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 631,
-    "order_id": "514c9311-10e6-4dbf-a0d4-a857d6975e09",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
-    "product_config": {
-      "glass_id": "28cb3997-daf6-464f-812d-97182ee602b3",
-      "name": "NU 40 LE",
-      "thickness": "3/4",
-      "shape": "Arch",
-      "tint": "Light Gray",
-      "length": 73,
-      "width": 24
-    },
-    "quantity": 34,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 1867,
-    "order_id": "1fa4a3e2-da3f-4554-9dee-ce4ea53c3543",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "46247eed-86b1-4ea7-bddf-4c8a7c89565a",
-      "name": "MC 68 LE-A",
-      "thickness": "1/4",
-      "shape": "Pentagon",
-      "tint": "Dark Gray",
-      "length": 61,
-      "width": 20
-    },
-    "quantity": 17,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 8300,
-    "order_id": "1fa4a3e2-da3f-4554-9dee-ce4ea53c3543",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "538c9855-17a0-410d-90d2-5e5e9f43c6c8",
-      "name": "SNX-L 62/34",
-      "thickness": "1/4",
-      "shape": "Half-Circle with Notch",
-      "tint": "Dark Gray",
-      "length": 70,
-      "width": 29
-    },
-    "quantity": 10,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 9477,
-    "order_id": "1fa4a3e2-da3f-4554-9dee-ce4ea53c3543",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
-    "product_config": {
-      "glass_id": "90410c20-66fd-44a0-8009-3d5b8afc631a",
-      "name": "MC 68 LE-T",
-      "thickness": "1/8",
-      "shape": "Ellipse",
-      "tint": "Frosted Blue Chip",
-      "length": 70,
-      "width": 44
-    },
-    "quantity": 14,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 1121,
-    "order_id": "1fa4a3e2-da3f-4554-9dee-ce4ea53c3543",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "ea045be8-3c33-4a2d-9137-da2e180210eb",
-      "name": "SatinDeco",
-      "thickness": "3/4",
-      "shape": "Quarter Round",
-      "tint": "Midnight Gray",
-      "length": 71,
-      "width": 30
-    },
-    "quantity": 56,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 3635,
-    "order_id": "1fa4a3e2-da3f-4554-9dee-ce4ea53c3543",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "ea045be8-3c33-4a2d-9137-da2e180210eb",
-      "name": "SatinDeco",
-      "thickness": "1/2",
-      "shape": "Trapezoid",
-      "tint": "Midnight Gray",
-      "length": 81,
-      "width": 24
-    },
-    "quantity": 170,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 3073,
-    "order_id": "ccac34aa-9568-4ae4-b8e5-43be9111ac8a",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
-    "product_config": {
-      "glass_id": "90410c20-66fd-44a0-8009-3d5b8afc631a",
-      "name": "MC 68 LE-T",
-      "thickness": "1/2",
-      "shape": "Single Slope Rectangle",
-      "tint": "Ultra Clear",
-      "length": 65,
-      "width": 25
-    },
-    "quantity": 1,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 2508,
-    "order_id": "ccac34aa-9568-4ae4-b8e5-43be9111ac8a",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "91454f2a-292a-4b6c-91bc-2b126062ab5f",
-      "name": "SN 68 HT",
-      "thickness": "1/2",
-      "shape": "Octagon",
-      "tint": "Dark Gray",
-      "length": 85,
-      "width": 47
-    },
-    "quantity": 2,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 6974,
-    "order_id": "ccac34aa-9568-4ae4-b8e5-43be9111ac8a",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "28cb3997-daf6-464f-812d-97182ee602b3",
-      "name": "NU 40 LE",
-      "thickness": "3/4",
-      "shape": "Quarter Round",
-      "tint": "Solex",
-      "length": 58,
-      "width": 18
-    },
-    "quantity": 8,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 9044,
-    "order_id": "ccac34aa-9568-4ae4-b8e5-43be9111ac8a",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "af9ab768-f43f-416f-8cb1-8e70979e0972",
-      "name": "Sunguard Spandrel HT",
-      "thickness": "1/8",
-      "shape": "Half-Circle with Notch",
-      "tint": "Light Gray",
-      "length": 69,
-      "width": 31
-    },
-    "quantity": 41,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 6091,
-    "order_id": "ccac34aa-9568-4ae4-b8e5-43be9111ac8a",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "da450d2a-3d5e-4646-8941-677dd51f7f8b",
-      "name": "AG 43",
-      "thickness": "1/2",
-      "shape": "Arch Side",
-      "tint": "P-516",
-      "length": 63,
-      "width": 20
-    },
-    "quantity": 8,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 2178,
-    "order_id": "ccac34aa-9568-4ae4-b8e5-43be9111ac8a",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
-    "product_config": {
-      "glass_id": "ef4a6120-93a8-450f-a7f9-6e75f27fde60",
-      "name": "MC 27 LE-A",
-      "thickness": "3/4",
-      "shape": "Trapezoid",
-      "tint": "Light Gray",
-      "length": 63,
-      "width": 19
-    },
-    "quantity": 3,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 6757,
-    "order_id": "ccac34aa-9568-4ae4-b8e5-43be9111ac8a",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "91454f2a-292a-4b6c-91bc-2b126062ab5f",
-      "name": "SN 68 HT",
-      "thickness": "3/4",
-      "shape": "Irregular/Any Other Shape",
-      "tint": "P-516",
-      "length": 10,
-      "width": 6
-    },
-    "quantity": 4,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 8080,
-    "order_id": "ccac34aa-9568-4ae4-b8e5-43be9111ac8a",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "24c66f1f-bd90-4fc2-b3e2-7ed7cb667b00",
-      "name": "IS20 LE-T",
-      "thickness": "1/8",
-      "shape": "Half-Circle",
-      "tint": "Ultra Clear",
-      "length": 46,
-      "width": 18
-    },
-    "quantity": 47,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 997,
-    "order_id": "303f7308-b906-429e-bfdc-d28074dc65c0",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "28cb3997-daf6-464f-812d-97182ee602b3",
-      "name": "NU 40 LE",
-      "thickness": "1/8",
-      "shape": "Arch",
-      "tint": "Solex",
-      "length": 81,
-      "width": 2
-    },
-    "quantity": 5,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 778,
-    "order_id": "303f7308-b906-429e-bfdc-d28074dc65c0",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "b4ad52ba-ba2e-4db7-815c-0f0087e58ff4",
-      "name": "SN 68",
-      "thickness": "1/2",
-      "shape": "Arch Top & Bottom",
-      "tint": "Dark Gray",
-      "length": 83,
-      "width": 21
-    },
-    "quantity": 6,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 6273,
-    "order_id": "5eb99343-98d3-4f90-9f5e-f5dfe99a84a1",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "538c9855-17a0-410d-90d2-5e5e9f43c6c8",
-      "name": "SNX-L 62/34",
-      "thickness": "1/2",
-      "shape": "Half-Circle with Notch",
-      "tint": "Clear",
-      "length": 51,
-      "width": 22
-    },
-    "quantity": 36,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 6542,
-    "order_id": "5eb99343-98d3-4f90-9f5e-f5dfe99a84a1",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
-    "product_config": {
-      "glass_id": "b4ad52ba-ba2e-4db7-815c-0f0087e58ff4",
-      "name": "SN 68",
-      "thickness": "1/2",
-      "shape": "Single Slope Rectangle",
-      "tint": "Mistlite",
-      "length": 90,
-      "width": 29
-    },
-    "quantity": 8,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 5469,
-    "order_id": "5eb99343-98d3-4f90-9f5e-f5dfe99a84a1",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
-    "product_config": {
-      "glass_id": "af9ab768-f43f-416f-8cb1-8e70979e0972",
-      "name": "Sunguard Spandrel HT",
-      "thickness": "3/4",
-      "shape": "Triangle",
-      "tint": "Midnight Gray",
-      "length": 31,
-      "width": 8
-    },
-    "quantity": 207,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 4880,
-    "order_id": "5eb99343-98d3-4f90-9f5e-f5dfe99a84a1",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
-    "product_config": {
-      "glass_id": "538c9855-17a0-410d-90d2-5e5e9f43c6c8",
-      "name": "SNX-L 62/34",
-      "thickness": "1/2",
-      "shape": "Octagon",
-      "tint": "Frosted Green Chip",
-      "length": 59,
-      "width": 45
-    },
-    "quantity": 28,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 6555,
-    "order_id": "5eb99343-98d3-4f90-9f5e-f5dfe99a84a1",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "ea045be8-3c33-4a2d-9137-da2e180210eb",
-      "name": "SatinDeco",
-      "thickness": "1/8",
-      "shape": "Clipped Corner(s)",
-      "tint": "Frosted Green Chip",
-      "length": 91,
-      "width": 34
-    },
-    "quantity": 84,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 2468,
-    "order_id": "5eb99343-98d3-4f90-9f5e-f5dfe99a84a1",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
-    "product_config": {
-      "glass_id": "af9ab768-f43f-416f-8cb1-8e70979e0972",
-      "name": "Sunguard Spandrel HT",
-      "thickness": "1/8",
-      "shape": "Half-Circle",
-      "tint": "Bronze",
-      "length": 50,
-      "width": 48
-    },
-    "quantity": 1,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 2917,
-    "order_id": "5eb99343-98d3-4f90-9f5e-f5dfe99a84a1",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "538c9855-17a0-410d-90d2-5e5e9f43c6c8",
-      "name": "SNX-L 62/34",
-      "thickness": "3/8",
-      "shape": "Trapezoid",
-      "tint": "Light Gray",
-      "length": 6,
-      "width": 6
-    },
-    "quantity": 3,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 162,
-    "order_id": "40db84f8-8c5a-438b-bc38-e3e6879c513f",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
-    "product_config": {
-      "glass_id": "90410c20-66fd-44a0-8009-3d5b8afc631a",
-      "name": "MC 68 LE-T",
-      "thickness": "1/8",
-      "shape": "Octagon",
-      "tint": "Ultra Clear",
-      "length": 57,
-      "width": 29
-    },
-    "quantity": 8,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 525,
-    "order_id": "40db84f8-8c5a-438b-bc38-e3e6879c513f",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "28cb3997-daf6-464f-812d-97182ee602b3",
-      "name": "NU 40 LE",
-      "thickness": "1/4",
-      "shape": "Arch-Top",
-      "tint": "Satin Etch",
-      "length": 45,
-      "width": 18
-    },
-    "quantity": 124,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 6525,
-    "order_id": "40db84f8-8c5a-438b-bc38-e3e6879c513f",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "b4ad52ba-ba2e-4db7-815c-0f0087e58ff4",
-      "name": "SN 68",
-      "thickness": "3/8",
-      "shape": "Arch Top & Bottom",
-      "tint": "Clear",
-      "length": 90,
-      "width": 4
-    },
-    "quantity": 9,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 915,
-    "order_id": "40db84f8-8c5a-438b-bc38-e3e6879c513f",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "060bfe65-db6f-4f54-87f7-bea2ea6a249f",
-      "name": "SNE 50/25",
-      "thickness": "3/8",
-      "shape": "Square/Rectangle",
-      "tint": "Low-E",
-      "length": 61,
-      "width": 8
-    },
-    "quantity": 92,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 7568,
-    "order_id": "a4f710f4-52fa-4403-94b4-66f41df8cec0",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "28cb3997-daf6-464f-812d-97182ee602b3",
-      "name": "NU 40 LE",
-      "thickness": "1/4",
-      "shape": "Parallelogram",
-      "tint": "Ultra Clear",
-      "length": 59,
-      "width": 26
-    },
-    "quantity": 88,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 6265,
-    "order_id": "a4f710f4-52fa-4403-94b4-66f41df8cec0",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "ef4a6120-93a8-450f-a7f9-6e75f27fde60",
-      "name": "MC 27 LE-A",
-      "thickness": "1/8",
-      "shape": "Triangle",
-      "tint": "Ultra Clear",
-      "length": 96,
-      "width": 40
-    },
-    "quantity": 26,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 5340,
-    "order_id": "a4f710f4-52fa-4403-94b4-66f41df8cec0",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
-    "product_config": {
-      "glass_id": "cd774965-da25-463b-921f-441244911276",
-      "name": "AG 50 LE",
-      "thickness": "3/8",
-      "shape": "Clipped Corner(s)",
-      "tint": "Mistlite",
-      "length": 87,
-      "width": 35
-    },
-    "quantity": 159,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 500,
-    "order_id": "af827ba3-38de-434d-bdc9-c636bf5d8739",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "90410c20-66fd-44a0-8009-3d5b8afc631a",
-      "name": "MC 68 LE-T",
-      "thickness": "3/8",
-      "shape": "Half-Circle",
-      "tint": "Light Gray",
-      "length": 52,
-      "width": 43
-    },
-    "quantity": 2,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 2683,
-    "order_id": "af827ba3-38de-434d-bdc9-c636bf5d8739",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
-    "product_config": {
-      "glass_id": "538c9855-17a0-410d-90d2-5e5e9f43c6c8",
+      "glass_id": "af123281-fd38-48a1-b865-f5d1c25307f8",
       "name": "SNX-L 62/34",
       "thickness": "1/8",
-      "shape": "Clipped Corner(s)",
-      "tint": "Bronze",
-      "length": 20,
-      "width": 13
-    },
-    "quantity": 36,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 452,
-    "order_id": "af827ba3-38de-434d-bdc9-c636bf5d8739",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
-    "product_config": {
-      "glass_id": "ef4a6120-93a8-450f-a7f9-6e75f27fde60",
-      "name": "MC 27 LE-A",
-      "thickness": "3/8",
-      "shape": "Irregular/Any Other Shape",
-      "tint": "Mistlite",
-      "length": 44,
-      "width": 41
-    },
-    "quantity": 1,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 5487,
-    "order_id": "af827ba3-38de-434d-bdc9-c636bf5d8739",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "da450d2a-3d5e-4646-8941-677dd51f7f8b",
-      "name": "AG 43",
-      "thickness": "3/8",
-      "shape": "Trapezoid",
-      "tint": "Satin Etch",
-      "length": 26,
-      "width": 22
-    },
-    "quantity": 51,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 1508,
-    "order_id": "af827ba3-38de-434d-bdc9-c636bf5d8739",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "da450d2a-3d5e-4646-8941-677dd51f7f8b",
-      "name": "AG 43",
-      "thickness": "1/8",
-      "shape": "Arch",
-      "tint": "Satin Etch",
-      "length": 36,
-      "width": 24
-    },
-    "quantity": 2,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 5520,
-    "order_id": "af827ba3-38de-434d-bdc9-c636bf5d8739",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "060bfe65-db6f-4f54-87f7-bea2ea6a249f",
-      "name": "SNE 50/25",
-      "thickness": "1/8",
-      "shape": "Quarter Round with Notch",
-      "tint": "Low-E",
-      "length": 94,
-      "width": 1
-    },
-    "quantity": 18,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 961,
-    "order_id": "596b20a3-5e07-4fce-bcb7-6d44bdcd947c",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "b4ad52ba-ba2e-4db7-815c-0f0087e58ff4",
-      "name": "SN 68",
-      "thickness": "3/4",
-      "shape": "Parallelogram",
-      "tint": "Clear",
-      "length": 44,
-      "width": 43
-    },
-    "quantity": 61,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 8700,
-    "order_id": "46118765-4a14-48ce-8bfd-e33f5cd619b4",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "da450d2a-3d5e-4646-8941-677dd51f7f8b",
-      "name": "AG 43",
-      "thickness": "1/2",
-      "shape": "Arch Side",
-      "tint": "Frosted Green Chip",
-      "length": 70,
-      "width": 42
-    },
-    "quantity": 10,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 6877,
-    "order_id": "46118765-4a14-48ce-8bfd-e33f5cd619b4",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
-    "product_config": {
-      "glass_id": "28cb3997-daf6-464f-812d-97182ee602b3",
-      "name": "NU 40 LE",
-      "thickness": "1/2",
-      "shape": "Arch",
-      "tint": "Dark Gray",
-      "length": 57,
-      "width": 41
-    },
-    "quantity": 91,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 5071,
-    "order_id": "46118765-4a14-48ce-8bfd-e33f5cd619b4",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
-    "product_config": {
-      "glass_id": "28cb3997-daf6-464f-812d-97182ee602b3",
-      "name": "NU 40 LE",
-      "thickness": "1/4",
-      "shape": "Quarter Round",
-      "tint": "Ultra Clear",
-      "length": 59,
-      "width": 8
-    },
-    "quantity": 155,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 6529,
-    "order_id": "46118765-4a14-48ce-8bfd-e33f5cd619b4",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "28cb3997-daf6-464f-812d-97182ee602b3",
-      "name": "NU 40 LE",
-      "thickness": "1/2",
-      "shape": "Arch",
-      "tint": "Light Gray",
-      "length": 40,
-      "width": 25
-    },
-    "quantity": 31,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 1708,
-    "order_id": "46118765-4a14-48ce-8bfd-e33f5cd619b4",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "da450d2a-3d5e-4646-8941-677dd51f7f8b",
-      "name": "AG 43",
-      "thickness": "1/4",
-      "shape": "Right Triangle",
-      "tint": "Satin Etch",
-      "length": 11,
-      "width": 10
-    },
-    "quantity": 5,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 6959,
-    "order_id": "46118765-4a14-48ce-8bfd-e33f5cd619b4",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "cd774965-da25-463b-921f-441244911276",
-      "name": "AG 50 LE",
-      "thickness": "1/8",
-      "shape": "Clipped Corner(s)",
-      "tint": "Satin Etch",
-      "length": 55,
-      "width": 33
-    },
-    "quantity": 49,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 6556,
-    "order_id": "46118765-4a14-48ce-8bfd-e33f5cd619b4",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "24c66f1f-bd90-4fc2-b3e2-7ed7cb667b00",
-      "name": "IS20 LE-T",
-      "thickness": "3/4",
-      "shape": "Half-Circle",
-      "tint": "Dark Gray",
-      "length": 44,
-      "width": 5
-    },
-    "quantity": 63,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 1205,
-    "order_id": "46118765-4a14-48ce-8bfd-e33f5cd619b4",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "b4ad52ba-ba2e-4db7-815c-0f0087e58ff4",
-      "name": "SN 68",
-      "thickness": "3/8",
-      "shape": "Half-Circle",
-      "tint": "Mistlite",
-      "length": 59,
-      "width": 43
-    },
-    "quantity": 9,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 9042,
-    "order_id": "46118765-4a14-48ce-8bfd-e33f5cd619b4",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "24c66f1f-bd90-4fc2-b3e2-7ed7cb667b00",
-      "name": "IS20 LE-T",
-      "thickness": "1/2",
       "shape": "Octagon",
-      "tint": "Ultra Clear",
-      "length": 40,
-      "width": 19
-    },
-    "quantity": 67,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 5831,
-    "order_id": "2638a486-c81e-4cfb-99f1-9bcfb7e41a5c",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "af9ab768-f43f-416f-8cb1-8e70979e0972",
-      "name": "Sunguard Spandrel HT",
-      "thickness": "3/4",
-      "shape": "Arch-Top",
-      "tint": "Bronze",
-      "length": 87,
-      "width": 4
-    },
-    "quantity": 38,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 7073,
-    "order_id": "2638a486-c81e-4cfb-99f1-9bcfb7e41a5c",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
-    "product_config": {
-      "glass_id": "ea045be8-3c33-4a2d-9137-da2e180210eb",
-      "name": "SatinDeco",
-      "thickness": "1/2",
-      "shape": "Ellipse",
-      "tint": "Light Gray",
-      "length": 73,
-      "width": 23
-    },
-    "quantity": 57,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 7033,
-    "order_id": "2638a486-c81e-4cfb-99f1-9bcfb7e41a5c",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "46247eed-86b1-4ea7-bddf-4c8a7c89565a",
-      "name": "MC 68 LE-A",
-      "thickness": "1/2",
-      "shape": "Rounded Corner(s)",
-      "tint": "Frosted Blue Chip",
-      "length": 69,
-      "width": 32
-    },
-    "quantity": 3,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 4192,
-    "order_id": "2638a486-c81e-4cfb-99f1-9bcfb7e41a5c",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "060bfe65-db6f-4f54-87f7-bea2ea6a249f",
-      "name": "SNE 50/25",
-      "thickness": "1/2",
-      "shape": "Quarter Round with Notch",
-      "tint": "Low-E",
-      "length": 56,
-      "width": 31
-    },
-    "quantity": 4,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 8968,
-    "order_id": "31d60726-30b2-4ad0-bd59-59ec6fa6cc7f",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "af9ab768-f43f-416f-8cb1-8e70979e0972",
-      "name": "Sunguard Spandrel HT",
-      "thickness": "3/4",
-      "shape": "Half-Circle with Notch",
-      "tint": "Bronze",
-      "length": 89,
-      "width": 3
-    },
-    "quantity": 1,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 9264,
-    "order_id": "668e67a8-432c-4a79-845d-b7fce0e8956d",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
-    "product_config": {
-      "glass_id": "cd774965-da25-463b-921f-441244911276",
-      "name": "AG 50 LE",
-      "thickness": "1/4",
-      "shape": "Trapezoid",
-      "tint": "Frosted Green Chip",
-      "length": 50,
-      "width": 3
-    },
-    "quantity": 53,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 1934,
-    "order_id": "668e67a8-432c-4a79-845d-b7fce0e8956d",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "da450d2a-3d5e-4646-8941-677dd51f7f8b",
-      "name": "AG 43",
-      "thickness": "1/8",
-      "shape": "Octagon",
-      "tint": "P-516",
-      "length": 90,
-      "width": 8
-    },
-    "quantity": 2,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 9670,
-    "order_id": "668e67a8-432c-4a79-845d-b7fce0e8956d",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "da450d2a-3d5e-4646-8941-677dd51f7f8b",
-      "name": "AG 43",
-      "thickness": "1/4",
-      "shape": "Arch Side",
-      "tint": "P-516",
-      "length": 73,
-      "width": 9
-    },
-    "quantity": 28,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 2613,
-    "order_id": "668e67a8-432c-4a79-845d-b7fce0e8956d",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "060bfe65-db6f-4f54-87f7-bea2ea6a249f",
-      "name": "SNE 50/25",
-      "thickness": "1/2",
-      "shape": "Quarter Round with Notch",
-      "tint": "P-516",
-      "length": 88,
-      "width": 23
-    },
-    "quantity": 82,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 1820,
-    "order_id": "668e67a8-432c-4a79-845d-b7fce0e8956d",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "46247eed-86b1-4ea7-bddf-4c8a7c89565a",
-      "name": "MC 68 LE-A",
-      "thickness": "3/4",
-      "shape": "Irregular/Any Other Shape",
-      "tint": "Satin Etch",
-      "length": 92,
-      "width": 31
-    },
-    "quantity": 8,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 5916,
-    "order_id": "48898011-e911-4d0a-a58a-c0d100e927d2",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "d0340245-d1b1-474d-b05b-1e330b5601d2",
-      "name": "SNR 35 HT",
-      "thickness": "3/8",
-      "shape": "Pentagon",
-      "tint": "Frosted Green Chip",
-      "length": 36,
-      "width": 7
-    },
-    "quantity": 146,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 7258,
-    "order_id": "b3236fcd-193f-472c-b8fe-31c8f128762f",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "91454f2a-292a-4b6c-91bc-2b126062ab5f",
-      "name": "SN 68 HT",
-      "thickness": "1/2",
-      "shape": "Pentagon",
-      "tint": "P-516",
-      "length": 50,
-      "width": 4
-    },
-    "quantity": 75,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 5384,
-    "order_id": "b3236fcd-193f-472c-b8fe-31c8f128762f",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "ef4a6120-93a8-450f-a7f9-6e75f27fde60",
-      "name": "MC 27 LE-A",
-      "thickness": "1/8",
-      "shape": "Irregular/Any Other Shape",
-      "tint": "Mistlite",
-      "length": 85,
-      "width": 13
-    },
-    "quantity": 35,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 8859,
-    "order_id": "b3236fcd-193f-472c-b8fe-31c8f128762f",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
-    "product_config": {
-      "glass_id": "46247eed-86b1-4ea7-bddf-4c8a7c89565a",
-      "name": "MC 68 LE-A",
-      "thickness": "3/8",
-      "shape": "Pentagon",
-      "tint": "Satin Etch",
-      "length": 67,
-      "width": 24
-    },
-    "quantity": 4,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 8437,
-    "order_id": "b3236fcd-193f-472c-b8fe-31c8f128762f",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "90410c20-66fd-44a0-8009-3d5b8afc631a",
-      "name": "MC 68 LE-T",
-      "thickness": "1/2",
-      "shape": "Ellipse",
-      "tint": "Frosted Blue Chip",
-      "length": 14,
-      "width": 4
-    },
-    "quantity": 28,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 1028,
-    "order_id": "b3236fcd-193f-472c-b8fe-31c8f128762f",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
-    "product_config": {
-      "glass_id": "90410c20-66fd-44a0-8009-3d5b8afc631a",
-      "name": "MC 68 LE-T",
-      "thickness": "1/8",
-      "shape": "Arch Side",
-      "tint": "Frosted Green Chip",
-      "length": 15,
-      "width": 11
-    },
-    "quantity": 187,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 9510,
-    "order_id": "b3236fcd-193f-472c-b8fe-31c8f128762f",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "da450d2a-3d5e-4646-8941-677dd51f7f8b",
-      "name": "AG 43",
-      "thickness": "1/4",
-      "shape": "Arch",
-      "tint": "Ultra Clear",
-      "length": 75,
-      "width": 5
-    },
-    "quantity": 36,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 8656,
-    "order_id": "2459ff82-7751-4440-b0e0-fe870f400839",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
-    "product_config": {
-      "glass_id": "28cb3997-daf6-464f-812d-97182ee602b3",
-      "name": "NU 40 LE",
-      "thickness": "1/4",
-      "shape": "Half-Circle with Notch",
-      "tint": "Ultra Clear",
-      "length": 63,
-      "width": 21
-    },
-    "quantity": 2,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 324,
-    "order_id": "2459ff82-7751-4440-b0e0-fe870f400839",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "b4ad52ba-ba2e-4db7-815c-0f0087e58ff4",
-      "name": "SN 68",
-      "thickness": "1/4",
-      "shape": "Arch Top & Bottom",
-      "tint": "Dark Gray",
-      "length": 33,
-      "width": 7
-    },
-    "quantity": 42,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 5720,
-    "order_id": "3d48f25a-2a1f-4608-b71c-cd5197bf0068",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "b4ad52ba-ba2e-4db7-815c-0f0087e58ff4",
-      "name": "SN 68",
-      "thickness": "3/8",
-      "shape": "Racetrack Oval",
-      "tint": "Dark Gray",
-      "length": 85,
-      "width": 35
-    },
-    "quantity": 10,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 8474,
-    "order_id": "55ee78ee-e9f8-48da-a8a0-8a37f484dd67",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "90410c20-66fd-44a0-8009-3d5b8afc631a",
-      "name": "MC 68 LE-T",
-      "thickness": "3/8",
-      "shape": "Ellipse",
-      "tint": "Frosted Blue Chip",
-      "length": 28,
-      "width": 27
-    },
-    "quantity": 13,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 9743,
-    "order_id": "55ee78ee-e9f8-48da-a8a0-8a37f484dd67",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "ef4a6120-93a8-450f-a7f9-6e75f27fde60",
-      "name": "MC 27 LE-A",
-      "thickness": "3/4",
-      "shape": "Right Triangle",
-      "tint": "Ultra Clear",
-      "length": 84,
-      "width": 18
-    },
-    "quantity": 177,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 1292,
-    "order_id": "55ee78ee-e9f8-48da-a8a0-8a37f484dd67",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "538c9855-17a0-410d-90d2-5e5e9f43c6c8",
-      "name": "SNX-L 62/34",
-      "thickness": "1/2",
-      "shape": "Parallelogram",
-      "tint": "Solex",
-      "length": 88,
-      "width": 18
-    },
-    "quantity": 4,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 3437,
-    "order_id": "55ee78ee-e9f8-48da-a8a0-8a37f484dd67",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
-    "product_config": {
-      "glass_id": "24c66f1f-bd90-4fc2-b3e2-7ed7cb667b00",
-      "name": "IS20 LE-T",
-      "thickness": "1/2",
-      "shape": "Trapezoid",
-      "tint": "Ultra Clear",
-      "length": 51,
-      "width": 38
-    },
-    "quantity": 8,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 3771,
-    "order_id": "55ee78ee-e9f8-48da-a8a0-8a37f484dd67",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "af9ab768-f43f-416f-8cb1-8e70979e0972",
-      "name": "Sunguard Spandrel HT",
-      "thickness": "1/4",
-      "shape": "Octagon",
-      "tint": "Light Gray",
-      "length": 65,
-      "width": 8
-    },
-    "quantity": 144,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 8040,
-    "order_id": "55ee78ee-e9f8-48da-a8a0-8a37f484dd67",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "46247eed-86b1-4ea7-bddf-4c8a7c89565a",
-      "name": "MC 68 LE-A",
-      "thickness": "1/4",
-      "shape": "Irregular/Any Other Shape",
       "tint": "Solex",
       "length": 53,
-      "width": 48
-    },
-    "quantity": 6,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 6918,
-    "order_id": "55ee78ee-e9f8-48da-a8a0-8a37f484dd67",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "538c9855-17a0-410d-90d2-5e5e9f43c6c8",
-      "name": "SNX-L 62/34",
-      "thickness": "1/8",
-      "shape": "Clipped Corner(s)",
-      "tint": "Solex",
-      "length": 42,
-      "width": 27
-    },
-    "quantity": 27,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 2283,
-    "order_id": "55ee78ee-e9f8-48da-a8a0-8a37f484dd67",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "91454f2a-292a-4b6c-91bc-2b126062ab5f",
-      "name": "SN 68 HT",
-      "thickness": "1/2",
-      "shape": "Right Triangle",
-      "tint": "P-516",
-      "length": 92,
-      "width": 36
+      "width": 15
     },
     "quantity": 3,
     "note": "some note"
   },
   {
-    "order_item_id": 3486,
-    "order_id": "55ee78ee-e9f8-48da-a8a0-8a37f484dd67",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
+    "order_item_id": 4642,
+    "order_id": "87382a9d-6233-4cef-a370-e4567ce60c9b",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
     "product_config": {
-      "glass_id": "538c9855-17a0-410d-90d2-5e5e9f43c6c8",
-      "name": "SNX-L 62/34",
+      "glass_id": "c112847c-f8ab-4e7b-a397-6a44ef7529f7",
+      "name": "NU 40 LE",
       "thickness": "1/8",
-      "shape": "Octagon",
-      "tint": "Solex",
-      "length": 39,
-      "width": 18
-    },
-    "quantity": 47,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 4307,
-    "order_id": "7dd18b5a-2c4b-467a-99bd-4d4379801df2",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "d0340245-d1b1-474d-b05b-1e330b5601d2",
-      "name": "SNR 35 HT",
-      "thickness": "1/8",
-      "shape": "Ellipse",
-      "tint": "Clear",
-      "length": 52,
-      "width": 46
-    },
-    "quantity": 3,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 9027,
-    "order_id": "7dd18b5a-2c4b-467a-99bd-4d4379801df2",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "b4ad52ba-ba2e-4db7-815c-0f0087e58ff4",
-      "name": "SN 68",
-      "thickness": "1/4",
-      "shape": "Arch Top & Bottom",
-      "tint": "Mistlite",
-      "length": 25,
-      "width": 12
+      "shape": "Arch",
+      "tint": "Bronze",
+      "length": 63,
+      "width": 43
     },
     "quantity": 56,
     "note": "some note"
   },
   {
-    "order_item_id": 2514,
-    "order_id": "7dd18b5a-2c4b-467a-99bd-4d4379801df2",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
+    "order_item_id": 8658,
+    "order_id": "93c855d0-e9be-4255-aa62-e95ec11082da",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
     "product_config": {
-      "glass_id": "da450d2a-3d5e-4646-8941-677dd51f7f8b",
+      "glass_id": "aeab03c7-9242-4c4d-a53a-ef341b9fed6f",
       "name": "AG 43",
-      "thickness": "1/2",
-      "shape": "Trapezoid",
-      "tint": "Satin Etch",
-      "length": 51,
-      "width": 23
-    },
-    "quantity": 3,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 8662,
-    "order_id": "7dd18b5a-2c4b-467a-99bd-4d4379801df2",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "538c9855-17a0-410d-90d2-5e5e9f43c6c8",
-      "name": "SNX-L 62/34",
-      "thickness": "3/4",
-      "shape": "Half-Circle",
-      "tint": "Bronze",
-      "length": 82,
-      "width": 44
-    },
-    "quantity": 17,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 5654,
-    "order_id": "a5ddfe61-0ffe-41a7-bde5-da8f8a9c967c",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "24c66f1f-bd90-4fc2-b3e2-7ed7cb667b00",
-      "name": "IS20 LE-T",
-      "thickness": "1/4",
-      "shape": "Pentagon",
-      "tint": "Dark Gray",
-      "length": 27,
-      "width": 11
-    },
-    "quantity": 26,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 9528,
-    "order_id": "a5ddfe61-0ffe-41a7-bde5-da8f8a9c967c",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "24c66f1f-bd90-4fc2-b3e2-7ed7cb667b00",
-      "name": "IS20 LE-T",
-      "thickness": "1/2",
-      "shape": "Half-Circle",
-      "tint": "Frosted Green Chip",
-      "length": 61,
-      "width": 9
-    },
-    "quantity": 59,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 1892,
-    "order_id": "a5ddfe61-0ffe-41a7-bde5-da8f8a9c967c",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
-    "product_config": {
-      "glass_id": "b4ad52ba-ba2e-4db7-815c-0f0087e58ff4",
-      "name": "SN 68",
-      "thickness": "3/4",
-      "shape": "Arch Top & Bottom",
-      "tint": "Satin Etch",
-      "length": 41,
-      "width": 39
-    },
-    "quantity": 47,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 5263,
-    "order_id": "a5ddfe61-0ffe-41a7-bde5-da8f8a9c967c",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "af9ab768-f43f-416f-8cb1-8e70979e0972",
-      "name": "Sunguard Spandrel HT",
-      "thickness": "3/4",
-      "shape": "Arch Top & Bottom",
-      "tint": "Clear",
-      "length": 57,
-      "width": 15
-    },
-    "quantity": 9,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 8191,
-    "order_id": "e93dbf48-5562-40d1-af54-b94106967442",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "da450d2a-3d5e-4646-8941-677dd51f7f8b",
-      "name": "AG 43",
-      "thickness": "3/4",
-      "shape": "Arch Side",
-      "tint": "Mistlite",
-      "length": 94,
-      "width": 25
-    },
-    "quantity": 25,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 9915,
-    "order_id": "e93dbf48-5562-40d1-af54-b94106967442",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
-    "product_config": {
-      "glass_id": "ef4a6120-93a8-450f-a7f9-6e75f27fde60",
-      "name": "MC 27 LE-A",
-      "thickness": "1/4",
-      "shape": "Right Triangle",
-      "tint": "Clear",
-      "length": 78,
-      "width": 28
-    },
-    "quantity": 21,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 2061,
-    "order_id": "e93dbf48-5562-40d1-af54-b94106967442",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
-    "product_config": {
-      "glass_id": "cd774965-da25-463b-921f-441244911276",
-      "name": "AG 50 LE",
-      "thickness": "1/2",
-      "shape": "Octagon",
-      "tint": "Light Gray",
-      "length": 36,
-      "width": 15
-    },
-    "quantity": 184,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 2304,
-    "order_id": "e93dbf48-5562-40d1-af54-b94106967442",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "cd774965-da25-463b-921f-441244911276",
-      "name": "AG 50 LE",
-      "thickness": "3/8",
-      "shape": "Rounded Corner(s)",
-      "tint": "Light Gray",
-      "length": 75,
-      "width": 48
-    },
-    "quantity": 37,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 3873,
-    "order_id": "e93dbf48-5562-40d1-af54-b94106967442",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "da450d2a-3d5e-4646-8941-677dd51f7f8b",
-      "name": "AG 43",
-      "thickness": "3/8",
-      "shape": "Octagon",
-      "tint": "P-516",
-      "length": 38,
-      "width": 16
-    },
-    "quantity": 22,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 5901,
-    "order_id": "e93dbf48-5562-40d1-af54-b94106967442",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "cd774965-da25-463b-921f-441244911276",
-      "name": "AG 50 LE",
-      "thickness": "1/2",
-      "shape": "Rounded Corner(s)",
-      "tint": "Light Gray",
-      "length": 87,
-      "width": 7
-    },
-    "quantity": 8,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 3116,
-    "order_id": "453dc66f-056c-4909-8878-e4ebe814064c",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "538c9855-17a0-410d-90d2-5e5e9f43c6c8",
-      "name": "SNX-L 62/34",
       "thickness": "1/8",
-      "shape": "Pentagon",
-      "tint": "Dark Gray",
-      "length": 90,
-      "width": 48
-    },
-    "quantity": 55,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 7903,
-    "order_id": "696a23f1-3f60-4d37-b28b-fc30b3abee31",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "af9ab768-f43f-416f-8cb1-8e70979e0972",
-      "name": "Sunguard Spandrel HT",
-      "thickness": "3/8",
-      "shape": "Arch-Top",
-      "tint": "Ultra Clear",
-      "length": 73,
-      "width": 26
-    },
-    "quantity": 65,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 7920,
-    "order_id": "696a23f1-3f60-4d37-b28b-fc30b3abee31",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "d0340245-d1b1-474d-b05b-1e330b5601d2",
-      "name": "SNR 35 HT",
-      "thickness": "3/8",
-      "shape": "Racetrack Oval",
-      "tint": "Frosted Green Chip",
-      "length": 51,
-      "width": 45
-    },
-    "quantity": 10,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 4409,
-    "order_id": "b7e005fc-9ea6-4f16-9dcd-9254a13d42df",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "d0340245-d1b1-474d-b05b-1e330b5601d2",
-      "name": "SNR 35 HT",
-      "thickness": "3/4",
-      "shape": "Quarter Round",
-      "tint": "Frosted Green Chip",
-      "length": 91,
-      "width": 16
-    },
-    "quantity": 17,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 2373,
-    "order_id": "b7e005fc-9ea6-4f16-9dcd-9254a13d42df",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "060bfe65-db6f-4f54-87f7-bea2ea6a249f",
-      "name": "SNE 50/25",
-      "thickness": "1/4",
-      "shape": "Quarter Round with Notch",
-      "tint": "Dark Gray",
-      "length": 89,
-      "width": 46
-    },
-    "quantity": 57,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 6623,
-    "order_id": "b7e005fc-9ea6-4f16-9dcd-9254a13d42df",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
-    "product_config": {
-      "glass_id": "538c9855-17a0-410d-90d2-5e5e9f43c6c8",
-      "name": "SNX-L 62/34",
-      "thickness": "1/4",
       "shape": "Clipped Corner(s)",
-      "tint": "Dark Gray",
-      "length": 85,
-      "width": 22
+      "tint": "Low-E",
+      "length": 53,
+      "width": 5
     },
     "quantity": 6,
     "note": "some note"
   },
   {
-    "order_item_id": 7771,
-    "order_id": "b7e005fc-9ea6-4f16-9dcd-9254a13d42df",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
+    "order_item_id": 4269,
+    "order_id": "93c855d0-e9be-4255-aa62-e95ec11082da",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
     "product_config": {
-      "glass_id": "24c66f1f-bd90-4fc2-b3e2-7ed7cb667b00",
-      "name": "IS20 LE-T",
-      "thickness": "3/4",
-      "shape": "Half-Circle",
-      "tint": "Frosted Blue Chip",
-      "length": 50,
-      "width": 43
-    },
-    "quantity": 28,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 5201,
-    "order_id": "b7e005fc-9ea6-4f16-9dcd-9254a13d42df",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "da450d2a-3d5e-4646-8941-677dd51f7f8b",
-      "name": "AG 43",
-      "thickness": "1/2",
-      "shape": "Irregular/Any Other Shape",
-      "tint": "Satin Etch",
-      "length": 96,
-      "width": 44
-    },
-    "quantity": 8,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 9731,
-    "order_id": "b7e005fc-9ea6-4f16-9dcd-9254a13d42df",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "ef4a6120-93a8-450f-a7f9-6e75f27fde60",
-      "name": "MC 27 LE-A",
-      "thickness": "1/4",
-      "shape": "Racetrack Oval",
-      "tint": "Light Gray",
-      "length": 90,
-      "width": 38
-    },
-    "quantity": 99,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 4886,
-    "order_id": "b7e005fc-9ea6-4f16-9dcd-9254a13d42df",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
-    "product_config": {
-      "glass_id": "da450d2a-3d5e-4646-8941-677dd51f7f8b",
-      "name": "AG 43",
-      "thickness": "1/8",
-      "shape": "Right Triangle",
-      "tint": "P-516",
-      "length": 30,
-      "width": 18
-    },
-    "quantity": 8,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 6118,
-    "order_id": "11e4e7c6-df77-4a4b-84f5-a5039d428f36",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
-    "product_config": {
-      "glass_id": "cd774965-da25-463b-921f-441244911276",
-      "name": "AG 50 LE",
-      "thickness": "1/2",
-      "shape": "Clipped Corner(s)",
-      "tint": "Bronze",
-      "length": 31,
-      "width": 6
-    },
-    "quantity": 53,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 5502,
-    "order_id": "11e4e7c6-df77-4a4b-84f5-a5039d428f36",
-    "product_type_id": "2b610460-54e6-4c13-9500-cff65cf117dc",
-    "product_config": {
-      "glass_id": "46247eed-86b1-4ea7-bddf-4c8a7c89565a",
+      "glass_id": "d1561e8c-3e9b-4e29-94d2-56bbdced64f7",
       "name": "MC 68 LE-A",
       "thickness": "1/2",
-      "shape": "House",
-      "tint": "Frosted Blue Chip",
-      "length": 23,
-      "width": 10
-    },
-    "quantity": 205,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 7741,
-    "order_id": "7c9a2b83-bfed-4d88-83a8-ace03eba46d6",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
-    "product_config": {
-      "glass_id": "24c66f1f-bd90-4fc2-b3e2-7ed7cb667b00",
-      "name": "IS20 LE-T",
-      "thickness": "3/8",
-      "shape": "Arch-Top",
-      "tint": "Ultra Clear",
-      "length": 87,
-      "width": 47
-    },
-    "quantity": 88,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 2685,
-    "order_id": "7c9a2b83-bfed-4d88-83a8-ace03eba46d6",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
-    "product_config": {
-      "glass_id": "ea045be8-3c33-4a2d-9137-da2e180210eb",
-      "name": "SatinDeco",
-      "thickness": "1/4",
-      "shape": "Quad Arch",
+      "shape": "Ellipse",
       "tint": "P-516",
-      "length": 91,
+      "length": 78,
       "width": 20
     },
-    "quantity": 32,
+    "quantity": 8,
     "note": "some note"
   },
   {
-    "order_item_id": 1757,
-    "order_id": "db25b1e0-67a9-4231-8656-ac74c37e36c5",
-    "product_type_id": "a933717c-d6d1-431b-91c5-36ade089ff8a",
+    "order_item_id": 8156,
+    "order_id": "93c855d0-e9be-4255-aa62-e95ec11082da",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
     "product_config": {
-      "glass_id": "ef4a6120-93a8-450f-a7f9-6e75f27fde60",
-      "name": "MC 27 LE-A",
+      "glass_id": "af123281-fd38-48a1-b865-f5d1c25307f8",
+      "name": "SNX-L 62/34",
+      "thickness": "3/4",
+      "shape": "Pentagon",
+      "tint": "Solex",
+      "length": 54,
+      "width": 18
+    },
+    "quantity": 185,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 4783,
+    "order_id": "7c7db3a8-1094-451a-8440-f0743a916568",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "cc546439-3cef-4f13-b365-c6893c05fc82",
+      "name": "SNR 35 HT",
       "thickness": "1/8",
-      "shape": "Irregular/Any Other Shape",
+      "shape": "Octagon",
+      "tint": "Clear",
+      "length": 57,
+      "width": 37
+    },
+    "quantity": 6,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 5152,
+    "order_id": "7c7db3a8-1094-451a-8440-f0743a916568",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "aeab03c7-9242-4c4d-a53a-ef341b9fed6f",
+      "name": "AG 43",
+      "thickness": "1/8",
+      "shape": "Triangle",
+      "tint": "Mistlite",
+      "length": 34,
+      "width": 6
+    },
+    "quantity": 8,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 1228,
+    "order_id": "7c7db3a8-1094-451a-8440-f0743a916568",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "c112847c-f8ab-4e7b-a397-6a44ef7529f7",
+      "name": "NU 40 LE",
+      "thickness": "3/8",
+      "shape": "House",
+      "tint": "Mistlite",
+      "length": 42,
+      "width": 21
+    },
+    "quantity": 19,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 1253,
+    "order_id": "7c7db3a8-1094-451a-8440-f0743a916568",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "c908d94a-e129-4912-b3dd-29d7073c042d",
+      "name": "Sunguard Spandrel HT",
+      "thickness": "1/4",
+      "shape": "Quarter Round",
       "tint": "Ultra Clear",
-      "length": 19,
-      "width": 14
+      "length": 82,
+      "width": 37
     },
     "quantity": 45,
     "note": "some note"
   },
   {
-    "order_item_id": 1984,
-    "order_id": "db25b1e0-67a9-4231-8656-ac74c37e36c5",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
+    "order_item_id": 5828,
+    "order_id": "7c7db3a8-1094-451a-8440-f0743a916568",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
     "product_config": {
-      "glass_id": "af9ab768-f43f-416f-8cb1-8e70979e0972",
-      "name": "Sunguard Spandrel HT",
+      "glass_id": "d1561e8c-3e9b-4e29-94d2-56bbdced64f7",
+      "name": "MC 68 LE-A",
       "thickness": "3/8",
-      "shape": "Arch-Top",
-      "tint": "Bronze",
-      "length": 80,
-      "width": 5
+      "shape": "Hexagon",
+      "tint": "Clear",
+      "length": 50,
+      "width": 37
     },
-    "quantity": 20,
+    "quantity": 2,
     "note": "some note"
   },
   {
-    "order_item_id": 5550,
-    "order_id": "db25b1e0-67a9-4231-8656-ac74c37e36c5",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
+    "order_item_id": 775,
+    "order_id": "3fc3ebe9-ac3f-44cb-b4c9-7ed73402505c",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
     "product_config": {
-      "glass_id": "d0340245-d1b1-474d-b05b-1e330b5601d2",
-      "name": "SNR 35 HT",
-      "thickness": "3/4",
-      "shape": "Racetrack Oval",
-      "tint": "Frosted Green Chip",
-      "length": 43,
-      "width": 25
-    },
-    "quantity": 7,
-    "note": "some note"
-  },
-  {
-    "order_item_id": 9931,
-    "order_id": "db25b1e0-67a9-4231-8656-ac74c37e36c5",
-    "product_type_id": "b4b2ff97-f0e7-449d-8396-a8062b834ae1",
-    "product_config": {
-      "glass_id": "538c9855-17a0-410d-90d2-5e5e9f43c6c8",
-      "name": "SNX-L 62/34",
+      "glass_id": "1da5b2a3-6a53-49de-bbce-4521ef09cd5c",
+      "name": "SatinDeco",
       "thickness": "3/8",
-      "shape": "Arch",
-      "tint": "Solex",
-      "length": 53,
-      "width": 11
+      "shape": "Single Slope Rectangle",
+      "tint": "Satin Etch",
+      "length": 94,
+      "width": 4
     },
-    "quantity": 40,
+    "quantity": 3,
     "note": "some note"
   },
   {
-    "order_item_id": 2326,
-    "order_id": "db25b1e0-67a9-4231-8656-ac74c37e36c5",
-    "product_type_id": "a004a246-efc6-443e-b2e6-65e846378844",
+    "order_item_id": 8055,
+    "order_id": "3fc3ebe9-ac3f-44cb-b4c9-7ed73402505c",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
     "product_config": {
-      "glass_id": "cd774965-da25-463b-921f-441244911276",
-      "name": "AG 50 LE",
-      "thickness": "1/8",
-      "shape": "Octagon",
+      "glass_id": "c112847c-f8ab-4e7b-a397-6a44ef7529f7",
+      "name": "NU 40 LE",
+      "thickness": "3/8",
+      "shape": "Arch Side",
       "tint": "Bronze",
       "length": 33,
-      "width": 28
+      "width": 20
+    },
+    "quantity": 10,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 7406,
+    "order_id": "3fc3ebe9-ac3f-44cb-b4c9-7ed73402505c",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "d1561e8c-3e9b-4e29-94d2-56bbdced64f7",
+      "name": "MC 68 LE-A",
+      "thickness": "1/8",
+      "shape": "Ellipse",
+      "tint": "Frosted Green Chip",
+      "length": 34,
+      "width": 4
+    },
+    "quantity": 1,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 148,
+    "order_id": "3fc3ebe9-ac3f-44cb-b4c9-7ed73402505c",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "004c4786-d558-43e7-82be-795f60182ef7",
+      "name": "SNE 50/25",
+      "thickness": "1/2",
+      "shape": "Arch Top & Bottom",
+      "tint": "Midnight Gray",
+      "length": 60,
+      "width": 37
+    },
+    "quantity": 26,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 1793,
+    "order_id": "3fc3ebe9-ac3f-44cb-b4c9-7ed73402505c",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "004c4786-d558-43e7-82be-795f60182ef7",
+      "name": "SNE 50/25",
+      "thickness": "1/8",
+      "shape": "Arch",
+      "tint": "Dark Gray",
+      "length": 73,
+      "width": 43
+    },
+    "quantity": 165,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 4529,
+    "order_id": "3fc3ebe9-ac3f-44cb-b4c9-7ed73402505c",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "d49c19b3-cf1a-4ad6-8ba4-bf127ce1de6f",
+      "name": "MC 27 LE-A",
+      "thickness": "1/2",
+      "shape": "Ellipse",
+      "tint": "Midnight Gray",
+      "length": 81,
+      "width": 2
+    },
+    "quantity": 117,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 2424,
+    "order_id": "3fc3ebe9-ac3f-44cb-b4c9-7ed73402505c",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "ec5ffa0f-39d8-4d03-94dd-95b190a8c2f5",
+      "name": "AG 50 LE",
+      "thickness": "1/4",
+      "shape": "Arch",
+      "tint": "Frosted Green Chip",
+      "length": 80,
+      "width": 10
+    },
+    "quantity": 9,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 8596,
+    "order_id": "9fff4613-fb71-483d-ba69-1773b5874f89",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "c5eb32fe-3209-43d3-a63c-f5d3c3555c8b",
+      "name": "IS20 LE-T",
+      "thickness": "3/4",
+      "shape": "Arch",
+      "tint": "Clear",
+      "length": 54,
+      "width": 46
+    },
+    "quantity": 66,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 9607,
+    "order_id": "9fff4613-fb71-483d-ba69-1773b5874f89",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
+    "product_config": {
+      "glass_id": "c112847c-f8ab-4e7b-a397-6a44ef7529f7",
+      "name": "NU 40 LE",
+      "thickness": "3/4",
+      "shape": "House",
+      "tint": "Bronze",
+      "length": 63,
+      "width": 47
+    },
+    "quantity": 57,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 1727,
+    "order_id": "9fff4613-fb71-483d-ba69-1773b5874f89",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "1da5b2a3-6a53-49de-bbce-4521ef09cd5c",
+      "name": "SatinDeco",
+      "thickness": "3/4",
+      "shape": "Single Slope Rectangle",
+      "tint": "Solex",
+      "length": 71,
+      "width": 39
+    },
+    "quantity": 133,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 6308,
+    "order_id": "9fff4613-fb71-483d-ba69-1773b5874f89",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "ec5ffa0f-39d8-4d03-94dd-95b190a8c2f5",
+      "name": "AG 50 LE",
+      "thickness": "3/8",
+      "shape": "Pentagon",
+      "tint": "Frosted Green Chip",
+      "length": 17,
+      "width": 7
+    },
+    "quantity": 3,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 1876,
+    "order_id": "9b83b640-dc66-4592-b923-71adccb663e8",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "c908d94a-e129-4912-b3dd-29d7073c042d",
+      "name": "Sunguard Spandrel HT",
+      "thickness": "1/4",
+      "shape": "House",
+      "tint": "Ultra Clear",
+      "length": 82,
+      "width": 32
+    },
+    "quantity": 96,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 1499,
+    "order_id": "9b83b640-dc66-4592-b923-71adccb663e8",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "f1e58ff5-48fc-40f5-971d-10c8ad04ab6f",
+      "name": "SN 68 HT",
+      "thickness": "1/4",
+      "shape": "Racetrack Oval",
+      "tint": "Dark Gray",
+      "length": 93,
+      "width": 5
+    },
+    "quantity": 1,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 3941,
+    "order_id": "9b83b640-dc66-4592-b923-71adccb663e8",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "c5eb32fe-3209-43d3-a63c-f5d3c3555c8b",
+      "name": "IS20 LE-T",
+      "thickness": "3/4",
+      "shape": "Arch",
+      "tint": "Mistlite",
+      "length": 80,
+      "width": 39
+    },
+    "quantity": 54,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 1581,
+    "order_id": "9b83b640-dc66-4592-b923-71adccb663e8",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "004c4786-d558-43e7-82be-795f60182ef7",
+      "name": "SNE 50/25",
+      "thickness": "1/2",
+      "shape": "Arch",
+      "tint": "Midnight Gray",
+      "length": 90,
+      "width": 29
+    },
+    "quantity": 51,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 3362,
+    "order_id": "9b83b640-dc66-4592-b923-71adccb663e8",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "aeab03c7-9242-4c4d-a53a-ef341b9fed6f",
+      "name": "AG 43",
+      "thickness": "3/4",
+      "shape": "Triangle",
+      "tint": "Frosted Blue Chip",
+      "length": 73,
+      "width": 8
     },
     "quantity": 58,
     "note": "some note"
   },
   {
-    "order_item_id": 861,
-    "order_id": "db25b1e0-67a9-4231-8656-ac74c37e36c5",
-    "product_type_id": "5d790f4a-46cb-4998-842c-4678ccaa72cb",
+    "order_item_id": 6385,
+    "order_id": "9b83b640-dc66-4592-b923-71adccb663e8",
+    "product_type_id": "42fb84ba-6974-4396-bccb-c0c0dafe6d69",
     "product_config": {
-      "glass_id": "cd774965-da25-463b-921f-441244911276",
-      "name": "AG 50 LE",
-      "thickness": "3/8",
-      "shape": "Quarter Round",
-      "tint": "Frosted Green Chip",
-      "length": 49,
-      "width": 46
+      "glass_id": "cc546439-3cef-4f13-b365-c6893c05fc82",
+      "name": "SNR 35 HT",
+      "thickness": "1/4",
+      "shape": "Trapezoid",
+      "tint": "Clear",
+      "length": 45,
+      "width": 19
     },
-    "quantity": 155,
+    "quantity": 28,
     "note": "some note"
   },
   {
-    "order_item_id": 7473,
-    "order_id": "db25b1e0-67a9-4231-8656-ac74c37e36c5",
-    "product_type_id": "3e0cfcf4-4223-424d-9dde-ff0d49966640",
+    "order_item_id": 4140,
+    "order_id": "9b83b640-dc66-4592-b923-71adccb663e8",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
     "product_config": {
-      "glass_id": "ef4a6120-93a8-450f-a7f9-6e75f27fde60",
-      "name": "MC 27 LE-A",
+      "glass_id": "cc546439-3cef-4f13-b365-c6893c05fc82",
+      "name": "SNR 35 HT",
+      "thickness": "1/8",
+      "shape": "Right Triangle",
+      "tint": "Clear",
+      "length": 74,
+      "width": 21
+    },
+    "quantity": 8,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 7176,
+    "order_id": "9b83b640-dc66-4592-b923-71adccb663e8",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "af123281-fd38-48a1-b865-f5d1c25307f8",
+      "name": "SNX-L 62/34",
       "thickness": "1/4",
-      "shape": "Quarter Round",
+      "shape": "Single Slope Rectangle",
+      "tint": "Bronze",
+      "length": 52,
+      "width": 25
+    },
+    "quantity": 9,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 9697,
+    "order_id": "c334b769-4cdc-4a4b-be61-16b5aa4a9cd6",
+    "product_type_id": "29c6c8b2-095f-42b4-8b21-4645f4ade71d",
+    "product_config": {
+      "glass_id": "f1e58ff5-48fc-40f5-971d-10c8ad04ab6f",
+      "name": "SN 68 HT",
+      "thickness": "1/2",
+      "shape": "Rounded Corner(s)",
+      "tint": "Light Gray",
+      "length": 47,
+      "width": 1
+    },
+    "quantity": 7,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 3511,
+    "order_id": "c334b769-4cdc-4a4b-be61-16b5aa4a9cd6",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "f1e58ff5-48fc-40f5-971d-10c8ad04ab6f",
+      "name": "SN 68 HT",
+      "thickness": "1/4",
+      "shape": "Quad Arch",
+      "tint": "Light Gray",
+      "length": 59,
+      "width": 42
+    },
+    "quantity": 2,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 6230,
+    "order_id": "c334b769-4cdc-4a4b-be61-16b5aa4a9cd6",
+    "product_type_id": "b6061ccf-77f6-48a0-b0be-3af94807c038",
+    "product_config": {
+      "glass_id": "c5eb32fe-3209-43d3-a63c-f5d3c3555c8b",
+      "name": "IS20 LE-T",
+      "thickness": "3/4",
+      "shape": "Triangle",
+      "tint": "Mistlite",
+      "length": 29,
+      "width": 15
+    },
+    "quantity": 197,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 1114,
+    "order_id": "c334b769-4cdc-4a4b-be61-16b5aa4a9cd6",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "aeab03c7-9242-4c4d-a53a-ef341b9fed6f",
+      "name": "AG 43",
+      "thickness": "3/4",
+      "shape": "Single Slope Rectangle",
+      "tint": "P-516",
+      "length": 77,
+      "width": 45
+    },
+    "quantity": 9,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 3575,
+    "order_id": "495d5924-3da5-4f4d-b68a-b9c147386e48",
+    "product_type_id": "fea0cb8d-a9e8-4c94-a5a7-7f2a0ca4b4a7",
+    "product_config": {
+      "glass_id": "1da5b2a3-6a53-49de-bbce-4521ef09cd5c",
+      "name": "SatinDeco",
+      "thickness": "3/8",
+      "shape": "Single Slope Rectangle",
+      "tint": "Solex",
+      "length": 32,
+      "width": 11
+    },
+    "quantity": 33,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 6237,
+    "order_id": "495d5924-3da5-4f4d-b68a-b9c147386e48",
+    "product_type_id": "fea920f0-0bbf-40eb-a075-20d14e998fe9",
+    "product_config": {
+      "glass_id": "a1a67246-21b6-4ba1-9024-417369d628b0",
+      "name": "MC 68 LE-T",
+      "thickness": "3/8",
+      "shape": "Arch Side",
+      "tint": "Frosted Green Chip",
+      "length": 92,
+      "width": 20
+    },
+    "quantity": 2,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 6027,
+    "order_id": "495d5924-3da5-4f4d-b68a-b9c147386e48",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "af123281-fd38-48a1-b865-f5d1c25307f8",
+      "name": "SNX-L 62/34",
+      "thickness": "1/2",
+      "shape": "Parallelogram",
       "tint": "Mistlite",
       "length": 59,
-      "width": 48
+      "width": 47
     },
-    "quantity": 10,
+    "quantity": 9,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 3768,
+    "order_id": "495d5924-3da5-4f4d-b68a-b9c147386e48",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "c112847c-f8ab-4e7b-a397-6a44ef7529f7",
+      "name": "NU 40 LE",
+      "thickness": "1/2",
+      "shape": "House",
+      "tint": "Solex",
+      "length": 63,
+      "width": 24
+    },
+    "quantity": 6,
+    "note": "some note"
+  },
+  {
+    "order_item_id": 8374,
+    "order_id": "495d5924-3da5-4f4d-b68a-b9c147386e48",
+    "product_type_id": "024a0571-87d5-4e88-9025-d048ad548dfa",
+    "product_config": {
+      "glass_id": "c908d94a-e129-4912-b3dd-29d7073c042d",
+      "name": "Sunguard Spandrel HT",
+      "thickness": "3/8",
+      "shape": "Circle",
+      "tint": "Ultra Clear",
+      "length": 54,
+      "width": 39
+    },
+    "quantity": 30,
     "note": "some note"
   }
 ];

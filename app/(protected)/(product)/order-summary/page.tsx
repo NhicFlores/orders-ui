@@ -1,7 +1,6 @@
 import OrderSummary from "./order-summary";
 import ProductHeader from "@/components/product-components/product-header";
 import { TintRoute } from "@/routes";
-import { fetchTestOrders } from "@/lib/data/data";
 
 const newOrder = {
   order_name: "Test Order 1",

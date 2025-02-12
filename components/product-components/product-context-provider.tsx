@@ -1,13 +1,12 @@
 "use client";
 import {
-  NewOrder,
-  NewOrderItem,
   Order,
   OrderItem,
-} from "@/lib/data-model/schema-definitions";
-import { OrderStatus } from "@/lib/data-model/data-definitions";
+} from "@/lib/data-model/schema-types";
 import { ProductContextType } from "@/lib/definitions/product-context";
 import { createContext, useContext, useState } from "react";
+import { getDefaultOrderItemValues, getDefaultOrderValues } from "@/lib/data-model/default-constructors";
+import { NewOrder, NewOrderItem } from "@/lib/data-model/utility-types";
 
 // {
 //   order: {
@@ -60,48 +59,9 @@ export default function ProductContextProvider({
 }: {
   children: React.ReactNode;
 }) {
-  const [order, setOrder] = useState<NewOrder | Order>({
-    created_by: "", // RESEARCH NOTE: where should the user id be set - server or client side?
-    customer_id: "",
-    order_name: "",
-    billing_data: {
-      street: "",
-      apt_num: "",
-      city: "",
-      state: "",
-      zip: "",
-      payment_method: "",
-      purchase_order: "",
-      primary_contact_name: "",
-      primary_contact_email: "",
-      primary_contact_phone: "",
-      fax_num: "",
-      is_primary: false,
-      is_active: false,
-    },
-    shipping_data: {
-      street: "",
-      apt_num: "",
-      city: "",
-      state: "",
-      zip: "",
-      is_job_site: false,
-      note: "",
-    },
-    status: OrderStatus.Draft,
-    date_created: new Date(),
-    date_updated: new Date(),
-    date_submitted: null,
-    date_shipped: null,
-    date_delivered: null,
-  });
+  const [order, setOrder] = useState<NewOrder | Order>(getDefaultOrderValues());
 
-  const [orderItem, setOrderItem] = useState<OrderItem | NewOrderItem>({
-    product_type_id: "",
-    product_config: {},
-    quantity: 1,
-    note: "",
-  });
+  const [orderItem, setOrderItem] = useState<OrderItem | NewOrderItem>(getDefaultOrderItemValues());
 
   const [orderItems, setOrderItems] = useState<OrderItem[] | NewOrderItem[]>(
     []

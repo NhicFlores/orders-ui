@@ -57,6 +57,13 @@ export const OrderDetailsRoute = (order_id: string) => {
   };
 };
 
+export const InvoicePageRoute = (invoice_id: string) => {
+  return {
+    label: "Invoice",
+    href: `/invoice/${invoice_id}`,
+  };
+}
+
 // product routes
 export const NewOrderNameRoute = {
   label: "Order Name",

@@ -5,7 +5,7 @@ import { LoginSchema, RegisterSchema } from "@/schema/form-schema";
 import bcrypt from "bcrypt";
 import { signIn, signOut } from "@/auth";
 import { AuthError } from "next-auth";
-import { User } from "../data-model/schema-definitions";
+import { User } from "../data-model/schema-types";
 import { getSchemaName } from "../utils";
 
 // -------------------- Authentication ------------------
@@ -48,8 +48,8 @@ export async function authenticate(
 
   //return { success: "user found"}; //TODO NOTE this doesn't work, it throws off the type for useFormStatus; how to change/define types expected by hooks
 }
-// TODO NOTE: unused function, remove after testing 
-// DEPRECATED 
+// TODO NOTE: unused function, remove after testing
+// DEPRECATED
 export async function userLogin(formFields: z.infer<typeof LoginSchema>) {
   console.log("------------- IN USER LOGIN ACTION ---------------");
 
@@ -139,9 +139,9 @@ export async function getUser(email: string): Promise<User | undefined> {
   console.log("----");
   console.log(" ");
   try {
-    // TODO NOTE NEXT: UPDATE QUERY TO USE DRIZZLE 
+    // TODO NOTE NEXT: UPDATE QUERY TO USE DRIZZLE
     const user = await sql<User>`
-            SELECT * FROM "dev-schema".users 
+            SELECT * FROM "dev-schema".user 
             WHERE email=${email}
         `;
     console.log("XXXX ---- USER: ", user);

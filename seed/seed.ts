@@ -5,8 +5,8 @@ import { seedUserInfo } from "./insert-queries/seed-users";
 
 export async function seedDatabase() {
   console.log("---- STARTING SEEDING PROCESS ... ----");
-  // await seedCustomerInfo();
   // await seedUserInfo();
+  // await seedCustomerInfo();
   // await seedProducts();
   // await seedGlassInventory();
   // await seedOrderInfo();

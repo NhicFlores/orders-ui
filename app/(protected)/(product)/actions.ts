@@ -1,12 +1,11 @@
 "use server";
 import { auth } from "@/auth";
-import { OrderStatus } from "@/lib/data-model/data-definitions";
+import { OrderStatusOptions } from "@/lib/data-model/enum-types";
 import {
-  NewOrder,
-  NewOrderItem,
   Order,
   OrderItem,
-} from "@/lib/data-model/schema-definitions";
+} from "@/lib/data-model/schema-types";
+import { NewOrder, NewOrderItem } from "@/lib/data-model/utility-types";
 import { CreateOrder } from "@/schema/form-schema";
 import { sql } from "@vercel/postgres";
 
@@ -88,7 +87,7 @@ export async function createOrder(order: NewOrder, orderItems: NewOrderItem[]) {
   const billing_data_string = JSON.stringify(billing_data);
   const shipping_data_string = JSON.stringify(shipping_data);
 
-  const status = OrderStatus.Pending;
+  const status = OrderStatusOptions.Pending;
 
   const date_created = new Date().toISOString().split("T")[0];
   const date_submitted = new Date().toISOString().split("T")[0];

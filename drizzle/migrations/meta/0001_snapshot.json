@@ -1,6 +1,6 @@
 {
-  "id": "d92f5916-013a-4805-9ec1-cd9df0d61370",
-  "prevId": "00000000-0000-0000-0000-000000000000",
+  "id": "32730d73-2a68-41dd-bcf4-d2c4695cd6d8",
+  "prevId": "d92f5916-013a-4805-9ec1-cd9df0d61370",
   "version": "7",
   "dialect": "postgresql",
   "tables": {
@@ -277,11 +277,11 @@
       "foreignKeys": {},
       "compositePrimaryKeys": {},
       "uniqueConstraints": {
-        "customer_name_unique": {
-          "name": "customer_name_unique",
+        "customer_account_num_unique": {
+          "name": "customer_account_num_unique",
           "nullsNotDistinct": false,
           "columns": [
-            "name"
+            "account_num"
           ]
         }
       },

@@ -87,10 +87,12 @@ export async function seedOrderInfo() {
           primary_contact_phone: billing_data.primary_contact_phone,
           fax_num: billing_data.fax_num,
         };
+        // RESEARCH NOTE: do i still need to stringify if i typed the drizzle schema as jsonb with .$type<CustomerBillingInformation>?
+        // yes: database is expecting a string representation of the object 
         const serializedShippingInfo = JSON.stringify(shippingInfoData);
         const serializedBillingInfo = JSON.stringify(billingInfoData);
         const result = await trx.execute(
-          sql`INSERT INTO "${sql.raw(getSchemaName())}".orders 
+          sql`INSERT INTO "${sql.raw(getSchemaName())}".order 
                       ("created_by",
                       "customer_id",
                       "order_name",
@@ -99,7 +101,7 @@ export async function seedOrderInfo() {
                       "billing_data",
                       status,
                       amount,
-                      "date_created",
+                      "date_drafted",
                       "date_updated",
                       "date_submitted",
                       "date_shipped",
@@ -112,7 +114,7 @@ export async function seedOrderInfo() {
                     ${serializedBillingInfo},
                     ${order.status},
                     ${order.amount},
-                    ${order.date_created},
+                    ${order.date_drafted},
                     ${order.date_updated},
                     ${order.date_submitted ? order.date_submitted : null},
                     ${order.date_shipped ? order.date_shipped : null},
@@ -135,7 +137,7 @@ export async function seedOrderInfo() {
 
             const serializedProductConfig = JSON.stringify(item.product_config);
             await trx.execute(
-              sql`INSERT INTO "${sql.raw(getSchemaName())}".order_items
+              sql`INSERT INTO "${sql.raw(getSchemaName())}".order_item
                                     ("order_id",
                                     "product_type_id",
                                     product_config,
@@ -159,7 +161,7 @@ export async function seedOrderInfo() {
             console.log("xxx SEEDING INVOICE xxx");
             invoiceCount++;
             await trx.execute(
-              sql`INSERT INTO "${sql.raw(getSchemaName())}"."order_invoices"
+              sql`INSERT INTO "${sql.raw(getSchemaName())}"."order_invoice"
                             (created_by,
                             order_id,
                             customer_id,

@@ -1,4 +1,5 @@
-import { OrderDetails, StatusDetails } from "@/lib/data-model/data-definitions";
+import { OrderTableRow } from "@/lib/data-model/query-types";
+import { StatusDetails } from "@/lib/data-model/utility-types";
 import { rankItem } from "@tanstack/match-sorter-utils";
 import { FilterFn, Row } from "@tanstack/react-table";
 
@@ -20,8 +21,8 @@ export const fuzzyOrderFilter: FilterFn<any> = (
 // filterValue is an array of statuses of type { statusValue: string, isVisible: boolean }
 // isVisible will be true if the status should be visible in the table
 // this function filters out rows that contain a status with a isVisible value of false
-export const statusColumnFilter: FilterFn<OrderDetails> = (
-  row: Row<OrderDetails>,
+export const statusColumnFilter: FilterFn<OrderTableRow> = (
+  row: Row<OrderTableRow>,
   columnId: string,
   filterValue: StatusDetails[],
   addMeta: (meta: any) => void

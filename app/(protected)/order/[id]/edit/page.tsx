@@ -1,3 +1,4 @@
+// NOTE: DEPRECATED
 import EditOrderForm from "@/app/ui/components/order-components/edit-order-form";
 import { fetchCustomers, fetchOrderById } from "@/lib/data/data";
 
@@ -8,7 +9,7 @@ export default async function Page({ params }: { params: { id:string } }) {
         fetchOrderById(id),
         fetchCustomers()
     ]);
-    // NOTE: DEPRECATED
+    
     return (
         <main>
             <EditOrderForm order={order} customers={customers}/>     
