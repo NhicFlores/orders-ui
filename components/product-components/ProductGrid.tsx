@@ -2,7 +2,7 @@
 import ProductCard from "./product-card";
 import { useState } from "react";
 import Link from "next/link";
-import { Product } from "@/lib/definitions/order-definitions";
+import { Product } from "@/lib/definitions/product-types";
 
 interface ProductGridProps {
   productList: Product[];

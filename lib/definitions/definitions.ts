@@ -1,9 +1,7 @@
 // definitions for data
 
-import {
-  GlassConfiguration,
-  OrderStatus,
-} from "@/lib/definitions/order-definitions";
+import { GlassConfiguration } from "@/lib/definitions/product-types";
+import { OrderStatus } from "../data-model/enum-types";
 
 // describes the shape of the data, and what data type each property should accept
 
@@ -19,15 +17,7 @@ export type Order_DEPRECATED = {
   glassConfig: GlassConfiguration;
 };
 
-export type OrderKeys = keyof Order_DEPRECATED;
-
-// NOTE: TODO: each order will have:
-//   - unique id
-//   - product list
-//     - quantity per product
-// for transferring to old system we need to split the order
-//   - order_id + product_id + i/quantity
-//   - 8634562 - 2345 - 1 / 10
+export type OrderKeys = keyof Order_DEPRECATED; 
 
 //this object is used to verify the data requested from db on edit forms
 export type OrderForm = {
@@ -39,14 +29,14 @@ export type OrderForm = {
   price: number;
   status: OrderStatus;
 };
-
+// unused 
 export type Customer = {
   id: string;
   name: string;
   email: string;
   image_url: string;
 };
-
+// unused
 export type Invoice = {
   id: string;
   customer_id: string;
@@ -61,7 +51,7 @@ export type Revenue = {
   month: string;
   revenue: number;
 };
-
+// unused
 export type LatestInvoice = {
   id: string;
   name: string;
@@ -69,7 +59,7 @@ export type LatestInvoice = {
   email: string;
   amount: string;
 };
-
+// unused
 export type LatestInvoiceRaw = Omit<LatestInvoice, "amount"> & {
   amount: number;
 };
@@ -94,7 +84,7 @@ export type CustomersTableType = {
   total_pending: number;
   total_paid: number;
 };
-
+// unused 
 export type FormattedCustomersTable = {
   id: string;
   name: string;

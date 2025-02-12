@@ -1,30 +1,34 @@
-'use client'
-// DEPRECATED 
+"use client";
+// DEPRECATED
 import { updateOrder } from "@/lib/actions/actions";
 import { MyButton } from "../my-button";
 import Link from "next/link";
 import { CustomerField, OrderForm } from "@/lib/definitions/definitions";
 import { useFormState, useFormStatus } from "react-dom";
-import { OrderStatus } from "@/lib/definitions/order-definitions";
+import { OrderStatusOptions } from "@/lib/data-model/enum-types";
 
-export default function EditOrderForm({ 
-    order, 
-    customers 
-}: { 
-    order: OrderForm; 
-    customers: CustomerField[];
-}){
+
+export default function EditOrderForm({
+  order,
+  customers,
+}: {
+  order: OrderForm;
+  customers: CustomerField[];
+}) {
   console.log("EDIT ORDER FORM: DEPRECATED");
-  const initialState = {message: "", errors: {}};
+  const initialState = { message: "", errors: {} };
   const updateOrderWithID = updateOrder.bind(null, order.id);
-  const [state, dispatch] = useFormState(updateOrderWithID, initialState);  
-  
-  return(
+  const [state, dispatch] = useFormState(updateOrderWithID, initialState);
+
+  return (
     <form action={dispatch}>
       <div className="rounded-md bg-gray-50 p-4 md:p-6">
         {/* Customer Name */}
         <div className="mb-4">
-          <label htmlFor="customer_id" className="mb-2 block text-sm font-medium">
+          <label
+            htmlFor="customer_id"
+            className="mb-2 block text-sm font-medium"
+          >
             Choose customer
           </label>
           <div className="relative">
@@ -33,7 +37,7 @@ export default function EditOrderForm({
               name="customer_id"
               className="peer block w-full cursor-pointer rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
               defaultValue={order.customer_id}
-              aria-describedby='customer-error'
+              aria-describedby="customer-error"
             >
               <option value="" disabled>
                 Select a customer
@@ -57,7 +61,10 @@ export default function EditOrderForm({
 
         {/* Order Name */}
         <div className="mb-4">
-          <label htmlFor="order_name" className="mb-2 block text-sm font-medium">
+          <label
+            htmlFor="order_name"
+            className="mb-2 block text-sm font-medium"
+          >
             Choose an order name
           </label>
           <div className="relative mt-2 rounded-md">
@@ -65,7 +72,7 @@ export default function EditOrderForm({
               <input
                 id="order_name"
                 name="order_name"
-                type='text'
+                type="text"
                 placeholder="Enter Order Name"
                 value={order.order_name}
                 className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
@@ -76,7 +83,10 @@ export default function EditOrderForm({
 
         {/* Product ID */}
         <div className="mb-4">
-          <label htmlFor="product_id" className="mb-2 block text-sm font-medium">
+          <label
+            htmlFor="product_id"
+            className="mb-2 block text-sm font-medium"
+          >
             Choose a product ID
           </label>
           <div className="relative mt-2 rounded-md">
@@ -84,7 +94,7 @@ export default function EditOrderForm({
               <input
                 id="product_id"
                 name="product_id"
-                type='text'
+                type="text"
                 placeholder="Enter product ID"
                 value={order.product_id}
                 className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
@@ -103,7 +113,7 @@ export default function EditOrderForm({
               <input
                 id="quantity"
                 name="quantity"
-                type='number'
+                type="number"
                 step="1"
                 placeholder="0"
                 value={order.quantity}
@@ -123,7 +133,7 @@ export default function EditOrderForm({
               <input
                 id="price"
                 name="price"
-                type='number'
+                type="number"
                 step="0.01"
                 placeholder="order total"
                 value={order.price}
@@ -144,9 +154,9 @@ export default function EditOrderForm({
                 <input
                   id="pending"
                   name="status"
-                  type='radio'
+                  type="radio"
                   value="pending"
-                  checked={order.status === OrderStatus.Pending ? true: false}
+                  checked={order.status === OrderStatusOptions.Pending ? true : false}
                   className="h-4 w-4 cursor-pointer border-gray-300 bg-gray-100 text-gray-600 focus:ring-2"
                 />
                 <label
@@ -162,7 +172,7 @@ export default function EditOrderForm({
                   name="status"
                   type="radio"
                   value="draft"
-                  checked={order.status === OrderStatus.Draft ? true: false}
+                  checked={order.status === OrderStatusOptions.Draft ? true : false}
                   className="h-4 w-4 cursor-pointer border-gray-300 bg-gray-100 text-gray-600 focus:ring-2"
                 />
                 <label
@@ -178,7 +188,9 @@ export default function EditOrderForm({
                   name="status"
                   type="radio"
                   value="processing"
-                  checked={order.status === OrderStatus.Processing ? true: false}
+                  checked={
+                    order.status === OrderStatusOptions.Processing ? true : false
+                  }
                   className="h-4 w-4 cursor-pointer border-gray-300 bg-gray-100 text-gray-600 focus:ring-2"
                 />
                 <label
@@ -194,7 +206,7 @@ export default function EditOrderForm({
                   name="status"
                   type="radio"
                   value="shipped"
-                  checked={order.status === OrderStatus.Shipped ? true: false}
+                  checked={order.status === OrderStatusOptions.Shipped ? true : false}
                   className="h-4 w-4 cursor-pointer border-gray-300 bg-gray-100 text-gray-600 focus:ring-2"
                 />
                 <label
@@ -218,5 +230,5 @@ export default function EditOrderForm({
         <MyButton type="submit">Submit Order</MyButton>
       </div>
     </form>
-    )
+  );
 }

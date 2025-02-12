@@ -5,7 +5,7 @@ import {
   Shape,
   Thickness,
   Tint,
-} from "@/lib/definitions/order-definitions";
+} from "@/lib/definitions/product-types";
 
 export const glassTypes: GlassType[] = [
   {
@@ -125,8 +125,8 @@ export const shapeOptions: Shape[] = [
     imageSrc: glassImage,
     alt: "Square/Rectangle",
     required_dimensions: [
-      { label: "Base", wholeNumber: "", fraction: ""},
-      { label: "Height", wholeNumber: "", fraction: ""},
+      { label: "Base", wholeNumber: "", fraction: "" },
+      { label: "Height", wholeNumber: "", fraction: "" },
     ],
     thickness_options: [],
     tint_types: [],
@@ -151,9 +151,7 @@ export const shapeOptions: Shape[] = [
     name: "Circle",
     imageSrc: glassImage,
     alt: "Circle",
-    required_dimensions: [
-      { label: "Radius", wholeNumber: "", fraction: ""},
-    ],
+    required_dimensions: [{ label: "Radius", wholeNumber: "", fraction: "" }],
     thickness_options: [],
     tint_types: [],
     misc_options: [],
@@ -164,10 +162,10 @@ export const shapeOptions: Shape[] = [
     imageSrc: glassImage,
     alt: "House",
     required_dimensions: [
-      { label: "Base", wholeNumber: "", fraction: ""},
-      { label: "Height", wholeNumber: "", fraction: ""},
-      { label: "Left Sub Height", wholeNumber: "", fraction: ""},
-      { label: "Right Sub Height", wholeNumber: "", fraction: ""},
+      { label: "Base", wholeNumber: "", fraction: "" },
+      { label: "Height", wholeNumber: "", fraction: "" },
+      { label: "Left Sub Height", wholeNumber: "", fraction: "" },
+      { label: "Right Sub Height", wholeNumber: "", fraction: "" },
     ],
     thickness_options: [],
     tint_types: [],
@@ -179,9 +177,9 @@ export const shapeOptions: Shape[] = [
     imageSrc: glassImage,
     alt: "Arch",
     required_dimensions: [
-      { label: "Base", wholeNumber: "", fraction: ""},
-      { label: "Height", wholeNumber: "", fraction: ""},
-      { label: "Radius", wholeNumber: "", fraction: ""},
+      { label: "Base", wholeNumber: "", fraction: "" },
+      { label: "Height", wholeNumber: "", fraction: "" },
+      { label: "Radius", wholeNumber: "", fraction: "" },
     ],
     thickness_options: [],
     tint_types: [],
@@ -193,7 +191,7 @@ export const shapeOptions: Shape[] = [
     imageSrc: glassImage,
     alt: "Arch-Top",
     required_dimensions: [
-      { label: "Base", wholeNumber: "", fraction: ""},
+      { label: "Base", wholeNumber: "", fraction: "" },
       { label: "Height", wholeNumber: "", fraction: "" },
       { label: "Radius", wholeNumber: "", fraction: "" },
       { label: "Offset", wholeNumber: "", fraction: "" },
@@ -208,7 +206,7 @@ export const shapeOptions: Shape[] = [
     imageSrc: glassImage,
     alt: "Arch Top & Bottom",
     required_dimensions: [
-      { label: "Base", wholeNumber: "", fraction: ""},
+      { label: "Base", wholeNumber: "", fraction: "" },
       { label: "Height", wholeNumber: "", fraction: "" },
       { label: "Radius", wholeNumber: "", fraction: "" },
       { label: "Offset", wholeNumber: "", fraction: "" },
@@ -223,9 +221,9 @@ export const shapeOptions: Shape[] = [
     imageSrc: glassImage,
     alt: "Arch Side",
     required_dimensions: [
-      { label: "Base", wholeNumber: "", fraction: ""},
+      { label: "Base", wholeNumber: "", fraction: "" },
       { label: "Height", wholeNumber: "", fraction: "" },
-      { label: "Sub Height", wholeNumber: "", fraction: ""},
+      { label: "Sub Height", wholeNumber: "", fraction: "" },
       { label: "Radius", wholeNumber: "", fraction: "" },
       { label: "Offset", wholeNumber: "", fraction: "" },
     ],
@@ -239,7 +237,7 @@ export const shapeOptions: Shape[] = [
     imageSrc: glassImage,
     alt: "Rounded Corner(s)",
     required_dimensions: [
-      { label: "Base", wholeNumber: "", fraction: ""},
+      { label: "Base", wholeNumber: "", fraction: "" },
       { label: "Height", wholeNumber: "", fraction: "" },
       { label: "Radius", wholeNumber: "", fraction: "" },
     ],
@@ -252,7 +250,7 @@ export const shapeOptions: Shape[] = [
     imageSrc: glassImage,
     alt: "Clipped Corner(s)",
     required_dimensions: [
-      { label: "Base", wholeNumber: "", fraction: ""},
+      { label: "Base", wholeNumber: "", fraction: "" },
       { label: "Height", wholeNumber: "", fraction: "" },
       { label: "Left Projection", wholeNumber: "", fraction: "" },
       { label: "Right Projection", wholeNumber: "", fraction: "" },
@@ -267,7 +265,7 @@ export const shapeOptions: Shape[] = [
     imageSrc: glassImage,
     alt: "Pentagon",
     required_dimensions: [
-      { label: "Base", wholeNumber: "", fraction: ""},
+      { label: "Base", wholeNumber: "", fraction: "" },
       { label: "Height", wholeNumber: "", fraction: "" },
       { label: "Edge Length", wholeNumber: "", fraction: "" },
     ],
@@ -281,7 +279,7 @@ export const shapeOptions: Shape[] = [
     imageSrc: glassImage,
     alt: "Hexagon",
     required_dimensions: [
-      { label: "Base", wholeNumber: "", fraction: ""},
+      { label: "Base", wholeNumber: "", fraction: "" },
       { label: "Height", wholeNumber: "", fraction: "" },
       { label: "Edge Length", wholeNumber: "", fraction: "" },
     ],
@@ -295,7 +293,7 @@ export const shapeOptions: Shape[] = [
     imageSrc: glassImage,
     alt: "Octagon",
     required_dimensions: [
-      { label: "Base", wholeNumber: "", fraction: ""},
+      { label: "Base", wholeNumber: "", fraction: "" },
       { label: "Height", wholeNumber: "", fraction: "" },
       { label: "Edge Length", wholeNumber: "", fraction: "" },
     ],
@@ -309,7 +307,7 @@ export const shapeOptions: Shape[] = [
     imageSrc: glassImage,
     alt: "Ellipse",
     required_dimensions: [
-      { label: "Base", wholeNumber: "", fraction: ""},
+      { label: "Base", wholeNumber: "", fraction: "" },
       { label: "Height", wholeNumber: "", fraction: "" },
       { label: "Radius", wholeNumber: "", fraction: "" },
     ],
@@ -322,7 +320,7 @@ export const shapeOptions: Shape[] = [
     imageSrc: glassImage,
     alt: "Racetrack Oval",
     required_dimensions: [
-      { label: "Base", wholeNumber: "", fraction: ""},
+      { label: "Base", wholeNumber: "", fraction: "" },
       { label: "Height", wholeNumber: "", fraction: "" },
       { label: "Radius", wholeNumber: "", fraction: "" },
     ],
@@ -335,7 +333,7 @@ export const shapeOptions: Shape[] = [
     imageSrc: glassImage,
     alt: "Quarter Round",
     required_dimensions: [
-      { label: "Base", wholeNumber: "", fraction: ""},
+      { label: "Base", wholeNumber: "", fraction: "" },
       { label: "Height", wholeNumber: "", fraction: "" },
       { label: "Radius", wholeNumber: "", fraction: "" },
     ],
@@ -445,14 +443,8 @@ export const fractionRange: string[] = [
   "15 / 16",
 ];
 
-// hard code vs formatting display string for fraction 
-export const smallFractionRange: string[] = [
-  "⅛",
-  "¼",
-  "½",
-  "⅝",
-  "¾",
-];
+// hard code vs formatting display string for fraction
+export const smallFractionRange: string[] = ["⅛", "¼", "½", "⅝", "¾"];
 
 export const thicknessOptions: Thickness[] = [
   { id: "1", thickness: 1 / 8 },
@@ -465,9 +457,9 @@ export const thicknessOptions: Thickness[] = [
 
 export const miscOptions: MiscOptions[] = [
   { id: "1", add_tempered_logo: true },
-  { id: "2", add_tempered_logo: false},
-  { id: "3", add_tempered_logo: true},
-  { id: "4", add_tempered_logo: false},
+  { id: "2", add_tempered_logo: false },
+  { id: "3", add_tempered_logo: true },
+  { id: "4", add_tempered_logo: false },
 ];
 
 export const tintOptions: Tint[] = [

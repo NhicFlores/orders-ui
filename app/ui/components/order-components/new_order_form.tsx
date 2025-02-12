@@ -1,24 +1,31 @@
-'use client';
-
+"use client";
+// DEPRECATED 
 import { createOrder } from "@/lib/actions/actions";
 import { MyButton } from "../my-button";
 import Link from "next/link";
-import { CustomerField} from "@/lib/definitions/definitions";
-import { OrderStatus } from "@/lib/definitions/order-definitions";
+import { CustomerField } from "@/lib/definitions/definitions";
 import { useFormState, useFormStatus } from "react-dom";
- 
-export default function NewOrderForm({ customers }: {customers: CustomerField[]}){
-  //server side validation setup 
-  //initial state can be anything - here we are creat an object with two empty keys: message and errors 
-  const initialState = {message: "", errors: {}};
-  const [state, dispatch] = useFormState(createOrder, initialState);  
+import { OrderStatusOptions } from "@/lib/data-model/enum-types";
+
+export default function NewOrderForm({
+  customers,
+}: {
+  customers: CustomerField[];
+}) {
+  //server side validation setup
+  //initial state can be anything - here we are creat an object with two empty keys: message and errors
+  const initialState = { message: "", errors: {} };
+  const [state, dispatch] = useFormState(createOrder, initialState);
   //{/** continue with aria labels and state */}
-  return(
+  return (
     <form action={dispatch}>
       <div className="rounded-md bg-gray-50 p-4 md:p-6">
         {/* Customer Name */}
         <div className="mb-4">
-          <label htmlFor="customer_id" className="mb-2 block text-sm font-medium">
+          <label
+            htmlFor="customer_id"
+            className="mb-2 block text-sm font-medium"
+          >
             Choose customer
           </label>
           <div className="relative">
@@ -27,7 +34,7 @@ export default function NewOrderForm({ customers }: {customers: CustomerField[]}
               name="customer_id"
               className="peer block w-full cursor-pointer rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
               defaultValue=""
-              aria-describedby='customer-error'
+              aria-describedby="customer-error"
             >
               <option value="" disabled>
                 Select a customer
@@ -39,10 +46,10 @@ export default function NewOrderForm({ customers }: {customers: CustomerField[]}
               ))}
             </select>
           </div>
-          <div id="customer-error" aria-live='polite' aria-atomic='true'>
-            {state.errors?.customer_id && 
+          <div id="customer-error" aria-live="polite" aria-atomic="true">
+            {state.errors?.customer_id &&
               state.errors.customer_id.map((error: string) => (
-                <p className='mt-2 text-sm text-red-500' key={error}>
+                <p className="mt-2 text-sm text-red-500" key={error}>
                   {error}
                 </p>
               ))}
@@ -51,7 +58,10 @@ export default function NewOrderForm({ customers }: {customers: CustomerField[]}
 
         {/* Order Name */}
         <div className="mb-4">
-          <label htmlFor="order_name" className="mb-2 block text-sm font-medium">
+          <label
+            htmlFor="order_name"
+            className="mb-2 block text-sm font-medium"
+          >
             Choose an order name
           </label>
           <div className="relative mt-2 rounded-md">
@@ -59,17 +69,17 @@ export default function NewOrderForm({ customers }: {customers: CustomerField[]}
               <input
                 id="order_name"
                 name="order_name"
-                type='text'
+                type="text"
                 placeholder="Enter Order Name"
                 className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
                 aria-describedby="order_name-error"
               />
             </div>
-            <div id='order_name-error' aria-live='polite' aria-atomic='true'>
+            <div id="order_name-error" aria-live="polite" aria-atomic="true">
               {/* conditionaly rendering for validation error */}
-              {state.errors?.order_name && 
+              {state.errors?.order_name &&
                 state.errors.order_name?.map((error: string) => (
-                  <p className='mt-2 text-sm text-red-500' key={error}>
+                  <p className="mt-2 text-sm text-red-500" key={error}>
                     {error}
                   </p>
                 ))}
@@ -79,7 +89,10 @@ export default function NewOrderForm({ customers }: {customers: CustomerField[]}
 
         {/* Product ID */}
         <div className="mb-4">
-          <label htmlFor="product_id" className="mb-2 block text-sm font-medium">
+          <label
+            htmlFor="product_id"
+            className="mb-2 block text-sm font-medium"
+          >
             Choose a product ID
           </label>
           <div className="relative mt-2 rounded-md">
@@ -87,17 +100,17 @@ export default function NewOrderForm({ customers }: {customers: CustomerField[]}
               <input
                 id="product_id"
                 name="product_id"
-                type='text'
+                type="text"
                 placeholder="Enter product ID"
                 className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
                 aria-describedby="product_id-error"
               />
             </div>
-            <div id='product_id-error' aria-live='polite' aria-atomic='true'>
+            <div id="product_id-error" aria-live="polite" aria-atomic="true">
               {/* conditionaly rendering for validation error */}
-              {state.errors?.product_id && 
+              {state.errors?.product_id &&
                 state.errors.product_id?.map((error: string) => (
-                  <p className='mt-2 text-sm text-red-500' key={error}>
+                  <p className="mt-2 text-sm text-red-500" key={error}>
                     {error}
                   </p>
                 ))}
@@ -115,18 +128,18 @@ export default function NewOrderForm({ customers }: {customers: CustomerField[]}
               <input
                 id="quantity"
                 name="quantity"
-                type='number'
+                type="number"
                 step="1"
                 placeholder="0"
                 className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
                 aria-describedby="quantity-error"
               />
             </div>
-            <div id='quantity-error' aria-live='polite' aria-atomic='true'>
+            <div id="quantity-error" aria-live="polite" aria-atomic="true">
               {/* conditionaly rendering for validation error */}
-              {state.errors?.quantity && 
+              {state.errors?.quantity &&
                 state.errors.quantity?.map((error: string) => (
-                  <p className='mt-2 text-sm text-red-500' key={error}>
+                  <p className="mt-2 text-sm text-red-500" key={error}>
                     {error}
                   </p>
                 ))}
@@ -144,18 +157,18 @@ export default function NewOrderForm({ customers }: {customers: CustomerField[]}
               <input
                 id="price"
                 name="price"
-                type='number'
+                type="number"
                 step="0.01"
                 placeholder="order total"
                 className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
                 aria-describedby="price-error"
               />
             </div>
-            <div id='price-error' aria-live='polite' aria-atomic='true'>
+            <div id="price-error" aria-live="polite" aria-atomic="true">
               {/* conditionaly rendering for validation error */}
-              {state.errors?.price && 
+              {state.errors?.price &&
                 state.errors.price?.map((error: string) => (
-                  <p className='mt-2 text-sm text-red-500' key={error}>
+                  <p className="mt-2 text-sm text-red-500" key={error}>
                     {error}
                   </p>
                 ))}
@@ -174,8 +187,8 @@ export default function NewOrderForm({ customers }: {customers: CustomerField[]}
                 <input
                   id="pending"
                   name="status"
-                  type='radio'
-                  value={OrderStatus.Pending}
+                  type="radio"
+                  value={OrderStatusOptions.Pending}
                   className="h-4 w-4 cursor-pointer border-gray-300 bg-gray-100 text-gray-600 focus:ring-2"
                   aria-describedby="status-error"
                 />
@@ -191,7 +204,7 @@ export default function NewOrderForm({ customers }: {customers: CustomerField[]}
                   id="draft"
                   name="status"
                   type="radio"
-                  value={OrderStatus.Draft}
+                  value={OrderStatusOptions.Draft}
                   className="h-4 w-4 cursor-pointer border-gray-300 bg-gray-100 text-gray-600 focus:ring-2"
                   aria-describedby="status-error"
                 />
@@ -207,7 +220,7 @@ export default function NewOrderForm({ customers }: {customers: CustomerField[]}
                   id="processing"
                   name="status"
                   type="radio"
-                  value={OrderStatus.Processing}
+                  value={OrderStatusOptions.Processing}
                   className="h-4 w-4 cursor-pointer border-gray-300 bg-gray-100 text-gray-600 focus:ring-2"
                   aria-describedby="status-error"
                 />
@@ -223,7 +236,7 @@ export default function NewOrderForm({ customers }: {customers: CustomerField[]}
                   id="shipped"
                   name="status"
                   type="radio"
-                  value={OrderStatus.Shipped}
+                  value={OrderStatusOptions.Shipped}
                   className="h-4 w-4 cursor-pointer border-gray-300 bg-gray-100 text-gray-600 focus:ring-2"
                   aria-describedby="status-error"
                 />
@@ -239,7 +252,7 @@ export default function NewOrderForm({ customers }: {customers: CustomerField[]}
                   id="quote"
                   name="status"
                   type="radio"
-                  value={OrderStatus.Quote}
+                  value={OrderStatusOptions.Quote}
                   className="h-4 w-4 cursor-pointer border-gray-300 bg-gray-100 text-gray-600 focus:ring-2"
                   aria-describedby="status-error"
                 />
@@ -252,20 +265,18 @@ export default function NewOrderForm({ customers }: {customers: CustomerField[]}
               </div>
             </div>
           </div>
-          <div id='status-error' aria-live='polite' aria-atomic='true'>
-                {state.errors?.status && 
-                  state.errors.status.map((error: string) => (
-                    <p className='mt-2 text-sm text-red-500' key={error}>
-                      {error}
-                    </p>
-                  ))}
+          <div id="status-error" aria-live="polite" aria-atomic="true">
+            {state.errors?.status &&
+              state.errors.status.map((error: string) => (
+                <p className="mt-2 text-sm text-red-500" key={error}>
+                  {error}
+                </p>
+              ))}
           </div>
         </fieldset>
-        {state.message && 
-          <p className='mt-2 text-sm text-red-500'>
-            {state.message}
-          </p>
-        }
+        {state.message && (
+          <p className="mt-2 text-sm text-red-500">{state.message}</p>
+        )}
       </div>
       <div className="mt-6 flex justify-end gap-4">
         <Link
@@ -277,7 +288,7 @@ export default function NewOrderForm({ customers }: {customers: CustomerField[]}
         <MyButton type="submit">Submit Order</MyButton>
       </div>
     </form>
-    )
+  );
 }
 
 function SubmitButton() {
@@ -287,6 +298,5 @@ function SubmitButton() {
     <MyButton className="mt-4 w-full" aria-disabled={pending}>
       Submit Order
     </MyButton>
-
-  )
+  );
 }

@@ -17,7 +17,7 @@ import {
   SelectValue,
 } from "../ui/select";
 import { Square } from "lucide-react";
-import { Dimension, Shape } from "@/lib/definitions/order-definitions";
+import { Dimension, Shape } from "@/lib/definitions/product-types";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { GlassThicknessRoute, ShapeRoute } from "@/routes";
