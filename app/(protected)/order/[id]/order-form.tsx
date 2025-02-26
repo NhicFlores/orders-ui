@@ -33,7 +33,7 @@ import {
   OrderStatusOptions,
 } from "@/lib/data-model/enum-types";
 import Link from "next/link";
-import { InvoicePageRoute } from "@/routes";
+import { InvoicePageRoute, NewInvoiceRoute } from "@/routes";
 
 interface OrderDetailFormProps {
   orderDetails?: AllOrderFormFields;
@@ -312,7 +312,7 @@ function InvoiceLink(invoiceId: string, invoiceNumber: string) {
     <div className="flex">
       <Link
         className="flex p-2 group rounded-md border border-transparent transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-        href={InvoicePageRoute(invoiceId)}
+        href={InvoicePageRoute(invoiceId).href}
       >
         <h1 className="text-lg">Invoice: {invoiceNumber}</h1>
         <span className="ml-1 inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
@@ -325,9 +325,12 @@ function InvoiceLink(invoiceId: string, invoiceNumber: string) {
 
 function GenerateInvoiceButton(orderID: string) {
   return (
-    <Button>
-      <Link href={InvoicePageRoute(orderID)}>Generate Invoice</Link>
-    </Button>
+    <Link
+      className="flex p-2 group rounded-md border border-transparent transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
+      href={NewInvoiceRoute.href}
+    >
+      Generate Invoice
+    </Link>
   );
 }
 

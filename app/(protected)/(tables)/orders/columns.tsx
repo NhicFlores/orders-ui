@@ -17,7 +17,7 @@ import Link from "next/link";
 import { deleteOrder } from "@/lib/actions/actions";
 import { formatDateToLocal } from "@/lib/utils";
 import { OrderTableRow } from "@/lib/data-model/query-types";
-import { statusColumnFilter } from "@/app/ui/components/table/table-utils";
+import { statusColumnFilter } from "@/lib/table-utils";
 import { OrderDetailsRoute } from "@/routes";
 
 //TODO: enable shift select

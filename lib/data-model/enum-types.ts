@@ -43,7 +43,10 @@ export const OrderStatusOptions = {
   /** Cancelled by user or admin. */
   Cancelled: "CANCELLED",
 } as const;
-
+// update status values: 
+// 'QUOTE REQUESTED', 'QUOTE SENT', 'QUOTE REVISED', 'QUOTE ACCEPTED', 'QUOTE REJECTED', 
+// 'ORDER CONFIRMED', 'ORDER IN PRODUCTION', 'ORDER SHIPPED', 'ORDER DELIVERED', 
+// 'ORDER CANCELLED', 'ORDER REFUNDED', 'ORDER RETURNED' 
 /**
  * OrderStatus type is a union of all possible OrderStatus values used as the type for the status field in Order objects
  */
@@ -68,6 +71,8 @@ export function isValidOrderStatus(status: any): status is OrderStatus {
 export const InvoiceStatusOptions = {
   /** Invoice has been created but not yet paid. */
   Unpaid: "UNPAID",
+  /**  */
+  Pending: "PENDING",
   /** Invoice has been paid. */
   Paid: "PAID",
   /** Invoice has been refunded. */

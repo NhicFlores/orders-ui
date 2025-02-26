@@ -1,7 +1,8 @@
 ---------------------------------------- NEXT ---------------------------------------- 
 - check for UNDO's before commit and merge 
-
 - how to connect to azure db 
+
+
 
 - make dimension select elements 'required' <select required/>
 
@@ -27,7 +28,46 @@ role base access:
 
 
 NEXT 
+small schema updates
+- date_created => date_updated 
+- created_by => user_id 
 
+customers 
+- customer table 
+- customer profile page 
+- customer form 
+
+refactor shipping and billing forms to use 
+customer information 
+
+order(quote) submission 
+- refactor order flow: order name is low priority and optional so it should be at the end 
+- prompt for contact info to submit 
+- placeholder for rate limiting 
+
+admin dashboard - single page for now 
+- cards to view examples of aggregate data 
+
+inventory: 
+start with preliminary(placeholder) data then get inventory info 
+- data model 
+- admin forms to interact with inventory: CRUD operations 
+
+
+
+
+
+
+
+
+
+
+
+
+
+FUTURE 
+currently checkout isn't needed until payment system and price book are implemented 
+until then, this will track 'quote requests'
 - on checkout 
 	-x- when payment or shipping are chosen, expand the form populated with data 
 	from the chosen object 

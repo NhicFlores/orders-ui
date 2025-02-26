@@ -1,9 +1,9 @@
+//client component containing <DataTable /> component
 "use client";
 
 import {
   ColumnDef,
   SortingState,
-  VisibilityState,
   getSortedRowModel,
   flexRender,
   getCoreRowModel,
@@ -31,11 +31,6 @@ import {
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import {
-  Collapsible,
-  CollapsibleContent,
-  CollapsibleTrigger,
-} from "@/components/ui/collapsible";
 
 import { useState } from "react";
 import { fuzzyOrderFilter } from "@/lib/table-utils";
@@ -45,16 +40,31 @@ interface DataTableProps<TData, TValue> {
   data: TData[];
 }
 // TODO NOTE: calculate performance impact of client-side operations on data
-export function InvoiceDataTable<TData, TValue>({
+export function DataTableWithFilter<TData, TValue>({
   columns,
   data,
 }: DataTableProps<TData, TValue>) {
   const [sorting, setSorting] = useState<SortingState>([]);
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
-  const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({
-    // TODO NOTE: set default visibility in columns definition
-  });
   const [rowSelection, setRowSelection] = useState({});
+  //const [globalFilter, setGlobalFilter] = useState<string>("");
+  //const globalFilter = fuzzyOrderFilter;
+
+  //TODO NOTE: conditionally render filter for existing columns
+
+  // block-scoped variable table used before its initialization
+  // useEffect(() => {
+  //   table.getColumn("status")?.setFilterValue(visibleStatus);
+  // }, [table, visibleStatus]);
+
+  // this cause website to hang, might be caught in asynchronous state update loop
+  // const typedData = data as OrderDetails[];
+  // const filteredData = typedData.filter((order) => {
+  //   console.log("---- FILTERING ----");
+  //   return visibleStatus.some((status) => {
+  //     return status.isVisible && order.status === status.statusValue;
+  //   });
+  // })
 
   const table = useReactTable({
     data: data,
@@ -65,22 +75,33 @@ export function InvoiceDataTable<TData, TValue>({
     getSortedRowModel: getSortedRowModel(),
     onColumnFiltersChange: setColumnFilters,
     getFilteredRowModel: getFilteredRowModel(),
-    onColumnVisibilityChange: setColumnVisibility,
     onRowSelectionChange: setRowSelection,
+    //useGlobalFilter: true,
+    //onGlobalFilterChange: setGlobalFilter,
     filterFns: {
+      // fuzzy: (row, columnId, value, addMeta) => {
+      //   const itemRank = rankItem(row.getValue(columnId), value);
+
+      //   addMeta({ itemRank });
+
+      //   return itemRank.passed;
+      // },
+      // TODO NOTE: experiment with removing fuzzy filter for global filter
       fuzzy: fuzzyOrderFilter,
     },
     globalFilterFn: fuzzyOrderFilter,
     state: {
       sorting,
       columnFilters,
-      columnVisibility,
       rowSelection,
     },
   });
+  // NOTE: CONTINUE IMPLEMENTATION
+  // https://github.com/TanStack/table/discussions/4133
+  // https://tanstack.com/table/latest/docs/guide/column-filtering
 
   return (
-    <div>
+    <div className="data-table-container">
       <div className="flex-1 text-sm text-muted-foreground">
         {table.getFilteredSelectedRowModel().rows.length} of{" "}
         {table.getFilteredRowModel().rows.length} row(s) selected.
@@ -144,32 +165,21 @@ export function InvoiceDataTable<TData, TValue>({
           <TableBody>
             {table.getRowModel().rows?.length ? (
               table.getRowModel().rows.map((row) => (
-                <Collapsible key={row.id} asChild>
-                  <>
-                    <TableRow
-                      key={row.id}
-                      data-state={row.getIsSelected() && "selected"}
-                    >
-                      {row.getVisibleCells().map((cell) => (
-                        <CollapsibleTrigger key={cell.id} asChild>
-                          <TableCell key={cell.id} className="text-center">
-                            {flexRender(
-                              cell.column.columnDef.cell,
-                              cell.getContext()
-                            )}
-                          </TableCell>
-                        </CollapsibleTrigger>
-                      ))}
-                    </TableRow>
-                    <CollapsibleContent asChild>
-                      <tr className="p-4 bg-slate-100">
-                        <td colSpan={row.getVisibleCells().length}>
-                          Collapsible Content
-                        </td>
-                      </tr>
-                    </CollapsibleContent>
-                  </>
-                </Collapsible>
+                <>
+                  <TableRow
+                    key={row.id}
+                    data-state={row.getIsSelected() && "selected"}
+                  >
+                    {row.getVisibleCells().map((cell) => (
+                      <TableCell key={cell.id} className="text-center">
+                        {flexRender(
+                          cell.column.columnDef.cell,
+                          cell.getContext()
+                        )}
+                      </TableCell>
+                    ))}
+                  </TableRow>
+                </>
               ))
             ) : (
               <TableRow>

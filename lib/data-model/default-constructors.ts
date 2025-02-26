@@ -84,3 +84,4 @@ export const getDefaultOrderItemValues = (): NewOrderItem => ({
     quantity: 1,
     note: "",
   })
+

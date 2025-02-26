@@ -256,6 +256,11 @@ export const OrderItemTable = dbSchema.table("order_item", {
   note: varchar("note", { length: 255 }),
 });
 
+  // change all date_created fields to date_updated fields
+  // date sent to customer 
+  // invoice_date: Date;
+  // date paid by customer 
+  // date_paid: Date;
 export const OrderInvoiceTable = dbSchema.table("order_invoice", {
   order_invoice_id: uuid("order_invoice_id")
     .defaultRandom()

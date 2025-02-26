@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { InvoiceTableRow } from "@/lib/data-model/query-types";
 import { formatDateToLocal } from "@/lib/utils";
+import { InvoicePageRoute } from "@/routes";
 import { ColumnDef } from "@tanstack/react-table";
 import { ArrowUpDown } from "lucide-react";
 import Link from "next/link";
@@ -29,24 +30,25 @@ export const InvoiceColumns: ColumnDef<InvoiceTableRow>[] = [
     ),
   },
   {
-    accessorKey: "invoice_id",
+    accessorKey: "invoice_number",
     header: ({ column }) => {
       return (
         <Button
           variant={"ghost"}
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
-          Invoice Id
+          Invoice Number
           <ArrowUpDown className="ml-2 h-4 w-4" />
         </Button>
       );
     },
-    cell: ({ row }) => (
-      // TODO NOTE: create order page, invoice page, and customer page to link to
-      <Link href={`/orders/${row.original.order_invoice_id}`}>
-        <div className="text-blue-500">{row.original.order_invoice_id}</div>
-      </Link>
-    ),
+    cell: ({ row }) => {
+      return (
+        <Link className="hover:underline hover:text-blue-500 p-2" href={InvoicePageRoute(row.original.order_invoice_id).href}>
+          {row.original.invoice_number}
+        </Link>
+      );
+    },
   },
   {
     accessorKey: "customer_name",

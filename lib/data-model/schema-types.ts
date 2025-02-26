@@ -3,6 +3,7 @@
 // ex: date_submitted: Date | null; instead of date_submitted?: Date;
 // this way, we can avoid having to set it to undefined if it comes back as null from the database
 
+import { UserTable } from "@/drizzle/schema";
 import { OrderStatus, UserRole } from "./enum-types";
 import {
   BillingFields,
@@ -18,6 +19,8 @@ export type User = {
   role: UserRole;
   is_active: boolean;
 };
+
+export type SchemaUser = typeof UserTable.$inferSelect
 
 // user-specific data that is subject to user manipulation which is
 // why it is separate from the user object and user table
@@ -161,7 +164,17 @@ export type OrderItem = {
   quantity: number;
   note?: string;
 };
-
+/**
+ * corresponds to the OrderInvoice table 
+ * @field order_invoice_id: string
+ * @field created_by: string
+ * @field order_id: string
+ * @field customer_id: string
+ * @field invoice_number: string
+ * @field status: string
+ * @field amount: number
+ * @field date_created: Date
+ */
 export type OrderInvoice = {
   order_invoice_id: string;
   // user_id of the user that entered the order
@@ -171,5 +184,10 @@ export type OrderInvoice = {
   invoice_number: string;
   status: string;
   amount: number;
+  // change all date_created fields to date_updated fields
   date_created: Date;
+  // date sent to customer 
+  // invoice_date: Date;
+  // date paid by customer 
+  // date_paid: Date;
 };

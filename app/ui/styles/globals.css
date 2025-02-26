@@ -2,6 +2,10 @@
   @tailwind components;
   @tailwind utilities;
 
+  .data-table-container {
+    @apply flex flex-col items-center  m-5 w-full;
+  }
+
   @layer base {
     :root {
       --background: 0 0% 100%;

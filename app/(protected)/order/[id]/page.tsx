@@ -5,7 +5,7 @@ import { ItemTable } from "./item-table";
 import { columns } from "./order-item-columns";
 import {
   fetchCustomers,
-  fetchOrderById,
+  fetchOrderFormFieldsById,
   fetchAllOrderFormFieldsById,
   fetchOrderInvoiceField,
   fetchOrderItems,
@@ -22,7 +22,7 @@ const OrderPage = async ({ params }: { params: { id: string } }) => {
   // const orderInvoiceId = await fetchOrderInvoiceNumber(params.id);
   // const orderItems = await fetchOrderItems(params.id);
   const [order, orderInvoiceField, orderItems, customers] = await Promise.all([
-    fetchOrderById(params.id),
+    fetchOrderFormFieldsById(params.id),
     fetchOrderInvoiceField(params.id),
     fetchOrderItems(params.id),
     fetchCustomers(),

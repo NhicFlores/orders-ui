@@ -340,7 +340,45 @@ scripts
 dev: runs next dev to start Next.js in development mode.
 build: runs next build to build the application for production usage.
 start: runs next start to start a Next.js production server.
-lint: runs next lint to set up Next.js' built-in ESLint configuration.
+lint: runs next lint to set up Next.js' built-in ESLint configuration. 
+
+navigation 
+https://www.geeksforgeeks.org/difference-between-nextjs-link-vs-userouter-in-navigating/ 
+https://www.reddit.com/r/nextjs/comments/1csgf5q/routerpush_vs_link/?rdt=39363 
+https://stackoverflow.com/questions/65086108/next-js-link-vs-router-push-vs-a-tag 
+useRouter: allows for programmatic navigation; direct users to specific routes based on some logic; conditional navigation 
+- this does not generate an <a> tag, which means it will not be detected by web crawlers, 
+negatively impacting SEO 
+<Link>: creates <a> tag when you pass a string as the child, creating the behavior of a 
+Single Page App which is good for SEO. if you pass another element, such as a <div> tag, 
+the <Link> component will not generate an <a> tag, it will instead use the Router object, eliminating 
+the SEO benefits 
+<a> tag: creates a standard hyperlink which directs user to the url as a new page 
+
+So it really comes down to the principle of least surprise. There are some globally accepted principles around when to use links, 
+when to use buttons, and when to use programmatic redirection (router.push)
+
+Fundamentally, links (a tags) are semantically designed to take a user to a new destination either on the same page or to a new page. 
+They are easy for screen readers for accessibility and search engines to crawl with minimal work thus improving SEO. 
+Furthermore, links always answer the question “I want to go here” and typically result in a change in the URL. 
+It also gives your user the option to copy the link to share instead of navigating. Finally, links require no additional JavaScript to 
+function thus reducing your bundle. In the old days there was even a possibility where someone could view your page with NO JavaScript 
+enabled rendering all of your buttons dead except for the links
+
+By contrast, the programmatic approach is usually an option where you need to conditionally take the user somewhere as a RESULT of 
+another determinant action. The classic example being: a user creates a new blog post. You need to first save the blog to your database, 
+then take the user to either the success page, list of blogs published page, or even to the live post. These interactions are determined 
+based on the result of the previous action. If the save fails, you don’t want to take the user to the live page because there isn’t one. 
+So they are a part of a greater workflow. This approach answers the question “now that I’ve done this action successfully, I want to go here”
+
+A button is usually used to facilitate the first step of this type of workflow, but not always
+
+Note that you can combine links in the second workflow as well to ask the user where they want to go next. For example, the user saves the blog 
+ and a modal appears with a prompt asking the user if they want to go back to the blog list page (link), go to the live blog post (link) or create a new 
+ blog (button which resets the form). It’s not required but I just wanted to highlight another use case
+
+For the question of SEO and accessibility, you can get pretty close with the aria tags on buttons to guide screen readers, 
+but the link is immediately understood
 
 ------------------------------------ TypeScript ------------------------------------
 -

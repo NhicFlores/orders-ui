@@ -39,7 +39,7 @@ import {
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
 
-import { fuzzyOrderFilter, statusColumnFilter } from "./table/table-utils";
+import { fuzzyOrderFilter, statusColumnFilter } from "../../../lib/table-utils";
 import OrderDetailTable from "@/app/(protected)/(tables)/order-detail-table";
 import { OrderDetailColumns } from "@/app/(protected)/(tables)/order-detail-columns";
 import {

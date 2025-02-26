@@ -27,13 +27,6 @@ export const NewOrderRoute = {
   href: "/order/new_order",
 };
 
-/*
-export const EditOrderRoute = {
-  label: "Edit Order",
-  href: 
-}
-*/
-
 export const OrderTableRoute = {
   label: "Orders",
   href: "/orders",
@@ -62,7 +55,18 @@ export const InvoicePageRoute = (invoice_id: string) => {
     label: "Invoice",
     href: `/invoice/${invoice_id}`,
   };
-}
+};
+
+export const NewInvoiceRoute = {
+  label: "New Invoice",
+  href: "/invoice/new_invoice",
+};
+
+export const CustomerRoute = {
+  label: "Customers",
+  href: "/customer/table",
+  detailPage: (customerId: string) => `/customer/${customerId}`,
+};
 
 // product routes
 export const NewOrderNameRoute = {
@@ -124,6 +128,7 @@ export const HeaderRoutes = [
   OrderTableRoute,
   DraftRoute,
   InvoiceRoute,
+  CustomerRoute,
 ];
 
 //dashboard nav links

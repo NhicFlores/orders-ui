@@ -2,6 +2,7 @@
 // fetch functions for users
 
 import {
+  Customer,
   CustomerBillingInformation,
   CustomerShippingInformation,
 } from "../data-model/schema-types";
@@ -9,8 +10,159 @@ import { db } from "@/drizzle/db";
 import {
   CustomerBillingInformationTable,
   CustomerShippingInformationTable,
+  CustomerTable,
+  OrderInvoiceTable,
+  OrderTable,
 } from "@/drizzle/schema";
-import { eq } from "drizzle-orm";
+import { and, eq, not, or, sql } from "drizzle-orm";
+import { CustomerTableRow } from "../data-model/query-types";
+import { InvoiceStatusOptions, OrderStatusOptions } from "../data-model/enum-types";
+
+export async function getCustomers(): Promise<Customer[]> {
+  try {
+    const result = await db.select().from(CustomerTable);
+
+    const customers = result.map((row) => {
+      return {
+        ...row,
+        credit_limit: parseFloat(row.credit_limit.toString()),
+        date_created: new Date(row.date_created),
+        date_updated: new Date(row.date_updated),
+      };
+    });
+
+    return customers;
+  } catch (error) {
+    console.error("Failed to fetch customers:", error);
+    throw new Error("Failed to fetch customers.");
+  }
+}
+
+export async function fetchCustomerData() {
+  const result = await db
+    .select({
+      customer_id: CustomerTable.customer_id,
+      name: CustomerTable.name,
+      account_num: CustomerTable.account_num,
+      credit_status: CustomerTable.credit_status,
+      credit_limit: CustomerTable.credit_limit,
+      unpaid_invoice_count:
+        sql`COUNT(${OrderInvoiceTable.order_invoice_id}) FILTER (WHERE ${OrderInvoiceTable.status} = 'UNPAID')`.as(
+          "unpaid_invoice_count"
+        ),
+      unpaid_invoice_sum:
+        sql`SUM(${OrderInvoiceTable.amount}) FILTER (WHERE ${OrderInvoiceTable.status} = 'UNPAID')`.as(
+          "unpaid_invoice_sum"
+        ),
+      paid_invoice_sum:
+        sql`SUM(${OrderInvoiceTable.amount}) FILTER (WHERE ${OrderInvoiceTable.status} = 'PAID')`.as(
+          "paid_invoice_sum"
+        ),
+      order_count: sql`COUNT(${OrderTable.order_id})`.as("order_count"),
+      most_recent_order_date: sql`MAX(${OrderTable.date_drafted})`.as(
+        "most_recent_order_date"
+      ),
+    })
+    .from(CustomerTable)
+    .leftJoin(
+      OrderInvoiceTable,
+      sql`${CustomerTable.customer_id} = ${OrderInvoiceTable.customer_id}`
+    )
+    .leftJoin(
+      OrderTable,
+      sql`${CustomerTable.customer_id} = ${OrderTable.customer_id}`
+    )
+    .groupBy(
+      CustomerTable.customer_id,
+      CustomerTable.name,
+      CustomerTable.account_num,
+      CustomerTable.credit_status,
+      CustomerTable.credit_limit
+    );
+
+  return result;
+}
+
+export async function getOrderByFilter() {
+  try {
+    const result = await db
+      .select()
+      .from(OrderTable)
+      .where(
+        and(
+          not(eq(OrderTable.status, OrderStatusOptions.Draft)),
+          not(eq(OrderTable.status, OrderStatusOptions.Cancelled))
+        )
+      );
+
+    return result;
+  } catch (error) {
+    console.error("Failed to fetch orders:", error);
+    throw new Error("Failed to fetch orders.");
+  }
+}
+
+/**
+ * this query fetches aggregate data from the invoice and order tables
+ * for each customer in the customer table
+ * @returns
+ */
+export async function getCustomerTableData(): Promise<CustomerTableRow[]> {
+  try {
+    const result = await db
+      .select({
+        customer_id: CustomerTable.customer_id,
+        name: CustomerTable.name,
+        account_num: CustomerTable.account_num,
+        credit_status: CustomerTable.credit_status,
+        credit_limit: CustomerTable.credit_limit,
+        // NOTE TODO: need to update this function to get UNPAID invoices instead of PENDING; need to update test data first 
+        unpaid_invoice_count: sql<number>`COUNT(${OrderInvoiceTable.order_invoice_id}) FILTER (WHERE ${OrderInvoiceTable.status} = '${sql.raw(InvoiceStatusOptions.Pending)}')`.as("unpaid_invoice_count"),
+        unpaid_invoice_sum: sql<number>`SUM(${OrderInvoiceTable.amount}) FILTER (WHERE ${OrderInvoiceTable.status} = '${sql.raw(InvoiceStatusOptions.Pending)}')`.as("unpaid_invoice_sum"),
+        total_spent: sql<number>`SUM(${OrderInvoiceTable.amount}) FILTER (WHERE ${OrderInvoiceTable.status} = '${sql.raw(InvoiceStatusOptions.Paid)}')`.as("total_spent"),
+        order_count: sql<number>`COUNT(${OrderTable.order_id})`.as("order_count"),
+        latest_order_date: sql<string>`MAX(${OrderTable.date_submitted})`.as("latest_order_date")
+      })
+      .from(CustomerTable)
+      .leftJoin(OrderInvoiceTable, eq(OrderInvoiceTable.customer_id, CustomerTable.customer_id))
+      .leftJoin(
+        OrderTable,
+        and(
+          eq(OrderTable.customer_id, CustomerTable.customer_id),
+          and(
+            not(eq(OrderTable.status, OrderStatusOptions.Draft)),
+            not(eq(OrderTable.status, OrderStatusOptions.Cancelled))
+          )
+        )
+      )
+      .groupBy(
+        CustomerTable.customer_id,
+        CustomerTable.name, 
+        CustomerTable.account_num,
+        CustomerTable.credit_status,
+        CustomerTable.credit_limit
+      );
+
+    const tableRows = result.map((row) => {
+      const creditLimit = parseFloat(row.credit_limit)
+      const unpaidInvoiceSum = parseFloat(row.unpaid_invoice_sum.toString())
+      return {
+        ...row,
+        credit_limit: creditLimit,
+        balance: creditLimit - unpaidInvoiceSum,
+        total_spent: parseFloat(row.total_spent.toString()),
+        // order_count: parseInt(row.order_count.toString()),
+        latest_order_date: new Date(row.latest_order_date),
+      }
+    })
+
+    return tableRows;
+    // return result
+  } catch (error) {
+    console.error("Failed to fetch customer table data:", error);
+    throw new Error("Failed to fetch customer table data.");
+  }
+}
 
 export async function getBillingInfoByCustomerId(customerId: string) {
   try {
