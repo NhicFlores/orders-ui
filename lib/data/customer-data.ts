@@ -26,7 +26,6 @@ export async function getCustomers(): Promise<Customer[]> {
       return {
         ...row,
         credit_limit: parseFloat(row.credit_limit.toString()),
-        date_created: new Date(row.date_created),
         date_updated: new Date(row.date_updated),
       };
     });
@@ -59,7 +58,7 @@ export async function fetchCustomerData() {
           "paid_invoice_sum"
         ),
       order_count: sql`COUNT(${OrderTable.order_id})`.as("order_count"),
-      most_recent_order_date: sql`MAX(${OrderTable.date_drafted})`.as(
+      most_recent_order_date: sql`MAX(${OrderTable.date_submitted})`.as(
         "most_recent_order_date"
       ),
     })
@@ -144,12 +143,10 @@ export async function getCustomerTableData(): Promise<CustomerTableRow[]> {
       );
 
     const tableRows = result.map((row) => {
-      const creditLimit = parseFloat(row.credit_limit)
       const unpaidInvoiceSum = parseFloat(row.unpaid_invoice_sum.toString())
       return {
         ...row,
-        credit_limit: creditLimit,
-        balance: creditLimit - unpaidInvoiceSum,
+        balance: row.credit_limit - unpaidInvoiceSum,
         total_spent: parseFloat(row.total_spent.toString()),
         // order_count: parseInt(row.order_count.toString()),
         latest_order_date: new Date(row.latest_order_date),

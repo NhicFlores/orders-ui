@@ -119,20 +119,20 @@ export const InvoiceColumns: ColumnDef<InvoiceTableRow>[] = [
     },
   },
   {
-    accessorKey: "date_created",
+    accessorKey: "invoice_date",
     header: ({ column }) => {
       return (
         <Button
           variant={"ghost"}
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
-          Date Created
+          Invoice Date
           <ArrowUpDown className="ml-2 h-4 w-4" />
         </Button>
       );
     },
     cell: ({ row }) => {
-      const date = row.original.date_created;
+      const date = row.original.invoice_date;
       const cellData = date ? formatDateToLocal(new Date(date)) : "N/A";
       return <div>{cellData}</div>;
     },

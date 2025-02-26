@@ -9,7 +9,7 @@ const CustomerTablePage = async () => {
     const customers = await getCustomers();
     // console.log(customers);
     const customerData = await getCustomerTableData();
-    console.log("CUSTOMER DATA COUNT", customerData);
+    // console.log("CUSTOMER DATA COUNT", customerData);
 
     // const filteredOrders = await getOrderByFilter();
     // console.log("FILTERED ORDERS COUNT", filteredOrders.length);

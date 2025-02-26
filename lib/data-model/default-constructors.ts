@@ -39,7 +39,7 @@ export const getDefaultBillingValues = () => ({
  * @returns NewOrder object initialized with default values
  */
 export const getDefaultOrderValues = (): NewOrder => ({
-  created_by: "", // RESEARCH NOTE: where should the user id be set - server or client side?
+  user_id: "", // RESEARCH NOTE: where should the user id be set - server or client side?
   customer_id: "",
   order_name: "",
   shipping_data: {
@@ -67,7 +67,6 @@ export const getDefaultOrderValues = (): NewOrder => ({
     is_active: false,
   },
   status: OrderStatusOptions.Draft,
-  date_drafted: new Date(),
   date_updated: new Date(),
   date_submitted: null,
   date_shipped: null,

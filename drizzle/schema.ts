@@ -7,7 +7,6 @@ import { sql } from "drizzle-orm";
 import {
   boolean,
   check,
-  decimal,
   integer,
   jsonb,
   pgSchema,
@@ -83,11 +82,10 @@ export const CustomerTable = dbSchema.table("customer", {
   type: varchar("type", { length: 255 }).notNull(),
   account_num: varchar("account_num", { length: 255 }).unique().notNull(),
   credit_status: varchar("credit_status", { length: 255 }).notNull(),
-  credit_limit: decimal("credit_limit", { precision: 10, scale: 2 }).notNull(),
+  credit_limit: integer("credit_limit").notNull(),
   // credit_terms
   // credit_balance
   // payment type
-  date_created: timestamp("date_created", { withTimezone: true }).notNull(),
   date_updated: timestamp("date_updated", { withTimezone: true }).notNull(),
 });
 
@@ -150,7 +148,6 @@ export const InventoryProductTable = dbSchema.table("inventory_product", {
   alt: varchar("alt", { length: 255 }).notNull(),
   description: varchar("description", { length: 255 }).notNull(),
   config_options: jsonb("config_options").notNull(),
-  date_created: timestamp("date_created", { withTimezone: true }).notNull(),
   date_updated: timestamp("date_updated", { withTimezone: true }).notNull(),
   updated_by: varchar("updated_by").notNull(),
 });
@@ -169,7 +166,6 @@ export const InventoryGlassTable = dbSchema.table("inventory_glass_item", {
   // quantity_on_order: integer("quantity"),
   // supplier_id: uuid("supplier_id").notNull(), // not necessary as a standalone field since it'll be part of supply orders
   quantity_incoming: jsonb("quantity_incoming").notNull(),
-  date_created: timestamp("date_created", { withTimezone: true }).notNull(),
   date_updated: timestamp("date_updated", { withTimezone: true }).notNull(),
   updated_by: varchar("updated_by").notNull(),
   // name of user instead of id incase user is deleted
@@ -189,7 +185,7 @@ export const OrderTable = dbSchema.table(
   {
     order_id: uuid("order_id").defaultRandom().primaryKey().notNull(),
     // TODO NOTE: set onDelete action; instead of "cascade," we need to set an action to archive records
-    created_by: uuid("created_by")
+    user_id: uuid("user_id")
       .notNull()
       .references(() => UserTable.id, { onDelete: "cascade" }),
     // customer name; auto-populated if entered by a user that is a customer,
@@ -200,22 +196,18 @@ export const OrderTable = dbSchema.table(
     order_name: varchar("order_name", { length: 255 }).notNull(),
     order_number: varchar("order_number", { length: 255 }).notNull(),
     shipping_data: jsonb("shipping_data").$type<ShippingFields>().notNull(),
-    billing_data: jsonb("billing_data")
-      .$type<BillingFields>()
-      .notNull(),
+    billing_data: jsonb("billing_data").$type<BillingFields>().notNull(),
     status: varchar("status", { length: 255 }).notNull(),
-    amount: decimal("amount", { precision: 10, scale: 2 }).notNull(),
+    amount: integer("amount").notNull(),
     // IMPLEMENTATION NOTE: metadata object for storing additional order details
     // TODO NOTE: refactor timestamp columns into separate ts file to import and spread
     // across multiple tables without having to rewrite
     // https://orm.drizzle.team/docs/sql-schema-declaration
     // TODO NOTE: determine if mode: string is needed
-    // TODO NOTE: date_created is only useful for drafts. date_submitted is used for pending orders
-    // date_created field name should be updated to date_drafted
     // date_quoted may be useful for tracking purposes
-    date_drafted: timestamp("date_drafted", { withTimezone: true }).notNull(),
     date_updated: timestamp("date_updated", { withTimezone: true }).notNull(),
     date_submitted: timestamp("date_submitted", { withTimezone: true }),
+    // date_quoted: timestamp("date_quoted", { withTimezone: true }),
     date_shipped: timestamp("date_shipped", { withTimezone: true }),
     date_delivered: timestamp("date_delivered", { withTimezone: true }),
   },
@@ -256,17 +248,17 @@ export const OrderItemTable = dbSchema.table("order_item", {
   note: varchar("note", { length: 255 }),
 });
 
-  // change all date_created fields to date_updated fields
-  // date sent to customer 
-  // invoice_date: Date;
-  // date paid by customer 
-  // date_paid: Date;
+// change all date_created fields to date_updated fields
+// date sent to customer
+// invoice_date: Date;
+// date paid by customer
+// date_paid: Date;
 export const OrderInvoiceTable = dbSchema.table("order_invoice", {
   order_invoice_id: uuid("order_invoice_id")
     .defaultRandom()
     .primaryKey()
     .notNull(),
-  created_by: uuid("created_by")
+  user_id: uuid("user_id")
     .notNull()
     .references(() => UserTable.id, { onDelete: "cascade" }),
   order_id: uuid("order_id")
@@ -278,6 +270,7 @@ export const OrderInvoiceTable = dbSchema.table("order_invoice", {
   invoice_number: varchar("invoice_number", { length: 255 }).notNull(),
   // example: "INV" + order_id + date_created
   status: varchar("status", { length: 255 }).notNull(),
-  amount: decimal("amount", { precision: 10, scale: 2 }).notNull(),
-  date_created: timestamp("date_created", { withTimezone: true }).notNull(),
+  amount: integer("amount").notNull(),
+  invoice_date: timestamp("invoice_date", { withTimezone: true }).notNull(),
+  date_updated: timestamp("date_updated", { withTimezone: true }).notNull(),
 });

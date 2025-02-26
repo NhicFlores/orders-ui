@@ -36,7 +36,7 @@ export async function fetchAllOrderFormFieldsById(
     const result = await db
       .select({
         order_id: OrderTable.order_id, // programmatic
-        created_by: OrderTable.created_by, // programmatic
+        user_id: OrderTable.user_id, // programmatic
         customer_id: OrderTable.customer_id, // programmatic
         order_name: OrderTable.order_name, //
         order_number: OrderTable.order_number, // modifiable conditionally
@@ -44,7 +44,6 @@ export async function fetchAllOrderFormFieldsById(
         billing_data: OrderTable.billing_data, // modifiable conditionally
         status: OrderTable.status, // programmatic
         amount: OrderTable.amount, // modifiable conditionally
-        date_drafted: OrderTable.date_drafted, // programmatic
         date_updated: OrderTable.date_updated, // programmatic
         date_submitted: OrderTable.date_submitted, // programmatic
         date_shipped: OrderTable.date_shipped, // modifiable conditionally
@@ -62,7 +61,7 @@ export async function fetchAllOrderFormFieldsById(
       .where(eq(OrderTable.order_id, orderId))
       .leftJoin(
         UserProfileTable,
-        eq(OrderTable.created_by, UserProfileTable.user_id)
+        eq(OrderTable.user_id, UserProfileTable.user_id)
       )
       .leftJoin(
         OrderInvoiceTable,
@@ -99,10 +98,9 @@ export async function fetchAllOrderFormFieldsById(
       status: isValidOrderStatus(result[0].status)
         ? result[0].status
         : OrderStatusOptions.Draft,
-      amount: parseFloat(result[0].amount),
+      amount: result[0].amount,
       shipping_data: result[0].shipping_data as ShippingFields,
       billing_data: result[0].billing_data as BillingFields,
-      date_drafted: new Date(result[0].date_drafted),
       date_updated: new Date(result[0].date_updated),
       date_submitted: result[0].date_submitted
         ? new Date(result[0].date_submitted)
@@ -136,7 +134,7 @@ export async function fetchOrderFormFieldsById(
       .select({
         // order table
         order_id: OrderTable.order_id,
-        created_by: OrderTable.created_by,
+        user_id: OrderTable.user_id,
         customer_id: OrderTable.customer_id,
         order_name: OrderTable.order_name,
         order_number: OrderTable.order_number,
@@ -144,7 +142,6 @@ export async function fetchOrderFormFieldsById(
         billing_data: OrderTable.billing_data,
         status: OrderTable.status,
         amount: OrderTable.amount,
-        date_drafted: OrderTable.date_drafted,
         date_updated: OrderTable.date_updated,
         date_submitted: OrderTable.date_submitted,
         date_shipped: OrderTable.date_shipped,
@@ -161,7 +158,7 @@ export async function fetchOrderFormFieldsById(
       .where(eq(OrderTable.order_id, orderId))
       .leftJoin(
         UserProfileTable,
-        eq(OrderTable.created_by, UserProfileTable.user_id)
+        eq(OrderTable.user_id, UserProfileTable.user_id)
       )
       .leftJoin(
         CustomerTable,
@@ -175,8 +172,7 @@ export async function fetchOrderFormFieldsById(
       status: isValidOrderStatus(result[0].status)
         ? result[0].status
         : OrderStatusOptions.Draft,
-      amount: parseFloat(result[0].amount),
-      date_drafted: new Date(result[0].date_drafted),
+      amount: result[0].amount,
       date_updated: new Date(result[0].date_updated),
       date_submitted: result[0].date_submitted
         ? new Date(result[0].date_submitted)
@@ -272,7 +268,7 @@ export async function fetchCustomers(): Promise<Customer[]> {
         credit_status: row.credit_status
           ? row.credit_status
           : "No credit status",
-        credit_limit: row.credit_limit ? parseFloat(row.credit_limit) : 0,
+        credit_limit: row.credit_limit ?? 0,
       };
     });
 
@@ -311,9 +307,7 @@ export async function fetchOrderCustomerObject(
 
     const customer: Customer = {
       ...customerResult[0],
-      credit_limit: customerResult[0].credit_limit
-        ? parseFloat(customerResult[0].credit_limit)
-        : 0,
+      credit_limit: customerResult[0].credit_limit ?? 0,
     };
 
     const order: Order = {
@@ -321,7 +315,7 @@ export async function fetchOrderCustomerObject(
       status: isValidOrderStatus(orderResult[0].status)
         ? orderResult[0].status
         : OrderStatusOptions.Draft,
-      amount: parseFloat(orderResult[0].amount),
+      amount: orderResult[0].amount,
     };
 
     console.log(" ");

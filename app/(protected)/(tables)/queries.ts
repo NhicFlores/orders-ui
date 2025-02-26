@@ -20,6 +20,7 @@ import {
   OrderStatusOptions,
 } from "@/lib/data-model/enum-types";
 import { getDefaultBillingValues } from "@/lib/data-model/default-constructors";
+import { date } from "drizzle-orm/mysql-core";
 
 /**
  * this function fetches data necessary to populate the Order Table
@@ -30,7 +31,7 @@ export async function fetchOrderTableData(): Promise<OrderTableRow[]> {
     const result = await db
       .select({
         order_id: OrderTable.order_id,
-        created_by: OrderTable.created_by,
+        user_id: OrderTable.user_id,
         customer_id: OrderTable.customer_id,
         order_name: OrderTable.order_name,
         order_number: OrderTable.order_number,
@@ -40,7 +41,6 @@ export async function fetchOrderTableData(): Promise<OrderTableRow[]> {
         // NOTE: billing, shipping, and order items will be removed from order table 
         billing_data: OrderTable.billing_data,
         status: OrderTable.status,
-        date_drafted: OrderTable.date_drafted,
         date_updated: OrderTable.date_updated,
         date_submitted: OrderTable.date_submitted,
         date_shipped: OrderTable.date_shipped,
@@ -56,7 +56,7 @@ export async function fetchOrderTableData(): Promise<OrderTableRow[]> {
       .from(OrderTable)
       .leftJoin(
         UserProfileTable,
-        eq(OrderTable.created_by, UserProfileTable.user_id)
+        eq(OrderTable.user_id, UserProfileTable.user_id)
       )
       .leftJoin(
         OrderInvoiceTable,
@@ -70,7 +70,7 @@ export async function fetchOrderTableData(): Promise<OrderTableRow[]> {
     const reducedResult = result.reduce<OrderTableRow[]>((acc, row) => {
       const orderDetails = {
         order_id: row.order_id,
-        created_by: row.created_by,
+        user_id: row.user_id,
         customer_id: row.customer_id,
         order_name: row.order_name,
         order_number: row.order_number,
@@ -79,12 +79,12 @@ export async function fetchOrderTableData(): Promise<OrderTableRow[]> {
         status: isValidOrderStatus(row.status)
           ? row.status
           : OrderStatusOptions.Draft,
-        date_drafted: row.date_drafted,
         date_updated: row.date_updated,
         date_submitted: row.date_submitted ? row.date_submitted : null,
         date_shipped: row.date_shipped ? row.date_shipped : null,
         date_delivered: row.date_delivered ? row.date_delivered : null,
-        amount: row.invoice_amount ? parseFloat(row.invoice_amount) : 0,
+        // amount: row.invoice_amount ? parseFloat(row.invoice_amount) : 0,
+        amount: row.invoice_amount ?? 0,
         order_invoice_id: row.order_invoice_id ? row.order_invoice_id : "",
         ordered_by: row.ordered_by as string,
         order_items: [],
@@ -125,14 +125,13 @@ export async function getOrderDetailsByStatus(
     const result = await db
       .select({
         order_id: OrderTable.order_id,
-        created_by: OrderTable.created_by,
+        user_id: OrderTable.user_id,
         customer_id: OrderTable.customer_id,
         order_name: OrderTable.order_name,
         order_number: OrderTable.order_number,
         shipping_data: OrderTable.shipping_data,
         billing_data: OrderTable.billing_data,
         status: OrderTable.status,
-        date_drafted: OrderTable.date_drafted,
         date_updated: OrderTable.date_updated,
         date_submitted: OrderTable.date_submitted,
         date_shipped: OrderTable.date_shipped,
@@ -149,7 +148,7 @@ export async function getOrderDetailsByStatus(
       .where(eq(OrderTable.status, status))
       .leftJoin(
         UserProfileTable,
-        eq(OrderTable.created_by, UserProfileTable.user_id)
+        eq(OrderTable.user_id, UserProfileTable.user_id)
       )
       .leftJoin(
         OrderInvoiceTable,
@@ -164,7 +163,7 @@ export async function getOrderDetailsByStatus(
     const reducedResult = result.reduce<OrderTableRow[]>((acc, row) => {
       const orderDetails = {
         order_id: row.order_id,
-        created_by: row.created_by,
+        user_id: row.user_id,
         customer_id: row.customer_id,
         order_name: row.order_name,
         order_number: row.order_number,
@@ -173,12 +172,11 @@ export async function getOrderDetailsByStatus(
         status: isValidOrderStatus(row.status)
           ? row.status
           : OrderStatusOptions.Draft,
-        date_drafted: row.date_drafted,
         date_updated: row.date_updated,
         date_submitted: row.date_submitted ? row.date_submitted : null,
         date_shipped: row.date_shipped ? row.date_shipped : null,
         date_delivered: row.date_delivered ? row.date_delivered : null,
-        amount: row.invoice_amount ? parseFloat(row.invoice_amount) : 0,
+        amount: row.invoice_amount ? row.invoice_amount : 0,
         order_invoice_id: row.order_invoice_id ? row.order_invoice_id : "",
         ordered_by: row.ordered_by as string,
         order_items: [],
@@ -218,13 +216,14 @@ export async function fetchInvoiceTableData(): Promise<InvoiceTableRow[]> {
       .select({
         // invoice table columns
         order_invoice_id: OrderInvoiceTable.order_invoice_id,
-        created_by: OrderInvoiceTable.created_by,
+        user_id: OrderInvoiceTable.user_id,
         order_id: OrderInvoiceTable.order_id,
         customer_id: OrderInvoiceTable.customer_id,
         invoice_number: OrderInvoiceTable.invoice_number,
         status: OrderInvoiceTable.status,
         amount: OrderInvoiceTable.amount,
-        date_created: OrderInvoiceTable.date_created,
+        invoice_date: OrderInvoiceTable.invoice_date,
+        date_updated: OrderInvoiceTable.date_updated,
         // customer table columns
         customer_name: CustomerTable.name,
         // user profile table columns
@@ -244,7 +243,7 @@ export async function fetchInvoiceTableData(): Promise<InvoiceTableRow[]> {
       )
       .leftJoin(
         UserProfileTable,
-        eq(OrderInvoiceTable.created_by, UserProfileTable.user_id)
+        eq(OrderInvoiceTable.user_id, UserProfileTable.user_id)
       )
       .leftJoin(
         OrderTable,
@@ -256,7 +255,7 @@ export async function fetchInvoiceTableData(): Promise<InvoiceTableRow[]> {
       // console.log(typeof row.created_by_name)
       return {
         ...row,
-        amount: parseFloat(row.amount),
+        // amount: parseFloat(row.amount),
         customer_name: row.customer_name ?? "NO CUSTOMER NAME",
         created_by_name: row.created_by_name ?? "NO USER NAME",
         order_name: row.order_name ?? "NO ORDER NAME",

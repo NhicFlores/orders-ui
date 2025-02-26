@@ -210,26 +210,6 @@ export const OrderColumns: ColumnDef<OrderTableRow>[] = [
     // TODO NOTE: define sorting function for date columns that look at status to determine sorting
   },
   {
-    accessorKey: "date_created",
-    header: ({ column }) => {
-      return (
-        <Button
-          variant={"ghost"}
-          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-        >
-          Date Created
-          <ArrowUpDown className="ml-2 h-4 w-4" />
-        </Button>
-      );
-    },
-    cell: ({ row }) => {
-      const date = row.original.date_drafted; // RESEARCH NOTE: casting vs conversion
-      // RESEARCH NOTE: format date before sending to db vs formatting on fetch
-      const formattedDate = formatDateToLocal(new Date(date));
-      return <div>{formattedDate}</div>;
-    },
-  },
-  {
     accessorKey: "date_updated",
     header: ({ column }) => {
       return (
