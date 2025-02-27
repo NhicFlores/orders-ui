@@ -62,7 +62,7 @@ export async function seedOrderInfo() {
       for (const order of ordersSeed) {
         console.log("xxxxxx NEW ORDER xxxxxx");
 
-        let userID = matchUserId(order.created_by, dbUsers); // userIds[Math.floor(Math.random() * userIds.length)];
+        let userID = matchUserId(order.user_id, dbUsers); // userIds[Math.floor(Math.random() * userIds.length)];
 
         const { shipping_data, billing_data } = order;
         const shippingInfoData = {
@@ -93,7 +93,7 @@ export async function seedOrderInfo() {
         const serializedBillingInfo = JSON.stringify(billingInfoData);
         const result = await trx.execute(
           sql`INSERT INTO "${sql.raw(getSchemaName())}".order 
-                      ("created_by",
+                      ("user_id",
                       "customer_id",
                       "order_name",
                       "order_number",
@@ -101,7 +101,6 @@ export async function seedOrderInfo() {
                       "billing_data",
                       status,
                       amount,
-                      "date_drafted",
                       "date_updated",
                       "date_submitted",
                       "date_shipped",
@@ -114,7 +113,6 @@ export async function seedOrderInfo() {
                     ${serializedBillingInfo},
                     ${order.status},
                     ${order.amount},
-                    ${order.date_drafted},
                     ${order.date_updated},
                     ${order.date_submitted ? order.date_submitted : null},
                     ${order.date_shipped ? order.date_shipped : null},
@@ -162,20 +160,22 @@ export async function seedOrderInfo() {
             invoiceCount++;
             await trx.execute(
               sql`INSERT INTO "${sql.raw(getSchemaName())}"."order_invoice"
-                            (created_by,
+                            (user_id,
                             order_id,
                             customer_id,
                             invoice_number,
                             status,
                             amount,
-                            date_created)
+                            invoice_date,
+                            date_updated)
                     VALUES (${userID},
                             ${orderId},
                             ${order.customer_id},
                             ${invoice.invoice_number},
                             ${invoice.status},
                             ${invoice.amount},
-                            ${invoice.date_created})`
+                            ${invoice.invoice_date},
+                            ${invoice.date_updated})`
             );
           }
         }

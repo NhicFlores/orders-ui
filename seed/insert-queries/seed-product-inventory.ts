@@ -19,7 +19,6 @@ export async function seedProducts() {
                     alt, 
                     description, 
                     "config_options", 
-                    "date_created", 
                     "date_updated",
                     "updated_by")
             VALUES (${product.type},
@@ -27,7 +26,6 @@ export async function seedProducts() {
                     ${product.alt},
                     ${product.description},
                     ${serializedConfigOptions},
-                    ${product.date_created},
                     ${product.date_updated},
                     ${product.updated_by})`
         );
@@ -83,7 +81,6 @@ export async function seedGlassInventory() {
                        compatible_products, 
                        quantity_available, 
                        quantity_incoming, 
-                       date_created, 
                        date_updated, 
                        updated_by)
               VALUES (${item.name},
@@ -94,7 +91,6 @@ export async function seedGlassInventory() {
                       ${serializedCompatibleProducts},
                       ${item.quantity_available},
                       ${serializedQuantityIncoming},
-                      ${item.date_created},
                       ${item.date_updated},
                       ${item.updated_by})`
         );

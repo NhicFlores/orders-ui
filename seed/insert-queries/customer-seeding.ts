@@ -33,7 +33,6 @@ export async function seedCustomerInfo() {
                         "account_num",
                         "credit_status",
                         "credit_limit",
-                        "date_created",
                         "date_updated")
                     VALUES (${customer.customer_id},
                             ${customer.name},
@@ -43,7 +42,6 @@ export async function seedCustomerInfo() {
                             ${customer.account_num},
                             ${customer.credit_status},
                             ${customer.credit_limit},
-                            ${customer.date_created},
                             ${customer.date_updated})
                     RETURNING customer_id`
         );

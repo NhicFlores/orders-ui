@@ -38,10 +38,9 @@ CREATE TABLE IF NOT EXISTS "dev-schema"."customer" (
 	"type" varchar(255) NOT NULL,
 	"account_num" varchar(255) NOT NULL,
 	"credit_status" varchar(255) NOT NULL,
-	"credit_limit" numeric(10, 2) NOT NULL,
-	"date_created" timestamp with time zone NOT NULL,
+	"credit_limit" integer NOT NULL,
 	"date_updated" timestamp with time zone NOT NULL,
-	CONSTRAINT "customer_name_unique" UNIQUE("name")
+	CONSTRAINT "customer_account_num_unique" UNIQUE("account_num")
 );
 --> statement-breakpoint
 CREATE TABLE IF NOT EXISTS "dev-schema"."inventory_glass_item" (
@@ -54,7 +53,6 @@ CREATE TABLE IF NOT EXISTS "dev-schema"."inventory_glass_item" (
 	"compatible_products" jsonb NOT NULL,
 	"quantity_available" integer NOT NULL,
 	"quantity_incoming" jsonb NOT NULL,
-	"date_created" timestamp with time zone NOT NULL,
 	"date_updated" timestamp with time zone NOT NULL,
 	"updated_by" varchar NOT NULL
 );
@@ -66,20 +64,20 @@ CREATE TABLE IF NOT EXISTS "dev-schema"."inventory_product" (
 	"alt" varchar(255) NOT NULL,
 	"description" varchar(255) NOT NULL,
 	"config_options" jsonb NOT NULL,
-	"date_created" timestamp with time zone NOT NULL,
 	"date_updated" timestamp with time zone NOT NULL,
 	"updated_by" varchar NOT NULL
 );
 --> statement-breakpoint
 CREATE TABLE IF NOT EXISTS "dev-schema"."order_invoice" (
 	"order_invoice_id" uuid PRIMARY KEY DEFAULT gen_random_uuid() NOT NULL,
-	"created_by" uuid NOT NULL,
+	"user_id" uuid NOT NULL,
 	"order_id" uuid NOT NULL,
 	"customer_id" uuid NOT NULL,
 	"invoice_number" varchar(255) NOT NULL,
 	"status" varchar(255) NOT NULL,
-	"amount" numeric(10, 2) NOT NULL,
-	"date_created" timestamp with time zone NOT NULL
+	"amount" integer NOT NULL,
+	"invoice_date" timestamp with time zone NOT NULL,
+	"date_updated" timestamp with time zone NOT NULL
 );
 --> statement-breakpoint
 CREATE TABLE IF NOT EXISTS "dev-schema"."order_item" (
@@ -93,15 +91,14 @@ CREATE TABLE IF NOT EXISTS "dev-schema"."order_item" (
 --> statement-breakpoint
 CREATE TABLE IF NOT EXISTS "dev-schema"."order" (
 	"order_id" uuid PRIMARY KEY DEFAULT gen_random_uuid() NOT NULL,
-	"created_by" uuid NOT NULL,
+	"user_id" uuid NOT NULL,
 	"customer_id" uuid NOT NULL,
 	"order_name" varchar(255) NOT NULL,
 	"order_number" varchar(255) NOT NULL,
 	"shipping_data" jsonb NOT NULL,
 	"billing_data" jsonb NOT NULL,
 	"status" varchar(255) NOT NULL,
-	"amount" numeric(10, 2) NOT NULL,
-	"date_drafted" timestamp with time zone NOT NULL,
+	"amount" integer NOT NULL,
 	"date_updated" timestamp with time zone NOT NULL,
 	"date_submitted" timestamp with time zone,
 	"date_shipped" timestamp with time zone,
@@ -140,7 +137,7 @@ EXCEPTION
 END $$;
 --> statement-breakpoint
 DO $$ BEGIN
- ALTER TABLE "dev-schema"."order_invoice" ADD CONSTRAINT "order_invoice_created_by_user_id_fk" FOREIGN KEY ("created_by") REFERENCES "dev-schema"."user"("id") ON DELETE cascade ON UPDATE no action;
+ ALTER TABLE "dev-schema"."order_invoice" ADD CONSTRAINT "order_invoice_user_id_user_id_fk" FOREIGN KEY ("user_id") REFERENCES "dev-schema"."user"("id") ON DELETE cascade ON UPDATE no action;
 EXCEPTION
  WHEN duplicate_object THEN null;
 END $$;
@@ -170,7 +167,7 @@ EXCEPTION
 END $$;
 --> statement-breakpoint
 DO $$ BEGIN
- ALTER TABLE "dev-schema"."order" ADD CONSTRAINT "order_created_by_user_id_fk" FOREIGN KEY ("created_by") REFERENCES "dev-schema"."user"("id") ON DELETE cascade ON UPDATE no action;
+ ALTER TABLE "dev-schema"."order" ADD CONSTRAINT "order_user_id_user_id_fk" FOREIGN KEY ("user_id") REFERENCES "dev-schema"."user"("id") ON DELETE cascade ON UPDATE no action;
 EXCEPTION
  WHEN duplicate_object THEN null;
 END $$;

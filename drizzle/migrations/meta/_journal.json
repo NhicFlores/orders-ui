@@ -5,15 +5,8 @@
     {
       "idx": 0,
       "version": "7",
-      "when": 1738958817617,
-      "tag": "0000_military_wolfsbane",
-      "breakpoints": true
-    },
-    {
-      "idx": 1,
-      "version": "7",
-      "when": 1739222195978,
-      "tag": "0001_left_power_man",
+      "when": 1740665916396,
+      "tag": "0000_dark_silver_centurion",
       "breakpoints": true
     }
   ]

@@ -115,9 +115,8 @@ export async function getCustomerTableData(): Promise<CustomerTableRow[]> {
         account_num: CustomerTable.account_num,
         credit_status: CustomerTable.credit_status,
         credit_limit: CustomerTable.credit_limit,
-        // NOTE TODO: need to update this function to get UNPAID invoices instead of PENDING; need to update test data first 
-        unpaid_invoice_count: sql<number>`COUNT(${OrderInvoiceTable.order_invoice_id}) FILTER (WHERE ${OrderInvoiceTable.status} = '${sql.raw(InvoiceStatusOptions.Pending)}')`.as("unpaid_invoice_count"),
-        unpaid_invoice_sum: sql<number>`SUM(${OrderInvoiceTable.amount}) FILTER (WHERE ${OrderInvoiceTable.status} = '${sql.raw(InvoiceStatusOptions.Pending)}')`.as("unpaid_invoice_sum"),
+        unpaid_invoice_count: sql<number>`COUNT(${OrderInvoiceTable.order_invoice_id}) FILTER (WHERE ${OrderInvoiceTable.status} = '${sql.raw(InvoiceStatusOptions.Unpaid)}')`.as("unpaid_invoice_count"),
+        unpaid_invoice_sum: sql<number>`SUM(${OrderInvoiceTable.amount}) FILTER (WHERE ${OrderInvoiceTable.status} = '${sql.raw(InvoiceStatusOptions.Unpaid)}')`.as("unpaid_invoice_sum"),
         total_spent: sql<number>`SUM(${OrderInvoiceTable.amount}) FILTER (WHERE ${OrderInvoiceTable.status} = '${sql.raw(InvoiceStatusOptions.Paid)}')`.as("total_spent"),
         order_count: sql<number>`COUNT(${OrderTable.order_id})`.as("order_count"),
         latest_order_date: sql<string>`MAX(${OrderTable.date_submitted})`.as("latest_order_date")
@@ -143,10 +142,10 @@ export async function getCustomerTableData(): Promise<CustomerTableRow[]> {
       );
 
     const tableRows = result.map((row) => {
-      const unpaidInvoiceSum = parseFloat(row.unpaid_invoice_sum.toString())
+      // const unpaidInvoiceSum = parseFloat(row.unpaid_invoice_sum.toString())
       return {
         ...row,
-        balance: row.credit_limit - unpaidInvoiceSum,
+        balance: row.credit_limit - row.unpaid_invoice_sum,
         total_spent: parseFloat(row.total_spent.toString()),
         // order_count: parseInt(row.order_count.toString()),
         latest_order_date: new Date(row.latest_order_date),

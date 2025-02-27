@@ -1,5 +1,5 @@
 {
-  "id": "d92f5916-013a-4805-9ec1-cd9df0d61370",
+  "id": "2a2ad120-0564-4015-a0b6-e07530c3259c",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "7",
   "dialect": "postgresql",
@@ -256,13 +256,7 @@
         },
         "credit_limit": {
           "name": "credit_limit",
-          "type": "numeric(10, 2)",
-          "primaryKey": false,
-          "notNull": true
-        },
-        "date_created": {
-          "name": "date_created",
-          "type": "timestamp with time zone",
+          "type": "integer",
           "primaryKey": false,
           "notNull": true
         },
@@ -277,11 +271,11 @@
       "foreignKeys": {},
       "compositePrimaryKeys": {},
       "uniqueConstraints": {
-        "customer_name_unique": {
-          "name": "customer_name_unique",
+        "customer_account_num_unique": {
+          "name": "customer_account_num_unique",
           "nullsNotDistinct": false,
           "columns": [
-            "name"
+            "account_num"
           ]
         }
       },
@@ -348,12 +342,6 @@
           "primaryKey": false,
           "notNull": true
         },
-        "date_created": {
-          "name": "date_created",
-          "type": "timestamp with time zone",
-          "primaryKey": false,
-          "notNull": true
-        },
         "date_updated": {
           "name": "date_updated",
           "type": "timestamp with time zone",
@@ -416,12 +404,6 @@
           "primaryKey": false,
           "notNull": true
         },
-        "date_created": {
-          "name": "date_created",
-          "type": "timestamp with time zone",
-          "primaryKey": false,
-          "notNull": true
-        },
         "date_updated": {
           "name": "date_updated",
           "type": "timestamp with time zone",
@@ -454,8 +436,8 @@
           "notNull": true,
           "default": "gen_random_uuid()"
         },
-        "created_by": {
-          "name": "created_by",
+        "user_id": {
+          "name": "user_id",
           "type": "uuid",
           "primaryKey": false,
           "notNull": true
@@ -486,12 +468,18 @@
         },
         "amount": {
           "name": "amount",
-          "type": "numeric(10, 2)",
+          "type": "integer",
           "primaryKey": false,
           "notNull": true
         },
-        "date_created": {
-          "name": "date_created",
+        "invoice_date": {
+          "name": "invoice_date",
+          "type": "timestamp with time zone",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "date_updated": {
+          "name": "date_updated",
           "type": "timestamp with time zone",
           "primaryKey": false,
           "notNull": true
@@ -499,13 +487,13 @@
       },
       "indexes": {},
       "foreignKeys": {
-        "order_invoice_created_by_user_id_fk": {
-          "name": "order_invoice_created_by_user_id_fk",
+        "order_invoice_user_id_user_id_fk": {
+          "name": "order_invoice_user_id_user_id_fk",
           "tableFrom": "order_invoice",
           "tableTo": "user",
           "schemaTo": "dev-schema",
           "columnsFrom": [
-            "created_by"
+            "user_id"
           ],
           "columnsTo": [
             "id"
@@ -637,8 +625,8 @@
           "notNull": true,
           "default": "gen_random_uuid()"
         },
-        "created_by": {
-          "name": "created_by",
+        "user_id": {
+          "name": "user_id",
           "type": "uuid",
           "primaryKey": false,
           "notNull": true
@@ -681,13 +669,7 @@
         },
         "amount": {
           "name": "amount",
-          "type": "numeric(10, 2)",
-          "primaryKey": false,
-          "notNull": true
-        },
-        "date_drafted": {
-          "name": "date_drafted",
-          "type": "timestamp with time zone",
+          "type": "integer",
           "primaryKey": false,
           "notNull": true
         },
@@ -718,13 +700,13 @@
       },
       "indexes": {},
       "foreignKeys": {
-        "order_created_by_user_id_fk": {
-          "name": "order_created_by_user_id_fk",
+        "order_user_id_user_id_fk": {
+          "name": "order_user_id_user_id_fk",
           "tableFrom": "order",
           "tableTo": "user",
           "schemaTo": "dev-schema",
           "columnsFrom": [
-            "created_by"
+            "user_id"
           ],
           "columnsTo": [
             "id"
