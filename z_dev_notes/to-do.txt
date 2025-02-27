@@ -28,6 +28,7 @@ role base access:
 
 
 NEXT 
+- migrate from Vercel Postgres to Neon Postgres 
 small schema updates
 - date_created => date_updated 
 - created_by => user_id 

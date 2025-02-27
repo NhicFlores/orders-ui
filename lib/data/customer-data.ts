@@ -101,6 +101,63 @@ export async function getOrderByFilter() {
   }
 }
 
+export async function getNumberOfOrders() {
+  try {
+    const result = await db.select({
+      customer_id: CustomerTable.customer_id,
+      name: CustomerTable.name,
+      order_count: sql`COUNT(${OrderTable.order_id})`.as("order_count"),
+    })
+    .from(CustomerTable)
+    .leftJoin(
+      OrderTable,
+      and(
+        eq(OrderTable.customer_id, CustomerTable.customer_id),
+        and(
+          not(eq(OrderTable.status, OrderStatusOptions.Draft)),
+          not(eq(OrderTable.status, OrderStatusOptions.Cancelled))
+        )
+      )
+    )
+    // .leftJoin(OrderTable, eq(OrderTable.customer_id, CustomerTable.customer_id))
+    // .where(
+    //   and(
+    //     not(eq(OrderTable.status, OrderStatusOptions.Draft)),
+    //     not(eq(OrderTable.status, OrderStatusOptions.Cancelled))
+    //   )
+    // )
+    .groupBy(CustomerTable.customer_id, CustomerTable.name);
+
+    console.log("RESULT", result);
+  
+  } catch (error) {
+    console.error("Failed to fetch orders:", error);
+    throw new Error("Failed to fetch orders.");
+  }
+}
+
+export async function getInvoiceSummaryPerCustomer() {
+  try {
+    const result = await db.select({
+      customer_id: CustomerTable.customer_id,
+      name: CustomerTable.name,
+      invoice_count: sql`COUNT(${OrderInvoiceTable.order_invoice_id})`.as("invoice_count"),
+      unpaid_invoice_count: sql`COUNT(${OrderInvoiceTable.order_invoice_id}) FILTER (WHERE ${OrderInvoiceTable.status} = ${InvoiceStatusOptions.Unpaid})`.as("unpaid_invoice_count"),
+      paid_invoice_count: sql`COUNT(${OrderInvoiceTable.order_invoice_id}) FILTER (WHERE ${OrderInvoiceTable.status} = ${InvoiceStatusOptions.Paid})`.as("paid_invoice_count"),
+    })
+    .from(CustomerTable)
+    .leftJoin(OrderInvoiceTable, eq(OrderInvoiceTable.customer_id, CustomerTable.customer_id))
+    .groupBy(CustomerTable.customer_id, CustomerTable.name)
+
+    console.log("INVOICE SUMMARY", result);
+
+    // return result;
+  } catch (error) {
+    console.error("Failed to fetch invoice summary:", error);
+    throw new Error("Failed to fetch invoice summary.");
+  }
+}
+
 /**
  * this query fetches aggregate data from the invoice and order tables
  * for each customer in the customer table

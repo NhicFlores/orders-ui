@@ -53,7 +53,7 @@ export const CustomerColumns: ColumnDef<CustomerTableRow>[] = [
       const { balance } = row.original;
       return (
         <div>
-          ${balance.toFixed(2)}
+          ${(balance / 100).toFixed(2)}
         </div>
       );
     },
