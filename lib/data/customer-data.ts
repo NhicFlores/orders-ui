@@ -14,7 +14,7 @@ import {
   OrderInvoiceTable,
   OrderTable,
 } from "@/drizzle/schema";
-import { and, eq, not, or, sql } from "drizzle-orm";
+import { and, desc, eq, not, or, sql } from "drizzle-orm";
 import { CustomerTableRow } from "../data-model/query-types";
 import { InvoiceStatusOptions, OrderStatusOptions } from "../data-model/enum-types";
 
@@ -101,12 +101,59 @@ export async function getOrderByFilter() {
   }
 }
 
+export async function getOrdersByCustomerId(customerId: string) {
+  try {
+    // this query gets all orders for a customer and orders them by date submitted 
+    const customerOrdersByDate = await db
+    .select({
+      order_id: OrderTable.order_id,
+      customerId: OrderTable.customer_id,
+      status: OrderTable.status,
+      date_submitted: OrderTable.date_submitted,
+    })
+    .from(OrderTable)
+    .where(eq(OrderTable.customer_id, customerId))
+    .orderBy(desc(OrderTable.date_submitted));
+
+    // console.log("Customer Orders By Date", customerOrdersByDate);
+
+    // this query get the latest order for a customer 
+    const latestOrder = await db
+    .select({
+      order_id: OrderTable.order_id,
+      date_submitted: OrderTable.date_submitted,
+    })
+    .from(OrderTable)
+    .where(eq(OrderTable.customer_id, customerId))
+    .orderBy(desc(OrderTable.date_submitted))
+    .limit(1);
+
+    // const latestOrder = await db.select({
+    //   order_id: OrderTable.order_id,
+    //   customer_id: OrderTable.customer_id,
+    //   latest_order_date: sql`MAX(${OrderTable.date_submitted})`.as("latest_order_date"),
+    // })
+    // .from(OrderTable)
+    // .where(eq(OrderTable.customer_id, customerId))
+    // .groupBy(OrderTable.customer_id, OrderTable.order_id)
+
+    // console.log("LATEST ORDER", latestOrder); 
+
+
+
+  } catch (error) {
+    console.error("Failed to fetch orders:", error);
+    throw new Error("Failed to fetch orders.");
+  }
+}
+
 export async function getNumberOfOrders() {
   try {
     const result = await db.select({
       customer_id: CustomerTable.customer_id,
       name: CustomerTable.name,
       order_count: sql`COUNT(${OrderTable.order_id})`.as("order_count"),
+      latest_order_date: sql`MAX(${OrderTable.date_submitted})`.as("latest_order_date"),
     })
     .from(CustomerTable)
     .leftJoin(
@@ -138,12 +185,15 @@ export async function getNumberOfOrders() {
 
 export async function getInvoiceSummaryPerCustomer() {
   try {
+    // these sum and count queries are verified to be correct 
     const result = await db.select({
       customer_id: CustomerTable.customer_id,
       name: CustomerTable.name,
       invoice_count: sql`COUNT(${OrderInvoiceTable.order_invoice_id})`.as("invoice_count"),
       unpaid_invoice_count: sql`COUNT(${OrderInvoiceTable.order_invoice_id}) FILTER (WHERE ${OrderInvoiceTable.status} = ${InvoiceStatusOptions.Unpaid})`.as("unpaid_invoice_count"),
       paid_invoice_count: sql`COUNT(${OrderInvoiceTable.order_invoice_id}) FILTER (WHERE ${OrderInvoiceTable.status} = ${InvoiceStatusOptions.Paid})`.as("paid_invoice_count"),
+      unpaid_invoice_sum: sql`SUM(${OrderInvoiceTable.amount}) FILTER (WHERE ${OrderInvoiceTable.status} = ${InvoiceStatusOptions.Unpaid})`.as("unpaid_invoice_sum"),
+      paid_invoice_sum: sql`SUM(${OrderInvoiceTable.amount}) FILTER (WHERE ${OrderInvoiceTable.status} = ${InvoiceStatusOptions.Paid})`.as("paid_invoice_sum"),
     })
     .from(CustomerTable)
     .leftJoin(OrderInvoiceTable, eq(OrderInvoiceTable.customer_id, CustomerTable.customer_id))
