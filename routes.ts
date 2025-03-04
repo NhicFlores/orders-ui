@@ -68,6 +68,11 @@ export const CustomerRoute = {
   detailPage: (customerId: string) => `/customer/${customerId}`,
 };
 
+export const NewCustomerRoute = {
+  label: "New Customer",
+  href: "/customer/new-customer",
+}
+
 // product routes
 export const NewOrderNameRoute = {
   label: "Order Name",

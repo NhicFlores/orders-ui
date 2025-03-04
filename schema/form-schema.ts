@@ -198,3 +198,19 @@ export const OrderDetailSchema = z.object({
   date_shipped: z.date().nullable(),
   date_delivered: z.date().nullable(),
 });
+
+export const NewCustomerFormSchema = z.object({
+  name: z.string().min(1, {
+    message: "please enter a customer name",
+  }),
+  phone: z.string(),
+  email: z.string().email({
+    message: "please enter a valid email address",
+  }),
+  type: z.string(),
+  account_num: z.string().min(1, {
+    message: "please enter an account number",
+  }),
+  credit_status: z.string(),
+  credit_limit: z.number(),
+})

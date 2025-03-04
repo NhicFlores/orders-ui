@@ -91,3 +91,9 @@ export type CustomerTableRow = Pick<Customer, "customer_id" | "name" | "account_
   order_count: number;
   latest_order_date: Date;
 }
+
+export type NewCustomerForm = Customer & {
+  
+  // TODO NOTE: add more fields
+  // TODO NOTE: add address fields
+}
