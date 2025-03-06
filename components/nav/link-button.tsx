@@ -28,6 +28,7 @@ const linkButtonSizes = {
   icon: "h-10 w-10",
 };
 // note: need to conditionally render an icon 
+// 'as?' property can be used to pass URL decorator for the URL that will be shown in the browser 
 const LinkButton = ({
   href,
   label,

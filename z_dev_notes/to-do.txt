@@ -39,7 +39,7 @@ customers
 - customer form 
 
 refactor shipping and billing forms to use 
-customer information 
+customer information v
 
 order(quote) submission 
 - refactor order flow: order name is low priority and optional so it should be at the end 
